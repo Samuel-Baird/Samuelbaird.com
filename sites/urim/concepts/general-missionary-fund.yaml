@@ -1,0 +1,15 @@
+id: concept.general-missionary-fund
+category: Finances
+en:
+  term: general missionary fund
+  match:
+  - general missionary fund
+sources: {}
+candidates:
+  pt:
+  - term: fundo missionário geral
+    hint: pulpit-glossary:verified
+  es:
+  - term: fondo misional general
+    hint: pulpit-glossary:verified
+related: []

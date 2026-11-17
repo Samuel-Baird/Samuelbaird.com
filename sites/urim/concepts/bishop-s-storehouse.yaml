@@ -1,0 +1,15 @@
+id: concept.bishop-s-storehouse
+category: Welfare & Self-Reliance
+en:
+  term: bishop's storehouse
+  match:
+  - bishop's storehouse
+sources: {}
+candidates:
+  pt:
+  - term: armazém do bispo
+    hint: pulpit-glossary:standard
+  es:
+  - term: almacén del obispo
+    hint: pulpit-glossary:verified
+related: []

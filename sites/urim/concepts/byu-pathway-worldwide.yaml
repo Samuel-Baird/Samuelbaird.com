@@ -1,0 +1,15 @@
+id: concept.byu-pathway-worldwide
+category: Education & Publications
+en:
+  term: BYU–Pathway Worldwide
+  match:
+  - BYU–Pathway Worldwide
+sources: {}
+candidates:
+  pt:
+  - term: BYU-Pathway
+    hint: pulpit-glossary:standard
+  es:
+  - term: BYU–Pathway Worldwide
+    hint: pulpit-glossary:verified
+related: []

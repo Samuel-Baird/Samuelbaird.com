@@ -1,0 +1,19 @@
+id: concept.gold-plates
+category: Scriptures & Study Helps
+en:
+  term: gold plates
+  match:
+  - gold plates
+sources:
+  GS:
+  - gold-plates
+  Topics:
+  - gold-plates
+candidates:
+  pt:
+  - term: placas de ouro
+    hint: pulpit-glossary:verified
+  es:
+  - term: planchas de oro
+    hint: pulpit-glossary:verified
+related: []

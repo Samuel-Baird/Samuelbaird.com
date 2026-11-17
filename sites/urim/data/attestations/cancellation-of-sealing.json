@@ -1,0 +1,73 @@
+{
+ "id": "concept.cancellation-of-sealing",
+ "pt": {
+  "en_paragraphs": 3,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "cancelamento de selamento",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 3,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2011,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-monson-priesthood-power",
+      "para": 22,
+      "en": "… I have each week is the handling of cancellations of sealings. Each one was preceded by a joyous marriage …",
+      "tr": "… a de ter que lidar cada semana com cancelamentos de selamentos. Cada um deles foi precedido de um feliz …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-carpenter-fruit-that-remains",
+      "para": 20,
+      "en": "However, if a cancellation of sealing is desired, agency is respected. Certain procedures can be …",
+      "tr": "… ligar na Terra e no céu. Quando um cancelamento de selamento é aprovado pela Primeira Presidência, as bênçãos relativas àquele …"
+     }
+    ],
+    "earliest": {
+     "year": 2011,
+     "conference": "2011 April General Conference",
+     "talk": "2011-04-monson-priesthood-power",
+     "para": 22,
+     "en": "… I have each week is the handling of cancellations of sealings. Each one was preceded by a joyous marriage …",
+     "tr": "… a de ter que lidar cada semana com cancelamentos de selamentos. Cada um deles foi precedido de um feliz …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 3,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "sea",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 18.0,
+    "source": "2011-04-monson-priesthood-power",
+    "kind": "talk",
+    "sample": "Después pasan los meses y los años y, por alguna razón, el amor muere. Tal vez sea el resultado de problemas económicos, falta de comunicación, malhumores descont"
+   }
+  ]
+ }
+}

@@ -1,0 +1,195 @@
+{
+ "id": "concept.mission-leader",
+ "pt": {
+  "en_paragraphs": 40,
+  "en_talks": 34,
+  "en_verses": 0,
+  "uncovered_paragraphs": 7,
+  "renderings": [
+   {
+    "term": "líder de missão",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 33,
+    "talks": 29,
+    "verses": 0,
+    "first_year": 2020,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2020,
+      "conference": "2020 October General Conference",
+      "talk": "2020-10-johnson-enduring-power",
+      "para": 16,
+      "en": "While my dear wife and I were serving as mission leaders in Thailand, Laos, and Myanmar, we witnessed firsthand the …",
+      "tr": "Quando minha querida esposa e eu servíamos como líderes de missão em Laos, em Mianmar e na Tailândia, testemunhamos pessoalmente …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-amos-the-good-news-recipe",
+      "para": 2,
+      "en": "… Michelle, and I had the honor to serve as mission leaders in Louisiana. We had a tradition of teaching the …",
+      "tr": "… e eu tivemos a honra de servir como líderes de missão em Louisiana. Tínhamos a tradição de ensinar os missionários …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-lebethoa-jesus-christ-is-the-light-and-life-of-the-world",
+      "para": 19,
+      "en": "Whilst we were serving as mission leaders in our home country, one of our missionaries shared …",
+      "tr": "Enquanto servíamos como líderes de missão em nosso país natal, um de nossos missionários contou …"
+     }
+    ],
+    "earliest": {
+     "year": 2020,
+     "conference": "2020 October General Conference",
+     "talk": "2020-10-johnson-enduring-power",
+     "para": 16,
+     "en": "While my dear wife and I were serving as mission leaders in Thailand, Laos, and Myanmar, we witnessed firsthand the …",
+     "tr": "Quando minha querida esposa e eu servíamos como líderes de missão em Laos, em Mianmar e na Tailândia, testemunhamos pessoalmente …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "líderes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.857,
+    "ratio": 39.4,
+    "source": "2013-04-monson-come-all-ye-sons-of-god",
+    "kind": "talk",
+    "sample": "bstituto para o amor. Os missionários bem-sucedidos amam o companheiro, amam os líderes da missão e amam as preciosas pessoas que eles ensinam. Na seção 4 de Doutrina"
+   },
+   {
+    "term": "missão",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.857,
+    "ratio": 35.0,
+    "source": "2013-04-monson-come-all-ye-sons-of-god",
+    "kind": "talk",
+    "sample": "ra o amor. Os missionários bem-sucedidos amam o companheiro, amam os líderes da missão e amam as preciosas pessoas que eles ensinam. Na seção 4 de Doutrina e Convênio"
+   },
+   {
+    "term": "missionário",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.429,
+    "ratio": 29.6,
+    "source": "2013-10-funk-called-of-him-to-declare-his-word",
+    "kind": "talk",
+    "sample": "Embora o trabalho missionário fosse novo e desafiador para o Élder Pokhrel, ele serviu com fé e fidelidade, p"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 40,
+  "en_talks": 34,
+  "en_verses": 0,
+  "uncovered_paragraphs": 7,
+  "renderings": [
+   {
+    "term": "líder de misión",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 33,
+    "talks": 29,
+    "verses": 0,
+    "first_year": 2020,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2020,
+      "conference": "2020 October General Conference",
+      "talk": "2020-10-johnson-enduring-power",
+      "para": 16,
+      "en": "While my dear wife and I were serving as mission leaders in Thailand, Laos, and Myanmar, we witnessed firsthand the …",
+      "tr": "Mientras mi querida esposa y yo servíamos como líderes de misión en Tailandia, Laos y Birmania, fuimos testigos de primera …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-runia-your-repentance-doesnt-burden-jesus-christ-it-brightens-his-joy",
+      "para": 48,
+      "en": "As mission leaders in Australia, during our last visit with each missionary, …",
+      "tr": "Como líderes de misión en Australia, en nuestra última reunión con cada misionero, …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-lebethoa-jesus-christ-is-the-light-and-life-of-the-world",
+      "para": 19,
+      "en": "Whilst we were serving as mission leaders in our home country, one of our missionaries shared …",
+      "tr": "Cuando servíamos como líderes de misión en nuestro país natal, uno de nuestros misioneros nos …"
+     }
+    ],
+    "earliest": {
+     "year": 2020,
+     "conference": "2020 October General Conference",
+     "talk": "2020-10-johnson-enduring-power",
+     "para": 16,
+     "en": "While my dear wife and I were serving as mission leaders in Thailand, Laos, and Myanmar, we witnessed firsthand the …",
+     "tr": "Mientras mi querida esposa y yo servíamos como líderes de misión en Tailandia, Laos y Birmania, fuimos testigos de primera …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "líderes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.857,
+    "ratio": 42.3,
+    "source": "2013-04-monson-come-all-ye-sons-of-god",
+    "kind": "talk",
+    "sample": "tuto para el amor. Los misioneros que tienen éxito aman a sus compañeros, a sus líderes misionales y a las valiosas personas a las que enseñan. En la sección cuatro de"
+   },
+   {
+    "term": "misión",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.857,
+    "ratio": 32.1,
+    "source": "2013-10-funk-called-of-him-to-declare-his-word",
+    "kind": "talk",
+    "sample": "prendiendo de las Escrituras, de *Predicad Mi Evangelio* y de sus líderes de la misión. Llegó a ser un maestro poderoso del Evangelio en inglés y un excelente líder."
+   },
+   {
+    "term": "servir",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.571,
+    "ratio": 21.8,
+    "source": "2013-04-monson-come-all-ye-sons-of-god",
+    "kind": "talk",
+    "sample": "El último punto de nuestra fórmula es **servir al Señor con amor**. No hay sustituto para el amor. Los misioneros que tienen é"
+   }
+  ]
+ }
+}

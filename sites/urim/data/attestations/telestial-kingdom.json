@@ -1,0 +1,156 @@
+{
+ "id": "concept.telestial-kingdom",
+ "pt": {
+  "en_paragraphs": 10,
+  "en_talks": 9,
+  "en_verses": 2,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "reino telestial",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 6,
+    "talks": 6,
+    "verses": 2,
+    "first_year": 1999,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 88:21",
+      "ref_en": "Doctrine and Covenants 88:21",
+      "en": "And they who are not sanctified through the law which I have given unto you, even the law of Christ, must inherit another kingdom, even that of a terrestrial kingdom, or that of a telestial kingdom.",
+      "tr": "E os que não forem santificados por meio da lei que vos dei, sim, a lei de Cristo, herdarão outro reino, sim, um reino terrestre ou um reino telestial.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/88?lang=por&id=p21"
+     },
+     {
+      "kind": "talk",
+      "year": 1999,
+      "conference": "1999 April General Conference",
+      "talk": "1999-04-maxwell-repent-of-our-selfishness-dc-568",
+      "para": 13,
+      "en": "… appetite. No wonder those who will later comprise the telestial kingdom, after they have paid a price, were once …",
+      "tr": "… desejo iníquo. Não admira que aqueles que herdarão o reino telestial, depois de terem sofrido por seus pecados, serão …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 October General Conference",
+      "talk": "2018-10-ashton-the-father",
+      "para": 40,
+      "en": "… [Doctrine and Covenants 76:77, 87](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/76?lang=eng&id=p77,p87#p77)) and those in the telestial kingdom through the ministrations of the Holy Ghost and angels …",
+      "tr": "… Convênios 76:77, 87](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/76?lang=por&id=p77,87#p77)). E também proverá às pessoas no reino telestial por meio da ministração do Espírito Santo e de …"
+     }
+    ],
+    "earliest": {
+     "year": 1999,
+     "conference": "1999 April General Conference",
+     "talk": "1999-04-maxwell-repent-of-our-selfishness-dc-568",
+     "para": 13,
+     "en": "… appetite. No wonder those who will later comprise the telestial kingdom, after they have paid a price, were once …",
+     "tr": "… desejo iníquo. Não admira que aqueles que herdarão o reino telestial, depois de terem sofrido por seus pecados, serão …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "telestial",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 500.1,
+    "source": "2017-10-holland-be-ye-therefore-perfecteventually",
+    "kind": "talk",
+    "sample": "s em um mundo decaído e, por enquanto, somos um povo decaído. Estamos no reino *telestial*, que é escrito com a letra *t*, não com a letra *c*. Conforme ensinou o presid"
+   },
+   {
+    "term": "reino",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.75,
+    "ratio": 36.2,
+    "source": "1993-10-nelson-constancy-amid-change",
+    "kind": "talk",
+    "sample": "não será exigido que pagueis pelas faltas dos outros. Vossa colocação final no reino celeste, terrestre ou teleste não será definida pelo acaso. O Senhor estabelece"
+   },
+   {
+    "term": "outro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 20.0,
+    "source": "1993-10-nelson-constancy-amid-change",
+    "kind": "talk",
+    "sample": "Outro princípio imutável, irmãos, é o do julgamento final. Todos vós sereis julgados"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 7,
+  "en_talks": 6,
+  "en_verses": 2,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "reino telestial",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 6,
+    "talks": 5,
+    "verses": 2,
+    "first_year": 2009,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 88:21",
+      "ref_en": "Doctrine and Covenants 88:21",
+      "en": "And they who are not sanctified through the law which I have given unto you, even the law of Christ, must inherit another kingdom, even that of a terrestrial kingdom, or that of a telestial kingdom.",
+      "tr": "Y aquellos que no son santificados por la ley que os he dado, a saber, la ley de Cristo, deberán heredar otro reino, ya sea un reino terrestre o un reino telestial.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/88?lang=spa&id=p21"
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 October General Conference",
+      "talk": "2009-10-oaks-love-and-law",
+      "para": 31,
+      "en": "“And he who cannot abide the law of a telestial kingdom cannot abide a telestial glory” ([D&C 88:22–24](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/88?lang=eng&id=p22-p24#p22)).",
+      "tr": "… el que no puede obedecer la ley de un reino telestial, no puede soportar una gloria telestial” (D. y …"
+     },
+     {
+      "kind": "talk",
+      "year": 2022,
+      "conference": "2022 April General Conference",
+      "talk": "2022-04-oaks-divine-love-in-the-fathers-plan",
+      "para": 11,
+      "en": "“And he who cannot abide the law of a telestial kingdom cannot abide a telestial glory.”[^13]",
+      "tr": "… el que no puede obedecer la ley de un reino telestial, no puede soportar una gloria telestial”[^13]."
+     }
+    ],
+    "earliest": {
+     "year": 2009,
+     "conference": "2009 October General Conference",
+     "talk": "2009-10-oaks-love-and-law",
+     "para": 31,
+     "en": "“And he who cannot abide the law of a telestial kingdom cannot abide a telestial glory” ([D&C 88:22–24](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/88?lang=eng&id=p22-p24#p22)).",
+     "tr": "… el que no puede obedecer la ley de un reino telestial, no puede soportar una gloria telestial” (D. y …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

@@ -1,0 +1,25 @@
+id: concept.quorum
+category: Priesthood Offices & Quorums
+en:
+  term: quorum
+  match:
+  - quorum
+sources:
+  GS:
+  - quorum
+  Topics:
+  - quorum
+  TtF:
+  - quorum
+  GH:
+  - 10-aaronic-priesthood#title_number6
+candidates:
+  pt:
+  - term: quórum
+    hint: pulpit-glossary:verified
+  es:
+  - term: cuórum
+    hint: approved-terms
+  - term: quórum
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,17 @@
+id: concept.recommend-interview
+category: Temple & Family History
+en:
+  term: recommend interview
+  match:
+  - recommend interview
+sources:
+  GH:
+  - 31#title_number17
+candidates:
+  pt:
+  - term: entrevista para a recomendação
+    hint: pulpit-glossary:verified
+  es:
+  - term: entrevista de recomendación
+    hint: pulpit-glossary:verified
+related: []

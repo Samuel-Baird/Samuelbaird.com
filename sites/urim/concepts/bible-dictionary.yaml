@@ -1,0 +1,15 @@
+id: concept.bible-dictionary
+category: Scriptures & Study Helps
+en:
+  term: Bible Dictionary
+  match:
+  - Bible Dictionary
+sources: {}
+candidates:
+  pt:
+  - term: Dicionário Bíblico
+    hint: pulpit-glossary:verified
+  es:
+  - term: Diccionario Bíblico
+    hint: pulpit-glossary:verified
+related: []

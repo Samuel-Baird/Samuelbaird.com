@@ -1,0 +1,19 @@
+id: concept.spirit-world
+category: Plan of Salvation
+en:
+  term: spirit world
+  match:
+  - spirit world
+sources:
+  GS:
+  - spirit-world
+  Topics:
+  - spirit-world
+candidates:
+  pt:
+  - term: mundo espiritual
+    hint: pulpit-glossary:verified
+  es:
+  - term: mundo de los espíritus
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,14 @@
+id: concept.elder-brother
+category: Deity
+en:
+  term: Elder Brother
+  match:
+  - Elder Brother
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: hermano mayor
+    hint: pulpit-glossary:verified
+related: []
+note: Referring to Jesus Christ as premortal elder sibling of all spirits

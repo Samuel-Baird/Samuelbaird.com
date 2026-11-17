@@ -1,0 +1,195 @@
+{
+ "id": "concept.trek",
+ "pt": {
+  "en_paragraphs": 37,
+  "en_talks": 26,
+  "en_verses": 0,
+  "uncovered_paragraphs": 30,
+  "renderings": [
+   {
+    "term": "trilha",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 7,
+    "talks": 7,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2019,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-monson-my-brothers-keeper",
+      "para": 12,
+      "en": "… keen interest the lighted map which plotted the pioneer trek from Nauvoo. However, my heart was truly touched when I …",
+      "tr": "… Observei com muito interesse o mapa iluminado mostrando a trilha dos pioneiros, desde Nauvoo. Entretanto, meu coração comoveu-se muito vendo …"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 October General Conference",
+      "talk": "2012-10-nash-by-faith-all-things-are-fulfilled",
+      "para": 3,
+      "en": "… of 1856. They had reached a point in the trek where her seven children were literally starving. She wrote: “It …",
+      "tr": "… que se deparou com nevascas intensas ao longo da trilha, no outono de 1856. Chegaram a um ponto da …"
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 October General Conference",
+      "talk": "2019-10-holland-the-message-the-meaning-and-the-multitude",
+      "para": 14,
+      "en": "… vocabulary of our religious practice—dietary restrictions, self-reliance supplies, pioneer treks, digitized family trees, with an untold number of stake …",
+      "tr": "… nossa prática religiosa — restrições alimentares, recursos de autossuficiência, trilhas pioneiras, árvores familiares digitalizadas, com um número incalculável de sedes …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-monson-my-brothers-keeper",
+     "para": 12,
+     "en": "… keen interest the lighted map which plotted the pioneer trek from Nauvoo. However, my heart was truly touched when I …",
+     "tr": "… Observei com muito interesse o mapa iluminado mostrando a trilha dos pioneiros, desde Nauvoo. Entretanto, meu coração comoveu-se muito vendo …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "jornada",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 23,
+    "share_of_uncovered": 0.767,
+    "ratio": 98.9,
+    "source": "1994-10-nelson-the-spirit-of-elijah",
+    "kind": "talk",
+    "sample": "antes de seguirem para oeste\" e foram, dessa maneira, abençoados também em sua jornada celestial (ibid., pp. 303–4).\n[^23]: D&C 127:6–7.\n[^24]: Ver D&C 128:1.\n[^25]:"
+   },
+   {
+    "term": "pioneiros",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.333,
+    "ratio": 190.5,
+    "source": "1996-04-wirthlin-faith-of-our-fathers",
+    "kind": "talk",
+    "sample": "te um futuro incerto! Não admira que tantas lágrimas tenham sido vertidas pelos pioneiros que partiam, enquanto conduziam seus carroções ruidosamente pela rua Parley até"
+   },
+   {
+    "term": "oeste",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.233,
+    "ratio": 71.8,
+    "source": "1994-10-nelson-the-spirit-of-elijah",
+    "kind": "talk",
+    "sample": "istros do templo, 5.615 santos receberam sua investidura antes de seguirem para oeste\" e foram, dessa maneira, abençoados também em sua jornada celestial (ibid., pp."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 35,
+  "en_talks": 25,
+  "en_verses": 0,
+  "uncovered_paragraphs": 29,
+  "renderings": [
+   {
+    "term": "travesía",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 6,
+    "talks": 6,
+    "verses": 0,
+    "first_year": 2011,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-burton-the-sanctifying-work-of-welfare",
+      "para": 16,
+      "en": "… they endured winter cold and debilitating conditions during their trek west. Robert Taylor Burton, one of my great-great-grandfathers, was one …",
+      "tr": "… el frío invernal y las condiciones debilitantes durante su travesía hacia el Oeste. Robert Taylor Burton, uno de mis tatarabuelos, …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-uchtdorf-grateful-in-any-circumstances",
+      "para": 22,
+      "en": "… a spirit of gratitude during their slow and painful trek toward the Great Salt Lake, even singing and dancing and …",
+      "tr": "… un espíritu de gratitud durante la lenta y penosa travesía hacia el Gran Lago Salado, incluso cantando, bailando y gloriándose …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-cook-the-atonement-of-jesus-christ-provides-the-ultimate-rescue",
+      "para": 36,
+      "en": "… tribute to the faithful Saints who died from the trek over Rocky Ridge (see Julie Dockstader Heaps, “Trail of Handcart …",
+      "tr": "… tributo a los fieles santos que murieron durante la travesía por Rocky Ridge (véase Julie Dockstader Heaps, \"Trail of Handcart …"
+     }
+    ],
+    "earliest": {
+     "year": 2011,
+     "conference": "2011 April General Conference",
+     "talk": "2011-04-burton-the-sanctifying-work-of-welfare",
+     "para": 16,
+     "en": "… they endured winter cold and debilitating conditions during their trek west. Robert Taylor Burton, one of my great-great-grandfathers, was one …",
+     "tr": "… el frío invernal y las condiciones debilitantes durante su travesía hacia el Oeste. Robert Taylor Burton, uno de mis tatarabuelos, …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "viaje",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 15,
+    "share_of_uncovered": 0.517,
+    "ratio": 64.7,
+    "source": "1999-04-nadauld-follow-the-light",
+    "kind": "talk",
+    "sample": "los con la ropa congelada y pegada al cuerpo, pero seguían adelante. Durante el viaje, su hijo de dieciocho años, Langley, enfermó y estaba tan débil que tuvieron qu"
+   },
+   {
+    "term": "pioneros",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.207,
+    "ratio": 39.4,
+    "source": "2006-04-wirthlin-the-abundant-life",
+    "kind": "talk",
+    "sample": "Años después del martirio del Profeta y tras haberse unido a los pioneros que hicieron el largo viaje hasta Utah, Jane dijo: “[todavía suelo] despertar a"
+   },
+   {
+    "term": "mano",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.241,
+    "ratio": 11.4,
+    "source": "1999-04-nadauld-follow-the-light",
+    "kind": "talk",
+    "sample": "re ni por la enfermedad en las planicies del estado de Wyoming. Tomándose de la mano con otras mujeres atravesaban los helados arroyos. Salían al otro lado de ellos"
+   }
+  ]
+ }
+}

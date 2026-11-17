@@ -1,0 +1,16 @@
+id: concept.second-estate
+category: Plan of Salvation
+en:
+  term: Second Estate
+  match:
+  - Second Estate
+sources:
+  GS:
+  - second-estate
+candidates:
+  pt: []
+  es:
+  - term: Segundo estado
+    hint: pulpit-glossary:verified
+related: []
+note: Paired premortal-doctrine term with "first estate" (Abraham 3) — mortal life as the second estate

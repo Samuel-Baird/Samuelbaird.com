@@ -1,0 +1,17 @@
+id: concept.area-seventy
+category: Presiding Quorums & General Leadership
+en:
+  term: Area Seventy
+  match:
+  - Area Seventy
+sources:
+  GH:
+  - 35#title_number6
+candidates:
+  pt:
+  - term: Setenta de Área
+    hint: pulpit-glossary:verified
+  es:
+  - term: Setenta de Área
+    hint: approved-terms
+related: []

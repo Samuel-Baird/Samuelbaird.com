@@ -1,0 +1,195 @@
+{
+ "id": "concept.priests-quorum",
+ "pt": {
+  "en_paragraphs": 33,
+  "en_talks": 24,
+  "en_verses": 0,
+  "uncovered_paragraphs": 11,
+  "renderings": [
+   {
+    "term": "quórum de sacerdotes",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 22,
+    "talks": 20,
+    "verses": 0,
+    "first_year": 1991,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 April General Conference",
+      "talk": "1991-04-clarke-to-honor-the-priesthood",
+      "para": 25,
+      "en": "… enthusiastically followed his leadership as first assistant in the priests quorum. Because John was unable to realize his dream …",
+      "tr": "… a liderança de John, como primeiro assistente do quorum de sacerdotes. Por ser incapaz de realizar o sonho de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 October General Conference",
+      "talk": "2011-10-eyring-preparation-in-the-priesthood-i-need-your-help",
+      "para": 12,
+      "en": "… was the bishop’s newly called first assistant in the priests quorum. He knew that I understood little about welfare …",
+      "tr": "… era o recém-chamado primeiro assistente do bispo no quórum de sacerdotes. Ele sabia que eu pouco conhecia sobre os …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-nelson-in-support-of-the-rising-generation",
+      "para": 26,
+      "en": "As the president of the priests quorum, the bishop can set an example for the …",
+      "tr": "Como presidente do quórum de sacerdotes, o bispo pode dar o exemplo aos jovens …"
+     }
+    ],
+    "earliest": {
+     "year": 1991,
+     "conference": "1991 April General Conference",
+     "talk": "1991-04-clarke-to-honor-the-priesthood",
+     "para": 25,
+     "en": "… enthusiastically followed his leadership as first assistant in the priests quorum. Because John was unable to realize his dream …",
+     "tr": "… a liderança de John, como primeiro assistente do quorum de sacerdotes. Por ser incapaz de realizar o sonho de …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "sacerdotes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.727,
+    "ratio": 181.9,
+    "source": "1990-10-hinckley-in-counsellors-there-is-safety",
+    "kind": "talk",
+    "sample": "No caso do quorum dos sacerdotes, o bispo serve como presidente. Tratando-se, porém, de bispado, presidência de"
+   },
+   {
+    "term": "quorum",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.909,
+    "ratio": 56.0,
+    "source": "1990-10-hinckley-in-counsellors-there-is-safety",
+    "kind": "talk",
+    "sample": "No caso do quorum dos sacerdotes, o bispo serve como presidente. Tratando-se, porém, de bispado,"
+   },
+   {
+    "term": "quóruns",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.364,
+    "ratio": 76.6,
+    "source": "2003-10-brough-young-menholders-of-keys",
+    "kind": "talk",
+    "sample": "milhares de rapazes que são portadores do Sacerdócio Aarônico e que pertencem a quóruns de diáconos, de mestres e de sacerdotes no mundo todo. Cada quórum é liderado p"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 30,
+  "en_talks": 22,
+  "en_verses": 0,
+  "uncovered_paragraphs": 11,
+  "renderings": [
+   {
+    "term": "quórum de presbíteros",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 19,
+    "talks": 15,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2014,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-hinckley-in-counsellors-there-is-safety",
+      "para": 6,
+      "en": "In the case of the priests quorum, the bishop serves as president. But whether it …",
+      "tr": "En el quórum de presbíteros, el obispo es el presidente. Pero, ya sea …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-eyring-learning-in-the-priesthood",
+      "para": 6,
+      "en": "… found the first when I was welcomed into a priests quorum, with the bishop as our president. That may …",
+      "tr": "… ayudas cuando se me invitó a integrar un quórum de presbíteros, con el obispo como nuestro presidente. Eso puede …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 October General Conference",
+      "talk": "2014-10-eyring-the-preparatory-priesthood",
+      "para": 12,
+      "en": "… called me to be his first assistant in the priests quorum. I remember that he taught the quorum himself—busy …",
+      "tr": "… me llamó a ser su primer ayudante del quórum de presbíteros. Recuerdo que él mismo enseñaba al quórum, aun …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 October General Conference",
+     "talk": "1990-10-hinckley-in-counsellors-there-is-safety",
+     "para": 6,
+     "en": "In the case of the priests quorum, the bishop serves as president. But whether it …",
+     "tr": "En el quórum de presbíteros, el obispo es el presidente. Pero, ya sea …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "presbíteros",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.818,
+    "ratio": 545.6,
+    "source": "2003-10-brough-young-menholders-of-keys",
+    "kind": "talk",
+    "sample": "l Sacerdocio Aarónico y que pertenecen a quórumes de diáconos, de maestros y de presbíteros por todo el mundo. Cada quórum está encabezado por una presidencia de quórum, i"
+   },
+   {
+    "term": "cuórum",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.636,
+    "ratio": 106.1,
+    "source": "2016-04-arnold-to-the-rescue-we-can-do-it",
+    "kind": "talk",
+    "sample": "El hermano Marques conocía el nombre de cada oveja en su cuórum y se dio cuenta de que Fernando faltaba. Buscó a Fernando en su casa, después l"
+   },
+   {
+    "term": "jóvenes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.727,
+    "ratio": 20.2,
+    "source": "2003-10-brough-young-menholders-of-keys",
+    "kind": "talk",
+    "sample": "En esta sesión del sacerdocio de la conferencia general tenemos a miles de jóvenes que poseen el Sacerdocio Aarónico y que pertenecen a quórumes de diáconos, de m"
+   }
+  ]
+ }
+}

@@ -1,0 +1,13 @@
+id: concept.district-council
+category: Missionary Work
+en:
+  term: district council
+  match:
+  - district council
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: consejo de distrito
+    hint: pulpit-glossary:verified
+related: []

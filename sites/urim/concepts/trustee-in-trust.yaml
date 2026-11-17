@@ -1,0 +1,15 @@
+id: concept.trustee-in-trust
+category: Finances
+en:
+  term: Trustee-in-Trust
+  match:
+  - Trustee-in-Trust
+sources: {}
+candidates:
+  pt:
+  - term: Fiduciário
+    hint: pulpit-glossary:verified
+  es:
+  - term: Fideicomisario en Fideicomiso
+    hint: pulpit-glossary:standard
+related: []

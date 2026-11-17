@@ -1,0 +1,83 @@
+{
+ "id": "concept.relief-society-room",
+ "pt": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "sala da Sociedade de Socorro",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2003,
+    "last_year": 2003,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 October General Conference",
+      "talk": "2003-10-hughes-in-covenant-with-him",
+      "para": 6,
+      "en": "… her, doing what we do best: love. The Relief Society room was a holy place that day. It was what …",
+      "tr": "… que fazem de melhor: demonstraram amor. A sala da Sociedade de Socorro tornou-se um lugar sagrado naquele dia. Tornou-se o …"
+     }
+    ],
+    "earliest": {
+     "year": 2003,
+     "conference": "2003 October General Conference",
+     "talk": "2003-10-hughes-in-covenant-with-him",
+     "para": 6,
+     "en": "… her, doing what we do best: love. The Relief Society room was a holy place that day. It was what …",
+     "tr": "… que fazem de melhor: demonstraram amor. A sala da Sociedade de Socorro tornou-se um lugar sagrado naquele dia. Tornou-se o …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "salón de la Sociedad de Socorro",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2003,
+    "last_year": 2003,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 October General Conference",
+      "talk": "2003-10-hughes-in-covenant-with-him",
+      "para": 6,
+      "en": "… her, doing what we do best: love. The Relief Society room was a holy place that day. It was what …",
+      "tr": "… lo que sabemos dar mejor: amor. El salón de la Sociedad de Socorro fue un lugar santo aquel día; fue …"
+     }
+    ],
+    "earliest": {
+     "year": 2003,
+     "conference": "2003 October General Conference",
+     "talk": "2003-10-hughes-in-covenant-with-him",
+     "para": 6,
+     "en": "… her, doing what we do best: love. The Relief Society room was a holy place that day. It was what …",
+     "tr": "… lo que sabemos dar mejor: amor. El salón de la Sociedad de Socorro fue un lugar santo aquel día; fue …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

@@ -1,0 +1,15 @@
+id: concept.adult-session
+category: Councils & Conferences
+en:
+  term: adult session
+  match:
+  - adult session
+sources: {}
+candidates:
+  pt:
+  - term: sessão de adultos
+    hint: pulpit-glossary:verified
+  es:
+  - term: sesión para los adultos
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,17 @@
+id: concept.district-president
+category: Local Leadership & Callings
+en:
+  term: district president
+  match:
+  - district president
+sources:
+  GH:
+  - 6-stake-leadership#title_number15
+candidates:
+  pt:
+  - term: presidente do distrito
+    hint: pulpit-glossary:standard
+  es:
+  - term: presidente de distrito
+    hint: approved-terms
+related: []

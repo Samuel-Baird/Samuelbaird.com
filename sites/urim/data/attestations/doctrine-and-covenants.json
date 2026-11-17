@@ -1,0 +1,194 @@
+{
+ "id": "concept.doctrine-and-covenants",
+ "pt": {
+  "en_paragraphs": 1342,
+  "en_talks": 985,
+  "en_verses": 3,
+  "uncovered_paragraphs": 19,
+  "renderings": [
+   {
+    "term": "Doutrina e Convênios",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1323,
+    "talks": 975,
+    "verses": 3,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 124:141",
+      "ref_en": "Doctrine and Covenants 124:141",
+      "en": "And again, I say unto you, I give unto you Vinson Knight, Samuel H. Smith, and Shadrach Roundy, if he will receive it, to preside over the bishopric; a knowledge of said bishopric is given unto you in the book of Doctrine and Covenants.",
+      "tr": "E também vos digo: Dou-vos Vinson Knight, Samuel H. Smith e Shadrach Roundy, se ele aceitar, para presidir o bispado; instruções sobre o dito bispado encontram-se no livro de Doutrina e Convênios.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/124?lang=por&id=p141"
+     },
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 October General Conference",
+      "talk": "1991-10-brewerton-light",
+      "para": 6,
+      "en": "… sun and spiritual light. We read in the Doctrine and Covenants, section 88, of “the light of truth;",
+      "tr": "… e a luz espiritual. Na seção 88 de Doutrina e Convênios lemos sobre “a luz da verdade;"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-jergensen-church-auditing-department-report-2017",
+      "para": 0,
+      "en": "… directed by revelation in [section 120 of the Doctrine and Covenants](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/120?lang=eng), the Council on the Disposition of the Tithes—composed …",
+      "tr": "… conforme ordenado por revelação na [seção 120 de Doutrina e Convênios](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/120?lang=por), o Conselho de Disposição dos Dízimos, formado pela …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-condie-some-scriptural-lessons-on-leadership",
+     "para": 19,
+     "en": "… tempered with patience. In section 107 of the Doctrine and Covenants we learn that Enoch was “four hundred and thirty …",
+     "tr": "… expectativas, temperadas com paciência. Na seção 107 de Doutrina e Convênios aprendemos que Enoque tinha “quatrocentos e trinta anos quando …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "joseph",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.368,
+    "ratio": 9.8,
+    "source": "1990-10-ayala-the-word-of-wisdom",
+    "kind": "talk",
+    "sample": "/scriptures/dc-testament/dc/89?lang=por&id=p8#p8)). Esta revelação recebida por Joseph Smith em fevereiro de 1833, foi motivo de muita controvérsia. Naqueles primeiro"
+   },
+   {
+    "term": "testament",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.316,
+    "ratio": 12.6,
+    "source": "1990-10-ayala-the-word-of-wisdom",
+    "kind": "talk",
+    "sample": "ra o homem” ([D&C 89:8](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/89?lang=por&id=p8#p8)). Esta revelação recebida por Joseph Smith em fevereir"
+   },
+   {
+    "term": "smith",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.316,
+    "ratio": 9.3,
+    "source": "1990-10-ayala-the-word-of-wisdom",
+    "kind": "talk",
+    "sample": "ures/dc-testament/dc/89?lang=por&id=p8#p8)). Esta revelação recebida por Joseph Smith em fevereiro de 1833, foi motivo de muita controvérsia. Naqueles primeiros temp"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 1318,
+  "en_talks": 976,
+  "en_verses": 3,
+  "uncovered_paragraphs": 42,
+  "renderings": [
+   {
+    "term": "Doctrina y Convenios",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 1276,
+    "talks": 945,
+    "verses": 3,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 124:141",
+      "ref_en": "Doctrine and Covenants 124:141",
+      "en": "And again, I say unto you, I give unto you Vinson Knight, Samuel H. Smith, and Shadrach Roundy, if he will receive it, to preside over the bishopric; a knowledge of said bishopric is given unto you in the book of Doctrine and Covenants.",
+      "tr": "Además, os digo que os nombro a Vinson Knight, Samuel H. Smith y Shadrac Roundy, si este quiere recibirlo, para presidir el obispado. Las instrucciones en cuanto a dicho obispado os son dadas en el libro de Doctrina y Convenios.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/124?lang=spa&id=p141"
+     },
+     {
+      "kind": "talk",
+      "year": 1992,
+      "conference": "1992 October General Conference",
+      "talk": "1992-10-jensen-remember-also-the-promises",
+      "para": 7,
+      "en": "… I stopped at the third section of the Doctrine and Covenants. I was deeply touched by the first five …",
+      "tr": "… hojas, me detuve en la sección tres de Doctrina y Convenios. Los primeros cinco versículos me conmovieron, pues se …"
+     },
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 October General Conference",
+      "talk": "2017-10-uchtdorf-a-yearning-for-home",
+      "para": 69,
+      "en": "… [^5]: [Galatians 5:22](https://www.churchofjesuschrist.org/study/scriptures/nt/gal/5?lang=eng&id=p22#p22).\n[^6]: [Proverbs 3:5–6](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=eng&id=p5-p6#p5).\n[^7]: [Doctrine and Covenants 90:24](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/90?lang=eng&id=p24#p24).\n[^8]: Isaiah 40:29, New International Version.\n[^9]: Proverbs …",
+      "tr": "… [^5]: [Gálatas 5:22](https://www.churchofjesuschrist.org/study/scriptures/nt/gal/5?lang=spa&id=p22#p22).\n[^6]: [Proverbios 3:5–6](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=spa&id=p5-p6#p5).\n[^7]: [Doctrina y Convenios 90:24](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/90?lang=spa&id=p24#p24).\n[^8]: Isaías 40:29.\n[^9]: Proverbios 24:16.\n[^10]: Véase …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 October General Conference",
+     "talk": "1990-10-monson-days-never-to-be-forgotten",
+     "para": 13,
+     "en": "… now know as the 100th section of the Doctrine and Covenants, the Lord counseled: “Verily, thus saith the Lord …",
+     "tr": "… que ahora conocemos como la Sección 100 de Doctrina y Convenios, el Señor les aconsejó: “De cierto, así dice …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "testament",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 31,
+    "share_of_uncovered": 0.738,
+    "ratio": 31.4,
+    "source": "2010-10-costa-obedience-to-the-prophets",
+    "kind": "talk",
+    "sample": "[Declaración Oficial 1](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/od/1?lang=spa))."
+   },
+   {
+    "term": "bofm",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 22,
+    "share_of_uncovered": 0.524,
+    "ratio": 19.2,
+    "source": "2011-04-dalton-guardians-of-virtue",
+    "kind": "talk",
+    "sample": "ág. 56.\n[^7]: [Moroni 9:9](https://www.churchofjesuschrist.org/study/scriptures/bofm/moro/9?lang=spa&id=p9#p9).\n[^8]: [Proverbios 3:15](https://www.churchofjesuschr"
+   },
+   {
+    "term": "pág",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 21,
+    "share_of_uncovered": 0.5,
+    "ratio": 17.7,
+    "source": "2011-04-dalton-guardians-of-virtue",
+    "kind": "talk",
+    "sample": "ng=spa&id=p13#p13).\n[^3]: *Mujeres Jóvenes, Progreso Personal, * librito, 2009, pág. 70.\n[^4]: Véase http://www.thefreedictionary.com/guardian.\n[^5]: \"Más santidad"
+   }
+  ]
+ }
+}

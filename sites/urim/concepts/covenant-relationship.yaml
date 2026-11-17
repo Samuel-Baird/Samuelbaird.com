@@ -1,0 +1,15 @@
+id: concept.covenant-relationship
+category: Faith & Gospel Principles
+en:
+  term: covenant relationship
+  match:
+  - covenant relationship
+sources: {}
+candidates:
+  pt:
+  - term: relacionamento de convênio
+    hint: pulpit-glossary:standard
+  es:
+  - term: relación de convenio
+    hint: pulpit-glossary:verified
+related: []

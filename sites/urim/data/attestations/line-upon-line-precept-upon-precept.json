@@ -1,0 +1,105 @@
+{
+ "id": "concept.line-upon-line-precept-upon-precept",
+ "pt": {
+  "en_paragraphs": 43,
+  "en_talks": 36,
+  "en_verses": 3,
+  "uncovered_paragraphs": 46,
+  "renderings": [
+   {
+    "term": "linha sobre linha, preceito sobre preceito",
+    "evidence": [],
+    "hint": "pulpit-glossary:verified"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "linha, preceito",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 44,
+    "share_of_uncovered": 0.957,
+    "ratio": 1913.5,
+    "source": "1991-04-beckham-a-pattern-of-righteousness",
+    "kind": "talk",
+    "sample": "dão. E-nos dito, ao vivermos as palavras de Deus: “Ao fiel ele dará linha sobre linha, preceito sobre preceito” ([D&C 98:12](https://www.churchofjesuschrist.org/study/scriptur"
+   },
+   {
+    "term": "preceito sobre preceito",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 43,
+    "share_of_uncovered": 0.935,
+    "ratio": 623.3,
+    "source": "1991-04-beckham-a-pattern-of-righteousness",
+    "kind": "talk",
+    "sample": "nos dito, ao vivermos as palavras de Deus: “Ao fiel ele dará linha sobre linha, preceito sobre preceito” ([D&C 98:12](https://www.churchofjesuschrist.org/study/scriptures/dc-testament"
+   },
+   {
+    "term": "linha sobre linha",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 41,
+    "share_of_uncovered": 0.891,
+    "ratio": 509.4,
+    "source": "1991-04-beckham-a-pattern-of-righteousness",
+    "kind": "talk",
+    "sample": "delo de retidão. E-nos dito, ao vivermos as palavras de Deus: “Ao fiel ele dará linha sobre linha, preceito sobre preceito” ([D&C 98:12](https://www.churchofjesuschrist.org/stud"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 41,
+  "en_talks": 35,
+  "en_verses": 3,
+  "uncovered_paragraphs": 44,
+  "renderings": [
+   {
+    "term": "línea sobre línea, precepto tras precepto",
+    "evidence": [],
+    "hint": "pulpit-glossary:verified"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "línea, precepto",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 43,
+    "share_of_uncovered": 0.977,
+    "ratio": 558.6,
+    "source": "1992-10-nelson-where-is-wisdom",
+    "kind": "talk",
+    "sample": "“Daré a los hijos de los hombres línea por línea, precepto por precepto, un poco aquí y un poco allí; y benditos son aquellos que escuchan"
+   },
+   {
+    "term": "precepto por precepto",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 35,
+    "share_of_uncovered": 0.795,
+    "ratio": 397.8,
+    "source": "1992-10-nelson-where-is-wisdom",
+    "kind": "talk",
+    "sample": "“Daré a los hijos de los hombres línea por línea, precepto por precepto, un poco aquí y un poco allí; y benditos son aquellos que escuchan mis precepto"
+   },
+   {
+    "term": "línea por línea",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 35,
+    "share_of_uncovered": 0.795,
+    "ratio": 397.8,
+    "source": "1992-10-nelson-where-is-wisdom",
+    "kind": "talk",
+    "sample": "“Daré a los hijos de los hombres línea por línea, precepto por precepto, un poco aquí y un poco allí; y benditos son aquellos qu"
+   }
+  ]
+ }
+}

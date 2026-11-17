@@ -1,0 +1,126 @@
+{
+ "id": "concept.church-administration-building",
+ "pt": {
+  "en_paragraphs": 8,
+  "en_talks": 8,
+  "en_verses": 0,
+  "uncovered_paragraphs": 8,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "administrativo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.625,
+    "ratio": 625.2,
+    "source": "2002-04-hinckley-the-church-goes-forward",
+    "kind": "talk",
+    "sample": "ifício Memorial Joseph Smith, as instalações de História da Família, o Edifício Administrativo da Igreja, o Edifício dos Escritórios da Igreja, as instalações de Bem-Estar, a"
+   },
+   {
+    "term": "edifício",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.75,
+    "ratio": 176.5,
+    "source": "1990-04-monson-my-brothers-keeper",
+    "kind": "talk",
+    "sample": "logo ali do outro lado.” Era a Rua South Temple. O bom samaritano que entrou no Edifício da Administração da Igreja para o trabalho diário, sem o seu sobretudo, foi o P"
+   },
+   {
+    "term": "escritório",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.5,
+    "ratio": 166.7,
+    "source": "1994-10-pinegar-the-simple-things",
+    "kind": "talk",
+    "sample": "a vez que encontrei o Presidente Howard W. Hunter foi em 1967, quando fui a seu escritório a fim de ser designado para um novo chamado. Conversamos sobre minha nova desig"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 8,
+  "en_talks": 8,
+  "en_verses": 0,
+  "uncovered_paragraphs": 7,
+  "renderings": [
+   {
+    "term": "Edificio de Administración de la Iglesia",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2006,
+    "last_year": 2006,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2006,
+      "conference": "2006 April General Conference",
+      "talk": "2006-04-monson-our-sacred-priesthood-trust",
+      "para": 0,
+      "en": "… 12th birthday, he and I were leaving the Church Administration Building when President Harold B. Lee approached and greeted us. …",
+      "tr": "… Un día, él y yo salíamos del Edificio de Administración de la Iglesia cuando el presidente Harold B. Lee se …"
+     }
+    ],
+    "earliest": {
+     "year": 2006,
+     "conference": "2006 April General Conference",
+     "talk": "2006-04-monson-our-sacred-priesthood-trust",
+     "para": 0,
+     "en": "… 12th birthday, he and I were leaving the Church Administration Building when President Harold B. Lee approached and greeted us. …",
+     "tr": "… Un día, él y yo salíamos del Edificio de Administración de la Iglesia cuando el presidente Harold B. Lee se …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "edificio",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.857,
+    "ratio": 142.9,
+    "source": "1997-04-monson-they-will-come",
+    "kind": "talk",
+    "sample": "h y muchos embajadores de otros países visitaron nuestro Capitolio y también el Edificio Administrativo de la Iglesia. Muchos también hicieron una gira por el Centro de"
+   },
+   {
+    "term": "oficinas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.429,
+    "ratio": 857.4,
+    "source": "1999-10-monson-priesthood-power",
+    "kind": "talk",
+    "sample": "estaba para cumplir los doce años de edad, él y yo salíamos del edificio de las Oficinas Generales de la Iglesia cuando nos saludó el presidente Harold B. Lee. Mencioné"
+   },
+   {
+    "term": "administrativo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.429,
+    "ratio": 857.4,
+    "source": "1997-04-monson-they-will-come",
+    "kind": "talk",
+    "sample": "s embajadores de otros países visitaron nuestro Capitolio y también el Edificio Administrativo de la Iglesia. Muchos también hicieron una gira por el Centro de Capacitación M"
+   }
+  ]
+ }
+}

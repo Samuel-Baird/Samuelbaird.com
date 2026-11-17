@@ -1,0 +1,13 @@
+id: concept.seer-stone
+category: Church History
+en:
+  term: seer stone
+  match:
+  - seer stone
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: piedra vidente
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,172 @@
+{
+ "id": "concept.mission-president",
+ "pt": {
+  "en_paragraphs": 193,
+  "en_talks": 156,
+  "en_verses": 0,
+  "uncovered_paragraphs": 53,
+  "renderings": [
+   {
+    "term": "presidente de missão",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 140,
+    "talks": 117,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-ashton-neither-boast-of-faith-nor-of-mighty-works",
+      "para": 13,
+      "en": "… in the gospel. Then he’d been called as a mission president. He had apparently been a very effective mission …",
+      "tr": "… chamado para presidir uma missão. Aparentemente, fora um presidente de missão muito bom, e, subseqüentemente, voltara para seu estado de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 October General Conference",
+      "talk": "2011-10-cook-the-songs-they-could-not-sing",
+      "para": 24,
+      "en": "My beloved mission president, Elder Marion D. Hanks (who passed away in …",
+      "tr": "Meu querido presidente de missão, o Élder Marion D. Hanks (que faleceu em …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-giuffra-trusting-the-lord-through-tithes-and-offerings",
+      "para": 4,
+      "en": "The next morning, I called my mission president, President Fernando Caballero, to seek his counsel. In …",
+      "tr": "Na manhã seguinte, liguei para meu presidente de missão, o presidente Fernando Caballero, para pedir seu conselho. …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-ashton-neither-boast-of-faith-nor-of-mighty-works",
+     "para": 13,
+     "en": "… in the gospel. Then he’d been called as a mission president. He had apparently been a very effective mission …",
+     "tr": "… chamado para presidir uma missão. Aparentemente, fora um presidente de missão muito bom, e, subseqüentemente, voltara para seu estado de …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "missão",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 46,
+    "share_of_uncovered": 0.868,
+    "ratio": 35.4,
+    "source": "1990-10-monson-god-be-with-you-till-we-meet-again",
+    "kind": "talk",
+    "sample": "m jovem que o cumprimentou alegremente e contou que havia sido chamado para uma missão de tempo integral. O Presidente Benson tomou o recém-chamado missionário pela m"
+   },
+   {
+    "term": "missionários",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 14,
+    "share_of_uncovered": 0.264,
+    "ratio": 15.3,
+    "source": "1993-04-stanley-the-principle-of-work",
+    "kind": "talk",
+    "sample": "Pais e instrutores de futuros missionários. Jovens amigos que se preparam para a missão, ou que estão servindo. Se quereis"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 195,
+  "en_talks": 159,
+  "en_verses": 0,
+  "uncovered_paragraphs": 26,
+  "renderings": [
+   {
+    "term": "presidente de misión",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 169,
+    "talks": 138,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1992,
+      "conference": "1992 October General Conference",
+      "talk": "1992-10-alvarez-honour-thy-father-and-thy-mother",
+      "para": 3,
+      "en": "… President Hinckley, who also called me as the stake mission president of the first stake in Santiago, Chile, in 1972 …",
+      "tr": "… Hinckley, que fue quien también me llamó como presidente de misión de estaca de la primera estaca organizada en Santiago …"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 October General Conference",
+      "talk": "2012-10-monson-welcome-to-conference",
+      "para": 9,
+      "en": "… experience with these 18-year-old missionaries has been positive. Their mission presidents report that they are obedient, faithful, mature, and serve …",
+      "tr": "… misioneros de 18 años ha sido positiva. Sus presidentes de misión nos dicen que son obedientes, fieles, maduros y prestan …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-fantone-take-upon-us-his-name",
+      "para": 18,
+      "en": "As a mission president, I held regular interviews. In their first few …",
+      "tr": "Como presidente de misión, los entrevistaba con regularidad. En sus primeros meses, …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-ashton-neither-boast-of-faith-nor-of-mighty-works",
+     "para": 13,
+     "en": "… in the gospel. Then he’d been called as a mission president. He had apparently been a very effective mission …",
+     "tr": "… en el evangelio. Entonces le llamaron a ser presidente de misión. Evidentemente había sido un presidente de misión muy …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "misión",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 17,
+    "share_of_uncovered": 0.654,
+    "ratio": 24.4,
+    "source": "1990-10-monson-god-be-with-you-till-we-meet-again",
+    "kind": "talk",
+    "sample": "saludó con gran gozo diciéndole que había recibido el llamamiento para ir a una misión. El presidente Benson tomó entonces de la mano al nuevo misionero y con una son"
+   },
+   {
+    "term": "obispo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.231,
+    "ratio": 22.0,
+    "source": "2003-10-reynolds-he-knows-us-he-loves-us",
+    "kind": "talk",
+    "sample": "ue a ver al presidente de rama y pagó su diezmo. Cuando salía de la oficina del obispo, acertó a encontrarse con el presidente de la misión, quien se fijó en lo lesio"
+   }
+  ]
+ }
+}

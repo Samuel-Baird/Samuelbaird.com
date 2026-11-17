@@ -1,0 +1,15 @@
+id: concept.teachers-quorum
+category: Priesthood Offices & Quorums
+en:
+  term: teachers quorum
+  match:
+  - teachers quorum
+sources: {}
+candidates:
+  pt:
+  - term: quórum de mestres
+    hint: pulpit-glossary:verified
+  es:
+  - term: quórum de maestros
+    hint: pulpit-glossary:verified
+related: []

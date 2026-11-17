@@ -1,0 +1,195 @@
+{
+ "id": "concept.priesthood-keys",
+ "pt": {
+  "en_paragraphs": 175,
+  "en_talks": 107,
+  "en_verses": 0,
+  "uncovered_paragraphs": 24,
+  "renderings": [
+   {
+    "term": "chaves do sacerdócio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 151,
+    "talks": 94,
+    "verses": 0,
+    "first_year": 1992,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1992,
+      "conference": "1992 April General Conference",
+      "talk": "1992-04-oaks-the-relief-society-and-the-church",
+      "para": 25,
+      "en": "No priesthood keys were delivered to the Relief Society. Keys are conferred …",
+      "tr": "… líder do sacerdócio a quem foram dadas as chaves do sacerdócio para dirigir os que trabalham em sua área de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-stevenson-where-are-the-keys-and-authority-of-the-priesthood",
+      "para": 15,
+      "en": "Can you see the relationship between priesthood keys and blessings? As you engage in this work, I …",
+      "tr": "Vocês conseguem ver a relação entre as chaves do sacerdócio e as bênçãos? Ao se envolverem nessa obra, vocês …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-gong-come-to-the-lord-in-his-holy-house",
+      "para": 19,
+      "en": "President Dallin H. Oaks exercises all priesthood keys on earth, including keys pertaining to temples. Next Sunday, …",
+      "tr": "O presidente Dallin H. Oaks exerce todas as chaves do sacerdócio na Terra, inclusive as chaves pertencentes aos templos. Fui …"
+     }
+    ],
+    "earliest": {
+     "year": 1992,
+     "conference": "1992 April General Conference",
+     "talk": "1992-04-maxwell-my-servant-joseph",
+     "para": 25,
+     "en": "… Mount of Transfiguration Peter, James, and John were given priesthood keys by Elias, the Prophet Joseph likewise received priesthood keys …",
+     "tr": "… da Transfiguração Pedro, Tiago e João receberam as chaves do sacerdócio de Elias, também o Profeta Joseph Smith recebeu essas …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "chaves",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 23,
+    "share_of_uncovered": 0.958,
+    "ratio": 78.3,
+    "source": "1999-04-faust-this-is-our-day",
+    "kind": "talk",
+    "sample": "ansporte, mas, sim, a Expiação do Salvador e a restauração do evangelho, com as chaves e autoridade do sacerdócio. Esses dois acontecimentos singulares continuarão a"
+   },
+   {
+    "term": "autoridade",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 12,
+    "share_of_uncovered": 0.5,
+    "ratio": 29.0,
+    "source": "1992-04-oaks-the-relief-society-and-the-church",
+    "kind": "talk",
+    "sample": "algo melhor para elas do que uma constituição escrita. Sendo organizadas sob a autoridade do sacerdócio, elas deveriam rejeitar conceitos temporais de poder e buscar o p"
+   },
+   {
+    "term": "ordenanças",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.25,
+    "ratio": 12.3,
+    "source": "2004-10-bednar-in-the-strength-of-the-lord",
+    "kind": "talk",
+    "sample": "intermédio do Profeta Joseph Smith. As chaves e a autoridade do sacerdócio e as ordenanças de salvação estão novamente na Terra. Pelo poder desse sacerdócio as famílias p"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 163,
+  "en_talks": 105,
+  "en_verses": 0,
+  "uncovered_paragraphs": 26,
+  "renderings": [
+   {
+    "term": "llaves del sacerdocio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 137,
+    "talks": 87,
+    "verses": 0,
+    "first_year": 1991,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2000,
+      "conference": "2000 October General Conference",
+      "talk": "2000-10-nadauld-the-joy-of-womanhood",
+      "para": 0,
+      "en": "… a prophet of God who holds all of the priesthood keys. I love and honor President Gordon B. Hinckley …",
+      "tr": "… un profeta de Dios que posee todas las llaves del sacerdocio. Amo y honro al presidente Gordon B. Hinckley …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-oaks-the-powers-of-the-priesthood",
+      "para": 29,
+      "en": "… no need to have the direction or approval of priesthood keys in order to counsel the members of his family, …",
+      "tr": "… tener la dirección ni la aprobación de las llaves del sacerdocio a fin de aconsejar a los miembros de su …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-cook-keys-covenants-and-easter",
+      "para": 11,
+      "en": "Elijah was a remarkable prophet who held sacred priesthood keys and through whom mighty miracles were performed.[^11] Christians, Muslims, …",
+      "tr": "… fue un extraordinario profeta que poseía las sagradas llaves del sacerdocio y por medio de quien se efectuaron grandes milagros[^11]. …"
+     }
+    ],
+    "earliest": {
+     "year": 1991,
+     "conference": "1991 April General Conference",
+     "talk": "1991-04-gibbons-the-savior-and-joseph-smithalike-yet-unlike",
+     "para": 24,
+     "en": "… after the Apostasy, and to whom was given the priesthood keys and authority necessary to direct the Savior’s earthly church.",
+     "tr": "… apostasía, y a quien se le dieron las llaves del sacerdocio y la autoridad necesaria para dirigir la Iglesia del …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "llaves",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 25,
+    "share_of_uncovered": 0.962,
+    "ratio": 142.5,
+    "source": "1999-04-faust-this-is-our-day",
+    "kind": "talk",
+    "sample": "orte; fueron la expiación del Salvador y la restauración del Evangelio, con las llaves y la autoridad del sacerdocio. Esos dos singulares acontecimientos continuarán"
+   },
+   {
+    "term": "autoridad",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 12,
+    "share_of_uncovered": 0.462,
+    "ratio": 37.7,
+    "source": "1999-04-faust-this-is-our-day",
+    "kind": "talk",
+    "sample": "la expiación del Salvador y la restauración del Evangelio, con las llaves y la autoridad del sacerdocio. Esos dos singulares acontecimientos continuarán siendo de impor"
+   },
+   {
+    "term": "restauración",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.308,
+    "ratio": 31.6,
+    "source": "1999-04-faust-this-is-our-day",
+    "kind": "talk",
+    "sample": "a ciencia, la tecnología y el transporte; fueron la expiación del Salvador y la restauración del Evangelio, con las llaves y la autoridad del sacerdocio. Esos dos singulare"
+   }
+  ]
+ }
+}

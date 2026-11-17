@@ -1,0 +1,119 @@
+{
+ "id": "concept.spirit-prison",
+ "pt": {
+  "en_paragraphs": 7,
+  "en_talks": 7,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "prisão espiritual",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 6,
+    "talks": 6,
+    "verses": 0,
+    "first_year": 2005,
+    "last_year": 2015,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2005,
+      "conference": "2005 April General Conference",
+      "talk": "2005-04-eyring-hearts-bound-together",
+      "para": 23,
+      "en": "… offered the covenants which will free them from their spirit prisons and bind them in families—your family—forever.",
+      "tr": "… pessoas podem receber os convênios que as libertarão da prisão espiritual em que se encontram e as unirão em família …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-cook-roots-and-branches",
+      "para": 28,
+      "en": "… ordinances that would free them from the bondage of spirit prison. *Prison* is defined as “a state of confinement …",
+      "tr": "… ordenanças de salvação que os libertarão do cativeiro da prisão espiritual. Define-se *prisão* como “estado de confinamento ou cativeiro”.[^23] …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 April General Conference",
+      "talk": "2015-04-nelson-the-sabbath-is-a-delight",
+      "para": 27,
+      "en": "… delight by finding your ancestors and liberating them from spirit prison![^19]",
+      "tr": "… do Senhor deleitoso encontrando seus antepassados e libertando-os da prisão espiritual![^19]"
+     }
+    ],
+    "earliest": {
+     "year": 2005,
+     "conference": "2005 April General Conference",
+     "talk": "2005-04-eyring-hearts-bound-together",
+     "para": 23,
+     "en": "… offered the covenants which will free them from their spirit prisons and bind them in families—your family—forever.",
+     "tr": "… pessoas podem receber os convênios que as libertarão da prisão espiritual em que se encontram e as unirão em família …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 6,
+  "en_talks": 6,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "Prisión espiritual",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 5,
+    "talks": 5,
+    "verses": 0,
+    "first_year": 2006,
+    "last_year": 2015,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2006,
+      "conference": "2006 April General Conference",
+      "talk": "2006-04-hales-to-act-for-ourselves-the-gift-and-blessings-of-agency",
+      "para": 16,
+      "en": "… we go, who we see, or what we do. Spirit prison is very much like that. Therefore, to retain our …",
+      "tr": "… dónde ir, a quién ver o qué hacer. La prisión espiritual es algo muy semejante; por tanto, y para conservar …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-cook-roots-and-branches",
+      "para": 28,
+      "en": "… ordinances that would free them from the bondage of spirit prison. *Prison* is defined as “a state of confinement …",
+      "tr": "… esperando las ordenanzas salvadoras que los liberarán de la prisión espiritual. El diccionario define la palabra *prisión* como “privación …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 April General Conference",
+      "talk": "2015-04-nelson-the-sabbath-is-a-delight",
+      "para": 27,
+      "en": "… delight by finding your ancestors and liberating them from spirit prison![^19]",
+      "tr": "… encontrar nombres de sus antepasados y liberarlos de la prisión espiritual[^19]."
+     }
+    ],
+    "earliest": {
+     "year": 2006,
+     "conference": "2006 April General Conference",
+     "talk": "2006-04-hales-to-act-for-ourselves-the-gift-and-blessings-of-agency",
+     "para": 16,
+     "en": "… we go, who we see, or what we do. Spirit prison is very much like that. Therefore, to retain our …",
+     "tr": "… dónde ir, a quién ver o qué hacer. La prisión espiritual es algo muy semejante; por tanto, y para conservar …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

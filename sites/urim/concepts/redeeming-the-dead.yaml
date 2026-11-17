@@ -1,0 +1,15 @@
+id: concept.redeeming-the-dead
+category: Temple & Family History
+en:
+  term: redeeming the dead
+  match:
+  - redeeming the dead
+sources: {}
+candidates:
+  pt:
+  - term: redimir os mortos
+    hint: pulpit-glossary:verified
+  es:
+  - term: redención de los muertos
+    hint: pulpit-glossary:verified
+related: []

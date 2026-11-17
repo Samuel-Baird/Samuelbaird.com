@@ -1,0 +1,148 @@
+{
+ "id": "concept.primary",
+ "pt": {
+  "en_paragraphs": 441,
+  "en_talks": 300,
+  "en_verses": 0,
+  "uncovered_paragraphs": 121,
+  "renderings": [
+   {
+    "term": "Primária",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 320,
+    "talks": 206,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 April General Conference",
+      "talk": "1991-04-ballard-teach-the-children",
+      "para": 12,
+      "en": "… future presidents of the Relief Society, Young Women, and Primary, even though today they may be girls who giggle …",
+      "tr": "… presidentes da Sociedade de Socorro, Organização das Moças e Primária, mesmo que hoje sejam apenas meninas que ficam dando …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 April General Conference",
+      "talk": "2015-04-wixom-returning-to-faith",
+      "para": 14,
+      "en": "… to start with basic gospel truths. She bought a Primary songbook and began reading the words of the songs. They …",
+      "tr": "… verdades básicas do evangelho. Ela comprou um hinário da Primária e começou a ler a letra dos hinos. Eles eram …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-stevenson-lost-luggage-redeemed-souls",
+      "para": 36,
+      "en": "… on this investment than when it is made with Primary children, young men, young women, and young adults.",
+      "tr": "… que quando ele é feito com as crianças da Primária, os rapazes, as moças e os jovens adultos."
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-lindsay-ye-have-done-it-unto-me",
+     "para": 11,
+     "en": "In another stake, in a Sunday morning Primary meeting of that stake conference, I met two beautiful daughters …",
+     "tr": "Noutra conferência de estaca, numa reunião da Primária, no domingo de manhã, conheci duas bonitas filhas de …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "principal",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 54,
+    "share_of_uncovered": 0.446,
+    "ratio": 74.4,
+    "source": "1993-04-perry-back-to-gospel-basics",
+    "kind": "talk",
+    "sample": "A oração é o principal meio de comunicação entre Deus e o homem. A oração é parte importante de pratic"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 469,
+  "en_talks": 306,
+  "en_verses": 0,
+  "uncovered_paragraphs": 127,
+  "renderings": [
+   {
+    "term": "Primaria",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 342,
+    "talks": 210,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-perry-serve-god-acceptably-with-reverence-and-godly-fear",
+      "para": 13,
+      "en": "… dedicatory prayer that the next Tuesday when we held Primary he attended with us. He wanted to teach us to …",
+      "tr": "… oración dedicatoria, que el martes siguiente asistió a la Primaria con nosotros, porque quería enseñarnos a sentir respeto por la …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-oscarson-sisterhood-oh-how-we-need-each-other",
+      "para": 6,
+      "en": "… women who are a little older need what you Primary-age girls have to offer. We can learn much from …",
+      "tr": "… necesitamos lo que las niñas en edad de la Primaria tienen que ofrecer; podemos aprender mucho de ustedes sobre el …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-stevenson-lost-luggage-redeemed-souls",
+      "para": 36,
+      "en": "… on this investment than when it is made with Primary children, young men, young women, and young adults.",
+      "tr": "… que cuando se realiza con los niños de la Primaria, los hombres jóvenes, las mujeres jóvenes y los jóvenes …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 October General Conference",
+     "talk": "1990-10-perry-serve-god-acceptably-with-reverence-and-godly-fear",
+     "para": 13,
+     "en": "… dedicatory prayer that the next Tuesday when we held Primary he attended with us. He wanted to teach us to …",
+     "tr": "… oración dedicatoria, que el martes siguiente asistió a la Primaria con nosotros, porque quería enseñarnos a sentir respeto por la …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "principal",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 53,
+    "share_of_uncovered": 0.417,
+    "ratio": 87.9,
+    "source": "1990-10-camargo-in-all-things-give-thanks",
+    "kind": "talk",
+    "sample": "y por las muchas otras bendiciones que no puedo describir debidamente, el tema principal que se me ocurrió cuando me invitaron a hablar en esta conferencia fue el de la"
+   }
+  ]
+ }
+}

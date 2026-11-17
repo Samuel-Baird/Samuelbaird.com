@@ -1,0 +1,17 @@
+id: concept.stake-conference
+category: Councils & Conferences
+en:
+  term: stake conference
+  match:
+  - stake conference
+sources:
+  GH:
+  - 29-meetings-in-the-church#title_number16
+candidates:
+  pt:
+  - term: conferência de estaca
+    hint: pulpit-glossary:verified
+  es:
+  - term: conferencia de estaca
+    hint: pulpit-glossary:verified
+related: []

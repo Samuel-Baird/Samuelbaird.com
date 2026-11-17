@@ -1,0 +1,195 @@
+{
+ "id": "concept.visiting-teaching",
+ "pt": {
+  "en_paragraphs": 64,
+  "en_talks": 34,
+  "en_verses": 0,
+  "uncovered_paragraphs": 21,
+  "renderings": [
+   {
+    "term": "professoras visitantes",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 43,
+    "talks": 25,
+    "verses": 0,
+    "first_year": 1991,
+    "last_year": 2020,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 April General Conference",
+      "talk": "1991-04-wirthlin-peace-within",
+      "para": 17,
+      "en": "… to the temple often, performing our home teaching and visiting teaching assignments, preparing lessons and talks, and doing other assignments.",
+      "tr": "… ao templo, às visitas de mestre familiar e de professoras visitantes, à preparação de lições, discursos e outras designações."
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 October General Conference",
+      "talk": "2009-10-eyring-the-enduring-legacy-of-relief-society",
+      "para": 34,
+      "en": "… each time you and your companion prepare to go visiting teaching, you just need to remember what success will …",
+      "tr": "… você e sua companheira se prepararem para sair como professoras visitantes, precisam apenas lembrar-se do que constituirá o sucesso. …"
+     },
+     {
+      "kind": "talk",
+      "year": 2020,
+      "conference": "2020 April General Conference",
+      "talk": "2020-04-clayton-the-finest-homes",
+      "para": 22,
+      "en": "… [Matthew 19:20](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/19?lang=eng&id=p20#p20).\n[^10]: [Mosiah 2:22](https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/2?lang=eng&id=p22#p22).\n[^11]: Home teaching and visiting teaching were retired and ministering was implemented in 2018 (see …",
+      "tr": "… [Mateus 19:20](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/19?lang=por&id=p20#p20).\n[^10]: [Mosias 2:22](https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/2?lang=por&id=p22#p22).\n[^11]: Mestres familiares e professoras visitantes foram descontinuados, e a ministração foi estabelecida em 2018 …"
+     }
+    ],
+    "earliest": {
+     "year": 1991,
+     "conference": "1991 April General Conference",
+     "talk": "1991-04-wirthlin-peace-within",
+     "para": 17,
+     "en": "… to the temple often, performing our home teaching and visiting teaching assignments, preparing lessons and talks, and doing other assignments.",
+     "tr": "… ao templo, às visitas de mestre familiar e de professoras visitantes, à preparação de lições, discursos e outras designações."
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "professora visitante",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 16,
+    "share_of_uncovered": 0.762,
+    "ratio": 762.1,
+    "source": "1992-04-kikuchi-the-pure-love-of-god",
+    "kind": "talk",
+    "sample": "s ativos ou não-membros, dentro da estrutura dos programas de mestre familiar e professora visitante. Essas pessoas serão tocadas por este amor. Quando Néfi viu o Salvador, exclamo"
+   },
+   {
+    "term": "visitas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 11,
+    "share_of_uncovered": 0.524,
+    "ratio": 349.3,
+    "source": "2001-10-smoot-steadfast-and-immovable",
+    "kind": "talk",
+    "sample": "Quando ouço algumas irmãs dizerem: “É difícil demais fazer minhas visitas de professora visitante” ou “Simplesmente não tenho tempo para orar e ler as es"
+   },
+   {
+    "term": "familiar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.286,
+    "ratio": 31.8,
+    "source": "1992-04-kikuchi-the-pure-love-of-god",
+    "kind": "talk",
+    "sample": "embros menos ativos ou não-membros, dentro da estrutura dos programas de mestre familiar e professora visitante. Essas pessoas serão tocadas por este amor. Quando Néfi"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 60,
+  "en_talks": 30,
+  "en_verses": 0,
+  "uncovered_paragraphs": 10,
+  "renderings": [
+   {
+    "term": "maestras visitantes",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 50,
+    "talks": 24,
+    "verses": 0,
+    "first_year": 1996,
+    "last_year": 2020,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 October General Conference",
+      "talk": "1996-10-eyring-witnesses-for-god",
+      "para": 8,
+      "en": "… too. I will never again see home teaching or visiting teaching as only programs of the Church. Those faithful teachers …",
+      "tr": "Esos maestros orientadores y esas maestras visitantes entendían y creían que el convenio de ser testigos …"
+     },
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 October General Conference",
+      "talk": "2010-10-beck-daughters-in-my-kingdom-the-history-and-work-of-relief-society",
+      "para": 24,
+      "en": "… Relief Society meetings. All policies regarding Relief Society meetings, visiting teaching, and other Relief Society work have their foundation …",
+      "tr": "… con las reuniones de la Sociedad de Socorro, las maestras visitantes y otras labores de la Sociedad de Socorro tienen …"
+     },
+     {
+      "kind": "talk",
+      "year": 2020,
+      "conference": "2020 April General Conference",
+      "talk": "2020-04-clayton-the-finest-homes",
+      "para": 22,
+      "en": "… [Matthew 19:20](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/19?lang=eng&id=p20#p20).\n[^10]: [Mosiah 2:22](https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/2?lang=eng&id=p22#p22).\n[^11]: Home teaching and visiting teaching were retired and ministering was implemented in 2018 (see …",
+      "tr": "… 2018, se retiró el programa de maestros orientadores y maestras visitantes y se implementó la ministración (véase Russell M. Nelson, …"
+     }
+    ],
+    "earliest": {
+     "year": 1996,
+     "conference": "1996 October General Conference",
+     "talk": "1996-10-eyring-witnesses-for-god",
+     "para": 8,
+     "en": "… too. I will never again see home teaching or visiting teaching as only programs of the Church. Those faithful teachers …",
+     "tr": "Esos maestros orientadores y esas maestras visitantes entendían y creían que el convenio de ser testigos …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "visitante",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.4,
+    "ratio": 533.5,
+    "source": "2000-04-smoot-we-are-creators",
+    "kind": "talk",
+    "sample": "de ser que se hayan sentido inspirados a hacer por alguna persona, como maestra visitante o maestro orientador, algo que haya ejercido una gran influencia en su vida. Si"
+   },
+   {
+    "term": "maestra",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.4,
+    "ratio": 177.8,
+    "source": "2000-04-smoot-we-are-creators",
+    "kind": "talk",
+    "sample": "iar? Puede ser que se hayan sentido inspirados a hacer por alguna persona, como maestra visitante o maestro orientador, algo que haya ejercido una gran influencia en s"
+   },
+   {
+    "term": "visitas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.3,
+    "ratio": 92.3,
+    "source": "2007-10-allred-feed-my-sheep",
+    "kind": "talk",
+    "sample": "s de cuarto que me acompañaran, pero ninguna podía hacerlo. Sabía que hacer las visitas sola no era lo ideal, y pensé en cancelarlas, pero decidí que era mejor hacerla"
+   }
+  ]
+ }
+}

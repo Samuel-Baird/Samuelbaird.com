@@ -1,0 +1,158 @@
+{
+ "id": "concept.ministering-brother",
+ "pt": {
+  "en_paragraphs": 33,
+  "en_talks": 22,
+  "en_verses": 0,
+  "uncovered_paragraphs": 21,
+  "renderings": [
+   {
+    "term": "irmão ministrador",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 12,
+    "talks": 8,
+    "verses": 0,
+    "first_year": 2018,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 October General Conference",
+      "talk": "2018-10-gong-our-campfire-of-faith",
+      "para": 26,
+      "en": "… are to their father and mother and to the ministering brother who came as a friend and companion with their …",
+      "tr": "… gratos a esse pai, a essa mãe e ao irmão ministrador, que se tornou um amigo e companheiro do …"
+     },
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 April General Conference",
+      "talk": "2021-04-eyring-bless-in-his-name",
+      "para": 14,
+      "en": "… center, is given out of love. In fact, the ministering brother recently asked his bishop if there were others in …",
+      "tr": "… casa de repouso, é prestado com amor. Aliás, esse irmão ministrador recentemente perguntou ao bispo se havia outras pessoas na …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-yee-ministeringthat-ye-love-one-another-as-i-have-loved-you",
+      "para": 1,
+      "en": "… a very low point in his life when two ministering brothers began to visit him. One of them invited my …",
+      "tr": "… chegou a um momento difícil em sua vida, dois irmãos ministradores começaram a visitá-lo. Um deles convidou meu pai a …"
+     }
+    ],
+    "earliest": {
+     "year": 2018,
+     "conference": "2018 October General Conference",
+     "talk": "2018-10-gong-our-campfire-of-faith",
+     "para": 26,
+     "en": "… are to their father and mother and to the ministering brother who came as a friend and companion with their …",
+     "tr": "… gratos a esse pai, a essa mãe e ao irmão ministrador, que se tornou um amigo e companheiro do …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "ministradores",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 19,
+    "share_of_uncovered": 0.905,
+    "ratio": 362.0,
+    "source": "2018-04-bingham-ministering-as-the-savior-does",
+    "kind": "talk",
+    "sample": "oas e as famílias pessoalmente quando as designações são dadas a irmãos e irmãs ministradores. Acontece quando caminhamos com alguém, jogamos um jogo juntos, oferecemos serv"
+   },
+   {
+    "term": "irmãs",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.619,
+    "ratio": 16.2,
+    "source": "2018-04-bingham-ministering-as-the-savior-does",
+    "kind": "talk",
+    "sample": "s pessoas e as famílias pessoalmente quando as designações são dadas a irmãos e irmãs ministradores. Acontece quando caminhamos com alguém, jogamos um jogo juntos, o"
+   },
+   {
+    "term": "socorro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.429,
+    "ratio": 28.1,
+    "source": "2018-04-bingham-ministering-as-the-savior-does",
+    "kind": "talk",
+    "sample": "istração acontece quando a presidência do quórum de élderes e a da Sociedade de Socorro se aconselham em espírito de oração sobre as designações. Em vez de vermos líde"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 33,
+  "en_talks": 22,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "hermano ministrante",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 31,
+    "talks": 21,
+    "verses": 0,
+    "first_year": 2018,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-bingham-ministering-as-the-savior-does",
+      "para": 5,
+      "en": "… and families in person as assignments are given to ministering brothers and sisters. It looks like going for a walk, …",
+      "tr": "… se dan asignaciones a los hermanos y a las hermanas ministrantes. Es salir a caminar, reunirse para una noche …"
+     },
+     {
+      "kind": "talk",
+      "year": 2022,
+      "conference": "2022 October General Conference",
+      "talk": "2022-10-schmitt-that-they-might-know-thee",
+      "para": 10,
+      "en": "… be good shepherds, particularly in our families and as ministering brothers and sisters. One way we demonstrate our love for …",
+      "tr": "… el seno de nuestra familia y como hermanos y hermanas ministrantes. Una manera de demostrar nuestro amor por Jesús …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-fale-i-am-a-child-of-god",
+      "para": 19,
+      "en": "… the earth with support from “parents, family, leaders, friends, ministering brothers and sisters[;] you and I [are] stewards of His …",
+      "tr": "… el apoyo de \"padres, familiares, líderes, amigos, hermanos y hermanas ministrantes, ustedes y yo [somos] mayordomos de Sus [hijos, …"
+     }
+    ],
+    "earliest": {
+     "year": 2018,
+     "conference": "2018 April General Conference",
+     "talk": "2018-04-bingham-ministering-as-the-savior-does",
+     "para": 5,
+     "en": "… and families in person as assignments are given to ministering brothers and sisters. It looks like going for a walk, …",
+     "tr": "… se dan asignaciones a los hermanos y a las hermanas ministrantes. Es salir a caminar, reunirse para una noche …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

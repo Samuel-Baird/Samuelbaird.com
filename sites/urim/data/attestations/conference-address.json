@@ -1,0 +1,144 @@
+{
+ "id": "concept.conference-address",
+ "pt": {
+  "en_paragraphs": 14,
+  "en_talks": 14,
+  "en_verses": 0,
+  "uncovered_paragraphs": 14,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "discurso",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 11,
+    "share_of_uncovered": 0.786,
+    "ratio": 98.2,
+    "source": "1991-10-hunter-the-gospela-global-faith",
+    "kind": "talk",
+    "sample": "O Élder Orson F. Whitney, em um discurso de conferência, explicou que muitos dos grandes líderes religiosos eram inspira"
+   },
+   {
+    "term": "conferência",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 12,
+    "share_of_uncovered": 0.857,
+    "ratio": 34.3,
+    "source": "1991-10-hunter-the-gospela-global-faith",
+    "kind": "talk",
+    "sample": "O Élder Orson F. Whitney, em um discurso de conferência, explicou que muitos dos grandes líderes religiosos eram inspirados. Disse ele:"
+   },
+   {
+    "term": "dallin",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.429,
+    "ratio": 55.3,
+    "source": "2014-04-oaks-the-keys-and-authority-of-the-priesthood",
+    "kind": "talk",
+    "sample": "e Priesthood\", *Ensign*, julho de 1980, p. 25; *Tambuli*, junho de 1982, p. 23; Dallin H. Oaks, \"Rights and Responsibilities\", *Mercer Law Review*, vol. 36, nº 2, 198"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 13,
+  "en_talks": 13,
+  "en_verses": 0,
+  "uncovered_paragraphs": 8,
+  "renderings": [
+   {
+    "term": "discurso de conferencia",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 5,
+    "talks": 5,
+    "verses": 0,
+    "first_year": 2012,
+    "last_year": 2021,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 April General Conference",
+      "talk": "2012-04-beck-the-vision-of-prophets-regarding-relief-society-faith-family-relief",
+      "para": 19,
+      "en": "… 2008, 108–11.\n[^2]: See Julie B. Beck, BYU Women’s Conference address (Apr. 29, 2011), http://ce.byu.edu/cw/womensconference/archive/2011/pdf/JulieB_openingS.pdf; “What I Hope My Granddaughters …",
+      "tr": "… 2008, págs. 108–111.\n[^2]: Véase Julie B. Beck, discurso de Conferencia de la Mujer en la Universidad Brigham Young (29 …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 October General Conference",
+      "talk": "2015-10-cook-shipshape-and-bristol-fashion-be-temple-worthyin-good-times-and-bad-times",
+      "para": 17,
+      "en": "I appreciated the conference address President Dieter F. Uchtdorf gave in 2010[^15] about the …",
+      "tr": "Me gustó el discurso de conferencia que el presidente Dieter F. Uchtdorf dio en 2010[^15] …"
+     },
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 October General Conference",
+      "talk": "2021-10-christofferson-the-love-of-god",
+      "para": 31,
+      "en": "… of the Second Century of Brigham Young University](https://speeches.byu.edu/talks/jeffrey-r-holland/the-second-half-second-century-brigham-young-university)” (university conference address, Aug. 23, 2021), 4, speeches.byu.edu: “As near as …",
+      "tr": "… the Second Century of Brigham Young University](https://speeches.byu.edu/talks/jeffrey-r-holland/the-second-half-second-century-brigham-young-university)\" (discurso de conferencia de la universidad, 23 de agosto de 2021), pág. …"
+     }
+    ],
+    "earliest": {
+     "year": 2012,
+     "conference": "2012 April General Conference",
+     "talk": "2012-04-beck-the-vision-of-prophets-regarding-relief-society-faith-family-relief",
+     "para": 19,
+     "en": "… 2008, 108–11.\n[^2]: See Julie B. Beck, BYU Women’s Conference address (Apr. 29, 2011), http://ce.byu.edu/cw/womensconference/archive/2011/pdf/JulieB_openingS.pdf; “What I Hope My Granddaughters …",
+     "tr": "… 2008, págs. 108–111.\n[^2]: Véase Julie B. Beck, discurso de Conferencia de la Mujer en la Universidad Brigham Young (29 …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "conferencia",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 1.0,
+    "ratio": 47.1,
+    "source": "2001-04-jensen-to-walk-humbly-with-thy-god",
+    "kind": "talk",
+    "sample": "doce años, el presidente Ezra Taft Benson pronunció un poderoso discurso en una conferencia en la que declaraba que el orgullo es “el pecado universal, el gran vicio”[^7]."
+   },
+   {
+    "term": "discurso",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.625,
+    "ratio": 73.5,
+    "source": "2001-04-jensen-to-walk-humbly-with-thy-god",
+    "kind": "talk",
+    "sample": "Hace doce años, el presidente Ezra Taft Benson pronunció un poderoso discurso en una conferencia en la que declaraba que el orgullo es “el pecado universal,"
+   },
+   {
+    "term": "oaks",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.5,
+    "ratio": 69.0,
+    "source": "2014-04-oaks-the-keys-and-authority-of-the-priesthood",
+    "kind": "talk",
+    "sample": "mujer con respecto al sacerdocio\", *Liahona,* junio de 1982, pág. 27; Dallin H. Oaks, \"Rights and Responsibilities\", *Mercer Law Review,* tomo XXXVI, Nº 2 (invierno"
+   }
+  ]
+ }
+}

@@ -1,0 +1,15 @@
+id: concept.zone-leader
+category: Missionary Work
+en:
+  term: zone leader
+  match:
+  - zone leader
+sources: {}
+candidates:
+  pt:
+  - term: líder de zona
+    hint: pulpit-glossary:standard
+  es:
+  - term: líder de zona
+    hint: pulpit-glossary:verified
+related: []

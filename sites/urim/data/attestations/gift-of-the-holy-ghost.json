@@ -1,0 +1,194 @@
+{
+ "id": "concept.gift-of-the-holy-ghost",
+ "pt": {
+  "en_paragraphs": 313,
+  "en_talks": 220,
+  "en_verses": 17,
+  "uncovered_paragraphs": 32,
+  "renderings": [
+   {
+    "term": "dom do Espírito Santo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 282,
+    "talks": 204,
+    "verses": 16,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 138:33",
+      "ref_en": "Doctrine and Covenants 138:33",
+      "en": "These were taught faith in God, repentance from sin, vicarious baptism for the remission of sins, the gift of the Holy Ghost by the laying on of hands,",
+      "tr": "A esses foi ensinada a fé em Deus, o arrependimento do pecado, o batismo vicário para remissão de pecados, o dom do Espírito Santo pela imposição de mãos.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/138?lang=por&id=p33"
+     },
+     {
+      "kind": "talk",
+      "year": 1993,
+      "conference": "1993 April General Conference",
+      "talk": "1993-04-burton-heroes",
+      "para": 21,
+      "en": "… the deception of Satan. It is the gift of the Holy Ghost.",
+      "tr": "… engodos de Satanás e resistir a eles: O dom do Espírito Santa."
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-eyring-daughters-in-the-covenant",
+      "para": 7,
+      "en": "… living God, and of baptism and the gift of the Holy Ghost by the laying on of the hands, when …",
+      "tr": "… do Deus vivo, e do batismo e do dom do Espírito Santo pela imposição das mãos, quando tiverem oito anos, …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 October General Conference",
+     "talk": "1990-10-paramore-the-many-witnesses-of-jesus-christ-and-his-work",
+     "para": 8,
+     "en": "… Baptist. He gave a special power, the gift of the Holy Ghost, to all who would follow Him and …",
+     "tr": "… profeta, João Batista. Ele deu poder especial, o dom do Espírito Santo, a todos os que o seguiram e …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "dom",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 15,
+    "share_of_uncovered": 0.469,
+    "ratio": 31.8,
+    "source": "1993-04-maxwell-behold-the-enemy-is-combined-dc-3812",
+    "kind": "talk",
+    "sample": "de “trigo e joio”, quão abençoados são os membros fiéis da Igreja, por terem o dom precioso e constante do Espírito Santo lembrando-lhes o que é certo e os convên"
+   },
+   {
+    "term": "batismo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.312,
+    "ratio": 24.5,
+    "source": "2000-04-coleman-are-you-still-here",
+    "kind": "talk",
+    "sample": "tava servindo como missionário: “Você vai ser batizado no Dia dos Pais?” Em seu batismo estavam presentes quatro ex-bispos da família."
+   },
+   {
+    "term": "dons",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.219,
+    "ratio": 36.5,
+    "source": "2001-04-faust-born-again",
+    "kind": "talk",
+    "sample": "Como já vivi muitos anos desde meu batismo na água, tenho valorizado os dons espirituais do Espírito Santo provenientes do batismo do Espírito. Fui confirma"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 306,
+  "en_talks": 213,
+  "en_verses": 17,
+  "uncovered_paragraphs": 24,
+  "renderings": [
+   {
+    "term": "don del Espíritu Santo",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 283,
+    "talks": 200,
+    "verses": 16,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Hechos 2:38",
+      "ref_en": "Acts 2:38",
+      "en": "Then Peter said unto them, Repent, and be baptized every one of you in the name of Jesus Christ for the remission of sins, and ye shall receive the gift of the Holy Ghost.",
+      "tr": "Y Pedro les dijo: Arrepentíos y bautícese cada uno de vosotros en el nombre de Jesucristo para perdón de los pecados, y recibiréis el don del Espíritu Santo.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/nt/acts/2?lang=spa&id=p38"
+     },
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 October General Conference",
+      "talk": "1996-10-jack-partakers-of-the-glories",
+      "para": 14,
+      "en": "… the heavens open and we receive the gift of the Holy Ghost. By and through the Spirit, blessings of …",
+      "tr": "… confirma, se abren los cielos y recibimos el don del Espíritu Santo. Las bendiciones del sacerdocio entran en nuestra …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-eyring-daughters-in-the-covenant",
+      "para": 3,
+      "en": "… you were baptized recently and received the gift of the Holy Ghost by the laying on of hands. To you …",
+      "tr": "… de ustedes se bautizaron recientemente y recibieron el don del Espíritu Santo por la imposición de manos; ese recuerdo aún …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 October General Conference",
+     "talk": "1990-10-kapp-crickets-can-be-destroyed-through-spirituality",
+     "para": 20,
+     "en": "… of Latter-day Saints, you were given the gift of the Holy Ghost. The Holy Ghost will help you recognize …",
+     "tr": "… los Santos de los Ultimos Días, recibieron el don del Espíritu Santo. El Espíritu Santo les ayudara a distinguir …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "don",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.417,
+    "ratio": 22.2,
+    "source": "2000-04-packer-the-cloven-tongues-of-fire",
+    "kind": "talk",
+    "sample": "ión para la remisión de los pecados”[^20]. Después, en una ordenanza aparte, el don inestimable del Espíritu Santo se confiere “por aquellos que tienen la autorida"
+   },
+   {
+    "term": "bautismo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.25,
+    "ratio": 21.3,
+    "source": "2000-04-packer-the-cloven-tongues-of-fire",
+    "kind": "talk",
+    "sample": "el principio[^19]. El entrar a la Iglesia de Jesucristo se hace por medio del “bautismo por inmersión para la remisión de los pecados”[^20]. Después, en una ordenanza"
+   },
+   {
+    "term": "autoridad",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.25,
+    "ratio": 20.4,
+    "source": "1990-10-paramore-the-many-witnesses-of-jesus-christ-and-his-work",
+    "kind": "talk",
+    "sample": "Además, Él llamó a Apóstoles y profetas y a otros y les dio la autoridad para actuar en su nombre. Estableció su Iglesia para que en ella los santos pud"
+   }
+  ]
+ }
+}

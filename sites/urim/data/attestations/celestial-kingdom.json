@@ -1,0 +1,144 @@
+{
+ "id": "concept.celestial-kingdom",
+ "pt": {
+  "en_paragraphs": 124,
+  "en_talks": 104,
+  "en_verses": 10,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "reino celestial",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 120,
+    "talks": 100,
+    "verses": 10,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 88:22",
+      "ref_en": "Doctrine and Covenants 88:22",
+      "en": "For he who is not able to abide the law of a celestial kingdom cannot abide a celestial glory.",
+      "tr": "Porque aquele que não consegue viver a lei de um reino celestial não consegue suportar uma glória celestial.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/88?lang=por&id=p22"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-monson-my-brothers-keeper",
+      "para": 15,
+      "en": "… and David P. Kimball an everlasting salvation in the Celestial Kingdom of God, worlds without end’” (LeRoy R. Hafen and …",
+      "tr": "… Grant e David P. Kimball a salvação eterna no Reino Celestial de Deus, mundos sem fim.’” (Le Roy R. Hafen …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 October General Conference",
+      "talk": "2016-10-cook-serve",
+      "para": 6,
+      "en": "… we can earn the right to live in the celestial kingdom. Service is the very fiber of which an …",
+      "tr": "… a fim de adquirir o direito de viver no Reino Celestial. Servir é a própria fibra de que é …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-hammond-the-resurrection",
+     "para": 17,
+     "en": "… to come back and live with Him in the celestial kingdom of God throughout all eternity? Then if you will …",
+     "tr": "… que ressuscitemos e voltemos a viver com ele no reino celestial de Deus, por toda a eternidade! Se vos lembrardes, …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "reino celeste",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.75,
+    "ratio": 1500.4,
+    "source": "1991-10-brewerton-light",
+    "kind": "talk",
+    "sample": "“E novamente, na verdade vos digo que a terra obedece à lei de um reino celeste, pois realiza o propósito da sua criação, e não transgride a lei –"
+   },
+   {
+    "term": "lado",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 23.0,
+    "source": "2002-04-monson-pathways-to-perfection",
+    "kind": "talk",
+    "sample": "penas ocasionalmente, mas todos os dias e todas as horas, porque se ficarmos do lado da linha em que o Senhor estiver, se permanecermos sob a influência de nosso Pa"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 125,
+  "en_talks": 103,
+  "en_verses": 10,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "Reino Celestial",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 122,
+    "talks": 100,
+    "verses": 10,
+    "first_year": 1997,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 88:22",
+      "ref_en": "Doctrine and Covenants 88:22",
+      "en": "For he who is not able to abide the law of a celestial kingdom cannot abide a celestial glory.",
+      "tr": "Porque el que no es capaz de obedecer la ley de un reino celestial, no puede soportar una gloria celestial.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/88?lang=spa&id=p22"
+     },
+     {
+      "kind": "talk",
+      "year": 1997,
+      "conference": "1997 April General Conference",
+      "talk": "1997-04-beckham-modern-pioneers",
+      "para": 11,
+      "en": "… Latter-day pioneers keep me on the path to the celestial kingdom, and I’m so thankful for them.”",
+      "tr": "… Días me mantienen en la senda que conduce al reino celestial, por lo que me siento agradecida a ellos”."
+     },
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 April General Conference",
+      "talk": "2017-04-ballard-return-and-receive",
+      "para": 28,
+      "en": "… and the Son in the highest degree of the celestial kingdom.[^14]",
+      "tr": "… y el Hijo en el grado más alto del reino celestial[^14]."
+     }
+    ],
+    "earliest": {
+     "year": 1997,
+     "conference": "1997 April General Conference",
+     "talk": "1997-04-beckham-modern-pioneers",
+     "para": 11,
+     "en": "… Latter-day pioneers keep me on the path to the celestial kingdom, and I’m so thankful for them.”",
+     "tr": "… Días me mantienen en la senda que conduce al reino celestial, por lo que me siento agradecida a ellos”."
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

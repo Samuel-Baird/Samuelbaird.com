@@ -1,0 +1,118 @@
+{
+ "id": "concept.holy-ghost",
+ "pt": {
+  "en_paragraphs": 1868,
+  "en_talks": 783,
+  "en_verses": 206,
+  "uncovered_paragraphs": 37,
+  "renderings": [
+   {
+    "term": "Espírito Santo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1832,
+    "talks": 774,
+    "verses": 205,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Atos 13:2",
+      "ref_en": "Acts 13:2",
+      "en": "As they ministered to the Lord, and fasted, the Holy Ghost said, Separate me Barnabas and Saul for the work whereunto I have called them.",
+      "tr": "E servindo eles ao Senhor, e jejuando, disse o Espírito Santo: Apartai-me Barnabé e Saulo para a obra a que os chamei.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/nt/acts/13?lang=por&id=p2"
+     },
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 October General Conference",
+      "talk": "1991-10-muren-and-now-you-will-know",
+      "para": 9,
+      "en": "… the Father, and of the Son, and of the Holy Ghost: Teaching them to observe all things whatsoever I …",
+      "tr": "… em nome do Pai, e do Filho, e do Espírito Santo; ensinando-as a guardar todas as coisas que eu …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-dalton-be-not-moved",
+      "para": 17,
+      "en": "… they made correct choices. They were guided by the Holy Ghost. They were virtuous, and they prepared themselves to …",
+      "tr": "… antes. Mas elas fizeram escolhas corretas. Foram guiadas pelo Espírito Santo, foram virtuosas, e se prepararam para fazer e …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-condie-some-scriptural-lessons-on-leadership",
+     "para": 23,
+     "en": "“Reproving betimes with sharpness, when moved upon by the Holy Ghost; and then showing forth afterwards an increase of …",
+     "tr": "Reprovando às vezes com firmeza, quando movido pelo Espírito Santo; e depois, mostrando um amor maior.” ([D&C 121:41–43](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/121?lang=por&id=p41-p43#p41).)"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 1861,
+  "en_talks": 785,
+  "en_verses": 207,
+  "uncovered_paragraphs": 34,
+  "renderings": [
+   {
+    "term": "Espiritu Santo",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 1829,
+    "talks": 772,
+    "verses": 205,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Jacob 7:13",
+      "ref_en": "Jacob 7:13",
+      "en": "And it came to pass that he said unto me: Show me a sign by this power of the Holy Ghost, in the which ye know so much.",
+      "tr": "Y aconteció que me dijo: Muéstrame una señal mediante este poder del Espíritu Santo, por medio del cual sabes tanto.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/jacob/7?lang=spa&id=p13"
+     },
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 October General Conference",
+      "talk": "1996-10-eyring-witnesses-for-god",
+      "para": 20,
+      "en": "… us to feel humble and meek so that the Holy Ghost may more easily be our companion. By our fast, …",
+      "tr": "… ser mas humildes y mas mansos para que al Espíritu Santo le sea mas fácil ser nuestro compañero. Por medio …"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 April General Conference",
+      "talk": "2012-04-hales-coming-to-ourselves-the-sacrament-the-temple-and-sacrifice-in-service",
+      "para": 16,
+      "en": "… obtain a testimony of Heavenly Father, Jesus Christ, the Holy Ghost, the reality of the Atonement, and the truthfulness …",
+      "tr": "… obtener un testimonio del Padre Celestial, de Jesucristo, del Espíritu Santo, de la realidad de la Expiación y de …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-wirthlin-personal-integrity",
+     "para": 43,
+     "en": "… reward of integrity is the constant companionship of the Holy Ghost (see [D&C 121:46](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/121?lang=eng&id=p46#p46)). The Holy Ghost does not attend …",
+     "tr": "… máxima de la integridad es la compañía constante del Espíritu Santo (véase D. y C. 121:46). El no nos acompaña …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

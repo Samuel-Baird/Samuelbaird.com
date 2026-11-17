@@ -1,0 +1,117 @@
+{
+ "id": "concept.stakes-of-zion",
+ "pt": {
+  "en_paragraphs": 17,
+  "en_talks": 16,
+  "en_verses": 3,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "estacas de Sião",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 16,
+    "talks": 15,
+    "verses": 3,
+    "first_year": 1990,
+    "last_year": 2020,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 119:7",
+      "ref_en": "Doctrine and Covenants 119:7",
+      "en": "And this shall be an ensample unto all the stakes of Zion. Even so. Amen.",
+      "tr": "E isto será um modelo para todas as estacas de Sião. Assim seja. Amém.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/119?lang=por&id=p7"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-lindsay-ye-have-done-it-unto-me",
+      "para": 5,
+      "en": "In visits to more than thirty stakes of Zion during the past year, my life has been blessed …",
+      "tr": "Em visitas a mais de trinta estacas de Sião durante o ano passado, senti que minha vida foi …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-hoyos-called-to-be-saints",
+      "para": 1,
+      "en": "… realize that I am in one of the stakes of Zion.",
+      "tr": "… ajuda-me a perceber que estou em uma das estacas de Sião."
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-lindsay-ye-have-done-it-unto-me",
+     "para": 5,
+     "en": "In visits to more than thirty stakes of Zion during the past year, my life has been blessed …",
+     "tr": "Em visitas a mais de trinta estacas de Sião durante o ano passado, senti que minha vida foi …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 15,
+  "en_talks": 14,
+  "en_verses": 3,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "estacas de Sión",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 14,
+    "talks": 13,
+    "verses": 3,
+    "first_year": 2006,
+    "last_year": 2020,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 119:7",
+      "ref_en": "Doctrine and Covenants 119:7",
+      "en": "And this shall be an ensample unto all the stakes of Zion. Even so. Amen.",
+      "tr": "Y esto servirá de norma a todas las estacas de Sion. Así sea. Amén.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/119?lang=spa&id=p7"
+     },
+     {
+      "kind": "talk",
+      "year": 2006,
+      "conference": "2006 October General Conference",
+      "talk": "2006-10-packer-a-defense-and-a-refuge",
+      "para": 14,
+      "en": "… earth. They knew their mission was to establish stakes of Zion in every nation of the earth.",
+      "tr": "… tierra; ellos sabían que su misión era establecer estacas de Sión en cada nación de la tierra."
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-cook-personal-peace-the-reward-of-righteousness",
+      "para": 6,
+      "en": "… at their location. Modern revelation teaches that the stakes of Zion are a defense and “a refuge from the storm, …",
+      "tr": "… se encontraban. La revelación moderna enseña que las estacas de Sión son una defensa y “[un] refugio contra la tempestad …"
+     }
+    ],
+    "earliest": {
+     "year": 2006,
+     "conference": "2006 October General Conference",
+     "talk": "2006-10-packer-a-defense-and-a-refuge",
+     "para": 14,
+     "en": "… earth. They knew their mission was to establish stakes of Zion in every nation of the earth.",
+     "tr": "… tierra; ellos sabían que su misión era establecer estacas de Sión en cada nación de la tierra."
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

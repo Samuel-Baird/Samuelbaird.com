@@ -1,0 +1,15 @@
+id: concept.revelator
+category: Priesthood Offices & Quorums
+en:
+  term: revelator
+  match:
+  - revelator
+sources: {}
+candidates:
+  pt:
+  - term: revelador
+    hint: pulpit-glossary:verified
+  es:
+  - term: revelador
+    hint: approved-terms
+related: []

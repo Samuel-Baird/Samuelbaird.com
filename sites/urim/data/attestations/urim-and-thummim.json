@@ -1,0 +1,118 @@
+{
+ "id": "concept.urim-and-thummim",
+ "pt": {
+  "en_paragraphs": 7,
+  "en_talks": 6,
+  "en_verses": 13,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "Urim e Tumim",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 5,
+    "talks": 4,
+    "verses": 13,
+    "first_year": 1995,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 10:1",
+      "ref_en": "Doctrine and Covenants 10:1",
+      "en": "Now, behold, I say unto you, that because you delivered up those writings which you had power given unto you to translate by the means of the Urim and Thummim, into the hands of a wicked man, you have lost them.",
+      "tr": "Agora, eis que te digo que porque entregaste esses escritos, que recebeste poder para traduzir por meio do Urim e Tumim, nas mãos de um homem iníquo, tu os perdeste.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/10?lang=por&id=p1"
+     },
+     {
+      "kind": "talk",
+      "year": 1995,
+      "conference": "1995 October General Conference",
+      "talk": "1995-10-wells-our-message-to-the-world",
+      "para": 11,
+      "en": "… He received revelations from Jesus Christ, and the Urim and Thummim provided another means by which Joseph Smith received scriptural …",
+      "tr": "… Ele rece­beu reve­la­ções de Jesus Cristo e o Urim e Tumim foram outro meio pelo qual Joseph Smith rece­beu ins­tru­ções …"
+     },
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 April General Conference",
+      "talk": "2017-04-cook-foundations-of-faith",
+      "para": 11,
+      "en": "… of God.”[^4] What about the aids to translation—the Urim and Thummim, the seer stones? Were they essential, or were …",
+      "tr": "… quanto ao auxílio para a tradução — o Urim e Tumim, as pedras de vidente? Será que era necessário? …"
+     }
+    ],
+    "earliest": {
+     "year": 1995,
+     "conference": "1995 October General Conference",
+     "talk": "1995-10-wells-our-message-to-the-world",
+     "para": 11,
+     "en": "… He received revelations from Jesus Christ, and the Urim and Thummim provided another means by which Joseph Smith received scriptural …",
+     "tr": "… Ele rece­beu reve­la­ções de Jesus Cristo e o Urim e Tumim foram outro meio pelo qual Joseph Smith rece­beu ins­tru­ções …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 9,
+  "en_talks": 7,
+  "en_verses": 13,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "Urim y Tumim",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 7,
+    "talks": 6,
+    "verses": 13,
+    "first_year": 2001,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 10:1",
+      "ref_en": "Doctrine and Covenants 10:1",
+      "en": "Now, behold, I say unto you, that because you delivered up those writings which you had power given unto you to translate by the means of the Urim and Thummim, into the hands of a wicked man, you have lost them.",
+      "tr": "He aquí, te digo que por haber entregado en manos de un hombre inicuo esos escritos para lo cual se te dio el poder de traducirlos por medio del Urim y Tumim, ahora los has perdido.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/10?lang=spa&id=p1"
+     },
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 October General Conference",
+      "talk": "2001-10-packer-the-book-of-mormon-another-testament-of-jesus-christ",
+      "para": 3,
+      "en": "… the plates were translated by use of a Urim and Thummim, which is referred to a number of times …",
+      "tr": "… de las planchas fueron traducidos por medio del Urim y Tumim, el cual se menciona varias veces en el …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 October General Conference",
+      "talk": "2016-10-robbins-the-righteous-judge",
+      "para": 14,
+      "en": "… was rejoiced when he gave me back the Urim and Thummim and said that God was pleased with my faithfulness …",
+      "tr": "… “El ángel estaba contento cuando me devolvió el Urim y Tumim y me dijo que Dios estaba complacido por mi …"
+     }
+    ],
+    "earliest": {
+     "year": 2001,
+     "conference": "2001 October General Conference",
+     "talk": "2001-10-packer-the-book-of-mormon-another-testament-of-jesus-christ",
+     "para": 3,
+     "en": "… the plates were translated by use of a Urim and Thummim, which is referred to a number of times …",
+     "tr": "… de las planchas fueron traducidos por medio del Urim y Tumim, el cual se menciona varias veces en el …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

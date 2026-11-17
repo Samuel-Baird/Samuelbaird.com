@@ -1,0 +1,195 @@
+{
+ "id": "concept.general-handbook",
+ "pt": {
+  "en_paragraphs": 82,
+  "en_talks": 66,
+  "en_verses": 0,
+  "uncovered_paragraphs": 6,
+  "renderings": [
+   {
+    "term": "Manual Geral",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 76,
+    "talks": 62,
+    "verses": 0,
+    "first_year": 1993,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1993,
+      "conference": "1993 October General Conference",
+      "talk": "1993-10-oaks-the-great-plan-of-happiness",
+      "para": 23,
+      "en": "… unto it’ ([D&C 59:6](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/59?lang=eng&id=p6#p6))” (*1991 Supplement to the 1989 General Handbook of Instructions,* p. 1).",
+      "tr": "… coisa alguma semelhante” ([D&C 59:6](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/59?lang=por&id=p6#p6))” (*Suplemento de 1991 do Manual Geral de Instruções de 1989,* p. 1)."
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-gerard-integrity-a-christlike-attribute",
+      "para": 27,
+      "en": "… 18:9](https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/18?lang=eng&id=p9#p9).\n[^18]: See [Doctrine and Covenants 42:2–3](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/42?lang=eng&id=p2-p3#p2); see also General Handbook: Serving in The Church of Jesus Christ of …",
+      "tr": "… 18:9](https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/18?lang=por&id=p9#p9).\n[^18]: Ver [Doutrina e Convênios 42:2–3](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/42?lang=por&id=p2-p3#p2); ver também Manual Geral: Servir em A Igreja de Jesus Cristo dos …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-yee-ministeringthat-ye-love-one-another-as-i-have-loved-you",
+      "para": 34,
+      "en": "… the elders quorum president or Relief Society president” (General Handbook, [3.4.3.2](https://www.churchofjesuschrist.org/study/manual/general-handbook/3-priesthood-principles?lang=eng&id=p59#p59)).",
+      "tr": "… élderes ou pela presidente da Sociedade de Socorro\" (Manual Geral, [item 3.4.3.2](https://www.churchofjesuschrist.org/study/manual/general-handbook/3-priesthood-principles?lang=por&id=p59#p59))."
+     }
+    ],
+    "earliest": {
+     "year": 1993,
+     "conference": "1993 October General Conference",
+     "talk": "1993-10-oaks-the-great-plan-of-happiness",
+     "para": 23,
+     "en": "… unto it’ ([D&C 59:6](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/59?lang=eng&id=p6#p6))” (*1991 Supplement to the 1989 General Handbook of Instructions,* p. 1).",
+     "tr": "… coisa alguma semelhante” ([D&C 59:6](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/59?lang=por&id=p6#p6))” (*Suplemento de 1991 do Manual Geral de Instruções de 1989,* p. 1)."
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "manual/general-handbook",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.667,
+    "ratio": 533.5,
+    "source": "2020-04-holmes-deep-in-our-heart",
+    "kind": "talk",
+    "sample": "of Jesus Christ of Latter-day Saints](https://www.churchofjesuschrist.org/study/manual/general-handbook/2-supporting-individuals-and-families?lang=por), 2.2, ChurchofJesusChrist.org."
+   },
+   {
+    "term": "aaronic-priesthood",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.5,
+    "ratio": 1000.2,
+    "source": "2020-04-holmes-deep-in-our-heart",
+    "kind": "talk",
+    "sample": "ro da Igreja]\" (in \"[Be with Them](https://www.ChurchofJesusChrist.org/callings/aaronic-priesthood-quorums/my-calling/leader-instruction/be-with-them)\", ChurchofJesusChrist.org/c"
+   },
+   {
+    "term": "speeches.byu.edu",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.5,
+    "ratio": 222.3,
+    "source": "2020-04-holmes-deep-in-our-heart",
+    "kind": "talk",
+    "sample": "lang=por&id=p17#p17).\n[^9]: Henry B. Eyring, \"[Teaching Is a Moral Act](https://speeches.byu.edu/talks/henry-b-eyring/teaching-moral-act)\" (discurso proferido na Universidade B"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 79,
+  "en_talks": 64,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "Manual General",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 76,
+    "talks": 62,
+    "verses": 0,
+    "first_year": 2020,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2020,
+      "conference": "2020 April General Conference",
+      "talk": "2020-04-holmes-deep-in-our-heart",
+      "para": 33,
+      "en": "… of significance if given a chance!”\n[^30]: See [General Handbook: Serving in The Church of Jesus Christ of …",
+      "tr": "… si se les da la oportunidad!\".\n[^30]: Véase [Manual General: Servir en La Iglesia de Jesucristo de los …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-dennis-put-ye-on-the-lord-jesus-christ",
+      "para": 21,
+      "en": "The General Handbook states that it is not required to have a …",
+      "tr": "El Manual General establece que no se requiere tener un llamamiento misional …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-soares-a-higher-and-holier-fast",
+      "para": 17,
+      "en": "See also General Handbook: Serving in The Church of Jesus Christ of …",
+      "tr": "Véase también Manual General: Servir en La Iglesia de Jesucristo de los …"
+     }
+    ],
+    "earliest": {
+     "year": 2020,
+     "conference": "2020 April General Conference",
+     "talk": "2020-04-holmes-deep-in-our-heart",
+     "para": 33,
+     "en": "… of significance if given a chance!”\n[^30]: See [General Handbook: Serving in The Church of Jesus Christ of …",
+     "tr": "… si se les da la oportunidad!\".\n[^30]: Véase [Manual General: Servir en La Iglesia de Jesucristo de los …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "manual",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 108.1,
+    "source": "1998-10-faust-opening-the-windows-of-heaven",
+    "kind": "talk",
+    "sample": "[^1]: D. y C. 119:4.\n[^2]: Manual de Instrucciones de la Iglesia, 1998, Libro 1.\n[^3]: Carta del presidente D. Br"
+   },
+   {
+    "term": "general-handbook",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 381.0,
+    "source": "2024-10-wilcox-o-youth-of-the-noble-birthright",
+    "kind": "talk",
+    "sample": "órums del Sacerdocio Aarónico](https://www.churchofjesuschrist.org/study/manual/general-handbook/10-aaronic-priesthood?lang=spa&id=title4#title4)\", Biblioteca del Evangelio.\n[^"
+   },
+   {
+    "term": "for the",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 333.4,
+    "source": "2024-10-wilcox-o-youth-of-the-noble-birthright",
+    "kind": "talk",
+    "sample": "shall, Children's Letters to God, 1991.\n[^2]: Véase Russell M. Nelson, \"[Thanks for the Covenant](https://speeches.byu.edu/talks/russell-m-nelson/thanks-covenant)\", de"
+   }
+  ]
+ }
+}

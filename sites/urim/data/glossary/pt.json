@@ -1,0 +1,4146 @@
+{
+ "lang": "pt",
+ "entries": [
+  {
+   "id": "concept.aaronic-priesthood-quorum",
+   "slug": "aaronic-priesthood-quorum",
+   "en": [
+    "Aaronic Priesthood quorum"
+   ],
+   "category": "Priesthood Offices & Quorums",
+   "preferred": "quórum do Sacerdócio Aarônico",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 19
+  },
+  {
+   "id": "concept.aaronic-priesthood",
+   "slug": "aaronic-priesthood",
+   "en": [
+    "Aaronic Priesthood"
+   ],
+   "category": "Priesthood Offices & Quorums",
+   "preferred": "Sacerdócio Aarônico",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 419
+  },
+  {
+   "id": "concept.accept-a-calling",
+   "slug": "accept-a-calling",
+   "en": [
+    "accept a calling"
+   ],
+   "category": "Callings & Sustaining",
+   "preferred": "aceitar um chamado",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2
+  },
+  {
+   "id": "concept.acting-president-of-the-quorum-of-the-twelve-apostles",
+   "slug": "acting-president-of-the-quorum-of-the-twelve-apostles",
+   "en": [
+    "Acting President of the Quorum of the Twelve Apostles"
+   ],
+   "category": "Presiding Quorums & General Leadership",
+   "preferred": "presidente em exercício do Quórum dos Doze Apóstolos",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 19
+  },
+  {
+   "id": "concept.activity-leader",
+   "slug": "activity-leader",
+   "en": [
+    "activity leader"
+   ],
+   "category": "Local Leadership & Callings",
+   "preferred": "líder de atividades dos Valorosos",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.addiction-recovery-program",
+   "slug": "addiction-recovery-program",
+   "en": [
+    "addiction recovery program"
+   ],
+   "category": "Welfare & Self-Reliance",
+   "preferred": "programa de recuperação do vício",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.adult-session",
+   "slug": "adult-session",
+   "en": [
+    "adult session"
+   ],
+   "category": "Councils & Conferences",
+   "preferred": "sessão de adultos",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2
+  },
+  {
+   "id": "concept.agency",
+   "slug": "agency",
+   "en": [
+    "agency"
+   ],
+   "category": "Plan of Salvation",
+   "preferred": "arbítrio",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 348
+  },
+  {
+   "id": "concept.another-testament-of-jesus-christ",
+   "slug": "another-testament-of-jesus-christ",
+   "en": [
+    "Another Testament of Jesus Christ"
+   ],
+   "category": "Scriptures & Study Helps",
+   "preferred": "Outro Testamento de Jesus Cristo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 77
+  },
+  {
+   "id": "concept.apostleship",
+   "slug": "apostleship",
+   "en": [
+    "apostleship"
+   ],
+   "category": "Priesthood Offices & Quorums",
+   "preferred": "apostolado",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 32
+  },
+  {
+   "id": "concept.area-conference",
+   "slug": "area-conference",
+   "en": [
+    "area conference"
+   ],
+   "category": "Councils & Conferences",
+   "preferred": "conferência de área",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 5
+  },
+  {
+   "id": "concept.area-seventy",
+   "slug": "area-seventy",
+   "en": [
+    "Area Seventy"
+   ],
+   "category": "Presiding Quorums & General Leadership",
+   "preferred": "Setenta de Área",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 188
+  },
+  {
+   "id": "concept.articles-of-faith",
+   "slug": "articles-of-faith",
+   "en": [
+    "Articles of Faith"
+   ],
+   "category": "Scriptures & Study Helps",
+   "preferred": "Regras de Fé",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 146
+  },
+  {
+   "id": "concept.assistant-to-the-president",
+   "slug": "assistant-to-the-president",
+   "en": [
+    "assistant to the president"
+   ],
+   "category": "Missionary Work",
+   "preferred": "assistente do presidente",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.baptism-for-the-dead",
+   "slug": "baptism-for-the-dead",
+   "en": [
+    "baptism for the dead"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "batismo pelos mortos",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 25
+  },
+  {
+   "id": "concept.baptismal-interview",
+   "slug": "baptismal-interview",
+   "en": [
+    "baptismal interview"
+   ],
+   "category": "Missionary Work",
+   "preferred": "entrevista batismal",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 3
+  },
+  {
+   "id": "concept.bearing-testimony",
+   "slug": "bearing-testimony",
+   "en": [
+    "bearing testimony"
+   ],
+   "category": "Sacrament & Meetings",
+   "preferred": "prestar testemunho",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 11
+  },
+  {
+   "id": "concept.bible-dictionary",
+   "slug": "bible-dictionary",
+   "en": [
+    "Bible Dictionary"
+   ],
+   "category": "Scriptures & Study Helps",
+   "preferred": "Dicionário Bíblico",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 9
+  },
+  {
+   "id": "concept.bishop-s-counsel",
+   "slug": "bishop-s-counsel",
+   "en": [
+    "bishop's counsel"
+   ],
+   "category": "Interviews, Repentance & Membership Councils",
+   "preferred": "conselho do bispo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 1
+  },
+  {
+   "id": "concept.bishop-s-storehouse",
+   "slug": "bishop-s-storehouse",
+   "en": [
+    "bishop's storehouse"
+   ],
+   "category": "Welfare & Self-Reliance",
+   "preferred": "armazém do bispo",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.bishopric-meeting",
+   "slug": "bishopric-meeting",
+   "en": [
+    "bishopric meeting"
+   ],
+   "category": "Councils & Conferences",
+   "preferred": "reunião do bispado",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 1
+  },
+  {
+   "id": "concept.bishopric",
+   "slug": "bishopric",
+   "en": [
+    "bishopric"
+   ],
+   "category": "Local Leadership & Callings",
+   "preferred": "bispado",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 111
+  },
+  {
+   "id": "concept.book-of-abraham",
+   "slug": "book-of-abraham",
+   "en": [
+    "Book of Abraham"
+   ],
+   "category": "Scriptures & Study Helps",
+   "preferred": "livro de Abraão",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 7
+  },
+  {
+   "id": "concept.book-of-mormon",
+   "slug": "book-of-mormon",
+   "en": [
+    "Book of Mormon"
+   ],
+   "category": "Scriptures & Study Helps",
+   "preferred": "Livro de Mórmon",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 1728
+  },
+  {
+   "id": "concept.book-of-moses",
+   "slug": "book-of-moses",
+   "en": [
+    "Book of Moses"
+   ],
+   "category": "Scriptures & Study Helps",
+   "preferred": "livro de Moisés",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 21
+  },
+  {
+   "id": "concept.book-of-remembrance",
+   "slug": "book-of-remembrance",
+   "en": [
+    "Book of Remembrance"
+   ],
+   "category": "Scriptures & Study Helps",
+   "preferred": "livro de recordações",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 4
+  },
+  {
+   "id": "concept.branch-conference",
+   "slug": "branch-conference",
+   "en": [
+    "branch conference"
+   ],
+   "category": "Councils & Conferences",
+   "preferred": "conferência do ramo",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.branch-president",
+   "slug": "branch-president",
+   "en": [
+    "branch president"
+   ],
+   "category": "Local Leadership & Callings",
+   "preferred": "presidente do ramo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 46
+  },
+  {
+   "id": "concept.branch",
+   "slug": "branch",
+   "en": [
+    "branch"
+   ],
+   "category": "Church Units & Facilities",
+   "preferred": "ramo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 462
+  },
+  {
+   "id": "concept.brass-plates",
+   "slug": "brass-plates",
+   "en": [
+    "brass plates"
+   ],
+   "category": "Scriptures & Study Helps",
+   "preferred": "placas de latão",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 26
+  },
+  {
+   "id": "concept.bread-and-water",
+   "slug": "bread-and-water",
+   "en": [
+    "bread and water"
+   ],
+   "category": "Sacrament & Meetings",
+   "preferred": "do pão e da água",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 13
+  },
+  {
+   "id": "concept.building-zion",
+   "slug": "building-zion",
+   "en": [
+    "building Zion"
+   ],
+   "category": "Zion & the Last Days",
+   "preferred": "edificar Sião",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.byu-pathway-worldwide",
+   "slug": "byu-pathway-worldwide",
+   "en": [
+    "BYU–Pathway Worldwide"
+   ],
+   "category": "Education & Publications",
+   "preferred": "BYU-Pathway",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2
+  },
+  {
+   "id": "concept.called-to-serve",
+   "slug": "called-to-serve",
+   "en": [
+    "called to serve"
+   ],
+   "category": "Missionary Work",
+   "preferred": "chamado para servir",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 73
+  },
+  {
+   "id": "concept.calling-and-election",
+   "slug": "calling-and-election",
+   "en": [
+    "Calling and Election"
+   ],
+   "category": "Faith & Gospel Principles",
+   "preferred": "vocação e eleição",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 1
+  },
+  {
+   "id": "concept.calling",
+   "slug": "calling",
+   "en": [
+    "calling"
+   ],
+   "category": "Callings & Sustaining",
+   "preferred": "chamado",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 712
+  },
+  {
+   "id": "concept.cancellation-of-sealing",
+   "slug": "cancellation-of-sealing",
+   "en": [
+    "cancellation of sealing"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "cancelamento de selamento",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 3
+  },
+  {
+   "id": "concept.celestial-kingdom",
+   "slug": "celestial-kingdom",
+   "en": [
+    "celestial kingdom"
+   ],
+   "category": "Plan of Salvation",
+   "preferred": "reino celestial",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 130
+  },
+  {
+   "id": "concept.celestial-marriage",
+   "slug": "celestial-marriage",
+   "en": [
+    "celestial marriage"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "casamento celestial",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 19
+  },
+  {
+   "id": "concept.celestial-room",
+   "slug": "celestial-room",
+   "en": [
+    "celestial room"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "sala celestial",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 13
+  },
+  {
+   "id": "concept.ces",
+   "slug": "ces",
+   "en": [
+    "CES"
+   ],
+   "category": "Education & Publications",
+   "preferred": "Sistema Educacional da Igreja",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 3
+  },
+  {
+   "id": "concept.children-s-songbook",
+   "slug": "children-s-songbook",
+   "en": [
+    "Children's Songbook"
+   ],
+   "category": "Music",
+   "preferred": "Músicas para Crianças",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 70
+  },
+  {
+   "id": "concept.choose-the-right",
+   "slug": "choose-the-right",
+   "en": [
+    "Choose the Right"
+   ],
+   "category": "Organizations & Youth",
+   "preferred": "escolher o certo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 19
+  },
+  {
+   "id": "concept.church-auditing-department",
+   "slug": "church-auditing-department",
+   "en": [
+    "Church Auditing Department"
+   ],
+   "category": "Finances",
+   "preferred": "Departamento de Auditoria da Igreja",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 45
+  },
+  {
+   "id": "concept.church-educational-system",
+   "slug": "church-educational-system",
+   "en": [
+    "Church Educational System"
+   ],
+   "category": "Education & Publications",
+   "preferred": "Sistema Educacional da Igreja",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 23
+  },
+  {
+   "id": "concept.church-great-and-abominable",
+   "slug": "church-great-and-abominable",
+   "en": [
+    "Church, Great and Abominable"
+   ],
+   "category": "The Church & Members",
+   "preferred": "Igreja, Grande e Abominável",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.church-news",
+   "slug": "church-news",
+   "en": [
+    "Church News"
+   ],
+   "category": "Education & Publications",
+   "preferred": "Church News",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 100
+  },
+  {
+   "id": "concept.church-of-the-firstborn",
+   "slug": "church-of-the-firstborn",
+   "en": [
+    "Church of the Firstborn"
+   ],
+   "category": "The Church & Members",
+   "preferred": "Igreja do Primogênito",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 13
+  },
+  {
+   "id": "concept.church-office-building",
+   "slug": "church-office-building",
+   "en": [
+    "Church Office Building"
+   ],
+   "category": "Church Units & Facilities",
+   "preferred": "Edifício dos Escritórios da Igreja",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 4
+  },
+  {
+   "id": "concept.church-service-missionary",
+   "slug": "church-service-missionary",
+   "en": [
+    "Church-service missionary"
+   ],
+   "category": "Missionary Work",
+   "preferred": "missionários de serviço na Igreja",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 1
+  },
+  {
+   "id": "concept.churchofjesuschrist-org",
+   "slug": "churchofjesuschrist-org",
+   "en": [
+    "ChurchofJesusChrist.org"
+   ],
+   "category": "Education & Publications",
+   "preferred": "churchofjesuschrist.org",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.come-follow-me",
+   "slug": "come-follow-me",
+   "en": [
+    "Come, Follow Me"
+   ],
+   "category": "Scriptures & Study Helps",
+   "preferred": "Vem, e Segue-Me",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 4
+  },
+  {
+   "id": "concept.common-consent",
+   "slug": "common-consent",
+   "en": [
+    "common consent"
+   ],
+   "category": "Callings & Sustaining",
+   "preferred": "comum acordo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 13
+  },
+  {
+   "id": "concept.compassionate-service",
+   "slug": "compassionate-service",
+   "en": [
+    "compassionate service"
+   ],
+   "category": "Discipleship & Ministering",
+   "preferred": "serviço de solidariedade",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 7
+  },
+  {
+   "id": "concept.confer-the-priesthood",
+   "slug": "confer-the-priesthood",
+   "en": [
+    "confer the priesthood"
+   ],
+   "category": "Priesthood Authority & Ordinances",
+   "preferred": "conferir o sacerdócio",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2
+  },
+  {
+   "id": "concept.continuing-revelation",
+   "slug": "continuing-revelation",
+   "en": [
+    "continuing revelation"
+   ],
+   "category": "Restoration & Revelation",
+   "preferred": "revelação contínua",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 23
+  },
+  {
+   "id": "concept.convert-baptism",
+   "slug": "convert-baptism",
+   "en": [
+    "convert baptism"
+   ],
+   "category": "Membership Records",
+   "preferred": "batismo de conversos",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 3
+  },
+  {
+   "id": "concept.council-on-the-disposition-of-the-tithes",
+   "slug": "council-on-the-disposition-of-the-tithes",
+   "en": [
+    "Council on the Disposition of the Tithes"
+   ],
+   "category": "Finances",
+   "preferred": "Conselho de Disposição dos Dízimos",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 17
+  },
+  {
+   "id": "concept.council-system",
+   "slug": "council-system",
+   "en": [
+    "council system"
+   ],
+   "category": "Councils & Conferences",
+   "preferred": "sistema de conselhos",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2
+  },
+  {
+   "id": "concept.counselor",
+   "slug": "counselor",
+   "en": [
+    "counselor"
+   ],
+   "category": "Local Leadership & Callings",
+   "preferred": "conselheiro",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 490
+  },
+  {
+   "id": "concept.covenant-path",
+   "slug": "covenant-path",
+   "en": [
+    "covenant path"
+   ],
+   "category": "Faith & Gospel Principles",
+   "preferred": "caminho dos convênios",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 4
+  },
+  {
+   "id": "concept.covenant-relationship",
+   "slug": "covenant-relationship",
+   "en": [
+    "covenant relationship"
+   ],
+   "category": "Faith & Gospel Principles",
+   "preferred": "relacionamento de convênio",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 5
+  },
+  {
+   "id": "concept.cultural-hall",
+   "slug": "cultural-hall",
+   "en": [
+    "cultural hall"
+   ],
+   "category": "Church Units & Facilities",
+   "preferred": "salão cultural",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2
+  },
+  {
+   "id": "concept.deacons-quorum",
+   "slug": "deacons-quorum",
+   "en": [
+    "deacons quorum"
+   ],
+   "category": "Priesthood Offices & Quorums",
+   "preferred": "quórum de diáconos",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 32
+  },
+  {
+   "id": "concept.deseret-industries",
+   "slug": "deseret-industries",
+   "en": [
+    "Deseret Industries"
+   ],
+   "category": "Welfare & Self-Reliance",
+   "preferred": "Indústrias Deseret",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 3
+  },
+  {
+   "id": "concept.deseret",
+   "slug": "deseret",
+   "en": [
+    "Deseret"
+   ],
+   "category": "Church History",
+   "preferred": "Deseret",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 148
+  },
+  {
+   "id": "concept.disciplinary-action",
+   "slug": "disciplinary-action",
+   "en": [
+    "disciplinary action"
+   ],
+   "category": "Interviews, Repentance & Membership Councils",
+   "preferred": "ação disciplinar",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2
+  },
+  {
+   "id": "concept.disciplinary-council",
+   "slug": "disciplinary-council",
+   "en": [
+    "disciplinary council"
+   ],
+   "category": "Interviews, Repentance & Membership Councils",
+   "preferred": "conselho disciplinar",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 1
+  },
+  {
+   "id": "concept.discussion",
+   "slug": "discussion",
+   "en": [
+    "discussion"
+   ],
+   "category": "Missionary Work",
+   "preferred": "palestra",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 22
+  },
+  {
+   "id": "concept.dispensation-of-the-fulness-of-times",
+   "slug": "dispensation-of-the-fulness-of-times",
+   "en": [
+    "dispensation of the fulness of times"
+   ],
+   "category": "Restoration & Revelation",
+   "preferred": "dispensação da plenitude dos tempos",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 72
+  },
+  {
+   "id": "concept.dispensation",
+   "slug": "dispensation",
+   "en": [
+    "dispensation"
+   ],
+   "category": "Restoration & Revelation",
+   "preferred": "dispensação",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 315
+  },
+  {
+   "id": "concept.district-leader",
+   "slug": "district-leader",
+   "en": [
+    "district leader"
+   ],
+   "category": "Missionary Work",
+   "preferred": "líder de distrito",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 4
+  },
+  {
+   "id": "concept.district-president",
+   "slug": "district-president",
+   "en": [
+    "district president"
+   ],
+   "category": "Local Leadership & Callings",
+   "preferred": "presidente do distrito",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 8
+  },
+  {
+   "id": "concept.doctrine-and-covenants",
+   "slug": "doctrine-and-covenants",
+   "en": [
+    "Doctrine and Covenants"
+   ],
+   "category": "Scriptures & Study Helps",
+   "preferred": "Doutrina e Convênios",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 1326
+  },
+  {
+   "id": "concept.eight-witnesses",
+   "slug": "eight-witnesses",
+   "en": [
+    "Eight Witnesses"
+   ],
+   "category": "Scriptures & Study Helps",
+   "preferred": "Oito Testemunhas",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 11
+  },
+  {
+   "id": "concept.elder",
+   "slug": "elder",
+   "en": [
+    "elder"
+   ],
+   "category": "Priesthood Offices & Quorums",
+   "preferred": "élder",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 1811
+  },
+  {
+   "id": "concept.elders-quorum-president",
+   "slug": "elders-quorum-president",
+   "en": [
+    "elders quorum president"
+   ],
+   "category": "Local Leadership & Callings",
+   "preferred": "presidente do quórum de élderes",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 27
+  },
+  {
+   "id": "concept.elders-quorum",
+   "slug": "elders-quorum",
+   "en": [
+    "elders quorum"
+   ],
+   "category": "Priesthood Offices & Quorums",
+   "preferred": "quórum de élderes",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 57
+  },
+  {
+   "id": "concept.emeritus-status",
+   "slug": "emeritus-status",
+   "en": [
+    "emeritus status"
+   ],
+   "category": "Presiding Quorums & General Leadership",
+   "preferred": "condição de emérito",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 4
+  },
+  {
+   "id": "concept.endowment-room",
+   "slug": "endowment-room",
+   "en": [
+    "endowment room"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "sala de investidura",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2
+  },
+  {
+   "id": "concept.endowment",
+   "slug": "endowment",
+   "en": [
+    "endowment"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "investidura",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 136
+  },
+  {
+   "id": "concept.endure-to-the-end",
+   "slug": "endure-to-the-end",
+   "en": [
+    "endure to the end"
+   ],
+   "category": "Faith & Gospel Principles",
+   "preferred": "perseverar até o fim",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 68
+  },
+  {
+   "id": "concept.ensign-to-the-nations",
+   "slug": "ensign-to-the-nations",
+   "en": [
+    "ensign to the nations"
+   ],
+   "category": "Zion & the Last Days",
+   "preferred": "estandarte para as nações",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 4
+  },
+  {
+   "id": "concept.especial-witnesses",
+   "slug": "especial-witnesses",
+   "en": [
+    "especial witnesses"
+   ],
+   "category": "Priesthood Offices & Quorums",
+   "preferred": "testemunhas especiais",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 5
+  },
+  {
+   "id": "concept.eternal-companion",
+   "slug": "eternal-companion",
+   "en": [
+    "eternal companion"
+   ],
+   "category": "The Family",
+   "preferred": "companheiro eterno",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 68
+  },
+  {
+   "id": "concept.eternal-family",
+   "slug": "eternal-family",
+   "en": [
+    "eternal family"
+   ],
+   "category": "The Family",
+   "preferred": "família eterna",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 120
+  },
+  {
+   "id": "concept.eternal-marriage",
+   "slug": "eternal-marriage",
+   "en": [
+    "eternal marriage"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "casamento eterno",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 45
+  },
+  {
+   "id": "concept.eternal-progression",
+   "slug": "eternal-progression",
+   "en": [
+    "eternal progression"
+   ],
+   "category": "Plan of Salvation",
+   "preferred": "progresso eterno",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 35
+  },
+  {
+   "id": "concept.exaltation",
+   "slug": "exaltation",
+   "en": [
+    "exaltation"
+   ],
+   "category": "Plan of Salvation",
+   "preferred": "exaltação",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 329
+  },
+  {
+   "id": "concept.exchanges",
+   "slug": "exchanges",
+   "en": [
+    "exchanges"
+   ],
+   "category": "Missionary Work",
+   "preferred": "divisões",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.family-history-library",
+   "slug": "family-history-library",
+   "en": [
+    "Family History Library"
+   ],
+   "category": "Church Units & Facilities",
+   "preferred": "Biblioteca de História da Família",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 8
+  },
+  {
+   "id": "concept.family-home-evening",
+   "slug": "family-home-evening",
+   "en": [
+    "family home evening"
+   ],
+   "category": "Sacrament & Meetings",
+   "preferred": "noite familiar",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 145
+  },
+  {
+   "id": "concept.familysearch",
+   "slug": "familysearch",
+   "en": [
+    "FamilySearch"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "Pesquisa Familiar",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 5
+  },
+  {
+   "id": "concept.fast-offering",
+   "slug": "fast-offering",
+   "en": [
+    "fast offering"
+   ],
+   "category": "Commandments & Laws",
+   "preferred": "oferta de jejum",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 61
+  },
+  {
+   "id": "concept.fast-sunday",
+   "slug": "fast-sunday",
+   "en": [
+    "fast Sunday"
+   ],
+   "category": "Sacrament & Meetings",
+   "preferred": "domingo de jejum",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 7
+  },
+  {
+   "id": "concept.father-s-blessing",
+   "slug": "father-s-blessing",
+   "en": [
+    "father's blessing"
+   ],
+   "category": "Baptism, Confirmation & Blessings",
+   "preferred": "bênção paterna",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 9
+  },
+  {
+   "id": "concept.fireside",
+   "slug": "fireside",
+   "en": [
+    "fireside"
+   ],
+   "category": "Sacrament & Meetings",
+   "preferred": "serão",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 36
+  },
+  {
+   "id": "concept.first-presidency",
+   "slug": "first-presidency",
+   "en": [
+    "First Presidency"
+   ],
+   "category": "Presiding Quorums & General Leadership",
+   "preferred": "Primeira Presidência",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 688
+  },
+  {
+   "id": "concept.first-vision",
+   "slug": "first-vision",
+   "en": [
+    "First Vision"
+   ],
+   "category": "Church History",
+   "preferred": "Primeira Visão",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 89
+  },
+  {
+   "id": "concept.for-the-strength-of-youth",
+   "slug": "for-the-strength-of-youth",
+   "en": [
+    "For the Strength of Youth"
+   ],
+   "category": "Organizations & Youth",
+   "preferred": "Para o Vigor da Juventude",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 84
+  },
+  {
+   "id": "concept.formal-membership-restrictions",
+   "slug": "formal-membership-restrictions",
+   "en": [
+    "formal membership restrictions"
+   ],
+   "category": "Interviews, Repentance & Membership Councils",
+   "preferred": "restrições formais à condição de membro",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.friend",
+   "slug": "friend",
+   "en": [
+    "Friend"
+   ],
+   "category": "Education & Publications",
+   "preferred": "Amigo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2076
+  },
+  {
+   "id": "concept.full-tithe-payer",
+   "slug": "full-tithe-payer",
+   "en": [
+    "full-tithe payer"
+   ],
+   "category": "Finances",
+   "preferred": "dizimista integral",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 7
+  },
+  {
+   "id": "concept.fulness-of-the-holy-ghost",
+   "slug": "fulness-of-the-holy-ghost",
+   "en": [
+    "fulness of the Holy Ghost"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "plenitude do Espírito Santo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 12
+  },
+  {
+   "id": "concept.garment",
+   "slug": "garment",
+   "en": [
+    "garment"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "garment",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 19
+  },
+  {
+   "id": "concept.gathering-of-israel",
+   "slug": "gathering-of-israel",
+   "en": [
+    "gathering of Israel"
+   ],
+   "category": "Israel & Covenant People",
+   "preferred": "coligação de Israel",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 80
+  },
+  {
+   "id": "concept.general-authorities-and-general-officers",
+   "slug": "general-authorities-and-general-officers",
+   "en": [
+    "general authorities and general officers"
+   ],
+   "category": "Presiding Quorums & General Leadership",
+   "preferred": "Autoridades Gerais e Oficiais Gerais",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2
+  },
+  {
+   "id": "concept.general-authority-seventy",
+   "slug": "general-authority-seventy",
+   "en": [
+    "General Authority Seventy"
+   ],
+   "category": "Presiding Quorums & General Leadership",
+   "preferred": "Setenta Autoridade Geral",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 14
+  },
+  {
+   "id": "concept.general-authority",
+   "slug": "general-authority",
+   "en": [
+    "General Authority"
+   ],
+   "category": "Presiding Quorums & General Leadership",
+   "preferred": "Autoridade Geral",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 75
+  },
+  {
+   "id": "concept.general-conference-talk",
+   "slug": "general-conference-talk",
+   "en": [
+    "general conference talk"
+   ],
+   "category": "Scriptures & Study Helps",
+   "preferred": "discurso da conferência geral",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 5
+  },
+  {
+   "id": "concept.general-conference",
+   "slug": "general-conference",
+   "en": [
+    "general conference"
+   ],
+   "category": "Councils & Conferences",
+   "preferred": "conferência geral",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 536
+  },
+  {
+   "id": "concept.general-handbook",
+   "slug": "general-handbook",
+   "en": [
+    "General Handbook"
+   ],
+   "category": "Education & Publications",
+   "preferred": "Manual Geral",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 76
+  },
+  {
+   "id": "concept.general-missionary-fund",
+   "slug": "general-missionary-fund",
+   "en": [
+    "general missionary fund"
+   ],
+   "category": "Finances",
+   "preferred": "fundo missionário geral",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 6
+  },
+  {
+   "id": "concept.general-officer",
+   "slug": "general-officer",
+   "en": [
+    "General Officer"
+   ],
+   "category": "Presiding Quorums & General Leadership",
+   "preferred": "Oficial Geral",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.gift-of-the-holy-ghost",
+   "slug": "gift-of-the-holy-ghost",
+   "en": [
+    "gift of the Holy Ghost"
+   ],
+   "category": "Faith & Gospel Principles",
+   "preferred": "dom do Espírito Santo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 298
+  },
+  {
+   "id": "concept.girls-camp",
+   "slug": "girls-camp",
+   "en": [
+    "girls camp"
+   ],
+   "category": "Organizations & Youth",
+   "preferred": "acampamento das Moças",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.godhead",
+   "slug": "godhead",
+   "en": [
+    "Godhead"
+   ],
+   "category": "Deity",
+   "preferred": "Trindade",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 79
+  },
+  {
+   "id": "concept.gold-plates",
+   "slug": "gold-plates",
+   "en": [
+    "gold plates"
+   ],
+   "category": "Scriptures & Study Helps",
+   "preferred": "placas de ouro",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 19
+  },
+  {
+   "id": "concept.gospel-library",
+   "slug": "gospel-library",
+   "en": [
+    "Gospel Library"
+   ],
+   "category": "Education & Publications",
+   "preferred": "Biblioteca do Evangelho",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 131
+  },
+  {
+   "id": "concept.gospel-living-app",
+   "slug": "gospel-living-app",
+   "en": [
+    "Gospel Living app"
+   ],
+   "category": "Education & Publications",
+   "preferred": "Gospel Living",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.gospel-topics-essays",
+   "slug": "gospel-topics-essays",
+   "en": [
+    "Gospel Topics Essays"
+   ],
+   "category": "Education & Publications",
+   "preferred": "ensaios de Tópicos do Evangelho",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.gospel-topics",
+   "slug": "gospel-topics",
+   "en": [
+    "Gospel Topics"
+   ],
+   "category": "Education & Publications",
+   "preferred": "Tópicos do Evangelho",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 25
+  },
+  {
+   "id": "concept.great-apostasy",
+   "slug": "great-apostasy",
+   "en": [
+    "Great Apostasy"
+   ],
+   "category": "Restoration & Revelation",
+   "preferred": "Grande Apostasia",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 6
+  },
+  {
+   "id": "concept.guide-to-the-scriptures",
+   "slug": "guide-to-the-scriptures",
+   "en": [
+    "Guide to the Scriptures"
+   ],
+   "category": "Scriptures & Study Helps",
+   "preferred": "Guia para Estudo das Escrituras",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 55
+  },
+  {
+   "id": "concept.healing-blessing",
+   "slug": "healing-blessing",
+   "en": [
+    "healing blessing"
+   ],
+   "category": "Baptism, Confirmation & Blessings",
+   "preferred": "bênção de saúde",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2
+  },
+  {
+   "id": "concept.heavenly-father",
+   "slug": "heavenly-father",
+   "en": [
+    "Heavenly Father"
+   ],
+   "category": "Deity",
+   "preferred": "Pai Celestial",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2773
+  },
+  {
+   "id": "concept.heavenly-parents",
+   "slug": "heavenly-parents",
+   "en": [
+    "Heavenly Parents"
+   ],
+   "category": "Deity",
+   "preferred": "pais celestiais",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 86
+  },
+  {
+   "id": "concept.high-council",
+   "slug": "high-council",
+   "en": [
+    "High Council"
+   ],
+   "category": "Councils & Conferences",
+   "preferred": "Sumo Conselho",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 38
+  },
+  {
+   "id": "concept.high-priests-quorum",
+   "slug": "high-priests-quorum",
+   "en": [
+    "high priests quorum"
+   ],
+   "category": "Priesthood Offices & Quorums",
+   "preferred": "quórum de sumos sacerdotes",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 7
+  },
+  {
+   "id": "concept.hill-cumorah",
+   "slug": "hill-cumorah",
+   "en": [
+    "Hill Cumorah"
+   ],
+   "category": "Church History",
+   "preferred": "monte Cumora",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 6
+  },
+  {
+   "id": "concept.hold-to-the-rod",
+   "slug": "hold-to-the-rod",
+   "en": [
+    "hold to the rod"
+   ],
+   "category": "Discipleship & Ministering",
+   "preferred": "segurar na barra",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.holy-ghost",
+   "slug": "holy-ghost",
+   "en": [
+    "Holy Ghost"
+   ],
+   "category": "Deity",
+   "preferred": "Espírito Santo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2037
+  },
+  {
+   "id": "concept.holy-spirit-of-promise",
+   "slug": "holy-spirit-of-promise",
+   "en": [
+    "Holy Spirit of Promise"
+   ],
+   "category": "Priesthood Authority & Ordinances",
+   "preferred": "Santo Espírito da promessa",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 45
+  },
+  {
+   "id": "concept.home-teaching",
+   "slug": "home-teaching",
+   "en": [
+    "home teaching"
+   ],
+   "category": "Discipleship & Ministering",
+   "preferred": "ensino familiar",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 53
+  },
+  {
+   "id": "concept.hosanna-shout",
+   "slug": "hosanna-shout",
+   "en": [
+    "Hosanna Shout"
+   ],
+   "category": "Baptism, Confirmation & Blessings",
+   "preferred": "brado de Hosana",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 3
+  },
+  {
+   "id": "concept.infinite-atonement",
+   "slug": "infinite-atonement",
+   "en": [
+    "infinite Atonement"
+   ],
+   "category": "Plan of Salvation",
+   "preferred": "Expiação infinita",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 74
+  },
+  {
+   "id": "concept.informal-membership-restrictions",
+   "slug": "informal-membership-restrictions",
+   "en": [
+    "informal membership restrictions"
+   ],
+   "category": "Interviews, Repentance & Membership Councils",
+   "preferred": "restrições informais à condição de membro da Igreja",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.initiatory",
+   "slug": "initiatory",
+   "en": [
+    "initiatory"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "iniciatórias",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2
+  },
+  {
+   "id": "concept.iron-rod",
+   "slug": "iron-rod",
+   "en": [
+    "iron rod"
+   ],
+   "category": "Discipleship & Ministering",
+   "preferred": "barra de ferro",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 57
+  },
+  {
+   "id": "concept.j-reuben-clark-law-society",
+   "slug": "j-reuben-clark-law-society",
+   "en": [
+    "J. Reuben Clark Law Society"
+   ],
+   "category": "Church History",
+   "preferred": "J. Reuben Clark Law Society",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.joseph-smith-history",
+   "slug": "joseph-smith-history",
+   "en": [
+    "Joseph Smith—History"
+   ],
+   "category": "Scriptures & Study Helps",
+   "preferred": "Joseph Smith—História",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 1
+  },
+  {
+   "id": "concept.joseph-smith-matthew",
+   "slug": "joseph-smith-matthew",
+   "en": [
+    "Joseph Smith—Matthew"
+   ],
+   "category": "Scriptures & Study Helps",
+   "preferred": "Joseph Smith—Mateus",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.joseph-smith-translation",
+   "slug": "joseph-smith-translation",
+   "en": [
+    "Joseph Smith Translation"
+   ],
+   "category": "Scriptures & Study Helps",
+   "preferred": "Tradução de Joseph Smith",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 91
+  },
+  {
+   "id": "concept.justserve",
+   "slug": "justserve",
+   "en": [
+    "JustServe"
+   ],
+   "category": "Welfare & Self-Reliance",
+   "preferred": "JustServe",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 3
+  },
+  {
+   "id": "concept.king-james-version",
+   "slug": "king-james-version",
+   "en": [
+    "King James Version"
+   ],
+   "category": "Scriptures & Study Helps",
+   "preferred": "Rei Jaime",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 14
+  },
+  {
+   "id": "concept.large-plates-of-nephi",
+   "slug": "large-plates-of-nephi",
+   "en": [
+    "large plates of Nephi"
+   ],
+   "category": "Scriptures & Study Helps",
+   "preferred": "placas maiores de Néfi",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.latter-day-saint-s",
+   "slug": "latter-day-saint-s",
+   "en": [
+    "Latter-day Saint"
+   ],
+   "category": "The Church & Members",
+   "preferred": "Santos dos Últimos Dias",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 493
+  },
+  {
+   "id": "concept.law-of-chastity",
+   "slug": "law-of-chastity",
+   "en": [
+    "law of chastity"
+   ],
+   "category": "Commandments & Laws",
+   "preferred": "lei de castidade",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2
+  },
+  {
+   "id": "concept.law-of-consecration",
+   "slug": "law-of-consecration",
+   "en": [
+    "law of consecration"
+   ],
+   "category": "Commandments & Laws",
+   "preferred": "lei da consagração",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 12
+  },
+  {
+   "id": "concept.law-of-the-gospel",
+   "slug": "law-of-the-gospel",
+   "en": [
+    "law of the gospel"
+   ],
+   "category": "Commandments & Laws",
+   "preferred": "lei do evangelho",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 15
+  },
+  {
+   "id": "concept.leadership-session",
+   "slug": "leadership-session",
+   "en": [
+    "leadership session"
+   ],
+   "category": "Councils & Conferences",
+   "preferred": "sessão de liderança",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 4
+  },
+  {
+   "id": "concept.less-active-member",
+   "slug": "less-active-member",
+   "en": [
+    "less-active member"
+   ],
+   "category": "The Church & Members",
+   "preferred": "membro menos ativo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 33
+  },
+  {
+   "id": "concept.lesson-manual",
+   "slug": "lesson-manual",
+   "en": [
+    "lesson manual"
+   ],
+   "category": "Education & Publications",
+   "preferred": "manual de lições",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 1
+  },
+  {
+   "id": "concept.liahona",
+   "slug": "liahona",
+   "en": [
+    "Liahona"
+   ],
+   "category": "Education & Publications",
+   "preferred": "Liahona",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 944
+  },
+  {
+   "id": "concept.limited-use-recommend",
+   "slug": "limited-use-recommend",
+   "en": [
+    "limited-use recommend"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "recomendação de uso limitado",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 5
+  },
+  {
+   "id": "concept.line-of-authority",
+   "slug": "line-of-authority",
+   "en": [
+    "line of authority"
+   ],
+   "category": "Priesthood Authority & Ordinances",
+   "preferred": "linha de autoridade",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 3
+  },
+  {
+   "id": "concept.line-upon-line-precept-upon-precept",
+   "slug": "line-upon-line-precept-upon-precept",
+   "en": [
+    "line upon line, precept upon precept"
+   ],
+   "category": "Restoration & Revelation",
+   "preferred": "linha sobre linha, preceito sobre preceito",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.living-prophet",
+   "slug": "living-prophet",
+   "en": [
+    "living prophet"
+   ],
+   "category": "Presiding Quorums & General Leadership",
+   "preferred": "profeta vivo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 320
+  },
+  {
+   "id": "concept.magnify-a-calling",
+   "slug": "magnify-a-calling",
+   "en": [
+    "magnify a calling"
+   ],
+   "category": "Callings & Sustaining",
+   "preferred": "magnificar seu chamado",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2
+  },
+  {
+   "id": "concept.manifesto",
+   "slug": "manifesto",
+   "en": [
+    "Manifesto"
+   ],
+   "category": "Church History",
+   "preferred": "Manifesto",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.matron",
+   "slug": "matron",
+   "en": [
+    "matron"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "diretora",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 5
+  },
+  {
+   "id": "concept.meetinghouse",
+   "slug": "meetinghouse",
+   "en": [
+    "meetinghouse"
+   ],
+   "category": "Church Units & Facilities",
+   "preferred": "capela",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 91
+  },
+  {
+   "id": "concept.melchizedek-priesthood",
+   "slug": "melchizedek-priesthood",
+   "en": [
+    "Melchizedek Priesthood"
+   ],
+   "category": "Priesthood Offices & Quorums",
+   "preferred": "Sacerdócio de Melquisedeque",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 267
+  },
+  {
+   "id": "concept.membership-council",
+   "slug": "membership-council",
+   "en": [
+    "membership council"
+   ],
+   "category": "Interviews, Repentance & Membership Councils",
+   "preferred": "conselho de condição de membro da Igreja",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.membership-record",
+   "slug": "membership-record",
+   "en": [
+    "membership record"
+   ],
+   "category": "Membership Records",
+   "preferred": "registro de membro",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2
+  },
+  {
+   "id": "concept.mighty-change-of-heart",
+   "slug": "mighty-change-of-heart",
+   "en": [
+    "mighty change of heart"
+   ],
+   "category": "Faith & Gospel Principles",
+   "preferred": "poderosa mudança de coração",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 11
+  },
+  {
+   "id": "concept.ministering-assignment",
+   "slug": "ministering-assignment",
+   "en": [
+    "ministering assignment"
+   ],
+   "category": "Discipleship & Ministering",
+   "preferred": "designação de ministração",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 6
+  },
+  {
+   "id": "concept.ministering-brother",
+   "slug": "ministering-brother",
+   "en": [
+    "ministering brother"
+   ],
+   "category": "Discipleship & Ministering",
+   "preferred": "irmão ministrador",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 12
+  },
+  {
+   "id": "concept.ministering-interview",
+   "slug": "ministering-interview",
+   "en": [
+    "ministering interview"
+   ],
+   "category": "Discipleship & Ministering",
+   "preferred": "entrevista de ministração",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2
+  },
+  {
+   "id": "concept.ministering-sister",
+   "slug": "ministering-sister",
+   "en": [
+    "ministering sister"
+   ],
+   "category": "Discipleship & Ministering",
+   "preferred": "irmã ministradora",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2
+  },
+  {
+   "id": "concept.ministering",
+   "slug": "ministering",
+   "en": [
+    "ministering"
+   ],
+   "category": "Discipleship & Ministering",
+   "preferred": "ministração",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 124
+  },
+  {
+   "id": "concept.mission-call",
+   "slug": "mission-call",
+   "en": [
+    "mission call"
+   ],
+   "category": "Missionary Work",
+   "preferred": "chamado missionário",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 29
+  },
+  {
+   "id": "concept.mission-leader",
+   "slug": "mission-leader",
+   "en": [
+    "mission leader"
+   ],
+   "category": "Local Leadership & Callings",
+   "preferred": "líder de missão",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 33
+  },
+  {
+   "id": "concept.mission-president",
+   "slug": "mission-president",
+   "en": [
+    "mission president"
+   ],
+   "category": "Local Leadership & Callings",
+   "preferred": "presidente de missão",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 140
+  },
+  {
+   "id": "concept.missionary-standards",
+   "slug": "missionary-standards",
+   "en": [
+    "missionary standards"
+   ],
+   "category": "Missionary Work",
+   "preferred": "normas missionárias",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.missionary-training-center",
+   "slug": "missionary-training-center",
+   "en": [
+    "Missionary Training Center"
+   ],
+   "category": "Missionary Work",
+   "preferred": "Centro de Treinamento Missionário",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 37
+  },
+  {
+   "id": "concept.moral-agency",
+   "slug": "moral-agency",
+   "en": [
+    "moral agency"
+   ],
+   "category": "Plan of Salvation",
+   "preferred": "arbítrio moral",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 83
+  },
+  {
+   "id": "concept.mormon-trail",
+   "slug": "mormon-trail",
+   "en": [
+    "Mormon Trail"
+   ],
+   "category": "Church History",
+   "preferred": "trilha mórmon",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2
+  },
+  {
+   "id": "concept.mormon",
+   "slug": "mormon",
+   "en": [
+    "Mormon"
+   ],
+   "category": "The Church & Members",
+   "preferred": "mórmon",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 477
+  },
+  {
+   "id": "concept.mormonism",
+   "slug": "mormonism",
+   "en": [
+    "Mormonism"
+   ],
+   "category": "The Church & Members",
+   "preferred": "mormonismo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 14
+  },
+  {
+   "id": "concept.music-and-the-spoken-word",
+   "slug": "music-and-the-spoken-word",
+   "en": [
+    "Music & the Spoken Word"
+   ],
+   "category": "Music",
+   "preferred": "Música e Palavra Inspirada",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.music-coordinator",
+   "slug": "music-coordinator",
+   "en": [
+    "music coordinator"
+   ],
+   "category": "Local Leadership & Callings",
+   "preferred": "coordenador de música da ala",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.names-to-the-temple",
+   "slug": "names-to-the-temple",
+   "en": [
+    "names to the temple"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "nomes ao templo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 1
+  },
+  {
+   "id": "concept.natural-man",
+   "slug": "natural-man",
+   "en": [
+    "natural man"
+   ],
+   "category": "Faith & Gospel Principles",
+   "preferred": "homem natural",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 135
+  },
+  {
+   "id": "concept.nursery-class",
+   "slug": "nursery-class",
+   "en": [
+    "nursery class"
+   ],
+   "category": "Sacrament & Meetings",
+   "preferred": "classe do berçário",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.official-declaration-1",
+   "slug": "official-declaration-1",
+   "en": [
+    "Official Declaration 1"
+   ],
+   "category": "Church History",
+   "preferred": "Declaração Oficial 1",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 1
+  },
+  {
+   "id": "concept.official-declaration-2",
+   "slug": "official-declaration-2",
+   "en": [
+    "Official Declaration 2"
+   ],
+   "category": "Church History",
+   "preferred": "Declaração Oficial 2",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 3
+  },
+  {
+   "id": "concept.ordinance-work",
+   "slug": "ordinance-work",
+   "en": [
+    "ordinance work"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "realização das ordenanças",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 1
+  },
+  {
+   "id": "concept.ordinance-worker",
+   "slug": "ordinance-worker",
+   "en": [
+    "ordinance worker"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "oficiante",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 16
+  },
+  {
+   "id": "concept.ordinance",
+   "slug": "ordinance",
+   "en": [
+    "ordinance"
+   ],
+   "category": "Priesthood Authority & Ordinances",
+   "preferred": "ordenança",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 1311
+  },
+  {
+   "id": "concept.out-of-unit-member",
+   "slug": "out-of-unit-member",
+   "en": [
+    "out-of-unit member"
+   ],
+   "category": "Membership Records",
+   "preferred": "membro fora da unidade",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.pearl-of-great-price",
+   "slug": "pearl-of-great-price",
+   "en": [
+    "Pearl of Great Price"
+   ],
+   "category": "Scriptures & Study Helps",
+   "preferred": "Pérola de Grande Valor",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 53
+  },
+  {
+   "id": "concept.peculiar-people",
+   "slug": "peculiar-people",
+   "en": [
+    "peculiar people"
+   ],
+   "category": "Israel & Covenant People",
+   "preferred": "povo adquirido",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 12
+  },
+  {
+   "id": "concept.perpetual-education-fund",
+   "slug": "perpetual-education-fund",
+   "en": [
+    "Perpetual Education Fund"
+   ],
+   "category": "Welfare & Self-Reliance",
+   "preferred": "Fundo Perpétuo de Educação",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 17
+  },
+  {
+   "id": "concept.perpetual-emigrating-fund",
+   "slug": "perpetual-emigrating-fund",
+   "en": [
+    "Perpetual Emigrating Fund"
+   ],
+   "category": "Church History",
+   "preferred": "Fundo Perpétuo de Emigração",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2
+  },
+  {
+   "id": "concept.person-being-taught-investigator",
+   "slug": "person-being-taught-investigator",
+   "en": [
+    "person being taught",
+    "investigator"
+   ],
+   "category": "The Church & Members",
+   "preferred": "pesquisador",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 57
+  },
+  {
+   "id": "concept.plan-of-happiness",
+   "slug": "plan-of-happiness",
+   "en": [
+    "plan of happiness"
+   ],
+   "category": "Plan of Salvation",
+   "preferred": "plano de felicidade",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 296
+  },
+  {
+   "id": "concept.plan-of-redemption",
+   "slug": "plan-of-redemption",
+   "en": [
+    "plan of redemption"
+   ],
+   "category": "Plan of Salvation",
+   "preferred": "plano de redenção",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 86
+  },
+  {
+   "id": "concept.plan-of-salvation",
+   "slug": "plan-of-salvation",
+   "en": [
+    "plan of salvation"
+   ],
+   "category": "Plan of Salvation",
+   "preferred": "plano de salvação",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 250
+  },
+  {
+   "id": "concept.plates",
+   "slug": "plates",
+   "en": [
+    "plates"
+   ],
+   "category": "Scriptures & Study Helps",
+   "preferred": "placas",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 219
+  },
+  {
+   "id": "concept.preach-my-gospel",
+   "slug": "preach-my-gospel",
+   "en": [
+    "Preach My Gospel"
+   ],
+   "category": "Missionary Work",
+   "preferred": "Pregar Meu Evangelho",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 183
+  },
+  {
+   "id": "concept.premortal-life",
+   "slug": "premortal-life",
+   "en": [
+    "premortal life"
+   ],
+   "category": "Plan of Salvation",
+   "preferred": "vida pré-mortal",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 34
+  },
+  {
+   "id": "concept.preparation-day",
+   "slug": "preparation-day",
+   "en": [
+    "preparation day"
+   ],
+   "category": "Missionary Work",
+   "preferred": "dia de preparação",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 1
+  },
+  {
+   "id": "concept.presidency-of-the-seventy",
+   "slug": "presidency-of-the-seventy",
+   "en": [
+    "Presidency of the Seventy"
+   ],
+   "category": "Presiding Quorums & General Leadership",
+   "preferred": "Presidência dos Setenta",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 25
+  },
+  {
+   "id": "concept.presiding-authority",
+   "slug": "presiding-authority",
+   "en": [
+    "presiding authority"
+   ],
+   "category": "Callings & Sustaining",
+   "preferred": "autoridade presidente",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 9
+  },
+  {
+   "id": "concept.presiding-bishopric",
+   "slug": "presiding-bishopric",
+   "en": [
+    "Presiding Bishopric"
+   ],
+   "category": "Presiding Quorums & General Leadership",
+   "preferred": "Bispado Presidente",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 69
+  },
+  {
+   "id": "concept.priesthood-authority",
+   "slug": "priesthood-authority",
+   "en": [
+    "priesthood authority"
+   ],
+   "category": "Priesthood Authority & Ordinances",
+   "preferred": "autoridade do sacerdócio",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 151
+  },
+  {
+   "id": "concept.priesthood-blessing",
+   "slug": "priesthood-blessing",
+   "en": [
+    "priesthood blessing"
+   ],
+   "category": "Baptism, Confirmation & Blessings",
+   "preferred": "bênção do sacerdócio",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 115
+  },
+  {
+   "id": "concept.priesthood-holder",
+   "slug": "priesthood-holder",
+   "en": [
+    "priesthood holder"
+   ],
+   "category": "Priesthood Offices & Quorums",
+   "preferred": "portador do sacerdócio",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 229
+  },
+  {
+   "id": "concept.priesthood-interview",
+   "slug": "priesthood-interview",
+   "en": [
+    "priesthood interview"
+   ],
+   "category": "Priesthood Authority & Ordinances",
+   "preferred": "entrevista do sacerdócio",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.priesthood-keys",
+   "slug": "priesthood-keys",
+   "en": [
+    "priesthood keys"
+   ],
+   "category": "Priesthood Authority & Ordinances",
+   "preferred": "chaves do sacerdócio",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 151
+  },
+  {
+   "id": "concept.priesthood-office",
+   "slug": "priesthood-office",
+   "en": [
+    "priesthood office"
+   ],
+   "category": "Priesthood Offices & Quorums",
+   "preferred": "ofício do sacerdócio",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 9
+  },
+  {
+   "id": "concept.priesthood-power",
+   "slug": "priesthood-power",
+   "en": [
+    "priesthood power"
+   ],
+   "category": "Priesthood Authority & Ordinances",
+   "preferred": "poder do sacerdócio",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 113
+  },
+  {
+   "id": "concept.priesthood-restoration",
+   "slug": "priesthood-restoration",
+   "en": [
+    "priesthood restoration"
+   ],
+   "category": "Church History",
+   "preferred": "restauração do sacerdócio",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 3
+  },
+  {
+   "id": "concept.priesthood-session",
+   "slug": "priesthood-session",
+   "en": [
+    "priesthood session"
+   ],
+   "category": "Councils & Conferences",
+   "preferred": "sessão do sacerdócio",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 25
+  },
+  {
+   "id": "concept.priesthood",
+   "slug": "priesthood",
+   "en": [
+    "priesthood"
+   ],
+   "category": "Priesthood Offices & Quorums",
+   "preferred": "sacerdócio",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2464
+  },
+  {
+   "id": "concept.priests-quorum",
+   "slug": "priests-quorum",
+   "en": [
+    "priests quorum"
+   ],
+   "category": "Priesthood Offices & Quorums",
+   "preferred": "quórum de sacerdotes",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 22
+  },
+  {
+   "id": "concept.primary-class",
+   "slug": "primary-class",
+   "en": [
+    "Primary class"
+   ],
+   "category": "Sacrament & Meetings",
+   "preferred": "classe da Primária",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 7
+  },
+  {
+   "id": "concept.primary-president",
+   "slug": "primary-president",
+   "en": [
+    "Primary president"
+   ],
+   "category": "Local Leadership & Callings",
+   "preferred": "presidente da Primária",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 6
+  },
+  {
+   "id": "concept.primary",
+   "slug": "primary",
+   "en": [
+    "Primary"
+   ],
+   "category": "Organizations & Youth",
+   "preferred": "Primária",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 320
+  },
+  {
+   "id": "concept.probationary-state",
+   "slug": "probationary-state",
+   "en": [
+    "probationary state"
+   ],
+   "category": "Plan of Salvation",
+   "preferred": "estado probatório",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 5
+  },
+  {
+   "id": "concept.prophet-seer-and-revelator",
+   "slug": "prophet-seer-and-revelator",
+   "en": [
+    "prophet, seer, and revelator"
+   ],
+   "category": "Priesthood Offices & Quorums",
+   "preferred": "profeta, vidente e revelador",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 1
+  },
+  {
+   "id": "concept.proxy-ordinance",
+   "slug": "proxy-ordinance",
+   "en": [
+    "proxy ordinance"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "ordenança vicária",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 1
+  },
+  {
+   "id": "concept.quorum-meeting",
+   "slug": "quorum-meeting",
+   "en": [
+    "quorum meeting"
+   ],
+   "category": "Sacrament & Meetings",
+   "preferred": "reunião do quórum",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 10
+  },
+  {
+   "id": "concept.quorum-of-the-twelve-apostles",
+   "slug": "quorum-of-the-twelve-apostles",
+   "en": [
+    "Quorum of the Twelve Apostles"
+   ],
+   "category": "Presiding Quorums & General Leadership",
+   "preferred": "Quórum dos Doze Apóstolos",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 353
+  },
+  {
+   "id": "concept.quorum-president",
+   "slug": "quorum-president",
+   "en": [
+    "quorum president"
+   ],
+   "category": "Priesthood Offices & Quorums",
+   "preferred": "presidente do quórum",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 5
+  },
+  {
+   "id": "concept.quorum",
+   "slug": "quorum",
+   "en": [
+    "quorum"
+   ],
+   "category": "Priesthood Offices & Quorums",
+   "preferred": "quórum",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 531
+  },
+  {
+   "id": "concept.receive-the-holy-ghost",
+   "slug": "receive-the-holy-ghost",
+   "en": [
+    "receive the Holy Ghost"
+   ],
+   "category": "Baptism, Confirmation & Blessings",
+   "preferred": "receber o Espírito Santo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 26
+  },
+  {
+   "id": "concept.recommend-interview",
+   "slug": "recommend-interview",
+   "en": [
+    "recommend interview"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "entrevista para a recomendação",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.record-number",
+   "slug": "record-number",
+   "en": [
+    "record number"
+   ],
+   "category": "Membership Records",
+   "preferred": "número de registro",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.record-of-the-nephites",
+   "slug": "record-of-the-nephites",
+   "en": [
+    "record of the Nephites"
+   ],
+   "category": "Scriptures & Study Helps",
+   "preferred": "registro dos nefitas",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 1
+  },
+  {
+   "id": "concept.redeeming-the-dead",
+   "slug": "redeeming-the-dead",
+   "en": [
+    "redeeming the dead"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "redimir os mortos",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 4
+  },
+  {
+   "id": "concept.release",
+   "slug": "release",
+   "en": [
+    "release"
+   ],
+   "category": "Callings & Sustaining",
+   "preferred": "desobrigação",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 34
+  },
+  {
+   "id": "concept.relief-society-meeting",
+   "slug": "relief-society-meeting",
+   "en": [
+    "Relief Society meeting"
+   ],
+   "category": "Sacrament & Meetings",
+   "preferred": "reunião geral da Sociedade de Socorro",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 17
+  },
+  {
+   "id": "concept.relief-society-president",
+   "slug": "relief-society-president",
+   "en": [
+    "Relief Society president"
+   ],
+   "category": "Local Leadership & Callings",
+   "preferred": "presidente da Sociedade de Socorro",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 70
+  },
+  {
+   "id": "concept.relief-society-room",
+   "slug": "relief-society-room",
+   "en": [
+    "Relief Society room"
+   ],
+   "category": "Church Units & Facilities",
+   "preferred": "sala da Sociedade de Socorro",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 1
+  },
+  {
+   "id": "concept.relief-society",
+   "slug": "relief-society",
+   "en": [
+    "Relief Society"
+   ],
+   "category": "Organizations & Youth",
+   "preferred": "Sociedade de Socorro",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 629
+  },
+  {
+   "id": "concept.renew-covenants",
+   "slug": "renew-covenants",
+   "en": [
+    "renew covenants"
+   ],
+   "category": "Sacrament & Meetings",
+   "preferred": "renovamos nossos convênios",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2
+  },
+  {
+   "id": "concept.restoration",
+   "slug": "restoration",
+   "en": [
+    "Restoration"
+   ],
+   "category": "Restoration & Revelation",
+   "preferred": "Restauração",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 663
+  },
+  {
+   "id": "concept.restored-church-of-jesus-christ",
+   "slug": "restored-church-of-jesus-christ",
+   "en": [
+    "restored Church of Jesus Christ"
+   ],
+   "category": "The Church & Members",
+   "preferred": "Igreja restaurada de Jesus Cristo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 41
+  },
+  {
+   "id": "concept.returned-missionary",
+   "slug": "returned-missionary",
+   "en": [
+    "returned missionary"
+   ],
+   "category": "Missionary Work",
+   "preferred": "ex-missionário",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 51
+  },
+  {
+   "id": "concept.revelator",
+   "slug": "revelator",
+   "en": [
+    "revelator"
+   ],
+   "category": "Priesthood Offices & Quorums",
+   "preferred": "revelador",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 60
+  },
+  {
+   "id": "concept.rising-generation",
+   "slug": "rising-generation",
+   "en": [
+    "Rising Generation"
+   ],
+   "category": "Organizations & Youth",
+   "preferred": "nova geração",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 108
+  },
+  {
+   "id": "concept.robes-of-the-holy-priesthood",
+   "slug": "robes-of-the-holy-priesthood",
+   "en": [
+    "robes of the holy priesthood"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "vestes do santo sacerdócio",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.sacrament-meeting",
+   "slug": "sacrament-meeting",
+   "en": [
+    "sacrament meeting"
+   ],
+   "category": "Sacrament & Meetings",
+   "preferred": "reunião sacramental",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 205
+  },
+  {
+   "id": "concept.sacrament-prayers",
+   "slug": "sacrament-prayers",
+   "en": [
+    "sacrament prayers"
+   ],
+   "category": "Sacrament & Meetings",
+   "preferred": "orações sacramentais",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 11
+  },
+  {
+   "id": "concept.sacrament",
+   "slug": "sacrament",
+   "en": [
+    "sacrament"
+   ],
+   "category": "Sacrament & Meetings",
+   "preferred": "sacramento",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 702
+  },
+  {
+   "id": "concept.sacred-grove",
+   "slug": "sacred-grove",
+   "en": [
+    "Sacred Grove"
+   ],
+   "category": "Church History",
+   "preferred": "Bosque Sagrado",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 55
+  },
+  {
+   "id": "concept.salvation-of-children",
+   "slug": "salvation-of-children",
+   "en": [
+    "Salvation of Children"
+   ],
+   "category": "Plan of Salvation",
+   "preferred": "salvação de crianças",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.saving-ordinances",
+   "slug": "saving-ordinances",
+   "en": [
+    "saving ordinances"
+   ],
+   "category": "Priesthood Authority & Ordinances",
+   "preferred": "ordenanças de salvação",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 49
+  },
+  {
+   "id": "concept.scattering-of-israel",
+   "slug": "scattering-of-israel",
+   "en": [
+    "scattering of Israel"
+   ],
+   "category": "Israel & Covenant People",
+   "preferred": "dispersão de Israel",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2
+  },
+  {
+   "id": "concept.sealed-in-the-temple",
+   "slug": "sealed-in-the-temple",
+   "en": [
+    "sealed in the temple"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "selados no templo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 30
+  },
+  {
+   "id": "concept.sealed-portion",
+   "slug": "sealed-portion",
+   "en": [
+    "sealed portion"
+   ],
+   "category": "Scriptures & Study Helps",
+   "preferred": "parte selada",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2
+  },
+  {
+   "id": "concept.sealing-power",
+   "slug": "sealing-power",
+   "en": [
+    "sealing power"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "poder selador",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 44
+  },
+  {
+   "id": "concept.sealing-room",
+   "slug": "sealing-room",
+   "en": [
+    "sealing room"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "sala de selamento",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 16
+  },
+  {
+   "id": "concept.sealing",
+   "slug": "sealing",
+   "en": [
+    "sealing"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "selamento",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 154
+  },
+  {
+   "id": "concept.second-hour",
+   "slug": "second-hour",
+   "en": [
+    "second hour"
+   ],
+   "category": "Sacrament & Meetings",
+   "preferred": "segunda hora",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 3
+  },
+  {
+   "id": "concept.senior-missionary",
+   "slug": "senior-missionary",
+   "en": [
+    "senior missionary"
+   ],
+   "category": "Missionary Work",
+   "preferred": "casais missionários",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 6
+  },
+  {
+   "id": "concept.service-missionary",
+   "slug": "service-missionary",
+   "en": [
+    "service missionary"
+   ],
+   "category": "Missionary Work",
+   "preferred": "missionários de serviço",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 9
+  },
+  {
+   "id": "concept.setting-apart",
+   "slug": "setting-apart",
+   "en": [
+    "setting apart"
+   ],
+   "category": "Baptism, Confirmation & Blessings",
+   "preferred": "designação",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 6
+  },
+  {
+   "id": "concept.seventy",
+   "slug": "seventy",
+   "en": [
+    "Seventy"
+   ],
+   "category": "Priesthood Offices & Quorums",
+   "preferred": "Setenta",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 338
+  },
+  {
+   "id": "concept.sign-of-the-dove",
+   "slug": "sign-of-the-dove",
+   "en": [
+    "Sign of the Dove"
+   ],
+   "category": "Priesthood Authority & Ordinances",
+   "preferred": "sinal da pomba",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.singles-ward",
+   "slug": "singles-ward",
+   "en": [
+    "singles ward"
+   ],
+   "category": "Church Units & Facilities",
+   "preferred": "ala de solteiros",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2
+  },
+  {
+   "id": "concept.small-plates-of-nephi",
+   "slug": "small-plates-of-nephi",
+   "en": [
+    "small plates of Nephi"
+   ],
+   "category": "Scriptures & Study Helps",
+   "preferred": "placas menores de Néfi",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 1
+  },
+  {
+   "id": "concept.solemn-assembly",
+   "slug": "solemn-assembly",
+   "en": [
+    "solemn assembly"
+   ],
+   "category": "Callings & Sustaining",
+   "preferred": "assembleia solene",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 62
+  },
+  {
+   "id": "concept.sons-of-perdition",
+   "slug": "sons-of-perdition",
+   "en": [
+    "Sons of Perdition"
+   ],
+   "category": "Plan of Salvation",
+   "preferred": "filhos de perdição",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 6
+  },
+  {
+   "id": "concept.spirit-prison",
+   "slug": "spirit-prison",
+   "en": [
+    "spirit prison"
+   ],
+   "category": "Plan of Salvation",
+   "preferred": "prisão espiritual",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 6
+  },
+  {
+   "id": "concept.spirit-world",
+   "slug": "spirit-world",
+   "en": [
+    "spirit world"
+   ],
+   "category": "Plan of Salvation",
+   "preferred": "mundo espiritual",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 107
+  },
+  {
+   "id": "concept.stake-center",
+   "slug": "stake-center",
+   "en": [
+    "stake center"
+   ],
+   "category": "Church Units & Facilities",
+   "preferred": "centro de estaca",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 1
+  },
+  {
+   "id": "concept.stake-conference",
+   "slug": "stake-conference",
+   "en": [
+    "stake conference"
+   ],
+   "category": "Councils & Conferences",
+   "preferred": "conferência de estaca",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 82
+  },
+  {
+   "id": "concept.stake-council",
+   "slug": "stake-council",
+   "en": [
+    "stake council"
+   ],
+   "category": "Councils & Conferences",
+   "preferred": "conselho da estaca",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 3
+  },
+  {
+   "id": "concept.stake-presidency",
+   "slug": "stake-presidency",
+   "en": [
+    "stake presidency"
+   ],
+   "category": "Local Leadership & Callings",
+   "preferred": "presidência da estaca",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 27
+  },
+  {
+   "id": "concept.stake-president",
+   "slug": "stake-president",
+   "en": [
+    "stake president"
+   ],
+   "category": "Local Leadership & Callings",
+   "preferred": "presidente de estaca",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 220
+  },
+  {
+   "id": "concept.stake",
+   "slug": "stake",
+   "en": [
+    "stake"
+   ],
+   "category": "Church Units & Facilities",
+   "preferred": "estaca",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 473
+  },
+  {
+   "id": "concept.stakes-of-zion",
+   "slug": "stakes-of-zion",
+   "en": [
+    "stakes of Zion"
+   ],
+   "category": "Zion & the Last Days",
+   "preferred": "estacas de Sião",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 19
+  },
+  {
+   "id": "concept.standard-of-truth",
+   "slug": "standard-of-truth",
+   "en": [
+    "standard of truth"
+   ],
+   "category": "Zion & the Last Days",
+   "preferred": "estandarte da verdade",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 23
+  },
+  {
+   "id": "concept.standard-works",
+   "slug": "standard-works",
+   "en": [
+    "standard works"
+   ],
+   "category": "Scriptures & Study Helps",
+   "preferred": "obras-padrão",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 32
+  },
+  {
+   "id": "concept.stick-of-joseph",
+   "slug": "stick-of-joseph",
+   "en": [
+    "stick of Joseph"
+   ],
+   "category": "Scriptures & Study Helps",
+   "preferred": "vara de José",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 4
+  },
+  {
+   "id": "concept.stick-of-judah",
+   "slug": "stick-of-judah",
+   "en": [
+    "stick of Judah"
+   ],
+   "category": "Scriptures & Study Helps",
+   "preferred": "vara de Judá",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 5
+  },
+  {
+   "id": "concept.student-ward",
+   "slug": "student-ward",
+   "en": [
+    "student ward"
+   ],
+   "category": "Church Units & Facilities",
+   "preferred": "ala de estudantes",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.study-guide",
+   "slug": "study-guide",
+   "en": [
+    "study guide"
+   ],
+   "category": "Education & Publications",
+   "preferred": "guia de estudo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 3
+  },
+  {
+   "id": "concept.sunbeams",
+   "slug": "sunbeams",
+   "en": [
+    "Sunbeams"
+   ],
+   "category": "Organizations & Youth",
+   "preferred": "Raio de Sol",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.sunday-school-president",
+   "slug": "sunday-school-president",
+   "en": [
+    "Sunday School president"
+   ],
+   "category": "Local Leadership & Callings",
+   "preferred": "presidente de Escola Dominical",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 1
+  },
+  {
+   "id": "concept.sustaining",
+   "slug": "sustaining",
+   "en": [
+    "sustaining"
+   ],
+   "category": "Callings & Sustaining",
+   "preferred": "apoio",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 141
+  },
+  {
+   "id": "concept.tabernacle-choir-at-temple-square",
+   "slug": "tabernacle-choir-at-temple-square",
+   "en": [
+    "Tabernacle Choir at Temple Square"
+   ],
+   "category": "Music",
+   "preferred": "Coro do Tabernáculo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 3
+  },
+  {
+   "id": "concept.teacher-council-meeting",
+   "slug": "teacher-council-meeting",
+   "en": [
+    "teacher council meeting"
+   ],
+   "category": "Sacrament & Meetings",
+   "preferred": "reunião de conselho dos professores",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 1
+  },
+  {
+   "id": "concept.teacher-council",
+   "slug": "teacher-council",
+   "en": [
+    "teacher council"
+   ],
+   "category": "Sacrament & Meetings",
+   "preferred": "conselho dos professores",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.teacher",
+   "slug": "teacher",
+   "en": [
+    "teacher"
+   ],
+   "category": "Priesthood Offices & Quorums",
+   "preferred": "mestre",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 381
+  },
+  {
+   "id": "concept.teachers-quorum",
+   "slug": "teachers-quorum",
+   "en": [
+    "teachers quorum"
+   ],
+   "category": "Priesthood Offices & Quorums",
+   "preferred": "quórum de mestres",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 10
+  },
+  {
+   "id": "concept.teachings-of-presidents-of-the-church",
+   "slug": "teachings-of-presidents-of-the-church",
+   "en": [
+    "Teachings of Presidents of the Church"
+   ],
+   "category": "Education & Publications",
+   "preferred": "Ensinamentos dos Presidentes da Igreja",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 274
+  },
+  {
+   "id": "concept.telestial-kingdom",
+   "slug": "telestial-kingdom",
+   "en": [
+    "telestial kingdom"
+   ],
+   "category": "Plan of Salvation",
+   "preferred": "reino telestial",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 8
+  },
+  {
+   "id": "concept.temple-and-family-history-consultant",
+   "slug": "temple-and-family-history-consultant",
+   "en": [
+    "temple and family history consultant"
+   ],
+   "category": "Local Leadership & Callings",
+   "preferred": "consultor de templo e história da família",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.temple-covenants",
+   "slug": "temple-covenants",
+   "en": [
+    "temple covenants"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "convênios do templo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 74
+  },
+  {
+   "id": "concept.temple-dedication",
+   "slug": "temple-dedication",
+   "en": [
+    "temple dedication"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "rededicação do Templo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2
+  },
+  {
+   "id": "concept.temple-district",
+   "slug": "temple-district",
+   "en": [
+    "temple district"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "distrito do templo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 12
+  },
+  {
+   "id": "concept.temple-marriage",
+   "slug": "temple-marriage",
+   "en": [
+    "temple marriage"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "casamento no templo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 33
+  },
+  {
+   "id": "concept.temple-ordinance",
+   "slug": "temple-ordinance",
+   "en": [
+    "temple ordinance"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "ordenança do templo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 96
+  },
+  {
+   "id": "concept.temple-presidency",
+   "slug": "temple-presidency",
+   "en": [
+    "temple presidency"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "presidência do templo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2
+  },
+  {
+   "id": "concept.temple-recommend-interview",
+   "slug": "temple-recommend-interview",
+   "en": [
+    "temple recommend interview"
+   ],
+   "category": "Interviews, Repentance & Membership Councils",
+   "preferred": "entrevista para a recomendação do templo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 1
+  },
+  {
+   "id": "concept.temple-recommend",
+   "slug": "temple-recommend",
+   "en": [
+    "temple recommend"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "recomendação para o templo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 88
+  },
+  {
+   "id": "concept.temple-worker",
+   "slug": "temple-worker",
+   "en": [
+    "temple worker"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "oficiante do templo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 10
+  },
+  {
+   "id": "concept.temple",
+   "slug": "temple",
+   "en": [
+    "temple"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "templo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2880
+  },
+  {
+   "id": "concept.tender-mercy",
+   "slug": "tender-mercy",
+   "en": [
+    "tender mercy"
+   ],
+   "category": "Discipleship & Ministering",
+   "preferred": "terna misericórdia",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 49
+  },
+  {
+   "id": "concept.terrestrial-kingdom",
+   "slug": "terrestrial-kingdom",
+   "en": [
+    "terrestrial kingdom"
+   ],
+   "category": "Plan of Salvation",
+   "preferred": "reino terrestrial",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 6
+  },
+  {
+   "id": "concept.testimony-meeting",
+   "slug": "testimony-meeting",
+   "en": [
+    "testimony meeting"
+   ],
+   "category": "Sacrament & Meetings",
+   "preferred": "reunião de testemunhos",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 5
+  },
+  {
+   "id": "concept.the-church-of-jesus-christ-of-latter-day-saints",
+   "slug": "the-church-of-jesus-christ-of-latter-day-saints",
+   "en": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ],
+   "category": "The Church & Members",
+   "preferred": "A Igreja de Jesus Cristo dos Santos dos Últimos Dias",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 784
+  },
+  {
+   "id": "concept.the-church-of-jesus-christ",
+   "slug": "the-church-of-jesus-christ",
+   "en": [
+    "the Church of Jesus Christ"
+   ],
+   "category": "The Church & Members",
+   "preferred": "A Igreja de Jesus Cristo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 108
+  },
+  {
+   "id": "concept.the-fall",
+   "slug": "the-fall",
+   "en": [
+    "the Fall"
+   ],
+   "category": "Plan of Salvation",
+   "preferred": "a Queda",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 60
+  },
+  {
+   "id": "concept.the-family-a-proclamation-to-the-world",
+   "slug": "the-family-a-proclamation-to-the-world",
+   "en": [
+    "The Family: A Proclamation to the World"
+   ],
+   "category": "The Family",
+   "preferred": "A Família: Proclamação ao Mundo",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.think-celestial",
+   "slug": "think-celestial",
+   "en": [
+    "think celestial"
+   ],
+   "category": "Faith & Gospel Principles",
+   "preferred": "pensar celestial",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 23
+  },
+  {
+   "id": "concept.three-witnesses",
+   "slug": "three-witnesses",
+   "en": [
+    "Three Witnesses"
+   ],
+   "category": "Scriptures & Study Helps",
+   "preferred": "Três Testemunhas",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 32
+  },
+  {
+   "id": "concept.tithing-funds",
+   "slug": "tithing-funds",
+   "en": [
+    "tithing funds"
+   ],
+   "category": "Finances",
+   "preferred": "fundos de dízimo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2
+  },
+  {
+   "id": "concept.tithing-settlement",
+   "slug": "tithing-settlement",
+   "en": [
+    "tithing settlement"
+   ],
+   "category": "Interviews, Repentance & Membership Councils",
+   "preferred": "acerto do dízimo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 3
+  },
+  {
+   "id": "concept.topical-guide",
+   "slug": "topical-guide",
+   "en": [
+    "Topical Guide"
+   ],
+   "category": "Scriptures & Study Helps",
+   "preferred": "Guia Temático",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.tracting",
+   "slug": "tracting",
+   "en": [
+    "tracting"
+   ],
+   "category": "Missionary Work",
+   "preferred": "proselitismo",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2
+  },
+  {
+   "id": "concept.trek",
+   "slug": "trek",
+   "en": [
+    "trek"
+   ],
+   "category": "Organizations & Youth",
+   "preferred": "trilha",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 7
+  },
+  {
+   "id": "concept.trustee-in-trust",
+   "slug": "trustee-in-trust",
+   "en": [
+    "Trustee-in-Trust"
+   ],
+   "category": "Finances",
+   "preferred": "Fiduciário",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.united-order",
+   "slug": "united-order",
+   "en": [
+    "United Order"
+   ],
+   "category": "Church History",
+   "preferred": "Ordem Unida",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 6
+  },
+  {
+   "id": "concept.urim-and-thummim",
+   "slug": "urim-and-thummim",
+   "en": [
+    "Urim and Thummim"
+   ],
+   "category": "Church History",
+   "preferred": "Urim e Tumim",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 18
+  },
+  {
+   "id": "concept.valiant",
+   "slug": "valiant",
+   "en": [
+    "Valiant"
+   ],
+   "category": "Organizations & Youth",
+   "preferred": "Valorosos",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 39
+  },
+  {
+   "id": "concept.vertical-bond",
+   "slug": "vertical-bond",
+   "en": [
+    "vertical bond"
+   ],
+   "category": "Faith & Gospel Principles",
+   "preferred": "vínculo vertical",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 3
+  },
+  {
+   "id": "concept.visiting-teaching",
+   "slug": "visiting-teaching",
+   "en": [
+    "visiting teaching"
+   ],
+   "category": "Discipleship & Ministering",
+   "preferred": "professoras visitantes",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 43
+  },
+  {
+   "id": "concept.ward-activity",
+   "slug": "ward-activity",
+   "en": [
+    "ward activity"
+   ],
+   "category": "Sacrament & Meetings",
+   "preferred": "atividade da ala",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 4
+  },
+  {
+   "id": "concept.ward-clerk",
+   "slug": "ward-clerk",
+   "en": [
+    "ward clerk"
+   ],
+   "category": "Local Leadership & Callings",
+   "preferred": "secretário da ala",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2
+  },
+  {
+   "id": "concept.ward-conference",
+   "slug": "ward-conference",
+   "en": [
+    "ward conference"
+   ],
+   "category": "Councils & Conferences",
+   "preferred": "conferência da ala",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.ward-council",
+   "slug": "ward-council",
+   "en": [
+    "ward council"
+   ],
+   "category": "Councils & Conferences",
+   "preferred": "conselho da ala",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 30
+  },
+  {
+   "id": "concept.ward-mission-leader",
+   "slug": "ward-mission-leader",
+   "en": [
+    "ward mission leader"
+   ],
+   "category": "Local Leadership & Callings",
+   "preferred": "líder da missão da ala",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 7
+  },
+  {
+   "id": "concept.ward-missionary-fund",
+   "slug": "ward-missionary-fund",
+   "en": [
+    "ward missionary fund"
+   ],
+   "category": "Finances",
+   "preferred": "fundo missionário da ala",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.ward-missionary",
+   "slug": "ward-missionary",
+   "en": [
+    "ward missionary"
+   ],
+   "category": "Missionary Work",
+   "preferred": "missionário de ala",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 2
+  },
+  {
+   "id": "concept.ward-temple-and-family-history-leader",
+   "slug": "ward-temple-and-family-history-leader",
+   "en": [
+    "ward temple and family history leader"
+   ],
+   "category": "Local Leadership & Callings",
+   "preferred": "líder de templo e história da família da ala",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.ward",
+   "slug": "ward",
+   "en": [
+    "ward"
+   ],
+   "category": "Church Units & Facilities",
+   "preferred": "ala",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 801
+  },
+  {
+   "id": "concept.washing-and-anointing",
+   "slug": "washing-and-anointing",
+   "en": [
+    "washing and anointing"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "ablução e unção",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.welfare-square",
+   "slug": "welfare-square",
+   "en": [
+    "Welfare Square"
+   ],
+   "category": "Church Units & Facilities",
+   "preferred": "Praça do Bem-Estar",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 4
+  },
+  {
+   "id": "concept.withdrawal-of-membership",
+   "slug": "withdrawal-of-membership",
+   "en": [
+    "withdrawal of membership"
+   ],
+   "category": "Interviews, Repentance & Membership Councils",
+   "preferred": "remoção da filiação à Igreja",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.women-s-session",
+   "slug": "women-s-session",
+   "en": [
+    "women's session"
+   ],
+   "category": "Councils & Conferences",
+   "preferred": "sessão geral das mulheres",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 6
+  },
+  {
+   "id": "concept.word-of-wisdom",
+   "slug": "word-of-wisdom",
+   "en": [
+    "Word of Wisdom"
+   ],
+   "category": "Commandments & Laws",
+   "preferred": "Palavra de Sabedoria",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 122
+  },
+  {
+   "id": "concept.work-for-the-dead",
+   "slug": "work-for-the-dead",
+   "en": [
+    "work for the dead"
+   ],
+   "category": "Temple & Family History",
+   "preferred": "obra pelos mortos",
+   "confidence": "hint",
+   "variants": [],
+   "uses": 0
+  },
+  {
+   "id": "concept.worthiness-interview",
+   "slug": "worthiness-interview",
+   "en": [
+    "worthiness interview"
+   ],
+   "category": "Interviews, Repentance & Membership Councils",
+   "preferred": "entrevista de dignidade",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 5
+  },
+  {
+   "id": "concept.young-men",
+   "slug": "young-men",
+   "en": [
+    "Young Men"
+   ],
+   "category": "Organizations & Youth",
+   "preferred": "Rapazes",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 607
+  },
+  {
+   "id": "concept.young-single-adult",
+   "slug": "young-single-adult",
+   "en": [
+    "young single adult"
+   ],
+   "category": "Organizations & Youth",
+   "preferred": "jovem adulto solteiro",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 7
+  },
+  {
+   "id": "concept.young-women-class",
+   "slug": "young-women-class",
+   "en": [
+    "Young Women class"
+   ],
+   "category": "Sacrament & Meetings",
+   "preferred": "classe das Moças",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 15
+  },
+  {
+   "id": "concept.young-women-president",
+   "slug": "young-women-president",
+   "en": [
+    "Young Women president"
+   ],
+   "category": "Local Leadership & Callings",
+   "preferred": "presidente das Moças",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 19
+  },
+  {
+   "id": "concept.young-women",
+   "slug": "young-women",
+   "en": [
+    "Young Women"
+   ],
+   "category": "Organizations & Youth",
+   "preferred": "Moças",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 539
+  },
+  {
+   "id": "concept.zone-conference",
+   "slug": "zone-conference",
+   "en": [
+    "zone conference"
+   ],
+   "category": "Missionary Work",
+   "preferred": "conferência de zona",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 6
+  },
+  {
+   "id": "concept.zone-leader",
+   "slug": "zone-leader",
+   "en": [
+    "zone leader"
+   ],
+   "category": "Missionary Work",
+   "preferred": "líder de zona",
+   "confidence": "attested",
+   "variants": [],
+   "uses": 3
+  }
+ ]
+}

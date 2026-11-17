@@ -1,0 +1,15 @@
+id: concept.first-principles-of-the-gospel
+category: Faith & Gospel Principles
+en:
+  term: First Principles of the Gospel
+  match:
+  - First Principles of the Gospel
+sources:
+  GS:
+  - first-principles-of-the-gospel
+candidates:
+  pt: []
+  es:
+  - term: Primeros principios del Evangelio
+    hint: pulpit-glossary:verified
+related: []

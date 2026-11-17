@@ -1,0 +1,15 @@
+id: concept.relief-society-room
+category: Church Units & Facilities
+en:
+  term: Relief Society room
+  match:
+  - Relief Society room
+sources: {}
+candidates:
+  pt:
+  - term: sala da Sociedade de Socorro
+    hint: pulpit-glossary:standard
+  es:
+  - term: salón de la Sociedad de Socorro
+    hint: pulpit-glossary:verified
+related: []

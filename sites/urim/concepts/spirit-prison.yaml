@@ -1,0 +1,19 @@
+id: concept.spirit-prison
+category: Plan of Salvation
+en:
+  term: spirit prison
+  match:
+  - spirit prison
+sources:
+  GS:
+  - spirit-prison
+  TtF:
+  - spirit-prison
+candidates:
+  pt:
+  - term: prisão espiritual
+    hint: pulpit-glossary:standard
+  es:
+  - term: Prisión espiritual
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,196 @@
+{
+ "id": "concept.articles-of-faith",
+ "pt": {
+  "en_paragraphs": 160,
+  "en_talks": 140,
+  "en_verses": 0,
+  "uncovered_paragraphs": 14,
+  "renderings": [
+   {
+    "term": "Regras de Fé",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 146,
+    "talks": 127,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1995,
+      "conference": "1995 October General Conference",
+      "talk": "1995-10-jack-relief-society-a-balm-in-gilead",
+      "para": 25,
+      "en": "… up wilderness camps for Laurels to teaching the Articles of Faith to Primary children to greeting at the door of …",
+      "tr": "… desde orga­ni­zar acam­pa­men­tos para Lauréis até ensi­nar as Regras de Fé às crian­ças da Primária e rece­ber as irmãs na …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 October General Conference",
+      "talk": "2013-10-perry-the-doctrines-and-principles-contained-in-the-articles-of-faith",
+      "para": 24,
+      "en": "The [tenth](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=eng&id=p10#p10), [eleventh](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=eng&id=p11#p11), and [twelfth](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=eng&id=p12#p12) articles of faith instruct us on how to conduct missionary work and …",
+      "tr": "… [décima](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=por&id=p10#p10), a [décima primeira](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=por&id=p11#p11) e a [décima segunda](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=por&id=p12#p12) Regras de Fé nos instruem sobre como realizar o trabalho missionário e …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-spannaus-god-is-at-your-side",
+      "para": 21,
+      "en": "[^1]: [Articles of Faith 1:13](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=eng&id=p13#p13).\n[^2]: See [Isaiah 48:17](https://www.churchofjesuschrist.org/study/scriptures/ot/isa/48?lang=eng&id=p17#p17).\n[^3]: See [Ether 12:27](https://www.churchofjesuschrist.org/study/scriptures/bofm/ether/12?lang=eng&id=p27#p27). …",
+      "tr": "[^1]: [Regras de Fé 1:13](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=por&id=p13#p13).\n[^2]: Ver [Isaías 48:17](https://www.churchofjesuschrist.org/study/scriptures/ot/isa/48?lang=por&id=p17#p17).\n[^3]: Ver [Éter 12:27](https://www.churchofjesuschrist.org/study/scriptures/bofm/ether/12?lang=por&id=p27#p27). …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-hinckley-blessed-are-the-merciful",
+     "para": 54,
+     "en": "… of dogmas and the enunciation of theories” (*Articles of Faith,* 12th ed. [Salt Lake City: The Church of …",
+     "tr": "… de dogmas e a declaração de teorias.” (*Regras de Fé*, p. 388.)"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "regra",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.571,
+    "ratio": 285.8,
+    "source": "2002-10-perry-called-of-god",
+    "kind": "talk",
+    "sample": "[^1]: 5ª Regra de Fé.\n[^2]: \"A Família: Proclamação ao Mundo\", *A Liahona*, janeiro de 1996, p"
+   },
+   {
+    "term": "the articles",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.357,
+    "ratio": 476.3,
+    "source": "1998-10-dew-we-are-not-alone",
+    "kind": "talk",
+    "sample": "isso conseguirmos ( … ) desfrutar o dom do Espírito Santo”. (A New Witness for the Articles of Faith, 1984, p. 253.) O que estamos dispostas a fazer, que fraquezas e indul"
+   },
+   {
+    "term": "faith",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.357,
+    "ratio": 204.1,
+    "source": "1998-10-dew-we-are-not-alone",
+    "kind": "talk",
+    "sample": "os ( … ) desfrutar o dom do Espírito Santo”. (A New Witness for the Articles of Faith, 1984, p. 253.) O que estamos dispostas a fazer, que fraquezas e indulgências e"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 156,
+  "en_talks": 137,
+  "en_verses": 0,
+  "uncovered_paragraphs": 11,
+  "renderings": [
+   {
+    "term": "Artículos de Fe",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 145,
+    "talks": 129,
+    "verses": 0,
+    "first_year": 1997,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2002,
+      "conference": "2002 October General Conference",
+      "talk": "2002-10-perry-called-of-god",
+      "para": 40,
+      "en": "[^1]: [Articles of Faith 1:5](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=eng&id=p5#p5).\n[^2]: “The Family: A Proclamation to the World,” …",
+      "tr": "[^1]: Artículos de Fe 1:5.\n[^2]: \"La familia: Una proclamación para el mundo\", …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 October General Conference",
+      "talk": "2013-10-cook-lamentations-of-jeremiah-beware-of-bondage",
+      "para": 30,
+      "en": "… Kings 17:6](https://www.churchofjesuschrist.org/study/scriptures/ot/2-kgs/17?lang=eng&id=p6#p6); [Doctrine and Covenants 110:11](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/110?lang=eng&id=p11#p11).\n[^10]: [Articles of Faith 1:10](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=eng&id=p10#p10); see also [2 Nephi 10:22](https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/10?lang=eng&id=p22#p22).\n[^11]: Russell M. …",
+      "tr": "… [2 Reyes 17:6;](https://www.churchofjesuschrist.org/study/scriptures/ot/2-kgs/17?lang=spa&id=p6#p6)[Doctrina y Convenios 110:11](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/110?lang=spa&id=p11#p11).\n[^10]: [Artículos de Fe 1:10](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=spa&id=p10#p10); véase también [2 Nefi 10:22](https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/10?lang=spa&id=p22#p22).\n[^11]: Russell M. …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-cook-integrity-and-virtue-lead-to-happiness",
+      "para": 29,
+      "en": "… [Matthew 7:21](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/7?lang=eng&id=p21#p21).\n[^24]: [Philippians 4:8](https://www.churchofjesuschrist.org/study/scriptures/nt/philip/4?lang=eng&id=p8#p8); see also [Articles of Faith 1:13](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=eng&id=p13#p13).\n[^25]: See [Doctrine and Covenants 121:46](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/121?lang=eng&id=p46#p46).\n[^26]: See …",
+      "tr": "… [Mateo 7:21](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/7?lang=spa&id=p21#p21).\n[^24]: [Filipenses 4:8](https://www.churchofjesuschrist.org/study/scriptures/nt/philip/4?lang=spa&id=p8#p8) véase también [Artículos de Fe 1:13](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=spa&id=p13#p13).\n[^25]: Véase [Doctrina y Convenios 121:46](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/121?lang=spa&id=p46#p46).\n[^26]: Véase …"
+     }
+    ],
+    "earliest": {
+     "year": 1997,
+     "conference": "1997 October General Conference",
+     "talk": "1997-10-nelson-spiritual-capacity",
+     "para": 27,
+     "en": "… [^16]: [D&C 58:27](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/58?lang=eng&id=p27#p27).\n[^17]: James E. Talmage, *Articles of Faith* (1968), 167; see also [D&C 121:26](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/121?lang=eng&id=p26#p26).\n[^18]: The …",
+     "tr": "… y C. 58:27.\n[^17]: James E. Talmage, Los Artículos de Fe ( 1 962A, pág. 186; véase también D. y …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "the articles",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.545,
+    "ratio": 2182.4,
+    "source": "1998-10-dew-we-are-not-alone",
+    "kind": "talk",
+    "sample": ", a fin de cuentas … disfrutamos del don del Espíritu Santo” (A New Witness for the Articles of Faith, 1984, pág. 253). ¿Qué estamos dispuestas a hacer, que flaquezas y pla"
+   },
+   {
+    "term": "mcconkie",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.545,
+    "ratio": 727.5,
+    "source": "1998-10-dew-we-are-not-alone",
+    "kind": "talk",
+    "sample": "El élder Bruce R. McConkie dijo: “No hay precio demasiado elevado … ni sacrificio demasiado grande, si, a"
+   },
+   {
+    "term": "witness for the",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.455,
+    "ratio": 1818.6,
+    "source": "1998-10-dew-we-are-not-alone",
+    "kind": "talk",
+    "sample": "o grande, si, a fin de cuentas … disfrutamos del don del Espíritu Santo” (A New Witness for the Articles of Faith, 1984, pág. 253). ¿Qué estamos dispuestas a hacer, que flaque"
+   }
+  ]
+ }
+}

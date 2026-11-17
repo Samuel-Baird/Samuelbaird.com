@@ -1,0 +1,146 @@
+{
+ "id": "concept.elder",
+ "pt": {
+  "en_paragraphs": 1765,
+  "en_talks": 900,
+  "en_verses": 314,
+  "uncovered_paragraphs": 268,
+  "renderings": [
+   {
+    "term": "élder",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1699,
+    "talks": 877,
+    "verses": 112,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 20:3",
+      "ref_en": "Doctrine and Covenants 20:3",
+      "en": "And to Oliver Cowdery, who was also called of God, an apostle of Jesus Christ, to be the second elder of this church, and ordained under his hand;",
+      "tr": "E a Oliver Cowdery, que foi também chamado por Deus como apóstolo de Jesus Cristo para ser o segundo élder desta igreja e ordenado sob sua mão;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/20?lang=por&id=p3"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-condie-some-scriptural-lessons-on-leadership",
+      "para": 8,
+      "en": "… made the king. He sought the counsel of the elders regarding how he should rule. “And they spake unto him, …",
+      "tr": "… para ser coroado rei. Ele procurou o conselho dos élderes sobre como reinar. “E eles lhe falaram, dizendo: Se hoje …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 October General Conference",
+      "talk": "2013-10-mcconkie-teaching-with-the-power-and-authority-of-god",
+      "para": 19,
+      "en": "Elder Holland continued: “The fact of the matter is [teachers] are …",
+      "tr": "O Élder Holland prosseguiu, dizendo: “O fato é que os [professores] ainda …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-condie-some-scriptural-lessons-on-leadership",
+     "para": 8,
+     "en": "… made the king. He sought the counsel of the elders regarding how he should rule. “And they spake unto him, …",
+     "tr": "… para ser coroado rei. Ele procurou o conselho dos élderes sobre como reinar. “E eles lhe falaram, dizendo: Se hoje …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "anciãos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 172,
+    "share_of_uncovered": 0.688,
+    "ratio": 2752.7,
+    "source": "1990-04-lybbert-a-latter-day-samaritan",
+    "kind": "talk",
+    "sample": "e um mestre da lei, incluindo a lei escrita do Pentateuco, e “as tradições dos anciãos”.* (Bible Dictionary,* s. v. *Lawyer.)*"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 1718,
+  "en_talks": 877,
+  "en_verses": 314,
+  "uncovered_paragraphs": 270,
+  "renderings": [
+   {
+    "term": "élder",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 1650,
+    "talks": 847,
+    "verses": 112,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 84:1",
+      "ref_en": "Doctrine and Covenants 84:1",
+      "en": "A revelation of Jesus Christ unto his servant Joseph Smith, Jun., and six elders, as they united their hearts and lifted their voices on high.",
+      "tr": "Una revelación de Jesucristo a su siervo José Smith, hijo, y a seis élderes, cuando unieron sus corazones y elevaron sus voces al cielo.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/84?lang=spa&id=p1"
+     },
+     {
+      "kind": "talk",
+      "year": 1994,
+      "conference": "1994 April General Conference",
+      "talk": "1994-04-jensen-the-power-of-a-good-life",
+      "para": 5,
+      "en": "Of one particularly tedious night, Elder Parley P. Pratt wrote:",
+      "tr": "El elder Parley P. Pratt escribió algo conmovedor sobre una noche particularmente …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 October General Conference",
+      "talk": "2015-10-andersen-faith-is-not-by-chance-but-by-choice",
+      "para": 7,
+      "en": "… first of many blessings. The bank that had employed Elder Cavalcante unexpectedly doubled the money he was to receive as …",
+      "tr": "… muchas bendiciones. El banco en el que trabajaba el élder Cavalcante inesperadamente duplicó el dinero que iba a recibir al …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-wirthlin-personal-integrity",
+     "para": 34,
+     "en": "Elder Neal A. Maxwell stated, “Oh, how we wish for more …",
+     "tr": "El élder Neal A. Maxwell dijo: “Cuanto desearía que hubiera mas honradez …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "ancianos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 174,
+    "share_of_uncovered": 0.696,
+    "ratio": 696.2,
+    "source": "1-ne/4/22",
+    "kind": "scripture",
+    "sample": "Y me habló concerniente a los ancianos de los judíos, porque sabía que su amo Labán había estado entre ellos durante l"
+   }
+  ]
+ }
+}

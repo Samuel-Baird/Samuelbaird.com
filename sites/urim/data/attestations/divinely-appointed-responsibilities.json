@@ -1,0 +1,93 @@
+{
+ "id": "concept.divinely-appointed-responsibilities",
+ "pt": {
+  "en_paragraphs": 25,
+  "en_talks": 9,
+  "en_verses": 0,
+  "uncovered_paragraphs": 25,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "responsabilidades divinamente",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 25,
+    "share_of_uncovered": 1.0,
+    "ratio": 4001.0,
+    "source": "2014-10-packer-the-book",
+    "kind": "talk",
+    "sample": "soas e as famílias a qualificarem-se para a exaltação, a Igreja concentra-se em responsabilidades divinamente atribuídas. Algumas delas são: ajudar os membros a viver o evangelho de Jesus C"
+   },
+   {
+    "term": "divinamente atribuídas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 24,
+    "share_of_uncovered": 0.96,
+    "ratio": 3841.0,
+    "source": "2014-10-packer-the-book",
+    "kind": "talk",
+    "sample": "a qualificarem-se para a exaltação, a Igreja concentra-se em responsabilidades divinamente atribuídas. Algumas delas são: ajudar os membros a viver o evangelho de Jesus Cristo, coli"
+   },
+   {
+    "term": "necessitados",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.24,
+    "ratio": 64.0,
+    "source": "2014-10-packer-the-book",
+    "kind": "talk",
+    "sample": "us Cristo, coligar Israel por meio do trabalho missionário, cuidar dos pobres e necessitados e possibilitar a salvação dos mortos por meio da edificação de templos e da rea"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 25,
+  "en_talks": 9,
+  "en_verses": 0,
+  "uncovered_paragraphs": 25,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "responsabilidades divinamente",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 24,
+    "share_of_uncovered": 0.96,
+    "ratio": 3841.0,
+    "source": "2014-10-packer-the-book",
+    "kind": "talk",
+    "sample": "lias a reunir los requisitos para lograr la exaltación, la Iglesia se centra en responsabilidades divinamente señaladas. Éstas incluyen ayudar a los miembros a vivir el evangelio de Jesucri"
+   },
+   {
+    "term": "divinamente asignadas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 15,
+    "share_of_uncovered": 0.6,
+    "ratio": 2400.6,
+    "source": "2017-10-maynes-earning-the-trust-of-the-lord-and-your-family",
+    "kind": "talk",
+    "sample": "principio es tal vez más claramente manifestado en nuestras responsabilidades, divinamente asignadas, como esposos y padres."
+   },
+   {
+    "term": "señaladas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.32,
+    "ratio": 1280.3,
+    "source": "2014-10-packer-the-book",
+    "kind": "talk",
+    "sample": "ara lograr la exaltación, la Iglesia se centra en responsabilidades divinamente señaladas. Éstas incluyen ayudar a los miembros a vivir el evangelio de Jesucristo, recog"
+   }
+  ]
+ }
+}

@@ -1,0 +1,17 @@
+id: concept.music-coordinator
+category: Local Leadership & Callings
+en:
+  term: music coordinator
+  match:
+  - music coordinator
+sources:
+  GH:
+  - 19-music#title_number14
+candidates:
+  pt:
+  - term: coordenador de música da ala
+    hint: pulpit-glossary:verified
+  es:
+  - term: coordinador de música
+    hint: pulpit-glossary:verified
+related: []

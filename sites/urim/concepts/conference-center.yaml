@@ -1,0 +1,13 @@
+id: concept.conference-center
+category: Church Units & Facilities
+en:
+  term: Conference Center
+  match:
+  - Conference Center
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: Centro de Conferencias
+    hint: pulpit-glossary:verified
+related: []

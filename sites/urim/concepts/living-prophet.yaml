@@ -1,0 +1,15 @@
+id: concept.living-prophet
+category: Presiding Quorums & General Leadership
+en:
+  term: living prophet
+  match:
+  - living prophet
+sources: {}
+candidates:
+  pt:
+  - term: profeta vivo
+    hint: pulpit-glossary:verified
+  es:
+  - term: profeta viviente
+    hint: pulpit-glossary:verified
+related: []

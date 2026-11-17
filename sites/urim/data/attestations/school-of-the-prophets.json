@@ -1,0 +1,85 @@
+{
+ "id": "concept.school-of-the-prophets",
+ "pt": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 5,
+  "uncovered_paragraphs": 6,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "escola dos profetas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.833,
+    "ratio": 3334.2,
+    "source": "dc/88/127",
+    "kind": "scripture",
+    "sample": "E também, a ordem da casa preparada para a presidência da escola dos profetas, estabelecida para sua instrução em todas as coisas que lhes convém, sim, para"
+   },
+   {
+    "term": "chamados",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.333,
+    "ratio": 29.0,
+    "source": "dc/88/127",
+    "kind": "scripture",
+    "sample": "onvém, sim, para todos os oficiais da igreja ou, em outras palavras, os que são chamados para o ministério da igreja, a começar pelos sumos sacerdotes, até os diáconos"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 5,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "Escuela de los Profetas",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 5,
+    "first_year": 1999,
+    "last_year": 1999,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 88:136",
+      "ref_en": "Doctrine and Covenants 88:136",
+      "en": "Behold, verily, I say unto you, this is an ensample unto you for a salutation to one another in the house of God, in the school of the prophets.",
+      "tr": "He aquí, de cierto os digo, esta es una norma para vosotros en cuanto a la manera de saludaros el uno al otro en la casa de Dios, en la escuela de los profetas.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/88?lang=spa&id=p136"
+     },
+     {
+      "kind": "talk",
+      "year": 1999,
+      "conference": "1999 October General Conference",
+      "talk": "1999-10-hinckley-why-we-do-some-of-the-things-we-do",
+      "para": 9,
+      "en": "… that deals with these things. There was the School of the Prophets in Kirtland. The Seventies Hall in Nauvoo was …",
+      "tr": "… en cuanto a eso. En Kirtland había una Escuela de los Profetas; en Nauvoo la Sala de los Setenta …"
+     }
+    ],
+    "earliest": {
+     "year": 1999,
+     "conference": "1999 October General Conference",
+     "talk": "1999-10-hinckley-why-we-do-some-of-the-things-we-do",
+     "para": 9,
+     "en": "… that deals with these things. There was the School of the Prophets in Kirtland. The Seventies Hall in Nauvoo was …",
+     "tr": "… en cuanto a eso. En Kirtland había una Escuela de los Profetas; en Nauvoo la Sala de los Setenta …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

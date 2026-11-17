@@ -1,0 +1,195 @@
+{
+ "id": "concept.joseph-smith-translation",
+ "pt": {
+  "en_paragraphs": 102,
+  "en_talks": 94,
+  "en_verses": 0,
+  "uncovered_paragraphs": 11,
+  "renderings": [
+   {
+    "term": "Tradução de Joseph Smith",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 91,
+    "talks": 84,
+    "verses": 0,
+    "first_year": 2003,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 April General Conference",
+      "talk": "2003-04-christensen-seek-and-ye-shall-find",
+      "para": 19,
+      "en": "… Faith 1:13](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=eng&id=p13#p13).\n[^8]: See [3 Nephi 20:41](https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/20?lang=eng&id=p41#p41); [Joseph Smith Translation, Matthew 6:38](https://www.churchofjesuschrist.org/study/scriptures/jst/jst-matt/6?lang=eng&id=p38#p38).\n[^9]: *Teachings of Gordon B. Hinckley* …",
+      "tr": "… de Fé 1:13.\n[^8]: Ver 3 Néfi 20:41; Tradução de Joseph Smith, Mateus 6:38.\n[^9]: *Teachings ofGordon B. Hinckley,* …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 October General Conference",
+      "talk": "2018-10-ashton-the-father",
+      "para": 40,
+      "en": "… [Luke 11:10–13](https://www.churchofjesuschrist.org/study/scriptures/nt/luke/11?lang=eng&id=p10-p13#p10); [James 1:17](https://www.churchofjesuschrist.org/study/scriptures/nt/james/1?lang=eng&id=p17#p17).\n[^22]: See [Luke 11:5–10](https://www.churchofjesuschrist.org/study/scriptures/nt/luke/11?lang=eng&id=p5-p10#p5); Joseph Smith Translation, [Luke 11:5–6](https://www.churchofjesuschrist.org/study/scriptures/nt/luke/11?lang=eng&id=p5-p6#p5) (in Luke 11:5, footnote *a*); [3 …",
+      "tr": "… [Lucas 11:10–13](https://www.churchofjesuschrist.org/study/scriptures/nt/luke/11?lang=por&id=p10-p13#p10); [Tiago 1:17](https://www.churchofjesuschrist.org/study/scriptures/nt/james/1?lang=por&id=p17#p17).\n[^22]: Ver [Lucas 11:5–10](https://www.churchofjesuschrist.org/study/scriptures/nt/luke/11?lang=por&id=p5-p10#p5); Tradução de Joseph Smith, [Lucas 11:5–6](https://www.churchofjesuschrist.org/study/scriptures/nt/luke/11?lang=por&id=p5-p6#p5) (em Lucas 11:5, nota de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-rasband-right-before-our-eyes",
+      "para": 28,
+      "en": "… provided by the Church’s Missionary Department.\n[^16]: [Joseph Smith Translation, Matthew 6:38](https://www.churchofjesuschrist.org/study/scriptures/jst/jst-matt/6?lang=eng&id=p38#p38) (in [Matthew 6:33](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/6?lang=eng&id=p33#p33), footnote *a*).\n[^17]: …",
+      "tr": "… fornecidas pelo Departamento Missionário da Igreja.\n[^16]: [Tradução de Joseph Smith, Mateus 6:38](https://www.churchofjesuschrist.org/study/scriptures/jst/jst-matt/6?lang=por&id=p38#p38) ([Mateus 6:33](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/6?lang=por&id=p33#p33), nota de rodapé …"
+     }
+    ],
+    "earliest": {
+     "year": 2003,
+     "conference": "2003 April General Conference",
+     "talk": "2003-04-christensen-seek-and-ye-shall-find",
+     "para": 19,
+     "en": "… Faith 1:13](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=eng&id=p13#p13).\n[^8]: See [3 Nephi 20:41](https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/20?lang=eng&id=p41#p41); [Joseph Smith Translation, Matthew 6:38](https://www.churchofjesuschrist.org/study/scriptures/jst/jst-matt/6?lang=eng&id=p38#p38).\n[^9]: *Teachings of Gordon B. Hinckley* …",
+     "tr": "… de Fé 1:13.\n[^8]: Ver 3 Néfi 20:41; Tradução de Joseph Smith, Mateus 6:38.\n[^9]: *Teachings ofGordon B. Hinckley,* …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "translation",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.455,
+    "ratio": 1818.6,
+    "source": "2002-10-nelson-blessed-are-the-peacemakers",
+    "kind": "talk",
+    "sample": "[^10]: Ver Lucas 2:14.\n[^11]: Mateus 5:9; ver também 3 Néfi 12:9; Joseph Smith Translation, Mateus 5:11.\n[^12]: Mateus 22:37.\n[^13]: Mateus 22:39; ver também Lucas 10:27;"
+   },
+   {
+    "term": "mateus",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.818,
+    "ratio": 43.1,
+    "source": "2002-10-nelson-blessed-are-the-peacemakers",
+    "kind": "talk",
+    "sample": "érbios 29:8.\n[^8]: Mosias 3:19.\n[^9]: Isaías 9:6.\n[^10]: Ver Lucas 2:14.\n[^11]: Mateus 5:9; ver também 3 Néfi 12:9; Joseph Smith Translation, Mateus 5:11.\n[^12]: Mate"
+   },
+   {
+    "term": "smith",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.818,
+    "ratio": 24.1,
+    "source": "2002-10-nelson-blessed-are-the-peacemakers",
+    "kind": "talk",
+    "sample": "s 9:6.\n[^10]: Ver Lucas 2:14.\n[^11]: Mateus 5:9; ver também 3 Néfi 12:9; Joseph Smith Translation, Mateus 5:11.\n[^12]: Mateus 22:37.\n[^13]: Mateus 22:39; ver também"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 110,
+  "en_talks": 100,
+  "en_verses": 0,
+  "uncovered_paragraphs": 14,
+  "renderings": [
+   {
+    "term": "Traducción de José Smith",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 96,
+    "talks": 88,
+    "verses": 0,
+    "first_year": 1998,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2002,
+      "conference": "2002 October General Conference",
+      "talk": "2002-10-mcmullin-come-to-zion-come-to-zion",
+      "para": 34,
+      "en": "… 5 June 1872, 248; emphasis added.\n[^2]: [Joseph Smith Translation, Matthew 6:38](https://www.churchofjesuschrist.org/study/scriptures/jst/jst-matt/6?lang=eng&id=p38#p38).\n[^3]: “Israel, Israel, God Is Calling,” …",
+      "tr": "… Brigham Young, págs. 50, 251; cursiva agregada.\n[^2]: Traducción de José Smith, Mateo 6:38.\n[^3]: \"Israel, Jesús os llama\", …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-nelson-ministering-with-the-power-and-authority-of-god",
+      "para": 24,
+      "en": "… 35–38](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/84?lang=eng&id=p17-p20,p35-p38#p17).\n[^3]: See [Doctrine and Covenants 84:19–22](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/84?lang=eng&id=p19-p22#p19); [107:18–19](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/107?lang=eng&id=p18-p19#p18); Joseph Smith Translation, Genesis 14:30–31 (in the Bible appendix).\n[^4]: [Doctrine …",
+      "tr": "… [^3]: Véanse [Doctrina y Convenios 84:19–22](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/84?lang=spa&id=p19-p22#p19); [107:18–19](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/107?lang=spa&id=p18-p19#p18); y Traducción de José Smith, Génesis 14:30–31 (en el Apéndice de la …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-renlund-because-of-jesus-christ",
+      "para": 19,
+      "en": "… Testimony of the Apostles](https://www.churchofjesuschrist.org/study/scriptures/the-living-christ-the-testimony-of-the-apostles/the-living-christ-the-testimony-of-the-apostles?lang=eng),” Gospel Library.\n[^3]: See Joseph Smith Translation, Matthew 27:54 (in [Matthew 27:50](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/27?lang=eng&id=p50#p50), footnote *a*).\n[^4]: …",
+      "tr": "… de los Apóstoles](https://www.churchofjesuschrist.org/study/scriptures/the-living-christ-the-testimony-of-the-apostles/the-living-christ-the-testimony-of-the-apostles?lang=spa)\", Biblioteca del Evangelio.\n[^3]: Véase Traducción de José Smith, Mateo 27:54 (en [Mateo 27:50](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/27?lang=spa&id=p50#p50), nota *a* …"
+     }
+    ],
+    "earliest": {
+     "year": 1998,
+     "conference": "1998 April General Conference",
+     "talk": "1998-04-robbins-agency-and-anger",
+     "para": 9,
+     "en": "In the [Joseph Smith Translation of Ephesians 4:26](https://www.churchofjesuschrist.org/study/scriptures/jst/jst-eph/4?lang=eng&id=p26#p26), Paul asks the question, “Can ye …",
+     "tr": "En la Traducción de José Smith de Efesios 4:26, Pablo pregunta: ¿Podéis airaros, y …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "mateo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.714,
+    "ratio": 40.8,
+    "source": "1995-04-clyde-covenant-of-love",
+    "kind": "talk",
+    "sample": "ducción que hizo José Smith de la Biblia al idioma inglés, en el capitulo 16 de Mateo, se aclaran algunos puntos que los discípulos de Cristo deben comprender:"
+   },
+   {
+    "term": "smith translation",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.286,
+    "ratio": 1143.1,
+    "source": "2002-10-maxwell-encircled-in-the-arms-of-his-love",
+    "kind": "talk",
+    "sample": "en realidad “puede” ejecutar Su obra grandiosa (véase 2 Nefi 27:20–21; *Joseph Smith Translation*, Isaías 29:22–23)."
+   },
+   {
+    "term": "nefi",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.643,
+    "ratio": 18.9,
+    "source": "1998-04-robbins-agency-and-anger",
+    "kind": "talk",
+    "sample": "español ni en la traducción inspirada de José Smith (véase Mateo 5:24), ni en 3 Nefi 12:22. Cuando el señor elimino la frase “sin causa” nos dejó sin excusa. “… ant"
+   }
+  ]
+ }
+}

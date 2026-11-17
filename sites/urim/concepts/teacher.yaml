@@ -1,0 +1,20 @@
+id: concept.teacher
+category: Priesthood Offices & Quorums
+en:
+  term: teacher
+  match:
+  - teacher
+sources:
+  GS:
+  - teach-teacher
+  GH:
+  - 15-seminaries-and-institutes#title_number3
+candidates:
+  pt:
+  - term: mestre
+    hint: pulpit-glossary:verified
+  es:
+  - term: maestro
+    hint: approved-terms
+related: []
+note: Also an Aaronic Priesthood office — distinguish from classroom instructor when translating

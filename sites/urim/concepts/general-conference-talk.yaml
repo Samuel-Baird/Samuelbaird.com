@@ -1,0 +1,15 @@
+id: concept.general-conference-talk
+category: Scriptures & Study Helps
+en:
+  term: general conference talk
+  match:
+  - general conference talk
+sources: {}
+candidates:
+  pt:
+  - term: discurso da conferência geral
+    hint: pulpit-glossary:standard
+  es:
+  - term: discurso en una conferencia general
+    hint: pulpit-glossary:verified
+related: []

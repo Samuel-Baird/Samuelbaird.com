@@ -1,0 +1,17 @@
+id: concept.priesthood-power
+category: Priesthood Authority & Ordinances
+en:
+  term: priesthood power
+  match:
+  - priesthood power
+sources:
+  GH:
+  - 3-priesthood-principles#title_number16
+candidates:
+  pt:
+  - term: poder do sacerdócio
+    hint: pulpit-glossary:verified
+  es:
+  - term: poder del sacerdocio
+    hint: pulpit-glossary:verified
+related: []

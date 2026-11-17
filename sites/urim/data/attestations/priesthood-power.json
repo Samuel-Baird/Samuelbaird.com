@@ -1,0 +1,159 @@
+{
+ "id": "concept.priesthood-power",
+ "pt": {
+  "en_paragraphs": 131,
+  "en_talks": 90,
+  "en_verses": 0,
+  "uncovered_paragraphs": 18,
+  "renderings": [
+   {
+    "term": "poder do sacerdócio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 113,
+    "talks": 80,
+    "verses": 0,
+    "first_year": 1991,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 April General Conference",
+      "talk": "1991-04-clarke-to-honor-the-priesthood",
+      "para": 11,
+      "en": "However, we may forfeit priesthood power when we commit transgression. Spiritual powers are sensitive and …",
+      "tr": "Podemos, entretanto, perder o poder do sacerdócio, se transgredirmos. Os poderes espirituais são sensíveis e …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-holland-lord-i-believe",
+      "para": 15,
+      "en": "… more of God’s love, of Christ’s divinity, and of priesthood power than any other prophet of whom I have ever …",
+      "tr": "… de Deus, da divindade de Cristo e do poder do sacerdócio do que qualquer outro profeta sobre o qual eu …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-yee-ministeringthat-ye-love-one-another-as-i-have-loved-you",
+      "para": 18,
+      "en": "… thing which he has commanded”[^27]—including the blessing of God’s priesthood power as we keep our covenants[^28] and His priesthood authority …",
+      "tr": "… que [nos] ordenou”[^27] — inclusive a bênção do poder do sacerdócio de Deus ao cumprirmos nossos convênios[^28] e Sua autoridade …"
+     }
+    ],
+    "earliest": {
+     "year": 1991,
+     "conference": "1991 April General Conference",
+     "talk": "1991-04-clarke-to-honor-the-priesthood",
+     "para": 11,
+     "en": "However, we may forfeit priesthood power when we commit transgression. Spiritual powers are sensitive and …",
+     "tr": "Podemos, entretanto, perder o poder do sacerdócio, se transgredirmos. Os poderes espirituais são sensíveis e …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "autoridade",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.5,
+    "ratio": 29.0,
+    "source": "2001-04-faust-them-that-honour-me-i-will-honour",
+    "kind": "talk",
+    "sample": "Senhor. O Senhor declarou: “Aos que me honram honrarei”.[^12] O grande poder e autoridade do sacerdócio que nos foi concedido deve ser exercido por pessoas autorizadas q"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 128,
+  "en_talks": 87,
+  "en_verses": 0,
+  "uncovered_paragraphs": 20,
+  "renderings": [
+   {
+    "term": "poder del sacerdocio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 108,
+    "talks": 78,
+    "verses": 0,
+    "first_year": 1997,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1998,
+      "conference": "1998 October General Conference",
+      "talk": "1998-10-faust-by-what-power-have-ye-done-this",
+      "para": 7,
+      "en": "… the priesthood come weighty responsibilities. Indeed, we can enjoy priesthood power only when we do our duty. The priesthood of …",
+      "tr": "El poder del sacerdocio conlleva importantes responsabilidades. En realidad, podemos disfrutar del poder …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-dalton-we-are-daughters-of-our-heavenly-father",
+      "para": 22,
+      "en": "… Monson, and I am grateful for righteous men, whose priesthood power blesses my life. And I shall ever be grateful …",
+      "tr": "… Monson, y agradezco que haya hombres rectos cuyo poder del sacerdocio bendice mi vida. Siempre estaré agradecida por la fortaleza …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-bowen-miracles-angels-and-priesthood-power",
+      "para": 13,
+      "en": "… in our lives, often as a direct result of priesthood power. Some priesthood blessings are fulfilled immediately, in ways …",
+      "tr": "… nuestra vida, a menudo como resultado directo del poder del sacerdocio. Algunas bendiciones del sacerdocio se cumplen de inmediato, …"
+     }
+    ],
+    "earliest": {
+     "year": 1997,
+     "conference": "1997 April General Conference",
+     "talk": "1997-04-jack-a-small-stone",
+     "para": 14,
+     "en": "… support just as we have needed their understanding and priesthood power. The Lord has called men of valor, wisdom, …",
+     "tr": "… que nosotras hemos necesitado su comprensión y el poder del sacerdocio. El Señor ha llamado a hombres de valor, …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "autoridad",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.5,
+    "ratio": 40.8,
+    "source": "2006-10-ellis-he-trusts-us",
+    "kind": "talk",
+    "sample": "nos conoce y nos ama. Deposit Su confianza en nosotros al darnos el poder y la autoridad de Su sacerdocio. Yo soy testigo de esa verdad. Ruego que usemos Su poder y aut"
+   },
+   {
+    "term": "dado",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.2,
+    "ratio": 9.3,
+    "source": "2014-04-oaks-the-keys-and-authority-of-the-priesthood",
+    "kind": "talk",
+    "sample": "llaves del sacerdocio. “Las llaves del sacerdocio son la autoridad que Dios ha dado a los líderes del sacerdocio para dirigir, controlar y gobernar el uso de Su sa"
+   }
+  ]
+ }
+}

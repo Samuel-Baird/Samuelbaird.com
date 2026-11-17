@@ -1,0 +1,15 @@
+id: concept.elders-quorum-president
+category: Local Leadership & Callings
+en:
+  term: elders quorum president
+  match:
+  - elders quorum president
+sources: {}
+candidates:
+  pt:
+  - term: presidente do quórum de élderes
+    hint: pulpit-glossary:verified
+  es:
+  - term: presidente del quórum de élderes
+    hint: pulpit-glossary:verified
+related: []

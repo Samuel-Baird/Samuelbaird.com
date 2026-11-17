@@ -1,0 +1,119 @@
+{
+ "id": "concept.presiding-bishopric",
+ "pt": {
+  "en_paragraphs": 71,
+  "en_talks": 59,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "Bispado Presidente",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 69,
+    "talks": 57,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-edling-the-church-audit-committee-report",
+      "para": 1,
+      "en": "… First Presidency, the Council of the Twelve, and the Presiding Bishopric, as prescribed under revelation of the Lord. The …",
+      "tr": "… Dízimos, compostos da Primeira Presidência, Conselho dos Doze e Bispado Presidente, segundo o prescrito pela revelação do Senhor. O …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 October General Conference",
+      "talk": "2013-10-bednar-the-windows-of-heaven",
+      "para": 16,
+      "en": "… Presidency, the Quorum of the Twelve Apostles, and the Presiding Bishopric (see [D&C 120](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/120?lang=eng)). As I prepared in December of …",
+      "tr": "… Primeira Presidência, pelo Quórum dos Doze Apóstolos e pelo Bispado Presidente (ver [D&C 120](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/120?lang=por)). Ao preparar-me, em dezembro de 2004, …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-christofferson-solemn-assembly",
+      "para": 21,
+      "en": "… General Authority Seventies, Area Seventies, and members of the Presiding Bishopric sustain Dallin Harris Oaks as prophet, seer, and revelator …",
+      "tr": "… setentas autoridades gerais, setentas de área e membros do bispado presidente apoiem Dallin Harris Oaks como profeta, vidente e revelador …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-edling-the-church-audit-committee-report",
+     "para": 1,
+     "en": "… First Presidency, the Council of the Twelve, and the Presiding Bishopric, as prescribed under revelation of the Lord. The …",
+     "tr": "… Dízimos, compostos da Primeira Presidência, Conselho dos Doze e Bispado Presidente, segundo o prescrito pela revelação do Senhor. O …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 60,
+  "en_talks": 50,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "Obispado Presidente",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 60,
+    "talks": 50,
+    "verses": 0,
+    "first_year": 1997,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1997,
+      "conference": "1997 April General Conference",
+      "talk": "1997-04-hinckley-may-we-be-faithful-and-true",
+      "para": 11,
+      "en": "… the Twelve Apostles, Quorums of the Seventy, and the Presiding Bishopric. At a local level the revelations speak of …",
+      "tr": "… los Doce Apóstoles, Quórumes de los Setenta y el Obispado Presidente. A un nivel local, las revelaciones hablan de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-jergensen-church-auditing-department-report-2015",
+      "para": 0,
+      "en": "… Presidency, the Quorum of the Twelve Apostles, and the Presiding Bishopric—authorizes the expenditure of Church funds. Church entities disburse …",
+      "tr": "… Presidencia, el Cuórum de los Doce Apóstoles y el Obispado Presidente, autoriza el gasto de los fondos de la …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-douglas-the-hour-of-your-mission-is-come",
+      "para": 0,
+      "en": "As a member of the Presiding Bishopric, I have the privilege of serving on the …",
+      "tr": "Como miembro del Obispado Presidente, tengo el privilegio de servir en el Consejo …"
+     }
+    ],
+    "earliest": {
+     "year": 1997,
+     "conference": "1997 April General Conference",
+     "talk": "1997-04-hinckley-may-we-be-faithful-and-true",
+     "para": 11,
+     "en": "… the Twelve Apostles, Quorums of the Seventy, and the Presiding Bishopric. At a local level the revelations speak of …",
+     "tr": "… los Doce Apóstoles, Quórumes de los Setenta y el Obispado Presidente. A un nivel local, las revelaciones hablan de …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

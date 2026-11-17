@@ -1,0 +1,19 @@
+id: concept.sign-of-the-dove
+category: Priesthood Authority & Ordinances
+en:
+  term: Sign of the Dove
+  match:
+  - Sign of the Dove
+sources:
+  GS:
+  - dove-sign-of-the
+candidates:
+  pt:
+  - term: sinal da pomba
+    hint: pulpit-glossary:verified
+  es:
+  - term: señal de la Paloma
+    hint: pulpit-glossary:verified
+related: []
+note: Scriptural test (D&C 128:20) for recognizing a true heavenly messenger — specialized, not the ordinary
+  dove symbol

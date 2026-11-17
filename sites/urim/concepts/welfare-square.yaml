@@ -1,0 +1,15 @@
+id: concept.welfare-square
+category: Church Units & Facilities
+en:
+  term: Welfare Square
+  match:
+  - Welfare Square
+sources: {}
+candidates:
+  pt:
+  - term: Praça do Bem-Estar
+    hint: pulpit-glossary:verified
+  es:
+  - term: Plaza de Bienestar
+    hint: pulpit-glossary:verified
+related: []

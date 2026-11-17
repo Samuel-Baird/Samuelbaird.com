@@ -1,0 +1,15 @@
+id: concept.moral-agency
+category: Plan of Salvation
+en:
+  term: moral agency
+  match:
+  - moral agency
+sources: {}
+candidates:
+  pt:
+  - term: arbítrio moral
+    hint: pulpit-glossary:verified
+  es:
+  - term: albedrío moral
+    hint: pulpit-glossary:verified
+related: []

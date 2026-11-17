@@ -1,0 +1,194 @@
+{
+ "id": "concept.endure-to-the-end",
+ "pt": {
+  "en_paragraphs": 133,
+  "en_talks": 104,
+  "en_verses": 10,
+  "uncovered_paragraphs": 75,
+  "renderings": [
+   {
+    "term": "perseverar até o fim",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 65,
+    "talks": 50,
+    "verses": 3,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 14:7",
+      "ref_en": "Doctrine and Covenants 14:7",
+      "en": "And, if you keep my commandments and endure to the end you shall have eternal life, which gift is the greatest of all the gifts of God.",
+      "tr": "E se guardares meus mandamentos e perseverares até o fim, terás vida eterna, que é o maior de todos os dons de Deus.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/14?lang=por&id=p7"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-packer-covenants",
+      "para": 0,
+      "en": "… he would “keep his *covenants* and *obligations* and endure to the end.” The word *covenant* is the subject of …",
+      "tr": "… que pudesse “cumprir seus *convênios* e *obrigações* e perseverar até o fim”. A palavra *convênio* é o assunto de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 April General Conference",
+      "talk": "2012-04-eyring-mountains-to-climb",
+      "para": 16,
+      "en": "… someone ready to give up the fight to endure to the end. If the foundation of faith is not …",
+      "tr": "… de alguém prestes a desistir da luta para perseverar até o fim. Se não tivermos um firme alicerce de …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 October General Conference",
+     "talk": "1990-10-packer-covenants",
+     "para": 0,
+     "en": "… he would “keep his *covenants* and *obligations* and endure to the end.” The word *covenant* is the subject of …",
+     "tr": "… que pudesse “cumprir seus *convênios* e *obrigações* e perseverar até o fim”. A palavra *convênio* é o assunto de …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "fim",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 73,
+    "share_of_uncovered": 0.973,
+    "ratio": 27.0,
+    "source": "1990-10-rector-the-resurrection",
+    "kind": "talk",
+    "sample": "ist.org/study/scriptures/bofm/2-ne/31?lang=por&id=p15#p15)), e perseverai até o fim."
+   },
+   {
+    "term": "banqueteando",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 21,
+    "share_of_uncovered": 0.28,
+    "ratio": 186.7,
+    "source": "1994-04-jack-walk-with-me",
+    "kind": "talk",
+    "sample": "na verdade, conhecemo-lo bem. O profeta Néfi prometeu: “Se assim prosseguirdes, banqueteando-vos com a palavra de Cristo e perseverando até o fim, eis que, diz o Pai: Terei"
+   },
+   {
+    "term": "tereis vida eterna",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 16,
+    "share_of_uncovered": 0.213,
+    "ratio": 213.4,
+    "source": "1994-04-jack-walk-with-me",
+    "kind": "talk",
+    "sample": "eando-vos com a palavra de Cristo e perseverando até o fim, eis que, diz o Pai: Tereis vida eterna”. (2 Néfi 31:20.) Que assim seja. Em nome de Jesus Cristo. Amém."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 144,
+  "en_talks": 112,
+  "en_verses": 10,
+  "uncovered_paragraphs": 92,
+  "renderings": [
+   {
+    "term": "perseverar hasta el fin",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 61,
+    "talks": 49,
+    "verses": 1,
+    "first_year": 1997,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "2 Nefi 33:4",
+      "ref_en": "2 Nephi 33:4",
+      "en": "And I know that the Lord God will consecrate my prayers for the gain of my people. And the words which I have written in weakness will be made strong unto them; for it persuadeth them to do good; it maketh known unto them of their fathers; and it speaketh of Jesus, and persuadeth them to believe in him, and to endure to the end, which is life eternal.",
+      "tr": "Y sé que el Señor Dios consagrará mis oraciones para el beneficio de mi pueblo. Y las palabras que he escrito en debilidad serán hechas fuertes para ellos; pues los persuaden a hacer el bien; les hacen saber acerca de sus padres; y hablan de Jesús, y los persuaden a creer en él y a perseverar hasta el fin, que es la vida eterna.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/33?lang=spa&id=p4"
+     },
+     {
+      "kind": "talk",
+      "year": 1997,
+      "conference": "1997 April General Conference",
+      "talk": "1997-04-scott-jesus-christ-our-redeemer",
+      "para": 6,
+      "en": "… shall have eternal life—you must be obedient and endure to the end.",
+      "tr": "… la vida eterna; pero debes ser obediente y perseverar hasta el fin."
+     },
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 October General Conference",
+      "talk": "2010-10-monson-till-we-meet-again",
+      "para": 7,
+      "en": "… to learn from them, and to overcome them. Endure to the end we must, for our goal is eternal life …",
+      "tr": "… para aprender de ellos y para superarlos. Debemos perseverar hasta el fin, pues nuestra meta es la vida eterna …"
+     }
+    ],
+    "earliest": {
+     "year": 1997,
+     "conference": "1997 April General Conference",
+     "talk": "1997-04-scott-jesus-christ-our-redeemer",
+     "para": 6,
+     "en": "… shall have eternal life—you must be obedient and endure to the end.",
+     "tr": "… la vida eterna; pero debes ser obediente y perseverar hasta el fin."
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "fin",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 90,
+    "share_of_uncovered": 0.978,
+    "ratio": 24.5,
+    "source": "1992-10-coleman-jesus-christ-is-at-the-center-of-the-restoration-of-the-gospel",
+    "kind": "talk",
+    "sample": "marcháis adelante, deleitándoos en la palabra de Cristo, y perseveráis hasta el fin, he aquí, así dice el Padre: Tendréis la vida eterna."
+   },
+   {
+    "term": "eterna",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 47,
+    "share_of_uncovered": 0.511,
+    "ratio": 16.4,
+    "source": "1992-10-coleman-jesus-christ-is-at-the-center-of-the-restoration-of-the-gospel",
+    "kind": "talk",
+    "sample": "risto, y perseveráis hasta el fin, he aquí, así dice el Padre: Tendréis la vida eterna."
+   },
+   {
+    "term": "adelante con firmeza",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 23,
+    "share_of_uncovered": 0.25,
+    "ratio": 200.1,
+    "source": "1992-10-coleman-jesus-christ-is-at-the-center-of-the-restoration-of-the-gospel",
+    "kind": "talk",
+    "sample": "“Por tanto”, dice el profeta Nefi, “debéis seguir adelante con firmeza en Cristo, teniendo un fulgor perfecto de esperanza y amor por Dios y por todos"
+   }
+  ]
+ }
+}

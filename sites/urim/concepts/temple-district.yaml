@@ -1,0 +1,15 @@
+id: concept.temple-district
+category: Temple & Family History
+en:
+  term: temple district
+  match:
+  - temple district
+sources: {}
+candidates:
+  pt:
+  - term: distrito do templo
+    hint: pulpit-glossary:verified
+  es:
+  - term: distrito del templo
+    hint: pulpit-glossary:verified
+related: []

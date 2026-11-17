@@ -1,0 +1,15 @@
+id: concept.less-active-member
+category: The Church & Members
+en:
+  term: less-active member
+  match:
+  - less-active member
+sources: {}
+candidates:
+  pt:
+  - term: membro menos ativo
+    hint: pulpit-glossary:verified
+  es:
+  - term: miembro menos activo
+    hint: pulpit-glossary:verified
+related: []

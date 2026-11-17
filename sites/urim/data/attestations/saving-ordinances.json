@@ -1,0 +1,195 @@
+{
+ "id": "concept.saving-ordinances",
+ "pt": {
+  "en_paragraphs": 83,
+  "en_talks": 70,
+  "en_verses": 0,
+  "uncovered_paragraphs": 34,
+  "renderings": [
+   {
+    "term": "ordenanças de salvação",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 49,
+    "talks": 39,
+    "verses": 0,
+    "first_year": 1993,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1993,
+      "conference": "1993 April General Conference",
+      "talk": "1993-04-haight-personal-temple-worship",
+      "para": 17,
+      "en": "… dead may be made possible by providing the necessary saving ordinances for them by living proxies.",
+      "tr": "… possibilite a redenção dos mortos por meio das ordenanças de salvação realizadas em seu favor por procuradores vivos."
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 October General Conference",
+      "talk": "2015-10-christofferson-why-the-church",
+      "para": 20,
+      "en": "… of the Savior’s doctrine and the integrity of His saving ordinances.[^29] They help prepare those who wish to receive …",
+      "tr": "… doutrina do Salvador e a integridade de Suas ordenanças de salvação.[^29] Eles auxiliam na preparação daqueles que desejam receber …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-gong-come-to-the-lord-in-his-holy-house",
+      "para": 13,
+      "en": "… the Holy Ghost “witnesses to the Father that the saving ordinances have been performed properly and that the covenants associated …",
+      "tr": "… Espírito Santo testifica ao Pai que as “ordenanças de salvação foram devidamente realizadas e que os convênios a elas …"
+     }
+    ],
+    "earliest": {
+     "year": 1993,
+     "conference": "1993 April General Conference",
+     "talk": "1993-04-haight-personal-temple-worship",
+     "para": 17,
+     "en": "… dead may be made possible by providing the necessary saving ordinances for them by living proxies.",
+     "tr": "… possibilite a redenção dos mortos por meio das ordenanças de salvação realizadas em seu favor por procuradores vivos."
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "ordenanças salvadoras",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 21,
+    "share_of_uncovered": 0.618,
+    "ratio": 823.7,
+    "source": "1991-04-haight-linking-the-family-of-man",
+    "kind": "talk",
+    "sample": "ar nossos ancestrais. Identificamos nossos ancestrais para realizar por eles as ordenanças salvadoras do evangelho, em templos sagrados dedicados a esse propósito. É nossa responsab"
+   },
+   {
+    "term": "salvação",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.294,
+    "ratio": 19.6,
+    "source": "1993-10-clyde-relief-society-charity-the-guiding-principle",
+    "kind": "talk",
+    "sample": "mo realmente serão; assim, estas coisas nos são manifestadas claramente, para a salvação de nossas almas”. Acreditamos que as mulheres que lutam pela própria identidade"
+   },
+   {
+    "term": "sagrados",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.206,
+    "ratio": 23.5,
+    "source": "1991-04-haight-linking-the-family-of-man",
+    "kind": "talk",
+    "sample": "strais para realizar por eles as ordenanças salvadoras do evangelho, em templos sagrados dedicados a esse propósito. É nossa responsabilidade, dada pelo Senhor, ajudar"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 79,
+  "en_talks": 67,
+  "en_verses": 0,
+  "uncovered_paragraphs": 43,
+  "renderings": [
+   {
+    "term": "ordenanzas salvadoras",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 36,
+    "talks": 33,
+    "verses": 0,
+    "first_year": 1997,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1997,
+      "conference": "1997 April General Conference",
+      "talk": "1997-04-monson-they-will-come",
+      "para": 32,
+      "en": "… Clegg would mention the temple of the Lord, the saving ordinances and covenants emphasized there, and would conclude with this …",
+      "tr": "… el presidente Clegg mencionaba el templo del Señor, las ordenanzas salvadoras y los convenios que allí se recalcaban, y terminaba …"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 October General Conference",
+      "talk": "2012-10-scott-the-joy-of-redeeming-the-dead",
+      "para": 20,
+      "en": "… authority delegated by the Savior, our progenitors receive the saving ordinances that allow them to enjoy eternal happiness.",
+      "tr": "… que el Señor ha delegado, nuestros progenitores reciben las ordenanzas salvadoras que les permiten disfrutar de felicidad eterna."
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-gong-come-to-the-lord-in-his-holy-house",
+      "para": 13,
+      "en": "… the Holy Ghost “witnesses to the Father that the saving ordinances have been performed properly and that the covenants associated …",
+      "tr": "… Promesa, el Espíritu Santo “testifica al Padre que las ordenanzas salvadoras se han efectuado debidamente y que se han guardado …"
+     }
+    ],
+    "earliest": {
+     "year": 1997,
+     "conference": "1997 April General Conference",
+     "talk": "1997-04-monson-they-will-come",
+     "para": 32,
+     "en": "… Clegg would mention the temple of the Lord, the saving ordinances and covenants emphasized there, and would conclude with this …",
+     "tr": "… el presidente Clegg mencionaba el templo del Señor, las ordenanzas salvadoras y los convenios que allí se recalcaban, y terminaba …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "salvación",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 41,
+    "share_of_uncovered": 0.953,
+    "ratio": 51.6,
+    "source": "1993-10-clyde-relief-society-charity-the-guiding-principle",
+    "kind": "talk",
+    "sample": "(o sea, la Sociedad de Socorro) estar pendientes del bienestar espiritual y la salvación de las madres e hijas de Sión; y asegurarse de que no se descuide a nadie, y qu"
+   },
+   {
+    "term": "ordenanzas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 41,
+    "share_of_uncovered": 0.953,
+    "ratio": 45.4,
+    "source": "1996-10-cook-rejoice",
+    "kind": "talk",
+    "sample": "¿Que debemos hacer para experimentar esta clase de gozo? Además de recibir las ordenanzas de salvación y de seguir al Profeta actual, es necesario que vivamos de acuerdo"
+   },
+   {
+    "term": "llaves",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.209,
+    "ratio": 31.0,
+    "source": "2003-10-hales-receiving-a-testimony-of-the-restored-gospel-of-jesus-christ",
+    "kind": "talk",
+    "sample": "s, Elías y Elías el profeta también aparecieron allí y le entregaron a José las llaves del reino y de las ordenanzas de salvación[^22]."
+   }
+  ]
+ }
+}

@@ -1,0 +1,157 @@
+{
+ "id": "concept.setting-apart",
+ "pt": {
+  "en_paragraphs": 11,
+  "en_talks": 10,
+  "en_verses": 0,
+  "uncovered_paragraphs": 5,
+  "renderings": [
+   {
+    "term": "designação",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 6,
+    "talks": 6,
+    "verses": 0,
+    "first_year": 1993,
+    "last_year": 2021,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1993,
+      "conference": "1993 April General Conference",
+      "talk": "1993-04-packer-the-temple-the-priesthood",
+      "para": 48,
+      "en": "… to which one is set apart. Unauthorized ordinations or settings apart convey nothing, neither power nor authority of the priesthood.",
+      "tr": "… chamado para o qual alguém foi designado. Ordenações e designações não autorizadas nada transmitem, nem poder, nem autoridade do sacerdócio."
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-rasband-behold-a-royal-army",
+      "para": 34,
+      "en": "I remind you: priesthood authority comes by way of setting apart and ordination, but real priesthood power, the power to …",
+      "tr": "… lembrá-los: A autoridade do sacerdócio vem por meio da designação e da ordenação, mas o poder real do sacerdócio, o …"
+     },
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 April General Conference",
+      "talk": "2021-04-cook-bishopsshepherds-over-the-lords-flock",
+      "para": 32,
+      "en": "… remarkable in so many ways. The calling, sustaining, and setting apart of a bishop is a never-to-be-forgotten experience. For me, …",
+      "tr": "… servir ao Senhor nesse chamado. O chamado, apoio e designação de um bispo é uma experiência inesquecível. Para mim, ela …"
+     }
+    ],
+    "earliest": {
+     "year": 1993,
+     "conference": "1993 April General Conference",
+     "talk": "1993-04-packer-the-temple-the-priesthood",
+     "para": 48,
+     "en": "… to which one is set apart. Unauthorized ordinations or settings apart convey nothing, neither power nor authority of the priesthood.",
+     "tr": "… chamado para o qual alguém foi designado. Ordenações e designações não autorizadas nada transmitem, nem poder, nem autoridade do sacerdócio."
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "sob",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.4,
+    "ratio": 39.0,
+    "source": "1992-04-oaks-the-relief-society-and-the-church",
+    "kind": "talk",
+    "sample": "acontece com a autoridade do sacerdócio e com a autoridade associada, exercida sob a direção do sacerdócio. As organizações podem canalizar o exercício dessa auto"
+   },
+   {
+    "term": "líderes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.4,
+    "ratio": 18.4,
+    "source": "2008-04-tanner-stand-as-a-witness",
+    "kind": "talk",
+    "sample": "Fortalecida por essas mulheres, por meus familiares, pelos jovens e líderes firmes e inamovíveis do mundo inteiro, sinto-me rodeada “de uma tão grande nuve"
+   },
+   {
+    "term": "será",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.4,
+    "ratio": 11.7,
+    "source": "1995-04-peterson-easter-reflections",
+    "kind": "talk",
+    "sample": "por todos os Seus ­filhos. Hoje, como na Páscoa de 1968, a Páscoa de 1995 nunca será esque­ci­da."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 6,
+  "en_talks": 6,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "apartamiento",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 4,
+    "talks": 4,
+    "verses": 0,
+    "first_year": 2017,
+    "last_year": 2021,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 April General Conference",
+      "talk": "2017-04-causs-prepare-the-way",
+      "para": 22,
+      "en": "… dear bishops, you have, included in your ordination and setting apart as bishop of your ward, the sacred calling to …",
+      "tr": "… queridos obispos, ustedes tienen, incluido en su ordenación y apartamiento como obispos del barrio, el sagrado llamamiento de servir como …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-rasband-behold-a-royal-army",
+      "para": 34,
+      "en": "I remind you: priesthood authority comes by way of setting apart and ordination, but real priesthood power, the power to …",
+      "tr": "Les recuerdo: la autoridad del sacerdocio viene mediante el apartamiento y la ordenación; pero el poder del sacerdocio real, el …"
+     },
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 April General Conference",
+      "talk": "2021-04-cook-bishopsshepherds-over-the-lords-flock",
+      "para": 32,
+      "en": "… remarkable in so many ways. The calling, sustaining, and setting apart of a bishop is a never-to-be-forgotten experience. For me, …",
+      "tr": "… es extraordinario en muchos sentidos. El llamamiento, sostenimiento y apartamiento de los obispos es una experiencia inolvidable. Para mí, se …"
+     }
+    ],
+    "earliest": {
+     "year": 2017,
+     "conference": "2017 April General Conference",
+     "talk": "2017-04-causs-prepare-the-way",
+     "para": 22,
+     "en": "… dear bishops, you have, included in your ordination and setting apart as bishop of your ward, the sacred calling to …",
+     "tr": "… queridos obispos, ustedes tienen, incluido en su ordenación y apartamiento como obispos del barrio, el sagrado llamamiento de servir como …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

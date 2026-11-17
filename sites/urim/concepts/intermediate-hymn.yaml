@@ -1,0 +1,13 @@
+id: concept.intermediate-hymn
+category: Sacrament & Meetings
+en:
+  term: intermediate hymn
+  match:
+  - intermediate hymn
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: himno intermedio
+    hint: pulpit-glossary:verified
+related: []

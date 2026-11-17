@@ -1,0 +1,29 @@
+{
+ "id": "concept.temple-and-family-history-consultant",
+ "pt": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "consultor de templo e história da família",
+    "evidence": [],
+    "hint": "pulpit-glossary:verified"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "consultor de templo e historia familiar",
+    "evidence": [],
+    "hint": "pulpit-glossary:verified"
+   }
+  ]
+ }
+}

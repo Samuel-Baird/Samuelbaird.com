@@ -1,0 +1,195 @@
+{
+ "id": "concept.acting-president-of-the-quorum-of-the-twelve-apostles",
+ "pt": {
+  "en_paragraphs": 34,
+  "en_talks": 34,
+  "en_verses": 0,
+  "uncovered_paragraphs": 15,
+  "renderings": [
+   {
+    "term": "presidente em exercício do Quórum dos Doze Apóstolos",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 19,
+    "talks": 19,
+    "verses": 0,
+    "first_year": 2018,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-eyring-solemn-assembly",
+      "para": 11,
+      "en": "… and Melvin Russell Ballard as Acting President of the Quorum of the Twelve Apostles.",
+      "tr": "… Apóstolos e Melvin Russell Ballard como presidente em exercício do Quórum dos Doze Apóstolos."
+     },
+     {
+      "kind": "talk",
+      "year": 2022,
+      "conference": "2022 April General Conference",
+      "talk": "2022-04-oaks-sustaining-of-general-authorities-area-seventies-and-general-officers",
+      "para": 5,
+      "en": "… and M. Russell Ballard as Acting President of the Quorum of the Twelve Apostles.",
+      "tr": "… Apóstolos e M. Russell Ballard como presidente em exercício do Quórum dos Doze Apóstolos."
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-christofferson-sustaining-of-general-authorities-area-seventies-and-general-officers",
+      "para": 5,
+      "en": "… and Dieter F. Uchtdorf as Acting President of the Quorum of the Twelve Apostles.",
+      "tr": "… Apóstolos e Dieter F. Uchtdorf como presidente em exercício do Quórum dos Doze Apóstolos."
+     }
+    ],
+    "earliest": {
+     "year": 2018,
+     "conference": "2018 April General Conference",
+     "talk": "2018-04-eyring-solemn-assembly",
+     "para": 11,
+     "en": "… and Melvin Russell Ballard as Acting President of the Quorum of the Twelve Apostles.",
+     "tr": "… Apóstolos e Melvin Russell Ballard como presidente em exercício do Quórum dos Doze Apóstolos."
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "interino",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 15,
+    "share_of_uncovered": 1.0,
+    "ratio": 4001.0,
+    "source": "1995-10-monson-the-sustaining-of-church-officers",
+    "kind": "talk",
+    "sample": "on como Presidente do Quórum dos Doze Apóstolos, Boyd K. Packer como Presidente Interino do Quórum dos Doze Apóstolos e os seguin­tes mem­bros desse quó­rum: Boyd K. Pa"
+   },
+   {
+    "term": "wirthlin, richard",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 14,
+    "share_of_uncovered": 0.933,
+    "ratio": 3734.3,
+    "source": "1995-10-monson-the-sustaining-of-church-officers",
+    "kind": "talk",
+    "sample": "al A. Maxwell, Russell M. Nelson, Dallin H. Oaks, M. Russell Ballard, Joseph B. Wirthlin, Richard G. Scott, Robert D. Hales, Jeffrey R. Holland, e Henry B. Eyring. Os que esti­v"
+   },
+   {
+    "term": "russell ballard, joseph",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 14,
+    "share_of_uncovered": 0.933,
+    "ratio": 3734.3,
+    "source": "1995-10-monson-the-sustaining-of-church-officers",
+    "kind": "talk",
+    "sample": "Perry, David B. Haight, Neal A. Maxwell, Russell M. Nelson, Dallin H. Oaks, M. Russell Ballard, Joseph B. Wirthlin, Richard G. Scott, Robert D. Hales, Jeffrey R. Holland, e Henry B."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 34,
+  "en_talks": 34,
+  "en_verses": 0,
+  "uncovered_paragraphs": 19,
+  "renderings": [
+   {
+    "term": "Presidente en Funciones del Quórum de los Doce Apóstoles",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 15,
+    "talks": 15,
+    "verses": 0,
+    "first_year": 1996,
+    "last_year": 2014,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 April General Conference",
+      "talk": "1996-04-faust-the-sustaining-of-church-officers",
+      "para": 2,
+      "en": "… Apostles, Boyd Kenneth Packer as Acting President of the Quorum of the Twelve Apostles, and the following as members …",
+      "tr": "… Apóstoles, Boyd Kenneth Packer como Presidente en Funciones del Quórum de los Doce Apóstoles y a los siguientes hermanos como …"
+     },
+     {
+      "kind": "talk",
+      "year": 2002,
+      "conference": "2002 October General Conference",
+      "talk": "2002-10-monson-the-sustaining-of-church-officers",
+      "para": 2,
+      "en": "… Apostles; Boyd Kenneth Packer as Acting President of the Quorum of the Twelve Apostles; and the following as members …",
+      "tr": "… a Boyd Kenneth Packer como Presidente en Funciones del Quórum de los Doce Apóstoles y a los siguientes hermanos como …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 October General Conference",
+      "talk": "2014-10-nelson-sustaining-the-prophets",
+      "para": 2,
+      "en": "… in 1972, when he was Acting President of the Quorum of the Twelve Apostles. He needed a very complex …",
+      "tr": "… en 1972, cuando él era Presidente en Funciones del Quórum de los Doce Apóstoles. Necesitaba una operación sumamente delicada, …"
+     }
+    ],
+    "earliest": {
+     "year": 1996,
+     "conference": "1996 April General Conference",
+     "talk": "1996-04-faust-the-sustaining-of-church-officers",
+     "para": 2,
+     "en": "… Apostles, Boyd Kenneth Packer as Acting President of the Quorum of the Twelve Apostles, and the following as members …",
+     "tr": "… Apóstoles, Boyd Kenneth Packer como Presidente en Funciones del Quórum de los Doce Apóstoles y a los siguientes hermanos como …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "funciones del cuórum",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 19,
+    "share_of_uncovered": 1.0,
+    "ratio": 1333.7,
+    "source": "2018-04-eyring-solemn-assembly",
+    "kind": "talk",
+    "sample": "del Cuórum de los Doce Apóstoles y a Melvin Russell Ballard como Presidente en funciones del Cuórum de los Doce Apóstoles."
+   },
+   {
+    "term": "doce apóstoles",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 19,
+    "share_of_uncovered": 1.0,
+    "ratio": 133.4,
+    "source": "2018-04-eyring-solemn-assembly",
+    "kind": "talk",
+    "sample": "era Presidencia sostenga a Dallin Harris Oaks como Presidente del Cuórum de los Doce Apóstoles y a Melvin Russell Ballard como Presidente en funciones del Cuórum de los Doce"
+   },
+   {
+    "term": "propone",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 17,
+    "share_of_uncovered": 0.895,
+    "ratio": 132.6,
+    "source": "2018-04-eyring-solemn-assembly",
+    "kind": "talk",
+    "sample": "Se propone que la Primera Presidencia sostenga a Dallin Harris Oaks como Presidente del Cu"
+   }
+  ]
+ }
+}

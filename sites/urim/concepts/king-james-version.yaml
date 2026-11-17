@@ -1,0 +1,15 @@
+id: concept.king-james-version
+category: Scriptures & Study Helps
+en:
+  term: King James Version
+  match:
+  - King James Version
+sources: {}
+candidates:
+  pt:
+  - term: Rei Jaime
+    hint: pulpit-glossary:standard
+  es:
+  - term: Versión del Rey Jacobo
+    hint: pulpit-glossary:verified
+related: []

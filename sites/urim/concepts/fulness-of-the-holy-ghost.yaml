@@ -1,0 +1,15 @@
+id: concept.fulness-of-the-holy-ghost
+category: Temple & Family History
+en:
+  term: fulness of the Holy Ghost
+  match:
+  - fulness of the Holy Ghost
+sources: {}
+candidates:
+  pt:
+  - term: plenitude do Espírito Santo
+    hint: pulpit-glossary:verified
+  es:
+  - term: plenitud del Espíritu Santo
+    hint: pulpit-glossary:verified
+related: []

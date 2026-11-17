@@ -1,0 +1,17 @@
+id: concept.bishopric-meeting
+category: Councils & Conferences
+en:
+  term: bishopric meeting
+  match:
+  - bishopric meeting
+sources:
+  GH:
+  - 29-meetings-in-the-church#title_number7
+candidates:
+  pt:
+  - term: reunião do bispado
+    hint: pulpit-glossary:standard
+  es:
+  - term: reunión de obispado
+    hint: pulpit-glossary:verified
+related: []

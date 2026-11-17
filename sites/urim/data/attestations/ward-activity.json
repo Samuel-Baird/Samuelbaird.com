@@ -1,0 +1,110 @@
+{
+ "id": "concept.ward-activity",
+ "pt": {
+  "en_paragraphs": 5,
+  "en_talks": 4,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "atividade da ala",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 4,
+    "talks": 3,
+    "verses": 0,
+    "first_year": 2012,
+    "last_year": 2023,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 April General Conference",
+      "talk": "2012-04-hallstrom-converted-to-his-gospel-through-his-church",
+      "para": 7,
+      "en": "… for the youth was Wednesday night. Saturday was for ward activities. On Sunday, men and young men would go …",
+      "tr": "… noites de quarta-feira. O sábado era para as atividades da ala. Aos domingos, os homens e rapazes iam para …"
+     },
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 October General Conference",
+      "talk": "2023-10-gong-love-is-spoken-here",
+      "para": 19,
+      "en": "… in many places in the Church, a few more ward activities, of course planned and implemented with gospel purpose, …",
+      "tr": "… sentido que, em muitos lugares da Igreja, algumas atividades da ala, obviamente planejadas e implementadas com o propósito do …"
+     }
+    ],
+    "earliest": {
+     "year": 2012,
+     "conference": "2012 April General Conference",
+     "talk": "2012-04-hallstrom-converted-to-his-gospel-through-his-church",
+     "para": 7,
+     "en": "… for the youth was Wednesday night. Saturday was for ward activities. On Sunday, men and young men would go …",
+     "tr": "… noites de quarta-feira. O sábado era para as atividades da ala. Aos domingos, os homens e rapazes iam para …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 5,
+  "en_talks": 4,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "actividad de barrio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 4,
+    "talks": 3,
+    "verses": 0,
+    "first_year": 2022,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2022,
+      "conference": "2022 April General Conference",
+      "talk": "2022-04-stevenson-love-share-invite",
+      "para": 35,
+      "en": "… others to “come and see” a sacrament service, a ward activity, an online video that explains the gospel of …",
+      "tr": "… a “venir y ver” un servicio sacramental, una actividad de barrio o un video en línea que explique el evangelio …"
+     },
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 October General Conference",
+      "talk": "2023-10-gong-love-is-spoken-here",
+      "para": 20,
+      "en": "One inspired ward activities chair and committee nurtures individuals and a community of …",
+      "tr": "Un comité de actividades de barrio y su presidente inspirados nutren a las personas y …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-jackson-remembering-the-sheep",
+      "para": 13,
+      "en": "… surprised when all that was discussed was an upcoming ward activity. I approached the ward mission leader afterward and …",
+      "tr": "… sorprendió que solo se habló de una futura actividad de barrio. Después de la reunión me acerqué al líder …"
+     }
+    ],
+    "earliest": {
+     "year": 2022,
+     "conference": "2022 April General Conference",
+     "talk": "2022-04-stevenson-love-share-invite",
+     "para": 35,
+     "en": "… others to “come and see” a sacrament service, a ward activity, an online video that explains the gospel of …",
+     "tr": "… a “venir y ver” un servicio sacramental, una actividad de barrio o un video en línea que explique el evangelio …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

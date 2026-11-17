@@ -1,0 +1,13 @@
+id: concept.missionary-standards
+category: Missionary Work
+en:
+  term: missionary standards
+  match:
+  - missionary standards
+sources: {}
+candidates:
+  pt:
+  - term: normas missionárias
+    hint: pulpit-glossary:standard
+  es: []
+related: []

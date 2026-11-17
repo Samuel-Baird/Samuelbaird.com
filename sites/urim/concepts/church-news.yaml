@@ -1,0 +1,15 @@
+id: concept.church-news
+category: Education & Publications
+en:
+  term: Church News
+  match:
+  - Church News
+sources: {}
+candidates:
+  pt:
+  - term: Church News
+    hint: pulpit-glossary:verified
+  es:
+  - term: Church News
+    hint: pulpit-glossary:verified
+related: []

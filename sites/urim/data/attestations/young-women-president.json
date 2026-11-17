@@ -1,0 +1,157 @@
+{
+ "id": "concept.young-women-president",
+ "pt": {
+  "en_paragraphs": 21,
+  "en_talks": 17,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "presidente das Moças",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 19,
+    "talks": 15,
+    "verses": 0,
+    "first_year": 1998,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1998,
+      "conference": "1998 April General Conference",
+      "talk": "1998-04-thomas-understanding-our-true-identity",
+      "para": 7,
+      "en": "… complete. Last summer in Alaska, I met a Young Women president whose mother had died when she was three. She …",
+      "tr": "… completa. No último verão no Alasca, conheci uma presidente das Moças que havia perdido a mãe quando tinha três anos. …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-oscarson-sisterhood-oh-how-we-need-each-other",
+      "para": 12,
+      "en": "… couple of weeks ago, I met a stake Young Women president in California who told me that her 81-year-old mother …",
+      "tr": "Há poucas semanas, conheci uma presidente das Moças de uma estaca da Califórnia que me contou que …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-yee-ministeringthat-ye-love-one-another-as-i-have-loved-you",
+      "para": 32,
+      "en": "… said to me, when I was an overwhelmed Young Women president of 53 young women, “When you bless the one, …",
+      "tr": "… me disse certa vez, quando eu era uma presidente das Moças sobrecarregada cuidando de 53 moças: \"Quando você abençoa uma …"
+     }
+    ],
+    "earliest": {
+     "year": 1998,
+     "conference": "1998 April General Conference",
+     "talk": "1998-04-thomas-understanding-our-true-identity",
+     "para": 7,
+     "en": "… complete. Last summer in Alaska, I met a Young Women president whose mother had died when she was three. She …",
+     "tr": "… completa. No último verão no Alasca, conheci uma presidente das Moças que havia perdido a mãe quando tinha três anos. …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 22,
+  "en_talks": 18,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "presidenta de las Mujeres Jóvenes",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 19,
+    "talks": 15,
+    "verses": 0,
+    "first_year": 2003,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 October General Conference",
+      "talk": "2003-10-hughes-in-covenant-with-him",
+      "para": 4,
+      "en": "Twenty years ago I was called to be Young Women president in my ward. My hair was brown, and my …",
+      "tr": "… veinte años, me llamaron a ser la presidenta de las Mujeres Jóvenes del barrio. En ese entonces tenía yo el …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-cook-lds-women-are-incredible",
+      "para": 38,
+      "en": "… from an e-mail written by Monica Sedgwick, stake Young Women president of the Laguna Niguel California Stake, and a talk …",
+      "tr": "… electrónico escrito por la hermana Monica Sedgwick, presidenta de las Mujeres Jóvenes de la Estaca Laguna Nigel; y de un …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-yee-ministeringthat-ye-love-one-another-as-i-have-loved-you",
+      "para": 32,
+      "en": "… said to me, when I was an overwhelmed Young Women president of 53 young women, “When you bless the one, …",
+      "tr": "… una vez, cuando me sentía abrumada como presidenta de las Mujeres Jóvenes de cincuenta y tres jovencitas: \"Cuando bendice a …"
+     }
+    ],
+    "earliest": {
+     "year": 2003,
+     "conference": "2003 October General Conference",
+     "talk": "2003-10-hughes-in-covenant-with-him",
+     "para": 4,
+     "en": "Twenty years ago I was called to be Young Women president in my ward. My hair was brown, and my …",
+     "tr": "… veinte años, me llamaron a ser la presidenta de las Mujeres Jóvenes del barrio. En ese entonces tenía yo el …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "mujeres jóvenes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 121.2,
+    "source": "1998-04-thomas-understanding-our-true-identity",
+    "kind": "talk",
+    "sample": "Algunas veces, cuando la familia no está completa, las mujeres jóvenes tienen desafíos especiales. El verano pasado, conocí en Alaska a una presidenta"
+   },
+   {
+    "term": "femineidad",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 1333.7,
+    "source": "1998-04-thomas-understanding-our-true-identity",
+    "kind": "talk",
+    "sample": "torce años. Le pregunté cómo había aprendido a hacer todo lo relacionado con la femineidad, cosas tales como arreglar su cabello y poner la mesa en forma elegante, a lo q"
+   },
+   {
+    "term": "presidenta",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 222.3,
+    "source": "1998-04-thomas-understanding-our-true-identity",
+    "kind": "talk",
+    "sample": "es jóvenes tienen desafíos especiales. El verano pasado, conocí en Alaska a una presidenta de Mujeres Jóvenes, cuya madre había muerto cuando ella tenía tres años; había"
+   }
+  ]
+ }
+}

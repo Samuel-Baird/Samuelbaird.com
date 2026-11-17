@@ -1,0 +1,93 @@
+{
+ "id": "concept.gospel-doctrine",
+ "pt": {
+  "en_paragraphs": 54,
+  "en_talks": 52,
+  "en_verses": 0,
+  "uncovered_paragraphs": 54,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "doutrina",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 41,
+    "share_of_uncovered": 0.759,
+    "ratio": 19.9,
+    "source": "1990-04-pinegar-home-first",
+    "kind": "talk",
+    "sample": "verte o lar numa instituição divina, que promove e preserva a vida familiar.” (*Doutrina do Evangelho*, pp. 272-273.)"
+   },
+   {
+    "term": "gospel doctrine",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.241,
+    "ratio": 963.2,
+    "source": "2007-04-hinckley-i-am-clean",
+    "kind": "talk",
+    "sample": "algo de positivo em mim. Isso me ajudou em todas as provações e dificuldades” (*Gospel Doctrine*, 5a ed. [1939], pp. 542–543)."
+   },
+   {
+    "term": "smith",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 22,
+    "share_of_uncovered": 0.407,
+    "ratio": 12.0,
+    "source": "1993-10-oaks-the-great-plan-of-happiness",
+    "kind": "talk",
+    "sample": "tome a iniciativa de procurar casamento. É por isso que o Presidente Joseph F. Smith direcionou sua profética advertência aos homens: “Homem algum que seja capacita"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 52,
+  "en_talks": 51,
+  "en_verses": 0,
+  "uncovered_paragraphs": 52,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "doctrina",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 42,
+    "share_of_uncovered": 0.808,
+    "ratio": 20.7,
+    "source": "1997-04-holland-because-she-is-a-mother",
+    "kind": "talk",
+    "sample": "riptures/bofm/3-ne/22?lang=spa&id=p1#p1).\n[^2]: Véase de Joseph Fielding Smith, Doctrina de Salvación, 2:71; Harold B. Lee, Ye Are the Light of the World: Selected Serm"
+   },
+   {
+    "term": "joseph",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 19,
+    "share_of_uncovered": 0.365,
+    "ratio": 52.2,
+    "source": "1997-04-holland-because-she-is-a-mother",
+    "kind": "talk",
+    "sample": "esuschrist.org/study/scriptures/bofm/3-ne/22?lang=spa&id=p1#p1).\n[^2]: Véase de Joseph Fielding Smith, Doctrina de Salvación, 2:71; Harold B. Lee, Ye Are the Light of"
+   },
+   {
+    "term": "pág",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 25,
+    "share_of_uncovered": 0.481,
+    "ratio": 17.0,
+    "source": "1997-04-holland-because-she-is-a-mother",
+    "kind": "talk",
+    "sample": "ritings of President Harold B. Lee; Salt Lake City: Deseret Book Company, 1974, pág. 292; y Gordon B. Hinckley, \"Lo que Dios ha unido\", Liahona, julio de 1991, pág"
+   }
+  ]
+ }
+}

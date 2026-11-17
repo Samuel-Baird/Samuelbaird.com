@@ -1,0 +1,156 @@
+{
+ "id": "concept.dispensation-of-the-fulness-of-times",
+ "pt": {
+  "en_paragraphs": 68,
+  "en_talks": 58,
+  "en_verses": 7,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "dispensação da plenitude dos tempos",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 65,
+    "talks": 56,
+    "verses": 7,
+    "first_year": 1990,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 124:41",
+      "ref_en": "Doctrine and Covenants 124:41",
+      "en": "For I deign to reveal unto my church things which have been kept hid from before the foundation of the world, things that pertain to the dispensation of the fulness of times.",
+      "tr": "Pois digno-me revelar à minha igreja coisas que têm sido mantidas ocultas desde antes da fundação do mundo, coisas pertinentes à dispensação da plenitude dos tempos.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/124?lang=por&id=p41"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-asay-one-small-step-for-a-man-one-giant-leap-for-mankind",
+      "para": 9,
+      "en": "… of unadulterated truths, and ushered in the dispensation of the fulness of times.",
+      "tr": "… de verdades imutáveis, e deu início à dispensação da plenitude dos tempos."
+     },
+     {
+      "kind": "talk",
+      "year": 2007,
+      "conference": "2007 October General Conference",
+      "talk": "2007-10-condie-claim-the-exceeding-great-and-precious-promises",
+      "para": 2,
+      "en": "… the restoration of all things in the dispensation of the fulness of times. Jesus Christ is the head of …",
+      "tr": "… a Restauração de todas as coisas na dispensação da plenitude dos tempos. Jesus Cristo é o Cabeça da Igreja …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-asay-one-small-step-for-a-man-one-giant-leap-for-mankind",
+     "para": 9,
+     "en": "… of unadulterated truths, and ushered in the dispensation of the fulness of times.",
+     "tr": "… de verdades imutáveis, e deu início à dispensação da plenitude dos tempos."
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "plenitude dos tempos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 666.8,
+    "source": "2002-04-nelson-how-firm-our-foundation",
+    "kind": "talk",
+    "sample": "ocultas desde antes da fundação do mundo, coisas pertinentes à dispen-sação da plenitude dos tempos”.[^23]"
+   },
+   {
+    "term": "fundação",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 666.8,
+    "source": "2002-04-nelson-how-firm-our-foundation",
+    "kind": "talk",
+    "sample": "ara os últimos dias. O Senhor há muito planejou revelar “coisas ocultas desde a fundação do mundo”.[^20] Essas coisas incluíam revelações registradas no Livro de Mórmon"
+   },
+   {
+    "term": "desde",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 41.0,
+    "source": "2002-04-nelson-how-firm-our-foundation",
+    "kind": "talk",
+    "sample": "rvadas para os últimos dias. O Senhor há muito planejou revelar “coisas ocultas desde a fundação do mundo”.[^20] Essas coisas incluíam revelações registradas no Livr"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 67,
+  "en_talks": 58,
+  "en_verses": 7,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "dispensación del cumplimiento de los tiempos",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 66,
+    "talks": 57,
+    "verses": 7,
+    "first_year": 1996,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 124:41",
+      "ref_en": "Doctrine and Covenants 124:41",
+      "en": "For I deign to reveal unto my church things which have been kept hid from before the foundation of the world, things that pertain to the dispensation of the fulness of times.",
+      "tr": "porque me propongo revelar a mi iglesia cosas que han estado escondidas desde antes de la fundación del mundo, cosas que pertenecen a la dispensación del cumplimiento de los tiempos.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/124?lang=spa&id=p41"
+     },
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 October General Conference",
+      "talk": "1996-10-hinckley-listen-by-the-power-of-the-spirit",
+      "para": 14,
+      "en": "… stands at the head of this, the dispensation of the fulness of times. We know that the priesthood was …",
+      "tr": "… esta a la cabeza de esta, la dispensación del cumplimiento de los tiempos. Sabemos que se restauró el sacerdocio …"
+     },
+     {
+      "kind": "talk",
+      "year": 2007,
+      "conference": "2007 October General Conference",
+      "talk": "2007-10-condie-claim-the-exceeding-great-and-precious-promises",
+      "para": 2,
+      "en": "… the restoration of all things in the dispensation of the fulness of times. Jesus Christ is the head of …",
+      "tr": "… restauración de todas las cosas en esta dispensación del cumplimiento de los tiempos. Jesucristo es la Cabeza de la …"
+     }
+    ],
+    "earliest": {
+     "year": 1996,
+     "conference": "1996 October General Conference",
+     "talk": "1996-10-hinckley-listen-by-the-power-of-the-spirit",
+     "para": 14,
+     "en": "… stands at the head of this, the dispensation of the fulness of times. We know that the priesthood was …",
+     "tr": "… esta a la cabeza de esta, la dispensación del cumplimiento de los tiempos. Sabemos que se restauró el sacerdocio …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

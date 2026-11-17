@@ -1,0 +1,13 @@
+id: concept.create-a-record
+category: Membership Records
+en:
+  term: create a record
+  match:
+  - create a record
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: crear un registro
+    hint: pulpit-glossary:verified
+related: []

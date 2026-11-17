@@ -1,0 +1,119 @@
+{
+ "id": "concept.eternal-progression",
+ "pt": {
+  "en_paragraphs": 36,
+  "en_talks": 31,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "progresso eterno",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 35,
+    "talks": 30,
+    "verses": 0,
+    "first_year": 1993,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1993,
+      "conference": "1993 October General Conference",
+      "talk": "1993-10-nelson-constancy-amid-change",
+      "para": 61,
+      "en": "… can be safely anchored to them. They provide peace, eternal progression, hope, freedom, love, and joy to all who …",
+      "tr": "… Nossa confiança pode apoiar-se neles com segurança. Fornecem paz, progresso eterno, esperança, liberdade, amor e alegria para todos os …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 October General Conference",
+      "talk": "2013-10-nelson-decisions-for-eternity",
+      "para": 0,
+      "en": "… and change come from a divinely instilled striving for eternal progression.[^2] Each day brings opportunity for decisions for eternity.",
+      "tr": "… vêm de um esforço divinamente instilado para alcançarmos o progresso eterno.[^2] Cada dia traz oportunidades para que tomemos decisões …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 October General Conference",
+      "talk": "2024-10-cook-sacred-scripturesthe-foundations-of-faith",
+      "para": 31,
+      "en": "… down a path that destroys faith and impairs your eternal progression. You can be acted upon positively or negatively. …",
+      "tr": "… um caminho que destrói a fé e prejudica seu progresso eterno. Vocês podem ser influenciados positiva ou negativamente. Procurem …"
+     }
+    ],
+    "earliest": {
+     "year": 1993,
+     "conference": "1993 October General Conference",
+     "talk": "1993-10-nelson-constancy-amid-change",
+     "para": 61,
+     "en": "… can be safely anchored to them. They provide peace, eternal progression, hope, freedom, love, and joy to all who …",
+     "tr": "… Nossa confiança pode apoiar-se neles com segurança. Fornecem paz, progresso eterno, esperança, liberdade, amor e alegria para todos os …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 27,
+  "en_talks": 26,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "progreso eterno",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 26,
+    "talks": 26,
+    "verses": 0,
+    "first_year": 1996,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 October General Conference",
+      "talk": "1996-10-jack-partakers-of-the-glories",
+      "para": 12,
+      "en": "… of us can be directed and blessed in our eternal progression by receiving these blessings. The ordinances, covenants, sealings, and …",
+      "tr": "… nosotros puede recibir dirección y ser bendecido en nuestro progreso eterno. Las ordenanzas, los convenios, los sellamientos y el …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 October General Conference",
+      "talk": "2015-10-cook-shipshape-and-bristol-fashion-be-temple-worthyin-good-times-and-bad-times",
+      "para": 19,
+      "en": "A principle of eternal progression is that exercising self-control and living righteously strengthen our …",
+      "tr": "Un principio de progreso eterno es que el ejercicio del autocontrol y una vida …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 October General Conference",
+      "talk": "2024-10-cook-sacred-scripturesthe-foundations-of-faith",
+      "para": 31,
+      "en": "… down a path that destroys faith and impairs your eternal progression. You can be acted upon positively or negatively. …",
+      "tr": "… un camino que destruye la fe y perjudica su progreso eterno. Se puede actuar sobre ustedes de manera positiva …"
+     }
+    ],
+    "earliest": {
+     "year": 1996,
+     "conference": "1996 October General Conference",
+     "talk": "1996-10-jack-partakers-of-the-glories",
+     "para": 12,
+     "en": "… of us can be directed and blessed in our eternal progression by receiving these blessings. The ordinances, covenants, sealings, and …",
+     "tr": "… nosotros puede recibir dirección y ser bendecido en nuestro progreso eterno. Las ordenanzas, los convenios, los sellamientos y el …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

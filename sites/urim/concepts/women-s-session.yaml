@@ -1,0 +1,15 @@
+id: concept.women-s-session
+category: Councils & Conferences
+en:
+  term: women's session
+  match:
+  - women's session
+sources: {}
+candidates:
+  pt:
+  - term: sessão geral das mulheres
+    hint: pulpit-glossary:verified
+  es:
+  - term: sesión de mujeres
+    hint: pulpit-glossary:verified
+related: []

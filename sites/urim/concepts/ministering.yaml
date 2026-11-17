@@ -1,0 +1,21 @@
+id: concept.ministering
+category: Discipleship & Ministering
+en:
+  term: ministering
+  match:
+  - ministering
+sources:
+  Topics:
+  - ministering
+  GH:
+  - 21-ministering#title_number3
+candidates:
+  pt:
+  - term: ministração
+    hint: pulpit-glossary:verified
+  es:
+  - term: ministración
+    hint: approved-terms
+  - term: ministrar
+    hint: approved-terms
+related: []

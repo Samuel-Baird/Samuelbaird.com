@@ -1,0 +1,20 @@
+id: concept.council-in-heaven
+category: Plan of Salvation
+en:
+  term: Council in Heaven
+  match:
+  - Council in Heaven
+sources:
+  GS:
+  - council-in-heaven
+  Topics:
+  - council-in-heaven
+  TtF:
+  - council-in-heaven
+candidates:
+  pt: []
+  es:
+  - term: Concilio de los cielos
+    hint: pulpit-glossary:verified
+related: []
+note: Premortal council where the Father's plan was presented; also called the War in Heaven in its aftermath

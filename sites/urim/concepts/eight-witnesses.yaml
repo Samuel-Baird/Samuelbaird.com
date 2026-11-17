@@ -1,0 +1,15 @@
+id: concept.eight-witnesses
+category: Scriptures & Study Helps
+en:
+  term: Eight Witnesses
+  match:
+  - Eight Witnesses
+sources: {}
+candidates:
+  pt:
+  - term: Oito Testemunhas
+    hint: pulpit-glossary:standard
+  es:
+  - term: Ocho Testigos
+    hint: pulpit-glossary:verified
+related: []

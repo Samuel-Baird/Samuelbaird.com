@@ -1,0 +1,21 @@
+id: concept.sealing
+category: Temple & Family History
+en:
+  term: sealing
+  match:
+  - sealing
+sources:
+  GS:
+  - seal-sealing
+  Topics:
+  - sealing
+  GH:
+  - 38-church-policies-and-guidelines#title_number71
+candidates:
+  pt:
+  - term: selamento
+    hint: pulpit-glossary:verified
+  es:
+  - term: sellamiento
+    hint: approved-terms
+related: []

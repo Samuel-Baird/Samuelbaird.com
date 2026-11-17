@@ -1,0 +1,23 @@
+id: concept.gift-of-the-holy-ghost
+category: Faith & Gospel Principles
+en:
+  term: gift of the Holy Ghost
+  match:
+  - gift of the Holy Ghost
+sources:
+  GS:
+  - gift-of-the-holy-ghost
+  Topics:
+  - holy-ghost-gift-study-guide
+  TtF:
+  - gift-of-the-holy-ghost
+  GH:
+  - 18-priesthood-ordinances-and-blessings#title_number23
+candidates:
+  pt:
+  - term: dom do Espírito Santo
+    hint: pulpit-glossary:verified
+  es:
+  - term: don del Espíritu Santo
+    hint: approved-terms
+related: []

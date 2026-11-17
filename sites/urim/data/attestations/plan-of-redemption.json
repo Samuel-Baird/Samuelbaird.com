@@ -1,0 +1,156 @@
+{
+ "id": "concept.plan-of-redemption",
+ "pt": {
+  "en_paragraphs": 73,
+  "en_talks": 62,
+  "en_verses": 15,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "plano de redenção",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 71,
+    "talks": 60,
+    "verses": 15,
+    "first_year": 1993,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Alma 17:16",
+      "ref_en": "Alma 17:16",
+      "en": "Therefore, this was the cause for which the sons of Mosiah had undertaken the work, that perhaps they might bring them unto repentance; that perhaps they might bring them to know of the plan of redemption.",
+      "tr": "Por conseguinte, esse era o motivo pelo qual os filhos de Mosias haviam empreendido esse trabalho, para que talvez pudessem levá-los ao arrependimento; para que talvez os levassem a conhecer o plano de redenção.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/17?lang=por&id=p16"
+     },
+     {
+      "kind": "talk",
+      "year": 1993,
+      "conference": "1993 October General Conference",
+      "talk": "1993-10-packer-for-time-and-all-eternity",
+      "para": 1,
+      "en": "… plan was presented:[^4] the plan of salvation,[^5] the plan of redemption,[^6] the great plan of happiness.[^7] The plan provides …",
+      "tr": "… plano de Deus:[^4] o plano de salvação,[^5] o plano de redenção,[^6] o grande plano de felicidade.[^7] O plano estabelece …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 October General Conference",
+      "talk": "2016-10-christofferson-abide-in-my-love",
+      "para": 8,
+      "en": "… repentance is brought about the great and eternal plan of redemption.”[^14]",
+      "tr": "… o arrependimento tem efeito o grande e eterno plano de redenção”.[^14]"
+     }
+    ],
+    "earliest": {
+     "year": 1993,
+     "conference": "1993 October General Conference",
+     "talk": "1993-10-packer-for-time-and-all-eternity",
+     "para": 1,
+     "en": "… plan was presented:[^4] the plan of salvation,[^5] the plan of redemption,[^6] the great plan of happiness.[^7] The plan provides …",
+     "tr": "… plano de Deus:[^4] o plano de salvação,[^5] o plano de redenção,[^6] o grande plano de felicidade.[^7] O plano estabelece …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 75,
+  "en_talks": 63,
+  "en_verses": 15,
+  "uncovered_paragraphs": 8,
+  "renderings": [
+   {
+    "term": "plan de redención",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 68,
+    "talks": 58,
+    "verses": 14,
+    "first_year": 1995,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Alma 29:2",
+      "ref_en": "Alma 29:2",
+      "en": "Yea, I would declare unto every soul, as with the voice of thunder, repentance and the plan of redemption, that they should repent and come unto our God, that there might not be more sorrow upon all the face of the earth.",
+      "tr": "Sí, declararía yo a toda alma, como con voz de trueno, el arrepentimiento y el plan de redención: Que deben arrepentirse y venir a nuestro Dios, para que no haya más dolor sobre toda la superficie de la tierra.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/29?lang=spa&id=p2"
+     },
+     {
+      "kind": "talk",
+      "year": 1995,
+      "conference": "1995 October General Conference",
+      "talk": "1995-10-eyring-to-touch-a-life-with-faith",
+      "para": 28,
+      "en": "… him, and their carnal state and also the plan of redemption, which was prepared from the foundation of the …",
+      "tr": "… hombre, y su estado carnal, y también el plan de redención que fue preparado desde la fundación del mundo, por …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 October General Conference",
+      "talk": "2016-10-renlund-repentance-a-joyful-choice",
+      "para": 30,
+      "en": "… harden not your hearts, *immediately* shall the great plan of redemption be brought about unto you.”[^22] We can feel godly …",
+      "tr": "… vuestros corazones, *inmediatamente* obrará para vosotros el gran plan de redención”[^22]. Podemos sentir la tristeza que es según Dios …"
+     }
+    ],
+    "earliest": {
+     "year": 1995,
+     "conference": "1995 October General Conference",
+     "talk": "1995-10-eyring-to-touch-a-life-with-faith",
+     "para": 28,
+     "en": "… him, and their carnal state and also the plan of redemption, which was prepared from the foundation of the …",
+     "tr": "… hombre, y su estado carnal, y también el plan de redención que fue preparado desde la fundación del mundo, por …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "únicamente para aquél",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.875,
+    "ratio": 3500.9,
+    "source": "2004-04-vias-applying-the-simple-and-plain-gospel-principles-in-the-family",
+    "kind": "talk",
+    "sample": ", y quedaríamos entonces fuera del maravilloso plan de misericordia, ya que es “únicamente para aquél que tiene fe para arrepentimiento [que] se realizará el gran y eterno plan de l"
+   },
+   {
+    "term": "realizará",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.875,
+    "ratio": 1750.4,
+    "source": "2004-04-vias-applying-the-simple-and-plain-gospel-principles-in-the-family",
+    "kind": "talk",
+    "sample": "ia, ya que es “únicamente para aquél que tiene fe para arrepentimiento [que] se realizará el gran y eterno plan de la redención” (Alma 34:16)."
+   },
+   {
+    "term": "eterno plan",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.875,
+    "ratio": 1750.4,
+    "source": "2004-04-vias-applying-the-simple-and-plain-gospel-principles-in-the-family",
+    "kind": "talk",
+    "sample": "mente para aquél que tiene fe para arrepentimiento [que] se realizará el gran y eterno plan de la redención” (Alma 34:16)."
+   }
+  ]
+ }
+}

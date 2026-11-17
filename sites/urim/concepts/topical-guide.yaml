@@ -1,0 +1,15 @@
+id: concept.topical-guide
+category: Scriptures & Study Helps
+en:
+  term: Topical Guide
+  match:
+  - Topical Guide
+sources: {}
+candidates:
+  pt:
+  - term: Guia Temático
+    hint: pulpit-glossary:standard
+  es:
+  - term: Guía Temática
+    hint: pulpit-glossary:verified
+related: []

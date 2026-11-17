@@ -1,0 +1,15 @@
+id: concept.assistant-to-the-president
+category: Missionary Work
+en:
+  term: assistant to the president
+  match:
+  - assistant to the president
+sources: {}
+candidates:
+  pt:
+  - term: assistente do presidente
+    hint: pulpit-glossary:standard
+  es:
+  - term: asistente del presidente
+    hint: pulpit-glossary:verified
+related: []

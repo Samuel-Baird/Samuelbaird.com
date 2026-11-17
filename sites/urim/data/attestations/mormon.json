@@ -1,0 +1,170 @@
+{
+ "id": "concept.mormon",
+ "pt": {
+  "en_paragraphs": 460,
+  "en_talks": 321,
+  "en_verses": 32,
+  "uncovered_paragraphs": 15,
+  "renderings": [
+   {
+    "term": "mórmon",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 445,
+    "talks": 312,
+    "verses": 32,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "3 Néfi 26:12",
+      "ref_en": "3 Nephi 26:12",
+      "en": "Therefore I, Mormon, do write the things which have been commanded me of the Lord. And now I, Mormon, make an end of my sayings, and proceed to write the things which have been commanded me.",
+      "tr": "Portanto, eu, Mórmon, escrevo as coisas que foram ordenadas pelo Senhor. E agora eu, Mórmon, termino meus dizeres e continuo a escrever as coisas que me foram ordenadas.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/26?lang=por&id=p12"
+     },
+     {
+      "kind": "talk",
+      "year": 1993,
+      "conference": "1993 April General Conference",
+      "talk": "1993-04-merrell-power-of-the-church-rooted-in-christ",
+      "para": 12,
+      "en": "… a “healthy fear” of the future power of the Mormons (*The American Religion,* p. 86). To them, we answer humbly, …",
+      "tr": "… podem ter um “receio saudável” do futuro poder dos mórmons (*The American Religion,* p. 86). A eles, respondemos humildemente: “Este …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 April General Conference",
+      "talk": "2015-04-ballard-the-greatest-generation-of-young-adults",
+      "para": 26,
+      "en": "… a family should be continuous. “RM” doesn’t mean “retired Mormon”! As a returned missionary, you “should be anxiously engaged …",
+      "tr": "… Encerrar a missão não lhes confere o título de mórmon aposentado! Como ex-missionários, vocês “devem ocupar-se zelosamente numa boa causa …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-asay-one-small-step-for-a-man-one-giant-leap-for-mankind",
+     "para": 38,
+     "en": "… glorious hour when it occurred” (Bruce R. McConkie, *Mormon Doctrine,* 2d ed. [Salt Lake City: Bookcraft, 1968], p. 285).",
+     "tr": "… glorioso momento em que aconteceu”. (Bruce R. McConkie, *Mormon Doctrine*, 2 ed., Salt Lake City: Bookcraft, 1968, p. 285.)"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "programa mãos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.267,
+    "ratio": 1066.9,
+    "source": "2008-04-burton-and-who-is-my-neighbor",
+    "kind": "talk",
+    "sample": "mpeza, cobertores, artigos de higiene e alimentos. Mais de 5.000 voluntários do programa Mãos Que Ajudam trabalharam ao lado dos missionários para limpar, cozinhar, conforta"
+   },
+   {
+    "term": "mãos que ajudam",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.267,
+    "ratio": 533.5,
+    "source": "2008-04-burton-and-who-is-my-neighbor",
+    "kind": "talk",
+    "sample": "bertores, artigos de higiene e alimentos. Mais de 5.000 voluntários do programa Mãos Que Ajudam trabalharam ao lado dos missionários para limpar, cozinhar, confortar e cuidar"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 447,
+  "en_talks": 312,
+  "en_verses": 32,
+  "uncovered_paragraphs": 39,
+  "renderings": [
+   {
+    "term": "Mormón",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 408,
+    "talks": 293,
+    "verses": 32,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "3 Nefi 26:12",
+      "ref_en": "3 Nephi 26:12",
+      "en": "Therefore I, Mormon, do write the things which have been commanded me of the Lord. And now I, Mormon, make an end of my sayings, and proceed to write the things which have been commanded me.",
+      "tr": "Por lo que, yo, Mormón, escribo las cosas que el Señor me ha mandado. Y ahora yo, Mormón, concluyo mis palabras, y procedo a escribir las cosas que se me han mandado.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/26?lang=spa&id=p12"
+     },
+     {
+      "kind": "talk",
+      "year": 1992,
+      "conference": "1992 April General Conference",
+      "talk": "1992-04-hales-gratitude-for-the-goodness-of-god",
+      "para": 14,
+      "en": "Mormon teaches us that there will always be suffering and sorrow …",
+      "tr": "… a permitirles que se deleitas en el pecado” (Mormón 2:13; cursiva agregada)."
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-dibb-your-holy-places",
+      "para": 5,
+      "en": "While watching a Mormon Message for Youth, I witnessed another bedroom that had become …",
+      "tr": "Al ver un Mensaje Mormón para la Juventud, fui testigo de otro cuarto que se …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-wirthlin-personal-integrity",
+     "para": 2,
+     "en": "… the “peaceable followers of Christ” ([Moro. 7:3](https://www.churchofjesuschrist.org/study/scriptures/bofm/moro/7?lang=eng&id=p3#p3)), the prophet Mormon said:",
+     "tr": "… pacíficos discípulos de Cristo” (véase [Moroni 7:3](https://www.churchofjesuschrist.org/study/scriptures/bofm/moro/7?lang=spa&id=p3#p3)), el profeta Mormón les dijo:"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "mormona",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 20,
+    "share_of_uncovered": 0.513,
+    "ratio": 512.9,
+    "source": "1997-04-jack-a-small-stone",
+    "kind": "talk",
+    "sample": "ntos pasos del Templo de Alberta, en Cardston, Canadá. En esa pequeña comunidad mormona ubicada al pie de las Montañas Rocosas canadienses, el templo se erguía como un"
+   },
+   {
+    "term": "santos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.256,
+    "ratio": 6.4,
+    "source": "2007-04-coleman-mom-are-we-christians",
+    "kind": "talk",
+    "sample": "que era mormona, nombre por el que se conoce a La Iglesia de Jesucristo de los Santos de los Últimos Días. Al llegar a casa ella le preguntó a su madre: “Mamá, ¿somo"
+   }
+  ]
+ }
+}

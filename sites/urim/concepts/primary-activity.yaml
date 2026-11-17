@@ -1,0 +1,13 @@
+id: concept.primary-activity
+category: Organizations & Youth
+en:
+  term: Primary activity
+  match:
+  - Primary activity
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: actividad de la Primaria
+    hint: pulpit-glossary:verified
+related: []

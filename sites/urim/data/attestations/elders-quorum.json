@@ -1,0 +1,195 @@
+{
+ "id": "concept.elders-quorum",
+ "pt": {
+  "en_paragraphs": 66,
+  "en_talks": 40,
+  "en_verses": 0,
+  "uncovered_paragraphs": 9,
+  "renderings": [
+   {
+    "term": "quórum de élderes",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 57,
+    "talks": 34,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-hinckley-keeping-the-temple-holy",
+      "para": 33,
+      "en": "… stake presidency or of a bishopric or of an elders quorum presidency is there because he wished to be there …",
+      "tr": "… uma presidência de estaca ou bispado ou de quorum de élderes está ali porque desejou e pediu o privilégio. Cada …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-rasband-behold-a-royal-army",
+      "para": 25,
+      "en": "Can a ward have more than one elders quorum? The answer is yes. In the spirit of …",
+      "tr": "A ala pode ter mais do que um quórum de élderes? A resposta é sim. De acordo com o …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-yee-ministeringthat-ye-love-one-another-as-i-have-loved-you",
+      "para": 19,
+      "en": "… the significance of our ministering assignments. Relief Society and elders quorum presidencies receive revelation from the Lord to extend inspired …",
+      "tr": "… da Sociedade de Socorro e a presidência do quórum de élderes recebem revelação do Senhor para estender designações inspiradas a …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-hinckley-keeping-the-temple-holy",
+     "para": 33,
+     "en": "… stake presidency or of a bishopric or of an elders quorum presidency is there because he wished to be there …",
+     "tr": "… uma presidência de estaca ou bispado ou de quorum de élderes está ali porque desejou e pediu o privilégio. Cada …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "quóruns",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.889,
+    "ratio": 187.2,
+    "source": "2003-10-brough-young-menholders-of-keys",
+    "kind": "talk",
+    "sample": "As responsabilidades dos quóruns do Sacerdócio Aarônico não são menos importantes que as dos quóruns de élderes"
+   },
+   {
+    "term": "élderes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.889,
+    "ratio": 104.6,
+    "source": "2003-10-brough-young-menholders-of-keys",
+    "kind": "talk",
+    "sample": "quóruns do Sacerdócio Aarônico não são menos importantes que as dos quóruns de élderes ou dos grupos de sumos sacerdotes. Lembrem-se de que eles são portadores “das c"
+   },
+   {
+    "term": "grupos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.444,
+    "ratio": 296.4,
+    "source": "2003-10-brough-young-menholders-of-keys",
+    "kind": "talk",
+    "sample": "erdócio Aarônico não são menos importantes que as dos quóruns de élderes ou dos grupos de sumos sacerdotes. Lembrem-se de que eles são portadores “das chaves do minis"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 68,
+  "en_talks": 40,
+  "en_verses": 0,
+  "uncovered_paragraphs": 53,
+  "renderings": [
+   {
+    "term": "quórum de élderes",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 15,
+    "talks": 13,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2012,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-hinckley-keeping-the-temple-holy",
+      "para": 33,
+      "en": "… stake presidency or of a bishopric or of an elders quorum presidency is there because he wished to be there …",
+      "tr": "… ni del obispado, ni de la presidencia del quórum de élderes está allí porque lo desea ni porque pidió ese …"
+     },
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 October General Conference",
+      "talk": "2003-10-brough-young-menholders-of-keys",
+      "para": 34,
+      "en": "… quorums are no less important than the responsibilities of elders quorums or high priests groups. Remember, they hold “the keys …",
+      "tr": "… son menos importantes que las responsabilidades de los quórumes de élderes o de los grupos de los sumos sacerdotes. Recuerden, …"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 April General Conference",
+      "talk": "2012-04-monson-willing-and-worthy-to-serve",
+      "para": 32,
+      "en": "… “I’m fine. I serve in the presidency of my elders quorum. Thank you again for your concern for me …",
+      "tr": "… bien, presto servicio en la presidencia de mi quórum de élderes. Gracias otra vez por su interés en mí …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-hinckley-keeping-the-temple-holy",
+     "para": 33,
+     "en": "… stake presidency or of a bishopric or of an elders quorum presidency is there because he wished to be there …",
+     "tr": "… ni del obispado, ni de la presidencia del quórum de élderes está allí porque lo desea ni porque pidió ese …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "élderes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 53,
+    "share_of_uncovered": 1.0,
+    "ratio": 174.0,
+    "source": "2018-04-bingham-ministering-as-the-savior-does",
+    "kind": "talk",
+    "sample": "Un ejemplo de ministrar son las presidencias de los cuórums de élderes y de la Sociedad de Socorro que deliberan con espíritu de oración sobre las asi"
+   },
+   {
+    "term": "cuórum",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 41,
+    "share_of_uncovered": 0.774,
+    "ratio": 129.0,
+    "source": "2018-04-bingham-ministering-as-the-savior-does",
+    "kind": "talk",
+    "sample": "l combinar esos esfuerzos de la Sociedad de Socorro con el ahora reestructurado cuórum de élderes dará lugar a una unidad que puede arrojar resultados sorprendentes."
+   },
+   {
+    "term": "socorro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 29,
+    "share_of_uncovered": 0.547,
+    "ratio": 43.8,
+    "source": "2018-04-bingham-ministering-as-the-savior-does",
+    "kind": "talk",
+    "sample": "de ministrar son las presidencias de los cuórums de élderes y de la Sociedad de Socorro que deliberan con espíritu de oración sobre las asignaciones. En vez de que los"
+   }
+  ]
+ }
+}

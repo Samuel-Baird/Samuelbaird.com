@@ -1,0 +1,15 @@
+id: concept.come-follow-me
+category: Scriptures & Study Helps
+en:
+  term: Come, Follow Me
+  match:
+  - Come, Follow Me
+sources: {}
+candidates:
+  pt:
+  - term: Vem, e Segue-Me
+    hint: pulpit-glossary:verified
+  es:
+  - term: Ven, sígueme
+    hint: pulpit-glossary:verified
+related: []

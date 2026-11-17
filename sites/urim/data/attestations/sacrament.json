@@ -1,0 +1,194 @@
+{
+ "id": "concept.sacrament",
+ "pt": {
+  "en_paragraphs": 726,
+  "en_talks": 367,
+  "en_verses": 10,
+  "uncovered_paragraphs": 34,
+  "renderings": [
+   {
+    "term": "sacramento",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 692,
+    "talks": 350,
+    "verses": 10,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 62:4",
+      "ref_en": "Doctrine and Covenants 62:4",
+      "en": "And now continue your journey. Assemble yourselves upon the land of Zion; and hold a meeting and rejoice together, and offer a sacrament unto the Most High.",
+      "tr": "E agora continuai vossa viagem. Reuni-vos na terra de Sião; realizai uma reunião e rejubilai-vos juntos e oferecei um sacramento ao Altíssimo.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/62?lang=por&id=p4"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-nelson-thus-shall-my-church-be-called",
+      "para": 48,
+      "en": "… only His church can provide baptism, confirmation, ordination, the sacrament, patriarchal blessings, and the ordinances of the temple—all bestowed …",
+      "tr": "… de Jesus Cristo pode proporcionar batismo, confirmação, ordenação, o sacramento, bênçãos patriarcais e as ordenanças do templo — e …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 October General Conference",
+      "talk": "2016-10-christensen-a-choice-seer-will-i-raise-up",
+      "para": 15,
+      "en": "… blessed their children, conferred priesthood authority, and administered the sacrament unto them.[^13] Joseph may not have realized it at the …",
+      "tr": "… crianças, conferiu-lhes a autoridade do sacerdócio e administrou o sacramento a eles.[^13] Joseph talvez não tenha percebido isso na época, …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-hinckley-sacred-resolves",
+     "para": 17,
+     "en": "… bore testimonies one to another and partook of the sacrament of the Lord’s Supper, President Benson stood before his brethren …",
+     "tr": "… onde prestamos testemunho uns aos outros e participamos do sacramento da Ceia do Senhor, o Presidente Benson, diante de seus …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "sacramental",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 21,
+    "share_of_uncovered": 0.618,
+    "ratio": 154.5,
+    "source": "2013-04-clayton-marriage-watch-and-learn",
+    "kind": "talk",
+    "sample": "casamento um valor inestimável praticam os padrões da fé: frequentam a reunião sacramental e outras reuniões toda semana, fazem noite familiar, oram e estudam as escritur"
+   },
+   {
+    "term": "reunião",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.235,
+    "ratio": 14.9,
+    "source": "1994-04-didier-remember-your-covenants",
+    "kind": "talk",
+    "sample": "Foram também dias interessantes, em que participar da reunião do sacerdócio significava sentar em um círculo com dois missionários e outros d"
+   },
+   {
+    "term": "oração",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.235,
+    "ratio": 8.6,
+    "source": "2014-10-esplin-the-sacramenta-renewal-for-the-soul",
+    "kind": "talk",
+    "sample": "A oração sacramental também nos relembra que devemos “guardar [Seus] mandamentos”.[^9]"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 715,
+  "en_talks": 368,
+  "en_verses": 10,
+  "uncovered_paragraphs": 71,
+  "renderings": [
+   {
+    "term": "Santa Cena",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 651,
+    "talks": 346,
+    "verses": 3,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 20:46",
+      "ref_en": "Doctrine and Covenants 20:46",
+      "en": "The priest’s duty is to preach, teach, expound, exhort, and baptize, and administer the sacrament,",
+      "tr": "El deber del presbítero es predicar, enseñar, exponer, exhortar, bautizar y administrar la santa cena,",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/20?lang=spa&id=p46"
+     },
+     {
+      "kind": "talk",
+      "year": 1995,
+      "conference": "1995 April General Conference",
+      "talk": "1995-04-clyde-covenant-of-love",
+      "para": 27,
+      "en": "… include baptism, the gift of the Holy Ghost, the sacrament, and temple covenants. These are the ways given to …",
+      "tr": "… Dios: el bautismo, el don del Espíritu Santo, la Santa Cena y los convenios del templo. Estos son los medios …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 April General Conference",
+      "talk": "2015-04-ballard-the-greatest-generation-of-young-adults",
+      "para": 18,
+      "en": "… asked to prepare, bless, pass, or partake of the sacrament?",
+      "tr": "… cuando se te pide preparar, bendecir y repartir la Santa Cena o participar de ella?"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 October General Conference",
+     "talk": "1990-10-monson-days-never-to-be-forgotten",
+     "para": 33,
+     "en": "… same individuals conducted the meeting, blessed and passed the sacrament, offered the prayers, and sang the songs.",
+     "tr": "… mismas personas dirigían la reunión, bendecían y repartían la Santa Cena, daban las oraciones y cantaban los himnos."
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "sacramental",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 37,
+    "share_of_uncovered": 0.521,
+    "ratio": 90.7,
+    "source": "1990-10-perry-serve-god-acceptably-with-reverence-and-godly-fear",
+    "kind": "talk",
+    "sample": "ía de su padre. No obstante, cuando el obispo se puso de pie y anunció el himno sacramental, ella retiró con dulzura el brazo que su padre le tenia sobre el hombro, lo pus"
+   },
+   {
+    "term": "sacramentos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 17,
+    "share_of_uncovered": 0.239,
+    "ratio": 319.3,
+    "source": "1991-04-lawrence-sunday-worship-service",
+    "kind": "talk",
+    "sample": "das conservarte sin mancha del mundo, iras a la casa de oración y ofrecerás tus sacramentos en mi día santo;"
+   },
+   {
+    "term": "oración",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 18,
+    "share_of_uncovered": 0.254,
+    "ratio": 8.7,
+    "source": "1991-04-lawrence-sunday-worship-service",
+    "kind": "talk",
+    "sample": "que mas íntegramente puedas conservarte sin mancha del mundo, iras a la casa de oración y ofrecerás tus sacramentos en mi día santo;"
+   }
+  ]
+ }
+}

@@ -1,0 +1,141 @@
+{
+ "id": "concept.welfare-square",
+ "pt": {
+  "en_paragraphs": 7,
+  "en_talks": 5,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "Praça do Bem-Estar",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 4,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2005,
+    "last_year": 2009,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2005,
+      "conference": "2005 October General Conference",
+      "talk": "2005-10-monson-do-your-dutythat-is-best",
+      "para": 12,
+      "en": "… take a busload of the deacons and teachers to Welfare Square in Salt Lake City. Here they saw needy children …",
+      "tr": "… ônibus cheio de diáconos e mestres para a Praça do Bem-Estar, em Salt Lake City. Ali eles viram crianças …"
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 October General Conference",
+      "talk": "2009-10-cook-stewardshipa-sacred-trust",
+      "para": 20,
+      "en": "When the rabbis visited Welfare Square, they were touched to learn that even in …",
+      "tr": "Quando os rabinos visitaram a Praça do Bem-Estar, ficaram tocados ao saber que mesmo nesta época …"
+     }
+    ],
+    "earliest": {
+     "year": 2005,
+     "conference": "2005 October General Conference",
+     "talk": "2005-10-monson-do-your-dutythat-is-best",
+     "para": 12,
+     "en": "… take a busload of the deacons and teachers to Welfare Square in Salt Lake City. Here they saw needy children …",
+     "tr": "… ônibus cheio de diáconos e mestres para a Praça do Bem-Estar, em Salt Lake City. Ali eles viram crianças …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "praça",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 333.4,
+    "source": "1999-04-monson-the-priesthoodmighty-army-of-the-lord",
+    "kind": "talk",
+    "sample": "pado foi inspirado a levar um ônibus cheio de diáconos e mestres para visitar a Praça de Bem-Estar aqui em Salt Lake City. Ali, eles viram crianças necessitadas rece"
+   },
+   {
+    "term": "jejum",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 190.5,
+    "source": "1999-04-monson-the-priesthoodmighty-army-of-the-lord",
+    "kind": "talk",
+    "sample": "eve comentário: “Rapazes, é isso que o dinheiro que vocês coletam no domingo de jejum proporciona, ou seja, alimentos, roupas e abrigo”. Os rapazes do Sacerdócio Aar"
+   },
+   {
+    "term": "dinheiro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 133.4,
+    "source": "1999-04-monson-the-priesthoodmighty-army-of-the-lord",
+    "kind": "talk",
+    "sample": "e pagou por essas coisas. Foi feito um breve comentário: “Rapazes, é isso que o dinheiro que vocês coletam no domingo de jejum proporciona, ou seja, alimentos, roupas e"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 7,
+  "en_talks": 5,
+  "en_verses": 0,
+  "uncovered_paragraphs": 7,
+  "renderings": [
+   {
+    "term": "Plaza de Bienestar",
+    "evidence": [],
+    "hint": "pulpit-glossary:verified"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "manzana",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 1.0,
+    "ratio": 2000.5,
+    "source": "1999-04-monson-the-priesthoodmighty-army-of-the-lord",
+    "kind": "talk",
+    "sample": "o recibió la inspiración de llevar un autobús lleno de diáconos y maestros a la Manzana de Bienestar aquí en Salt Lake City. Ahí vieron a niños necesitados que recibía"
+   },
+   {
+    "term": "bienestar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 1.0,
+    "ratio": 166.7,
+    "source": "1999-04-monson-the-priesthoodmighty-army-of-the-lord",
+    "kind": "talk",
+    "sample": "a inspiración de llevar un autobús lleno de diáconos y maestros a la Manzana de Bienestar aquí en Salt Lake City. Ahí vieron a niños necesitados que recibían zapatos nue"
+   },
+   {
+    "term": "ayuno",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.571,
+    "ratio": 95.3,
+    "source": "1999-04-monson-the-priesthoodmighty-army-of-the-lord",
+    "kind": "talk",
+    "sample": "es, esto es lo que proporciona el dinero que ustedes colectan durante el día de ayuno: alimentos, ropa y refugio”. Los jóvenes del Sacerdocio Aarónico sonrieron un p"
+   }
+  ]
+ }
+}

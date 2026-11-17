@@ -1,0 +1,15 @@
+id: concept.continuing-revelation
+category: Restoration & Revelation
+en:
+  term: continuing revelation
+  match:
+  - continuing revelation
+sources: {}
+candidates:
+  pt:
+  - term: revelação contínua
+    hint: pulpit-glossary:verified
+  es:
+  - term: revelación continua
+    hint: pulpit-glossary:verified
+related: []

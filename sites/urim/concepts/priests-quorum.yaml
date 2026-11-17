@@ -1,0 +1,15 @@
+id: concept.priests-quorum
+category: Priesthood Offices & Quorums
+en:
+  term: priests quorum
+  match:
+  - priests quorum
+sources: {}
+candidates:
+  pt:
+  - term: quórum de sacerdotes
+    hint: pulpit-glossary:verified
+  es:
+  - term: quórum de presbíteros
+    hint: pulpit-glossary:verified
+related: []

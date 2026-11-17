@@ -1,0 +1,11 @@
+id: concept.move-records
+category: Membership Records
+en:
+  term: move records
+  match:
+  - move records
+sources: {}
+candidates:
+  pt: []
+  es: []
+related: []

@@ -1,0 +1,15 @@
+id: concept.fireside
+category: Sacrament & Meetings
+en:
+  term: fireside
+  match:
+  - fireside
+sources: {}
+candidates:
+  pt:
+  - term: serão
+    hint: pulpit-glossary:verified
+  es:
+  - term: charla fogonera
+    hint: pulpit-glossary:verified
+related: []

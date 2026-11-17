@@ -1,0 +1,195 @@
+{
+ "id": "concept.think-celestial",
+ "pt": {
+  "en_paragraphs": 50,
+  "en_talks": 21,
+  "en_verses": 0,
+  "uncovered_paragraphs": 27,
+  "renderings": [
+   {
+    "term": "pensar celestial",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 23,
+    "talks": 15,
+    "verses": 0,
+    "first_year": 2023,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 October General Conference",
+      "talk": "2023-10-nelson-think-celestial",
+      "para": 15,
+      "en": "As you think celestial, your heart will gradually change. You will want …",
+      "tr": "Ao pensar celestial, seu coração mudará gradualmente. Vocês desejarão orar com …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-oaks-covenants-and-responsibilities",
+      "para": 14,
+      "en": "… see the end from the beginning and to “think celestial.”[^16]",
+      "tr": "… vermos o fim desde o princípio e a “pensar celestial”.[^16]"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-brown-the-eternal-gift-of-testimony",
+      "para": 49,
+      "en": "… be spiritually-minded is life eternal’” (Russell M. Nelson, “[Think Celestial!](https://www.churchofjesuschrist.org/study/general-conference/2023/10/51nelson?lang=eng&id=p7#p7),” *Liahona*, Nov. 2023, 117).\n[^6]: See Topics and …",
+      "tr": "… \"Eu os convido a adotar a prática de 'pensar celestial'! Pensar celestial significa ter uma mente espiritual. Aprendemos …"
+     }
+    ],
+    "earliest": {
+     "year": 2023,
+     "conference": "2023 October General Conference",
+     "talk": "2023-10-nelson-think-celestial",
+     "para": 15,
+     "en": "As you think celestial, your heart will gradually change. You will want …",
+     "tr": "Ao pensar celestial, seu coração mudará gradualmente. Vocês desejarão orar com …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "nelson, \"[pensem",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 15,
+    "share_of_uncovered": 0.556,
+    "ratio": 1111.4,
+    "source": "2024-04-christofferson-the-testimony-of-jesus",
+    "kind": "talk",
+    "sample": "esuschrist.org/study/scriptures/nt/rom/8?lang=por&id=p17#p17).\n[^6]: Russell M. Nelson, \"[Pensem celestial!](https://www.churchofjesuschrist.org/study/general-conference/2023/1"
+   },
+   {
+    "term": "liahona, novembro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 16,
+    "share_of_uncovered": 0.593,
+    "ratio": 60.8,
+    "source": "2024-04-christofferson-the-testimony-of-jesus",
+    "kind": "talk",
+    "sample": "www.churchofjesuschrist.org/study/general-conference/2023/10/17oaks?lang=por)\", Liahona, novembro de 2023, p. 26.\n[^2]: [Doutrina e Convênios 76:39](https://www.churchofjesuschr"
+   },
+   {
+    "term": "general-conference",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 16,
+    "share_of_uncovered": 0.593,
+    "ratio": 48.4,
+    "source": "2024-04-christofferson-the-testimony-of-jesus",
+    "kind": "talk",
+    "sample": "r Dallin H. Oaks, \"[Reinos de glória](https://www.churchofjesuschrist.org/study/general-conference/2023/10/17oaks?lang=por)\", Liahona, novembro de 2023, p. 26.\n[^2]: [Doutrina e"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 50,
+  "en_talks": 21,
+  "en_verses": 0,
+  "uncovered_paragraphs": 30,
+  "renderings": [
+   {
+    "term": "pensar de manera celestial",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 20,
+    "talks": 13,
+    "verses": 0,
+    "first_year": 2023,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 October General Conference",
+      "talk": "2023-10-nelson-think-celestial",
+      "para": 15,
+      "en": "As you think celestial, your heart will gradually change. You will want …",
+      "tr": "… sus oraciones podría sorprenderlos y los ayudará a pensar de manera celestial."
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-oaks-covenants-and-responsibilities",
+      "para": 14,
+      "en": "… see the end from the beginning and to “think celestial.”[^16]",
+      "tr": "… el fin desde el principio y a “pensar de manera celestial”[^16]."
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-brown-the-eternal-gift-of-testimony",
+      "para": 49,
+      "en": "… be spiritually-minded is life eternal’” (Russell M. Nelson, “[Think Celestial!](https://www.churchofjesuschrist.org/study/general-conference/2023/10/51nelson?lang=eng&id=p7#p7),” *Liahona*, Nov. 2023, 117).\n[^6]: See Topics and …",
+      "tr": "… \"¡Los invito a adoptar la costumbre de 'pensar de manera celestial'! Pensar de manera celestial significa ser de …"
+     }
+    ],
+    "earliest": {
+     "year": 2023,
+     "conference": "2023 October General Conference",
+     "talk": "2023-10-nelson-think-celestial",
+     "para": 15,
+     "en": "As you think celestial, your heart will gradually change. You will want …",
+     "tr": "… sus oraciones podría sorprenderlos y los ayudará a pensar de manera celestial."
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "nelson, \"[¡piensen",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 15,
+    "share_of_uncovered": 0.5,
+    "ratio": 2000.5,
+    "source": "2024-04-christofferson-the-testimony-of-jesus",
+    "kind": "talk",
+    "sample": "esuschrist.org/study/scriptures/nt/rom/8?lang=spa&id=p17#p17).\n[^6]: Russell M. Nelson, \"[¡Piensen de manera celestial!](https://www.churchofjesuschrist.org/study/general-confere"
+   },
+   {
+    "term": "liahona, noviembre",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 17,
+    "share_of_uncovered": 0.567,
+    "ratio": 58.1,
+    "source": "2024-04-christofferson-the-testimony-of-jesus",
+    "kind": "talk",
+    "sample": "www.churchofjesuschrist.org/study/general-conference/2023/10/17oaks?lang=spa)\", Liahona, noviembre de 2023, págs. 26–29.\n[^2]: [Doctrina y Convenios 76:39](https://www.churchofje"
+   },
+   {
+    "term": "general-conference",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 17,
+    "share_of_uncovered": 0.567,
+    "ratio": 44.5,
+    "source": "2024-04-christofferson-the-testimony-of-jesus",
+    "kind": "talk",
+    "sample": "e Dallin H. Oaks, \"[Reinos de gloria](https://www.churchofjesuschrist.org/study/general-conference/2023/10/17oaks?lang=spa)\", Liahona, noviembre de 2023, págs. 26–29.\n[^2]: [Doct"
+   }
+  ]
+ }
+}

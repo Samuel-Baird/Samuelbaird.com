@@ -1,0 +1,177 @@
+{
+ "id": "concept.choose-the-right",
+ "pt": {
+  "en_paragraphs": 52,
+  "en_talks": 34,
+  "en_verses": 0,
+  "uncovered_paragraphs": 33,
+  "renderings": [
+   {
+    "term": "escolher o certo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 19,
+    "talks": 15,
+    "verses": 0,
+    "first_year": 1993,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1993,
+      "conference": "1993 October General Conference",
+      "talk": "1993-10-perry-choose-the-right",
+      "para": 8,
+      "en": "… do such a thing again. He chose to choose the right, as he remembered what the emblem stood for. …",
+      "tr": "… nunca mais fazer tal coisa. Ele optou por escolher o certo, ao lembrar-se do significado do emblema. Por causa …"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 April General Conference",
+      "talk": "2012-04-eyring-mountains-to-climb",
+      "para": 45,
+      "en": "… be a blessing. In all conditions, we can choose the right with the guidance of the Spirit. We have the …",
+      "tr": "… ser uma bênção. Em todas as condições, podemos escolher o certo com a orientação do Espírito. Temos o evangelho de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-andersen-courage-born-of-our-faith-in-jesus-christ",
+      "para": 14,
+      "en": "… independently, we are given the increased courage to choose the right. As a young man, I heard President David …",
+      "tr": "… e de modo independente, recebemos mais coragem para escolher o certo. Quando eu era jovem, ouvi o presidente David …"
+     }
+    ],
+    "earliest": {
+     "year": 1993,
+     "conference": "1993 October General Conference",
+     "talk": "1993-10-perry-choose-the-right",
+     "para": 8,
+     "en": "… do such a thing again. He chose to choose the right, as he remembered what the emblem stood for. …",
+     "tr": "… nunca mais fazer tal coisa. Ele optou por escolher o certo, ao lembrar-se do significado do emblema. Por causa …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "certo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 19,
+    "share_of_uncovered": 0.576,
+    "ratio": 34.4,
+    "source": "1993-04-hinckley-some-lessons-i-learned-as-a-boy",
+    "kind": "talk",
+    "sample": "os efeitos espera” (*Hinos*, 1991, número 147). “Faze o bem, escolhendo o que é certo” (*Hinos*, 1991, número 148)."
+   },
+   {
+    "term": "escolher",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 11,
+    "share_of_uncovered": 0.333,
+    "ratio": 63.5,
+    "source": "1993-10-perry-choose-the-right",
+    "kind": "talk",
+    "sample": "Para compensar as mensagens do mundo que nos seduzem a escolher o errado, o Senhor nos abençoou com símbolos de pureza para manter-nos no camin"
+   },
+   {
+    "term": "faze",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 11,
+    "share_of_uncovered": 0.333,
+    "ratio": 31.8,
+    "source": "1993-04-hinckley-some-lessons-i-learned-as-a-boy",
+    "kind": "talk",
+    "sample": "Jovens, “Faze o bem, os efeitos espera” (*Hinos*, 1991, número 147). “Faze o bem, escolhendo"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 47,
+  "en_talks": 37,
+  "en_verses": 0,
+  "uncovered_paragraphs": 46,
+  "renderings": [
+   {
+    "term": "hagan lo justo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 1993,
+    "last_year": 1993,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1993,
+      "conference": "1993 April General Conference",
+      "talk": "1993-04-hinckley-some-lessons-i-learned-as-a-boy",
+      "para": 54,
+      "en": "… the consequence follow” (*Hymns,* 1985, no. 237). “Choose the right when a choice is placed before you” (*Hymns,* 1985, …",
+      "tr": "Jóvenes, hagan lo justo (véase Himnos, N° 154) y hagan el bien cuando …"
+     }
+    ],
+    "earliest": {
+     "year": 1993,
+     "conference": "1993 April General Conference",
+     "talk": "1993-04-hinckley-some-lessons-i-learned-as-a-boy",
+     "para": 54,
+     "en": "… the consequence follow” (*Hymns,* 1985, no. 237). “Choose the right when a choice is placed before you” (*Hymns,* 1985, …",
+     "tr": "Jóvenes, hagan lo justo (véase Himnos, N° 154) y hagan el bien cuando …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "correcto",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 19,
+    "share_of_uncovered": 0.413,
+    "ratio": 57.0,
+    "source": "2001-04-scott-first-things-first",
+    "kind": "talk",
+    "sample": "y cuando se fue, oré con fervor para que el Señor le ayudara a escoger el orden correcto de las prioridades. De lo contrario, fracasará en el propósito de la vida."
+   },
+   {
+    "term": "escoger",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 15,
+    "share_of_uncovered": 0.326,
+    "ratio": 87.0,
+    "source": "2001-04-scott-first-things-first",
+    "kind": "talk",
+    "sample": "di una bendición y cuando se fue, oré con fervor para que el Señor le ayudara a escoger el orden correcto de las prioridades. De lo contrario, fracasará en el propósit"
+   },
+   {
+    "term": "haz",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.217,
+    "ratio": 145.0,
+    "source": "1998-04-monson-in-harms-way",
+    "kind": "talk",
+    "sample": "lang=spa&id=p16,p17#p16).\n[^2]: Mateo 11: 28, 29.\n[^3]: D. y C. 88:1 18.\n[^4]: \"Haz el bien\", Himnos, N° 155.\n[^5]: En Conference Report, octubre de 1945, pág. 118"
+   }
+  ]
+ }
+}

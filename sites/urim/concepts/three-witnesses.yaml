@@ -1,0 +1,15 @@
+id: concept.three-witnesses
+category: Scriptures & Study Helps
+en:
+  term: Three Witnesses
+  match:
+  - Three Witnesses
+sources: {}
+candidates:
+  pt:
+  - term: Três Testemunhas
+    hint: pulpit-glossary:verified
+  es:
+  - term: Tres Testigos
+    hint: pulpit-glossary:verified
+related: []

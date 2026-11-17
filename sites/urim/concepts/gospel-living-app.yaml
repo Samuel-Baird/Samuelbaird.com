@@ -1,0 +1,13 @@
+id: concept.gospel-living-app
+category: Education & Publications
+en:
+  term: Gospel Living app
+  match:
+  - Gospel Living app
+sources: {}
+candidates:
+  pt:
+  - term: Gospel Living
+    hint: pulpit-glossary:standard
+  es: []
+related: []

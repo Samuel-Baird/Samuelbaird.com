@@ -1,0 +1,155 @@
+{
+ "id": "concept.sons-of-perdition",
+ "pt": {
+  "en_paragraphs": 10,
+  "en_talks": 10,
+  "en_verses": 2,
+  "uncovered_paragraphs": 6,
+  "renderings": [
+   {
+    "term": "filhos de perdição",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 4,
+    "talks": 4,
+    "verses": 2,
+    "first_year": 1998,
+    "last_year": 2018,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 76:32",
+      "ref_en": "Doctrine and Covenants 76:32",
+      "en": "They are they who are the sons of perdition, of whom I say that it had been better for them never to have been born;",
+      "tr": "Estes são os filhos de perdição, de quem eu digo que melhor lhes fora nunca terem nascido;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/76?lang=por&id=p32"
+     },
+     {
+      "kind": "talk",
+      "year": 1998,
+      "conference": "1998 April General Conference",
+      "talk": "1998-04-oaks-have-you-been-saved",
+      "para": 23,
+      "en": "… all the works of his hands,* except those sons of perdition who deny the Son after the Father has revealed …",
+      "tr": "… todas as obras de suas mãos*, exceto os filhos de perdição, que negam o Filho depois que o Pai …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-christofferson-redemption",
+      "para": 26,
+      "en": "… ([Doctrine and Covenants 76:85](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/76?lang=eng&id=p85#p85)). The relatively few “sons of perdition” are “the only ones on whom the second …",
+      "tr": "… ([Doutrina e Convênios 76:85](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/76?lang=por&id=p85#p85)). Os relativamente poucos \"filhos de perdição\" são \"os únicos sobre quem a segunda morte …"
+     }
+    ],
+    "earliest": {
+     "year": 1998,
+     "conference": "1998 April General Conference",
+     "talk": "1998-04-oaks-have-you-been-saved",
+     "para": 23,
+     "en": "… all the works of his hands,* except those sons of perdition who deny the Son after the Father has revealed …",
+     "tr": "… todas as obras de suas mãos*, exceto os filhos de perdição, que negam o Filho depois que o Pai …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "perdição",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.667,
+    "ratio": 2667.3,
+    "source": "2016-04-uchtdorf-he-will-place-you-on-his-shoulders-and-carry-you-home",
+    "kind": "talk",
+    "sample": "e se afastaram de Deus podem ser reconstruídos. Com exceção dos raros filhos da perdição, não há vida tão despedaçada que não possa ser restaurada."
+   },
+   {
+    "term": "poucos que deliberadamente",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.5,
+    "ratio": 2000.5,
+    "source": "2018-10-oaks-truth-and-the-plan",
+    "kind": "talk",
+    "sample": "Por fim, o amor de Deus é tão grande que, exceto para os poucos que deliberadamente se tornam filhos da perdição, Ele providenciou um destino de glória para todos"
+   },
+   {
+    "term": "providenciou",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.5,
+    "ratio": 400.1,
+    "source": "2018-10-oaks-truth-and-the-plan",
+    "kind": "talk",
+    "sample": "ue, exceto para os poucos que deliberadamente se tornam filhos da perdição, Ele providenciou um destino de glória para todos os Seus filhos. “Todos os Seus filhos” incluem"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 9,
+  "en_talks": 9,
+  "en_verses": 2,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "Hijos de perdición",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 8,
+    "talks": 8,
+    "verses": 2,
+    "first_year": 1998,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 76:32",
+      "ref_en": "Doctrine and Covenants 76:32",
+      "en": "They are they who are the sons of perdition, of whom I say that it had been better for them never to have been born;",
+      "tr": "Estos son los hijos de perdición, de quienes digo que mejor hubiera sido para ellos no haber nacido;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/76?lang=spa&id=p32"
+     },
+     {
+      "kind": "talk",
+      "year": 1998,
+      "conference": "1998 April General Conference",
+      "talk": "1998-04-oaks-have-you-been-saved",
+      "para": 23,
+      "en": "… all the works of his hands,* except those sons of perdition who deny the Son after the Father has revealed …",
+      "tr": "… las obras de sus manos, menos a esos hijos de perdición que niegan al Hijo después que el Padre lo …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 October General Conference",
+      "talk": "2018-10-ballard-the-vision-of-the-redemption-of-the-dead",
+      "para": 34,
+      "en": "… Woman’s Journal,* and the *Millennial Star.*\n[^19]: Although sons of perdition will be resurrected, they may not give love and …",
+      "tr": "… Journal* y *Millennial Star*.\n[^19]: Si bien los hijos de perdición resucitarán, tal vez no den amor ni alaben al …"
+     }
+    ],
+    "earliest": {
+     "year": 1998,
+     "conference": "1998 April General Conference",
+     "talk": "1998-04-oaks-have-you-been-saved",
+     "para": 23,
+     "en": "… all the works of his hands,* except those sons of perdition who deny the Son after the Father has revealed …",
+     "tr": "… las obras de sus manos, menos a esos hijos de perdición que niegan al Hijo después que el Padre lo …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

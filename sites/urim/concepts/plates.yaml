@@ -1,0 +1,17 @@
+id: concept.plates
+category: Scriptures & Study Helps
+en:
+  term: plates
+  match:
+  - plates
+sources:
+  GS:
+  - plates
+candidates:
+  pt:
+  - term: placas
+    hint: pulpit-glossary:verified
+  es:
+  - term: planchas
+    hint: approved-terms
+related: []

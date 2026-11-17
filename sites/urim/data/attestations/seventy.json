@@ -1,0 +1,194 @@
+{
+ "id": "concept.seventy",
+ "pt": {
+  "en_paragraphs": 278,
+  "en_talks": 157,
+  "en_verses": 91,
+  "uncovered_paragraphs": 31,
+  "renderings": [
+   {
+    "term": "Setenta",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 258,
+    "talks": 145,
+    "verses": 80,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Neemias 7:43",
+      "ref_en": "Nehemiah 7:43",
+      "en": "¶ The Levites: the children of Jeshua, of Kadmiel, and of the children of Hodevah, seventy and four.",
+      "tr": "Os levitas: Os filhos de Jesua, de Cadmiel, dos filhos de Hodeva, setenta e quatro.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/ot/neh/7?lang=por&id=p43"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-jeppsen-who-is-a-true-friend",
+      "para": 0,
+      "en": "A year ago when I was called as a Seventy, a nonmember patient of mine asked me an interesting …",
+      "tr": "Há um ano, quando fui chamado como setenta, uma paciente minha que não era membro da Igreja …"
+     },
+     {
+      "kind": "talk",
+      "year": 2004,
+      "conference": "2004 October General Conference",
+      "talk": "2004-10-packer-the-least-of-these",
+      "para": 43,
+      "en": "Eight weeks ago Elder William Walker of the Seventy and I held a zone conference in Naha for 44 …",
+      "tr": "Há oito semanas, o Élder William Walker, dos Setenta, e eu realizamos uma conferência de zona em Naha, …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-jeppsen-who-is-a-true-friend",
+     "para": 0,
+     "en": "A year ago when I was called as a Seventy, a nonmember patient of mine asked me an interesting …",
+     "tr": "Há um ano, quando fui chamado como setenta, uma paciente minha que não era membro da Igreja …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "septuagésimo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 12,
+    "share_of_uncovered": 0.387,
+    "ratio": 1548.8,
+    "source": "2023-10-eyring-our-constant-companion",
+    "kind": "talk",
+    "sample": "“E no septuagésimo nono ano começaram a surgir muitas contendas. Aconteceu, porém, que Néfi, Leí e"
+   },
+   {
+    "term": "ano",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.419,
+    "ratio": 25.8,
+    "source": "2002-04-condie-becoming-a-great-benefit-to-our-fellow-beings",
+    "kind": "talk",
+    "sample": "Ao fim do primeiro ano de sua missão, ele relatou que tinha “viajado 5.228 quilômetros, realizado 170"
+   },
+   {
+    "term": "povo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.226,
+    "ratio": 10.2,
+    "source": "2023-10-eyring-our-constant-companion",
+    "kind": "talk",
+    "sample": "deiros pontos da doutrina, recebendo diariamente muitas revelações, pregaram ao povo, de modo que puseram fim às suas contendas nesse mesmo ano”.[^2]"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 258,
+  "en_talks": 153,
+  "en_verses": 91,
+  "uncovered_paragraphs": 10,
+  "renderings": [
+   {
+    "term": "Setenta",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 248,
+    "talks": 145,
+    "verses": 91,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Helamán 10:19",
+      "ref_en": "Helaman 10:19",
+      "en": "And thus ended the seventy and first year of the reign of the judges over the people of Nephi.",
+      "tr": "Y así concluyó el año setenta y uno del gobierno de los jueces sobre el pueblo de Nefi.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/hel/10?lang=spa&id=p19"
+     },
+     {
+      "kind": "talk",
+      "year": 1995,
+      "conference": "1995 April General Conference",
+      "talk": "1995-04-peterson-easter-reflections",
+      "para": 12,
+      "en": "… I was sustained in that conference as a new Seventy. In early March, President Hunter passed away. My mind …",
+      "tr": "… me sostuvo a mí como nuevo miembro de los Setenta. A principios de marzo, el presidente Hunter falleció. Aun …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 October General Conference",
+      "talk": "2011-10-eyring-the-sustaining-of-church-officers",
+      "para": 9,
+      "en": "… member of the Presidency of the Quorums of the Seventy.",
+      "tr": "… como miembro de la Presidencia del Quórum de los Setenta."
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 October General Conference",
+     "talk": "1990-10-hinckley-in-counsellors-there-is-safety",
+     "para": 4,
+     "en": "… president of the Quorum, and the Quorums of the Seventy, where there are seven presidents. I think I can …",
+     "tr": "… un presidente del quórum; y los Quórumes de los Setenta, que tienen siete presidentes. Entiendo el porque de que …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "seventy",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.2,
+    "ratio": 400.1,
+    "source": "2011-10-cornish-the-privilege-of-prayer",
+    "kind": "talk",
+    "sample": "and Others,* 5 tomos, 1987–92, tomo III, págs.76–79; B. H. Roberts, comp., *The Seventy's Course in Theology,* 5 tomos, 1907–1912, tomo IV, pág. 120; *Encyclopedia of"
+   },
+   {
+    "term": "comp",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.2,
+    "ratio": 160.0,
+    "source": "2011-10-cornish-the-privilege-of-prayer",
+    "kind": "talk",
+    "sample": "[^1]: Véase Francis M. Lyman, \"Proprieties in Prayer\", en Brian H. Stuy, comp., *Collected Discourses Delivered by President Wilford Woodruff, His Two Counse"
+   },
+   {
+    "term": "quórum",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.3,
+    "ratio": 27.9,
+    "source": "1998-10-christofferson-the-priesthood-quorum",
+    "kind": "talk",
+    "sample": "“Un quórum es una hermandad … El ser parte … de su quórum es el derecho de quien ha sido o"
+   }
+  ]
+ }
+}

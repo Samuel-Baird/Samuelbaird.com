@@ -1,0 +1,195 @@
+{
+ "id": "concept.bread-and-water",
+ "pt": {
+  "en_paragraphs": 27,
+  "en_talks": 26,
+  "en_verses": 4,
+  "uncovered_paragraphs": 18,
+  "renderings": [
+   {
+    "term": "do pão e da água",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 13,
+    "talks": 13,
+    "verses": 0,
+    "first_year": 1996,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 October General Conference",
+      "talk": "1996-10-wirthlin-christians-in-belief-and-action",
+      "para": 26,
+      "en": "… week as we partake of the emblems of bread and water, we do it in remembrance of Him. We …",
+      "tr": "… Todas as semanas, quando participamos dos emblemas do pão e da água, fazemos isso em lembrança Dele. Renovamos nosso …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 October General Conference",
+      "talk": "2013-10-hamilton-continually-holding-fast",
+      "para": 9,
+      "en": "… can renew these covenants by partaking of the bread and water of the sacrament ordinance. This simple act allows us …",
+      "tr": "… na qual podemos renovar esses convênios partilhando do pão e da água na ordenança do sacramento. Esse simples ato permite …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 October General Conference",
+      "talk": "2024-10-kearon-welcome-to-the-church-of-joy",
+      "para": 21,
+      "en": "… we listen intently to the blessing of the bread and water[^10] and partake of those sacred tokens, we may …",
+      "tr": "… e problemas. Ao ouvirmos atentamente a bênção do pão e da água[^10] e partilharmos desses símbolos sagrados, podemos refletir …"
+     }
+    ],
+    "earliest": {
+     "year": 1996,
+     "conference": "1996 October General Conference",
+     "talk": "1996-10-wirthlin-christians-in-belief-and-action",
+     "para": 26,
+     "en": "… week as we partake of the emblems of bread and water, we do it in remembrance of Him. We …",
+     "tr": "… Todas as semanas, quando participamos dos emblemas do pão e da água, fazemos isso em lembrança Dele. Renovamos nosso …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "pão",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 18,
+    "share_of_uncovered": 1.0,
+    "ratio": 307.8,
+    "source": "2001-10-faust-the-atonement-our-greatest-hope",
+    "kind": "talk",
+    "sample": "acramento todas as semanas. No espírito das orações sacramentais, partilhamos o pão e a água em lembrança do corpo e do sangue sacrificados por nós, e devemos lemb"
+   },
+   {
+    "term": "água",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 18,
+    "share_of_uncovered": 1.0,
+    "ratio": 121.2,
+    "source": "2001-10-faust-the-atonement-our-greatest-hope",
+    "kind": "talk",
+    "sample": "o todas as semanas. No espírito das orações sacramentais, partilhamos o pão e a água em lembrança do corpo e do sangue sacrificados por nós, e devemos lembrar-nos D"
+   },
+   {
+    "term": "sacramento",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.389,
+    "ratio": 28.3,
+    "source": "2001-10-faust-the-atonement-our-greatest-hope",
+    "kind": "talk",
+    "sample": "recordar os importantes eventos da mediação, Crucificação e Expiação ao tomar o sacramento todas as semanas. No espírito das orações sacramentais, partilhamos o pão e a á"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 25,
+  "en_talks": 24,
+  "en_verses": 4,
+  "uncovered_paragraphs": 15,
+  "renderings": [
+   {
+    "term": "del pan y del agua",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 14,
+    "talks": 14,
+    "verses": 0,
+    "first_year": 2006,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2006,
+      "conference": "2006 October General Conference",
+      "talk": "2006-10-packer-a-defense-and-a-refuge",
+      "para": 12,
+      "en": "… in those simple and sacred prayers over the bread and water. We are to honor the priesthood and be …",
+      "tr": "… promesas de esas sencillas y sagradas oraciones del pan y del agua. Debemos honrar el sacerdocio y ser obedientes …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 October General Conference",
+      "talk": "2015-10-eyring-you-are-not-alone-in-the-work",
+      "para": 5,
+      "en": "… is not simply to have people partake of bread and water. It is to have them keep a covenant …",
+      "tr": "… no es simplemente que las personas participen del pan y del agua, sino que es hacer que cumplan con …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 October General Conference",
+      "talk": "2024-10-kearon-welcome-to-the-church-of-joy",
+      "para": 21,
+      "en": "… we listen intently to the blessing of the bread and water[^10] and partake of those sacred tokens, we may …",
+      "tr": "… problemas. Al escuchar con intención la bendición del pan y del agua[^10] y participar de esos sagrados emblemas, podríamos …"
+     }
+    ],
+    "earliest": {
+     "year": 2006,
+     "conference": "2006 October General Conference",
+     "talk": "2006-10-packer-a-defense-and-a-refuge",
+     "para": 12,
+     "en": "… in those simple and sacred prayers over the bread and water. We are to honor the priesthood and be …",
+     "tr": "… promesas de esas sencillas y sagradas oraciones del pan y del agua. Debemos honrar el sacerdocio y ser obedientes …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "pan",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 15,
+    "share_of_uncovered": 1.0,
+    "ratio": 190.5,
+    "source": "2006-04-pingree-to-grow-up-unto-the-lord",
+    "kind": "talk",
+    "sample": "llevar las bandejas al repartir la Santa Cena, cómo arrodillarse y bendecir el pan y el agua en forma reverente. Sus hermanos de más experiencia, que muchas veces"
+   },
+   {
+    "term": "agua",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 15,
+    "share_of_uncovered": 1.0,
+    "ratio": 111.1,
+    "source": "2006-04-pingree-to-grow-up-unto-the-lord",
+    "kind": "talk",
+    "sample": "as bandejas al repartir la Santa Cena, cómo arrodillarse y bendecir el pan y el agua en forma reverente. Sus hermanos de más experiencia, que muchas veces eran los"
+   },
+   {
+    "term": "santa cena",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.333,
+    "ratio": 35.1,
+    "source": "2006-04-pingree-to-grow-up-unto-the-lord",
+    "kind": "talk",
+    "sample": "les enseñó a los miembros nuevos cómo debían llevar las bandejas al repartir la Santa Cena, cómo arrodillarse y bendecir el pan y el agua en forma reverente. Sus hermanos"
+   }
+  ]
+ }
+}

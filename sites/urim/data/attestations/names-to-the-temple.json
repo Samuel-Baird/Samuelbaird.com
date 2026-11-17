@@ -1,0 +1,132 @@
+{
+ "id": "concept.names-to-the-temple",
+ "pt": {
+  "en_paragraphs": 7,
+  "en_talks": 6,
+  "en_verses": 0,
+  "uncovered_paragraphs": 6,
+  "renderings": [
+   {
+    "term": "nomes ao templo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2017,
+    "last_year": 2017,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 April General Conference",
+      "talk": "2017-04-hoyos-that-our-light-may-be-a-standard-for-the-nations",
+      "para": 21,
+      "en": "When we find and take names to the temple and teach others how to as well, together …",
+      "tr": "Quando encontramos e levamos nomes ao templo e ensinamos outras pessoas a fazer o mesmo, brilhamos …"
+     }
+    ],
+    "earliest": {
+     "year": 2017,
+     "conference": "2017 April General Conference",
+     "talk": "2017-04-hoyos-that-our-light-may-be-a-standard-for-the-nations",
+     "para": 21,
+     "en": "When we find and take names to the temple and teach others how to as well, together …",
+     "tr": "Quando encontramos e levamos nomes ao templo e ensinamos outras pessoas a fazer o mesmo, brilhamos …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "nomes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.833,
+    "ratio": 151.6,
+    "source": "1994-10-nelson-the-spirit-of-elijah",
+    "kind": "talk",
+    "sample": "e a liberação conveniente e quase imediata, por meio de um microcomputador, dos nomes para ordenanças do templo, trabalho esse que requeria anteriormente muito tempo"
+   },
+   {
+    "term": "antepassados",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.667,
+    "ratio": 148.2,
+    "source": "2012-10-scott-the-joy-of-redeeming-the-dead",
+    "kind": "talk",
+    "sample": "a ala e estaca estão entre aqueles que ajudaram a completar o trabalho por seus antepassados. Ela sente muita gratidão por eles terem feito isso."
+   },
+   {
+    "term": "faleceram",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.333,
+    "ratio": 666.8,
+    "source": "2014-04-andersen-spiritual-whirlwinds",
+    "kind": "talk",
+    "sample": "Encontrem seus avôs e suas avós e seus primos distantes que já faleceram. Levem o nome deles ao templo com vocês.[^22] Ao aprenderem algo sobre seus ant"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 7,
+  "en_talks": 6,
+  "en_verses": 0,
+  "uncovered_paragraphs": 7,
+  "renderings": [
+   {
+    "term": "llevar nombres al templo",
+    "evidence": [],
+    "hint": "pulpit-glossary:verified"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "nombres",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 1.0,
+    "ratio": 235.4,
+    "source": "2005-10-packer-on-zions-hill",
+    "kind": "talk",
+    "sample": "Historia Familiar, y la tecnología más moderna ayuda a los miembros a preparar nombres y llevarlos al templo."
+   },
+   {
+    "term": "antepasados",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.571,
+    "ratio": 99.4,
+    "source": "2012-10-scott-the-joy-of-redeeming-the-dead",
+    "kind": "talk",
+    "sample": "rrio y estaca se encuentran entre los que le ayudan a completar la obra por sus antepasados, lo cual aprecia muchísimo."
+   },
+   {
+    "term": "genealogía",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.286,
+    "ratio": 571.6,
+    "source": "2005-10-packer-on-zions-hill",
+    "kind": "talk",
+    "sample": "Se cambió el nombre de Genealogía a Historia Familiar, y la tecnología más moderna ayuda a los miembros a prepara"
+   }
+  ]
+ }
+}

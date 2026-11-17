@@ -1,0 +1,194 @@
+{
+ "id": "concept.book-of-mormon",
+ "pt": {
+  "en_paragraphs": 1739,
+  "en_talks": 770,
+  "en_verses": 16,
+  "uncovered_paragraphs": 27,
+  "renderings": [
+   {
+    "term": "Livro de Mórmon",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1712,
+    "talks": 760,
+    "verses": 16,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Joseph Smith—História 1:67",
+      "ref_en": "Joseph Smith—History 1:67",
+      "en": "Two days after the arrival of Mr. Cowdery (being the 7th of April) I commenced to translate the Book of Mormon, and he began to write for me.",
+      "tr": "Dois dias após a chegada do Sr. Cowdery (estávamos em 7 de abril), comecei a traduzir o Livro de Mórmon e ele começou a escrever para mim.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/pgp/js-h/1?lang=por&id=p67"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-oaks-world-peace",
+      "para": 26,
+      "en": "… of the earth” ([2 Ne. 26:25](https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/26?lang=eng&id=p25#p25)). As the Book of Mormon teaches, he has created all flesh, “and the one …",
+      "tr": "… da terra.” ([2 Néfi 26:25](https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/26?lang=por&id=p25#p25).) Conforme ensina o Livro de Mórmon, ele criou toda a carne, e “para ele …"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 October General Conference",
+      "talk": "2012-10-hawk-come-unto-me-o-ye-house-of-israel",
+      "para": 11,
+      "en": "The Book of Mormon is sacred scripture. It contains the fulness of the …",
+      "tr": "O Livro de Mórmon é uma escritura sagrada. Contém a plenitude do evangelho …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-asay-one-small-step-for-a-man-one-giant-leap-for-mankind",
+     "para": 48,
+     "en": "… 27) and who was instrumental in translating the Book of Mormon, restoring the holy priesthood, organizing The Church of …",
+     "tr": "… e que serviu de instrumento na tradução do Livro de Mórmon, restaurando o santo sacerdócio, organizando A Igreja de …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "the book",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.296,
+    "ratio": 395.2,
+    "source": "1992-04-maxwell-my-servant-joseph",
+    "kind": "talk",
+    "sample": "ressa nos dias de hoje. (Vide John W. Welch e Tim Rathbone, “The Translation of the Book of Mormon: Basic Historical Information”, Preliminary Report, F.A.R.M.S., Provo"
+   },
+   {
+    "term": "mormon",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 11,
+    "share_of_uncovered": 0.407,
+    "ratio": 11.5,
+    "source": "1992-04-maxwell-my-servant-joseph",
+    "kind": "talk",
+    "sample": "as de hoje. (Vide John W. Welch e Tim Rathbone, “The Translation of the Book of Mormon: Basic Historical Information”, Preliminary Report, F.A.R.M.S., Provo, Utah, 19"
+   },
+   {
+    "term": "joão",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.259,
+    "ratio": 12.5,
+    "source": "1995-04-samuelson-as-jesus-sees-us",
+    "kind": "talk",
+    "sample": "ponder ao aparentemente insignificante Natanael e suas perguntas pessoais. (Ver João 1:45–51.)"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 1772,
+  "en_talks": 776,
+  "en_verses": 16,
+  "uncovered_paragraphs": 30,
+  "renderings": [
+   {
+    "term": "Libro de Mormón",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 1742,
+    "talks": 765,
+    "verses": 16,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Artículos de Fe 1:8",
+      "ref_en": "Articles of Faith 1:8",
+      "en": "We believe the Bible to be the word of God as far as it is translated correctly; we also believe the Book of Mormon to be the word of God.",
+      "tr": "Creemos que la Biblia es la palabra de Dios hasta donde esté traducida correctamente; también creemos que el Libro de Mormón es la palabra de Dios.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=spa&id=p8"
+     },
+     {
+      "kind": "talk",
+      "year": 1993,
+      "conference": "1993 October General Conference",
+      "talk": "1993-10-condie-a-mighty-change-of-heart",
+      "para": 8,
+      "en": "One of the powerful doctrines of the Book of Mormon is that we *can,* indeed we *must,* undergo a …",
+      "tr": "Una de las poderosas doctrinas del Libro de Mormón es que podemos y, en verdad, debemos efectuar un …"
+     },
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 October General Conference",
+      "talk": "2017-10-nelson-the-book-of-mormon-what-would-your-life-be-like-without-it",
+      "para": 21,
+      "en": "… what would your life be like *without* the Book of Mormon? Second, what would you *not know*? And third, …",
+      "tr": "Primera: ¿Cómo sería su vida *sin* el Libro de Mormón?. Segunda: ¿Qué *no sabrían*?. Y tercera: ¿Qué *no …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-hinckley-sacred-resolves",
+     "para": 6,
+     "en": "“So we invite all men, as the Book of Mormon declares, to ‘Come unto Christ, and be [redeemed] in …",
+     "tr": "“Por este motivo, como dice en el Libro de Mormón, invitamos a todos a ‘[venir] a Cristo, y …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "the book",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.3,
+    "ratio": 240.1,
+    "source": "2004-04-hafen-the-atonement-all-for-all",
+    "kind": "talk",
+    "sample": "]: Jeffrey R. Holland, *Christ and the New Covenant*, *The Messianic Message of the Book of Mormon*, 1997, pág. 207.\n[^6]: 2 Nefi 25:23; cursiva agregada.\n[^7]: Véase É"
+   },
+   {
+    "term": "pág",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.433,
+    "ratio": 15.3,
+    "source": "1990-10-monson-god-be-with-you-till-we-meet-again",
+    "kind": "talk",
+    "sample": "es la bendición mas sublime de la vida.”(“Orad siempre”, Liahona junio de 1990, pág. 6)."
+   },
+   {
+    "term": "new",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.267,
+    "ratio": 82.1,
+    "source": "2004-04-hafen-the-atonement-all-for-all",
+    "kind": "talk",
+    "sample": "C. 93:38.\n[^4]: Véase D. y C. 29:39.\n[^5]: Jeffrey R. Holland, *Christ and the New Covenant*, *The Messianic Message of the Book of Mormon*, 1997, pág. 207.\n[^6]:"
+   }
+  ]
+ }
+}

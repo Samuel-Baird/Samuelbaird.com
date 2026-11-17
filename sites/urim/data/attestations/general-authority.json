@@ -1,0 +1,195 @@
+{
+ "id": "concept.general-authority",
+ "pt": {
+  "en_paragraphs": 287,
+  "en_talks": 208,
+  "en_verses": 1,
+  "uncovered_paragraphs": 213,
+  "renderings": [
+   {
+    "term": "Autoridade Geral",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 75,
+    "talks": 69,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-hinckley-keeping-the-temple-holy",
+      "para": 33,
+      "en": "… of this church, no Counselor in the Presidency, no General Authority, no member of a stake presidency or of …",
+      "tr": "… sempre que nenhum Presidente da Igreja, conselheiro na Presidência, autoridade geral, membro de uma presidência de estaca ou bispado …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 October General Conference",
+      "talk": "2011-10-eyring-preparation-in-the-priesthood-i-need-your-help",
+      "para": 11,
+      "en": "… business, who later became a mission president and a General Authority. The other counselor was a prominent judge in …",
+      "tr": "… empresa e mais tarde tornou-se presidente de missão e Autoridade Geral. O outro conselheiro era um preeminente juiz naquela …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-shumway-participate-to-prepare-for-christs-return",
+      "para": 0,
+      "en": "… by. I had just been called as a new General Authority. Likely sensing my feelings of inadequacy, he smiled …",
+      "tr": "… por mim. Eu havia acabado de ser chamado como autoridade geral. Provavelmente percebendo meu sentimento de inadequação, ele sorriu …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-hinckley-keeping-the-temple-holy",
+     "para": 33,
+     "en": "… of this church, no Counselor in the Presidency, no General Authority, no member of a stake presidency or of …",
+     "tr": "… sempre que nenhum Presidente da Igreja, conselheiro na Presidência, autoridade geral, membro de uma presidência de estaca ou bispado …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "autoridades gerais",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 198,
+    "share_of_uncovered": 0.93,
+    "ratio": 186.0,
+    "source": "1990-04-hinckley-keeping-the-temple-holy",
+    "kind": "talk",
+    "sample": "Nós apoiamos as autoridades locais e as Autoridades Gerais? Isto nada tem a ver com homenagens prestadas àqueles chamados por Deus para pr"
+   },
+   {
+    "term": "setentas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 82,
+    "share_of_uncovered": 0.385,
+    "ratio": 85.6,
+    "source": "1994-10-faust-the-keys-that-never-rust",
+    "kind": "talk",
+    "sample": "pelos Doze. O mesmo foi feito pelo Presidente Rex D. Pinegar, representando os Setentas, e pelo Bispo Merril J. Bateman falando pelo Bispado Presidente. Todas as Autor"
+   },
+   {
+    "term": "área",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 82,
+    "share_of_uncovered": 0.385,
+    "ratio": 48.1,
+    "source": "1998-04-faust-the-sustaining-of-church-officers",
+    "kind": "talk",
+    "sample": "e que agora lhes apresentasse as Autoridades Gerais, os Setantas-Autoridades de Área e as presidências gerais das auxiliares da Igreja para seu voto de apoio."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 271,
+  "en_talks": 191,
+  "en_verses": 1,
+  "uncovered_paragraphs": 11,
+  "renderings": [
+   {
+    "term": "Autoridad General",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 260,
+    "talks": 181,
+    "verses": 1,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 102:32",
+      "ref_en": "Doctrine and Covenants 102:32",
+      "en": "The latter can only be called in question by the general authorities of the church in case of transgression.",
+      "tr": "Solamente las autoridades generales de la iglesia pueden llamar a estos a cuentas, en caso de transgresión.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/102?lang=spa&id=p32"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-hinckley-sacred-resolves",
+      "para": 17,
+      "en": "… a meeting in the temple of all of the General Authorities, where we bore testimonies one to another and …",
+      "tr": "El jueves pasado, en una reunión de todas las Autoridades Generales que hubo en el templo [de Salt Lake], en …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 October General Conference",
+      "talk": "2011-10-mcmullin-the-power-of-the-aaronic-priesthood",
+      "para": 0,
+      "en": "In a recent training session for General Authorities, President Thomas S. Monson emphasized anew the duties …",
+      "tr": "En una sesión de capacitación reciente dirigida a las Autoridades Generales, el presidente Thomas S. Monson recalcó de nuevo …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-hinckley-keeping-the-temple-holy",
+     "para": 33,
+     "en": "… of this church, no Counselor in the Presidency, no General Authority, no member of a stake presidency or of …",
+     "tr": "… de la Iglesia, ningún Consejero de la Presidencia, ninguna Autoridad General, ningún miembro de la presidencia de la estaca …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "evening-with",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.364,
+    "ratio": 727.5,
+    "source": "2015-04-wixom-returning-to-faith",
+    "kind": "talk",
+    "sample": "de febrero de 2015); [lds.org/broadcasts](http://www.lds.org/broadcasts/article/evening-with-a-general-authority/2015/02/helping-with-the-real-issues?lang=eng).\n[^7]: [Mosí"
+   },
+   {
+    "term": "broadcasts",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.455,
+    "ratio": 165.3,
+    "source": "2015-04-wixom-returning-to-faith",
+    "kind": "talk",
+    "sample": "e\" (Una velada con el élder Jeffrey R. Holland, 6 de febrero de 2015); [lds.org/broadcasts](http://www.lds.org/broadcasts/article/evening-with-a-general-authority/2015/02"
+   },
+   {
+    "term": "with-the",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.364,
+    "ratio": 485.0,
+    "source": "2015-04-wixom-returning-to-faith",
+    "kind": "talk",
+    "sample": "www.lds.org/broadcasts/article/evening-with-a-general-authority/2015/02/helping-with-the-real-issues?lang=eng).\n[^7]: [Mosíah 4:9](https://www.churchofjesuschrist.org/s"
+   }
+  ]
+ }
+}

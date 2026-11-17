@@ -1,0 +1,13 @@
+id: concept.presiding-council
+category: Councils & Conferences
+en:
+  term: presiding council
+  match:
+  - presiding council
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: consejo presidente
+    hint: pulpit-glossary:verified
+related: []

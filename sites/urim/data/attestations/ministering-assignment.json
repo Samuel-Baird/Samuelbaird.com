@@ -1,0 +1,144 @@
+{
+ "id": "concept.ministering-assignment",
+ "pt": {
+  "en_paragraphs": 11,
+  "en_talks": 9,
+  "en_verses": 0,
+  "uncovered_paragraphs": 5,
+  "renderings": [
+   {
+    "term": "designação de ministração",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 6,
+    "talks": 5,
+    "verses": 0,
+    "first_year": 2018,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 October General Conference",
+      "talk": "2018-10-cordon-becoming-a-shepherd",
+      "para": 39,
+      "en": "… men, we need you! If you don’t have a ministering assignment, talk with your Relief Society or elders quorum …",
+      "tr": "… precisamos de vocês! Se vocês não tiverem uma designação de ministração, conversem com seu presidente do quórum de élderes …"
+     },
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 October General Conference",
+      "talk": "2023-10-giraudcarrier-we-are-his-children",
+      "para": 8,
+      "en": "Some years ago, my wife, Isabelle, received an unusual ministering assignment. She was asked to visit an elderly widow …",
+      "tr": "Há alguns anos, minha esposa, Isabelle, recebeu uma designação de ministração incomum. Pediram-lhe que visitasse uma viúva idosa de nossa …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-yee-ministeringthat-ye-love-one-another-as-i-have-loved-you",
+      "para": 21,
+      "en": "… and invites us to do the same.[^38] We receive ministering assignments to grow our capacity to love others and to …",
+      "tr": "… e nos convida a fazer o mesmo.[^38] Recebemos designações de ministração para aumentar nossa capacidade de amar as pessoas e …"
+     }
+    ],
+    "earliest": {
+     "year": 2018,
+     "conference": "2018 October General Conference",
+     "talk": "2018-10-cordon-becoming-a-shepherd",
+     "para": 39,
+     "en": "… men, we need you! If you don’t have a ministering assignment, talk with your Relief Society or elders quorum …",
+     "tr": "… precisamos de vocês! Se vocês não tiverem uma designação de ministração, conversem com seu presidente do quórum de élderes …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "ministrar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.8,
+    "ratio": 228.6,
+    "source": "2018-04-bingham-ministering-as-the-savior-does",
+    "kind": "talk",
+    "sample": "os inspirados é a oportunidade que as moças de 14 a 18 anos de idade vão ter de ministrar como companheiras das irmãs da Sociedade de Socorro, assim como os rapazes da m"
+   },
+   {
+    "term": "designação",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.6,
+    "ratio": 141.2,
+    "source": "2018-10-cordon-becoming-a-shepherd",
+    "kind": "talk",
+    "sample": "dades das pessoas a quem ministramos, nossos olhos serão abertos. Nossa sagrada designação de ministrar nos dá o direito divino de receber inspiração. Podemos buscar essa"
+   },
+   {
+    "term": "modo cristão",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.4,
+    "ratio": 1600.4,
+    "source": "2026-04-stevenson-lost-luggage-redeemed-souls",
+    "kind": "talk",
+    "sample": "Considerem sua designação para ministrar de “modo cristão”[^7] aos bens mais preciosos do Senhor, que no final de sua jornada mortal pode"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 11,
+  "en_talks": 9,
+  "en_verses": 0,
+  "uncovered_paragraphs": 11,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "ministración",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.818,
+    "ratio": 818.4,
+    "source": "2018-04-bingham-ministering-as-the-savior-does",
+    "kind": "talk",
+    "sample": "los adultos en la obra de salvación. Contar con los jóvenes en asignaciones de ministración también puede aumentar el alcance del cuidado que la Sociedad de Socorro y los"
+   },
+   {
+    "term": "asignaciones",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.545,
+    "ratio": 198.4,
+    "source": "2018-04-bingham-ministering-as-the-savior-does",
+    "kind": "talk",
+    "sample": "l servir junto a los adultos en la obra de salvación. Contar con los jóvenes en asignaciones de ministración también puede aumentar el alcance del cuidado que la Sociedad d"
+   },
+   {
+    "term": "actos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.273,
+    "ratio": 54.6,
+    "source": "2018-10-cordon-becoming-a-shepherd",
+    "kind": "talk",
+    "sample": "Hermanas y hermanos, el mundo está más lleno de esperanza y gozo gracias a los actos inspirados de bondad que realizan. Al procurar la guía del Señor sobre cómo tra"
+   }
+  ]
+ }
+}

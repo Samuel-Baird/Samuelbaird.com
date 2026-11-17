@@ -1,0 +1,15 @@
+id: concept.standard-of-truth
+category: Zion & the Last Days
+en:
+  term: standard of truth
+  match:
+  - standard of truth
+sources: {}
+candidates:
+  pt:
+  - term: estandarte da verdade
+    hint: pulpit-glossary:verified
+  es:
+  - term: estandarte de la verdad
+    hint: pulpit-glossary:verified
+related: []

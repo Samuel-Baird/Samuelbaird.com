@@ -1,0 +1,15 @@
+id: concept.convert-baptism
+category: Membership Records
+en:
+  term: convert baptism
+  match:
+  - convert baptism
+sources: {}
+candidates:
+  pt:
+  - term: batismo de conversos
+    hint: pulpit-glossary:standard
+  es:
+  - term: bautismo de converso
+    hint: pulpit-glossary:verified
+related: []

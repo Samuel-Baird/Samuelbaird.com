@@ -1,0 +1,17 @@
+id: concept.fast-offering
+category: Commandments & Laws
+en:
+  term: fast offering
+  match:
+  - fast offering
+sources:
+  GH:
+  - 34-finances-and-audits#title_number8
+candidates:
+  pt:
+  - term: oferta de jejum
+    hint: pulpit-glossary:verified
+  es:
+  - term: ofrenda de ayuno
+    hint: approved-terms
+related: []

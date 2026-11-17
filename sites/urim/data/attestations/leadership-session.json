@@ -1,0 +1,195 @@
+{
+ "id": "concept.leadership-session",
+ "pt": {
+  "en_paragraphs": 17,
+  "en_talks": 16,
+  "en_verses": 0,
+  "uncovered_paragraphs": 13,
+  "renderings": [
+   {
+    "term": "sessão de liderança",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 4,
+    "talks": 4,
+    "verses": 0,
+    "first_year": 2001,
+    "last_year": 2016,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 October General Conference",
+      "talk": "2001-10-monson-duty-calls",
+      "para": 23,
+      "en": "… mind. The most frightening one, however, happened at the leadership session of our ward conference. The member of our stake …",
+      "tr": "… outros. A tarefa mais assustadora, porém, ocorreu numa sessão de liderança da nossa conferência de ala. O membro da presidência …"
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 April General Conference",
+      "talk": "2009-04-monson-be-your-best-self",
+      "para": 7,
+      "en": "… mind. The most frightening one, however, happened at the leadership session of our ward conference. The member of our stake …",
+      "tr": "… Contudo, a que achei mais assustadora aconteceu na sessão de liderança da conferência de nossa ala. O membro da presidência …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-hales-the-holy-ghost",
+      "para": 20,
+      "en": "… planned to leave the chapel immediately after the priesthood leadership session. However, following the benediction, the Holy Ghost said …",
+      "tr": "… energias, planejei sair da capela imediatamente após a sessão de liderança do sacerdócio. No entanto, após a oração de encerramento, …"
+     }
+    ],
+    "earliest": {
+     "year": 2001,
+     "conference": "2001 October General Conference",
+     "talk": "2001-10-monson-duty-calls",
+     "para": 23,
+     "en": "… mind. The most frightening one, however, happened at the leadership session of our ward conference. The member of our stake …",
+     "tr": "… outros. A tarefa mais assustadora, porém, ocorreu numa sessão de liderança da nossa conferência de ala. O membro da presidência …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "seguintes setentas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.769,
+    "ratio": 1538.8,
+    "source": "2021-04-oaks-sustaining-of-general-authorities-area-seventies-and-general-officers",
+    "kind": "talk",
+    "sample": "**Os seguintes setentas de área foram apoiados durante a reunião de treinamento de liderança realizada"
+   },
+   {
+    "term": "realizada como parte",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.769,
+    "ratio": 1538.8,
+    "source": "2021-04-oaks-sustaining-of-general-authorities-area-seventies-and-general-officers",
+    "kind": "talk",
+    "sample": "s setentas de área foram apoiados durante a reunião de treinamento de liderança realizada como parte da conferência geral.**"
+   },
+   {
+    "term": "liderança realizada",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.769,
+    "ratio": 1538.8,
+    "source": "2021-04-oaks-sustaining-of-general-authorities-area-seventies-and-general-officers",
+    "kind": "talk",
+    "sample": "s seguintes setentas de área foram apoiados durante a reunião de treinamento de liderança realizada como parte da conferência geral.**"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 18,
+  "en_talks": 17,
+  "en_verses": 0,
+  "uncovered_paragraphs": 15,
+  "renderings": [
+   {
+    "term": "sesión de liderazgo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 3,
+    "talks": 3,
+    "verses": 0,
+    "first_year": 2001,
+    "last_year": 2009,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 October General Conference",
+      "talk": "2001-10-monson-duty-calls",
+      "para": 23,
+      "en": "… mind. The most frightening one, however, happened at the leadership session of our ward conference. The member of our stake …",
+      "tr": "… más aterradora para mí tuvo lugar en la sesión de liderazgo de una conferencia de mi barrio. El miembro de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2005,
+      "conference": "2005 April General Conference",
+      "talk": "2005-04-edgley-a-still-small-voice-and-a-throbbing-heart",
+      "para": 1,
+      "en": "… sat on the stand in preparation for the priesthood leadership session, an African man entered the chapel and sat …",
+      "tr": "… me hallaba en el estrado, preparándome para la sesión de liderazgo del sacerdocio, un hombre de África entró en la …"
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 April General Conference",
+      "talk": "2009-04-monson-be-your-best-self",
+      "para": 7,
+      "en": "… mind. The most frightening one, however, happened at the leadership session of our ward conference. The member of our stake …",
+      "tr": "… que más miedo me dio ocurrió en la sesión de liderazgo de nuestra conferencia de barrio. El miembro de la …"
+     }
+    ],
+    "earliest": {
+     "year": 2001,
+     "conference": "2001 October General Conference",
+     "talk": "2001-10-monson-duty-calls",
+     "para": 23,
+     "en": "… mind. The most frightening one, however, happened at the leadership session of our ward conference. The member of our stake …",
+     "tr": "… más aterradora para mí tuvo lugar en la sesión de liderazgo de una conferencia de mi barrio. El miembro de …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "área fueron",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.667,
+    "ratio": 1333.7,
+    "source": "2021-04-oaks-sustaining-of-general-authorities-area-seventies-and-general-officers",
+    "kind": "talk",
+    "sample": "**Los siguientes Setentas de Área fueron sostenidos durante una reunión de líderes que se llevó a cabo como parte de la"
+   },
+   {
+    "term": "fueron sostenidos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.6,
+    "ratio": 2400.6,
+    "source": "2021-04-oaks-sustaining-of-general-authorities-area-seventies-and-general-officers",
+    "kind": "talk",
+    "sample": "**Los siguientes Setentas de Área fueron sostenidos durante una reunión de líderes que se llevó a cabo como parte de la conferencia"
+   },
+   {
+    "term": "siguientes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 12,
+    "share_of_uncovered": 0.8,
+    "ratio": 168.5,
+    "source": "2020-04-holmes-deep-in-our-heart",
+    "kind": "talk",
+    "sample": "la Biblioteca del Evangelio para ayudar a los jóvenes a dirigir, incluidos los siguientes: \"[Recursos para las presidencias de cuórum y de clase](https://www.churchofjes"
+   }
+  ]
+ }
+}

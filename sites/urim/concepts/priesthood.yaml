@@ -1,0 +1,23 @@
+id: concept.priesthood
+category: Priesthood Offices & Quorums
+en:
+  term: priesthood
+  match:
+  - priesthood
+sources:
+  GS:
+  - priesthood
+  Topics:
+  - priesthood
+  TtF:
+  - priesthood
+  GH:
+  - 10-aaronic-priesthood#title_number10
+candidates:
+  pt:
+  - term: sacerdócio
+    hint: pulpit-glossary:verified
+  es:
+  - term: sacerdocio
+    hint: approved-terms
+related: []

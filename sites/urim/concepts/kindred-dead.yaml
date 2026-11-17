@@ -1,0 +1,13 @@
+id: concept.kindred-dead
+category: Temple & Family History
+en:
+  term: kindred dead
+  match:
+  - kindred dead
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: parientes fallecidos
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,195 @@
+{
+ "id": "concept.young-single-adult",
+ "pt": {
+  "en_paragraphs": 30,
+  "en_talks": 28,
+  "en_verses": 0,
+  "uncovered_paragraphs": 23,
+  "renderings": [
+   {
+    "term": "jovem adulto solteiro",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 7,
+    "talks": 7,
+    "verses": 0,
+    "first_year": 2005,
+    "last_year": 2016,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2005,
+      "conference": "2005 October General Conference",
+      "talk": "2005-10-parkin-sweet-moments",
+      "para": 22,
+      "en": "… of visiting teacher you’ve always wanted; ask a young single adult about what she likes to do rather than why …",
+      "tr": "… que você sempre quis ter; perguntar a uma jovem adulta solteira do que ela gosta em vez de por que …"
+     },
+     {
+      "kind": "talk",
+      "year": 2008,
+      "conference": "2008 October General Conference",
+      "talk": "2008-10-jensen-arms-of-safety",
+      "para": 21,
+      "en": "A young single adult in our ward was dating a young woman. They …",
+      "tr": "Um jovem adulto solteiro de nossa ala estava namorando uma moça. O casal …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-arnold-to-the-rescue-we-can-do-it",
+      "para": 35,
+      "en": "Allan, a young single adult, felt inspired to share the Church videos, *Mormon …",
+      "tr": "Allan, um jovem adulto solteiro, sentiu-se inspirado a compartilhar os vídeos da Igreja, …"
+     }
+    ],
+    "earliest": {
+     "year": 2005,
+     "conference": "2005 October General Conference",
+     "talk": "2005-10-parkin-sweet-moments",
+     "para": 22,
+     "en": "… of visiting teacher you’ve always wanted; ask a young single adult about what she likes to do rather than why …",
+     "tr": "… que você sempre quis ter; perguntar a uma jovem adulta solteira do que ela gosta em vez de por que …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "adultos solteiros",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 21,
+    "share_of_uncovered": 0.913,
+    "ratio": 913.3,
+    "source": "2005-10-ko-sacrifice-is-a-joy-and-a-blessing",
+    "kind": "talk",
+    "sample": "ração há mais de um ano. Muitos membros na Coréia — a Primária, rapazes, moças, adultos solteiros, irmãs da Sociedade de Socorro e outros — reuniram-se para ensaiar. Eles prepar"
+   },
+   {
+    "term": "jovens adultos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 21,
+    "share_of_uncovered": 0.913,
+    "ratio": 456.6,
+    "source": "2006-04-rasband-our-rising-generation",
+    "kind": "talk",
+    "sample": "chamado “todos a postos no convés” quando se referir a nossos rapazes e moças e jovens adultos solteiros. Devemos buscar oportunidades de abençoar os jovens, estejamos ou não"
+   },
+   {
+    "term": "rapazes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.304,
+    "ratio": 27.1,
+    "source": "2005-10-ko-sacrifice-is-a-joy-and-a-blessing",
+    "kind": "talk",
+    "sample": "para essa comemoração há mais de um ano. Muitos membros na Coréia — a Primária, rapazes, moças, adultos solteiros, irmãs da Sociedade de Socorro e outros — reuniram-se"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 35,
+  "en_talks": 31,
+  "en_verses": 0,
+  "uncovered_paragraphs": 13,
+  "renderings": [
+   {
+    "term": "jóvenes adultos solteros",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 22,
+    "talks": 21,
+    "verses": 0,
+    "first_year": 2001,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 April General Conference",
+      "talk": "2001-04-ballard-his-word-ye-shall-receive",
+      "para": 12,
+      "en": "… as much as they do to youth and young single adults. As parents and adult leaders of youth, we …",
+      "tr": "… madres como a los jóvenes y a los jóvenes adultos solteros. Como padres y líderes adultos de la juventud, …"
+     },
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 October General Conference",
+      "talk": "2017-10-eyring-the-lord-leads-his-church",
+      "para": 22,
+      "en": "… I was once called as a bishop of young single adults. I am not sure whether the Lord’s purposes …",
+      "tr": "… servir. Una vez fui llamado como obispo de jóvenes adultos solteros. No estoy seguro si los propósitos del Señor …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-cook-integrity-and-virtue-lead-to-happiness",
+      "para": 17,
+      "en": "… who attend For the Strength of Youth and young single adult conferences often tell me the testimony meeting, a small …",
+      "tr": "… la Fortaleza de la Juventud y las de jóvenes adultos solteros a menudo me dicen que la reunión de testimonios, …"
+     }
+    ],
+    "earliest": {
+     "year": 2001,
+     "conference": "2001 April General Conference",
+     "talk": "2001-04-ballard-his-word-ye-shall-receive",
+     "para": 12,
+     "en": "… as much as they do to youth and young single adults. As parents and adult leaders of youth, we …",
+     "tr": "… madres como a los jóvenes y a los jóvenes adultos solteros. Como padres y líderes adultos de la juventud, …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "soltero",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.385,
+    "ratio": 1538.8,
+    "source": "2005-04-perry-what-seek-ye",
+    "kind": "talk",
+    "sample": "entar, permítanme darles tres: El de un padre de familia, el de un joven adulto soltero y el de una hermana soltera que han hallado una nueva fe y esperanza en sus res"
+   },
+   {
+    "term": "adulto",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.462,
+    "ratio": 369.3,
+    "source": "2005-04-perry-what-seek-ye",
+    "kind": "talk",
+    "sample": "ía presentar, permítanme darles tres: El de un padre de familia, el de un joven adulto soltero y el de una hermana soltera que han hallado una nueva fe y esperanza en"
+   },
+   {
+    "term": "joven",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.615,
+    "ratio": 20.9,
+    "source": "2005-04-perry-what-seek-ye",
+    "kind": "talk",
+    "sample": "e podría presentar, permítanme darles tres: El de un padre de familia, el de un joven adulto soltero y el de una hermana soltera que han hallado una nueva fe y esper"
+   }
+  ]
+ }
+}

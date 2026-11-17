@@ -1,0 +1,15 @@
+id: concept.general-conference
+category: Councils & Conferences
+en:
+  term: general conference
+  match:
+  - general conference
+sources: {}
+candidates:
+  pt:
+  - term: conferência geral
+    hint: pulpit-glossary:verified
+  es:
+  - term: conferencia general
+    hint: approved-terms
+related: []

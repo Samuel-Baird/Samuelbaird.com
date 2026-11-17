@@ -1,0 +1,15 @@
+id: concept.priesthood-holder
+category: Priesthood Offices & Quorums
+en:
+  term: priesthood holder
+  match:
+  - priesthood holder
+sources: {}
+candidates:
+  pt:
+  - term: portador do sacerdócio
+    hint: pulpit-glossary:verified
+  es:
+  - term: poseedor del sacerdocio
+    hint: pulpit-glossary:verified
+related: []

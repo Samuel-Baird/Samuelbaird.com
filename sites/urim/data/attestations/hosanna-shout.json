@@ -1,0 +1,103 @@
+{
+ "id": "concept.hosanna-shout",
+ "pt": {
+  "en_paragraphs": 3,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "brado de Hosana",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 3,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2020,
+    "last_year": 2023,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2020,
+      "conference": "2020 April General Conference",
+      "talk": "2020-04-nelson-opening-message",
+      "para": 10,
+      "en": "… assembly when I will lead you in the sacred Hosanna Shout. We pray that this will be a spiritual …",
+      "tr": "… assembleia solene mundial em que conduzirei o sagrado Brado de Hosana. Oramos para que esse seja um momento espiritual …"
+     },
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 April General Conference",
+      "talk": "2023-04-hoyos-the-work-of-the-temple-and-family-historyone-and-the-same-work",
+      "para": 2,
+      "en": "… of God,” and the congregation stood and gave the Hosanna Shout “with such [force that it] seemed … to raise …",
+      "tr": "… e a congregação se levantou e entoou o Brado de Hosana “com tamanho vigor que parecia forte o bastante para …"
+     }
+    ],
+    "earliest": {
+     "year": 2020,
+     "conference": "2020 April General Conference",
+     "talk": "2020-04-nelson-opening-message",
+     "para": 10,
+     "en": "… assembly when I will lead you in the sacred Hosanna Shout. We pray that this will be a spiritual …",
+     "tr": "… assembleia solene mundial em que conduzirei o sagrado Brado de Hosana. Oramos para que esse seja um momento espiritual …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 7,
+  "en_talks": 4,
+  "en_verses": 0,
+  "uncovered_paragraphs": 7,
+  "renderings": [
+   {
+    "term": "Grito de Hosanna",
+    "evidence": [],
+    "hint": "pulpit-glossary:verified"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "exclamación",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 1.0,
+    "ratio": 4001.0,
+    "source": "2020-04-nelson-go-forward-in-faith",
+    "kind": "talk",
+    "sample": "Conmemoramos la Restauración con la Exclamación de Hosanna."
+   },
+   {
+    "term": "hosanna",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.857,
+    "ratio": 1143.1,
+    "source": "2020-04-nelson-go-forward-in-faith",
+    "kind": "talk",
+    "sample": "Conmemoramos la Restauración con la Exclamación de Hosanna."
+   },
+   {
+    "term": "sagrada",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.429,
+    "ratio": 41.8,
+    "source": "2020-04-nelson-hosanna-shout",
+    "kind": "talk",
+    "sample": "tros colegas de los medios de comunicación a tratar con dignidad y respeto esta sagrada observancia."
+   }
+  ]
+ }
+}

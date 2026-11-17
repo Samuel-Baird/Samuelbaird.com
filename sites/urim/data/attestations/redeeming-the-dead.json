@@ -1,0 +1,101 @@
+{
+ "id": "concept.redeeming-the-dead",
+ "pt": {
+  "en_paragraphs": 5,
+  "en_talks": 5,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "redimir os mortos",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 4,
+    "talks": 4,
+    "verses": 0,
+    "first_year": 1994,
+    "last_year": 2018,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1994,
+      "conference": "1994 October General Conference",
+      "talk": "1994-10-hunter-follow-the-son-of-god",
+      "para": 8,
+      "en": "… in proclaiming the gospel, perfecting the Saints, and redeeming the dead lead to the holy temple. This is because the …",
+      "tr": "… em proclamar o evangelho, aperfeiçoar os santos e redimir os mortos levam ao templo santo, e isto porque suas ordenanças …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 October General Conference",
+      "talk": "2014-10-packer-the-book",
+      "para": 33,
+      "en": "… 2010, 91–94; Richard G. Scott, “[The Joy of Redeeming the Dead](https://www.churchofjesuschrist.org/study/ensign/2012/11/sunday-afternoon-session/the-joy-of-redeeming-the-dead?lang=eng),” *Ensign* or *Liahona,* Nov. 2012, 93–95; Quentin L. …",
+      "tr": "… p. 91; Richard G. Scott, \"A Alegria de Redimir os Mortos\", *A Liahona,* novembro de 2012, p. 93; Quentin …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-renlund-family-history-and-temple-work-sealing-and-healing",
+      "para": 37,
+      "en": "… 2011, 24–27; Richard G. Scott, “[The Joy of Redeeming the Dead](https://www.churchofjesuschrist.org/study/general-conference/2012/10/the-joy-of-redeeming-the-dead?lang=eng),” *Ensign* or *Liahona,* Nov. 2012, 93–95; Quentin L. …",
+      "tr": "… p. 24; Richard G. Scott, \"[A alegria de redimir os mortos](https://www.churchofjesuschrist.org/study/general-conference/2012/10/the-joy-of-redeeming-the-dead?lang=por)\", *A Liahona*, novembro de 2012, p. 93; Quentin …"
+     }
+    ],
+    "earliest": {
+     "year": 1994,
+     "conference": "1994 October General Conference",
+     "talk": "1994-10-hunter-follow-the-son-of-god",
+     "para": 8,
+     "en": "… in proclaiming the gospel, perfecting the Saints, and redeeming the dead lead to the holy temple. This is because the …",
+     "tr": "… em proclamar o evangelho, aperfeiçoar os santos e redimir os mortos levam ao templo santo, e isto porque suas ordenanças …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 3,
+  "en_talks": 3,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "redención de los muertos",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2018,
+    "last_year": 2018,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-renlund-family-history-and-temple-work-sealing-and-healing",
+      "para": 37,
+      "en": "… 2011, 24–27; Richard G. Scott, “[The Joy of Redeeming the Dead](https://www.churchofjesuschrist.org/study/general-conference/2012/10/the-joy-of-redeeming-the-dead?lang=eng),” *Ensign* or *Liahona,* Nov. 2012, 93–95; Quentin L. …",
+      "tr": "… Tambuli,* Dec. 1989, 18–23; D. Todd Christofferson, \"[La redención de los muertos y el testimonio de Jesús](https://www.churchofjesuschrist.org/study/general-conference/2000/10/the-redemption-of-the-dead-and-the-testimony-of-jesus?lang=spa)\", * Liahona,* enero …"
+     }
+    ],
+    "earliest": {
+     "year": 2018,
+     "conference": "2018 April General Conference",
+     "talk": "2018-04-renlund-family-history-and-temple-work-sealing-and-healing",
+     "para": 37,
+     "en": "… 2011, 24–27; Richard G. Scott, “[The Joy of Redeeming the Dead](https://www.churchofjesuschrist.org/study/general-conference/2012/10/the-joy-of-redeeming-the-dead?lang=eng),” *Ensign* or *Liahona,* Nov. 2012, 93–95; Quentin L. …",
+     "tr": "… Tambuli,* Dec. 1989, 18–23; D. Todd Christofferson, \"[La redención de los muertos y el testimonio de Jesús](https://www.churchofjesuschrist.org/study/general-conference/2000/10/the-redemption-of-the-dead-and-the-testimony-of-jesus?lang=spa)\", * Liahona,* enero …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

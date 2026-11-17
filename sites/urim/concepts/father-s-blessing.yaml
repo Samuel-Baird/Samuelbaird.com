@@ -1,0 +1,15 @@
+id: concept.father-s-blessing
+category: Baptism, Confirmation & Blessings
+en:
+  term: father's blessing
+  match:
+  - father's blessing
+sources: {}
+candidates:
+  pt:
+  - term: bênção paterna
+    hint: pulpit-glossary:verified
+  es:
+  - term: bendición de padre
+    hint: pulpit-glossary:verified
+related: []

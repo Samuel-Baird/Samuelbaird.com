@@ -1,0 +1,17 @@
+id: concept.priesthood-blessing
+category: Baptism, Confirmation & Blessings
+en:
+  term: priesthood blessing
+  match:
+  - priesthood blessing
+sources:
+  Topics:
+  - priesthood-blessing
+candidates:
+  pt:
+  - term: bênção do sacerdócio
+    hint: pulpit-glossary:verified
+  es:
+  - term: bendición del sacerdocio
+    hint: pulpit-glossary:verified
+related: []

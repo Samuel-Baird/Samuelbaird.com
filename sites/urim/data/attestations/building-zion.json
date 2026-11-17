@@ -1,0 +1,105 @@
+{
+ "id": "concept.building-zion",
+ "pt": {
+  "en_paragraphs": 4,
+  "en_talks": 4,
+  "en_verses": 0,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "edificar Sião",
+    "evidence": [],
+    "hint": "pulpit-glossary:standard"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "sião",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.75,
+    "ratio": 166.7,
+    "source": "2008-10-cook-hope-ya-know-we-had-a-hard-time",
+    "kind": "talk",
+    "sample": "evangelho por toda a vida e colaboraram de forma magnífica para a edificação de Sião, mas enfrentaram muitas outras provações e dificuldades que ambas sobrepujaram"
+   },
+   {
+    "term": "edificação",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 200.1,
+    "source": "2008-10-cook-hope-ya-know-we-had-a-hard-time",
+    "kind": "talk",
+    "sample": "ram firmes no evangelho por toda a vida e colaboraram de forma magnífica para a edificação de Sião, mas enfrentaram muitas outras provações e dificuldades que ambas sobre"
+   },
+   {
+    "term": "virá",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 166.7,
+    "source": "2019-04-christofferson-preparing-for-the-lords-return",
+    "kind": "talk",
+    "sample": "mundo[^25] “para recuperar [Seu] povo, que é da casa de Israel”,[^26] “e então virá o fim”.[^27] A profecia de Jeremias está se cumprindo:"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 4,
+  "en_talks": 4,
+  "en_verses": 0,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "edificar Sion",
+    "evidence": [],
+    "hint": "pulpit-glossary:verified"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "sión",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 1.0,
+    "ratio": 181.9,
+    "source": "2008-10-cook-hope-ya-know-we-had-a-hard-time",
+    "kind": "talk",
+    "sample": "rgo de su vida y proporcionaron un extraordinario servicio en la edificación de Sión, aunque afrontaron muchas otras pruebas y dificultades que ambas sobrellevaron"
+   },
+   {
+    "term": "edificación",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 666.8,
+    "source": "2008-10-cook-hope-ya-know-we-had-a-hard-time",
+    "kind": "talk",
+    "sample": "angelio a lo largo de su vida y proporcionaron un extraordinario servicio en la edificación de Sión, aunque afrontaron muchas otras pruebas y dificultades que ambas sobrel"
+   },
+   {
+    "term": "vendrá",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 181.9,
+    "source": "2019-04-christofferson-preparing-for-the-lords-return",
+    "kind": "talk",
+    "sample": "a recobrar a los de [Su] pueblo, que son de la casa de Israel”[^26] “y entonces vendrá el fin”[^27]. La profecía de Jeremías se está cumpliendo:"
+   }
+  ]
+ }
+}

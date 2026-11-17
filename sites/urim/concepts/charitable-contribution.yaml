@@ -1,0 +1,11 @@
+id: concept.charitable-contribution
+category: Finances
+en:
+  term: charitable contribution
+  match:
+  - charitable contribution
+sources: {}
+candidates:
+  pt: []
+  es: []
+related: []

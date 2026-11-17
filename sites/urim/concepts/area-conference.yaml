@@ -1,0 +1,15 @@
+id: concept.area-conference
+category: Councils & Conferences
+en:
+  term: area conference
+  match:
+  - area conference
+sources: {}
+candidates:
+  pt:
+  - term: conferência de área
+    hint: pulpit-glossary:verified
+  es:
+  - term: conferencia de área
+    hint: pulpit-glossary:verified
+related: []

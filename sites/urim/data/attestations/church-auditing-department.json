@@ -1,0 +1,119 @@
+{
+ "id": "concept.church-auditing-department",
+ "pt": {
+  "en_paragraphs": 46,
+  "en_talks": 24,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "Departamento de Auditoria da Igreja",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 45,
+    "talks": 23,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-edling-the-church-audit-committee-report",
+      "para": 4,
+      "en": "… and the audit reports are reviewed by the Church Auditing Department. Incorporated businesses owned or controlled by the Church …",
+      "tr": "… e os relatórios de auditoria examinados pelo Departamento de Auditoria da Igreja. Negócios incorporados controlados pela Igreja ou de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-cantwell-church-auditing-department-report-2012",
+      "para": 5,
+      "en": "Church Auditing Department",
+      "tr": "Departamento de Auditoria da Igreja"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-larson-church-auditing-department-report-2025",
+      "para": 4,
+      "en": "Church Auditing Department",
+      "tr": "Departamento de Auditoria da Igreja"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-edling-the-church-audit-committee-report",
+     "para": 4,
+     "en": "… and the audit reports are reviewed by the Church Auditing Department. Incorporated businesses owned or controlled by the Church …",
+     "tr": "… e os relatórios de auditoria examinados pelo Departamento de Auditoria da Igreja. Negócios incorporados controlados pela Igreja ou de …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 41,
+  "en_talks": 20,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "Departamento de Auditoría de la Iglesia",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 40,
+    "talks": 20,
+    "verses": 0,
+    "first_year": 2002,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2002,
+      "conference": "2002 April General Conference",
+      "talk": "2002-04-jones-church-auditing-department-report",
+      "para": 0,
+      "en": "… departments and operations. The managing director of the Church Auditing Department reports directly and regularly to the First Presidency. Church …",
+      "tr": "… de la Iglesia. El director ejecutivo del Departamento de Auditorías de la Iglesia informa directamente y con regularidad a la …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-jergensen-church-auditing-department-report-2013",
+      "para": 4,
+      "en": "Church Auditing Department",
+      "tr": "Departamento de Auditorías de la Iglesia"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-larson-church-auditing-department-report-2025",
+      "para": 4,
+      "en": "Church Auditing Department",
+      "tr": "Departamento de Auditorías de la Iglesia"
+     }
+    ],
+    "earliest": {
+     "year": 2002,
+     "conference": "2002 April General Conference",
+     "talk": "2002-04-jones-church-auditing-department-report",
+     "para": 0,
+     "en": "… departments and operations. The managing director of the Church Auditing Department reports directly and regularly to the First Presidency. Church …",
+     "tr": "… de la Iglesia. El director ejecutivo del Departamento de Auditorías de la Iglesia informa directamente y con regularidad a la …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

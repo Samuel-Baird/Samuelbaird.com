@@ -1,0 +1,101 @@
+{
+ "id": "concept.perpetual-emigrating-fund",
+ "pt": {
+  "en_paragraphs": 3,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "Fundo Perpétuo de Emigração",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2007,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2007,
+      "conference": "2007 April General Conference",
+      "talk": "2007-04-tingey-prophetspioneer-and-modern-day",
+      "para": 10,
+      "en": "***He organized the Perpetual Emigrating Fund*** to reach out to those in need, assisting …",
+      "tr": "***Organizou o Fundo Perpétuo de Emigração,*** para ajudar os necessitados e auxiliar os …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-cook-the-lord-is-hastening-his-work",
+      "para": 3,
+      "en": "… occurred, some supported by loans provided through the Perpetual Emigrating Fund.",
+      "tr": "… ajuda por meio de empréstimos fornecidos através do Fundo Perpétuo de Emigração."
+     }
+    ],
+    "earliest": {
+     "year": 2007,
+     "conference": "2007 April General Conference",
+     "talk": "2007-04-tingey-prophetspioneer-and-modern-day",
+     "para": 10,
+     "en": "***He organized the Perpetual Emigrating Fund*** to reach out to those in need, assisting …",
+     "tr": "***Organizou o Fundo Perpétuo de Emigração,*** para ajudar os necessitados e auxiliar os …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 3,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "Fondo Perpetuo para la Emigración",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2007,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2007,
+      "conference": "2007 April General Conference",
+      "talk": "2007-04-tingey-prophetspioneer-and-modern-day",
+      "para": 10,
+      "en": "***He organized the Perpetual Emigrating Fund*** to reach out to those in need, assisting …",
+      "tr": "***Organizó el Fondo Perpetuo para la Emigración*** a fin de tender una mano a …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-cook-the-lord-is-hastening-his-work",
+      "para": 3,
+      "en": "… occurred, some supported by loans provided through the Perpetual Emigrating Fund.",
+      "tr": "… recibieron el apoyo de los préstamos del Fondo Perpetuo para la Emigración."
+     }
+    ],
+    "earliest": {
+     "year": 2007,
+     "conference": "2007 April General Conference",
+     "talk": "2007-04-tingey-prophetspioneer-and-modern-day",
+     "para": 10,
+     "en": "***He organized the Perpetual Emigrating Fund*** to reach out to those in need, assisting …",
+     "tr": "***Organizó el Fondo Perpetuo para la Emigración*** a fin de tender una mano a …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

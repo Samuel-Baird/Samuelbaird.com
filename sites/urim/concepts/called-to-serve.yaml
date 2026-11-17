@@ -1,0 +1,17 @@
+id: concept.called-to-serve
+category: Missionary Work
+en:
+  term: called to serve
+  match:
+  - called to serve
+sources:
+  GH:
+  - 14-single-members#title_number27
+candidates:
+  pt:
+  - term: chamado para servir
+    hint: pulpit-glossary:verified
+  es:
+  - term: llamado a servir
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,15 @@
+id: concept.gospel-topics
+category: Education & Publications
+en:
+  term: Gospel Topics
+  match:
+  - Gospel Topics
+sources: {}
+candidates:
+  pt:
+  - term: Tópicos do Evangelho
+    hint: pulpit-glossary:verified
+  es:
+  - term: Temas del Evangelio
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,177 @@
+{
+ "id": "concept.tithing-funds",
+ "pt": {
+  "en_paragraphs": 5,
+  "en_talks": 5,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "fundos de dízimo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2003,
+    "last_year": 2006,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 April General Conference",
+      "talk": "2003-04-hinckley-the-condition-of-the-church",
+      "para": 8,
+      "en": "… wish to give the entire Church the assurance that tithing funds have not and will not be used to acquire …",
+      "tr": "… assegurar a toda a Igreja de que os fundos de dízimo não foram e nem serão utilizados na compra dessa …"
+     },
+     {
+      "kind": "talk",
+      "year": 2006,
+      "conference": "2006 October General Conference",
+      "talk": "2006-10-hinckley-we-bear-testimony-to-the-world",
+      "para": 7,
+      "en": "… be great, it will not involve the expenditure of tithing funds.",
+      "tr": "… as despesas serem grandes, não envolverão dispêndio dos fundos de dízimo."
+     }
+    ],
+    "earliest": {
+     "year": 2003,
+     "conference": "2003 April General Conference",
+     "talk": "2003-04-hinckley-the-condition-of-the-church",
+     "para": 8,
+     "en": "… wish to give the entire Church the assurance that tithing funds have not and will not be used to acquire …",
+     "tr": "… assegurar a toda a Igreja de que os fundos de dízimo não foram e nem serão utilizados na compra dessa …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "fundos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 571.6,
+    "source": "2004-10-hinckley-condition-of-the-church",
+    "kind": "talk",
+    "sample": "iações da Praça do Templo. Isso exige um projeto de construção muito grande. Os fundos do dízimo não serão usados nessa construção. A renda obtida nos negócios da Igr"
+   },
+   {
+    "term": "dízimo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 285.8,
+    "source": "2004-10-hinckley-condition-of-the-church",
+    "kind": "talk",
+    "sample": "Praça do Templo. Isso exige um projeto de construção muito grande. Os fundos do dízimo não serão usados nessa construção. A renda obtida nos negócios da Igreja, alugu"
+   },
+   {
+    "term": "usados",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 381.0,
+    "source": "2004-10-hinckley-condition-of-the-church",
+    "kind": "talk",
+    "sample": "Isso exige um projeto de construção muito grande. Os fundos do dízimo não serão usados nessa construção. A renda obtida nos negócios da Igreja, aluguéis de propriedad"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 5,
+  "en_talks": 5,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "fondos de diezmos",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2001,
+    "last_year": 2003,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 October General Conference",
+      "talk": "2001-10-hinckley-reaching-down-to-lift-another",
+      "para": 12,
+      "en": "… would be donated by our people, and not from tithing funds, we would create a corpus, the earnings from …",
+      "tr": "… que donaría nuestra gente, y no de los fondos de diezmos, se crearía un capital, de cuyos ingresos se …"
+     },
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 April General Conference",
+      "talk": "2003-04-hinckley-the-condition-of-the-church",
+      "para": 8,
+      "en": "… wish to give the entire Church the assurance that tithing funds have not and will not be used to acquire …",
+      "tr": "… deseo asegurar a toda la Iglesia que los fondos de diezmos no se han empleado ni se emplearán para la …"
+     }
+    ],
+    "earliest": {
+     "year": 2001,
+     "conference": "2001 October General Conference",
+     "talk": "2001-10-hinckley-reaching-down-to-lift-another",
+     "para": 12,
+     "en": "… would be donated by our people, and not from tithing funds, we would create a corpus, the earnings from …",
+     "tr": "… que donaría nuestra gente, y no de los fondos de diezmos, se crearía un capital, de cuyos ingresos se …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "diezmos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 363.7,
+    "source": "2004-10-hinckley-condition-of-the-church",
+    "kind": "talk",
+    "sample": "es necesario que se realice un proyecto de construcción muy grande. El fondo de diezmos no se utilizará para esa construcción, sino que se hará posible mediante el ing"
+   },
+   {
+    "term": "manzana",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 1333.7,
+    "source": "2004-10-hinckley-condition-of-the-church",
+    "kind": "talk",
+    "sample": "en Salt Lake City. Es imprescindible que conservemos el entorno alrededor de la Manzana del Templo. Para eso, es necesario que se realice un proyecto de construcción m"
+   },
+   {
+    "term": "proyecto",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 296.4,
+    "source": "2004-10-hinckley-condition-of-the-church",
+    "kind": "talk",
+    "sample": "no alrededor de la Manzana del Templo. Para eso, es necesario que se realice un proyecto de construcción muy grande. El fondo de diezmos no se utilizará para esa constr"
+   }
+  ]
+ }
+}

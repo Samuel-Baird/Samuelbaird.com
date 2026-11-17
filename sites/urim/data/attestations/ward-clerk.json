@@ -1,0 +1,127 @@
+{
+ "id": "concept.ward-clerk",
+ "pt": {
+  "en_paragraphs": 3,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "secretário da ala",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2003,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 April General Conference",
+      "talk": "2003-04-gerratt-follow-the-instructions",
+      "para": 0,
+      "en": "Some years ago while I was serving as a ward clerk, the ward supplies for the new year arrived …",
+      "tr": "Há alguns anos, quando eu servia como secretário da ala, recebi em minha casa a entrega dos suprimentos …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-kearon-about-his-business",
+      "para": 4,
+      "en": "The ward clerk I was to be “assisting” came straight to me …",
+      "tr": "O secretário da ala que eu deveria “auxiliar” veio falar comigo logo após …"
+     }
+    ],
+    "earliest": {
+     "year": 2003,
+     "conference": "2003 April General Conference",
+     "talk": "2003-04-gerratt-follow-the-instructions",
+     "para": 0,
+     "en": "Some years ago while I was serving as a ward clerk, the ward supplies for the new year arrived …",
+     "tr": "Há alguns anos, quando eu servia como secretário da ala, recebi em minha casa a entrega dos suprimentos …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 5,
+  "en_talks": 4,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "secretario del barrio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2003,
+    "last_year": 2004,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 April General Conference",
+      "talk": "2003-04-gerratt-follow-the-instructions",
+      "para": 0,
+      "en": "Some years ago while I was serving as a ward clerk, the ward supplies for the new year arrived …",
+      "tr": "… año. Entre las numerosas cajas, una dirigida al secretario del barrio captó mi atención porque tenía una etiqueta que con …"
+     },
+     {
+      "kind": "talk",
+      "year": 2004,
+      "conference": "2004 April General Conference",
+      "talk": "2004-04-maxwell-remember-how-merciful-the-lord-hath-been",
+      "para": 11,
+      "en": "Years later I would learn from that bishop’s devoted ward clerk that the bishop had felt I needed a little …",
+      "tr": "… supe, por el que había sido un dedicado secretario del barrio con aquel obispo, que éste opinaba que era necesario …"
+     }
+    ],
+    "earliest": {
+     "year": 2003,
+     "conference": "2003 April General Conference",
+     "talk": "2003-04-gerratt-follow-the-instructions",
+     "para": 0,
+     "en": "Some years ago while I was serving as a ward clerk, the ward supplies for the new year arrived …",
+     "tr": "… año. Entre las numerosas cajas, una dirigida al secretario del barrio captó mi atención porque tenía una etiqueta que con …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "secretario",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 1000.2,
+    "source": "2009-04-neider-revealed-quorum-principles",
+    "kind": "talk",
+    "sample": "a bendecir a los miembros del quórum y a sus familias. De inmediato le pidió al secretario de barrio una lista de los miembros del quórum, practicó su español y, con una"
+   },
+   {
+    "term": "barrio",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 100.0,
+    "source": "2009-04-neider-revealed-quorum-principles",
+    "kind": "talk",
+    "sample": "maestros, él era el único miembro de ese quórum que asistía a la Iglesia en su barrio. El joven presidente Matt Andersen estaba aprendiendo un idioma nuevo para lleg"
+   }
+  ]
+ }
+}

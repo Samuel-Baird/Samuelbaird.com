@@ -1,0 +1,15 @@
+id: concept.guide-to-the-scriptures
+category: Scriptures & Study Helps
+en:
+  term: Guide to the Scriptures
+  match:
+  - Guide to the Scriptures
+sources: {}
+candidates:
+  pt:
+  - term: Guia para Estudo das Escrituras
+    hint: pulpit-glossary:verified
+  es:
+  - term: Guía para el Estudio de las Escrituras
+    hint: pulpit-glossary:verified
+related: []

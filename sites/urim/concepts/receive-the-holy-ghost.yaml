@@ -1,0 +1,15 @@
+id: concept.receive-the-holy-ghost
+category: Baptism, Confirmation & Blessings
+en:
+  term: receive the Holy Ghost
+  match:
+  - receive the Holy Ghost
+sources: {}
+candidates:
+  pt:
+  - term: receber o Espírito Santo
+    hint: pulpit-glossary:verified
+  es:
+  - term: recibir el Espíritu Santo
+    hint: pulpit-glossary:verified
+related: []

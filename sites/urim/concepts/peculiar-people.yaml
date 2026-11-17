@@ -1,0 +1,15 @@
+id: concept.peculiar-people
+category: Israel & Covenant People
+en:
+  term: peculiar people
+  match:
+  - peculiar people
+sources: {}
+candidates:
+  pt:
+  - term: povo adquirido
+    hint: pulpit-glossary:verified
+  es:
+  - term: pueblo adquirido
+    hint: pulpit-glossary:verified
+related: []

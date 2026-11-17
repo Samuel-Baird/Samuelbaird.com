@@ -1,0 +1,21 @@
+id: concept.spiritual-death
+category: Plan of Salvation
+en:
+  term: Spiritual Death
+  match:
+  - Spiritual Death
+sources:
+  GS:
+  - spiritual-death
+  Topics:
+  - death-spiritual
+  TtF:
+  - spiritual-death
+candidates:
+  pt: []
+  es:
+  - term: muerte espiritual
+    hint: approved-terms
+related: []
+note: Doctrinal category (separation from God via the Fall/sin) — pair with "the Fall" already listed,
+  distinct from physical death

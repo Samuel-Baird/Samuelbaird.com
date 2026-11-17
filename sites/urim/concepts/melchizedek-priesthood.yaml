@@ -1,0 +1,23 @@
+id: concept.melchizedek-priesthood
+category: Priesthood Offices & Quorums
+en:
+  term: Melchizedek Priesthood
+  match:
+  - Melchizedek Priesthood
+sources:
+  GS:
+  - melchizedek-priesthood
+  Topics:
+  - melchizedek-priesthood
+  TtF:
+  - melchizedek-priesthood
+  GH:
+  - 18-priesthood-ordinances-and-blessings#title_number59
+candidates:
+  pt:
+  - term: Sacerdócio de Melquisedeque
+    hint: pulpit-glossary:standard
+  es:
+  - term: Sacerdocio de Melquisedec
+    hint: approved-terms
+related: []

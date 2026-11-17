@@ -1,0 +1,7 @@
+{
+ "pulpit_commit": "f57f3ff446",
+ "words": 73207,
+ "confident_words": 54918,
+ "heteronym_entries": 18,
+ "source": "pulpit-vault indexes/deseret/wordlist.tsv and schema/deseret/heteronyms.yaml"
+}

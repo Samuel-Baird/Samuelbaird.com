@@ -1,0 +1,195 @@
+{
+ "id": "concept.home-teaching",
+ "pt": {
+  "en_paragraphs": 79,
+  "en_talks": 49,
+  "en_verses": 0,
+  "uncovered_paragraphs": 26,
+  "renderings": [
+   {
+    "term": "ensino familiar",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 53,
+    "talks": 27,
+    "verses": 0,
+    "first_year": 1995,
+    "last_year": 2018,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1995,
+      "conference": "1995 April General Conference",
+      "talk": "1995-04-ayala-we-have-kept-the-faith",
+      "para": 11,
+      "en": "… to hear it. References came in from member families. Home teaching increased. Nobody was overlooked. Just as they said, they …",
+      "tr": "… aos que desejavam ouvi-lo. Receberam-se referências dos membros. O ensino familiar progrediu. Ninguém foi esquecido. Como disseram, eles guardaram a …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 October General Conference",
+      "talk": "2013-10-monson-true-shepherds",
+      "para": 12,
+      "en": "A home teaching visit is also more likely to be successful if …",
+      "tr": "É mais provável que a visita de ensino familiar tenha sucesso se um compromisso for marcado com antecedência. …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 October General Conference",
+      "talk": "2018-10-nelson-sisters-participation-in-the-gathering-of-israel",
+      "para": 12,
+      "en": "… tendency of some men was to check off their home teaching assignment as “done” and move on to the next …",
+      "tr": "… tendência de alguns homens era marcar sua designação de ensino familiar como “feita” e partir para a próxima tarefa."
+     }
+    ],
+    "earliest": {
+     "year": 1995,
+     "conference": "1995 April General Conference",
+     "talk": "1995-04-ayala-we-have-kept-the-faith",
+     "para": 11,
+     "en": "… to hear it. References came in from member families. Home teaching increased. Nobody was overlooked. Just as they said, they …",
+     "tr": "… aos que desejavam ouvi-lo. Receberam-se referências dos membros. O ensino familiar progrediu. Ninguém foi esquecido. Como disseram, eles guardaram a …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "mestre familiar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.5,
+    "ratio": 400.1,
+    "source": "1991-04-wirthlin-peace-within",
+    "kind": "talk",
+    "sample": "timo momento. Isto se aplica também à nossa freqüência ao templo, às visitas de mestre familiar e de professoras visitantes, à preparação de lições, discursos e outras designa"
+   },
+   {
+    "term": "visitas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.308,
+    "ratio": 205.2,
+    "source": "1991-04-wirthlin-peace-within",
+    "kind": "talk",
+    "sample": "ar até o último momento. Isto se aplica também à nossa freqüência ao templo, às visitas de mestre familiar e de professoras visitantes, à preparação de lições, discurs"
+   },
+   {
+    "term": "mestres familiares",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.269,
+    "ratio": 269.3,
+    "source": "1996-04-howard-commitment",
+    "kind": "talk",
+    "sample": "Irmão Howard, sabe por que nunca se consegue mais de 83 por cento de visitas de mestres familiares na Igreja?” Eu respondi: “Não, por quê?” Ele disse: “Porque ninguém quer fazer"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 82,
+  "en_talks": 44,
+  "en_verses": 0,
+  "uncovered_paragraphs": 15,
+  "renderings": [
+   {
+    "term": "orientación familiar",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 67,
+    "talks": 33,
+    "verses": 0,
+    "first_year": 1994,
+    "last_year": 2020,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1994,
+      "conference": "1994 April General Conference",
+      "talk": "1994-04-jensen-the-power-of-a-good-life",
+      "para": 22,
+      "en": "… evening is a silver-haired stake patriarch became my “senior” home teaching companion. Under his wise tutelage, and in spite of …",
+      "tr": "… la cabeza blanca era mi compañero mayor en la orientación familiar. Bajo su sabia dirección, y a pesar de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 October General Conference",
+      "talk": "2013-10-monson-true-shepherds",
+      "para": 14,
+      "en": "… one more example of the incorrect way to accomplish home teaching. President Marion G. Romney, who was a counselor …",
+      "tr": "… de la manera incorrecta de llevar a cabo la orientación familiar. El presidente Marion G. Romney, que hace algunos …"
+     },
+     {
+      "kind": "talk",
+      "year": 2020,
+      "conference": "2020 October General Conference",
+      "talk": "2020-10-godoy-i-believe-in-angels",
+      "para": 12,
+      "en": "… Fusco. He was also assigned to be my senior home teaching companion. Despite my lack of experience and different appearance, …",
+      "tr": "… le había asignado que fuera mi compañero mayor de orientación familiar. A pesar de mi falta de experiencia y …"
+     }
+    ],
+    "earliest": {
+     "year": 1994,
+     "conference": "1994 April General Conference",
+     "talk": "1994-04-jensen-the-power-of-a-good-life",
+     "para": 22,
+     "en": "… evening is a silver-haired stake patriarch became my “senior” home teaching companion. Under his wise tutelage, and in spite of …",
+     "tr": "… la cabeza blanca era mi compañero mayor en la orientación familiar. Bajo su sabia dirección, y a pesar de …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "teaching",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.267,
+    "ratio": 1066.9,
+    "source": "2004-10-monson-if-ye-are-prepared-ye-shall-not-fear",
+    "kind": "talk",
+    "sample": "eatre,* 2 tomos, ed. Stanley Richards, 1973–1976, 1:393.\n[^6]: *Priesthood Home Teaching Handbook,* rev. ed. 1967, ii.\n[^7]: *Gospel Ideals*, 1953, pág. 169.\n[^8]: *Gos"
+   },
+   {
+    "term": "orientador",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.267,
+    "ratio": 1066.9,
+    "source": "2000-04-smoot-we-are-creators",
+    "kind": "talk",
+    "sample": "sentido inspirados a hacer por alguna persona, como maestra visitante o maestro orientador, algo que haya ejercido una gran influencia en su vida. Si han hecho algo de es"
+   },
+   {
+    "term": "home",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.267,
+    "ratio": 355.6,
+    "source": "2004-10-monson-if-ye-are-prepared-ye-shall-not-fear",
+    "kind": "talk",
+    "sample": "an Theatre,* 2 tomos, ed. Stanley Richards, 1973–1976, 1:393.\n[^6]: *Priesthood Home Teaching Handbook,* rev. ed. 1967, ii.\n[^7]: *Gospel Ideals*, 1953, pág. 169.\n["
+   }
+  ]
+ }
+}

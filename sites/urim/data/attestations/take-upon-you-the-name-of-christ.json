@@ -1,0 +1,144 @@
+{
+ "id": "concept.take-upon-you-the-name-of-christ",
+ "pt": {
+  "en_paragraphs": 19,
+  "en_talks": 19,
+  "en_verses": 6,
+  "uncovered_paragraphs": 25,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "tomar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 16,
+    "share_of_uncovered": 0.64,
+    "ratio": 50.2,
+    "source": "2001-04-sorensen-you-cant-pet-a-rattlesnake",
+    "kind": "talk",
+    "sample": "gora, neste local, junto comigo vocês se comprometessem mais uma vez a honrar e tomar sobre si o nome de Cristo. Com esse sacerdócio que vocês possuem, podem erguer-"
+   },
+   {
+    "term": "dizem que deveis",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.24,
+    "ratio": 960.2,
+    "source": "2005-04-packer-the-book-of-mormon-another-testament-of-jesus-christplain-and-precious-things",
+    "kind": "talk",
+    "sample": "Não leram as escrituras, que dizem que deveis tomar sobre vós o nome de Cristo, que é o meu nome? Porque por esse nome sereis"
+   },
+   {
+    "term": "escrituras, que dizem",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.24,
+    "ratio": 480.1,
+    "source": "2005-04-packer-the-book-of-mormon-another-testament-of-jesus-christplain-and-precious-things",
+    "kind": "talk",
+    "sample": "Não leram as escrituras, que dizem que deveis tomar sobre vós o nome de Cristo, que é o meu nome? Porque por esse"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 17,
+  "en_talks": 17,
+  "en_verses": 6,
+  "uncovered_paragraphs": 12,
+  "renderings": [
+   {
+    "term": "tomar sobre vosotros el nombre de Cristo",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 8,
+    "talks": 8,
+    "verses": 3,
+    "first_year": 2011,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "3 Nefi 27:5",
+      "ref_en": "3 Nephi 27:5",
+      "en": "Have they not read the scriptures, which say ye must take upon you the name of Christ, which is my name? For by this name shall ye be called at the last day;",
+      "tr": "¿No han leído las Escrituras que dicen que debéis tomar sobre vosotros el nombre de Cristo, que es mi nombre? Porque por este nombre seréis llamados en el postrer día;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/27?lang=spa&id=p5"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-packer-guided-by-the-holy-spirit",
+      "para": 10,
+      "en": "… the scriptures, which say ye must take upon you the name of Christ … ? For by this name shall …",
+      "tr": "… las Escrituras que dicen que debéis tomar sobre vosotros el nombre de Cristo…? Porque por este nombre seréis llamados …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 October General Conference",
+      "talk": "2018-10-gay-taking-upon-ourselves-the-name-of-jesus-christ",
+      "para": 0,
+      "en": "… told the people that “ye must take upon you the name of Christ.”[^2] This caused me to look at …",
+      "tr": "… le dijo al pueblo: “… debéis tomar sobre vosotros el nombre de Cristo”[^2]. Esto me llevó a observarme a …"
+     }
+    ],
+    "earliest": {
+     "year": 2011,
+     "conference": "2011 April General Conference",
+     "talk": "2011-04-packer-guided-by-the-holy-spirit",
+     "para": 10,
+     "en": "… the scriptures, which say ye must take upon you the name of Christ … ? For by this name shall …",
+     "tr": "… las Escrituras que dicen que debéis tomar sobre vosotros el nombre de Cristo…? Porque por este nombre seréis llamados …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "vosotros",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.75,
+    "ratio": 63.8,
+    "source": "2000-04-packer-the-cloven-tongues-of-fire",
+    "kind": "talk",
+    "sample": "l profeta Nefi. Él dio la misma respuesta que Pedro había dado: “…[tomad] sobre vosotros el nombre de Cristo por medio del bautismo… entonces viene el bautismo de fuego"
+   },
+   {
+    "term": "tomaseis",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.417,
+    "ratio": 1667.1,
+    "source": "2005-10-koelliker-gospel-covenants-bring-promised-blessings",
+    "kind": "talk",
+    "sample": "“…por tanto, quisiera que tomaseis sobre vosotros el nombre de Cristo, todos vosotros que habéis hecho convenio co"
+   },
+   {
+    "term": "tomad",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.333,
+    "ratio": 444.6,
+    "source": "2000-04-packer-the-cloven-tongues-of-fire",
+    "kind": "talk",
+    "sample": "e fue hecha al profeta Nefi. Él dio la misma respuesta que Pedro había dado: “…[tomad] sobre vosotros el nombre de Cristo por medio del bautismo… entonces viene el b"
+   }
+  ]
+ }
+}

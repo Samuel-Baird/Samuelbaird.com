@@ -1,0 +1,13 @@
+id: concept.church-history-library
+category: Church Units & Facilities
+en:
+  term: Church History Library
+  match:
+  - Church History Library
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: Biblioteca de Historia de la Iglesia
+    hint: pulpit-glossary:verified
+related: []

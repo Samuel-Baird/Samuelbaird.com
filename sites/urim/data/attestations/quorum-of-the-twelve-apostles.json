@@ -1,0 +1,195 @@
+{
+ "id": "concept.quorum-of-the-twelve-apostles",
+ "pt": {
+  "en_paragraphs": 366,
+  "en_talks": 262,
+  "en_verses": 0,
+  "uncovered_paragraphs": 13,
+  "renderings": [
+   {
+    "term": "Quórum dos Doze Apóstolos",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 353,
+    "talks": 254,
+    "verses": 0,
+    "first_year": 1993,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1993,
+      "conference": "1993 April General Conference",
+      "talk": "1993-04-merrell-power-of-the-church-rooted-in-christ",
+      "para": 6,
+      "en": "… authority of the First Presidency and the Quorum of the Twelve Apostles extend to Christ’s ordained work in all the …",
+      "tr": "… e a autoridade da Primeira Presidência e do Quorum dos Doze Apóstolos estendem-se ao trabalho ordenado por Cristo no mundo …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 April General Conference",
+      "talk": "2015-04-renlund-latter-day-saints-keep-on-trying",
+      "para": 19,
+      "en": "… the sermons of the First Presidency and Quorum of the Twelve Apostles is striking. President Dieter F. Uchtdorf made this …",
+      "tr": "… aparece nos discursos da Primeira Presidência e do Quórum dos Doze Apóstolos é impressionante. O Presidente Dieter F. Uchtdorf transmitiu …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-larson-church-auditing-department-report-2025",
+      "para": 0,
+      "en": "… the Tithes—composed of the First Presidency, the Quorum of the Twelve Apostles, and the Presiding Bishopric—authorizes the expenditure of …",
+      "tr": "… Disposição dos Dízimos, formado pela Primeira Presidência, pelo Quórum dos Doze Apóstolos e pelo Bispado Presidente, autoriza a utilização dos …"
+     }
+    ],
+    "earliest": {
+     "year": 1993,
+     "conference": "1993 April General Conference",
+     "talk": "1993-04-merrell-power-of-the-church-rooted-in-christ",
+     "para": 6,
+     "en": "… authority of the First Presidency and the Quorum of the Twelve Apostles extend to Christ’s ordained work in all the …",
+     "tr": "… e a autoridade da Primeira Presidência e do Quorum dos Doze Apóstolos estendem-se ao trabalho ordenado por Cristo no mundo …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "quórum",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.615,
+    "ratio": 37.9,
+    "source": "2011-10-packer-counsel-to-youth",
+    "kind": "talk",
+    "sample": "como profetas, videntes e reveladores. Cada membro da Primeira Presidência e do Quórum dos Doze possui todas as chaves do sacerdócio necessárias para dirigir a Igreja"
+   },
+   {
+    "term": "doze",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.462,
+    "ratio": 34.2,
+    "source": "2010-10-costa-obedience-to-the-prophets",
+    "kind": "talk",
+    "sample": "80, quando o Presidente Ezra Taft Benson serviu como presidente do Conselho dos Doze Apóstolos, ele nos passou uma vigorosa mensagem sobre a obediência aos profetas"
+   },
+   {
+    "term": "twelve apostles",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.231,
+    "ratio": 923.3,
+    "source": "2020-04-eyring-he-goes-before-us",
+    "kind": "talk",
+    "sample": "n, Ronald K. Esplin e David J. Whittaker, Men With a Mission: The Quorum of the Twelve Apostles in the British Isles, 1837–1841, 1992, pp. 53, 302; Brandon S. Plewe, ed., Mapp"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 352,
+  "en_talks": 256,
+  "en_verses": 0,
+  "uncovered_paragraphs": 202,
+  "renderings": [
+   {
+    "term": "Quórum de los Doce Apóstoles",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 150,
+    "talks": 128,
+    "verses": 0,
+    "first_year": 1992,
+    "last_year": 2015,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 October General Conference",
+      "talk": "1996-10-hafen-covenant-marriage",
+      "para": 19,
+      "en": "… p. A10.\n[^12]: The First Presidency and Quorum of the Twelve Apostles, “The Family: A Proclamation to the World,” …",
+      "tr": "… A-8.\n[^11]: La Primera Presidencia y el Quórum de los Doce Apóstoles, \"La familia: Una proclamación para el mundo\", …"
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 April General Conference",
+      "talk": "2009-04-monson-until-we-meet-again",
+      "para": 5,
+      "en": "… love and support my Brethren of the Quorum of the Twelve Apostles. During this conference we sustained a new …",
+      "tr": "… doy mi apoyo a las autoridades del Quórum de los Doce Apóstoles. Durante esta conferencia sostuvimos a un nuevo …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 April General Conference",
+      "talk": "2015-04-stephens-the-family-is-of-god",
+      "para": 19,
+      "en": "Twenty years ago, the First Presidency and Quorum of the Twelve Apostles reached out to the entire world when issuing …",
+      "tr": "… veinte años, la Primera Presidencia y el Quórum de los Doce Apóstoles tendieron la mano al mundo entero al emitir …"
+     }
+    ],
+    "earliest": {
+     "year": 1992,
+     "conference": "1992 April General Conference",
+     "talk": "1992-04-packer-our-moral-environment",
+     "para": 0,
+     "en": "… thirty years and a member of the Quorum of the Twelve Apostles for twenty-two. During those years, I have interviewed …",
+     "tr": "… mas de treinta años y miembro del Quórum de los Doce Apóstoles por veintidós. Durante esos años, he entrevistado no …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "cuórum",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 187,
+    "share_of_uncovered": 0.926,
+    "ratio": 154.3,
+    "source": "2015-10-ballard-god-is-at-the-helm",
+    "kind": "talk",
+    "sample": "Hace veinte años, la Primera Presidencia y el Cuórum de los Doce Apóstoles emitieron “La Familia: Una Proclamación para el Mundo”. E"
+   },
+   {
+    "term": "doce apóstoles",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 189,
+    "share_of_uncovered": 0.936,
+    "ratio": 124.8,
+    "source": "2014-04-uchtdorf-the-sustaining-of-church-officers",
+    "kind": "talk",
+    "sample": "Se propone que sostengamos a los consejeros de la Primera Presidencia y a los Doce Apóstoles como profetas, videntes y reveladores."
+   },
+   {
+    "term": "propone",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 81,
+    "share_of_uncovered": 0.401,
+    "ratio": 59.4,
+    "source": "2014-04-uchtdorf-the-sustaining-of-church-officers",
+    "kind": "talk",
+    "sample": "Se propone que sostengamos a los consejeros de la Primera Presidencia y a los Doce Apóstol"
+   }
+  ]
+ }
+}

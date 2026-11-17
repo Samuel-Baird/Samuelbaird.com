@@ -1,0 +1,195 @@
+{
+ "id": "concept.relief-society-meeting",
+ "pt": {
+  "en_paragraphs": 52,
+  "en_talks": 30,
+  "en_verses": 0,
+  "uncovered_paragraphs": 35,
+  "renderings": [
+   {
+    "term": "reunião geral da Sociedade de Socorro",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 17,
+    "talks": 17,
+    "verses": 0,
+    "first_year": 1995,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1995,
+      "conference": "1995 October General Conference",
+      "talk": "1995-10-hinckley-the-family-a-proclamation-to-the-world",
+      "para": 9,
+      "en": "… as part of his message at the General Relief Society Meeting held September 23, 1995, in Salt Lake City, Utah.*",
+      "tr": "… Hinckley como parte de sua mensagem na Reunião Geral da Sociedade de Socorro, realizada em 23 de setembro de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 April General Conference",
+      "talk": "2009-04-thompson-his-arm-is-sufficient",
+      "para": 10,
+      "en": "Last September in the general Relief Society meeting, Sister Beck outlined three things to help us …",
+      "tr": "Na reunião geral da Sociedade de Socorro, em setembro passado, a irmã Beck …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-rasband-the-family-proclamationwords-from-god",
+      "para": 9,
+      "en": "Days before the September 23 general Relief Society meeting that preceded general conference, President Hinckley and his counselors …",
+      "tr": "Alguns dias antes da Reunião Geral da Sociedade de Socorro de 23 de setembro, que foi realizada …"
+     }
+    ],
+    "earliest": {
+     "year": 1995,
+     "conference": "1995 October General Conference",
+     "talk": "1995-10-hinckley-the-family-a-proclamation-to-the-world",
+     "para": 9,
+     "en": "… as part of his message at the General Relief Society Meeting held September 23, 1995, in Salt Lake City, Utah.*",
+     "tr": "… Hinckley como parte de sua mensagem na Reunião Geral da Sociedade de Socorro, realizada em 23 de setembro de …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "socorro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 34,
+    "share_of_uncovered": 0.971,
+    "ratio": 63.7,
+    "source": "1995-04-parkin-celebrating-covenants",
+    "kind": "talk",
+    "sample": "Numa reu­nião da Sociedade de Socorro, um grupo de mulhe­res esta­va tro­can­do ­idéias sobre como ensi­nar a juven­t"
+   },
+   {
+    "term": "sociedade",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 34,
+    "share_of_uncovered": 0.971,
+    "ratio": 58.9,
+    "source": "1995-04-parkin-celebrating-covenants",
+    "kind": "talk",
+    "sample": "Numa reu­nião da Sociedade de Socorro, um grupo de mulhe­res esta­va tro­can­do ­idéias sobre como ensi­na"
+   },
+   {
+    "term": "reuniões",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 24,
+    "share_of_uncovered": 0.686,
+    "ratio": 85.7,
+    "source": "2003-10-hughes-in-covenant-with-him",
+    "kind": "talk",
+    "sample": "presidência reuniu-se com um líder da Igreja. Ele comentou que gostaria que as reuniões da Sociedade de Socorro e do sacerdócio fossem ocasiões em que pudéssemos dizer"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 53,
+  "en_talks": 31,
+  "en_verses": 0,
+  "uncovered_paragraphs": 36,
+  "renderings": [
+   {
+    "term": "reunión general de la Sociedad de Socorro",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 17,
+    "talks": 16,
+    "verses": 0,
+    "first_year": 1995,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1995,
+      "conference": "1995 October General Conference",
+      "talk": "1995-10-hinckley-the-family-a-proclamation-to-the-world",
+      "para": 9,
+      "en": "… as part of his message at the General Relief Society Meeting held September 23, 1995, in Salt Lake City, Utah.*",
+      "tr": "… parte de su mensaje en la Reunión General de la Sociedad de Socorro, que se llevó a cabo el …"
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 April General Conference",
+      "talk": "2009-04-thompson-his-arm-is-sufficient",
+      "para": 10,
+      "en": "Last September in the general Relief Society meeting, Sister Beck outlined three things to help us …",
+      "tr": "… mes de septiembre pasado, en la Reunión General de la Sociedad de Socorro, la hermana Beck esbozó tres cosas …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-rasband-the-family-proclamationwords-from-god",
+      "para": 9,
+      "en": "Days before the September 23 general Relief Society meeting that preceded general conference, President Hinckley and his counselors …",
+      "tr": "Días antes de la reunión general de la Sociedad de Socorro del 23 de septiembre, que precedió a …"
+     }
+    ],
+    "earliest": {
+     "year": 1995,
+     "conference": "1995 October General Conference",
+     "talk": "1995-10-hinckley-the-family-a-proclamation-to-the-world",
+     "para": 9,
+     "en": "… as part of his message at the General Relief Society Meeting held September 23, 1995, in Salt Lake City, Utah.*",
+     "tr": "… parte de su mensaje en la Reunión General de la Sociedad de Socorro, que se llevó a cabo el …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "socorro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 35,
+    "share_of_uncovered": 0.972,
+    "ratio": 77.8,
+    "source": "1998-10-dew-we-are-not-alone",
+    "kind": "talk",
+    "sample": "En este siglo tendremos sólo una reunión general mas de la Sociedad de Socorro. El Señor ha confiado lo suficiente en nosotras para mandarnos a la tierra dura"
+   },
+   {
+    "term": "sociedad",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 35,
+    "share_of_uncovered": 0.972,
+    "ratio": 63.8,
+    "source": "1998-10-dew-we-are-not-alone",
+    "kind": "talk",
+    "sample": "En este siglo tendremos sólo una reunión general mas de la Sociedad de Socorro. El Señor ha confiado lo suficiente en nosotras para mandarnos a la"
+   },
+   {
+    "term": "reuniones",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 25,
+    "share_of_uncovered": 0.694,
+    "ratio": 60.4,
+    "source": "1998-10-oaks-the-living-prophet-our-source-of-pure-doctrine",
+    "kind": "talk",
+    "sample": "el privilegio de estudiar las enseñanzas del profeta Brigham Young tanto en las reuniones del sacerdocio como en las de la Sociedad de Socorro. Existen una continuidad y"
+   }
+  ]
+ }
+}

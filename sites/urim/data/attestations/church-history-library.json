@@ -1,0 +1,144 @@
+{
+ "id": "concept.church-history-library",
+ "pt": {
+  "en_paragraphs": 39,
+  "en_talks": 39,
+  "en_verses": 0,
+  "uncovered_paragraphs": 39,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "biblioteca",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 34,
+    "share_of_uncovered": 0.872,
+    "ratio": 232.5,
+    "source": "2009-04-scott-temple-worship-the-source-of-strength-and-power-in-times-of-need",
+    "kind": "talk",
+    "sample": "m ser um bom começo.\n[^2]: Sarah De Armon Pea Rich, \"Autobiografia, 1885–1893\", Biblioteca de História da Igreja, p. 66; a grafia, a pontuação e as maiúsculas foram padro"
+   },
+   {
+    "term": "city",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 31,
+    "share_of_uncovered": 0.795,
+    "ratio": 122.3,
+    "source": "2009-10-eyring-the-enduring-legacy-of-relief-society",
+    "kind": "talk",
+    "sample": "4, registro de 28 de abril de 1842. Biblioteca de História da Igreja, Salt Lake City, p. 39.\n[^4]: D&C 88:52–56; grifo do autor.\n[^5]: Mosias 4:26.\n[^6]: Lucy Mack"
+   },
+   {
+    "term": "salt lake",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 30,
+    "share_of_uncovered": 0.769,
+    "ratio": 99.3,
+    "source": "2009-10-eyring-the-enduring-legacy-of-relief-society",
+    "kind": "talk",
+    "sample": "rço de 1844, registro de 28 de abril de 1842. Biblioteca de História da Igreja, Salt Lake City, p. 39.\n[^4]: D&C 88:52–56; grifo do autor.\n[^5]: Mosias 4:26.\n[^6]: Lucy"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 39,
+  "en_talks": 39,
+  "en_verses": 0,
+  "uncovered_paragraphs": 7,
+  "renderings": [
+   {
+    "term": "Biblioteca de Historia de la Iglesia",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 32,
+    "talks": 32,
+    "verses": 0,
+    "first_year": 2009,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 April General Conference",
+      "talk": "2009-04-snow-get-on-with-our-lives",
+      "para": 16,
+      "en": "… journey” (“Robert Gardner Jr. Self History and Journal,” Church History Library, Salt Lake City, Utah, 23).",
+      "tr": "… (“Robert Gardner Jr., Diario e historia personal”, Biblioteca de Historia de la Iglesia, pág. 23)."
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 October General Conference",
+      "talk": "2018-10-ballard-the-vision-of-the-redemption-of-the-dead",
+      "para": 34,
+      "en": "… [^8]: Joseph F. Smith, journal, July 7, 1870, Church History Library, The Church of Jesus Christ of Latter-day Saints, …",
+      "tr": "… F. Smith, 7 de julio de 1870, Biblioteca de Historia de la Iglesia, La Iglesia de Jesucristo de los …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-cook-the-atonement-of-jesus-christ-provides-the-ultimate-rescue",
+      "para": 36,
+      "en": "… G. Willie emigrating company journal, Nov. 7, 1856, Church History Library, Salt Lake City.\n[^18]: John Jaques, “Some Reminiscences,” …",
+      "tr": "… G. Willie, 7 de noviembre de 1856, Biblioteca de Historia de la Iglesia, Salt Lake City.\n[^18]: John Jaques, …"
+     }
+    ],
+    "earliest": {
+     "year": 2009,
+     "conference": "2009 April General Conference",
+     "talk": "2009-04-snow-get-on-with-our-lives",
+     "para": 16,
+     "en": "… journey” (“Robert Gardner Jr. Self History and Journal,” Church History Library, Salt Lake City, Utah, 23).",
+     "tr": "… (“Robert Gardner Jr., Diario e historia personal”, Biblioteca de Historia de la Iglesia, pág. 23)."
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "biblioteca",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.714,
+    "ratio": 142.9,
+    "source": "2009-04-scott-temple-worship-the-source-of-strength-and-power-in-times-of-need",
+    "kind": "talk",
+    "sample": "o de partida.\n[^2]: (Sarah DeArmon Pea Rich, Autobiografía, 1885-1893, pág. 66, Biblioteca Histórica de la Iglesia); se observaron las reglas normales de ortografía y pun"
+   },
+   {
+    "term": "pág",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.857,
+    "ratio": 30.3,
+    "source": "2009-04-scott-temple-worship-the-source-of-strength-and-power-in-times-of-need",
+    "kind": "talk",
+    "sample": "buen punto de partida.\n[^2]: (Sarah DeArmon Pea Rich, Autobiografía, 1885-1893, pág. 66, Biblioteca Histórica de la Iglesia); se observaron las reglas normales de"
+   },
+   {
+    "term": "salt lake city",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.571,
+    "ratio": 142.9,
+    "source": "2010-04-beck-and-upon-the-handmaids-in-those-days-will-i-pour-out-my-spirit",
+    "kind": "talk",
+    "sample": "Lehi, Estaca Alpine, Utah, 1868-1879, Biblioteca de la Historia de la Iglesia, Salt Lake City, págs. 26–27.\n[^9]: Véase *Predicad Mi Evangelio*, 2004, págs. 10–11.\n[^10]: Vé"
+   }
+  ]
+ }
+}

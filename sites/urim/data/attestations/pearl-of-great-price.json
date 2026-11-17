@@ -1,0 +1,168 @@
+{
+ "id": "concept.pearl-of-great-price",
+ "pt": {
+  "en_paragraphs": 54,
+  "en_talks": 49,
+  "en_verses": 1,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "Pérola de Grande Valor",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 52,
+    "talks": 47,
+    "verses": 1,
+    "first_year": 1990,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Mateus 13:46",
+      "ref_en": "Matthew 13:46",
+      "en": "Who, when he had found one pearl of great price, went and sold all that he had, and bought it.",
+      "tr": "E encontrando uma pérola de grande valor, foi, vendeu tudo quanto tinha, e comprou-a.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/nt/matt/13?lang=por&id=p46"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-condie-some-scriptural-lessons-on-leadership",
+      "para": 2,
+      "en": "In the Pearl of Great Price we learn that as Moses was called to …",
+      "tr": "Na Pérola de Grande Valor aprendemos que quando Moisés foi chamado como profeta …"
+     },
+     {
+      "kind": "talk",
+      "year": 2007,
+      "conference": "2007 April General Conference",
+      "talk": "2007-04-packer-the-spirit-of-the-tabernacle",
+      "para": 36,
+      "en": "… of Mormon, the Doctrine and Covenants, and the Pearl of Great Price were announced to the Church here.",
+      "tr": "… de Mórmon, de Doutrina e Convênios e d’A Pérola de Grande Valor foram anunciadas à Igreja aqui."
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-condie-some-scriptural-lessons-on-leadership",
+     "para": 2,
+     "en": "In the Pearl of Great Price we learn that as Moses was called to …",
+     "tr": "Na Pérola de Grande Valor aprendemos que quando Moisés foi chamado como profeta …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 43,
+  "en_talks": 40,
+  "en_verses": 1,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "Perla de Gran Precio",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 42,
+    "talks": 39,
+    "verses": 1,
+    "first_year": 2000,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Mateo 13:46",
+      "ref_en": "Matthew 13:46",
+      "en": "Who, when he had found one pearl of great price, went and sold all that he had, and bought it.",
+      "tr": "y que, habiendo hallado una perla de gran precio, fue y vendió todo lo que tenía y la compró.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/nt/matt/13?lang=spa&id=p46"
+     },
+     {
+      "kind": "talk",
+      "year": 2000,
+      "conference": "2000 April General Conference",
+      "talk": "2000-04-packer-the-cloven-tongues-of-fire",
+      "para": 2,
+      "en": "… line it with blue velvet. He put his pearl of great price on display so others could share his treasure. …",
+      "tr": "… y lo forrara con terciopelo azul. Colocó la perla de gran precio a la vista, para que otras personas pudieran …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-packer-guided-by-the-holy-spirit",
+      "para": 4,
+      "en": "… of Mormon: Another Testament of Jesus Christ, the Pearl of Great Price, and the Doctrine and Covenants.",
+      "tr": "… Libro de Mormón: Otro Testamento de Jesucristo, la Perla de Gran Precio y Doctrina y Convenios."
+     }
+    ],
+    "earliest": {
+     "year": 2000,
+     "conference": "2000 April General Conference",
+     "talk": "2000-04-packer-the-cloven-tongues-of-fire",
+     "para": 2,
+     "en": "… line it with blue velvet. He put his pearl of great price on display so others could share his treasure. …",
+     "tr": "… y lo forrara con terciopelo azul. Colocó la perla de gran precio a la vista, para que otras personas pudieran …"
+    },
+    "share": 0.544
+   },
+   {
+    "term": "La Perla de Gran Precio",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 36,
+    "talks": 34,
+    "verses": 0,
+    "first_year": 2000,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2000,
+      "conference": "2000 April General Conference",
+      "talk": "2000-04-packer-the-cloven-tongues-of-fire",
+      "para": 2,
+      "en": "… line it with blue velvet. He put his pearl of great price on display so others could share his treasure. …",
+      "tr": "… y lo forrara con terciopelo azul. Colocó la perla de gran precio a la vista, para que otras personas pudieran …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-andersen-preparing-the-world-for-the-second-coming",
+      "para": 10,
+      "en": "… of Mormon, the Doctrine and Covenants, and the Pearl of Great Price. A few weeks later the family was …",
+      "tr": "… Libro de Mormón, Doctrina y Convenios y la Perla de Gran Precio. Después de unas semanas, la familia se …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 October General Conference",
+      "talk": "2024-10-alliaud-sons-and-daughters-of-god",
+      "para": 9,
+      "en": "… God’s instructions to Moses as recorded in the Pearl of Great Price.",
+      "tr": "… a Moisés que se hallan registradas en la Perla de Gran Precio."
+     }
+    ],
+    "earliest": {
+     "year": 2000,
+     "conference": "2000 April General Conference",
+     "talk": "2000-04-packer-the-cloven-tongues-of-fire",
+     "para": 2,
+     "en": "… line it with blue velvet. He put his pearl of great price on display so others could share his treasure. …",
+     "tr": "… y lo forrara con terciopelo azul. Colocó la perla de gran precio a la vista, para que otras personas pudieran …"
+    },
+    "share": 0.456
+   }
+  ]
+ }
+}

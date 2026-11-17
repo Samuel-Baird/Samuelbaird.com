@@ -1,0 +1,17 @@
+id: concept.premortal-life
+category: Plan of Salvation
+en:
+  term: premortal life
+  match:
+  - premortal life
+sources:
+  GS:
+  - premortal-life
+candidates:
+  pt:
+  - term: vida pré-mortal
+    hint: pulpit-glossary:verified
+  es:
+  - term: vida preterrenal
+    hint: approved-terms
+related: []

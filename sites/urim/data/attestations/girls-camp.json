@@ -1,0 +1,61 @@
+{
+ "id": "concept.girls-camp",
+ "pt": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "acampamento das Moças",
+    "evidence": [],
+    "hint": "pulpit-glossary:standard"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 3,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "jóvenes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 27.8,
+    "source": "1999-10-stucki-the-faith-of-a-sparrow-faith-and-trust-in-the-lord-jesus-christ",
+    "kind": "talk",
+    "sample": "o llegó el momento en que la jovencita y su hermana fueran al campamento de las jóvenes, el pajarito fue con ellas a pasar una semana en las montañas. Fue allí donde t"
+   },
+   {
+    "term": "regresó",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 86.0,
+    "source": "1999-10-stucki-the-faith-of-a-sparrow-faith-and-trust-in-the-lord-jesus-christ",
+    "kind": "talk",
+    "sample": "volar, no se fue. Cuando el campamento de las jóvenes llegó a su fin, el pájaro regresó a casa con ellas y siguió con las lecciones de vuelo."
+   },
+   {
+    "term": "allí",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 31.0,
+    "source": "1999-10-stucki-the-faith-of-a-sparrow-faith-and-trust-in-the-lord-jesus-christ",
+    "kind": "talk",
+    "sample": "las jóvenes, el pajarito fue con ellas a pasar una semana en las montañas. Fue allí donde trató de volar por primera vez, volando desde la mano de la joven hasta l"
+   }
+  ]
+ }
+}

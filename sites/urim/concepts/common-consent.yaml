@@ -1,0 +1,17 @@
+id: concept.common-consent
+category: Callings & Sustaining
+en:
+  term: common consent
+  match:
+  - common consent
+sources:
+  GS:
+  - common-consent
+candidates:
+  pt:
+  - term: comum acordo
+    hint: pulpit-glossary:verified
+  es:
+  - term: común acuerdo
+    hint: pulpit-glossary:verified
+related: []

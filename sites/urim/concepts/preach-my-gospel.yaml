@@ -1,0 +1,15 @@
+id: concept.preach-my-gospel
+category: Missionary Work
+en:
+  term: Preach My Gospel
+  match:
+  - Preach My Gospel
+sources: {}
+candidates:
+  pt:
+  - term: Pregar Meu Evangelho
+    hint: pulpit-glossary:verified
+  es:
+  - term: Predicad Mi Evangelio
+    hint: pulpit-glossary:verified
+related: []

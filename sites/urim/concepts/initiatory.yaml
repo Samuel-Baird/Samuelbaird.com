@@ -1,0 +1,17 @@
+id: concept.initiatory
+category: Temple & Family History
+en:
+  term: initiatory
+  match:
+  - initiatory
+sources:
+  GH:
+  - 28#title_number16
+candidates:
+  pt:
+  - term: iniciatórias
+    hint: pulpit-glossary:standard
+  es:
+  - term: obra iniciatoria
+    hint: pulpit-glossary:verified
+related: []

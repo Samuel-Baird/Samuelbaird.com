@@ -1,0 +1,15 @@
+id: concept.deseret-industries
+category: Welfare & Self-Reliance
+en:
+  term: Deseret Industries
+  match:
+  - Deseret Industries
+sources: {}
+candidates:
+  pt:
+  - term: Indústrias Deseret
+    hint: pulpit-glossary:verified
+  es:
+  - term: Deseret Industries
+    hint: pulpit-glossary:verified
+related: []

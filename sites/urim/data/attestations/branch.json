@@ -1,0 +1,196 @@
+{
+ "id": "concept.branch",
+ "pt": {
+  "en_paragraphs": 375,
+  "en_talks": 248,
+  "en_verses": 156,
+  "uncovered_paragraphs": 69,
+  "renderings": [
+   {
+    "term": "ramo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 342,
+    "talks": 232,
+    "verses": 120,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Ezequiel 31:9",
+      "ref_en": "Ezekiel 31:9",
+      "en": "I have made him fair by the multitude of his branches: so that all the trees of Eden, that were in the garden of God, envied him.",
+      "tr": "Formoso o fiz com a multidão dos seus ramos; e todas as árvores do Éden, que estavam no jardim de Deus, tiveram inveja dele.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/ot/ezek/31?lang=por&id=p9"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-watson-statistical-report-1989",
+      "para": 10,
+      "en": "Number of branches",
+      "tr": "Número de ramos"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-eyring-the-priesthood-man",
+      "para": 20,
+      "en": "… the Church. Now there are missionaries teaching and a branch growing in numbers and strength because of him. But more …",
+      "tr": "… parte do reino de Deus. Conheço um presidente de ramo que quase todos os dias leva pessoas aos missionários para …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-packer-the-library-of-the-lord",
+     "para": 62,
+     "en": "Student branches and wards and stakes are organized to provide opportunities for …",
+     "tr": "Para que tenhais oportunidades de servir, são organizados ramos e alas de estudantes."
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 358,
+  "en_talks": 244,
+  "en_verses": 156,
+  "uncovered_paragraphs": 59,
+  "renderings": [
+   {
+    "term": "rama",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 328,
+    "talks": 224,
+    "verses": 114,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Ezequiel 31:3",
+      "ref_en": "Ezekiel 31:3",
+      "en": "¶ Behold, the Assyrian was a cedar in Lebanon with fair branches, and with a shadowing shroud, and of an high stature; and his top was among the thick boughs.",
+      "tr": "He aquí, el asirio era cedro en el Líbano, de hermosas ramas, y frondoso, de amplia sombra y de gran altura; y su copa estaba entre densas ramas.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/ot/ezek/31?lang=spa&id=p3"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-monson-days-never-to-be-forgotten",
+      "para": 33,
+      "en": "… took place when I first visited the St. Thomas Branch of the mission, situated about 120 miles from Toronto. My …",
+      "tr": "Otra evidencia de fe ocurrió cuando visitamos la Rama Santo Tomas, situada a unos 190 kilómetros de Toronto. Mi …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 October General Conference",
+      "talk": "2015-10-eyring-you-are-not-alone-in-the-work",
+      "para": 23,
+      "en": "… recorded, “a number to the church.” He organized two branches but noted that “very few are alive in the cause.”[^3]",
+      "tr": "… “un número de miembros a la Iglesia”. Organizó dos ramas, pero observó que “muy pocos están con vida en …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 October General Conference",
+     "talk": "1990-10-monson-days-never-to-be-forgotten",
+     "para": 1,
+     "en": "… in Czechoslovakia. And now, official recognition of our Leningrad Branch in the Soviet Union. Who, except the Lord Himself, could …",
+     "tr": "… en Checoslovaquia. Y ahora se ha reconocido oficialmente la Rama Leningrado en la Unión Soviética. ¿Quién, excepto el Señor mismo, …"
+    },
+    "share": 0.969
+   },
+   {
+    "term": "Renuevo",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 13,
+    "first_year": 2014,
+    "last_year": 2014,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Job 14:7",
+      "ref_en": "Job 14:7",
+      "en": "For there is hope of a tree, if it be cut down, that it will sprout again, and that the tender branch thereof will not cease.",
+      "tr": "Porque si el árbol es cortado, aún queda para él esperanza; retoñará aún,y sus renuevos no faltarán.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/ot/job/14?lang=spa&id=p7"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-cook-roots-and-branches",
+      "para": 2,
+      "en": "… that it will sprout again, and that the tender branch thereof will not cease … and bring forth boughs like …",
+      "tr": "… aún queda para él esperanza; retoñará aún, y sus renuevos no faltarán… y echará ramas como planta nueva”[^3]."
+     }
+    ],
+    "earliest": {
+     "year": 2014,
+     "conference": "2014 April General Conference",
+     "talk": "2014-04-cook-roots-and-branches",
+     "para": 2,
+     "en": "… that it will sprout again, and that the tender branch thereof will not cease … and bring forth boughs like …",
+     "tr": "… aún queda para él esperanza; retoñará aún, y sus renuevos no faltarán… y echará ramas como planta nueva”[^3]."
+    },
+    "share": 0.031
+   }
+  ],
+  "inferred": [
+   {
+    "term": "vid",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 16,
+    "share_of_uncovered": 0.271,
+    "ratio": 542.5,
+    "source": "2004-04-holland-abide-in-me",
+    "kind": "talk",
+    "sample": "Cristo dijo: “Yo soy la vid verdadera, y… vosotros los pámpanos”[^2]. “Permaneced en mí, y yo en vosotros."
+   },
+   {
+    "term": "fruto",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 17,
+    "share_of_uncovered": 0.288,
+    "ratio": 48.0,
+    "source": "2002-10-christofferson-that-they-may-be-one-in-us",
+    "kind": "talk",
+    "sample": "“Todo pámpano que en mí no lleva fruto, lo quitará; y todo aquel que lleva fruto, lo limpiará, para que lleve más frut"
+   },
+   {
+    "term": "permanece",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.22,
+    "ratio": 146.9,
+    "source": "2004-04-holland-abide-in-me",
+    "kind": "talk",
+    "sample": "Cristo dijo: “Yo soy la vid verdadera, y… vosotros los pámpanos”[^2]. “Permaneced en mí, y yo en vosotros. Como el pámpano no puede llevar fruto por sí mismo, s"
+   }
+  ]
+ }
+}

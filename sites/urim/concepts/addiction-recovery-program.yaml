@@ -1,0 +1,15 @@
+id: concept.addiction-recovery-program
+category: Welfare & Self-Reliance
+en:
+  term: addiction recovery program
+  match:
+  - addiction recovery program
+sources: {}
+candidates:
+  pt:
+  - term: programa de recuperação do vício
+    hint: pulpit-glossary:standard
+  es:
+  - term: programa para la recuperación de adicciones
+    hint: pulpit-glossary:verified
+related: []

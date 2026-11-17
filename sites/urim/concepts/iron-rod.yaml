@@ -1,0 +1,15 @@
+id: concept.iron-rod
+category: Discipleship & Ministering
+en:
+  term: iron rod
+  match:
+  - iron rod
+sources: {}
+candidates:
+  pt:
+  - term: barra de ferro
+    hint: pulpit-glossary:verified
+  es:
+  - term: barra de hierro
+    hint: pulpit-glossary:verified
+related: []

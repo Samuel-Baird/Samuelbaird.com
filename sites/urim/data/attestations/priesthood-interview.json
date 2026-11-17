@@ -1,0 +1,56 @@
+{
+ "id": "concept.priesthood-interview",
+ "pt": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "entrevista do sacerdócio",
+    "evidence": [],
+    "hint": "pulpit-glossary:standard"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "entrevista del sacerdocio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2008,
+    "last_year": 2008,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2008,
+      "conference": "2008 April General Conference",
+      "talk": "2008-04-burgess-do-you-know-who-you-are",
+      "para": 2,
+      "en": "… called me aside to talk to me. This unscheduled priesthood interview became a blessing in my life as I have …",
+      "tr": "… obispado me llamó aparte para hablar conmigo. Esta entrevista del sacerdocio imprevista se ha convertido en una bendición para mí …"
+     }
+    ],
+    "earliest": {
+     "year": 2008,
+     "conference": "2008 April General Conference",
+     "talk": "2008-04-burgess-do-you-know-who-you-are",
+     "para": 2,
+     "en": "… called me aside to talk to me. This unscheduled priesthood interview became a blessing in my life as I have …",
+     "tr": "… obispado me llamó aparte para hablar conmigo. Esta entrevista del sacerdocio imprevista se ha convertido en una bendición para mí …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

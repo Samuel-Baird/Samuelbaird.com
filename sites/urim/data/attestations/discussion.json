@@ -1,0 +1,159 @@
+{
+ "id": "concept.discussion",
+ "pt": {
+  "en_paragraphs": 170,
+  "en_talks": 135,
+  "en_verses": 0,
+  "uncovered_paragraphs": 148,
+  "renderings": [
+   {
+    "term": "palestra",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 22,
+    "talks": 17,
+    "verses": 0,
+    "first_year": 1991,
+    "last_year": 2016,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 October General Conference",
+      "talk": "1991-10-muren-and-now-you-will-know",
+      "para": 1,
+      "en": "I was intrigued with the discussions. I found that my intellect was stimulated by the …",
+      "tr": "Fiquei intrigado com as palestras. Percebi que meu intelecto estava sendo estimulado pelas novas …"
+     },
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 October General Conference",
+      "talk": "2003-10-eyring-an-enduring-testimony-of-the-mission-of-the-prophet-joseph",
+      "para": 34,
+      "en": "… pray that in family home evenings and in missionary discussions and in all the times we worship together, we will …",
+      "tr": "… conosco. Oro para que nas noites familiares e nas palestras missionárias e em todas as ocasiões em que adoramos juntos …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 October General Conference",
+      "talk": "2016-10-andersen-a-witness-of-god",
+      "para": 35,
+      "en": "… had found the missionaries on his own, taken the discussions, and was ready for baptism. This past June 11, …",
+      "tr": "… Ele encontrou por si mesmo os missionários, ouviu as palestras e estava pronto para o batismo. Em 11 de junho …"
+     }
+    ],
+    "earliest": {
+     "year": 1991,
+     "conference": "1991 October General Conference",
+     "talk": "1991-10-muren-and-now-you-will-know",
+     "para": 1,
+     "en": "I was intrigued with the discussions. I found that my intellect was stimulated by the …",
+     "tr": "Fiquei intrigado com as palestras. Percebi que meu intelecto estava sendo estimulado pelas novas …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "conversa",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 31,
+    "share_of_uncovered": 0.209,
+    "ratio": 49.3,
+    "source": "1990-10-paramore-the-many-witnesses-of-jesus-christ-and-his-work",
+    "kind": "talk",
+    "sample": "Caro Ken, sinto-me induzido a escrever-lhe, continuando nossa longa conversa no avião. Espero que tenha recebido minhas cartas e os materiais sobre a Igreja"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 158,
+  "en_talks": 131,
+  "en_verses": 0,
+  "uncovered_paragraphs": 128,
+  "renderings": [
+   {
+    "term": "charla",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 30,
+    "talks": 23,
+    "verses": 0,
+    "first_year": 1991,
+    "last_year": 2017,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 October General Conference",
+      "talk": "1991-10-dvila-the-conversion-process",
+      "para": 4,
+      "en": "… to start teaching us, but after many visits and discussions I was touched by the Spirit, and I agreed to …",
+      "tr": "… comenzar a enseñarnos, pero luego de muchas visitas y charlas recibí la inspiración del Espíritu y acepte ser bautizado, lo …"
+     },
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 October General Conference",
+      "talk": "2003-10-scott-realize-your-full-potential",
+      "para": 6,
+      "en": "… adjustments have been made in the presentation of the discussions. They are not now memorized; rather, the basic content …",
+      "tr": "… han hecho también ajustes en la presentación de las charlas. No se memorizan más, sino que el contenido básico …"
+     },
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 April General Conference",
+      "talk": "2017-04-stevenson-how-does-the-holy-ghost-help-you",
+      "para": 6,
+      "en": "… So I asked, and my question led to a discussion about the Holy Ghost and how the Holy Ghost can …",
+      "tr": "… le pregunté, y mi pregunta nos llevó a una charla sobre el Espíritu Santo y cómo Él puede ayudarnos. Jamás …"
+     }
+    ],
+    "earliest": {
+     "year": 1991,
+     "conference": "1991 October General Conference",
+     "talk": "1991-10-dvila-the-conversion-process",
+     "para": 4,
+     "en": "… to start teaching us, but after many visits and discussions I was touched by the Spirit, and I agreed to …",
+     "tr": "… comenzar a enseñarnos, pero luego de muchas visitas y charlas recibí la inspiración del Espíritu y acepte ser bautizado, lo …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "análisis",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 32,
+    "share_of_uncovered": 0.25,
+    "ratio": 200.1,
+    "source": "1997-10-eyring-feed-my-lambs",
+    "kind": "talk",
+    "sample": "lo cada vez que hablemos con un nuevo miembro y cada vez que participemos en un análisis en clase. Cada palabra que pronunciemos puede fortalecer o debilitar la fe; nec"
+   },
+   {
+    "term": "conversaciones",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 36,
+    "share_of_uncovered": 0.281,
+    "ratio": 75.0,
+    "source": "1999-04-hales-strengthening-families-our-sacred-duty",
+    "kind": "talk",
+    "sample": "- Comamos juntos cuando sea posible, y tengamos conversaciones sobre temas significativos a esa hora."
+   }
+  ]
+ }
+}

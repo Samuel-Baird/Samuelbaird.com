@@ -1,0 +1,186 @@
+{
+ "id": "concept.law-of-chastity",
+ "pt": {
+  "en_paragraphs": 56,
+  "en_talks": 42,
+  "en_verses": 0,
+  "uncovered_paragraphs": 54,
+  "renderings": [
+   {
+    "term": "lei de castidade",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2002,
+    "last_year": 2013,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2002,
+      "conference": "2002 April General Conference",
+      "talk": "2002-04-hinckley-personal-worthiness-to-exercise-the-priesthood",
+      "para": 21,
+      "en": "… standards of conduct, including strict observance of the law of chastity. …",
+      "tr": "… padrões de conduta, incluindo a estrita observância da lei de castidade (…)."
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 October General Conference",
+      "talk": "2013-10-nelson-decisions-for-eternity",
+      "para": 28,
+      "en": "… 2: Administering the Church,* which states: “The Lord’s law of chastity is abstinence from sexual relations outside of lawful marriage …",
+      "tr": "… *Manual 2: Administração da Igreja*, que declara: \"A lei de castidade dada pelo Senhor significa abstinência de qualquer relação sexual …"
+     }
+    ],
+    "earliest": {
+     "year": 2002,
+     "conference": "2002 April General Conference",
+     "talk": "2002-04-hinckley-personal-worthiness-to-exercise-the-priesthood",
+     "para": 21,
+     "en": "… standards of conduct, including strict observance of the law of chastity. …",
+     "tr": "… padrões de conduta, incluindo a estrita observância da lei de castidade (…)."
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "castidade",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 52,
+    "share_of_uncovered": 0.963,
+    "ratio": 350.3,
+    "source": "1990-10-ballard-purity-precedes-power",
+    "kind": "talk",
+    "sample": "vinte anos. Muitos jovens, principalmente nos Estados Unidos, violaram a lei da castidade antes de completarem 19 anos de idade. Infelizmente, os jovens da Igreja não es"
+   },
+   {
+    "term": "lei",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 52,
+    "share_of_uncovered": 0.963,
+    "ratio": 52.8,
+    "source": "1990-10-ballard-purity-precedes-power",
+    "kind": "talk",
+    "sample": "ltimos vinte anos. Muitos jovens, principalmente nos Estados Unidos, violaram a lei da castidade antes de completarem 19 anos de idade. Infelizmente, os jovens da"
+   },
+   {
+    "term": "mandamentos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.241,
+    "ratio": 8.0,
+    "source": "2004-10-oaks-be-not-deceived",
+    "kind": "talk",
+    "sample": "sempre fazer as coisas necessárias para reter esse Espírito. Devemos guardar os mandamentos, orar por orientação, freqüentar a Igreja e participar do sacramento a cada dom"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 52,
+  "en_talks": 39,
+  "en_verses": 0,
+  "uncovered_paragraphs": 5,
+  "renderings": [
+   {
+    "term": "ley de castidad",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 47,
+    "talks": 35,
+    "verses": 0,
+    "first_year": 1998,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1998,
+      "conference": "1998 October General Conference",
+      "talk": "1998-10-hinckley-what-are-people-asking-about-us",
+      "para": 16,
+      "en": "… members of the Church. If they violate the law of chastity and the moral standards of the Church, then they …",
+      "tr": "… demás miembros de la Iglesia. Si violan la ley de castidad y las normas morales de la Iglesia, entonces están …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 October General Conference",
+      "talk": "2013-10-oscarson-be-ye-converted",
+      "para": 8,
+      "en": "… principles of the gospel, whether it is the law of chastity, the principle of modesty, the Word of Wisdom, …",
+      "tr": "… todos los principios del Evangelio, ya sea la ley de castidad, el principio de la modestia, la Palabra de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-andersen-courage-born-of-our-faith-in-jesus-christ",
+      "para": 18,
+      "en": "… others, live the Word of Wisdom, keep the law of chastity, honor the Sabbath day, be honest in our …",
+      "tr": "… demás, vivir la Palabra de Sabiduría, guardar la ley de castidad, honrar el día de reposo, ser honrados en …"
+     }
+    ],
+    "earliest": {
+     "year": 1998,
+     "conference": "1998 October General Conference",
+     "talk": "1998-10-hinckley-what-are-people-asking-about-us",
+     "para": 16,
+     "en": "… members of the Church. If they violate the law of chastity and the moral standards of the Church, then they …",
+     "tr": "… demás miembros de la Iglesia. Si violan la ley de castidad y las normas morales de la Iglesia, entonces están …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "castidad",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.6,
+    "ratio": 266.7,
+    "source": "1994-10-scott-making-the-right-choices",
+    "kind": "talk",
+    "sample": "Pregunta: )Por que es tan importante la ley de la castidad? )Por que esta mal tener relaciones sexuales antes del matrimonio?"
+   },
+   {
+    "term": "chastity",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.4,
+    "ratio": 1600.4,
+    "source": "2007-04-uchtdorf-point-of-safe-return",
+    "kind": "talk",
+    "sample": "la paz interior, que le hace saber se le han perdonado los pecados”(en “Law of Chastity Vital, Girls Told,” *Church News*, 2 de septiembre de 1972, pág. 7, citado en*"
+   },
+   {
+    "term": "law",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.4,
+    "ratio": 800.2,
+    "source": "2007-04-uchtdorf-point-of-safe-return",
+    "kind": "talk",
+    "sample": "lcanzar la paz interior, que le hace saber se le han perdonado los pecados”(en “Law of Chastity Vital, Girls Told,” *Church News*, 2 de septiembre de 1972, pág. 7,"
+   }
+  ]
+ }
+}

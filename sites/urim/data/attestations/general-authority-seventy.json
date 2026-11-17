@@ -1,0 +1,157 @@
+{
+ "id": "concept.general-authority-seventy",
+ "pt": {
+  "en_paragraphs": 45,
+  "en_talks": 29,
+  "en_verses": 0,
+  "uncovered_paragraphs": 31,
+  "renderings": [
+   {
+    "term": "Setenta Autoridade Geral",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 14,
+    "talks": 12,
+    "verses": 0,
+    "first_year": 2016,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 October General Conference",
+      "talk": "2016-10-renlund-repentance-a-joyful-choice",
+      "para": 33,
+      "en": "… Elder Per Gösta Malm (1948–2016) served as a General Authority Seventy from 2010 until his death. Though born in Jönköping, …",
+      "tr": "… O Élder Per Gösta Malm (1948–2016) serviu como Setenta Autoridade Geral de 2010 até o dia em que faleceu. Embora …"
+     },
+     {
+      "kind": "talk",
+      "year": 2022,
+      "conference": "2022 October General Conference",
+      "talk": "2022-10-rasband-this-day",
+      "para": 2,
+      "en": "… Eastern States Mission; and Elder Marion D. Hanks, General Authority Seventy.",
+      "tr": "… Estados do Leste e élder Marion D. Hanks, setenta autoridade geral."
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-causs-the-gift-of-testimony",
+      "para": 0,
+      "en": "… which he called me to serve as a General Authority Seventy. We accepted in faith, knowing that this calling …",
+      "tr": "… Naquela ocasião, ele me chamou para servir como setenta autoridade geral. Aceitamos com fé, sabendo que esse chamado mudaria …"
+     }
+    ],
+    "earliest": {
+     "year": 2016,
+     "conference": "2016 October General Conference",
+     "talk": "2016-10-renlund-repentance-a-joyful-choice",
+     "para": 33,
+     "en": "… Elder Per Gösta Malm (1948–2016) served as a General Authority Seventy from 2010 until his death. Though born in Jönköping, …",
+     "tr": "… O Élder Per Gösta Malm (1948–2016) serviu como Setenta Autoridade Geral de 2010 até o dia em que faleceu. Embora …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "setentas autoridades gerais",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 29,
+    "share_of_uncovered": 0.935,
+    "ratio": 1871.4,
+    "source": "2016-04-uchtdorf-the-sustaining-of-church-officers",
+    "kind": "talk",
+    "sample": "É proposto que apoiemos como novos Setentas Autoridades Gerais W. Mark Bassett, Mark A. Bragg, Weatherford T. Clayton, Valeri V. Cordón, Joaqu"
+   },
+   {
+    "term": "proposto",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 17,
+    "share_of_uncovered": 0.548,
+    "ratio": 64.5,
+    "source": "2016-04-uchtdorf-the-sustaining-of-church-officers",
+    "kind": "talk",
+    "sample": "É proposto que apoiemos como novos Setentas Autoridades Gerais W. Mark Bassett, Mark A. Br"
+   },
+   {
+    "term": "seguintes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 11,
+    "share_of_uncovered": 0.355,
+    "ratio": 94.6,
+    "source": "2018-04-oaks-the-sustaining-of-church-officers",
+    "kind": "talk",
+    "sample": "É proposto que apoiemos os seguintes irmãos como setentas autoridades gerais: Steven R. Bangerter, Matthew L. Carpen"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 45,
+  "en_talks": 29,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "Setenta Autoridad General",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 44,
+    "talks": 29,
+    "verses": 0,
+    "first_year": 2016,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-uchtdorf-the-sustaining-of-church-officers",
+      "para": 17,
+      "en": "It is proposed that we sustain as new General Authority Seventies W. Mark Bassett, Mark A. Bragg, Weatherford T. Clayton, …",
+      "tr": "Se propone que sostengamos como nuevos Setentas Autoridades Generales a: W. Mark Bassett, Mark A. Bragg, Weatherford T. …"
+     },
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 April General Conference",
+      "talk": "2021-04-oaks-sustaining-of-general-authorities-area-seventies-and-general-officers",
+      "para": 23,
+      "en": "… is proposed that we sustain the following as General Authority Seventies: Sean Douglas, Michael A. Dunn, Clark G. Gilbert, …",
+      "tr": "… propone que sostengamos a los siguientes hermanos como Setentas Autoridades Generales: Sean Douglas, Michael A. Dunn, Clark G. Gilbert, …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-causs-the-gift-of-testimony",
+      "para": 0,
+      "en": "… which he called me to serve as a General Authority Seventy. We accepted in faith, knowing that this calling …",
+      "tr": "… durante la cual me llamó a servir como Setenta Autoridad General. Aceptamos con fe, sabiendo que ese llamamiento cambiaría …"
+     }
+    ],
+    "earliest": {
+     "year": 2016,
+     "conference": "2016 April General Conference",
+     "talk": "2016-04-uchtdorf-the-sustaining-of-church-officers",
+     "para": 17,
+     "en": "It is proposed that we sustain as new General Authority Seventies W. Mark Bassett, Mark A. Bragg, Weatherford T. Clayton, …",
+     "tr": "Se propone que sostengamos como nuevos Setentas Autoridades Generales a: W. Mark Bassett, Mark A. Bragg, Weatherford T. …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

@@ -1,0 +1,17 @@
+id: concept.mission-call
+category: Missionary Work
+en:
+  term: mission call
+  match:
+  - mission call
+sources:
+  GH:
+  - 24#title_number27
+candidates:
+  pt:
+  - term: chamado missionário
+    hint: pulpit-glossary:verified
+  es:
+  - term: llamamiento misional
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,17 @@
+id: concept.temple-ordinance
+category: Temple & Family History
+en:
+  term: temple ordinance
+  match:
+  - temple ordinance
+sources:
+  GH:
+  - 27-temple-ordinances-for-the-living#title_number4
+candidates:
+  pt:
+  - term: ordenança do templo
+    hint: pulpit-glossary:verified
+  es:
+  - term: ordenanza del templo
+    hint: pulpit-glossary:verified
+related: []

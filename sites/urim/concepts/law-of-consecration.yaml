@@ -1,0 +1,17 @@
+id: concept.law-of-consecration
+category: Commandments & Laws
+en:
+  term: law of consecration
+  match:
+  - law of consecration
+sources:
+  GS:
+  - consecrate-law-of-consecration
+candidates:
+  pt:
+  - term: lei da consagração
+    hint: pulpit-glossary:verified
+  es:
+  - term: ley de consagración
+    hint: pulpit-glossary:verified
+related: []

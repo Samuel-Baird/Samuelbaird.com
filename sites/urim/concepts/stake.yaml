@@ -1,0 +1,23 @@
+id: concept.stake
+category: Church Units & Facilities
+en:
+  term: stake
+  match:
+  - stake
+sources:
+  GS:
+  - stake
+  Topics:
+  - stake
+  TtF:
+  - stake
+  GH:
+  - 33-records-and-reports#title_number6
+candidates:
+  pt:
+  - term: estaca
+    hint: pulpit-glossary:standard
+  es:
+  - term: estaca
+    hint: approved-terms
+related: []

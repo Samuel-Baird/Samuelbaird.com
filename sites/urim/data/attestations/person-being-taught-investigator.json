@@ -1,0 +1,195 @@
+{
+ "id": "concept.person-being-taught-investigator",
+ "pt": {
+  "en_paragraphs": 69,
+  "en_talks": 54,
+  "en_verses": 0,
+  "uncovered_paragraphs": 12,
+  "renderings": [
+   {
+    "term": "pesquisador",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 57,
+    "talks": 43,
+    "verses": 0,
+    "first_year": 1993,
+    "last_year": 2017,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1993,
+      "conference": "1993 April General Conference",
+      "talk": "1993-04-stanley-the-principle-of-work",
+      "para": 8,
+      "en": "… in a home one night, they challenged a young investigator to begin reading the Book of Mormon. His answer overwhelmed …",
+      "tr": "… companhia de dois missionários na casa de um jovem pesquisador, que fora desafiado a ler o Livro de Mórmon. …"
+     },
+     {
+      "kind": "talk",
+      "year": 2008,
+      "conference": "2008 October General Conference",
+      "talk": "2008-10-allred-go-ye-therefore",
+      "para": 27,
+      "en": "- Extend friendship to investigators and new converts.",
+      "tr": "- Façam amizade com pesquisadores e recém-conversos."
+     },
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 October General Conference",
+      "talk": "2017-10-nelson-the-book-of-mormon-what-would-your-life-be-like-without-it",
+      "para": 31,
+      "en": "… of our missionary granddaughters, Sister Olivia Nelson, promised an investigator that if he would read the Book of Mormon daily, …",
+      "tr": "… servindo missão, a síster Olivia Nelson, prometeu a um pesquisador que, se ele lesse o Livro de Mórmon todos os …"
+     }
+    ],
+    "earliest": {
+     "year": 1993,
+     "conference": "1993 April General Conference",
+     "talk": "1993-04-stanley-the-principle-of-work",
+     "para": 8,
+     "en": "… in a home one night, they challenged a young investigator to begin reading the Book of Mormon. His answer overwhelmed …",
+     "tr": "… companhia de dois missionários na casa de um jovem pesquisador, que fora desafiado a ler o Livro de Mórmon. …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "pesquisadora",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.25,
+    "ratio": 1000.2,
+    "source": "2001-04-holland-witnesses-unto-me",
+    "kind": "talk",
+    "sample": "Kong contou-me, recentemente, que quando ela e a companheira perguntaram a uma pesquisadora se acreditava em Deus, a mulher replicou: “Não acreditei até que conheci um mem"
+   },
+   {
+    "term": "membro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.333,
+    "ratio": 23.0,
+    "source": "1994-10-rector-endure-to-the-end-in-charity",
+    "kind": "talk",
+    "sample": "no Philippine Seas batizou-me, e Fred Gaylord Peterson confirmou-me. Tornei-me membro da Igreja em 26 de fevereiro de 1952, sendo ordenado diácono no mesmo dia e, da"
+   },
+   {
+    "term": "jovem",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.333,
+    "ratio": 20.8,
+    "source": "2001-04-holland-witnesses-unto-me",
+    "kind": "talk",
+    "sample": "Uma jovem ex-missionária de Hong Kong contou-me, recentemente, que quando ela e a companh"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 71,
+  "en_talks": 56,
+  "en_verses": 0,
+  "uncovered_paragraphs": 8,
+  "renderings": [
+   {
+    "term": "investigador",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 63,
+    "talks": 50,
+    "verses": 0,
+    "first_year": 1995,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1995,
+      "conference": "1995 April General Conference",
+      "talk": "1995-04-peterson-easter-reflections",
+      "para": 2,
+      "en": "… me if I would accompany him to visit an investigator family. Shortly thereafter, we walked down the dirt streets of …",
+      "tr": "… adobe a ambos lados. Hablamos con la familia de investigadores acerca de importantes preguntas tales como: ¿de dónde vinimos?, ¿por …"
+     },
+     {
+      "kind": "talk",
+      "year": 2008,
+      "conference": "2008 October General Conference",
+      "talk": "2008-10-godoy-testimony-as-a-process",
+      "para": 11,
+      "en": "Since those days, for me as an investigator of the Church, and later as a missionary, and then …",
+      "tr": "Desde esos días, para mí como investigador de la Iglesia, y posteriormente como misionero y después como …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 October General Conference",
+      "talk": "2024-10-browning-seeking-answers-to-spiritual-questions",
+      "para": 2,
+      "en": "One leading planetary scientist and principal investigator for the New Horizons space mission tasked with exploring Pluto …",
+      "tr": "Un destacado científico planetario e investigador principal de la misión espacial Nuevos Horizontes, encargada de explorar …"
+     }
+    ],
+    "earliest": {
+     "year": 1995,
+     "conference": "1995 April General Conference",
+     "talk": "1995-04-peterson-easter-reflections",
+     "para": 2,
+     "en": "… me if I would accompany him to visit an investigator family. Shortly thereafter, we walked down the dirt streets of …",
+     "tr": "… adobe a ambos lados. Hablamos con la familia de investigadores acerca de importantes preguntas tales como: ¿de dónde vinimos?, ¿por …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "investigadora",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.375,
+    "ratio": 1500.4,
+    "source": "2001-04-holland-witnesses-unto-me",
+    "kind": "talk",
+    "sample": "Kong me contó recientemente que cuando ella y su compañera le preguntaron a una investigadora si creía en Dios, la mujer respondió: “No creía, hasta que conocí a un miembro"
+   },
+   {
+    "term": "miembro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.5,
+    "ratio": 41.7,
+    "source": "1997-04-monson-they-will-come",
+    "kind": "talk",
+    "sample": "mples, como la que se le dio a Jacob deJager cuando el y su familia se hicieron miembros en Toronto. El tenía cargos importantes en los negocios, pero su primer llamam"
+   },
+   {
+    "term": "preguntaron",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.25,
+    "ratio": 250.1,
+    "source": "2001-04-holland-witnesses-unto-me",
+    "kind": "talk",
+    "sample": "misionera de Hong Kong me contó recientemente que cuando ella y su compañera le preguntaron a una investigadora si creía en Dios, la mujer respondió: “No creía, hasta que"
+   }
+  ]
+ }
+}

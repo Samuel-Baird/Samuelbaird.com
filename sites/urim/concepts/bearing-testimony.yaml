@@ -1,0 +1,15 @@
+id: concept.bearing-testimony
+category: Sacrament & Meetings
+en:
+  term: bearing testimony
+  match:
+  - bearing testimony
+sources: {}
+candidates:
+  pt:
+  - term: prestar testemunho
+    hint: pulpit-glossary:verified
+  es:
+  - term: dar testimonio
+    hint: pulpit-glossary:verified
+related: []

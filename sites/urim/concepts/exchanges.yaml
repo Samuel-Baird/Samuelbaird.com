@@ -1,0 +1,13 @@
+id: concept.exchanges
+category: Missionary Work
+en:
+  term: exchanges
+  match:
+  - exchanges
+sources: {}
+candidates:
+  pt:
+  - term: divisões
+    hint: pulpit-glossary:standard
+  es: []
+related: []

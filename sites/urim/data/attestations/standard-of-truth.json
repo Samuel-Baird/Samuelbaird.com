@@ -1,0 +1,157 @@
+{
+ "id": "concept.standard-of-truth",
+ "pt": {
+  "en_paragraphs": 26,
+  "en_talks": 23,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "estandarte da verdade",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 23,
+    "talks": 20,
+    "verses": 0,
+    "first_year": 2003,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 October General Conference",
+      "talk": "2003-10-packer-the-standard-of-truth-has-been-erected",
+      "para": 42,
+      "en": "“The Standard of Truth has been erected; no unhallowed hand can stop the …",
+      "tr": "“O estandarte da verdade foi erguido; a mão do ímpio não conseguirá barrar …"
+     },
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 October General Conference",
+      "talk": "2021-10-cook-personal-peace-in-challenging-times",
+      "para": 31,
+      "en": "… Christ in the Latter Days](https://www.churchofjesuschrist.org/study/history/saints-v1/16-only-a-prelude?lang=eng&id=p4#p4), vol. 1, The Standard of Truth, 1815–1846 [2018], 172).\n[^2]: [Doctrine and Covenants 121:1](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/121?lang=eng&id=p1#p1). …",
+      "tr": "… Jesus Cristo nos Últimos Dias](https://www.churchofjesuschrist.org/study/history/saints-v1/16-only-a-prelude?lang=por&id=p4#p4), Volume 1, O Estandarte da Verdade, 1815–1846, 2018, p. 172).\n[^2]: [Doutrina e Convênios …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-holland-forsake-not-your-own-mercy",
+      "para": 19,
+      "en": "… Christ in the Latter Days](https://www.churchofjesuschrist.org/study/history/saints-v1/05-all-is-lost?lang=eng), vol. 1, The Standard of Truth, 1815–1846 [2018], 43–53).\n[^12]: [Jonah 2:2–9](https://www.churchofjesuschrist.org/study/scriptures/ot/jonah/2?lang=eng&id=p2-p9#p2); emphasis added. …",
+      "tr": "… Jesus Cristo nos Últimos Dias](https://www.churchofjesuschrist.org/study/history/saints-v1/05-all-is-lost?lang=por), vol. 1, O Estandarte da Verdade, 1815–1846, 2018, p. 42).\n[^12]: [Jonas 2:2–9](https://www.churchofjesuschrist.org/study/scriptures/ot/jonah/2?lang=por&id=p2-p9#p2); grifo …"
+     }
+    ],
+    "earliest": {
+     "year": 2003,
+     "conference": "2003 October General Conference",
+     "talk": "2003-10-packer-the-standard-of-truth-has-been-erected",
+     "para": 42,
+     "en": "“The Standard of Truth has been erected; no unhallowed hand can stop the …",
+     "tr": "“O estandarte da verdade foi erguido; a mão do ímpio não conseguirá barrar …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "haja",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 166.7,
+    "source": "1999-04-ballard-like-a-flame-unquenchable",
+    "kind": "talk",
+    "sample": "Uma coisa, porém, é certa: os mandamentos de Deus não mudaram. Que não haja dúvidas sobre isso. O certo é certo; o que é errado é errado, mesmo que tenha s"
+   },
+   {
+    "term": "padrão",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 86.0,
+    "source": "1999-04-ballard-like-a-flame-unquenchable",
+    "kind": "talk",
+    "sample": "tamos na castidade antes do casamento e na fidelidade dos cônjuges depois. Esse padrão é absolutamente verdadeiro. Não está sujeito ao resultado da opinião pública ne"
+   },
+   {
+    "term": "verdadeiro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 59.3,
+    "source": "1999-04-ballard-like-a-flame-unquenchable",
+    "kind": "talk",
+    "sample": "s do casamento e na fidelidade dos cônjuges depois. Esse padrão é absolutamente verdadeiro. Não está sujeito ao resultado da opinião pública nem depende de uma situação o"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 25,
+  "en_talks": 22,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "estandarte de la verdad",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 24,
+    "talks": 21,
+    "verses": 0,
+    "first_year": 1996,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 April General Conference",
+      "talk": "1996-04-oaks-joseph-the-man-and-the-prophet",
+      "para": 23,
+      "en": "“The standard of truth has been erected; no unhallowed hand can stop the …",
+      "tr": "“El estandarte de la verdad se ha levantado. Ninguna mano impía puede detener …"
+     },
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 October General Conference",
+      "talk": "2021-10-cook-personal-peace-in-challenging-times",
+      "para": 31,
+      "en": "… Christ in the Latter Days](https://www.churchofjesuschrist.org/study/history/saints-v1/16-only-a-prelude?lang=eng&id=p4#p4), vol. 1, The Standard of Truth, 1815–1846 [2018], 172).\n[^2]: [Doctrine and Covenants 121:1](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/121?lang=eng&id=p1#p1). …",
+      "tr": "… Jesucristo en los últimos días](https://www.churchofjesuschrist.org/study/history/saints-v1/16-only-a-prelude?lang=spa&id=p4#p4), tomo I, El estandarte de la verdad, 1815–1846, 2018, pág. 175).\n[^2]: [Doctrina y …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-holland-forsake-not-your-own-mercy",
+      "para": 19,
+      "en": "… Christ in the Latter Days](https://www.churchofjesuschrist.org/study/history/saints-v1/05-all-is-lost?lang=eng), vol. 1, The Standard of Truth, 1815–1846 [2018], 43–53).\n[^12]: [Jonah 2:2–9](https://www.churchofjesuschrist.org/study/scriptures/ot/jonah/2?lang=eng&id=p2-p9#p2); emphasis added. …",
+      "tr": "… Jesucristo en los Últimos Días](https://www.churchofjesuschrist.org/study/history/saints-v1/05-all-is-lost?lang=spa), tomo I, El estandarte de la verdad, 1815–1846 2018, págs. 43–53).\n[^12]: [Mateo 2:2–9](https://www.churchofjesuschrist.org/study/scriptures/ot/jonah/2?lang=spa&id=p2-p9#p2); …"
+     }
+    ],
+    "earliest": {
+     "year": 1996,
+     "conference": "1996 April General Conference",
+     "talk": "1996-04-oaks-joseph-the-man-and-the-prophet",
+     "para": 23,
+     "en": "“The standard of truth has been erected; no unhallowed hand can stop the …",
+     "tr": "“El estandarte de la verdad se ha levantado. Ninguna mano impía puede detener …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

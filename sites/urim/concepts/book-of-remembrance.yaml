@@ -1,0 +1,17 @@
+id: concept.book-of-remembrance
+category: Scriptures & Study Helps
+en:
+  term: Book of Remembrance
+  match:
+  - Book of Remembrance
+sources:
+  GS:
+  - book-of-remembrance
+candidates:
+  pt:
+  - term: livro de recordações
+    hint: pulpit-glossary:verified
+  es:
+  - term: Libro de memorias
+    hint: pulpit-glossary:verified
+related: []

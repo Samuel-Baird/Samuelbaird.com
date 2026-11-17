@@ -1,0 +1,99 @@
+{
+ "id": "concept.confirmed-a-member",
+ "pt": {
+  "en_paragraphs": 22,
+  "en_talks": 20,
+  "en_verses": 0,
+  "uncovered_paragraphs": 22,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "confirmado",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.455,
+    "ratio": 606.2,
+    "source": "2001-04-faust-born-again",
+    "kind": "talk",
+    "sample": "epois, Atiati pediu que o carregassem da pia batismal até a capela onde ele foi confirmado membro da Igreja."
+   },
+   {
+    "term": "membro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 15,
+    "share_of_uncovered": 0.682,
+    "ratio": 47.0,
+    "source": "2001-04-faust-born-again",
+    "kind": "talk",
+    "sample": "ti pediu que o carregassem da pia batismal até a capela onde ele foi confirmado membro da Igreja."
+   },
+   {
+    "term": "batizado",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.273,
+    "ratio": 60.6,
+    "source": "2009-10-gonzlez-becoming-more-powerful-priesthood-holders",
+    "kind": "talk",
+    "sample": "jo de aplicar os ensinamentos do livro ao fazer convênios. Fiz convênios ao ser batizado e confirmado membro da Igreja. Esses convênios feitos por meio das ordenanças d"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 21,
+  "en_talks": 19,
+  "en_verses": 0,
+  "uncovered_paragraphs": 21,
+  "renderings": [
+   {
+    "term": "confirmar miembro de la Iglesia",
+    "evidence": [],
+    "hint": "pulpit-glossary:verified"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "miembro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.619,
+    "ratio": 51.6,
+    "source": "2001-04-faust-born-again",
+    "kind": "talk",
+    "sample": "uego pidió que lo llevaran desde la pila hasta la capilla, donde se le confirmó miembro de la Iglesia."
+   },
+   {
+    "term": "confirmado",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.333,
+    "ratio": 444.6,
+    "source": "2009-10-gonzlez-becoming-more-powerful-priesthood-holders",
+    "kind": "talk",
+    "sample": "licar las enseñanzas del libro haciendo convenios. Los hice al bautizarme y ser confirmado miembro de la Iglesia. Estos convenios, efectuados mediante las ordenanzas del"
+   },
+   {
+    "term": "bautizado",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.238,
+    "ratio": 86.6,
+    "source": "2014-04-hallstrom-what-manner-of-men",
+    "kind": "talk",
+    "sample": "potencial era mayor, tanto en esta vida como en la eternidad que le sigue. Fue bautizado y confirmado miembro de la Iglesia. Con una perspectiva muchísimo más amplia, s"
+   }
+  ]
+ }
+}

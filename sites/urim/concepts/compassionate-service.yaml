@@ -1,0 +1,15 @@
+id: concept.compassionate-service
+category: Discipleship & Ministering
+en:
+  term: compassionate service
+  match:
+  - compassionate service
+sources: {}
+candidates:
+  pt:
+  - term: serviço de solidariedade
+    hint: pulpit-glossary:verified
+  es:
+  - term: servicio compasivo
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,195 @@
+{
+ "id": "concept.bible-dictionary",
+ "pt": {
+  "en_paragraphs": 106,
+  "en_talks": 97,
+  "en_verses": 0,
+  "uncovered_paragraphs": 97,
+  "renderings": [
+   {
+    "term": "Dicionário Bíblico",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 9,
+    "talks": 7,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2017,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-packer-the-library-of-the-lord",
+      "para": 7,
+      "en": "… were a combined topical guide, with concordance and index, Bible dictionary, and maps. All chapters were given new headings.",
+      "tr": "… um guia por assunto, com concordância e índice remissivo, dicionário bíblico e mapas. Todos os capítulos foram dotados de novos …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 October General Conference",
+      "talk": "2011-10-cornish-the-privilege-of-prayer",
+      "para": 13,
+      "en": "… it is not the same as our will. Our Bible Dictionary explains: “Prayer is the act by which the will …",
+      "tr": "… Sua vontade, mesmo que seja contrária a nossa. Nosso Dicionário Bíblico, em inglês, explica: “A oração é o ato …"
+     },
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 April General Conference",
+      "talk": "2017-04-bragg-brighter-and-brighter-until-the-perfect-day",
+      "para": 27,
+      "en": "… the World](https://www.churchofjesuschrist.org/study/scriptures/the-family-a-proclamation-to-the-world/the-family-a-proclamation-to-the-world?lang=eng),” *Ensign* or *Liahona,* Nov. 2010, 129.\n[^12]: Bible Dictionary, “[Temple](https://www.churchofjesuschrist.org/study/scriptures/bd/temple?lang=eng).”\n[^13]: Boyd K. Packer, “[The Light of …",
+      "tr": "… Mundo\", *A Liahona*, novembro de 2010, última contracapa.\n[^12]: Dicionário Bíblico na Bíblia SUD em inglês, \"Temple\" [Templo].\n[^13]: Boyd …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-packer-the-library-of-the-lord",
+     "para": 7,
+     "en": "… were a combined topical guide, with concordance and index, Bible dictionary, and maps. All chapters were given new headings.",
+     "tr": "… um guia por assunto, com concordância e índice remissivo, dicionário bíblico e mapas. Todos os capítulos foram dotados de novos …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "bible dictionary",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 49,
+    "share_of_uncovered": 0.505,
+    "ratio": 505.3,
+    "source": "1990-04-lybbert-a-latter-day-samaritan",
+    "kind": "talk",
+    "sample": "da lei, incluindo a lei escrita do Pentateuco, e “as tradições dos anciãos”.* (Bible Dictionary,* s. v. *Lawyer.)*"
+   },
+   {
+    "term": "guia para estudo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 56,
+    "share_of_uncovered": 0.577,
+    "ratio": 192.5,
+    "source": "2001-10-clayton-help-thou-mine-unbelief",
+    "kind": "talk",
+    "sample": "//www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=por&id=p4#p4); Guia para Estudo das Escrituras, \"Fé\", pp. 85–86.\n[^5]: [Alma 32:21](https://www.churchofjesusch"
+   },
+   {
+    "term": "estudo das escrituras",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 57,
+    "share_of_uncovered": 0.588,
+    "ratio": 87.1,
+    "source": "2001-04-haight-gratitude-and-service",
+    "kind": "talk",
+    "sample": "alavra aposentadoria na Bíblia. Não creio que encontrem essa palavra no Guia de Estudo das Escrituras. Não é interessante pensar no que pode acontecer à nossa vida hoje e que possib"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 99,
+  "en_talks": 90,
+  "en_verses": 0,
+  "uncovered_paragraphs": 85,
+  "renderings": [
+   {
+    "term": "Diccionario Bíblico",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 14,
+    "talks": 11,
+    "verses": 0,
+    "first_year": 2008,
+    "last_year": 2017,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2008,
+      "conference": "2008 October General Conference",
+      "talk": "2008-10-bednar-pray-always",
+      "para": 2,
+      "en": "… prayer becomes natural and instinctive on our part” (Bible Dictionary, “[Prayer](https://www.churchofjesuschrist.org/study/scriptures/bd/prayer?lang=eng&id=p7#p7),” 752). We are commanded to pray always …",
+      "tr": "… en algo natural e instintivo por parte nuestra” (“Oración”, Diccionario Bíblico en inglés, pág. 752). Se nos manda orar siempre …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 October General Conference",
+      "talk": "2011-10-thompson-cleave-unto-the-covenants",
+      "para": 7,
+      "en": "The Bible Dictionary tells us that a covenant is a contract made …",
+      "tr": "En el diccionario bíblico [en inglés] dice que un convenio es un contrato …"
+     },
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 April General Conference",
+      "talk": "2017-04-bragg-brighter-and-brighter-until-the-perfect-day",
+      "para": 27,
+      "en": "… the World](https://www.churchofjesuschrist.org/study/scriptures/the-family-a-proclamation-to-the-world/the-family-a-proclamation-to-the-world?lang=eng),” *Ensign* or *Liahona,* Nov. 2010, 129.\n[^12]: Bible Dictionary, “[Temple](https://www.churchofjesuschrist.org/study/scriptures/bd/temple?lang=eng).”\n[^13]: Boyd K. Packer, “[The Light of …",
+      "tr": "… el Mundo\", *Liahona,* noviembre de 2010, pág. 129.\n[^12]: Diccionario bíblico de la Biblia SUD en inglés, \"Temple\".\n[^13]: Boyd …"
+     }
+    ],
+    "earliest": {
+     "year": 2008,
+     "conference": "2008 October General Conference",
+     "talk": "2008-10-bednar-pray-always",
+     "para": 2,
+     "en": "… prayer becomes natural and instinctive on our part” (Bible Dictionary, “[Prayer](https://www.churchofjesuschrist.org/study/scriptures/bd/prayer?lang=eng&id=p7#p7),” 752). We are commanded to pray always …",
+     "tr": "… en algo natural e instintivo por parte nuestra” (“Oración”, Diccionario Bíblico en inglés, pág. 752). Se nos manda orar siempre …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "estudio",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 58,
+    "share_of_uncovered": 0.682,
+    "ratio": 59.3,
+    "source": "2001-04-faust-born-again",
+    "kind": "talk",
+    "sample": "[^1]: Véase Guía para el Estudio de las Escrituras; véase también Mateo 3:16; Hechos 8:37–39; Romanos 6:1–6; Col"
+   },
+   {
+    "term": "pág",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 66,
+    "share_of_uncovered": 0.776,
+    "ratio": 27.5,
+    "source": "2001-04-faust-born-again",
+    "kind": "talk",
+    "sample": "en Matthias F. Cowley, Wilford Woodruff: History of His Life and Labors, 1964, pág. 117.\n[^5]: Juan 3:2–3.\n[^6]: Juan 3:4–6.\n[^7]: \"Nacer de nuevo a los noventa y"
+   },
+   {
+    "term": "bible dictionary",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 32,
+    "share_of_uncovered": 0.376,
+    "ratio": 753.1,
+    "source": "2002-10-monson-models-to-follow",
+    "kind": "talk",
+    "sample": "1.\n[^8]: Job 2:9.\n[^9]: Job 16:19.\n[^10]: Job 19:25.\n[^11]: Génesis 6:9.\n[^12]: Bible Dictionary, \"Noah\", págs. 738–739.\n[^13]: Véase \"Fe en el Santo de Israel\", Liahona, agost"
+   }
+  ]
+ }
+}

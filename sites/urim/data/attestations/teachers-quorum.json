@@ -1,0 +1,195 @@
+{
+ "id": "concept.teachers-quorum",
+ "pt": {
+  "en_paragraphs": 18,
+  "en_talks": 13,
+  "en_verses": 0,
+  "uncovered_paragraphs": 8,
+  "renderings": [
+   {
+    "term": "quórum de mestres",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 10,
+    "talks": 7,
+    "verses": 0,
+    "first_year": 2001,
+    "last_year": 2021,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 October General Conference",
+      "talk": "2001-10-monson-duty-calls",
+      "para": 27,
+      "en": "… following such an engagement and came back to our teachers quorum. The quorum adviser invited him to speak to …",
+      "tr": "… licença, após esse combate, e foi ao nosso quórum de mestres. O consultor do quórum pediu que ele falasse …"
+     },
+     {
+      "kind": "talk",
+      "year": 2006,
+      "conference": "2006 October General Conference",
+      "talk": "2006-10-eyring-a-priesthood-quorum",
+      "para": 7,
+      "en": "… given according to the covenants.”[^3] The president of the teachers quorum is to teach its members their duties “as given …",
+      "tr": "… “de acordo com os convênios”.[^3] O presidente do quórum de mestres deve ensinar aos membros os seus deveres “como dados …"
+     },
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 April General Conference",
+      "talk": "2021-04-cook-bishopsshepherds-over-the-lords-flock",
+      "para": 34,
+      "en": "… priests quorum. His first counselor has responsibility for the teachers quorum, and his second counselor has responsibility for the …",
+      "tr": "… O primeiro conselheiro no bispado é responsável pelo quórum de mestres e o segundo conselheiro pelo quórum de diáconos. (Ver …"
+     }
+    ],
+    "earliest": {
+     "year": 2001,
+     "conference": "2001 October General Conference",
+     "talk": "2001-10-monson-duty-calls",
+     "para": 27,
+     "en": "… following such an engagement and came back to our teachers quorum. The quorum adviser invited him to speak to …",
+     "tr": "… licença, após esse combate, e foi ao nosso quórum de mestres. O consultor do quórum pediu que ele falasse …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "mestres",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.75,
+    "ratio": 272.8,
+    "source": "2001-10-monson-duty-calls",
+    "kind": "talk",
+    "sample": "o eu era adolescente, tive o privilégio de servir como presidente do quórum dos mestres. Pediram-me que aprendesse e depois aplicasse o conselho que se encontra em [Do"
+   },
+   {
+    "term": "quórum",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 1.0,
+    "ratio": 61.6,
+    "source": "2001-10-monson-duty-calls",
+    "kind": "talk",
+    "sample": "dial, quando eu era adolescente, tive o privilégio de servir como presidente do quórum dos mestres. Pediram-me que aprendesse e depois aplicasse o conselho que se enc"
+   },
+   {
+    "term": "diáconos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.5,
+    "ratio": 222.3,
+    "source": "2006-10-eyring-a-priesthood-quorum",
+    "kind": "talk",
+    "sample": "scar a união no quórum. Por exemplo, isso até modificará o modo de um quórum de diáconos jogar basquete. A meta dos membros será aumentar o entrosamento mais do que ape"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 19,
+  "en_talks": 13,
+  "en_verses": 0,
+  "uncovered_paragraphs": 9,
+  "renderings": [
+   {
+    "term": "quórum de maestros",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 10,
+    "talks": 6,
+    "verses": 0,
+    "first_year": 2001,
+    "last_year": 2013,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 October General Conference",
+      "talk": "2001-10-monson-duty-calls",
+      "para": 25,
+      "en": "… I was privileged to serve as president of the teachers quorum. I was asked to learn and then apply …",
+      "tr": "… tuve el privilegio de servir como presidente del quórum de maestros. Se me pidió que aprendiera y que luego …"
+     },
+     {
+      "kind": "talk",
+      "year": 2004,
+      "conference": "2004 October General Conference",
+      "talk": "2004-10-monson-anxiously-engaged",
+      "para": 22,
+      "en": "… adviser commented, “Tom, you are the president of the teachers quorum.” This, of course, I already knew. Then he …",
+      "tr": "… me comentó: “Tom, tú eres el presidente del quórum de maestros”. Por supuesto, yo ya sabía eso. Luego agregó: …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 October General Conference",
+      "talk": "2013-10-eyring-to-my-grandchildren",
+      "para": 16,
+      "en": "… president in his call to him to advise a teachers quorum. I know of another who has been a …",
+      "tr": "… misión en su llamamiento para asesorar a un quórum de maestros. Sé de otro hermano que ha sido obispo …"
+     }
+    ],
+    "earliest": {
+     "year": 2001,
+     "conference": "2001 October General Conference",
+     "talk": "2001-10-monson-duty-calls",
+     "para": 25,
+     "en": "… I was privileged to serve as president of the teachers quorum. I was asked to learn and then apply …",
+     "tr": "… tuve el privilegio de servir como presidente del quórum de maestros. Se me pidió que aprendiera y que luego …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "maestros",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.778,
+    "ratio": 97.2,
+    "source": "2003-04-burton-and-thats-the-way-it-is",
+    "kind": "talk",
+    "sample": "espirituales*, y usan las sagradas llaves del sacerdocio para bendecirnos. Los maestros de seminario, asesores de quórumes, y maestros orientadores integran el equipo"
+   },
+   {
+    "term": "diáconos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.556,
+    "ratio": 370.5,
+    "source": "2006-10-eyring-a-priesthood-quorum",
+    "kind": "talk",
+    "sample": "en el quórum. Por ejemplo, podría incluso cambiar la forma en que un quórum de diáconos juega al baloncesto. Quizá los miembros esperen forjar la hermandad más que sól"
+   },
+   {
+    "term": "asesores",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.444,
+    "ratio": 355.6,
+    "source": "2003-04-burton-and-thats-the-way-it-is",
+    "kind": "talk",
+    "sample": "las sagradas llaves del sacerdocio para bendecirnos. Los maestros de seminario, asesores de quórumes, y maestros orientadores integran el equipo de apoyo que ha formado"
+   }
+  ]
+ }
+}

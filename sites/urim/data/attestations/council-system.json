@@ -1,0 +1,101 @@
+{
+ "id": "concept.council-system",
+ "pt": {
+  "en_paragraphs": 3,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "sistema de conselhos",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2000,
+    "last_year": 2016,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2000,
+      "conference": "2000 October General Conference",
+      "talk": "2000-10-ballard-now-is-the-time",
+      "para": 13,
+      "en": "… me a tender story demonstrating the power of the council system in building up the Church. He said that both …",
+      "tr": "… história muito terna que mostra o poder do sistema de conselhos na edificação da Igreja. Ele disse que tanto a …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-ballard-family-councils",
+      "para": 35,
+      "en": "… each other. He has done this by providing the council system to strengthen, protect, safeguard, and nurture our most precious …",
+      "tr": "… agradáveis juntos. Ele fez isso ao proporcionar o sistema de conselhos para fortalecer, proteger e defender nosso relacionamento mais precioso."
+     }
+    ],
+    "earliest": {
+     "year": 2000,
+     "conference": "2000 October General Conference",
+     "talk": "2000-10-ballard-now-is-the-time",
+     "para": 13,
+     "en": "… me a tender story demonstrating the power of the council system in building up the Church. He said that both …",
+     "tr": "… história muito terna que mostra o poder do sistema de conselhos na edificação da Igreja. Ele disse que tanto a …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 3,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "sistema de consejos",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2000,
+    "last_year": 2016,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2000,
+      "conference": "2000 October General Conference",
+      "talk": "2000-10-ballard-now-is-the-time",
+      "para": 13,
+      "en": "… me a tender story demonstrating the power of the council system in building up the Church. He said that both …",
+      "tr": "… un tierno relato que demuestra el poder del sistema de consejos en la edificación de la Iglesia. Dijo que tanto …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-ballard-family-councils",
+      "para": 35,
+      "en": "… each other. He has done this by providing the council system to strengthen, protect, safeguard, and nurture our most precious …",
+      "tr": "… calidad juntos. Lo ha hecho al proveer el sistema de consejos para fortalecer, proteger, salvaguardar y nutrir nuestras relaciones más …"
+     }
+    ],
+    "earliest": {
+     "year": 2000,
+     "conference": "2000 October General Conference",
+     "talk": "2000-10-ballard-now-is-the-time",
+     "para": 13,
+     "en": "… me a tender story demonstrating the power of the council system in building up the Church. He said that both …",
+     "tr": "… un tierno relato que demuestra el poder del sistema de consejos en la edificación de la Iglesia. Dijo que tanto …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

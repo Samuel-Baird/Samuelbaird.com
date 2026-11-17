@@ -1,0 +1,144 @@
+{
+ "id": "concept.stake",
+ "pt": {
+  "en_paragraphs": 488,
+  "en_talks": 340,
+  "en_verses": 25,
+  "uncovered_paragraphs": 40,
+  "renderings": [
+   {
+    "term": "estaca",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 448,
+    "talks": 313,
+    "verses": 25,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 124:134",
+      "ref_en": "Doctrine and Covenants 124:134",
+      "en": "Which ordinance is instituted for the purpose of qualifying those who shall be appointed standing presidents or servants over different stakes scattered abroad;",
+      "tr": "Ordenança essa instituída com o propósito de qualificar os que serão designados presidentes, ou seja, servos locais de diferentes estacas espalhadas fora daqui;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/124?lang=por&id=p134"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-packer-the-library-of-the-lord",
+      "para": 65,
+      "en": "… seminary and institute to the people of his home stake. Afterwards I said, “I will be quoting you all …",
+      "tr": "… apoiando o seminário e instituto ao povo de sua estaca de origem. Depois eu comentei: “Vou citar o senhor na …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 October General Conference",
+      "talk": "2011-10-waddell-the-opportunity-of-a-lifetime",
+      "para": 5,
+      "en": "At the conclusion of a stake fireside where he and his companion had been invited to …",
+      "tr": "Ao término de um serão da estaca, do qual ele e seu companheiro haviam sido convidados …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-edling-the-church-audit-committee-report",
+     "para": 4,
+     "en": "The audits of local funds of wards and stakes are performed by stake auditors. The audit procedures are established …",
+     "tr": "As auditorias dos fundos locais de alas e estacas fica a cargo de auditores de estaca. Os procedimentos são …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "sociedade",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.2,
+    "ratio": 12.1,
+    "source": "1994-10-jack-seek-and-ye-shall-find",
+    "kind": "talk",
+    "sample": "Na Argentina, as líderes da Sociedade de Socorro estão tentando ensinar a importância de armazenar alimentos. Elas es"
+   },
+   {
+    "term": "líderes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.2,
+    "ratio": 9.2,
+    "source": "1993-10-ballard-strength-in-counsel",
+    "kind": "talk",
+    "sample": ", sirvo em diversos conselhos e comitês gerais da Igreja. Reúno-me com diversos líderes das auxiliares. Juntos, aconselhamo-nos, examinamos as escrituras e oramos pedi"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 480,
+  "en_talks": 323,
+  "en_verses": 25,
+  "uncovered_paragraphs": 46,
+  "renderings": [
+   {
+    "term": "estaca",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 434,
+    "talks": 289,
+    "verses": 25,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 124:134",
+      "ref_en": "Doctrine and Covenants 124:134",
+      "en": "Which ordinance is instituted for the purpose of qualifying those who shall be appointed standing presidents or servants over different stakes scattered abroad;",
+      "tr": "ordenanza que se instituye con el propósito de habilitar a aquellos que serán nombrados presidentes residentes o siervos sobre diversas estacas esparcidas fuera de aquí;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/124?lang=spa&id=p134"
+     },
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 October General Conference",
+      "talk": "1996-10-jack-strengthened-in-charity",
+      "para": 30,
+      "en": "… tabernacle, in Texas, in tiny branches, sprawling wards, and stakes around the world, our efforts sound the theme “Charity Never …",
+      "tr": "… en Texas, en pequeñas ramas, en barrios y en estacas a través del mundo, nuestros esfuerzos proclaman el tema “la …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-cook-personal-peace-the-reward-of-righteousness",
+      "para": 40,
+      "en": "… (2002), 226.\n[^18]: “Three of the five Ivory Coast stakes are among the top 25 in the Church in the …",
+      "tr": "… Grant*, 2002, pág. 244.\n[^18]: \"Tres de las cinco estacas de Costa de Marfil se encuentran entre las veinticinco estacas …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-hinckley-keeping-the-temple-holy",
+     "para": 17,
+     "en": "… to you a circular letter addressed to presidents of stakes and bishops of wards under date of November 10, 1891:",
+     "tr": "… Deseo leeros una circular dirigida a los presidentes de estacas y obispos, con fecha 10 de noviembre de 1891:"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

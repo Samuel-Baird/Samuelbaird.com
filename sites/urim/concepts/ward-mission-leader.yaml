@@ -1,0 +1,17 @@
+id: concept.ward-mission-leader
+category: Local Leadership & Callings
+en:
+  term: ward mission leader
+  match:
+  - ward mission leader
+sources:
+  GH:
+  - 23#title_number17
+candidates:
+  pt:
+  - term: líder da missão da ala
+    hint: pulpit-glossary:verified
+  es:
+  - term: líder misional de barrio
+    hint: pulpit-glossary:verified
+related: []

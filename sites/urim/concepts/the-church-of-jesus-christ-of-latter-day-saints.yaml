@@ -1,0 +1,18 @@
+id: concept.the-church-of-jesus-christ-of-latter-day-saints
+category: The Church & Members
+en:
+  term: The Church of Jesus Christ of Latter-day Saints
+  match:
+  - The Church of Jesus Christ of Latter-day Saints
+sources:
+  GS:
+  - church-of-jesus-christ-of-latter-day-saints-the
+candidates:
+  pt:
+  - term: A Igreja de Jesus Cristo dos Santos dos Últimos Dias
+    hint: pulpit-glossary:verified
+  es:
+  - term: La Iglesia de Jesucristo de los Santos de los Últimos Días
+    hint: approved-terms
+related: []
+note: Full form on first use; official localized name only, never transliterate

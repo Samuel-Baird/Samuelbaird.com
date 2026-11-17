@@ -1,0 +1,15 @@
+id: concept.churchofjesuschrist-org
+category: Education & Publications
+en:
+  term: ChurchofJesusChrist.org
+  match:
+  - ChurchofJesusChrist.org
+sources: {}
+candidates:
+  pt:
+  - term: churchofjesuschrist.org
+    hint: pulpit-glossary:verified
+  es:
+  - term: churchofjesuschrist.org
+    hint: pulpit-glossary:verified
+related: []

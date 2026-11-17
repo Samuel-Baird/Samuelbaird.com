@@ -1,0 +1,194 @@
+{
+ "id": "concept.dispensation",
+ "pt": {
+  "en_paragraphs": 321,
+  "en_talks": 235,
+  "en_verses": 12,
+  "uncovered_paragraphs": 18,
+  "renderings": [
+   {
+    "term": "dispensação",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 303,
+    "talks": 225,
+    "verses": 12,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Colossenses 1:25",
+      "ref_en": "Colossians 1:25",
+      "en": "Whereof I am made a minister, according to the dispensation of God which is given to me for you, to fulfil the word of God;",
+      "tr": "Da qual eu fui feito ministro, segundo a dispensação de Deus, que me foi concedida para convosco, para cumprir a palavra de Deus;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/nt/col/1?lang=por&id=p25"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-cutler-the-greatest-joy",
+      "para": 5,
+      "en": "… testified that Joseph Smith is the Prophet of this dispensation and that today, standing as the mouthpiece of the Lord, …",
+      "tr": "… lar. Testificaram que Joseph Smith é o Profeta desta dispensação e que hoje, como porta-voz do Senhor, está o Presidente …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-andersen-preparing-the-world-for-the-second-coming",
+      "para": 17,
+      "en": "… face of the earth.[^13] The Lord declared in this dispensation, “Ye are called to bring to pass the gathering …",
+      "tr": "… toda a face da Terra.[^13] O Senhor declarou, nesta dispensação: “Sois chamados para efetuardes a reunião de meus eleitos”.[^14] …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-cutler-the-greatest-joy",
+     "para": 5,
+     "en": "… testified that Joseph Smith is the Prophet of this dispensation and that today, standing as the mouthpiece of the Lord, …",
+     "tr": "… lar. Testificaram que Joseph Smith é o Profeta desta dispensação e que hoje, como porta-voz do Senhor, está o Presidente …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "dis",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.278,
+    "ratio": 1111.4,
+    "source": "1995-10-ballard-hyrum-smith-firm-as-the-pillars-of-heaven",
+    "kind": "talk",
+    "sample": "pro­ces­so da Restauração. Por fim, jun­tou-se a Joseph e outros már­ti­res de dis­pen­sa­ções pas­sa­das do evan­ge­lho. Seu san­gue foi der­ra­ma­do em tes­te­m"
+   },
+   {
+    "term": "pen",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.222,
+    "ratio": 444.6,
+    "source": "1995-10-ballard-hyrum-smith-firm-as-the-pillars-of-heaven",
+    "kind": "talk",
+    "sample": "­ces­so da Restauração. Por fim, jun­tou-se a Joseph e outros már­ti­res de dis­pen­sa­ções pas­sa­das do evan­ge­lho. Seu san­gue foi der­ra­ma­do em tes­te­mu­nh"
+   },
+   {
+    "term": "ção",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.278,
+    "ratio": 65.4,
+    "source": "1995-10-ballard-hyrum-smith-firm-as-the-pillars-of-heaven",
+    "kind": "talk",
+    "sample": "vida pres­tou tes­te­mu­nho da natu­re­za divi­na do Livro de Mórmon, na con­di­ção de uma das Oito Testemunhas que “viram as pla­cas com os pró­prios olhos e manu"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 305,
+  "en_talks": 223,
+  "en_verses": 12,
+  "uncovered_paragraphs": 10,
+  "renderings": [
+   {
+    "term": "dispensación",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 298,
+    "talks": 218,
+    "verses": 9,
+    "first_year": 1991,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 112:32",
+      "ref_en": "Doctrine and Covenants 112:32",
+      "en": "For verily I say unto you, the keys of the dispensation, which ye have received, have come down from the fathers, and last of all, being sent down from heaven unto you.",
+      "tr": "porque, de cierto os digo, las llaves de la dispensación, las cuales habéis recibido, han descendido desde los padres, y por último, se han enviado del cielo a vosotros.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/112?lang=spa&id=p32"
+     },
+     {
+      "kind": "talk",
+      "year": 1998,
+      "conference": "1998 October General Conference",
+      "talk": "1998-10-holland-personal-purity",
+      "para": 8,
+      "en": "… of the “plain and precious” truths restored in this dispensation is that “the spirit and the body are the soul …",
+      "tr": "… verdades “claras y preciosas” que se restauraron en esta dispensación es que “el espíritu y el cuerpo son el alma …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-eyring-learning-in-the-priesthood",
+      "para": 13,
+      "en": "In the early days of the Church in this dispensation, he received a command from God to build strength …",
+      "tr": "En los primeros días de la Iglesia en esta dispensación, recibió un mandamiento de Dios de edificar la fortaleza …"
+     }
+    ],
+    "earliest": {
+     "year": 1991,
+     "conference": "1991 April General Conference",
+     "talk": "1991-04-lawrence-sunday-worship-service",
+     "para": 23,
+     "en": "… in the fulness of the gospel in this last dispensation of time. President Ezra Taft Benson is our true and …",
+     "tr": "… Señor introdujo la plenitud del evangelio en esta ultima dispensación. El presidente Ezra Taft Benson es nuestro verdadero Profeta. …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "presentaron",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.2,
+    "ratio": 266.7,
+    "source": "1996-10-jack-strengthened-in-charity",
+    "kind": "talk",
+    "sample": "Luego lo llevó a la casa de su hermano Labán, y no fue sino hasta que se presentaron que supo que era el siervo de su tío. La respuesta caritativa a ese extranjero"
+   },
+   {
+    "term": "impuesto",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.2,
+    "ratio": 266.7,
+    "source": "1996-04-oaks-joseph-the-man-and-the-prophet",
+    "kind": "talk",
+    "sample": "A pesar de su estilo familiar y amigable, el profeta José Smith se había impuesto la resolución de cumplir con su deber. Durante una reunión en la que se conside"
+   },
+   {
+    "term": "consideró",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.2,
+    "ratio": 133.4,
+    "source": "1996-04-oaks-joseph-the-man-and-the-prophet",
+    "kind": "talk",
+    "sample": "mpuesto la resolución de cumplir con su deber. Durante una reunión en la que se consideró disciplinar a un hombre que había rechazado el consejo de la Primera Presidenci"
+   }
+  ]
+ }
+}

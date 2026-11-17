@@ -1,0 +1,15 @@
+id: concept.perpetual-education-fund
+category: Welfare & Self-Reliance
+en:
+  term: Perpetual Education Fund
+  match:
+  - Perpetual Education Fund
+sources: {}
+candidates:
+  pt:
+  - term: Fundo Perpétuo de Educação
+    hint: pulpit-glossary:verified
+  es:
+  - term: Fondo Perpetuo para la Educación
+    hint: pulpit-glossary:verified
+related: []

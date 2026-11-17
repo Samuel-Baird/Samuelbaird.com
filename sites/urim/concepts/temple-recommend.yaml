@@ -1,0 +1,17 @@
+id: concept.temple-recommend
+category: Temple & Family History
+en:
+  term: temple recommend
+  match:
+  - temple recommend
+sources:
+  GH:
+  - 24#title_number52
+candidates:
+  pt:
+  - term: recomendação para o templo
+    hint: pulpit-glossary:verified
+  es:
+  - term: recomendación para el templo
+    hint: approved-terms
+related: []

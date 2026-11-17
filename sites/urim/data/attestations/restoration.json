@@ -1,0 +1,244 @@
+{
+ "id": "concept.restoration",
+ "pt": {
+  "en_paragraphs": 682,
+  "en_talks": 400,
+  "en_verses": 28,
+  "uncovered_paragraphs": 47,
+  "renderings": [
+   {
+    "term": "Restauração",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 640,
+    "talks": 374,
+    "verses": 23,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Alma 41:15",
+      "ref_en": "Alma 41:15",
+      "en": "For that which ye do send out shall return unto you again, and be restored; therefore, the word restoration more fully condemneth the sinner, and justifieth him not at all.",
+      "tr": "Porque o que de ti sair, a ti retornará e será restaurado. Portanto, a palavra restauração condena o pecador mais plenamente e em nada o justifica.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/41?lang=por&id=p15"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-packer-the-library-of-the-lord",
+      "para": 43,
+      "en": "… read prophecies of the coming Messiah and of the restoration of the gospel. You see Elijah demonstrate the sealing power …",
+      "tr": "… ofertas. Lereis profecias sobre a vinda do Messias e restauração do evangelho. Vereis Elias demonstrar o poder selador e Malaquias …"
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 October General Conference",
+      "talk": "2019-10-nelson-closing-remarks",
+      "para": 36,
+      "en": "… School, and other Church callings—all vital parts of the Restoration of the gospel of Jesus Christ in its fulness.",
+      "tr": "… em outros chamados da Igreja — partes vitais da Restauração do evangelho de Jesus Cristo em sua plenitude."
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-asay-one-small-step-for-a-man-one-giant-leap-for-mankind",
+     "para": 7,
+     "en": "… for the dawning of a new day and the restoration of the gospel of Jesus Christ.",
+     "tr": "… pacientemente o alvorecer de um novo dia e a restauração do Evangelho de Jesus Cristo."
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "joseph",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.277,
+    "ratio": 7.4,
+    "source": "1990-04-wirthlin-personal-integrity",
+    "kind": "talk",
+    "sample": "o físico. Sua mente tinha por ‘IDEAL’ a busca incessante.” (Leon R. Hartshorn, *Joseph Smith: Prophet of the Restoration*, Salt Lake City: Deseret Book Co., 1970, p."
+   },
+   {
+    "term": "the",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.213,
+    "ratio": 10.6,
+    "source": "1990-04-wirthlin-personal-integrity",
+    "kind": "talk",
+    "sample": "por ‘IDEAL’ a busca incessante.” (Leon R. Hartshorn, *Joseph Smith: Prophet of the Restoration*, Salt Lake City: Deseret Book Co., 1970, p. 67.) “Sua grandeza não"
+   },
+   {
+    "term": "smith",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 11,
+    "share_of_uncovered": 0.234,
+    "ratio": 6.9,
+    "source": "1990-04-wirthlin-personal-integrity",
+    "kind": "talk",
+    "sample": "o. Sua mente tinha por ‘IDEAL’ a busca incessante.” (Leon R. Hartshorn, *Joseph Smith: Prophet of the Restoration*, Salt Lake City: Deseret Book Co., 1970, p. 67.) “"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 673,
+  "en_talks": 383,
+  "en_verses": 28,
+  "uncovered_paragraphs": 25,
+  "renderings": [
+   {
+    "term": "Restauración",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 648,
+    "talks": 372,
+    "verses": 28,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Alma 41:12",
+      "ref_en": "Alma 41:12",
+      "en": "And now behold, is the meaning of the word restoration to take a thing of a natural state and place it in an unnatural state, or to place it in a state opposite to its nature?",
+      "tr": "Y he aquí, ¿significa la palabra restauración tomar una cosa de un estado natural y colocarla en un estado innatural, o sea, ponerla en una condición que se opone a su naturaleza?",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/41?lang=spa&id=p12"
+     },
+     {
+      "kind": "talk",
+      "year": 1999,
+      "conference": "1999 April General Conference",
+      "talk": "1999-04-faust-this-is-our-day",
+      "para": 2,
+      "en": "… and travel. They were the Savior’s Atonement and the Restoration of the gospel with the priesthood keys and authority. These …",
+      "tr": "… el transporte; fueron la expiación del Salvador y la restauración del Evangelio, con las llaves y la autoridad del sacerdocio. …"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 October General Conference",
+      "talk": "2012-10-nelson-ask-the-missionaries-they-can-help-you",
+      "para": 26,
+      "en": "… about the Lord Jesus Christ, His Atonement, and the Restoration of His Church as it was originally established, ask the …",
+      "tr": "… del Señor Jesucristo, de Su expiación y de la restauración de Su Iglesia como se estableció originalmente, ¡pregúntenles a los …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-wirthlin-personal-integrity",
+     "para": 19,
+     "en": "… 50:27–29](https://www.churchofjesuschrist.org/study/scriptures/jst/jst-gen/50?lang=eng&id=p27-p29#p27)), and of Joseph Smith, the prophet of the restoration of the gospel in the latter days (see [JST, Gen. …",
+     "tr": "… Israel, y sobre José Smith, el Profeta de la restauración del evangelio en los últimos días. (Véase 2 Nefi 3:6-21.)"
+    },
+    "share": 0.846
+   },
+   {
+    "term": "restauración (del Evangelio)",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 123,
+    "talks": 105,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 October General Conference",
+      "talk": "1991-10-haight-a-time-for-preparation",
+      "para": 20,
+      "en": "… that would bring about the mighty work of the restoration of the gospel of Jesus Christ. Joseph saw the living …",
+      "tr": "… lo que originaria la extraordinaria obra de la restauración del Evangelio de Jesucristo. ¡El vio al Dios viviente! ¡Vio al …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 October General Conference",
+      "talk": "2013-10-ballard-put-your-trust-in-the-lord",
+      "para": 6,
+      "en": "… be anxiously engaged in bringing the message of the Restoration of the gospel to all of our Heavenly Father’s children …",
+      "tr": "… anhelosamente consagrados a llevar el mensaje de la restauración del Evangelio a todos los hijos de nuestro Padre Celestial en …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-cook-keys-covenants-and-easter",
+      "para": 3,
+      "en": "… by Moses, Elias, and Elijah are central to the Restoration of the gospel of Jesus Christ in the latter days.[^6] …",
+      "tr": "… y Elías el Profeta son fundamentales para la restauración del Evangelio de Jesucristo en los últimos días[^6]. La función de …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-wirthlin-personal-integrity",
+     "para": 19,
+     "en": "… 50:27–29](https://www.churchofjesuschrist.org/study/scriptures/jst/jst-gen/50?lang=eng&id=p27-p29#p27)), and of Joseph Smith, the prophet of the restoration of the gospel in the latter days (see [JST, Gen. …",
+     "tr": "… y sobre José Smith, el Profeta de la restauración del evangelio en los últimos días. (Véase 2 Nefi 3:6-21.)"
+    },
+    "share": 0.154
+   }
+  ],
+  "inferred": [
+   {
+    "term": "restoration",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.32,
+    "ratio": 320.1,
+    "source": "2001-04-thomas-developing-our-talent-for-spirituality",
+    "kind": "talk",
+    "sample": "e es el poder de revelación y… testimonio” (Bruce R. McConkie, Doctrines of the Restoration; Sermons and Writings of Bruce R. McConkie, ed. Mark L. McConkie, 1989, pág. 93"
+   },
+   {
+    "term": "pág",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.32,
+    "ratio": 11.3,
+    "source": "2001-04-thomas-developing-our-talent-for-spirituality",
+    "kind": "talk",
+    "sample": "oration; Sermons and Writings of Bruce R. McConkie, ed. Mark L. McConkie, 1989, pág. 93). Una vez que sepamos lo que es el Espíritu, ¿cómo podemos reconocerlo si l"
+   },
+   {
+    "term": "juan",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.28,
+    "ratio": 13.2,
+    "source": "2006-04-faust-the-restoration-of-all-things",
+    "kind": "talk",
+    "sample": "e restaurar las llaves del sacerdocio, las cuales se habían perdido. El apóstol Juan vio en una visión la época cuando “[volaría] por en medio del cielo… otro ángel"
+   }
+  ]
+ }
+}

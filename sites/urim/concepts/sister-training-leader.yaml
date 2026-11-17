@@ -1,0 +1,13 @@
+id: concept.sister-training-leader
+category: Missionary Work
+en:
+  term: sister training leader
+  match:
+  - sister training leader
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: líder de capacitación de las hermanas
+    hint: pulpit-glossary:verified
+related: []

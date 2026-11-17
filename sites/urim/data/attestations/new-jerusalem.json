@@ -1,0 +1,106 @@
+{
+ "id": "concept.new-jerusalem",
+ "pt": {
+  "en_paragraphs": 5,
+  "en_talks": 3,
+  "en_verses": 20,
+  "uncovered_paragraphs": 25,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "nova jerusalém",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 25,
+    "share_of_uncovered": 1.0,
+    "ratio": 4001.0,
+    "source": "2019-04-christofferson-preparing-for-the-lords-return",
+    "kind": "talk",
+    "sample": "o tempo da minha vinda; pois ali estará meu tabernáculo e chamar-se-á Sião, uma Nova Jerusalém. (…) E pelo espaço de mil anos a Terra descansará\" ([Moisés 7:62, 64](https://w"
+   },
+   {
+    "term": "cidade",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 12,
+    "share_of_uncovered": 0.48,
+    "ratio": 60.0,
+    "source": "2019-04-christofferson-preparing-for-the-lords-return",
+    "kind": "talk",
+    "sample": "reunir meus eleitos dos quatro cantos da Terra em um lugar que prepararei, uma Cidade Santa, para que meu povo cinja os lombos e anseie pelo tempo da minha vinda; po"
+   },
+   {
+    "term": "sião",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.32,
+    "ratio": 71.1,
+    "source": "2019-04-christofferson-preparing-for-the-lords-return",
+    "kind": "talk",
+    "sample": "&id=p98-p100#p98).\n[^12]: As escrituras declaram simplesmente: \"E aconteceu que Sião já não existia, porque Deus a recebeu em seu próprio seio\" ([Moisés 7:69](https"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 5,
+  "en_talks": 3,
+  "en_verses": 20,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "Nueva Jerusalén",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 5,
+    "talks": 3,
+    "verses": 20,
+    "first_year": 2019,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 45:66",
+      "ref_en": "Doctrine and Covenants 45:66",
+      "en": "And it shall be called the New Jerusalem, a land of peace, a city of refuge, a place of safety for the saints of the Most High God;",
+      "tr": "Y se llamará la Nueva Jerusalén, una tierra de paz, una ciudad de refugio, un lugar de seguridad para los santos del Más Alto Dios;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/45?lang=spa&id=p66"
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 April General Conference",
+      "talk": "2019-04-christofferson-preparing-for-the-lords-return",
+      "para": 31,
+      "en": "… my tabernacle, and it shall be called Zion, a New Jerusalem. … And for the space of a thousand …",
+      "tr": "… allí estará mi tabernáculo, y se llamará Sion, una Nueva Jerusalén… y por el espacio de mil años la …"
+     },
+     {
+      "kind": "talk",
+      "year": 2020,
+      "conference": "2020 October General Conference",
+      "talk": "2020-10-eyring-sisters-in-zion",
+      "para": 7,
+      "en": "… Zion people who will dwell in peace in the New Jerusalem.",
+      "tr": "… pueblo de Sion que vivirá en paz en la Nueva Jerusalén."
+     }
+    ],
+    "earliest": {
+     "year": 2019,
+     "conference": "2019 April General Conference",
+     "talk": "2019-04-christofferson-preparing-for-the-lords-return",
+     "para": 31,
+     "en": "… my tabernacle, and it shall be called Zion, a New Jerusalem. … And for the space of a thousand …",
+     "tr": "… allí estará mi tabernáculo, y se llamará Sion, una Nueva Jerusalén… y por el espacio de mil años la …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

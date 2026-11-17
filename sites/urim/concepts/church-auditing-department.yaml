@@ -1,0 +1,15 @@
+id: concept.church-auditing-department
+category: Finances
+en:
+  term: Church Auditing Department
+  match:
+  - Church Auditing Department
+sources: {}
+candidates:
+  pt:
+  - term: Departamento de Auditoria da Igreja
+    hint: pulpit-glossary:verified
+  es:
+  - term: Departamento de Auditoría de la Iglesia
+    hint: pulpit-glossary:verified
+related: []

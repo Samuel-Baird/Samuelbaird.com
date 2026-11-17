@@ -1,0 +1,15 @@
+id: concept.another-testament-of-jesus-christ
+category: Scriptures & Study Helps
+en:
+  term: Another Testament of Jesus Christ
+  match:
+  - Another Testament of Jesus Christ
+sources: {}
+candidates:
+  pt:
+  - term: Outro Testamento de Jesus Cristo
+    hint: pulpit-glossary:verified
+  es:
+  - term: Otro Testamento de Jesucristo
+    hint: pulpit-glossary:verified
+related: []

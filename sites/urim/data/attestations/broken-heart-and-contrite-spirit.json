@@ -1,0 +1,143 @@
+{
+ "id": "concept.broken-heart-and-contrite-spirit",
+ "pt": {
+  "en_paragraphs": 26,
+  "en_talks": 26,
+  "en_verses": 2,
+  "uncovered_paragraphs": 28,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "quebrantado",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 27,
+    "share_of_uncovered": 0.964,
+    "ratio": 350.7,
+    "source": "2001-04-faust-born-again",
+    "kind": "talk",
+    "sample": "milharem perante Deus e desejarem ser batizados e se apresentarem com o coração quebrantado e o espírito contrito; e testificarem à igreja que verdadeiramente se arrepende"
+   },
+   {
+    "term": "contrito",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 27,
+    "share_of_uncovered": 0.964,
+    "ratio": 350.7,
+    "source": "2001-04-faust-born-again",
+    "kind": "talk",
+    "sample": "esejarem ser batizados e se apresentarem com o coração quebrantado e o espírito contrito; e testificarem à igreja que verdadeiramente se arrependeram de todos os seus p"
+   },
+   {
+    "term": "batismo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 12,
+    "share_of_uncovered": 0.429,
+    "ratio": 33.6,
+    "source": "1990-10-oaks-witnesses-of-christ",
+    "kind": "talk",
+    "sample": "O profeta Néfi descreveu a ordenança do batismo como uma ocasião em que as pessoas deveriam testemunhar ao Pai que desejavam to"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 25,
+  "en_talks": 25,
+  "en_verses": 2,
+  "uncovered_paragraphs": 17,
+  "renderings": [
+   {
+    "term": "corazón quebrantado y espíritu contrito",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 9,
+    "talks": 9,
+    "verses": 1,
+    "first_year": 2003,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Mormón 2:14",
+      "ref_en": "Mormon 2:14",
+      "en": "And they did not come unto Jesus with broken hearts and contrite spirits, but they did curse God, and wish to die. Nevertheless they would struggle with the sword for their lives.",
+      "tr": "Y no venían a Jesús con corazones quebrantados y espíritus contritos, antes bien, maldecían a Dios, y deseaban morir. No obstante, luchaban con la espada por sus vidas.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/morm/2?lang=spa&id=p14"
+     },
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 October General Conference",
+      "talk": "2003-10-edgley-the-empowerment-of-humility",
+      "para": 10,
+      "en": "… before God … and come forth with broken hearts and contrite spirits, … [these are the ones who] shall …",
+      "tr": "… se humillen ante Dios… y vengan con corazones quebrantados y espíritus contritos… [esos son los que] serán recibidos en …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 October General Conference",
+      "talk": "2016-10-mcconkie-the-souls-sincere-desire",
+      "para": 21,
+      "en": "… wherever we are; whether we pray with broken hearts and contrite spirits seeking forgiveness, heavenly wisdom, or simply the strength …",
+      "tr": "… dondequiera que estemos, o que oremos con corazones quebrantados y espíritus contritos a fin de procurar perdón, sabiduría divina o …"
+     }
+    ],
+    "earliest": {
+     "year": 2003,
+     "conference": "2003 October General Conference",
+     "talk": "2003-10-edgley-the-empowerment-of-humility",
+     "para": 10,
+     "en": "… before God … and come forth with broken hearts and contrite spirits, … [these are the ones who] shall …",
+     "tr": "… se humillen ante Dios… y vengan con corazones quebrantados y espíritus contritos… [esos son los que] serán recibidos en …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "contrito",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 12,
+    "share_of_uncovered": 0.706,
+    "ratio": 353.0,
+    "source": "2010-04-cook-we-follow-jesus-christ",
+    "kind": "talk",
+    "sample": "rmite que cada uno de nosotros exprese con un corazón quebrantado y un espíritu contrito nuestra disposición de seguir al Salvador, de arrepentirnos y llegar a ser sant"
+   },
+   {
+    "term": "quebrantado",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 12,
+    "share_of_uncovered": 0.706,
+    "ratio": 235.4,
+    "source": "2010-04-cook-we-follow-jesus-christ",
+    "kind": "talk",
+    "sample": "iar la Santa Cena; ella permite que cada uno de nosotros exprese con un corazón quebrantado y un espíritu contrito nuestra disposición de seguir al Salvador, de arrepentir"
+   },
+   {
+    "term": "vengan con corazones",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.235,
+    "ratio": 941.4,
+    "source": "2001-04-faust-born-again",
+    "kind": "talk",
+    "sample": "“…Todos los que se humillen ante Dios, y deseen bautizarse, y vengan con corazones quebrantados y con espíritus contritos, y testifiquen ante la iglesia que se ha"
+   }
+  ]
+ }
+}

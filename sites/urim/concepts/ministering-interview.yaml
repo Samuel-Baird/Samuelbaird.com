@@ -1,0 +1,17 @@
+id: concept.ministering-interview
+category: Discipleship & Ministering
+en:
+  term: ministering interview
+  match:
+  - ministering interview
+sources:
+  GH:
+  - 21-ministering#title_number4
+candidates:
+  pt:
+  - term: entrevista de ministração
+    hint: pulpit-glossary:standard
+  es:
+  - term: entrevista de ministración
+    hint: approved-terms
+related: []

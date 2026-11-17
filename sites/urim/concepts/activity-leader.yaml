@@ -1,0 +1,17 @@
+id: concept.activity-leader
+category: Local Leadership & Callings
+en:
+  term: activity leader
+  match:
+  - activity leader
+sources:
+  GH:
+  - 12-primary#title_number21
+candidates:
+  pt:
+  - term: líder de atividades dos Valorosos
+    hint: pulpit-glossary:verified
+  es:
+  - term: líder de actividades
+    hint: pulpit-glossary:verified
+related: []

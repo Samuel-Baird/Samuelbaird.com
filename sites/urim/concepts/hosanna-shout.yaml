@@ -1,0 +1,15 @@
+id: concept.hosanna-shout
+category: Baptism, Confirmation & Blessings
+en:
+  term: Hosanna Shout
+  match:
+  - Hosanna Shout
+sources: {}
+candidates:
+  pt:
+  - term: brado de Hosana
+    hint: pulpit-glossary:standard
+  es:
+  - term: Grito de Hosanna
+    hint: pulpit-glossary:verified
+related: []

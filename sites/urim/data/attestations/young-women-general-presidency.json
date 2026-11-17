@@ -1,0 +1,106 @@
+{
+ "id": "concept.young-women-general-presidency",
+ "pt": {
+  "en_paragraphs": 21,
+  "en_talks": 15,
+  "en_verses": 0,
+  "uncovered_paragraphs": 21,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "geral das moças",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 18,
+    "share_of_uncovered": 0.857,
+    "ratio": 1714.7,
+    "source": "1991-04-beckham-a-pattern-of-righteousness",
+    "kind": "talk",
+    "sample": "profeta vivo. Poucos dias depois de ser chamada como conselheira na Presidência Geral das Moças, a Primeira Presidência da Igreja se aproximou da cadeira onde eu estava sentad"
+   },
+   {
+    "term": "presidência geral",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 20,
+    "share_of_uncovered": 0.952,
+    "ratio": 317.5,
+    "source": "1991-04-beckham-a-pattern-of-righteousness",
+    "kind": "talk",
+    "sample": "r termos um profeta vivo. Poucos dias depois de ser chamada como conselheira na Presidência Geral das Moças, a Primeira Presidência da Igreja se aproximou da cadeira onde eu est"
+   },
+   {
+    "term": "conselheira",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.286,
+    "ratio": 381.0,
+    "source": "1991-04-beckham-a-pattern-of-righteousness",
+    "kind": "talk",
+    "sample": "ão. Agradeço por termos um profeta vivo. Poucos dias depois de ser chamada como conselheira na Presidência Geral das Moças, a Primeira Presidência da Igreja se aproximou d"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 18,
+  "en_talks": 11,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "Presidencia General de las Mujeres Jóvenes",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 17,
+    "talks": 11,
+    "verses": 0,
+    "first_year": 1997,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1997,
+      "conference": "1997 October General Conference",
+      "talk": "1997-10-faust-the-sustaining-of-church-officers",
+      "para": 10,
+      "en": "… H. Pearce, and Carol B. Thomas as the Young Women general presidency. We also release all members of the …",
+      "tr": "… H. Pearce y Carol B. Thomas como presidencia general de las Mujeres Jóvenes. Tambien relevamos a todos los miembros …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-hales-statistical-report-2010",
+      "para": 9,
+      "en": "… *Norma Jane B. Smith,* former counselor in the Young Women general presidency; *Helen Fyans,* widow of Elder J. Thomas …",
+      "tr": "… B. Smith, ex primera consejera de la presidencia general de las Mujeres Jóvenes; Helen Fyans, viuda del élder J. …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-spannaus-faithful-to-the-end",
+      "para": 1,
+      "en": "It’s been a year since our Young Women General Presidency was called. How much has happened in this …",
+      "tr": "… que fuimos llamadas a servir en la Presidencia General de las Mujeres Jóvenes. ¡Y cuántas cosas han pasado en …"
+     }
+    ],
+    "earliest": {
+     "year": 1997,
+     "conference": "1997 October General Conference",
+     "talk": "1997-10-faust-the-sustaining-of-church-officers",
+     "para": 10,
+     "en": "… H. Pearce, and Carol B. Thomas as the Young Women general presidency. We also release all members of the …",
+     "tr": "… H. Pearce y Carol B. Thomas como presidencia general de las Mujeres Jóvenes. Tambien relevamos a todos los miembros …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

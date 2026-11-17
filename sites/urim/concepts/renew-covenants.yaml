@@ -1,0 +1,15 @@
+id: concept.renew-covenants
+category: Sacrament & Meetings
+en:
+  term: renew covenants
+  match:
+  - renew covenants
+sources: {}
+candidates:
+  pt:
+  - term: renovamos nossos convênios
+    hint: pulpit-glossary:verified
+  es:
+  - term: renovamos los convenios
+    hint: pulpit-glossary:verified
+related: []

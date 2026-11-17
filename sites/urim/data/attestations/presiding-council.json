@@ -1,0 +1,97 @@
+{
+ "id": "concept.presiding-council",
+ "pt": {
+  "en_paragraphs": 4,
+  "en_talks": 4,
+  "en_verses": 0,
+  "uncovered_paragraphs": 4,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "conselhos presidentes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.75,
+    "ratio": 1500.4,
+    "source": "2001-10-holland-like-a-watered-garden",
+    "kind": "talk",
+    "sample": "omada, mas posso imaginar as discussões que tiveram e p ato de fé requerido dos conselhos presidentes da igreja. O que aconteceria se a Igreja parasse com o levantamento de fundos e"
+   },
+   {
+    "term": "doze",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.75,
+    "ratio": 55.6,
+    "source": "2001-10-holland-like-a-watered-garden",
+    "kind": "talk",
+    "sample": "Eu não pertencia ao Quórum dos Doze quando essa importante decisão foi tomada, mas posso imaginar as discussões que"
+   },
+   {
+    "term": "quórum",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.75,
+    "ratio": 46.2,
+    "source": "2001-10-holland-like-a-watered-garden",
+    "kind": "talk",
+    "sample": "Eu não pertencia ao Quórum dos Doze quando essa importante decisão foi tomada, mas posso imaginar as discu"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 4,
+  "en_talks": 4,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "consejo presidente",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2005,
+    "last_year": 2009,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2005,
+      "conference": "2005 October General Conference",
+      "talk": "2005-10-faust-called-and-chosen",
+      "para": 18,
+      "en": "… before, a special love and harmony exist in the presiding councils of the Church for our President and for each …",
+      "tr": "… existe un amor y una armonía especiales en los consejos presidentes de la Iglesia por nuestro presidente y entre nosotros."
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 October General Conference",
+      "talk": "2009-10-eyring-be-ready",
+      "para": 17,
+      "en": "… quorum secretaries of long ago now sit in the presiding councils of the Church. They now read the minutes others …",
+      "tr": "… esos secretarios de quórumes de antaño ahora integran los consejos presidentes de la Iglesia y leen las actas que otros …"
+     }
+    ],
+    "earliest": {
+     "year": 2005,
+     "conference": "2005 October General Conference",
+     "talk": "2005-10-faust-called-and-chosen",
+     "para": 18,
+     "en": "… before, a special love and harmony exist in the presiding councils of the Church for our President and for each …",
+     "tr": "… existe un amor y una armonía especiales en los consejos presidentes de la Iglesia por nuestro presidente y entre nosotros."
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

@@ -1,0 +1,21 @@
+id: concept.plan-of-salvation
+category: Plan of Salvation
+en:
+  term: plan of salvation
+  match:
+  - plan of salvation
+sources:
+  GS:
+  - plan-of-salvation
+  Topics:
+  - plan-of-salvation
+  TtF:
+  - plan-of-salvation
+candidates:
+  pt:
+  - term: plano de salvação
+    hint: pulpit-glossary:verified
+  es:
+  - term: Plan de Salvación
+    hint: approved-terms
+related: []

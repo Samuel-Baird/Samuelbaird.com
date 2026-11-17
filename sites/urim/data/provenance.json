@@ -1,0 +1,19 @@
+{
+ "generated": "2026-11-02",
+ "pulpit_commit": "f57f3ff446",
+ "evidence": "church_official + exact alignment (talks); Church scripture verse pairs",
+ "stats": {
+  "pt": {
+   "talk_pairs_used": 63662,
+   "skipped_ai_generated": 63611,
+   "skipped_count_mismatch": 24079,
+   "scripture_verse_pairs": 41994
+  },
+  "es": {
+   "talk_pairs_used": 61988,
+   "skipped_ai_generated": 61780,
+   "skipped_count_mismatch": 27878,
+   "scripture_verse_pairs": 41995
+  }
+ }
+}

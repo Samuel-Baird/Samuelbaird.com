@@ -1,0 +1,19 @@
+id: concept.dispensation
+category: Restoration & Revelation
+en:
+  term: dispensation
+  match:
+  - dispensation
+sources:
+  GS:
+  - dispensation
+  Topics:
+  - dispensations
+candidates:
+  pt:
+  - term: dispensação
+    hint: pulpit-glossary:verified
+  es:
+  - term: dispensación
+    hint: approved-terms
+related: []

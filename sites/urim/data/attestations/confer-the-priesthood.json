@@ -1,0 +1,186 @@
+{
+ "id": "concept.confer-the-priesthood",
+ "pt": {
+  "en_paragraphs": 16,
+  "en_talks": 14,
+  "en_verses": 2,
+  "uncovered_paragraphs": 16,
+  "renderings": [
+   {
+    "term": "conferir o sacerdócio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2006,
+    "last_year": 2014,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2006,
+      "conference": "2006 October General Conference",
+      "talk": "2006-10-ellis-he-trusts-us",
+      "para": 4,
+      "en": "… of sins, confirm and confer the Holy Ghost, confer the priesthood and ordain others to priesthood offices, and perform temple …",
+      "tr": "… de pecados, confirmar e conferir o Espírito Santo, conferir o sacerdócio e ordenar outras pessoas aos ofícios do sacerdócio e …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 October General Conference",
+      "talk": "2014-10-monson-guided-safely-home",
+      "para": 14,
+      "en": "… servant on whom he has seen fit to confer the priesthood and power to act in his name. Always remember …",
+      "tr": "… [por Deus] a quem Ele achou por bem conferir o sacerdócio e o poder de agir em Seu nome. Lembrem-se …"
+     }
+    ],
+    "earliest": {
+     "year": 2006,
+     "conference": "2006 October General Conference",
+     "talk": "2006-10-ellis-he-trusts-us",
+     "para": 4,
+     "en": "… of sins, confirm and confer the Holy Ghost, confer the priesthood and ordain others to priesthood offices, and perform temple …",
+     "tr": "… de pecados, confirmar e conferir o Espírito Santo, conferir o sacerdócio e ordenar outras pessoas aos ofícios do sacerdócio e …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "confiro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 14,
+    "share_of_uncovered": 0.875,
+    "ratio": 1750.4,
+    "source": "2003-10-brough-young-menholders-of-keys",
+    "kind": "talk",
+    "sample": "A vós, meus conservos, em nome do Messias, eu confiro o Sacerdócio de Aarão, que possui as chaves do ministério de anjos e do evangel"
+   },
+   {
+    "term": "aarão",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 14,
+    "share_of_uncovered": 0.875,
+    "ratio": 875.2,
+    "source": "2003-10-brough-young-menholders-of-keys",
+    "kind": "talk",
+    "sample": "A vós, meus conservos, em nome do Messias, eu confiro o Sacerdócio de Aarão, que possui as chaves do ministério de anjos e do evangelho do arrependimento e"
+   },
+   {
+    "term": "conservos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 12,
+    "share_of_uncovered": 0.75,
+    "ratio": 1500.4,
+    "source": "2003-10-brough-young-menholders-of-keys",
+    "kind": "talk",
+    "sample": "A vós, meus conservos, em nome do Messias, eu confiro o Sacerdócio de Aarão, que possui as chaves do"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 19,
+  "en_talks": 16,
+  "en_verses": 2,
+  "uncovered_paragraphs": 18,
+  "renderings": [
+   {
+    "term": "conferir el sacerdocio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 3,
+    "talks": 3,
+    "verses": 0,
+    "first_year": 2006,
+    "last_year": 2014,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2006,
+      "conference": "2006 October General Conference",
+      "talk": "2006-10-ellis-he-trusts-us",
+      "para": 4,
+      "en": "… of sins, confirm and confer the Holy Ghost, confer the priesthood and ordain others to priesthood offices, and perform temple …",
+      "tr": "… los pecados; confirmar y conferir el Espíritu Santo; conferir el sacerdocio; ordenar a los oficios del sacerdocio y efectuar …"
+     },
+     {
+      "kind": "talk",
+      "year": 2008,
+      "conference": "2008 April General Conference",
+      "talk": "2008-04-monson-examples-of-righteousness",
+      "para": 12,
+      "en": "… servant on whom he has seen fit to confer the priesthood and power to act in his name. Always remember …",
+      "tr": "… escogido [de Dios], en quien ha considerado apropiado conferir el sacerdocio y el poder para actuar en Su nombre. Siempre …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 October General Conference",
+      "talk": "2014-10-monson-guided-safely-home",
+      "para": 14,
+      "en": "… servant on whom he has seen fit to confer the priesthood and power to act in his name. Always remember …",
+      "tr": "… [de Dios] en quien Él ha creído conveniente conferir el sacerdocio y el poder de actuar en Su nombre. Siempre …"
+     }
+    ],
+    "earliest": {
+     "year": 2006,
+     "conference": "2006 October General Conference",
+     "talk": "2006-10-ellis-he-trusts-us",
+     "para": 4,
+     "en": "… of sins, confirm and confer the Holy Ghost, confer the priesthood and ordain others to priesthood offices, and perform temple …",
+     "tr": "… los pecados; confirmar y conferir el Espíritu Santo; conferir el sacerdocio; ordenar a los oficios del sacerdocio y efectuar …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "confiero",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 16,
+    "share_of_uncovered": 0.889,
+    "ratio": 3556.4,
+    "source": "2003-10-brough-young-menholders-of-keys",
+    "kind": "talk",
+    "sample": "“Sobre vosotros, mis consiervos, en el nombre del Mesías, confiero el Sacerdocio de Aarón, el cual tiene las llaves del ministerio de ángeles, y d"
+   },
+   {
+    "term": "aarón",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 16,
+    "share_of_uncovered": 0.889,
+    "ratio": 1778.2,
+    "source": "2003-10-brough-young-menholders-of-keys",
+    "kind": "talk",
+    "sample": "re vosotros, mis consiervos, en el nombre del Mesías, confiero el Sacerdocio de Aarón, el cual tiene las llaves del ministerio de ángeles, y del evangelio de arrepen"
+   },
+   {
+    "term": "vosotros, mis consiervos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 14,
+    "share_of_uncovered": 0.778,
+    "ratio": 3111.9,
+    "source": "2003-10-brough-young-menholders-of-keys",
+    "kind": "talk",
+    "sample": "“Sobre vosotros, mis consiervos, en el nombre del Mesías, confiero el Sacerdocio de Aarón, el cual tiene las ll"
+   }
+  ]
+ }
+}

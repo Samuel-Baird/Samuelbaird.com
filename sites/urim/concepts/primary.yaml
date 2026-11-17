@@ -1,0 +1,17 @@
+id: concept.primary
+category: Organizations & Youth
+en:
+  term: Primary
+  match:
+  - Primary
+sources:
+  GH:
+  - 6-stake-leadership#title_number32
+candidates:
+  pt:
+  - term: Primária
+    hint: pulpit-glossary:verified
+  es:
+  - term: Primaria
+    hint: approved-terms
+related: []

@@ -1,0 +1,17 @@
+id: concept.ward-conference
+category: Councils & Conferences
+en:
+  term: ward conference
+  match:
+  - ward conference
+sources:
+  GH:
+  - 29-meetings-in-the-church#title_number6
+candidates:
+  pt:
+  - term: conferência da ala
+    hint: pulpit-glossary:standard
+  es:
+  - term: conferencia de barrio
+    hint: pulpit-glossary:verified
+related: []

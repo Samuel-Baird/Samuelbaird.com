@@ -1,0 +1,15 @@
+id: concept.ward-missionary
+category: Missionary Work
+en:
+  term: ward missionary
+  match:
+  - ward missionary
+sources: {}
+candidates:
+  pt:
+  - term: missionário de ala
+    hint: pulpit-glossary:verified
+  es:
+  - term: misionero de barrio
+    hint: pulpit-glossary:verified
+related: []

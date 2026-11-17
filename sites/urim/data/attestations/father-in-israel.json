@@ -1,0 +1,97 @@
+{
+ "id": "concept.father-in-israel",
+ "pt": {
+  "en_paragraphs": 4,
+  "en_talks": 4,
+  "en_verses": 0,
+  "uncovered_paragraphs": 4,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "eternidade",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.75,
+    "ratio": 75.0,
+    "source": "1991-10-andersen-bring-up-your-children-in-light-and-truth",
+    "kind": "talk",
+    "sample": "l, o Presidente Benson nos lembrou que o chamado mais importante, no tempo e na eternidade, é o de marido e pai. Passarei agora meu tempo na área Andersen da Igreja, um c"
+   },
+   {
+    "term": "israel",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.75,
+    "ratio": 66.7,
+    "source": "1991-10-andersen-bring-up-your-children-in-light-and-truth",
+    "kind": "talk",
+    "sample": "Em um maravilhoso discurso dirigido aos pais de Israel, o Presidente Benson nos lembrou que o chamado mais importante, no tempo e na e"
+   },
+   {
+    "term": "importante",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 21.5,
+    "source": "1991-10-andersen-bring-up-your-children-in-light-and-truth",
+    "kind": "talk",
+    "sample": "dirigido aos pais de Israel, o Presidente Benson nos lembrou que o chamado mais importante, no tempo e na eternidade, é o de marido e pai. Passarei agora meu tempo na áre"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 3,
+  "en_talks": 3,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "padre en Israel",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2014,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 October General Conference",
+      "talk": "2014-10-perry-finding-lasting-peace-and-building-eternal-families",
+      "para": 33,
+      "en": "Please remember, brethren, your sacred calling as a father in Israel—your most important calling in time and eternity—a calling …",
+      "tr": "… tengan presente, hermanos, su sagrado llamamiento como un padre en Israel —su llamamiento más importante en esta vida y por …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-bowen-miracles-angels-and-priesthood-power",
+      "para": 8,
+      "en": "… I would be blessed and magnified as a father in Israel.",
+      "tr": "… y que yo sería bendecido y magnificado como padre en Israel."
+     }
+    ],
+    "earliest": {
+     "year": 2014,
+     "conference": "2014 October General Conference",
+     "talk": "2014-10-perry-finding-lasting-peace-and-building-eternal-families",
+     "para": 33,
+     "en": "Please remember, brethren, your sacred calling as a father in Israel—your most important calling in time and eternity—a calling …",
+     "tr": "… tengan presente, hermanos, su sagrado llamamiento como un padre en Israel —su llamamiento más importante en esta vida y por …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

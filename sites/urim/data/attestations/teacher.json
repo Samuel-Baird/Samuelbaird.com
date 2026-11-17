@@ -1,0 +1,170 @@
+{
+ "id": "concept.teacher",
+ "pt": {
+  "en_paragraphs": 877,
+  "en_talks": 456,
+  "en_verses": 85,
+  "uncovered_paragraphs": 581,
+  "renderings": [
+   {
+    "term": "mestre",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 304,
+    "talks": 181,
+    "verses": 77,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Mosias 23:14",
+      "ref_en": "Mosiah 23:14",
+      "en": "And also trust no one to be your teacher nor your minister, except he be a man of God, walking in his ways and keeping his commandments.",
+      "tr": "E também, que em ninguém confieis para ser vosso mestre ou ministro, a não ser que seja um homem de Deus, que ande em seus caminhos e guarde os mandamentos.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/23?lang=por&id=p14"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-asay-one-small-step-for-a-man-one-giant-leap-for-mankind",
+      "para": 13,
+      "en": "… by “an appeal to the Bible” so long as teachers of religion understand the same passage of scripture so differently …",
+      "tr": "… por meio de “uma consulta à Bíblia”, enquanto os mestres de religião interpretarem as mesmas passagens da escritura tão diferentemente. …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 October General Conference",
+      "talk": "2011-10-callister-the-book-of-mormona-book-from-god",
+      "para": 2,
+      "en": "… ‘I’m ready to accept Jesus as a great moral teacher, but I don’t accept His claim to be God.’ …",
+      "tr": "… Dele: ‘Estou disposto a aceitar Jesus como um grande mestre moralista, mas não aceito Sua afirmação de que é Deus’.Essa …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-asay-one-small-step-for-a-man-one-giant-leap-for-mankind",
+     "para": 13,
+     "en": "… by “an appeal to the Bible” so long as teachers of religion understand the same passage of scripture so differently …",
+     "tr": "… por meio de “uma consulta à Bíblia”, enquanto os mestres de religião interpretarem as mesmas passagens da escritura tão diferentemente. …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "professores",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 96,
+    "share_of_uncovered": 0.384,
+    "ratio": 85.4,
+    "source": "1990-04-cutler-the-greatest-joy",
+    "kind": "talk",
+    "sample": "xemplo em nossa família, ao mostrar o caminho que seus filhos devem seguir; nos professores, conselheiros e nos muitos companheiros queridos desses anos todos."
+   },
+   {
+    "term": "professora",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 62,
+    "share_of_uncovered": 0.248,
+    "ratio": 99.2,
+    "source": "2025-10-holland-forsake-not-your-own-mercy",
+    "kind": "talk",
+    "sample": "Certa vez, uma professora ensinou que uma baleia — mesmo sendo grande — não conseguiria engolir uma pesso"
+   },
+   {
+    "term": "líderes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 50,
+    "share_of_uncovered": 0.2,
+    "ratio": 9.2,
+    "source": "1991-04-ballard-teach-the-children",
+    "kind": "talk",
+    "sample": "o, com o rosto sujo e buracos nos joelhos das calças. Verdadeiros professores e líderes vêem nas crianças o que elas poderão vir a ser. Vêem o valoroso missionário que"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 838,
+  "en_talks": 448,
+  "en_verses": 85,
+  "uncovered_paragraphs": 39,
+  "renderings": [
+   {
+    "term": "maestro",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 802,
+    "talks": 432,
+    "verses": 82,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 20:38",
+      "ref_en": "Doctrine and Covenants 20:38",
+      "en": "The duty of the elders, priests, teachers, deacons, and members of the church of Christ—An apostle is an elder, and it is his calling to baptize;",
+      "tr": "El deber de los élderes, presbíteros, maestros, diáconos y miembros de la Iglesia de Cristo: Un apóstol es un élder, y es suyo el llamamiento de bautizar;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/20?lang=spa&id=p38"
+     },
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 October General Conference",
+      "talk": "1996-10-cook-rejoice",
+      "para": 15,
+      "en": "… a recommend. Others want to be a good home teacher or visiting teacher but are distracted by the constant parade …",
+      "tr": "… no podrían obtener una recomendación. Otros quieren ser buenos maestros orientadores o buenas maestras visitantes, pero se distraen con un …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 October General Conference",
+      "talk": "2011-10-oaks-teachings-of-jesus",
+      "para": 1,
+      "en": "… who call themselves Christians praise Jesus as a great teacher but refrain from affirming His divinity. To address them, I …",
+      "tr": "… se denominan cristianos alaban a Jesús como un gran maestro, pero no afirman Su divinidad. Para dirigirme a ellos, …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-wirthlin-personal-integrity",
+     "para": 36,
+     "en": "… an instance where family members, a Christlike bishop, home teachers, visiting teachers, and ward members so lived.",
+     "tr": "… en el que una familia, un obispo cristiano, los maestros orientadores, las maestras visitantes y los miembros del barrio así …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "profesor",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.231,
+    "ratio": 461.7,
+    "source": "1991-10-haight-a-time-for-preparation",
+    "kind": "talk",
+    "sample": "lavos acodillados, por lo que usamos las zapatillas de básquetbol. Nombraron al profesor de química para que fuese nuestro entrenador porque una vez había visto un part"
+   }
+  ]
+ }
+}

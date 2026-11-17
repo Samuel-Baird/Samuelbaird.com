@@ -1,0 +1,112 @@
+{
+ "id": "concept.ordinance-worker",
+ "pt": {
+  "en_paragraphs": 16,
+  "en_talks": 11,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "oficiante",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 16,
+    "talks": 11,
+    "verses": 0,
+    "first_year": 1994,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1994,
+      "conference": "1994 April General Conference",
+      "talk": "1994-04-melchin-decisions",
+      "para": 1,
+      "en": "… two great counselors, along with their companions, and dedicated ordinance workers, some serving as full-time missionaries. The area is …",
+      "tr": "… dois grandes conselheiros, juntamente com suas esposas e com oficiantes dedicados, alguns servindo como missionários de tempo integral. Membros de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-richards-the-power-of-godliness",
+      "para": 29,
+      "en": "… … is a sublime activity for a family.”[^20] As ordinance workers, in addition to receiving ordinances for your ancestors, …",
+      "tr": "… (…) é uma atividade sublime para uma família”.[^20] Como oficiantes, além de receber as ordenanças por seus antepassados, vocês …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-eyre-know-who-you-really-are",
+      "para": 23,
+      "en": "… a recommendation for a brother to serve as an ordinance worker in the temple. After explaining what a wonderful ordinance …",
+      "tr": "… enviei uma recomendação para que um irmão servisse como oficiante de ordenanças no templo. Depois de explicar o quão maravilhoso …"
+     }
+    ],
+    "earliest": {
+     "year": 1994,
+     "conference": "1994 April General Conference",
+     "talk": "1994-04-melchin-decisions",
+     "para": 1,
+     "en": "… two great counselors, along with their companions, and dedicated ordinance workers, some serving as full-time missionaries. The area is …",
+     "tr": "… dois grandes conselheiros, juntamente com suas esposas e com oficiantes dedicados, alguns servindo como missionários de tempo integral. Membros de …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 15,
+  "en_talks": 11,
+  "en_verses": 0,
+  "uncovered_paragraphs": 15,
+  "renderings": [
+   {
+    "term": "obrero(a) de ordenanzas",
+    "evidence": [],
+    "hint": "pulpit-glossary:verified"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "obreros",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.6,
+    "ratio": 1200.3,
+    "source": "2009-04-costa-priesthood-responsibilities",
+    "kind": "talk",
+    "sample": "nte. No sólo prestan servicio en sus llamamientos del barrio, sino también como obreros de las ordenanzas en el Templo de São Paulo, Brasil, cada viernes; allí sirven"
+   },
+   {
+    "term": "ordenanzas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.867,
+    "ratio": 41.3,
+    "source": "2006-04-scott-now-is-the-time-to-serve-a-mission",
+    "kind": "talk",
+    "sample": "staron servicio devoto en el templo, él como sellador y ella como obrera de las ordenanzas. Sin embargo, cuando yo era joven no tenía forma de juzgar personalmente la imp"
+   },
+   {
+    "term": "obrera",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.267,
+    "ratio": 1066.9,
+    "source": "2006-04-scott-now-is-the-time-to-serve-a-mission",
+    "kind": "talk",
+    "sample": "Iglesia y prestaron servicio devoto en el templo, él como sellador y ella como obrera de las ordenanzas. Sin embargo, cuando yo era joven no tenía forma de juzgar pe"
+   }
+  ]
+ }
+}

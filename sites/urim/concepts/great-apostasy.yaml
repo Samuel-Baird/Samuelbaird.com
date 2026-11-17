@@ -1,0 +1,21 @@
+id: concept.great-apostasy
+category: Restoration & Revelation
+en:
+  term: Great Apostasy
+  match:
+  - Great Apostasy
+sources:
+  GS:
+  - apostasy
+  Topics:
+  - apostasy
+  TtF:
+  - apostasy
+candidates:
+  pt:
+  - term: Grande Apostasia
+    hint: pulpit-glossary:verified
+  es:
+  - term: Gran Apostasía
+    hint: pulpit-glossary:verified
+related: []

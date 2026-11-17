@@ -1,0 +1,17 @@
+id: concept.young-men
+category: Organizations & Youth
+en:
+  term: Young Men
+  match:
+  - Young Men
+sources:
+  GH:
+  - 10-aaronic-priesthood#title_number30
+candidates:
+  pt:
+  - term: Rapazes
+    hint: pulpit-glossary:verified
+  es:
+  - term: Hombres Jóvenes
+    hint: approved-terms
+related: []

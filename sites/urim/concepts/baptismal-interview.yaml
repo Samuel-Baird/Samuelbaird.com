@@ -1,0 +1,15 @@
+id: concept.baptismal-interview
+category: Missionary Work
+en:
+  term: baptismal interview
+  match:
+  - baptismal interview
+sources: {}
+candidates:
+  pt:
+  - term: entrevista batismal
+    hint: pulpit-glossary:standard
+  es:
+  - term: entrevista bautismal
+    hint: pulpit-glossary:verified
+related: []

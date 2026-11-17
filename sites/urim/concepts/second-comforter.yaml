@@ -1,0 +1,17 @@
+id: concept.second-comforter
+category: Deity
+en:
+  term: Second Comforter
+  match:
+  - Second Comforter
+sources:
+  GS:
+  - second-comforter
+candidates:
+  pt: []
+  es:
+  - term: Segundo Consolador
+    hint: pulpit-glossary:verified
+related: []
+note: Distinct doctrinal concept from the Holy Ghost (the "first" Comforter) — a personal appearance of
+  Christ to the faithful

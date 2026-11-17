@@ -1,0 +1,171 @@
+{
+ "id": "concept.sacrament-meeting",
+ "pt": {
+  "en_paragraphs": 254,
+  "en_talks": 181,
+  "en_verses": 2,
+  "uncovered_paragraphs": 51,
+  "renderings": [
+   {
+    "term": "reunião sacramental",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 205,
+    "talks": 151,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-monson-days-never-to-be-forgotten",
+      "para": 33,
+      "en": "… and I had been invited to attend the branch sacrament meeting and to speak to the members there. As we …",
+      "tr": "… sido convidados, minha mulher e eu, a assistir à reunião sacramental do ramo e falar aos membros de lá. Passamos …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 October General Conference",
+      "talk": "2016-10-meurs-the-sacrament-can-help-us-become-holy",
+      "para": 35,
+      "en": "… reverence and revelation that can accompany the beginning of sacrament meeting?",
+      "tr": "… ambiente de revelação que podem permear o início da reunião sacramental?"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-kearon-about-his-business",
+      "para": 0,
+      "en": "… adult friends in my newfound faith. During the first sacrament meeting following my baptism, I was asked to come to …",
+      "tr": "… adultos solteiros em minha recém-descoberta fé. Durante a primeira reunião sacramental após meu batismo, pediram-me que eu fosse à frente …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 October General Conference",
+     "talk": "1990-10-monson-days-never-to-be-forgotten",
+     "para": 33,
+     "en": "… and I had been invited to attend the branch sacrament meeting and to speak to the members there. As we …",
+     "tr": "… sido convidados, minha mulher e eu, a assistir à reunião sacramental do ramo e falar aos membros de lá. Passamos …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "reuniões sacramentais",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 42,
+    "share_of_uncovered": 0.824,
+    "ratio": 823.7,
+    "source": "1990-04-faust-gratitude-as-a-saving-principle",
+    "kind": "talk",
+    "sample": "que podemos encontrar pessoalmente no casulo espiritual de nossos lares, nossas reuniões sacramentais e nosso sagrado templo. Nesses ambientes pacíficos, nossa alma repousa. Temos a"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 249,
+  "en_talks": 173,
+  "en_verses": 2,
+  "uncovered_paragraphs": 6,
+  "renderings": [
+   {
+    "term": "reunión sacramental",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 244,
+    "talks": 170,
+    "verses": 1,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 46:4",
+      "ref_en": "Doctrine and Covenants 46:4",
+      "en": "Ye are also commanded not to cast any one who belongeth to the church out of your sacrament meetings; nevertheless, if any have trespassed, let him not partake until he makes reconciliation.",
+      "tr": "También se os manda no desechar de vuestras reuniones sacramentales a ninguno que pertenezca a la iglesia; sin embargo, si alguien ha transgredido, no le permitáis participar sino hasta que se haya reconciliado.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/46?lang=spa&id=p4"
+     },
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 April General Conference",
+      "talk": "1991-04-lawrence-sunday-worship-service",
+      "para": 22,
+      "en": "That we may make sacrament meeting a joyful time for worshipping our Savior, I pray.",
+      "tr": "Ruego que podamos sentir en la reunión sacramental momentos de gozo adorando a nuestro Salvador."
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-monson-be-strong-and-of-a-good-courage",
+      "para": 12,
+      "en": "… courage. A friend told of a spiritual and faith-promoting sacrament meeting she and her husband had attended in their ward. …",
+      "tr": "… tener valor interior. Una amiga me comentó de una reunión sacramental espiritual y fortalecedora a la que ella y su …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 October General Conference",
+     "talk": "1990-10-monson-days-never-to-be-forgotten",
+     "para": 33,
+     "en": "… and I had been invited to attend the branch sacrament meeting and to speak to the members there. As we …",
+     "tr": "… y yo habíamos sido invitados a asistir a la reunión sacramental de la rama y a hablarles a los miembros. …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "citó",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.333,
+    "ratio": 266.7,
+    "source": "1991-04-goaslind-yagottawanna",
+    "kind": "talk",
+    "sample": "s, a veces en forma radical y otras veces gradualmente. El élder Packer una vez citó a Lady Astor: “Siempre le temí a la vejez … porque uno no puede hacer todo lo q"
+   },
+   {
+    "term": "reunión",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.5,
+    "ratio": 37.0,
+    "source": "2012-10-clarke-blessings-of-the-sacrament",
+    "kind": "talk",
+    "sample": ", durante la Santa Cena podemos sentir el perdón de los pecados. Si antes de la reunión hemos tomado tiempo para arrepentirnos, podemos salir sintiéndonos limpios y pu"
+   },
+   {
+    "term": "liahona, julio",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.333,
+    "ratio": 111.1,
+    "source": "1991-04-goaslind-yagottawanna",
+    "kind": "talk",
+    "sample": "Nadie puede adorar en vuestro nombre, sino que debéis hacerlo vosotros mismos (Liahona, julio de 1978, pág. 5)."
+   }
+  ]
+ }
+}

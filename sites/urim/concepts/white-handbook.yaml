@@ -1,0 +1,13 @@
+id: concept.white-handbook
+category: Missionary Work
+en:
+  term: white handbook
+  match:
+  - white handbook
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: manual blanco
+    hint: pulpit-glossary:verified
+related: []

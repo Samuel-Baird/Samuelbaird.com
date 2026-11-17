@@ -1,0 +1,15 @@
+id: concept.student-ward
+category: Church Units & Facilities
+en:
+  term: student ward
+  match:
+  - student ward
+sources: {}
+candidates:
+  pt:
+  - term: ala de estudantes
+    hint: pulpit-glossary:standard
+  es:
+  - term: barrio estudiantil
+    hint: pulpit-glossary:verified
+related: []

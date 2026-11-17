@@ -1,0 +1,15 @@
+id: concept.priesthood-interview
+category: Priesthood Authority & Ordinances
+en:
+  term: priesthood interview
+  match:
+  - priesthood interview
+sources: {}
+candidates:
+  pt:
+  - term: entrevista do sacerdócio
+    hint: pulpit-glossary:standard
+  es:
+  - term: entrevista del sacerdocio
+    hint: pulpit-glossary:verified
+related: []

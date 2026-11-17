@@ -1,0 +1,15 @@
+id: concept.presiding-authority
+category: Callings & Sustaining
+en:
+  term: presiding authority
+  match:
+  - presiding authority
+sources: {}
+candidates:
+  pt:
+  - term: autoridade presidente
+    hint: pulpit-glossary:verified
+  es:
+  - term: autoridad que presidía
+    hint: pulpit-glossary:verified
+related: []

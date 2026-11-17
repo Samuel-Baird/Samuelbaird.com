@@ -1,0 +1,92 @@
+{
+ "id": "concept.adult-session",
+ "pt": {
+  "en_paragraphs": 3,
+  "en_talks": 3,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "sessão de adultos",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2005,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2005,
+      "conference": "2005 April General Conference",
+      "talk": "2005-04-edgley-a-still-small-voice-and-a-throbbing-heart",
+      "para": 3,
+      "en": "At the conclusion of the Saturday evening adult session, this man came rushing to the podium and, …",
+      "tr": "No término da sessão de adultos da noite de sábado, aquele homem veio correndo até …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-chigbundu-spiritual-immunity",
+      "para": 17,
+      "en": "… a stake conference in Côte d’Ivoire. After the Saturday adult session, the stake president and I decided to visit …",
+      "tr": "… de estaca na Costa do Marfim. Depois da sessão de adultos no sábado, o presidente da estaca e eu decidimos …"
+     }
+    ],
+    "earliest": {
+     "year": 2005,
+     "conference": "2005 April General Conference",
+     "talk": "2005-04-edgley-a-still-small-voice-and-a-throbbing-heart",
+     "para": 3,
+     "en": "At the conclusion of the Saturday evening adult session, this man came rushing to the podium and, …",
+     "tr": "No término da sessão de adultos da noite de sábado, aquele homem veio correndo até …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 3,
+  "en_talks": 3,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "sesión para los adultos",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2005,
+    "last_year": 2005,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2005,
+      "conference": "2005 April General Conference",
+      "talk": "2005-04-edgley-a-still-small-voice-and-a-throbbing-heart",
+      "para": 3,
+      "en": "At the conclusion of the Saturday evening adult session, this man came rushing to the podium and, …",
+      "tr": "Al final de la sesión para los adultos celebrada aquel mismo sábado por la tarde, ese …"
+     }
+    ],
+    "earliest": {
+     "year": 2005,
+     "conference": "2005 April General Conference",
+     "talk": "2005-04-edgley-a-still-small-voice-and-a-throbbing-heart",
+     "para": 3,
+     "en": "At the conclusion of the Saturday evening adult session, this man came rushing to the podium and, …",
+     "tr": "Al final de la sesión para los adultos celebrada aquel mismo sábado por la tarde, ese …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

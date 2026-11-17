@@ -1,0 +1,195 @@
+{
+ "id": "concept.church-news",
+ "pt": {
+  "en_paragraphs": 105,
+  "en_talks": 97,
+  "en_verses": 0,
+  "uncovered_paragraphs": 5,
+  "renderings": [
+   {
+    "term": "Church News",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 100,
+    "talks": 94,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 October General Conference",
+      "talk": "1991-10-hinckley-christ-is-the-light-to-all-mankind",
+      "para": 4,
+      "en": "… sword’” (“Myriad of Lights to Remind of Savior,” *Church News,* 4 Dec. 1982, p. 10). But even to …",
+      "tr": "… evangelho por meio da coerção e da espadaʼ” (*Church News*, 4 de dezembro de 1982, p. 10). Mesmo …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-taylor-am-i-a-child-of-god",
+      "para": 29,
+      "en": "… a Child of God’ Teaches Children Their Divine Identity](https://www.lds.org/church/news/2018-primary-theme-i-am-a-child-of-god-teaches-children-their-divine-identity),” Church News section of LDS.org, Jan. 5, 2018, news.lds.org. …",
+      "tr": "… ensina as crianças sobre sua identidade divina], seção do Church News do LDS.org, 5 de janeiro de 2018, news.LDS.org.\n[^27]: …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-rowe-choose-jesus-christ-as-your-guide",
+      "para": 26,
+      "en": "… Oaks Says in First Interview as Church President](https://www.thechurchnews.com/leaders/2025/10/16/president-dallin-h-oaks-first-interview-as-church-president),” *Church News*, Oct. 16, 2025, thechurchnews.com.",
+      "tr": "… Oaks na primeira entrevista como presidente da Igreja](https://www.thechurchnews.com/leaders/2025/10/16/president-dallin-h-oaks-first-interview-as-church-president)\", *Church News*, 16 de outubro de 2025, thechurchnews.com."
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-faust-gratitude-as-a-saving-principle",
+     "para": 32,
+     "en": "… here; yours is the part of cherishing them” (*Church News,* 14 June 1969, p. 2). As we come …",
+     "tr": "… obtê-las, elas estão aqui; vossa parte é apreciá-las.” (*Church News*, 14 de junho de 1969, p. 2.) Chegando …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "lds",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.4,
+    "ratio": 145.5,
+    "source": "2007-04-burton-if-these-old-walls-could-talk",
+    "kind": "talk",
+    "sample": "arks by President Gordon B. Hinckley\"*, 1º de outubro de 2004; ver www.newsroom.lds.org.\n[^2]: Ver Alma 46:36; 62:4.\n[^3]: Em Conference Report, outubro de 1918, p"
+   },
+   {
+    "term": "liahona*, janeiro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.4,
+    "ratio": 106.7,
+    "source": "2007-04-burton-if-these-old-walls-could-talk",
+    "kind": "talk",
+    "sample": "n* maio de 1985, p. 11.\n[^7]: \"Enfrentar com Firmeza as Artimanhas do Mundo, *A Liahona*, janeiro de 1996, p. 114; ver também *\"A Família — Proclamação ao Mundo\"*, *A Liahona*,"
+   },
+   {
+    "term": "proclamação",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.4,
+    "ratio": 76.2,
+    "source": "2007-04-burton-if-these-old-walls-could-talk",
+    "kind": "talk",
+    "sample": "manhas do Mundo, *A Liahona*, janeiro de 1996, p. 114; ver também *\"A Família — Proclamação ao Mundo\"*, *A Liahona*, outubro de 2004, p. 49."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 96,
+  "en_talks": 91,
+  "en_verses": 0,
+  "uncovered_paragraphs": 8,
+  "renderings": [
+   {
+    "term": "Church News",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 88,
+    "talks": 84,
+    "verses": 0,
+    "first_year": 1991,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 October General Conference",
+      "talk": "1991-10-oaks-joy-and-mercy",
+      "para": 37,
+      "en": "We appreciate the work of our *Church News* and our Church magazines, which share worthy and …",
+      "tr": "… labor de aquellos que trabajan en nuestro periódico, el Church News, y en las revistas de la Iglesia al …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-durrant-teaching-in-the-homea-joyful-and-sacred-responsibility",
+      "para": 50,
+      "en": "… Callister, “[Most Influential Teacher—Emeritus Seventy Pays Tribute to Father](https://www.lds.org/church/news/most-influential-teacher-emeritus-seventy-pays-tribute-to-father),” Aug. 29, 2016, news.lds.org.\n[^16]: Russell M. Nelson, “[Set …",
+      "tr": "… \"[Most Influential Teacher—Emeritus Seventy Pays Tribute to Father](https://www.lds.org/church/news/most-influential-teacher-emeritus-seventy-pays-tribute-to-father)\", sección Church News de LDS.org, 29 de agosto de 2016, LDS.org/news.\n[^16]: …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-causs-love-all-love-each",
+      "para": 36,
+      "en": "[^1]: See Sara Jane Weaver, host, Church News podcast, episode 269, “Elder Gérald Caussé on Serving as …",
+      "tr": "[^1]: Véase Sara Jane Weaver, presentadora, pódcast de Church News, episodio 269, \"Elder Gérald Caussé on Serving as …"
+     }
+    ],
+    "earliest": {
+     "year": 1991,
+     "conference": "1991 October General Conference",
+     "talk": "1991-10-hinckley-christ-is-the-light-to-all-mankind",
+     "para": 4,
+     "en": "… sword’” (“Myriad of Lights to Remind of Savior,” *Church News,* 4 Dec. 1982, p. 10). But even to …",
+     "tr": "… intentado reemplazar Su evangelio con coerción y violencia’” (Church News, 4 de diciembre de 1982, pág. 10). Pero …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "lds.org/church",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.375,
+    "ratio": 1500.4,
+    "source": "2015-04-stephens-the-family-is-of-god",
+    "kind": "talk",
+    "sample": "son Teaches\", sección de Noticias de la Iglesia de lds.org, 28 de enero de 2014[lds.org/church/news/god-wants-his-children-to-return-to-him-elder-nelson-teaches](https://www."
+   },
+   {
+    "term": "liahona",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.75,
+    "ratio": 34.1,
+    "source": "1996-10-oaks-always-have-his-spirit",
+    "kind": "talk",
+    "sample": "utos de la hermandad con los santos” (“Un preciado patrimonio”, James E. Faust, Liahona, enero de 1993, pág. 97). Hagámonos dignos de la promesa de nuestro Salvador de"
+   },
+   {
+    "term": "news",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.5,
+    "ratio": 166.7,
+    "source": "2007-04-burton-if-these-old-walls-could-talk",
+    "kind": "talk",
+    "sample": "fing. Remarks by President Gordon B. Hinckley\", 1 de octubre de 2004, véase www.news room.lds.org\n[^2]: Alma 46:36; 62:4.\n[^3]: En *Conference Report,* octubre de 1"
+   }
+  ]
+ }
+}

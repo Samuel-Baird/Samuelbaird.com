@@ -1,0 +1,15 @@
+id: concept.discussion
+category: Missionary Work
+en:
+  term: discussion
+  match:
+  - discussion
+sources: {}
+candidates:
+  pt:
+  - term: palestra
+    hint: pulpit-glossary:verified
+  es:
+  - term: charla
+    hint: pulpit-glossary:verified
+related: []

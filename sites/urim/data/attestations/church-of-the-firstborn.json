@@ -1,0 +1,118 @@
+{
+ "id": "concept.church-of-the-firstborn",
+ "pt": {
+  "en_paragraphs": 3,
+  "en_talks": 3,
+  "en_verses": 10,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "Igreja do Primogênito",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 3,
+    "talks": 3,
+    "verses": 10,
+    "first_year": 2016,
+    "last_year": 2023,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 93:22",
+      "ref_en": "Doctrine and Covenants 93:22",
+      "en": "And all those who are begotten through me are partakers of the glory of the same, and are the church of the Firstborn.",
+      "tr": "E todos os que são gerados por meu intermédio são participantes da mesma glória e são a igreja do Primogênito.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/93?lang=por&id=p22"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 October General Conference",
+      "talk": "2016-10-eyring-that-he-may-become-strong-also",
+      "para": 8,
+      "en": "… them, to commune with the general assembly and church of the Firstborn, and to enjoy the communion and presence …",
+      "tr": "… céus, de comunicar-se com a assembleia geral e igreja do Primogênito; e usufruir a comunhão e presença de Deus, …"
+     },
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 April General Conference",
+      "talk": "2017-04-eyring-walk-with-me",
+      "para": 7,
+      "en": "… them, to commune with the general assembly and church of the Firstborn, and to enjoy the communion and presence …",
+      "tr": "… céus, de comunicar-se com a assembleia geral e igreja do Primogênito; e usufruir a comunhão e presença de Deus, …"
+     }
+    ],
+    "earliest": {
+     "year": 2016,
+     "conference": "2016 October General Conference",
+     "talk": "2016-10-eyring-that-he-may-become-strong-also",
+     "para": 8,
+     "en": "… them, to commune with the general assembly and church of the Firstborn, and to enjoy the communion and presence …",
+     "tr": "… céus, de comunicar-se com a assembleia geral e igreja do Primogênito; e usufruir a comunhão e presença de Deus, …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 3,
+  "en_talks": 3,
+  "en_verses": 10,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "iglesia del Primogénito",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 3,
+    "talks": 3,
+    "verses": 9,
+    "first_year": 2016,
+    "last_year": 2023,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 93:22",
+      "ref_en": "Doctrine and Covenants 93:22",
+      "en": "And all those who are begotten through me are partakers of the glory of the same, and are the church of the Firstborn.",
+      "tr": "y todos los que por medio de mí son engendrados, son partícipes de esa gloria, y son la iglesia del Primogénito.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/93?lang=spa&id=p22"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 October General Conference",
+      "talk": "2016-10-eyring-that-he-may-become-strong-also",
+      "para": 8,
+      "en": "… them, to commune with the general assembly and church of the Firstborn, and to enjoy the communion and presence …",
+      "tr": "… los cielos, comunicarse con la asamblea general e iglesia del Primogénito, y gozar de la comunión y presencia de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 April General Conference",
+      "talk": "2017-04-eyring-walk-with-me",
+      "para": 7,
+      "en": "… them, to commune with the general assembly and church of the Firstborn, and to enjoy the communion and presence …",
+      "tr": "… los cielos, comunicarse con la asamblea general e iglesia del Primogénito, y gozar de la comunión y presencia de …"
+     }
+    ],
+    "earliest": {
+     "year": 2016,
+     "conference": "2016 October General Conference",
+     "talk": "2016-10-eyring-that-he-may-become-strong-also",
+     "para": 8,
+     "en": "… them, to commune with the general assembly and church of the Firstborn, and to enjoy the communion and presence …",
+     "tr": "… los cielos, comunicarse con la asamblea general e iglesia del Primogénito, y gozar de la comunión y presencia de …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

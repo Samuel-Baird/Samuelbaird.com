@@ -1,0 +1,106 @@
+{
+ "id": "concept.intermediate-hymn",
+ "pt": {
+  "en_paragraphs": 3,
+  "en_talks": 3,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "hino",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 235.4,
+    "source": "1996-10-haight-prophets-are-inspired",
+    "kind": "talk",
+    "sample": "Cantamos um belo hino, “Alegres Cantemos”, composto por W. W. Phelps (*Hinos*, n° 3). Esse hino foi c"
+   },
+   {
+    "term": "intermediário",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 2667.3,
+    "source": "2015-10-montoya-tested-and-temptedbut-helped",
+    "kind": "talk",
+    "sample": "Quando estávamos cantando o hino intermediário, tive a forte impressão de que alguém estava me observando. Pensei comigo: “Há"
+   },
+   {
+    "term": "após",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 35.1,
+    "source": "1996-10-haight-prophets-are-inspired",
+    "kind": "talk",
+    "sample": "es Cantemos”, composto por W. W. Phelps (*Hinos*, n° 3). Esse hino foi composto após um incidente ocorrido em Independence, Estado de Missouri, onde o Irmão Phelps"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 4,
+  "en_talks": 3,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "himno intermedio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 4,
+    "talks": 3,
+    "verses": 0,
+    "first_year": 2005,
+    "last_year": 2019,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2005,
+      "conference": "2005 April General Conference",
+      "talk": "2005-04-bednar-the-tender-mercies-of-the-lord",
+      "para": 1,
+      "en": "… Savior. Then we all stood together to sing the intermediate hymn that previously had been announced by President Gordon B. …",
+      "tr": "… procedimos a ponernos todos de pie para cantar el himno intermedio que previamente había anunciado el presidente Gordon B. Hinckley. …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 October General Conference",
+      "talk": "2015-10-montoya-tested-and-temptedbut-helped",
+      "para": 10,
+      "en": "When we were singing the intermediate hymn, I felt a strong impression that someone was …",
+      "tr": "Cuando nos paramos para cantar el himno intermedio, sentí la fuerte impresión de que alguien me …"
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 October General Conference",
+      "talk": "2019-10-nelson-spiritual-treasures",
+      "para": 0,
+      "en": "… beautiful music. As we all stood to sing that intermediate hymn, “We Thank Thee, O God, for a Prophet,” …",
+      "tr": "… música. Al ponernos todos de pie para cantar el himno intermedio “Te damos, Señor, nuestras gracias”, me vinieron a la …"
+     }
+    ],
+    "earliest": {
+     "year": 2005,
+     "conference": "2005 April General Conference",
+     "talk": "2005-04-bednar-the-tender-mercies-of-the-lord",
+     "para": 1,
+     "en": "… Savior. Then we all stood together to sing the intermediate hymn that previously had been announced by President Gordon B. …",
+     "tr": "… procedimos a ponernos todos de pie para cantar el himno intermedio que previamente había anunciado el presidente Gordon B. Hinckley. …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

@@ -1,0 +1,25 @@
+id: concept.holy-ghost
+category: Deity
+en:
+  term: Holy Ghost
+  match:
+  - Holy Ghost
+sources:
+  GS:
+  - holy-ghost
+  Topics:
+  - holy-ghost
+  TtF:
+  - holy-ghost
+  GH:
+  - 18-priesthood-ordinances-and-blessings#title_number23
+candidates:
+  pt:
+  - term: Espírito Santo
+    hint: pulpit-glossary:verified
+  es:
+  - term: Espiritu Santo
+    hint: approved-terms
+  - term: Espíritu Santo
+    hint: pulpit-glossary:verified
+related: []

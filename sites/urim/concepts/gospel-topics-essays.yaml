@@ -1,0 +1,13 @@
+id: concept.gospel-topics-essays
+category: Education & Publications
+en:
+  term: Gospel Topics Essays
+  match:
+  - Gospel Topics Essays
+sources: {}
+candidates:
+  pt:
+  - term: ensaios de Tópicos do Evangelho
+    hint: pulpit-glossary:standard
+  es: []
+related: []

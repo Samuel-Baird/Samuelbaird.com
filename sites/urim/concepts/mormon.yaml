@@ -1,0 +1,21 @@
+id: concept.mormon
+category: The Church & Members
+en:
+  term: Mormon
+  match:
+  - Mormon
+sources:
+  GS:
+  - mormons
+  Topics:
+  - mormons
+candidates:
+  pt:
+  - term: mórmon
+    hint: pulpit-glossary:verified
+  es:
+  - term: Mormón
+    hint: approved-terms
+related: []
+note: Retired from official usage (2018 style guidance) but common in the historical talks this vault
+  translates; render per the source talk's era

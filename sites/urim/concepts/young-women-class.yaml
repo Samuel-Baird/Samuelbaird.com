@@ -1,0 +1,15 @@
+id: concept.young-women-class
+category: Sacrament & Meetings
+en:
+  term: Young Women class
+  match:
+  - Young Women class
+sources: {}
+candidates:
+  pt:
+  - term: classe das Moças
+    hint: pulpit-glossary:standard
+  es:
+  - term: clase de las Mujeres Jóvenes
+    hint: pulpit-glossary:verified
+related: []

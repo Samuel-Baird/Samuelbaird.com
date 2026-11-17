@@ -1,0 +1,15 @@
+id: concept.quorum-president
+category: Priesthood Offices & Quorums
+en:
+  term: quorum president
+  match:
+  - quorum president
+sources: {}
+candidates:
+  pt:
+  - term: presidente do quórum
+    hint: pulpit-glossary:verified
+  es:
+  - term: presidente del quórum
+    hint: pulpit-glossary:verified
+related: []

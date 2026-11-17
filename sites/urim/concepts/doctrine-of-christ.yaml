@@ -1,0 +1,17 @@
+id: concept.doctrine-of-christ
+category: Faith & Gospel Principles
+en:
+  term: doctrine of Christ
+  match:
+  - doctrine of Christ
+sources:
+  GS:
+  - doctrine-of-christ
+candidates:
+  pt: []
+  es:
+  - term: doctrina de Cristo
+    hint: approved-terms
+related: []
+note: 'Technical term (2 Nephi 31) for the specific sequence: faith, repentance, baptism, gift of the
+  Holy Ghost, enduring to the end'

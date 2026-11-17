@@ -1,0 +1,170 @@
+{
+ "id": "concept.tithing-settlement",
+ "pt": {
+  "en_paragraphs": 5,
+  "en_talks": 5,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "acerto do dízimo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 3,
+    "talks": 3,
+    "verses": 0,
+    "first_year": 2003,
+    "last_year": 2011,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 October General Conference",
+      "talk": "2003-10-parkin-choosing-charity-that-good-part",
+      "para": 23,
+      "en": "… December in Sunday School, our teacher suggested that at tithing settlement time we give the Lord a private accounting of …",
+      "tr": "… Dominical, nosso professor sugeriu que, por ocasião do acerto do dízimo, fizéssemos ao Senhor, em particular, o relatório de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2007,
+      "conference": "2007 April General Conference",
+      "talk": "2007-04-hinckley-let-virtue-garnish-thy-thoughts-unceasingly",
+      "para": 20,
+      "en": "… the street to the home of Bishop Duncan for tithing settlement. The bishop did not have an office in …",
+      "tr": "… rua à casa do bispo Duncan para o acerto do dízimo. O bispo não tinha uma sala no prédio …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-pratt-the-lords-richest-blessings",
+      "para": 14,
+      "en": "… other income, and then take them with us to tithing settlement so they know of our example and our love …",
+      "tr": "… fontes de renda, depois, levemo-nos conosco para o acerto do dízimo, para que eles saibam por meio de nosso …"
+     }
+    ],
+    "earliest": {
+     "year": 2003,
+     "conference": "2003 October General Conference",
+     "talk": "2003-10-parkin-choosing-charity-that-good-part",
+     "para": 23,
+     "en": "… December in Sunday School, our teacher suggested that at tithing settlement time we give the Lord a private accounting of …",
+     "tr": "… Dominical, nosso professor sugeriu que, por ocasião do acerto do dízimo, fizéssemos ao Senhor, em particular, o relatório de …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 8,
+  "en_talks": 6,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "ajuste de diezmo",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 6,
+    "talks": 5,
+    "verses": 0,
+    "first_year": 1998,
+    "last_year": 2011,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1998,
+      "conference": "1998 October General Conference",
+      "talk": "1998-10-faust-opening-the-windows-of-heaven",
+      "para": 3,
+      "en": "… when I was serving as a young bishop. One tithing settlement, President Moyle came in and declared, “Bishop, this …",
+      "tr": "… mas acerca del espíritu del diezmo. En un ajuste de diezmos, el presidente Moyle declaró: “Obispo, este es mi …"
+     },
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 October General Conference",
+      "talk": "2003-10-parkin-choosing-charity-that-good-part",
+      "para": 23,
+      "en": "… December in Sunday School, our teacher suggested that at tithing settlement time we give the Lord a private accounting of …",
+      "tr": "… Escuela Dominical, nuestro maestro sugirió que durante el ajuste de diezmos diéramos al Señor un informe privado de nuestro estudio …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-pratt-the-lords-richest-blessings",
+      "para": 14,
+      "en": "… other income, and then take them with us to tithing settlement so they know of our example and our love …",
+      "tr": "… u otros ingresos, y luego llevémoslos a los ajustes de diezmos para que vean nuestro ejemplo y sepan de nuestro …"
+     }
+    ],
+    "earliest": {
+     "year": 1998,
+     "conference": "1998 October General Conference",
+     "talk": "1998-10-faust-opening-the-windows-of-heaven",
+     "para": 3,
+     "en": "… when I was serving as a young bishop. One tithing settlement, President Moyle came in and declared, “Bishop, this …",
+     "tr": "… mas acerca del espíritu del diezmo. En un ajuste de diezmos, el presidente Moyle declaró: “Obispo, este es mi …"
+    },
+    "share": 0.5
+   },
+   {
+    "term": "ajuste de diezmos",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 6,
+    "talks": 5,
+    "verses": 0,
+    "first_year": 1998,
+    "last_year": 2011,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1998,
+      "conference": "1998 October General Conference",
+      "talk": "1998-10-faust-opening-the-windows-of-heaven",
+      "para": 3,
+      "en": "… when I was serving as a young bishop. One tithing settlement, President Moyle came in and declared, “Bishop, this …",
+      "tr": "… mas acerca del espíritu del diezmo. En un ajuste de diezmos, el presidente Moyle declaró: “Obispo, este es mi …"
+     },
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 October General Conference",
+      "talk": "2003-10-parkin-choosing-charity-that-good-part",
+      "para": 23,
+      "en": "… December in Sunday School, our teacher suggested that at tithing settlement time we give the Lord a private accounting of …",
+      "tr": "… Escuela Dominical, nuestro maestro sugirió que durante el ajuste de diezmos diéramos al Señor un informe privado de nuestro estudio …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-pratt-the-lords-richest-blessings",
+      "para": 14,
+      "en": "… other income, and then take them with us to tithing settlement so they know of our example and our love …",
+      "tr": "… u otros ingresos, y luego llevémoslos a los ajustes de diezmos para que vean nuestro ejemplo y sepan de nuestro …"
+     }
+    ],
+    "earliest": {
+     "year": 1998,
+     "conference": "1998 October General Conference",
+     "talk": "1998-10-faust-opening-the-windows-of-heaven",
+     "para": 3,
+     "en": "… when I was serving as a young bishop. One tithing settlement, President Moyle came in and declared, “Bishop, this …",
+     "tr": "… mas acerca del espíritu del diezmo. En un ajuste de diezmos, el presidente Moyle declaró: “Obispo, este es mi …"
+    },
+    "share": 0.5
+   }
+  ]
+ }
+}

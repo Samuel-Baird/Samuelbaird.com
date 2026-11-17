@@ -1,0 +1,150 @@
+{
+ "id": "concept.council-on-the-disposition-of-the-tithes",
+ "pt": {
+  "en_paragraphs": 24,
+  "en_talks": 21,
+  "en_verses": 0,
+  "uncovered_paragraphs": 7,
+  "renderings": [
+   {
+    "term": "Conselho de Disposição dos Dízimos",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 17,
+    "talks": 14,
+    "verses": 0,
+    "first_year": 2013,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 October General Conference",
+      "talk": "2013-10-bednar-the-windows-of-heaven",
+      "para": 16,
+      "en": "… and disburse sacred tithing funds. The Council on the Disposition of the Tithes was established by revelation and consists of …",
+      "tr": "… distribuir os fundos sagrados do dízimo. O Conselho de Disposição dos Dízimos foi estabelecido por revelação e é constituído pela …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-jergensen-church-auditing-department-report-2017",
+      "para": 0,
+      "en": "… of the Doctrine and Covenants](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/120?lang=eng), the Council on the Disposition of the Tithes—composed of the First Presidency, the Quorum …",
+      "tr": "… [seção 120 de Doutrina e Convênios](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/120?lang=por), o Conselho de Disposição dos Dízimos, formado pela Primeira Presidência, pelo Quórum dos …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-larson-church-auditing-department-report-2025",
+      "para": 0,
+      "en": "… of the Doctrine and Covenants](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/120?lang=eng), the Council on the Disposition of the Tithes—composed of the First Presidency, the Quorum …",
+      "tr": "… [seção 120 de Doutrina e Convênios](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/120?lang=por), o Conselho de Disposição dos Dízimos, formado pela Primeira Presidência, pelo Quórum dos …"
+     }
+    ],
+    "earliest": {
+     "year": 2013,
+     "conference": "2013 October General Conference",
+     "talk": "2013-10-bednar-the-windows-of-heaven",
+     "para": 16,
+     "en": "… and disburse sacred tithing funds. The Council on the Disposition of the Tithes was established by revelation and consists of …",
+     "tr": "… distribuir os fundos sagrados do dízimo. O Conselho de Disposição dos Dízimos foi estabelecido por revelação e é constituído pela …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "dispêndio",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.857,
+    "ratio": 3429.4,
+    "source": "1994-04-davis-the-church-audit-committee-report",
+    "kind": "talk",
+    "sample": "nsabilidade. Examinamos, para ver se são adequados, os controles de recibos e o dispêndio de fundos e outros procedimentos que salvaguardam os bens da Igreja e as organi"
+   },
+   {
+    "term": "fundos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 1.0,
+    "ratio": 571.6,
+    "source": "1994-04-davis-the-church-audit-committee-report",
+    "kind": "talk",
+    "sample": "Examinamos, para ver se são adequados, os controles de recibos e o dispêndio de fundos e outros procedimentos que salvaguardam os bens da Igreja e as organizações que"
+   },
+   {
+    "term": "prescrito por revelação",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.714,
+    "ratio": 2857.9,
+    "source": "1998-04-davis-the-church-audit-committee-report",
+    "kind": "talk",
+    "sample": "pela Primeira Presidência, Quórum dos Doze Apóstolos e Bispado Presidente, como prescrito por revelação. A administração dos orçamentos aprovados é controlada pelo Departamento de Orç"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 22,
+  "en_talks": 19,
+  "en_verses": 0,
+  "uncovered_paragraphs": 22,
+  "renderings": [
+   {
+    "term": "Consejo sobre la Disposición de los Diezmos",
+    "evidence": [],
+    "hint": "pulpit-glossary:verified"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "consejo encargado",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 22,
+    "share_of_uncovered": 1.0,
+    "ratio": 1333.7,
+    "source": "2008-04-cantwell-church-auditing-department-report-2007",
+    "kind": "talk",
+    "sample": "stá prescrito mediante revelación en la sección 120 de Doctrina y Convenios, el Consejo Encargado de la Disposición de Diezmos autoriza el empleo de los fondos de la Iglesia. Es"
+   },
+   {
+    "term": "diezmos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 22,
+    "share_of_uncovered": 1.0,
+    "ratio": 363.7,
+    "source": "2008-04-cantwell-church-auditing-department-report-2007",
+    "kind": "talk",
+    "sample": "sección 120 de Doctrina y Convenios, el Consejo Encargado de la Disposición de Diezmos autoriza el empleo de los fondos de la Iglesia. Este consejo está compuesto por"
+   },
+   {
+    "term": "autoriza",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 18,
+    "share_of_uncovered": 0.818,
+    "ratio": 1091.2,
+    "source": "2008-04-cantwell-church-auditing-department-report-2007",
+    "kind": "talk",
+    "sample": "120 de Doctrina y Convenios, el Consejo Encargado de la Disposición de Diezmos autoriza el empleo de los fondos de la Iglesia. Este consejo está compuesto por la Prime"
+   }
+  ]
+ }
+}

@@ -1,0 +1,101 @@
+{
+ "id": "concept.district-leader",
+ "pt": {
+  "en_paragraphs": 5,
+  "en_talks": 3,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "líder de distrito",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 4,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2004,
+    "last_year": 2023,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2004,
+      "conference": "2004 October General Conference",
+      "talk": "2004-10-burton-more-holiness-give-me",
+      "para": 15,
+      "en": "A missionary district leader was wondering why Elder Parker, who was about to …",
+      "tr": "Certo líder de distrito estava intrigado com o que fazia o Élder Parker, …"
+     },
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 October General Conference",
+      "talk": "2023-10-rasband-how-great-will-be-your-joy",
+      "para": 27,
+      "en": "… and trees can be likened to mission presidents, bishops, district leaders, members, and those who seek the truth but …",
+      "tr": "… podem ser comparados a presidentes de missão, bispos, líderes de distrito, membros, e àqueles que buscam a verdade, mas …"
+     }
+    ],
+    "earliest": {
+     "year": 2004,
+     "conference": "2004 October General Conference",
+     "talk": "2004-10-burton-more-holiness-give-me",
+     "para": 15,
+     "en": "A missionary district leader was wondering why Elder Parker, who was about to …",
+     "tr": "Certo líder de distrito estava intrigado com o que fazia o Élder Parker, …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 5,
+  "en_talks": 3,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "líder de distrito",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 4,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2004,
+    "last_year": 2023,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2004,
+      "conference": "2004 October General Conference",
+      "talk": "2004-10-burton-more-holiness-give-me",
+      "para": 15,
+      "en": "A missionary district leader was wondering why Elder Parker, who was about to …",
+      "tr": "Un misionero, líder de distrito, se preguntaba por qué el élder Parker, que …"
+     },
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 October General Conference",
+      "talk": "2023-10-rasband-how-great-will-be-your-joy",
+      "para": 27,
+      "en": "… and trees can be likened to mission presidents, bishops, district leaders, members, and those who seek the truth but …",
+      "tr": "… pueden comparar con los presidentes de misión, obispos, líderes de distrito y miembros, y aquellos que buscan la verdad, pero …"
+     }
+    ],
+    "earliest": {
+     "year": 2004,
+     "conference": "2004 October General Conference",
+     "talk": "2004-10-burton-more-holiness-give-me",
+     "para": 15,
+     "en": "A missionary district leader was wondering why Elder Parker, who was about to …",
+     "tr": "Un misionero, líder de distrito, se preguntaba por qué el élder Parker, que …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

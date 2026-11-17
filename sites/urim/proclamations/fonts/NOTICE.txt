@@ -1,0 +1,6 @@
+Fonts bundled with the proclamations generator
+
+NotoSansDeseret-Regular.ttf   Copyright 2022 The Noto Project Authors (https://github.com/notofonts/deseret)
+NotoSans-{Regular,Italic,Bold}.ttf   Copyright 2022 The Noto Project Authors (https://github.com/notofonts/latin-greek-cyrillic)
+
+Both are licensed under the SIL Open Font License, Version 1.1; the licence text is in OFL-NotoSans.txt.

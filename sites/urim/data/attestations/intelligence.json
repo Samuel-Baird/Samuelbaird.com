@@ -1,0 +1,132 @@
+{
+ "id": "concept.intelligence",
+ "pt": {
+  "en_paragraphs": 85,
+  "en_talks": 68,
+  "en_verses": 10,
+  "uncovered_paragraphs": 95,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "inteligência",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 75,
+    "share_of_uncovered": 0.789,
+    "ratio": 789.7,
+    "source": "1990-04-ashton-neither-boast-of-faith-nor-of-mighty-works",
+    "kind": "talk",
+    "sample": "te eu conseguira todas essas coisas maravilhosas com meu próprio esforço, minha inteligência e assim por diante. Quando fui atingido pelas dificuldades, comecei a perceber"
+   },
+   {
+    "term": "conhecimento",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 27,
+    "share_of_uncovered": 0.284,
+    "ratio": 15.8,
+    "source": "1992-04-oaks-the-relief-society-and-the-church",
+    "kind": "talk",
+    "sample": "da Igreja e reino de Deus. Isso deu às mulheres novas oportunidades de receber conhecimento e inteligência do alto, como por meio das ordenanças do templo que logo seriam"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 89,
+  "en_talks": 70,
+  "en_verses": 10,
+  "uncovered_paragraphs": 8,
+  "renderings": [
+   {
+    "term": "inteligencia",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 82,
+    "talks": 66,
+    "verses": 9,
+    "first_year": 1990,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 93:29",
+      "ref_en": "Doctrine and Covenants 93:29",
+      "en": "Man was also in the beginning with God. Intelligence, or the light of truth, was not created or made, neither indeed can be.",
+      "tr": "También el hombre fue en el principio con Dios. La inteligencia, o sea, la luz de verdad, no fue creada ni hecha, ni tampoco lo puede ser.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/93?lang=spa&id=p29"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-ashton-neither-boast-of-faith-nor-of-mighty-works",
+      "para": 14,
+      "en": "… all of these wonderful things through my hard work, intelligence, and so forth. But when hard times hit, I …",
+      "tr": "… espléndidas cosas gracias a mi arduo trabajo, a mi inteligencia, etcétera. Pero cuando sobrevinieron los reveses, comencé a comprender …"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 October General Conference",
+      "talk": "2012-10-nelson-ask-the-missionaries-they-can-help-you",
+      "para": 23,
+      "en": "… we seek it! The glory of God indeed is intelligence.[^12]",
+      "tr": "… la procuramos! Verdaderamente la gloria de Dios es la inteligencia[^12]."
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-ashton-neither-boast-of-faith-nor-of-mighty-works",
+     "para": 14,
+     "en": "… all of these wonderful things through my hard work, intelligence, and so forth. But when hard times hit, I …",
+     "tr": "… espléndidas cosas gracias a mi arduo trabajo, a mi inteligencia, etcétera. Pero cuando sobrevinieron los reveses, comencé a comprender …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "talentos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.25,
+    "ratio": 71.4,
+    "source": "1993-10-clyde-relief-society-charity-the-guiding-principle",
+    "kind": "talk",
+    "sample": "ante los 46 años de matrimonio; cada uno encontró oportunidades de utilizar sus talentos. Thales trabajó como instructor en un hospital pediátrico que proporcionaba una"
+   },
+   {
+    "term": "com",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.25,
+    "ratio": 40.0,
+    "source": "2007-04-faust-the-healing-power-of-forgiveness",
+    "kind": "talk",
+    "sample": "[^1]: Joan Kern, \"A Community Cries\", *Lancaster New Era,* 4 de octubre de 2006, pág. A8.\n[^2]: Helen C"
+   },
+   {
+    "term": "esencial",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.25,
+    "ratio": 38.5,
+    "source": "1993-10-clyde-relief-society-charity-the-guiding-principle",
+    "kind": "talk",
+    "sample": "so en la condición de aquellos niños. El amor no solamente es bueno sino que es esencial para la vida."
+   }
+  ]
+ }
+}

@@ -1,0 +1,19 @@
+id: concept.deseret
+category: Church History
+en:
+  term: Deseret
+  match:
+  - Deseret
+sources:
+  GS:
+  - deseret
+candidates:
+  pt:
+  - term: Deseret
+    hint: pulpit-glossary:verified
+  es:
+  - term: colmena
+    hint: approved-terms
+  - term: Deseret
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,97 @@
+{
+ "id": "concept.genealogical-society",
+ "pt": {
+  "en_paragraphs": 7,
+  "en_talks": 4,
+  "en_verses": 0,
+  "uncovered_paragraphs": 7,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "sociedade genealógica",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.857,
+    "ratio": 3429.4,
+    "source": "1991-04-tingey-redemption-of-the-dead",
+    "kind": "talk",
+    "sample": "que a pesquisa da família na América, de modo geral, começou com a formação da Sociedade Genealógica da Nova Inglaterra, em Boston, em 1844."
+   },
+   {
+    "term": "elias",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.571,
+    "ratio": 207.8,
+    "source": "1991-04-tingey-redemption-of-the-dead",
+    "kind": "talk",
+    "sample": "A semente plantada pelo Senhor, com a aparição de Elias a Joseph Smith em 1836, não era uma árvore frondosa, era apenas uma semente. Na"
+   },
+   {
+    "term": "utah",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.571,
+    "ratio": 87.9,
+    "source": "1994-10-nelson-the-spirit-of-elijah",
+    "kind": "talk",
+    "sample": "pensamentos, juntamente com o centésimo aniversário da Sociedade Genealógica de Utah, que será comemorado no próximo mês, salientam a grande importância e influênci"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 2,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "Sociedad Genealógica",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2012,
+    "last_year": 2023,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 October General Conference",
+      "talk": "2012-10-scott-the-joy-of-redeeming-the-dead",
+      "para": 19,
+      "en": "… of the Ancestral File computerized records sent into the genealogical society. They came mostly from the records of the …",
+      "tr": "… computarizados y actualizados de Ancestral File, enviados a la sociedad genealógica. La mayoría de ellos provenían de los registros …"
+     },
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 April General Conference",
+      "talk": "2023-04-hoyos-the-work-of-the-temple-and-family-historyone-and-the-same-work",
+      "para": 17,
+      "en": "… the same President Woodruff oversaw the creation of the Genealogical Society of Utah. One hundred years later, in 1994, Elder …",
+      "tr": "… el mismo presidente Woodruff supervisó la creación de la Sociedad Genealógica de Utah. Cien años después, en 1994, el élder …"
+     }
+    ],
+    "earliest": {
+     "year": 2012,
+     "conference": "2012 October General Conference",
+     "talk": "2012-10-scott-the-joy-of-redeeming-the-dead",
+     "para": 19,
+     "en": "… of the Ancestral File computerized records sent into the genealogical society. They came mostly from the records of the …",
+     "tr": "… computarizados y actualizados de Ancestral File, enviados a la sociedad genealógica. La mayoría de ellos provenían de los registros …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

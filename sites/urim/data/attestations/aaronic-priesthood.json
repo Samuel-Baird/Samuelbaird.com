@@ -1,0 +1,194 @@
+{
+ "id": "concept.aaronic-priesthood",
+ "pt": {
+  "en_paragraphs": 429,
+  "en_talks": 190,
+  "en_verses": 3,
+  "uncovered_paragraphs": 13,
+  "renderings": [
+   {
+    "term": "Sacerdócio Aarônico",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 416,
+    "talks": 183,
+    "verses": 3,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 107:20",
+      "ref_en": "Doctrine and Covenants 107:20",
+      "en": "The power and authority of the lesser, or Aaronic Priesthood, is to hold the keys of the ministering of angels, and to administer in outward ordinances, the letter of the gospel, the baptism of repentance for the remission of sins, agreeable to the covenants and commandments.",
+      "tr": "O poder e autoridade do menor, ou seja, do Sacerdócio Aarônico, é possuir as chaves do ministério de anjos e administrar as ordenanças exteriores, a letra do evangelho, o batismo de arrependimento para remissão de pecados, conforme os convênios e mandamentos.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/107?lang=por&id=p20"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-packer-the-library-of-the-lord",
+      "para": 74,
+      "en": "… for the priesthood. For you young men of the Aaronic Priesthood and you brethren of the Melchizedek Priesthood, I bear …",
+      "tr": "… são o manual do sacerdócio. A vós, jovens do Sacerdócio Aarônico e vós, irmãos do Sacerdócio de Melquisedeque, presto testemunho …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-gibson-sacred-keys-of-the-aaronic-priesthood",
+      "para": 17,
+      "en": "… it starts long before that. The Lord wants every Aaronic Priesthood holder to invite all to come unto Christ—beginning with …",
+      "tr": "… antes disso. O Senhor quer que todo portador do Sacerdócio Aarônico convide todos a virem a Cristo — começando pela …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-hinckley-keeping-the-temple-holy",
+     "para": 1,
+     "en": "… remarks in these priesthood meetings to those of the Aaronic Priesthood. This evening, if they will excuse me, I …",
+     "tr": "… minhas palavras, nestas reuniões do sacerdócio, aos portadores do Sacerdócio Aarônico. Nesta noite, se me permitis, decidi dirigir-me aos …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "aaronic priesthood",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.308,
+    "ratio": 615.5,
+    "source": "2001-10-hales-fulfilling-our-duty-to-god",
+    "kind": "talk",
+    "sample": "e um símbolo de sua preparação para receberem o Sacerdócio de Melquisedeque.” (*Aaronic Priesthood: Fulfilling Our Duty to God, Deacon [2001]*, P–4)"
+   },
+   {
+    "term": "our",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.308,
+    "ratio": 82.1,
+    "source": "2001-10-hales-fulfilling-our-duty-to-god",
+    "kind": "talk",
+    "sample": "para receberem o Sacerdócio de Melquisedeque.” (*Aaronic Priesthood: Fulfilling Our Duty to God, Deacon [2001]*, P–4)"
+   },
+   {
+    "term": "maio",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.308,
+    "ratio": 19.2,
+    "source": "2001-10-holland-like-a-watered-garden",
+    "kind": "talk",
+    "sample": "do por David B. Haight no Conference Report, abril de 1981, p. 57; ou *Ensign*, maio de 1981, p. 42.\n[^4]: [Malaquias 3:10](https://www.churchofjesuschrist.org/stud"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 426,
+  "en_talks": 186,
+  "en_verses": 3,
+  "uncovered_paragraphs": 22,
+  "renderings": [
+   {
+    "term": "Sacerdocio Aarónico",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 406,
+    "talks": 179,
+    "verses": 1,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "José Smith—Historia 1:70",
+      "ref_en": "Joseph Smith—History 1:70",
+      "en": "He said this Aaronic Priesthood had not the power of laying on hands for the gift of the Holy Ghost, but that this should be conferred on us hereafter; and he commanded us to go and be baptized, and gave us directions that I should baptize Oliver Cowdery, and that afterwards he should baptize me.",
+      "tr": "Declaró que este Sacerdocio Aarónico no tenía el poder de imponer las manos para comunicar el don del Espíritu Santo, pero que se nos conferiría más adelante; y nos mandó bautizarnos, indicándonos que yo bautizara a Oliver Cowdery, y que después me bautizara él a mí.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/pgp/js-h/1?lang=spa&id=p70"
+     },
+     {
+      "kind": "talk",
+      "year": 1993,
+      "conference": "1993 October General Conference",
+      "talk": "1993-10-condie-a-mighty-change-of-heart",
+      "para": 12,
+      "en": "… a call for him to work with the young Aaronic Priesthood brethren of the ward. He was a natural, enthusiastic …",
+      "tr": "… un llamamiento para que trabajara con los jóvenes del Sacerdocio Aarónico del barrio. Como líder tenía un talento innato y …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 October General Conference",
+      "talk": "2011-10-eyring-preparation-in-the-priesthood-i-need-your-help",
+      "para": 2,
+      "en": "As you know, the Aaronic Priesthood is designated as a preparatory priesthood. The great majority …",
+      "tr": "Como saben, el Sacerdocio Aarónico ha sido designado como un sacerdocio preparatorio. La gran …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-hinckley-keeping-the-temple-holy",
+     "para": 1,
+     "en": "… remarks in these priesthood meetings to those of the Aaronic Priesthood. This evening, if they will excuse me, I …",
+     "tr": "… del sacerdocio me he dirigido a los jóvenes del Sacerdocio Aarónico; sin embargo, con el permiso de ellos, en …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "aarón",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.364,
+    "ratio": 727.5,
+    "source": "2007-04-perry-the-message-of-the-restoration",
+    "kind": "talk",
+    "sample": "—después de lo cual puse mis manos sobre su cabeza y lo ordené al Sacerdocio de Aarón, y luego él puso sus manos sobre mí y me ordenó al mismo sacerdocio— porque así"
+   },
+   {
+    "term": "poseer las llaves",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.273,
+    "ratio": 1091.2,
+    "source": "2009-04-monson-be-your-best-self",
+    "kind": "talk",
+    "sample": "“El poder y la autoridad del sacerdocio menor, o sea, el de Aarón, consiste en poseer las llaves del ministerio de ángeles y en administrar las ordenanzas exteriores, la letra"
+   },
+   {
+    "term": "llaves del ministerio",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.273,
+    "ratio": 1091.2,
+    "source": "2009-04-monson-be-your-best-self",
+    "kind": "talk",
+    "sample": "y la autoridad del sacerdocio menor, o sea, el de Aarón, consiste en poseer las llaves del ministerio de ángeles y en administrar las ordenanzas exteriores, la letra del evangelio,"
+   }
+  ]
+ }
+}

@@ -1,0 +1,15 @@
+id: concept.robes-of-the-holy-priesthood
+category: Temple & Family History
+en:
+  term: robes of the holy priesthood
+  match:
+  - robes of the holy priesthood
+sources: {}
+candidates:
+  pt:
+  - term: vestes do santo sacerdócio
+    hint: pulpit-glossary:standard
+  es:
+  - term: túnicas del santo sacerdocio
+    hint: pulpit-glossary:verified
+related: []

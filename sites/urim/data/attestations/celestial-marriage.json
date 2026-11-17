@@ -1,0 +1,119 @@
+{
+ "id": "concept.celestial-marriage",
+ "pt": {
+  "en_paragraphs": 20,
+  "en_talks": 13,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "casamento celestial",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 19,
+    "talks": 12,
+    "verses": 0,
+    "first_year": 1999,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1999,
+      "conference": "1999 April General Conference",
+      "talk": "1999-04-scott-receive-the-temple-blessings",
+      "para": 14,
+      "en": "… are single and haven’t identified a solid prospect for celestial marriage, live for it. Pray for it. Expect it …",
+      "tr": "… seja solteiro e não tenha uma perspectiva concreta de casamento celestial, viva para mere-cê-lo. Ore pedindo isso. Espere o …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 October General Conference",
+      "talk": "2015-10-vias-the-pleasing-word-of-god",
+      "para": 5,
+      "en": "The hope of achieving a celestial marriage and establishing a family in this life can begin …",
+      "tr": "A esperança de obter um casamento celestial e de estabelecer uma família nesta vida pode começar …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-uchtdorf-christ-centered-unity",
+      "para": 4,
+      "en": "… a joyful life expands. The temple endowment, missionary service, celestial marriage in the house of the Lord, ongoing service in …",
+      "tr": "… como a investidura do templo, o serviço missionário, o casamento celestial na casa do Senhor, o serviço contínuo no reino …"
+     }
+    ],
+    "earliest": {
+     "year": 1999,
+     "conference": "1999 April General Conference",
+     "talk": "1999-04-scott-receive-the-temple-blessings",
+     "para": 14,
+     "en": "… are single and haven’t identified a solid prospect for celestial marriage, live for it. Pray for it. Expect it …",
+     "tr": "… seja solteiro e não tenha uma perspectiva concreta de casamento celestial, viva para mere-cê-lo. Ore pedindo isso. Espere o …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 20,
+  "en_talks": 13,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "matrimonio celestial",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 19,
+    "talks": 12,
+    "verses": 0,
+    "first_year": 1999,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1999,
+      "conference": "1999 April General Conference",
+      "talk": "1999-04-scott-receive-the-temple-blessings",
+      "para": 14,
+      "en": "… are single and haven’t identified a solid prospect for celestial marriage, live for it. Pray for it. Expect it …",
+      "tr": "… aún no cuentas con un firme candidato para un matrimonio celestial, vive para lograrlo. Ora por ello. Espéralo en …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-falabella-the-home-the-school-of-life",
+      "para": 17,
+      "en": "Participating in the ceremony of celestial marriage is not enough. We also have to live a …",
+      "tr": "… no se trata solamente de realizar la ceremonia del matrimonio celestial, sino de vivir una vida celestial."
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-uchtdorf-christ-centered-unity",
+      "para": 4,
+      "en": "… a joyful life expands. The temple endowment, missionary service, celestial marriage in the house of the Lord, ongoing service in …",
+      "tr": "… gozosa. La investidura del templo, el servicio misional, el matrimonio celestial en la Casa del Señor, el servicio continuo en …"
+     }
+    ],
+    "earliest": {
+     "year": 1999,
+     "conference": "1999 April General Conference",
+     "talk": "1999-04-scott-receive-the-temple-blessings",
+     "para": 14,
+     "en": "… are single and haven’t identified a solid prospect for celestial marriage, live for it. Pray for it. Expect it …",
+     "tr": "… aún no cuentas con un firme candidato para un matrimonio celestial, vive para lograrlo. Ora por ello. Espéralo en …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

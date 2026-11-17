@@ -1,0 +1,15 @@
+id: concept.branch-conference
+category: Councils & Conferences
+en:
+  term: branch conference
+  match:
+  - branch conference
+sources: {}
+candidates:
+  pt:
+  - term: conferência do ramo
+    hint: pulpit-glossary:standard
+  es:
+  - term: conferencia de rama
+    hint: pulpit-glossary:verified
+related: []

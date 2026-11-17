@@ -1,0 +1,182 @@
+{
+ "id": "concept.the-church-of-jesus-christ-of-latter-day-saints",
+ "pt": {
+  "en_paragraphs": 944,
+  "en_talks": 638,
+  "en_verses": 4,
+  "uncovered_paragraphs": 164,
+  "renderings": [
+   {
+    "term": "A Igreja de Jesus Cristo dos Santos dos Últimos Dias",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 780,
+    "talks": 539,
+    "verses": 4,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 127:12",
+      "ref_en": "Doctrine and Covenants 127:12",
+      "en": "Behold, my prayer to God is that you all may be saved. And I subscribe myself your servant in the Lord, prophet and seer of The Church of Jesus Christ of Latter-day Saints.",
+      "tr": "Eis que minha oração a Deus é para que todos vós sejais salvos. E subscrevo-me, vosso servo no Senhor, profeta e vidente de A Igreja de Jesus Cristo dos Santos dos Últimos Dias.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/127?lang=por&id=p12"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-asay-one-small-step-for-a-man-one-giant-leap-for-mankind",
+      "para": 35,
+      "en": "Such prophecy has been fulfilled as The Church of Jesus Christ of Latter-day Saints has been established and as the …",
+      "tr": "… evangelho e o estabelecimento de A Igreja de Jesus Cristo dos Santos dos Últimos Dias em todo o mundo."
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 October General Conference",
+      "talk": "2015-10-ballard-god-is-at-the-helm",
+      "para": 34,
+      "en": "… sail on within the glorious ship, The Church of Jesus Christ of Latter-day Saints, and we will reach our …",
+      "tr": "… a bordo do glorioso barco, A Igreja de Jesus Cristo dos Santos dos Últimos Dias, e chegaremos a nosso …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-asay-one-small-step-for-a-man-one-giant-leap-for-mankind",
+     "para": 35,
+     "en": "Such prophecy has been fulfilled as The Church of Jesus Christ of Latter-day Saints has been established and as the …",
+     "tr": "… evangelho e o estabelecimento de A Igreja de Jesus Cristo dos Santos dos Últimos Dias em todo o mundo."
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "últimos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 114,
+    "share_of_uncovered": 0.695,
+    "ratio": 21.1,
+    "source": "1990-04-oaks-world-peace",
+    "kind": "talk",
+    "sample": "Na Igreja de Jesus Cristo dos Santos dos Últimos Dias, seguimos a receita prescrita pelo rei-profeta Benjamim. Ele ensinava que"
+   },
+   {
+    "term": "the",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 33,
+    "share_of_uncovered": 0.201,
+    "ratio": 10.1,
+    "source": "1992-04-oaks-the-relief-society-and-the-church",
+    "kind": "talk",
+    "sample": "obres, mas para salvar almas” (atas, 9 de junho de 1842, página 63; *History of the Church*, 5:25). Uma Primeira Presidência posterior explicou: “Um dos propósitos"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 906,
+  "en_talks": 630,
+  "en_verses": 4,
+  "uncovered_paragraphs": 48,
+  "renderings": [
+   {
+    "term": "La Iglesia de Jesucristo de los Santos de los Últimos Días",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 858,
+    "talks": 602,
+    "verses": 4,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 127:12",
+      "ref_en": "Doctrine and Covenants 127:12",
+      "en": "Behold, my prayer to God is that you all may be saved. And I subscribe myself your servant in the Lord, prophet and seer of The Church of Jesus Christ of Latter-day Saints.",
+      "tr": "He aquí, mi oración a Dios es que os salvéis todos vosotros; y me suscribo como vuestro siervo en el Señor, profeta y vidente de La Iglesia de Jesucristo de los Santos de los Últimos Días.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/127?lang=spa&id=p12"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-kapp-crickets-can-be-destroyed-through-spirituality",
+      "para": 20,
+      "en": "… and then confirmed a member of The Church of Jesus Christ of Latter-day Saints, you were given the gift …",
+      "tr": "… luego confirmadas miembros de La Iglesia de Jesucristo de los Santos de los Ultimos Días, recibieron el don del …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 October General Conference",
+      "talk": "2015-10-christofferson-why-the-church",
+      "para": 0,
+      "en": "… to use a church, His Church, The Church of Jesus Christ of Latter-day Saints, to carry out His and …",
+      "tr": "… una iglesia, Su Iglesia, La Iglesia de Jesucristo de los Santos de los Últimos Días, para realizar la obra …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-hinckley-keeping-the-temple-holy",
+     "para": 20,
+     "en": "… Joseph F. Smith, First Presidency of the Church of Jesus Christ of Latter-day Saints” (in James R. Clark, comp., …",
+     "tr": "… Smith, Primera Presidencia de La Iglesia de Jesucristo de los Santos de los Ultimos Días.” (En James R. Clark, …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "latter day saints",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 23,
+    "share_of_uncovered": 0.479,
+    "ratio": 273.9,
+    "source": "1996-04-hinckley-remember-thy-church-o-lord",
+    "kind": "talk",
+    "sample": "Clark, comp., Messages of the First Presidency of The Church of Jesus Christ of Latter day Saints, 6 tomos [1965-1975], tomo III, págs. 267-268)."
+   },
+   {
+    "term": "jesus christ",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 23,
+    "share_of_uncovered": 0.479,
+    "ratio": 159.8,
+    "source": "1996-04-hinckley-remember-thy-church-o-lord",
+    "kind": "talk",
+    "sample": "ada en James R. Clark, comp., Messages of the First Presidency of The Church of Jesus Christ of Latter day Saints, 6 tomos [1965-1975], tomo III, págs. 267-268)."
+   },
+   {
+    "term": "the church",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 23,
+    "share_of_uncovered": 0.479,
+    "ratio": 95.9,
+    "source": "1996-04-hinckley-remember-thy-church-o-lord",
+    "kind": "talk",
+    "sample": "otros” (publicada en James R. Clark, comp., Messages of the First Presidency of The Church of Jesus Christ of Latter day Saints, 6 tomos [1965-1975], tomo III, págs. 267-"
+   }
+  ]
+ }
+}

@@ -1,0 +1,195 @@
+{
+ "id": "concept.quorum-president",
+ "pt": {
+  "en_paragraphs": 25,
+  "en_talks": 21,
+  "en_verses": 0,
+  "uncovered_paragraphs": 20,
+  "renderings": [
+   {
+    "term": "presidente do quórum",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 5,
+    "talks": 5,
+    "verses": 0,
+    "first_year": 2003,
+    "last_year": 2018,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 April General Conference",
+      "talk": "2003-04-faust-the-devils-throat",
+      "para": 9,
+      "en": "… or to follow the counsel of your bishop or quorum president. Bishop Richard C. Edgley shared an experience he …",
+      "tr": "… ou seguir o conselho de seu bispo ou presidente do quórum. O Bispo Richard C. Edgley contou uma experiência …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 October General Conference",
+      "talk": "2011-10-eyring-preparation-in-the-priesthood-i-need-your-help",
+      "para": 18,
+      "en": "… He had learned that he was helped as a quorum president by a clear and vivid memory of his own …",
+      "tr": "… sábio. Tinha aprendido que fora ajudado quando foi presidente do quórum pela clara e vívida lembrança de suas próprias necessidades, …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-stevenson-the-heart-of-a-prophet",
+      "para": 11,
+      "en": "… Quorum of the Twelve, under the leadership of the quorum president, jointly holds the keys to administer the leadership …",
+      "tr": "… o Quórum dos Doze, sob a liderança do presidente do quórum, porta as chaves para administrar a liderança da …"
+     }
+    ],
+    "earliest": {
+     "year": 2003,
+     "conference": "2003 April General Conference",
+     "talk": "2003-04-faust-the-devils-throat",
+     "para": 9,
+     "en": "… or to follow the counsel of your bishop or quorum president. Bishop Richard C. Edgley shared an experience he …",
+     "tr": "… ou seguir o conselho de seu bispo ou presidente do quórum. O Bispo Richard C. Edgley contou uma experiência …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "quórum",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 19,
+    "share_of_uncovered": 0.95,
+    "ratio": 58.5,
+    "source": "1998-10-faust-by-what-power-have-ye-done-this",
+    "kind": "talk",
+    "sample": "uer coisa no mundo e desejam o que é melhor para vocês. Ouçam seu presidente de quórum, seu bispo, seu presidente de estaca, os apóstolos, videntes e reveladores, esp"
+   },
+   {
+    "term": "presidentes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.3,
+    "ratio": 40.0,
+    "source": "2003-10-bateman-priesthood-keys-and-the-power-to-bless",
+    "kind": "talk",
+    "sample": "tolos também possuem as chaves do reino e atuam sob a direção do Presidente. Os presidentes de estaca, bispos, presidentes de templo, missão e quórum recebem chaves para g"
+   },
+   {
+    "term": "apóstolos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.2,
+    "ratio": 10.0,
+    "source": "1998-10-faust-by-what-power-have-ye-done-this",
+    "kind": "talk",
+    "sample": "vocês. Ouçam seu presidente de quórum, seu bispo, seu presidente de estaca, os apóstolos, videntes e reveladores, especialmente o Presidente Hinckley, bem como as outra"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 34,
+  "en_talks": 27,
+  "en_verses": 0,
+  "uncovered_paragraphs": 30,
+  "renderings": [
+   {
+    "term": "presidente del quórum",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 4,
+    "talks": 4,
+    "verses": 0,
+    "first_year": 1995,
+    "last_year": 2011,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1995,
+      "conference": "1995 October General Conference",
+      "talk": "1995-10-eyring-to-touch-a-life-with-faith",
+      "para": 6,
+      "en": "… out through a twelve-year-old servant assigned by a thirteen-year-old quorum president.",
+      "tr": "… que creen. Quizás la semana que viene, el presidente del quórum de diáconos les pida que inviten a la reunión …"
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 April General Conference",
+      "talk": "2009-04-neider-revealed-quorum-principles",
+      "para": 16,
+      "en": "… in Mexico. When Matt was set apart as the quorum president, he was the only member of the teachers …",
+      "tr": "… en México. Cuando se apartó a Matt como presidente del quórum de maestros, él era el único miembro de ese …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 October General Conference",
+      "talk": "2011-10-eyring-preparation-in-the-priesthood-i-need-your-help",
+      "para": 18,
+      "en": "… He had learned that he was helped as a quorum president by a clear and vivid memory of his own …",
+      "tr": "… tenía dos años menos lo había ayudado como presidente del quórum. El reto en su futuro liderazgo, el de …"
+     }
+    ],
+    "earliest": {
+     "year": 1995,
+     "conference": "1995 October General Conference",
+     "talk": "1995-10-eyring-to-touch-a-life-with-faith",
+     "para": 6,
+     "en": "… out through a twelve-year-old servant assigned by a thirteen-year-old quorum president.",
+     "tr": "… que creen. Quizás la semana que viene, el presidente del quórum de diáconos les pida que inviten a la reunión …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "quórum",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 20,
+    "share_of_uncovered": 0.667,
+    "ratio": 62.0,
+    "source": "1997-04-monson-they-will-come",
+    "kind": "talk",
+    "sample": "entras contemplaba desde la obscuridad del pozo de engrasado a su presidente de quórum que le extendía la mano."
+   },
+   {
+    "term": "cuórum",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.3,
+    "ratio": 50.0,
+    "source": "2015-10-rasband-i-stand-all-amazed",
+    "kind": "talk",
+    "sample": "ermanos de los Setenta. Durante quince años he estado en uno de los más grandes cuórums y hermandades de la Iglesia donde reina el amor. Muchas gracias, mis queridos"
+   },
+   {
+    "term": "presidentes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.3,
+    "ratio": 32.4,
+    "source": "2003-10-bateman-priesthood-keys-and-the-power-to-bless",
+    "kind": "talk",
+    "sample": "n también las llaves del reino y actúan bajo la dirección del Presidente. A los presidentes de estaca, obispos, y a los presidentes de templo, de misión y de quórum se dan"
+   }
+  ]
+ }
+}

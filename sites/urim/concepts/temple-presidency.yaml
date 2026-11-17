@@ -1,0 +1,15 @@
+id: concept.temple-presidency
+category: Temple & Family History
+en:
+  term: temple presidency
+  match:
+  - temple presidency
+sources: {}
+candidates:
+  pt:
+  - term: presidência do templo
+    hint: pulpit-glossary:verified
+  es:
+  - term: presidencia del templo
+    hint: pulpit-glossary:verified
+related: []

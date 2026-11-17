@@ -1,0 +1,177 @@
+{
+ "id": "concept.ward-missionary",
+ "pt": {
+  "en_paragraphs": 5,
+  "en_talks": 4,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "missionário de ala",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2002,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2002,
+      "conference": "2002 October General Conference",
+      "talk": "2002-10-ballard-the-greatest-generation-of-missionaries",
+      "para": 32,
+      "en": "… home; some may best serve under your direction as ward missionaries.",
+      "tr": "… muito mais úteis servindo sob sua direção, como missionários de ala."
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-jackson-remembering-the-sheep",
+      "para": 13,
+      "en": "… smaller, more isolated units. I was called as a ward missionary. We had a great ward mission leader and …",
+      "tr": "… em unidades menores e mais isoladas. Fui chamado missionário de ala. Tínhamos um excelente líder de missão da ala …"
+     }
+    ],
+    "earliest": {
+     "year": 2002,
+     "conference": "2002 October General Conference",
+     "talk": "2002-10-ballard-the-greatest-generation-of-missionaries",
+     "para": 32,
+     "en": "… home; some may best serve under your direction as ward missionaries.",
+     "tr": "… muito mais úteis servindo sob sua direção, como missionários de ala."
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "ala",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 93.0,
+    "source": "2003-04-ballard-the-essential-role-of-member-missionary-work",
+    "kind": "talk",
+    "sample": "para ajudá-los a auxiliar os missionários que estão trabalhando em sua própria ala”. (“Trabalho Missionário”, *Primeira Reunião Mundial de Treinamento de Lideranç"
+   },
+   {
+    "term": "missionários",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 58.0,
+    "source": "2003-04-ballard-the-essential-role-of-member-missionary-work",
+    "kind": "talk",
+    "sample": "se recentemente: “Será um dia grandioso quando nosso povo não apenas orar pelos missionários de todo o mundo, mas também pedir ao Senhor para ajudá-los a auxiliar os missio"
+   },
+   {
+    "term": "líderes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 30.7,
+    "source": "2003-04-ballard-the-essential-role-of-member-missionary-work",
+    "kind": "talk",
+    "sample": "conselho em espírito de oração. Eis o que ele está fazendo. Por intermédio dos líderes do sacerdócio e das auxiliares, o conselho da ala coordena o trabalho missionár"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 5,
+  "en_talks": 4,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "misionero de barrio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2002,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2002,
+      "conference": "2002 October General Conference",
+      "talk": "2002-10-ballard-the-greatest-generation-of-missionaries",
+      "para": 32,
+      "en": "… home; some may best serve under your direction as ward missionaries.",
+      "tr": "… mejor manera bajo la dirección de ustedes como misioneros de barrio."
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-jackson-remembering-the-sheep",
+      "para": 13,
+      "en": "… smaller, more isolated units. I was called as a ward missionary. We had a great ward mission leader and …",
+      "tr": "… pequeñas y aisladas. Me llamaron a servir como misionero de barrio. Teníamos un extraordinario líder misional de barrio y …"
+     }
+    ],
+    "earliest": {
+     "year": 2002,
+     "conference": "2002 October General Conference",
+     "talk": "2002-10-ballard-the-greatest-generation-of-missionaries",
+     "para": 32,
+     "en": "… home; some may best serve under your direction as ward missionaries.",
+     "tr": "… mejor manera bajo la dirección de ustedes como misioneros de barrio."
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "misioneros",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 50.6,
+    "source": "2003-04-ballard-the-essential-role-of-member-missionary-work",
+    "kind": "talk",
+    "sample": "recientemente: “Qué grande será el día en que los miembros no sólo oren por los misioneros de todo el mundo, sino que también pidan al Señor que les ayude para colaborar"
+   },
+   {
+    "term": "líderes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 49.4,
+    "source": "2003-04-ballard-the-essential-role-of-member-missionary-work",
+    "kind": "talk",
+    "sample": "e están trabajando en sus propios barrios” (Transmisión de la capacitación para líderes del sacerdocio, 11 de enero de 2003)."
+   },
+   {
+    "term": "labor",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 242.5,
+    "source": "2003-04-ballard-the-essential-role-of-member-missionary-work",
+    "kind": "talk",
+    "sample": "liares. Se invita a los misioneros a asistir a estas reuniones para analizar su labor y se asigna a miembros para que ayuden a los misioneros en las visitas a los in"
+   }
+  ]
+ }
+}

@@ -1,0 +1,13 @@
+id: concept.assigned-families
+category: Discipleship & Ministering
+en:
+  term: assigned families
+  match:
+  - assigned families
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: familias asignadas
+    hint: pulpit-glossary:verified
+related: []

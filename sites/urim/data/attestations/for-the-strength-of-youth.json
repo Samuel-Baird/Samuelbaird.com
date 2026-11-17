@@ -1,0 +1,195 @@
+{
+ "id": "concept.for-the-strength-of-youth",
+ "pt": {
+  "en_paragraphs": 119,
+  "en_talks": 79,
+  "en_verses": 0,
+  "uncovered_paragraphs": 35,
+  "renderings": [
+   {
+    "term": "Para o Vigor da Juventude",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 84,
+    "talks": 55,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2022,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-monson-that-we-may-touch-heaven",
+      "para": 4,
+      "en": "… to God, a new booklet, entitled *For the Strength of Youth,* has been published under the direction of …",
+      "tr": "… a Deus, um novo folheto intitulado “Para o Vigor da Juventude” foi publicado, sob a direção da Primeira …"
+     },
+     {
+      "kind": "talk",
+      "year": 2006,
+      "conference": "2006 April General Conference",
+      "talk": "2006-04-uchtdorf-see-the-end-from-the-beginning",
+      "para": 21,
+      "en": "Living the standards set in *For the Strength of Youth* will make you feel good about yourself. …",
+      "tr": "O cumprimento dos padrões estabelecidos em *Para o Vigor da Juventude* fará com que se sintam bem a …"
+     },
+     {
+      "kind": "talk",
+      "year": 2022,
+      "conference": "2022 October General Conference",
+      "talk": "2022-10-uchtdorf-jesus-christ-is-the-strength-of-youth",
+      "para": 34,
+      "en": "For over 50 years, For the Strength of Youth has been a guide for generations of Latter-day …",
+      "tr": "Por mais de 50 anos, o livreto Para o Vigor da Juventude tem sido um guia para gerações de jovens …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 October General Conference",
+     "talk": "1990-10-monson-that-we-may-touch-heaven",
+     "para": 4,
+     "en": "… to God, a new booklet, entitled *For the Strength of Youth,* has been published under the direction of …",
+     "tr": "… a Deus, um novo folheto intitulado “Para o Vigor da Juventude” foi publicado, sob a direção da Primeira …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "força dos jovens",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 32,
+    "share_of_uncovered": 0.914,
+    "ratio": 1219.4,
+    "source": "2020-10-gong-all-nations-kindreds-and-tongues",
+    "kind": "talk",
+    "sample": "Em janeiro de 2021, nossas três novas revistas mundiais — Meu Amigo, Força dos Jovens e Liahona — convidam todas as pessoas a participar e compartilhar experiências"
+   },
+   {
+    "term": "escolhas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 20,
+    "share_of_uncovered": 0.571,
+    "ratio": 73.8,
+    "source": "2022-10-uchtdorf-jesus-christ-is-the-strength-of-youth",
+    "kind": "talk",
+    "sample": "sa nova versão do guia, Força dos Jovens, tem como subtítulo Um Guia para Fazer Escolhas."
+   },
+   {
+    "term": "guia",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 21,
+    "share_of_uncovered": 0.6,
+    "ratio": 57.2,
+    "source": "2022-10-uchtdorf-jesus-christ-is-the-strength-of-youth",
+    "kind": "talk",
+    "sample": "Essa nova versão do guia, Força dos Jovens, tem como subtítulo Um Guia para Fazer Escolhas."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 112,
+  "en_talks": 77,
+  "en_verses": 0,
+  "uncovered_paragraphs": 6,
+  "renderings": [
+   {
+    "term": "Para la Fortaleza de la Juventud",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 106,
+    "talks": 71,
+    "verses": 0,
+    "first_year": 2001,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2002,
+      "conference": "2002 April General Conference",
+      "talk": "2002-04-banks-this-road-we-call-life",
+      "para": 20,
+      "en": "Again, from the *For the Strength of Youth* booklet, the First Presidency writes: “May you …",
+      "tr": "Volviendo al cuadernillo* Para la fortaleza de la juventud*, la Primera Presidencia escribe: “Que puedan …"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 April General Conference",
+      "talk": "2012-04-cook-seek-learning-you-have-a-work-to-do",
+      "para": 1,
+      "en": "… can be found in the new *For the Strength of Youth* booklet under the standard of education and …",
+      "tr": "… se encuentra en el nuevo librito *Para la Fortaleza de la Juventud,* bajo la norma de educación académica, …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-stevenson-fruit-to-make-one-happy",
+      "para": 27,
+      "en": "… [^14]: [Alma 42:8](https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/42?lang=eng&id=p8#p8).\n[^15]: “[Jesus Christ Will Help You](https://www.churchofjesuschrist.org/study/manual/for-the-strength-of-youth/04-jesus-christ-will-help-you?lang=eng&id=p_rna9f-p_zSJoQ#p_rna9f),” in For the Strength of Youth: A Guide for …",
+      "tr": "… [Alma 42:8](https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/42?lang=spa&id=p8#p8).\n[^15]: \"[Jesucristo te ayudará](https://www.churchofjesuschrist.org/study/manual/for-the-strength-of-youth/04-jesus-christ-will-help-you?lang=spa&id=p_rna9f-p_zSJoQ#p_rna9f)\", en Para la Fortaleza de la Juventud: Una guía para tomar decisiones, 2023, …"
+     }
+    ],
+    "earliest": {
+     "year": 2001,
+     "conference": "2001 October General Conference",
+     "talk": "2001-10-burton-standing-tall",
+     "para": 9,
+     "en": "… the stomach, and other revealing attire” (*For the Strength of Youth* [2001], 12). Clothing that is modest, neat, …",
+     "tr": "… el estómago y otras prendas atrevidas“ (Para la fortaleza de la juventud, 09/01). La ropa que es modesta, …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "cumplir nuestro deber",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.5,
+    "ratio": 1000.2,
+    "source": "2001-10-larsen-fear-not-for-they-that-be-with-us-are-more",
+    "kind": "talk",
+    "sample": "no: El programaProgreso Personal de las Mujeres Jóvenes, elSacerdocio Aarónico: Cumplir nuestro deber a Dios,laGuía para padres y líderes de la juventudy la edición revisada dePara"
+   },
+   {
+    "term": "folleto",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.5,
+    "ratio": 500.1,
+    "source": "1991-10-oaks-joy-and-mercy",
+    "kind": "talk",
+    "sample": "arente ser. Jóvenes, aferraos firmes a vuestras normas; estudiad y utilizad ese folleto salvador titulado La fortaleza de la juventud."
+   },
+   {
+    "term": "juventud",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.667,
+    "ratio": 83.4,
+    "source": "1991-10-oaks-joy-and-mercy",
+    "kind": "talk",
+    "sample": "as normas; estudiad y utilizad ese folleto salvador titulado La fortaleza de la juventud."
+   }
+  ]
+ }
+}

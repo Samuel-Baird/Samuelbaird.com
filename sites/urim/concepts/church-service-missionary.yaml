@@ -1,0 +1,15 @@
+id: concept.church-service-missionary
+category: Missionary Work
+en:
+  term: Church-service missionary
+  match:
+  - Church-service missionary
+sources: {}
+candidates:
+  pt:
+  - term: missionários de serviço na Igreja
+    hint: pulpit-glossary:verified
+  es:
+  - term: misioneros de servicio a la Iglesia
+    hint: pulpit-glossary:verified
+related: []

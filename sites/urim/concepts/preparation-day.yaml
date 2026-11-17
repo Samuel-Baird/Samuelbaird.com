@@ -1,0 +1,15 @@
+id: concept.preparation-day
+category: Missionary Work
+en:
+  term: preparation day
+  match:
+  - preparation day
+sources: {}
+candidates:
+  pt:
+  - term: dia de preparação
+    hint: pulpit-glossary:standard
+  es:
+  - term: día de preparación
+    hint: pulpit-glossary:verified
+related: []

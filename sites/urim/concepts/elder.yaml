@@ -1,0 +1,23 @@
+id: concept.elder
+category: Priesthood Offices & Quorums
+en:
+  term: elder
+  match:
+  - elder
+sources:
+  GS:
+  - elder
+  Topics:
+  - elder
+  TtF:
+  - elder
+  GH:
+  - 8-elders-quorum#title_number11
+candidates:
+  pt:
+  - term: élder
+    hint: pulpit-glossary:verified
+  es:
+  - term: élder
+    hint: approved-terms
+related: []

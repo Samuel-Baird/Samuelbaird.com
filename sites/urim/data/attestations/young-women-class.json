@@ -1,0 +1,195 @@
+{
+ "id": "concept.young-women-class",
+ "pt": {
+  "en_paragraphs": 21,
+  "en_talks": 15,
+  "en_verses": 0,
+  "uncovered_paragraphs": 6,
+  "renderings": [
+   {
+    "term": "classe das Moças",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 15,
+    "talks": 9,
+    "verses": 0,
+    "first_year": 2014,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-wixom-keeping-covenants-protects-us-prepares-us-and-empowers-us",
+      "para": 0,
+      "en": "… crowded hallway. Just then the door to the Young Women class opened, and I saw the young women and their …",
+      "tr": "… cheio de gente. Naquele momento, a porta da classe das Moças se abriu e vi as moças e suas líderes. …"
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 October General Conference",
+      "talk": "2019-10-cordon-beloved-daughters",
+      "para": 27,
+      "en": "… the importance of class presidencies. No matter how Young Women classes are organized, *every class should have a class presidency*![^21] …",
+      "tr": "… presidências de classe. A despeito de como as classes das Moças estiverem organizadas, *cada classe deve ter uma presidência de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-bangerter-foreordained-to-serve",
+      "para": 8,
+      "en": "… you will receive opportunities to serve in your Young Women class or priesthood quorum. You will be blessed to serve …",
+      "tr": "… do convênio, receberão oportunidades de servir em sua classe das Moças ou em seu quórum do sacerdócio. Vocês serão abençoados …"
+     }
+    ],
+    "earliest": {
+     "year": 2014,
+     "conference": "2014 April General Conference",
+     "talk": "2014-04-wixom-keeping-covenants-protects-us-prepares-us-and-empowers-us",
+     "para": 0,
+     "en": "… crowded hallway. Just then the door to the Young Women class opened, and I saw the young women and their …",
+     "tr": "… cheio de gente. Naquele momento, a porta da classe das Moças se abriu e vi as moças e suas líderes. …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "moças",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 1.0,
+    "ratio": 64.5,
+    "source": "2004-04-tanner-all-things-shall-work-together-for-your-good",
+    "kind": "talk",
+    "sample": "hosas na Terra que me demonstram amor, especialmente as meninas da [classe] das Moças e as líderes que me ensinam por meio da linguagem de sinais e ajudam-me a apren"
+   },
+   {
+    "term": "meninas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.333,
+    "ratio": 190.5,
+    "source": "2004-04-tanner-all-things-shall-work-together-for-your-good",
+    "kind": "talk",
+    "sample": "orque há pessoas maravilhosas na Terra que me demonstram amor, especialmente as meninas da [classe] das Moças e as líderes que me ensinam por meio da linguagem de sina"
+   },
+   {
+    "term": "aula",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.333,
+    "ratio": 121.2,
+    "source": "2015-10-mcconkie-here-to-serve-a-righteous-cause",
+    "kind": "talk",
+    "sample": "Vi as meninas em uma aula das Moças entrelaçar os braços juntas e assumir o compromisso de ministrar umas"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 21,
+  "en_talks": 15,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "clase de las Mujeres Jóvenes",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 18,
+    "talks": 13,
+    "verses": 0,
+    "first_year": 2006,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2006,
+      "conference": "2006 October General Conference",
+      "talk": "2006-10-monson-how-firm-a-foundation",
+      "para": 29,
+      "en": "… require multiple surgeries. A long-planned hike with her Young Women class up a rugged trail to Timpanogos Cave—located in the …",
+      "tr": "… que olvidarse de la excursión que su clase de las Mujeres Jóvenes había planeado desde hacía mucho tiempo para ascender …"
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 October General Conference",
+      "talk": "2019-10-cordon-beloved-daughters",
+      "para": 27,
+      "en": "… the importance of class presidencies. No matter how Young Women classes are organized, *every class should have a class presidency*![^21] …",
+      "tr": "… clase. No importa cómo estén organizadas las clases de las Mujeres Jóvenes, *¡cada clase debe tener una presidencia de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-bangerter-foreordained-to-serve",
+      "para": 8,
+      "en": "… you will receive opportunities to serve in your Young Women class or priesthood quorum. You will be blessed to serve …",
+      "tr": "… convenios, recibirán oportunidades de servir en su clase de las Mujeres Jóvenes o en su cuórum del sacerdocio. Serán bendecidos …"
+     }
+    ],
+    "earliest": {
+     "year": 2006,
+     "conference": "2006 October General Conference",
+     "talk": "2006-10-monson-how-firm-a-foundation",
+     "para": 29,
+     "en": "… require multiple surgeries. A long-planned hike with her Young Women class up a rugged trail to Timpanogos Cave—located in the …",
+     "tr": "… que olvidarse de la excursión que su clase de las Mujeres Jóvenes había planeado desde hacía mucho tiempo para ascender …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "mujeres jóvenes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 121.2,
+    "source": "2004-04-tanner-all-things-shall-work-together-for-your-good",
+    "kind": "talk",
+    "sample": "ravillosas en la tierra que me demuestran amor, especialmente las chicas de las Mujeres Jóvenes y las líderes que se comunican conmigo por señas y me ayudan a aprender el Evan"
+   },
+   {
+    "term": "chicas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 1333.7,
+    "source": "2004-04-tanner-all-things-shall-work-together-for-your-good",
+    "kind": "talk",
+    "sample": "de personas maravillosas en la tierra que me demuestran amor, especialmente las chicas de las Mujeres Jóvenes y las líderes que se comunican conmigo por señas y me ay"
+   },
+   {
+    "term": "clase",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 50.3,
+    "source": "2015-10-mcconkie-here-to-serve-a-righteous-cause",
+    "kind": "talk",
+    "sample": "Vi a las chicas en una clase de Mujeres Jóvenes entrelazar sus brazos y asumir el compromiso de cuidarse las"
+   }
+  ]
+ }
+}

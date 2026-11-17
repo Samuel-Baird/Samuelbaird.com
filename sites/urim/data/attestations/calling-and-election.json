@@ -1,0 +1,68 @@
+{
+ "id": "concept.calling-and-election",
+ "pt": {
+  "en_paragraphs": 0,
+  "en_talks": 0,
+  "en_verses": 2,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "vocação e eleição",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 0,
+    "talks": 0,
+    "verses": 1,
+    "first_year": null,
+    "last_year": null,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "2 Pedro 1:10",
+      "ref_en": "2 Peter 1:10",
+      "en": "Wherefore the rather, brethren, give diligence to make your calling and election sure: for if ye do these things, ye shall never fall:",
+      "tr": "Portanto, irmãos, procurai fazer cada vez mais firmes a vossa vocação e eleição; porque, fazendo isso, nunca jamais tropeçareis.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/nt/2-pet/1?lang=por&id=p10"
+     }
+    ],
+    "earliest": null,
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 0,
+  "en_talks": 0,
+  "en_verses": 2,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "vocación y elección",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 0,
+    "talks": 0,
+    "verses": 1,
+    "first_year": null,
+    "last_year": null,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "2 Pedro 1:10",
+      "ref_en": "2 Peter 1:10",
+      "en": "Wherefore the rather, brethren, give diligence to make your calling and election sure: for if ye do these things, ye shall never fall:",
+      "tr": "Por lo cual, hermanos, tanto más procurad hacer firme vuestra vocación y elección, porque haciendo estas cosas, no caeréis jamás.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/nt/2-pet/1?lang=spa&id=p10"
+     }
+    ],
+    "earliest": null,
+    "share": 1.0
+   }
+  ]
+ }
+}

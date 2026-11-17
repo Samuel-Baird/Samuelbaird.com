@@ -1,0 +1,13 @@
+id: concept.sacred-clothing
+category: Temple & Family History
+en:
+  term: sacred clothing
+  match:
+  - sacred clothing
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: ropa sagrada
+    hint: pulpit-glossary:verified
+related: []

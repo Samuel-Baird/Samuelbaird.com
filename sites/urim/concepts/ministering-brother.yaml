@@ -1,0 +1,17 @@
+id: concept.ministering-brother
+category: Discipleship & Ministering
+en:
+  term: ministering brother
+  match:
+  - ministering brother
+sources:
+  GH:
+  - 22-providing-for-temporal-needs#title_number53
+candidates:
+  pt:
+  - term: irmão ministrador
+    hint: pulpit-glossary:standard
+  es:
+  - term: hermano ministrante
+    hint: approved-terms
+related: []

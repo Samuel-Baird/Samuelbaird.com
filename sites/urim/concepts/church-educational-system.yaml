@@ -1,0 +1,17 @@
+id: concept.church-educational-system
+category: Education & Publications
+en:
+  term: Church Educational System
+  match:
+  - Church Educational System
+sources:
+  GH:
+  - 15-seminaries-and-institutes#title_number10
+candidates:
+  pt:
+  - term: Sistema Educacional da Igreja
+    hint: pulpit-glossary:verified
+  es:
+  - term: Sistema Educativo de la Iglesia
+    hint: pulpit-glossary:verified
+related: []

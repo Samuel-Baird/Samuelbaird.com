@@ -1,0 +1,13 @@
+id: concept.donation-slip
+category: Finances
+en:
+  term: donation slip
+  match:
+  - donation slip
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: formulario de donativos
+    hint: pulpit-glossary:verified
+related: []

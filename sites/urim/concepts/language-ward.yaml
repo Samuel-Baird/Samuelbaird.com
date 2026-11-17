@@ -1,0 +1,15 @@
+id: concept.language-ward
+category: Church Units & Facilities
+en:
+  term: language ward
+  match:
+  - language ward
+sources:
+  GH:
+  - 37-specialized-stakes-wards-and-branches#title_number2
+candidates:
+  pt: []
+  es:
+  - term: barrio en otro idioma
+    hint: pulpit-glossary:verified
+related: []

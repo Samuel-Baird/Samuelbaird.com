@@ -1,0 +1,15 @@
+id: concept.sealed-in-the-temple
+category: Temple & Family History
+en:
+  term: sealed in the temple
+  match:
+  - sealed in the temple
+sources: {}
+candidates:
+  pt:
+  - term: selados no templo
+    hint: pulpit-glossary:verified
+  es:
+  - term: sellado en el templo
+    hint: pulpit-glossary:verified
+related: []

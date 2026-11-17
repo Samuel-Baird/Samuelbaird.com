@@ -1,0 +1,15 @@
+id: concept.general-authority
+category: Presiding Quorums & General Leadership
+en:
+  term: General Authority
+  match:
+  - General Authority
+sources: {}
+candidates:
+  pt:
+  - term: Autoridade Geral
+    hint: pulpit-glossary:verified
+  es:
+  - term: Autoridad General
+    hint: approved-terms
+related: []

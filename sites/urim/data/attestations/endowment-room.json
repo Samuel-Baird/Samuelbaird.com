@@ -1,0 +1,65 @@
+{
+ "id": "concept.endowment-room",
+ "pt": {
+  "en_paragraphs": 2,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "sala de investidura",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2022,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2022,
+      "conference": "2022 October General Conference",
+      "talk": "2022-10-nelson-overcome-the-world-and-find-rest",
+      "para": 5,
+      "en": "… on the conversation. When the tour group entered an endowment room, the boy pointed to the altar, where people …",
+      "tr": "… a conversa. Quando o grupo entrou em uma sala de investidura, o menino apontou para o altar onde as …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-jaggi-humble-souls-at-altars-kneel",
+      "para": 32,
+      "en": "“When the tour group entered an endowment room, the boy pointed to the altar, where people …",
+      "tr": "“Quando o grupo entrou em uma sala de investidura, o menino apontou para o altar onde as …"
+     }
+    ],
+    "earliest": {
+     "year": 2022,
+     "conference": "2022 October General Conference",
+     "talk": "2022-10-nelson-overcome-the-world-and-find-rest",
+     "para": 5,
+     "en": "… on the conversation. When the tour group entered an endowment room, the boy pointed to the altar, where people …",
+     "tr": "… a conversa. Quando o grupo entrou em uma sala de investidura, o menino apontou para o altar onde as …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 2,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "salón de investiduras",
+    "evidence": [],
+    "hint": "pulpit-glossary:verified"
+   }
+  ]
+ }
+}

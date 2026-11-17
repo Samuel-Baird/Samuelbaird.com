@@ -1,0 +1,105 @@
+{
+ "id": "concept.hold-to-the-rod",
+ "pt": {
+  "en_paragraphs": 3,
+  "en_talks": 3,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "segurar na barra",
+    "evidence": [],
+    "hint": "pulpit-glossary:standard"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "barra",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 571.6,
+    "source": "2002-10-monson-models-to-follow",
+    "kind": "talk",
+    "sample": "*Apegue-se à barra, à barra de ferro;*"
+   },
+   {
+    "term": "agarrem",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 1333.7,
+    "source": "2012-04-cook-in-tune-with-the-music-of-faith",
+    "kind": "talk",
+    "sample": "ue ainda não encontraram o caminho estreito e apertado. Oramos para que eles se agarrem à barra e partilhem do amor de Deus, que vai lhes encher “a alma de imensa aleg"
+   },
+   {
+    "term": "ferro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 381.0,
+    "source": "2002-10-monson-models-to-follow",
+    "kind": "talk",
+    "sample": "*Apegue-se à barra, à barra de ferro;*"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 3,
+  "en_talks": 3,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "aferrarse a la barra",
+    "evidence": [],
+    "hint": "pulpit-glossary:verified"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "hierro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 1000.2,
+    "source": "2002-10-monson-models-to-follow",
+    "kind": "talk",
+    "sample": "*La barra de hierro firme es.*"
+   },
+   {
+    "term": "barra",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 800.2,
+    "source": "2002-10-monson-models-to-follow",
+    "kind": "talk",
+    "sample": "*La barra de hierro firme es.*"
+   },
+   {
+    "term": "lehi",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 88.9,
+    "source": "2012-04-cook-in-tune-with-the-music-of-faith",
+    "kind": "talk",
+    "sample": "Es preciso enseñar y entender que amamos y respetamos a toda la gente que Lehi describió[^8]. Recuerden que el juzgar no es asunto nuestro. El juicio es del S"
+   }
+  ]
+ }
+}

@@ -1,0 +1,15 @@
+id: concept.apostleship
+category: Priesthood Offices & Quorums
+en:
+  term: apostleship
+  match:
+  - apostleship
+sources: {}
+candidates:
+  pt:
+  - term: apostolado
+    hint: pulpit-glossary:verified
+  es:
+  - term: apostolado
+    hint: pulpit-glossary:verified
+related: []

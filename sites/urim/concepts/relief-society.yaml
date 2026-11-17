@@ -1,0 +1,21 @@
+id: concept.relief-society
+category: Organizations & Youth
+en:
+  term: Relief Society
+  match:
+  - Relief Society
+sources:
+  Topics:
+  - relief-society
+  TtF:
+  - relief-society
+  GH:
+  - 9-relief-society#title_number15
+candidates:
+  pt:
+  - term: Sociedade de Socorro
+    hint: pulpit-glossary:standard
+  es:
+  - term: Sociedad de Socorro
+    hint: approved-terms
+related: []

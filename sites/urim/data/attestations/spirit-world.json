@@ -1,0 +1,194 @@
+{
+ "id": "concept.spirit-world",
+ "pt": {
+  "en_paragraphs": 114,
+  "en_talks": 74,
+  "en_verses": 2,
+  "uncovered_paragraphs": 9,
+  "renderings": [
+   {
+    "term": "mundo espiritual",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 107,
+    "talks": 71,
+    "verses": 0,
+    "first_year": 1993,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1993,
+      "conference": "1993 October General Conference",
+      "talk": "1993-10-oaks-the-great-plan-of-happiness",
+      "para": 9,
+      "en": "… were in a transitional state, no longer in the spirit world but with physical bodies not yet subject to death …",
+      "tr": "… mandamento, encontravam-se em um estado transitório, não mais no mundo espiritual, porém com corpos físicos ainda não sujeitos à …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 October General Conference",
+      "talk": "2018-10-ballard-the-vision-of-the-redemption-of-the-dead",
+      "para": 13,
+      "en": "… our heads” on the subject of death and the spirit world. Nevertheless, his faith in the Lord’s eternal promises …",
+      "tr": "… mim”, referindo-se às questões sobre a morte e o mundo espiritual. Entretanto, sua fé nas promessas eternas do Senhor …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-kearon-jesus-lives-to-lift",
+      "para": 47,
+      "en": "… things. For example, we know very little about the spirit world that follows mortality or even about the spirit world …",
+      "tr": "… algumas coisas. Por exemplo, sabemos muito pouco sobre o mundo espiritual após a mortalidade, ou mesmo sobre o mundo espiritual …"
+     }
+    ],
+    "earliest": {
+     "year": 1993,
+     "conference": "1993 April General Conference",
+     "talk": "1993-04-haight-personal-temple-worship",
+     "para": 28,
+     "en": "… you can bless those who are waiting in the spirit world. If you live near a temple, partake of …",
+     "tr": "… mais simples de abençoar aqueles que estão aguardando no mundo espiritual. Se morais perto de um templo, aproveitai a …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "pré",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.444,
+    "ratio": 98.8,
+    "source": "1995-10-wells-our-message-to-the-world",
+    "kind": "talk",
+    "sample": "a Joseph, o véu de esque­ci­men­to que sepa­ra esta vida de nossa exis­tên­cia pré-mor­tal torna-se às vezes quase trans­pa­ren­te. O véu entre esta vida e o mund"
+   },
+   {
+    "term": "espíritos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.333,
+    "ratio": 333.4,
+    "source": "2003-04-hales-faith-through-tribulation-brings-peace-and-joy",
+    "kind": "talk",
+    "sample": "Estavam reunidos, aguardando a chegada do Filho de Deus ao mundo dos espíritos para declarar sua redenção das ligaduras da morte.”"
+   },
+   {
+    "term": "reunidos, aguardando",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.222,
+    "ratio": 889.1,
+    "source": "2003-04-hales-faith-through-tribulation-brings-peace-and-joy",
+    "kind": "talk",
+    "sample": "Estavam reunidos, aguardando a chegada do Filho de Deus ao mundo dos espíritos para declarar sua redenção da"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 104,
+  "en_talks": 71,
+  "en_verses": 2,
+  "uncovered_paragraphs": 6,
+  "renderings": [
+   {
+    "term": "mundo de los espíritus",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 98,
+    "talks": 66,
+    "verses": 2,
+    "first_year": 1997,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 138:16",
+      "ref_en": "Doctrine and Covenants 138:16",
+      "en": "They were assembled awaiting the advent of the Son of God into the spirit world, to declare their redemption from the bands of death.",
+      "tr": "Se hallaban reunidos esperando el advenimiento del Hijo de Dios al mundo de los espíritus para declarar su redención de las ligaduras de la muerte.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/138?lang=spa&id=p16"
+     },
+     {
+      "kind": "talk",
+      "year": 2000,
+      "conference": "2000 April General Conference",
+      "talk": "2000-04-tingey-the-widows-of-zion",
+      "para": 27,
+      "en": "… serve together, forever, in the great work in the spirit world.",
+      "tr": "… juntos, para siempre, en la gran obra del mundo de los espíritus."
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 October General Conference",
+      "talk": "2019-10-oaks-trust-in-the-lord",
+      "para": 5,
+      "en": "The work of salvation in the spirit world consists of freeing spirits from what the scriptures frequently …",
+      "tr": "La obra de salvación en el mundo de los espíritus consiste en liberar a los espíritus de lo …"
+     }
+    ],
+    "earliest": {
+     "year": 1997,
+     "conference": "1997 April General Conference",
+     "talk": "1997-04-scott-jesus-christ-our-redeemer",
+     "para": 17,
+     "en": "… evil than you will as a spirit in the spirit world.[^15] Compared to the length of a normal life, …",
+     "tr": "… que lo harás como un espíritu en el mundo de los espíritus([^15]). Comparado con la duración de una vida …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "preterrenal",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.667,
+    "ratio": 666.8,
+    "source": "2001-04-scott-first-things-first",
+    "kind": "talk",
+    "sample": "lleno de expectativa, entusiasmo y gratitud. Esa experiencia ocurrió en la vida preterrenal, cuando se te informó que finalmente había llegado el momento de dejar el mundo"
+   },
+   {
+    "term": "espíritus",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.667,
+    "ratio": 190.5,
+    "source": "2015-04-christofferson-why-marriage-why-family",
+    "kind": "talk",
+    "sample": "ue Dios mismo tiene. Si, cuando estábamos con Dios en el mundo premortal de los espíritus, accedíamos a participar en Su plan —o en otras palabras “[guardábmos nuestro]"
+   },
+   {
+    "term": "velo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.5,
+    "ratio": 105.3,
+    "source": "2000-04-pace-a-temple-for-west-africa",
+    "kind": "talk",
+    "sample": "la gran cantidad de africanos que han aceptado el Evangelio en el otro lado del velo y que esperan ansiosos el bautismo y la investidura vicarios del templo, al igu"
+   }
+  ]
+ }
+}

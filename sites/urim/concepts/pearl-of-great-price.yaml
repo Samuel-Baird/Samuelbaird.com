@@ -1,0 +1,23 @@
+id: concept.pearl-of-great-price
+category: Scriptures & Study Helps
+en:
+  term: Pearl of Great Price
+  match:
+  - Pearl of Great Price
+sources:
+  GS:
+  - pearl-of-great-price
+  Topics:
+  - pearl-of-great-price
+  TtF:
+  - pearl-of-great-price
+candidates:
+  pt:
+  - term: Pérola de Grande Valor
+    hint: pulpit-glossary:standard
+  es:
+  - term: La Perla de Gran Precio
+    hint: approved-terms
+  - term: Perla de Gran Precio
+    hint: pulpit-glossary:standard
+related: []

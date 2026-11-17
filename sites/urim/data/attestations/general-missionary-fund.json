@@ -1,0 +1,157 @@
+{
+ "id": "concept.general-missionary-fund",
+ "pt": {
+  "en_paragraphs": 7,
+  "en_talks": 7,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "fundo missionário geral",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 6,
+    "talks": 6,
+    "verses": 0,
+    "first_year": 2011,
+    "last_year": 2013,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-monson-its-conference-once-again",
+      "para": 8,
+      "en": "… you might consider making a contribution to the General Missionary Fund of the Church.",
+      "tr": "… na possibilidade de fazer uma contribuição para o Fundo Missionário Geral da Igreja."
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-nelson-catch-the-wave",
+      "para": 5,
+      "en": "… your dollars on missions by contributing to the General Missionary Fund, as suggested by President Monson again this morning.[^3]",
+      "tr": "… seus dólares em missão, fazendo contribuições para o Fundo Missionário Geral, conforme sugerido pelo Presidente Monson novamente esta manhã.[^3]"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 October General Conference",
+      "talk": "2013-10-monson-welcome-to-conference",
+      "para": 5,
+      "en": "… to their ward missionary fund or to the General Missionary Fund of the Church. The response to that request has …",
+      "tr": "… fundo missionário de sua ala ou para o Fundo Missionário Geral da Igreja. A resposta a esse pedido foi gratificante …"
+     }
+    ],
+    "earliest": {
+     "year": 2011,
+     "conference": "2011 April General Conference",
+     "talk": "2011-04-monson-its-conference-once-again",
+     "para": 8,
+     "en": "… you might consider making a contribution to the General Missionary Fund of the Church.",
+     "tr": "… na possibilidade de fazer uma contribuição para o Fundo Missionário Geral da Igreja."
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 8,
+  "en_talks": 8,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "fondo misional general",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 5,
+    "talks": 5,
+    "verses": 0,
+    "first_year": 2011,
+    "last_year": 2013,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-monson-its-conference-once-again",
+      "para": 8,
+      "en": "… you might consider making a contribution to the General Missionary Fund of the Church.",
+      "tr": "… si pueden hacerlo, consideraran hacer una contribución al Fondo misional general de la Iglesia."
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-monson-welcome-to-conference",
+      "para": 9,
+      "en": "… you are able, to contribute generously to the General Missionary Fund of the Church.",
+      "tr": "… les sea posible, a que contribuyan generosamente al Fondo misional general de la Iglesia."
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 October General Conference",
+      "talk": "2013-10-monson-i-will-not-fail-thee-nor-forsake-thee",
+      "para": 3,
+      "en": "… have been offered in her name to the General Missionary Fund of the Church. On behalf of those of us …",
+      "tr": "… que se han ofrecido en su nombre al Fondo misional general de la Iglesia. En nombre de nosotros, a quienes …"
+     }
+    ],
+    "earliest": {
+     "year": 2011,
+     "conference": "2011 April General Conference",
+     "talk": "2011-04-monson-its-conference-once-again",
+     "para": 8,
+     "en": "… you might consider making a contribution to the General Missionary Fund of the Church.",
+     "tr": "… si pueden hacerlo, consideraran hacer una contribución al Fondo misional general de la Iglesia."
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "general misional",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 2000.5,
+    "source": "1998-10-faust-opening-the-windows-of-heaven",
+    "kind": "talk",
+    "sample": "nación ni dirección eclesiástica. Entre ellas se cuentan los donativos al fondo general misional, al fondo de ayuda humanitaria y al fondo del Libro de Mormón. También tenemos"
+   },
+   {
+    "term": "fondo general",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 2000.5,
+    "source": "1998-10-faust-opening-the-windows-of-heaven",
+    "kind": "talk",
+    "sample": "r asignación ni dirección eclesiástica. Entre ellas se cuentan los donativos al fondo general misional, al fondo de ayuda humanitaria y al fondo del Libro de Mormón. También"
+   },
+   {
+    "term": "misioneros",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 33.8,
+    "source": "2001-04-hinckley-the-perpetual-education-fund",
+    "kind": "talk",
+    "sample": "ora, mis hermanos, hacemos frente a otro problema en la Iglesia. Tenemos muchos misioneros, hombres y mujeres jóvenes, que son llamados a servir en su tierra natal y lo h"
+   }
+  ]
+ }
+}

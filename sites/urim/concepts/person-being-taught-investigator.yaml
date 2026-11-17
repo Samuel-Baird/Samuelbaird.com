@@ -1,0 +1,17 @@
+id: concept.person-being-taught-investigator
+category: The Church & Members
+en:
+  term: person being taught / investigator
+  match:
+  - person being taught
+  - investigator
+sources: {}
+candidates:
+  pt:
+  - term: pesquisador
+    hint: pulpit-glossary:verified
+  es:
+  - term: investigador
+    hint: pulpit-glossary:verified
+related: []
+note: '"Investigator" superseded in current usage but standard in older talks; render per source era'

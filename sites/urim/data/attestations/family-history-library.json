@@ -1,0 +1,92 @@
+{
+ "id": "concept.family-history-library",
+ "pt": {
+  "en_paragraphs": 9,
+  "en_talks": 5,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "Biblioteca de História da Família",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 8,
+    "talks": 4,
+    "verses": 0,
+    "first_year": 1991,
+    "last_year": 2009,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 April General Conference",
+      "talk": "1991-04-haight-linking-the-family-of-man",
+      "para": 20,
+      "en": "… of microfilm at my fingertips, even with the Family History Library in Salt Lake City and the hundreds of family …",
+      "tr": "… microfilme ao meu alcance, mesmo com a Biblioteca de História da Família na Cidade do Lago Salgado e com as …"
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 October General Conference",
+      "talk": "2009-10-cook-stewardshipa-sacred-trust",
+      "para": 1,
+      "en": "… Valley, including Welfare Square, the Humanitarian Center, the Family History Library, and the Oquirrh Mountain Utah Temple open house. …",
+      "tr": "… Praça do Bem-Estar, o Centro Humanitário, a Biblioteca de História da Família e o Templo de Oquirrh Mountain, Utah, que …"
+     }
+    ],
+    "earliest": {
+     "year": 1991,
+     "conference": "1991 April General Conference",
+     "talk": "1991-04-haight-linking-the-family-of-man",
+     "para": 20,
+     "en": "… of microfilm at my fingertips, even with the Family History Library in Salt Lake City and the hundreds of family …",
+     "tr": "… microfilme ao meu alcance, mesmo com a Biblioteca de História da Família na Cidade do Lago Salgado e com as …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 2,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "Centro de Historia Familiar",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2009,
+    "last_year": 2009,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 October General Conference",
+      "talk": "2009-10-cook-stewardshipa-sacred-trust",
+      "para": 1,
+      "en": "… Valley, including Welfare Square, the Humanitarian Center, the Family History Library, and the Oquirrh Mountain Utah Temple open house. …",
+      "tr": "… la Manzana de Bienestar, el Centro Humanitario, el Centro de Historia Familiar y el programa de puertas abiertas del Templo …"
+     }
+    ],
+    "earliest": {
+     "year": 2009,
+     "conference": "2009 October General Conference",
+     "talk": "2009-10-cook-stewardshipa-sacred-trust",
+     "para": 1,
+     "en": "… Valley, including Welfare Square, the Humanitarian Center, the Family History Library, and the Oquirrh Mountain Utah Temple open house. …",
+     "tr": "… la Manzana de Bienestar, el Centro Humanitario, el Centro de Historia Familiar y el programa de puertas abiertas del Templo …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

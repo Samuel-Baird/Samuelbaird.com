@@ -1,0 +1,97 @@
+{
+ "id": "concept.covenant-confidence",
+ "pt": {
+  "en_paragraphs": 9,
+  "en_talks": 4,
+  "en_verses": 0,
+  "uncovered_paragraphs": 9,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "confiança",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 1.0,
+    "ratio": 74.1,
+    "source": "2024-04-soares-covenant-confidence-through-jesus-christ",
+    "kind": "talk",
+    "sample": "eres neste fim de semana e que nos regozijemos no que gosto muito de chamar de “confiança nos convênios por meio de Jesus Cristo”. Essa confiança é a certeza silenciosa,"
+   },
+   {
+    "term": "manteve",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.222,
+    "ratio": 444.6,
+    "source": "2024-04-soares-covenant-confidence-through-jesus-christ",
+    "kind": "talk",
+    "sample": "tremamente entristecido pelo temor e pela falta de fé de Lamã e Lemuel, Néfi se manteve confiante de que o Senhor lhes entregaria as placas. Ele disse aos irmãos: “Ass"
+   },
+   {
+    "term": "fortalecerá",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.222,
+    "ratio": 127.0,
+    "source": "2024-04-soares-covenant-confidence-through-jesus-christ",
+    "kind": "talk",
+    "sample": "templo, e isso transformará nossa vida fora do templo. “Então tua confiança se fortalecerá na presença de Deus; e a doutrina do sacerdócio destilar-se-á sobre tua alma co"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 9,
+  "en_talks": 4,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "confianza en los convenios",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 7,
+    "talks": 3,
+    "verses": 0,
+    "first_year": 2024,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-soares-covenant-confidence-through-jesus-christ",
+      "para": 0,
+      "en": "… and rejoice in what I love to call “covenant confidence through Jesus Christ.” This confidence is the quiet yet …",
+      "tr": "… en lo que me encanta llamar la “confianza en los convenios por medio de Jesucristo”. Esta confianza es la …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-soares-reverence-for-sacred-things",
+      "para": 14,
+      "en": "… the Lord’s house—our holy temples—and strive to live with covenant confidence, especially when we face the trials of mortal …",
+      "tr": "… —nuestros santos templos— y esforzarnos por vivir con confianza en los convenios, en especial cuando nos enfrentamos a las …"
+     }
+    ],
+    "earliest": {
+     "year": 2024,
+     "conference": "2024 April General Conference",
+     "talk": "2024-04-soares-covenant-confidence-through-jesus-christ",
+     "para": 0,
+     "en": "… and rejoice in what I love to call “covenant confidence through Jesus Christ.” This confidence is the quiet yet …",
+     "tr": "… en lo que me encanta llamar la “confianza en los convenios por medio de Jesucristo”. Esta confianza es la …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

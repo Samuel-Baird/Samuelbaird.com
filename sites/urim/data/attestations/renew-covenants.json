@@ -1,0 +1,168 @@
+{
+ "id": "concept.renew-covenants",
+ "pt": {
+  "en_paragraphs": 11,
+  "en_talks": 11,
+  "en_verses": 0,
+  "uncovered_paragraphs": 9,
+  "renderings": [
+   {
+    "term": "renovamos nossos convênios",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 1998,
+    "last_year": 2009,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1998,
+      "conference": "1998 October General Conference",
+      "talk": "1998-10-wirthlin-cultivating-divine-attributes",
+      "para": 1,
+      "en": "… care for our own souls. On these occasions we renew covenants, affirm commitments, and establish eternal goals.",
+      "tr": "… de cuidar de nossa própria alma. Nessa ocasião, renovamos nossos convênios, firmamos compromissos e estabelecemos metas eternas."
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 October General Conference",
+      "talk": "2009-10-ringwood-an-easiness-and-willingness-to-believe",
+      "para": 17,
+      "en": "… as we attend sacrament meeting. In this meeting we renew covenants by expressing our willingness to take upon ourselves the …",
+      "tr": "… semanas quando vamos à reunião sacramental. Nessa reunião, renovamos nossos convênios expressando nosso desejo de tomar sobre nós o nome …"
+     }
+    ],
+    "earliest": {
+     "year": 1998,
+     "conference": "1998 October General Conference",
+     "talk": "1998-10-wirthlin-cultivating-divine-attributes",
+     "para": 1,
+     "en": "… care for our own souls. On these occasions we renew covenants, affirm commitments, and establish eternal goals.",
+     "tr": "… de cuidar de nossa própria alma. Nessa ocasião, renovamos nossos convênios, firmamos compromissos e estabelecemos metas eternas."
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "sacramento",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.667,
+    "ratio": 48.5,
+    "source": "2016-10-rasband-lest-thou-forget",
+    "kind": "talk",
+    "sample": "Frequentem as reuniões da Igreja, especialmente a reunião sacramental, tomem o sacramento e renovem os convênios, inclusive a promessa de sempre se lembrarem do Salvador"
+   },
+   {
+    "term": "renovar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.333,
+    "ratio": 333.4,
+    "source": "2019-10-renlund-unwavering-commitment-to-jesus-christ",
+    "kind": "talk",
+    "sample": "Seus mandamentos. Frequentemente ouço a expressão que tomamos o sacramento para renovar os convênios feitos no batismo. Embora isso seja verdade, é muito mais do que i"
+   },
+   {
+    "term": "frequentemente ouço",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.222,
+    "ratio": 889.1,
+    "source": "2019-10-renlund-unwavering-commitment-to-jesus-christ",
+    "kind": "talk",
+    "sample": "im o nome de Jesus Cristo e de que estaria disposto a guardar Seus mandamentos. Frequentemente ouço a expressão que tomamos o sacramento para renovar os convênios feitos no batism"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 10,
+  "en_talks": 10,
+  "en_verses": 0,
+  "uncovered_paragraphs": 9,
+  "renderings": [
+   {
+    "term": "renovamos los convenios",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2009,
+    "last_year": 2009,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 October General Conference",
+      "talk": "2009-10-ringwood-an-easiness-and-willingness-to-believe",
+      "para": 17,
+      "en": "… as we attend sacrament meeting. In this meeting we renew covenants by expressing our willingness to take upon ourselves the …",
+      "tr": "… todas las semanas a la reunión sacramental; ahí renovamos los convenios expresando nuestra disposición a tomar sobre nosotros el nombre …"
+     }
+    ],
+    "earliest": {
+     "year": 2009,
+     "conference": "2009 October General Conference",
+     "talk": "2009-10-ringwood-an-easiness-and-willingness-to-believe",
+     "para": 17,
+     "en": "… as we attend sacrament meeting. In this meeting we renew covenants by expressing our willingness to take upon ourselves the …",
+     "tr": "… todas las semanas a la reunión sacramental; ahí renovamos los convenios expresando nuestra disposición a tomar sobre nosotros el nombre …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "renovar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.667,
+    "ratio": 296.4,
+    "source": "2009-04-lifferth-respect-and-reverence",
+    "kind": "talk",
+    "sample": "ones diferentes, pero el domingo son lugares de adoración. Nos congregamos para renovar los convenios que sanarán nuestra alma. Vamos a aprender la doctrina y a fortal"
+   },
+   {
+    "term": "santa cena",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.556,
+    "ratio": 58.5,
+    "source": "2016-10-rasband-lest-thou-forget",
+    "kind": "talk",
+    "sample": "uniones de la Iglesia, en especial a la reunión sacramental, y participen de la Santa Cena y renueven sus convenios, entre ellos la promesa de recordar siempre al Salvado"
+   },
+   {
+    "term": "bautizarnos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.333,
+    "ratio": 444.6,
+    "source": "2018-10-eyring-try-try-try",
+    "kind": "talk",
+    "sample": "[nosotros]” nos indica que, aunque tomamos primeramente el nombre del Señor al bautizarnos, ese acto no ha finalizado con el bautismo. Debemos esforzarnos continuamente p"
+   }
+  ]
+ }
+}

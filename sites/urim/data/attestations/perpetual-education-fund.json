@@ -1,0 +1,157 @@
+{
+ "id": "concept.perpetual-education-fund",
+ "pt": {
+  "en_paragraphs": 20,
+  "en_talks": 16,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "Fundo Perpétuo de Educação",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 17,
+    "talks": 15,
+    "verses": 0,
+    "first_year": 2001,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 October General Conference",
+      "talk": "2001-10-holland-like-a-watered-garden",
+      "para": 2,
+      "en": "… nations. Most recently President Hinckley has announced a Perpetual Education Fund that has the potential to bless many in even …",
+      "tr": "… países. Mais recentemente o Presidente Hinckley anunciou um Fundo Perpétuo de Educação que tem o potencial de abençoar muitas pessoas …"
+     },
+     {
+      "kind": "talk",
+      "year": 2004,
+      "conference": "2004 April General Conference",
+      "talk": "2004-04-hinckley-stay-on-the-high-road",
+      "para": 14,
+      "en": "It is for this reason that the Perpetual Education Fund was established. We recognized that a few dollars could …",
+      "tr": "É por esse motivo que foi criado o Fundo Perpétuo de Educação. Sabemos que uns poucos dólares podem fazer …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-godoy-smiling-faces-and-grateful-hearts",
+      "para": 2,
+      "en": "… Succeed in School, EnglishConnect, BYU–Pathway Worldwide, and the Perpetual Education Fund bless many lives, especially those of the rising generation.",
+      "tr": "… Succeed in School, EnglishConnect, BYU-Pathway Worldwide e o Fundo Perpétuo de Educação abençoam muitas vidas, especialmente as da nova geração."
+     }
+    ],
+    "earliest": {
+     "year": 2001,
+     "conference": "2001 October General Conference",
+     "talk": "2001-10-holland-like-a-watered-garden",
+     "para": 2,
+     "en": "… nations. Most recently President Hinckley has announced a Perpetual Education Fund that has the potential to bless many in even …",
+     "tr": "… países. Mais recentemente o Presidente Hinckley anunciou um Fundo Perpétuo de Educação que tem o potencial de abençoar muitas pessoas …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "perpétuo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 1000.2,
+    "source": "2001-04-hinckley-the-perpetual-education-fund",
+    "kind": "talk",
+    "sample": "mos profundamente gratos a eles. Baseado em princípios semelhantes aos do Fundo Perpétuo para Emigração, iremos chamá-lo de Fundo Perpétuo paraEducação."
+   },
+   {
+    "term": "fundo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 250.1,
+    "source": "2001-04-hinckley-the-perpetual-education-fund",
+    "kind": "talk",
+    "sample": "plano que acreditamos ser inspirado pelo Senhor. A Igreja está estabelecendo um fundo com doações, em sua maioria feitas por santos dos últimos dias fiéis que contri"
+   },
+   {
+    "term": "educação",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 266.7,
+    "source": "2001-04-hinckley-the-perpetual-education-fund",
+    "kind": "talk",
+    "sample": "o de trabalho. A área educativa será de responsabilidade do Fundo Perpétuo para Educação. O funcionamento dos centros de emprego será responsabilidade do programa de be"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 25,
+  "en_talks": 19,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "Fondo Perpetuo para la Educación",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 25,
+    "talks": 19,
+    "verses": 0,
+    "first_year": 2001,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 April General Conference",
+      "talk": "2001-04-hinckley-the-perpetual-education-fund",
+      "para": 11,
+      "en": "… Perpetual Emigration Fund, we shall call it the Perpetual Education Fund.",
+      "tr": "… Perpetuo para la Emigración, lo llamaremos el Fondo Perpetuo para la Educación."
+     },
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 October General Conference",
+      "talk": "2003-10-hinckley-the-state-of-the-church",
+      "para": 32,
+      "en": "… generosity, interest, and prayers in behalf of the Perpetual Education Fund.",
+      "tr": "… generosidad, interés y oraciones a favor del Fondo Perpetuo para la Educación."
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-godoy-smiling-faces-and-grateful-hearts",
+      "para": 2,
+      "en": "… Succeed in School, EnglishConnect, BYU–Pathway Worldwide, and the Perpetual Education Fund bless many lives, especially those of the rising generation.",
+      "tr": "… la escuela, EnglishConnect, BYU–Pathway Worldwide y el Fondo Perpetuo para la Educación bendicen muchas vidas, en especial, las de la …"
+     }
+    ],
+    "earliest": {
+     "year": 2001,
+     "conference": "2001 April General Conference",
+     "talk": "2001-04-hinckley-the-perpetual-education-fund",
+     "para": 11,
+     "en": "… Perpetual Emigration Fund, we shall call it the Perpetual Education Fund.",
+     "tr": "… Perpetuo para la Emigración, lo llamaremos el Fondo Perpetuo para la Educación."
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

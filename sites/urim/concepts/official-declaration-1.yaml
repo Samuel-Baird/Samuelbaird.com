@@ -1,0 +1,17 @@
+id: concept.official-declaration-1
+category: Church History
+en:
+  term: Official Declaration 1
+  match:
+  - Official Declaration 1
+sources:
+  GS:
+  - official-declaration-1
+candidates:
+  pt:
+  - term: Declaração Oficial 1
+    hint: pulpit-glossary:verified
+  es:
+  - term: Declaración Oficial 1
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,195 @@
+{
+ "id": "concept.aaronic-priesthood-quorum",
+ "pt": {
+  "en_paragraphs": 44,
+  "en_talks": 31,
+  "en_verses": 0,
+  "uncovered_paragraphs": 25,
+  "renderings": [
+   {
+    "term": "quórum do Sacerdócio Aarônico",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 19,
+    "talks": 14,
+    "verses": 0,
+    "first_year": 2005,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2005,
+      "conference": "2005 October General Conference",
+      "talk": "2005-10-monson-do-your-dutythat-is-best",
+      "para": 48,
+      "en": "You will ever remember your Aaronic Priesthood quorum advisers and your fellow quorum members, thereby experiencing the …",
+      "tr": "Vocês se lembrarão de seus consultores de quórum do Sacerdócio Aarônico e de seus colegas membros do quórum, comprovando …"
+     },
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 April General Conference",
+      "talk": "2021-04-cook-bishopsshepherds-over-the-lords-flock",
+      "para": 34,
+      "en": "… advisers and specialists are called to assist the Aaronic Priesthood quorum presidencies and the bishopric in their duties.\n[^18]: Russell …",
+      "tr": "… capacitados são chamados para auxiliar as presidências do quorum do Sacerdócio Aarônico e o bispado em seus deveres.\n[^18]: Russell …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-renlund-taking-on-the-name-of-jesus-christ",
+      "para": 20,
+      "en": "… (2023), 123–38.\n[^18]: See [Moses 1:39](https://www.churchofjesuschrist.org/study/scriptures/pgp/moses/1?lang=eng&id=p39#p39). The [Aaronic Priesthood Quorum Theme](https://www.churchofjesuschrist.org/study/manual/aaronic-priesthood-quorum-theme/aaronic-priesthood-quorum-theme?lang=eng&id=p1#p1) begins: “I am a beloved son of God, …",
+      "tr": "… 123–138.\n[^17]: Ver [Moisés 1:39](https://www.churchofjesuschrist.org/study/scriptures/pgp/moses/1?lang=por&id=p39#p39). O [tema do quórum do Sacerdócio Aarônico](https://www.churchofjesuschrist.org/study/manual/aaronic-priesthood-quorum-theme/aaronic-priesthood-quorum-theme?lang=por&id=p1#p1) começa com: \"Sou um filho amado de …"
+     }
+    ],
+    "earliest": {
+     "year": 2005,
+     "conference": "2005 October General Conference",
+     "talk": "2005-10-monson-do-your-dutythat-is-best",
+     "para": 48,
+     "en": "You will ever remember your Aaronic Priesthood quorum advisers and your fellow quorum members, thereby experiencing the …",
+     "tr": "Vocês se lembrarão de seus consultores de quórum do Sacerdócio Aarônico e de seus colegas membros do quórum, comprovando …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "quóruns",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 23,
+    "share_of_uncovered": 0.92,
+    "ratio": 193.7,
+    "source": "1999-04-monson-the-priesthoodmighty-army-of-the-lord",
+    "kind": "talk",
+    "sample": "s podem oferecer uma ajuda inestimável. O serviço prestado pela presidência dos quóruns do Sacerdócio Aarônico pode também ser muito eficiente."
+   },
+   {
+    "term": "aarônico",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 24,
+    "share_of_uncovered": 0.96,
+    "ratio": 120.0,
+    "source": "1999-04-monson-the-priesthoodmighty-army-of-the-lord",
+    "kind": "talk",
+    "sample": "juda inestimável. O serviço prestado pela presidência dos quóruns do Sacerdócio Aarônico pode também ser muito eficiente."
+   },
+   {
+    "term": "rapazes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 12,
+    "share_of_uncovered": 0.48,
+    "ratio": 42.7,
+    "source": "1999-04-monson-the-priesthoodmighty-army-of-the-lord",
+    "kind": "talk",
+    "sample": "outros líderes e professores da ala e, particularmente, o pai e a mãe de nossos rapazes podem oferecer uma ajuda inestimável. O serviço prestado pela presidência dos q"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 56,
+  "en_talks": 35,
+  "en_verses": 0,
+  "uncovered_paragraphs": 35,
+  "renderings": [
+   {
+    "term": "quórumes del Sacerdocio Aarónico",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 21,
+    "talks": 15,
+    "verses": 0,
+    "first_year": 1997,
+    "last_year": 2014,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1997,
+      "conference": "1997 April General Conference",
+      "talk": "1997-04-monson-they-will-come",
+      "para": 29,
+      "en": "Aaronic Priesthood quorum advisers and Young Women teachers are on the line …",
+      "tr": "Los asesores de quórumes del Sacerdocio Aarónico y las maestras de las Mujeres Jóvenes están …"
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 April General Conference",
+      "talk": "2009-04-neider-revealed-quorum-principles",
+      "para": 13,
+      "en": "… Brethren to assist in the work of the Aaronic Priesthood quorum, including the mighty prayer of faith, fasting, scripture …",
+      "tr": "… muchas ayudas para facilitarnos la labor de los quórumes del Sacerdocio Aarónico, incluso la poderosa oración de fe, el …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 October General Conference",
+      "talk": "2014-10-davies-the-law-of-the-fast-a-personal-responsibility-to-care-for-the-poor-and-needy",
+      "para": 29,
+      "en": "… Monson has said, “Those bishops who organize their Aaronic Priesthood quorums to participate in the collection of fast offerings will …",
+      "tr": "… ha dicho: “Aquellos obispos que organicen a sus quórumes del Sacerdocio Aarónico para participar en la recolección de las ofrendas …"
+     }
+    ],
+    "earliest": {
+     "year": 1997,
+     "conference": "1997 April General Conference",
+     "talk": "1997-04-monson-they-will-come",
+     "para": 29,
+     "en": "Aaronic Priesthood quorum advisers and Young Women teachers are on the line …",
+     "tr": "Los asesores de quórumes del Sacerdocio Aarónico y las maestras de las Mujeres Jóvenes están …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "aarónico",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 31,
+    "share_of_uncovered": 0.886,
+    "ratio": 118.1,
+    "source": "1999-04-monson-the-priesthoodmighty-army-of-the-lord",
+    "kind": "talk",
+    "sample": "er muy eficaz el servicio que presten las presidencias de quórum del Sacerdocio Aarónico."
+   },
+   {
+    "term": "cuórums",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 21,
+    "share_of_uncovered": 0.6,
+    "ratio": 400.1,
+    "source": "2016-04-owen-the-greatest-leaders-are-the-greatest-followers",
+    "kind": "talk",
+    "sample": "nversaba con ellos ese día, me enteré que cada semana los miembros de todos los cuórums del Sacerdocio Aarónico de ese barrio se comunicaban con otros jóvenes y los in"
+   },
+   {
+    "term": "mujeres jóvenes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 18,
+    "share_of_uncovered": 0.514,
+    "ratio": 62.4,
+    "source": "2018-04-oscarson-young-women-in-the-work",
+    "kind": "talk",
+    "sample": "ispo y sus consejeros brindan liderazgo del sacerdocio a la organización de las Mujeres Jóvenes. Velan por cada una de las mujeres jóvenes y las fortalecen, trabajando estrech"
+   }
+  ]
+ }
+}

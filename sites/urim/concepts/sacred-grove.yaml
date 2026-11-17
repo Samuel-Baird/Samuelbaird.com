@@ -1,0 +1,17 @@
+id: concept.sacred-grove
+category: Church History
+en:
+  term: Sacred Grove
+  match:
+  - Sacred Grove
+sources:
+  GS:
+  - sacred-grove
+candidates:
+  pt:
+  - term: Bosque Sagrado
+    hint: pulpit-glossary:verified
+  es:
+  - term: Arboleda Sagrada
+    hint: approved-terms
+related: []

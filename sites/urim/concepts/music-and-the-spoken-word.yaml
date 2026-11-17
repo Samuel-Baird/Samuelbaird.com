@@ -1,0 +1,13 @@
+id: concept.music-and-the-spoken-word
+category: Music
+en:
+  term: Music & the Spoken Word
+  match:
+  - Music & the Spoken Word
+sources: {}
+candidates:
+  pt:
+  - term: Música e Palavra Inspirada
+    hint: pulpit-glossary:standard
+  es: []
+related: []

@@ -1,0 +1,15 @@
+id: concept.lesson-manual
+category: Education & Publications
+en:
+  term: lesson manual
+  match:
+  - lesson manual
+sources: {}
+candidates:
+  pt:
+  - term: manual de lições
+    hint: pulpit-glossary:standard
+  es:
+  - term: manual de lecciones
+    hint: pulpit-glossary:verified
+related: []

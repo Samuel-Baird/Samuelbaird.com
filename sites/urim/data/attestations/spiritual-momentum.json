@@ -1,0 +1,106 @@
+{
+ "id": "concept.spiritual-momentum",
+ "pt": {
+  "en_paragraphs": 50,
+  "en_talks": 32,
+  "en_verses": 0,
+  "uncovered_paragraphs": 50,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "ímpeto espiritual",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 48,
+    "share_of_uncovered": 0.96,
+    "ratio": 640.2,
+    "source": "2022-04-nelson-now-is-the-time",
+    "kind": "talk",
+    "sample": "ito minha admoestação desta manhã para que façam as coisas que vão aumentar seu ímpeto espiritual positivo, a sustentação sobre a qual o élder Dieter F. Uchtdorf estava falando,"
+   },
+   {
+    "term": "nelson",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 31,
+    "share_of_uncovered": 0.62,
+    "ratio": 24.1,
+    "source": "2022-10-eddy-the-virtue-of-the-word",
+    "kind": "talk",
+    "sample": "Deleitar-se nas escrituras\", A Liahona, junho de 1986, p. 2).\n[^27]: Russell M. Nelson, \"[Como seria sua vida sem o Livro de Mórmon?](https://www.churchofjesuschrist."
+   },
+   {
+    "term": "liahona, maio",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 25,
+    "share_of_uncovered": 0.5,
+    "ratio": 50.0,
+    "source": "2022-10-eddy-the-virtue-of-the-word",
+    "kind": "talk",
+    "sample": "esuschrist.org/study/general-conference/2022/04/47nelson?lang=por&id=p17#p17)\", Liahona, maio de 2022, p. 98).\n[^31]: Ver [Alma 5:11–13](https://www.churchofjesuschrist.org/"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 50,
+  "en_talks": 32,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "ímpetu espiritual",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 48,
+    "talks": 31,
+    "verses": 0,
+    "first_year": 2022,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2022,
+      "conference": "2022 April General Conference",
+      "talk": "2022-04-nelson-now-is-the-time",
+      "para": 13,
+      "en": "… to do those things that will increase your positive spiritual momentum, that lift Elder Dieter F. Uchtdorf was talking …",
+      "tr": "… mañana de que hagan aquellas cosas que aumenten su ímpetu espiritual positivo, ese impulso del que el élder Dieter F. …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-renlund-the-powerful-virtuous-cycle-of-the-doctrine-of-christ",
+      "para": 5,
+      "en": "… down and especially when we stop.[^3] If we maintain spiritual momentum by continually “rowing” toward the Savior, we are safer …",
+      "tr": "… velocidad y especialmente cuando nos detenemos[^3]. Si mantenemos el ímpetu espiritual “remando” continuamente hacia el Salvador, estaremos más a salvo …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-uchtdorf-christ-centered-unity",
+      "para": 35,
+      "en": "… 19:26](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/19?lang=eng&id=p26#p26).\n[^20]: See Russell M. Nelson, “[The Power of Spiritual Momentum](https://www.churchofjesuschrist.org/study/general-conference/2022/04/47nelson?lang=eng),” Liahona, May 2022, 97–100.\n[^21]: See [Alma 34:34](https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/34?lang=eng&id=p34#p34); …",
+      "tr": "… 19:26](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/19?lang=spa&id=p26#p26).\n[^20]: Véase Russell M. Nelson, \"[El poder del ímpetu espiritual](https://www.churchofjesuschrist.org/study/general-conference/2022/04/47nelson?lang=spa)\", Liahona, mayo de 2022, págs. 97–100.\n[^21]: Véanse …"
+     }
+    ],
+    "earliest": {
+     "year": 2022,
+     "conference": "2022 April General Conference",
+     "talk": "2022-04-nelson-now-is-the-time",
+     "para": 13,
+     "en": "… to do those things that will increase your positive spiritual momentum, that lift Elder Dieter F. Uchtdorf was talking …",
+     "tr": "… mañana de que hagan aquellas cosas que aumenten su ímpetu espiritual positivo, ese impulso del que el élder Dieter F. …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

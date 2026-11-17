@@ -1,0 +1,112 @@
+{
+ "id": "concept.work-for-the-dead",
+ "pt": {
+  "en_paragraphs": 8,
+  "en_talks": 8,
+  "en_verses": 0,
+  "uncovered_paragraphs": 8,
+  "renderings": [
+   {
+    "term": "obra pelos mortos",
+    "evidence": [],
+    "hint": "pulpit-glossary:standard"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "mortos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.875,
+    "ratio": 140.0,
+    "source": "1994-10-nelson-the-spirit-of-elijah",
+    "kind": "talk",
+    "sample": "erdidas do conhecimento humano.[^13] Uma dessas doutrinas foi a da salvação dos mortos, parte extremamente importante da prometida “restauração de todas as coisas”.[^"
+   },
+   {
+    "term": "elias",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.625,
+    "ratio": 227.3,
+    "source": "2001-04-faust-born-again",
+    "kind": "talk",
+    "sample": "ta Malaquias referiu-se a esse conceito quando falou acerca da vinda do profeta Elias, que “[converteria] o coração dos pais aos filhos, e o coração dos filhos a seu"
+   },
+   {
+    "term": "vivos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.625,
+    "ratio": 125.0,
+    "source": "2000-04-dunn-because-my-father-sent-me",
+    "kind": "talk",
+    "sample": "m mandamento para realizarmos a obra vicária, mas algo que se aplica também aos vivos e mostra a importância de cultivarmos e preservarmos os relacionamentos familia"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 6,
+  "en_talks": 6,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "obra por los muertos",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 4,
+    "talks": 4,
+    "verses": 0,
+    "first_year": 2000,
+    "last_year": 2021,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2000,
+      "conference": "2000 April General Conference",
+      "talk": "2000-04-dunn-because-my-father-sent-me",
+      "para": 11,
+      "en": "… children was not only a commission to do work for the dead, but it also applied to the living …",
+      "tr": "… no era una asignación de hacer sólo la obra por los muertos, sino que también se aplicaba a los …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-cook-roots-and-branches",
+      "para": 38,
+      "en": "… of all time to the living), speaking of work for the dead, said: “I look upon this portion of …",
+      "tr": "… haya habido para los vivos) hablando de la obra por los muertos, dijo: \"Contemplo esta parte de nuestro ministerio …"
+     },
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 October General Conference",
+      "talk": "2021-10-bednar-with-the-power-of-god-in-great-glory",
+      "para": 8,
+      "en": "… the veil* and initiated in our dispensation the work for the dead on *the other side of the veil*.",
+      "tr": "… del velo* e inició, en nuestra dispensación, la obra por los muertos *del otro lado del velo*."
+     }
+    ],
+    "earliest": {
+     "year": 2000,
+     "conference": "2000 April General Conference",
+     "talk": "2000-04-dunn-because-my-father-sent-me",
+     "para": 11,
+     "en": "… children was not only a commission to do work for the dead, but it also applied to the living …",
+     "tr": "… no era una asignación de hacer sólo la obra por los muertos, sino que también se aplicaba a los …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

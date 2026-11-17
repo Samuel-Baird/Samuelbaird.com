@@ -1,0 +1,11 @@
+id: concept.partial-tithe-payer
+category: Finances
+en:
+  term: partial-tithe payer
+  match:
+  - partial-tithe payer
+sources: {}
+candidates:
+  pt: []
+  es: []
+related: []

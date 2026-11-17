@@ -1,0 +1,195 @@
+{
+ "id": "concept.fireside",
+ "pt": {
+  "en_paragraphs": 49,
+  "en_talks": 47,
+  "en_verses": 0,
+  "uncovered_paragraphs": 13,
+  "renderings": [
+   {
+    "term": "serão",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 36,
+    "talks": 34,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-cuthbert-the-spirituality-of-service",
+      "para": 4,
+      "en": "… forgets herself in service to others as she gives firesides and helps wherever she can with a cheerful smile and …",
+      "tr": "… esquece de si mesma em benefício dos outros, realizando serões domingueiros e ajudando em tudo o que pode com um …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 October General Conference",
+      "talk": "2011-10-monson-dare-to-stand-alone",
+      "para": 49,
+      "en": "… *1979 Devotional Speeches of the Year: BYU Devotional and Fireside Addresses* (1980), 59.\n[^5]: Gordon B. Hinckley, in Conference Report, …",
+      "tr": "… Taft Benson, \"In His Steps\" [Seguir Seus Passos] (serão do Sistema Educacional da Igreja, 8 de fevereiro de 1987); …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-oaks-the-family-centered-gospel-of-jesus-christ",
+      "para": 27,
+      "en": "… Russell M. Nelson, “[Faith and Families](https://speeches.byu.edu/talks/russell-m-nelson/faith-families)” (Brigham Young University fireside, Feb. 6, 2005), 3, speeches.byu.edu.\n[^3]: Russell M. Nelson, …",
+      "tr": "… Evangelho.\n[^2]: Russell M. Nelson, \"[Faith and Families](https://speeches.byu.edu/talks/russell-m-nelson/faith-families)\" (serão da Universidade Brigham Young, fevereiro de 2005), p. 3, speeches.byu.edu. …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-cuthbert-the-spirituality-of-service",
+     "para": 4,
+     "en": "… forgets herself in service to others as she gives firesides and helps wherever she can with a cheerful smile and …",
+     "tr": "… esquece de si mesma em benefício dos outros, realizando serões domingueiros e ajudando em tudo o que pode com um …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "fireside",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.308,
+    "ratio": 1231.1,
+    "source": "1991-10-malan-these-are-your-days",
+    "kind": "talk",
+    "sample": "o de Jesus Cristo, pois tendes uma causa, e a causa é gloriosa!” (Young Women — Fireside, 10 de novembro de 1985.)"
+   },
+   {
+    "term": "young",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.462,
+    "ratio": 47.3,
+    "source": "1991-10-malan-these-are-your-days",
+    "kind": "talk",
+    "sample": "is do evangelho de Jesus Cristo, pois tendes uma causa, e a causa é gloriosa!” (Young Women — Fireside, 10 de novembro de 1985.)"
+   },
+   {
+    "term": "brigham",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.385,
+    "ratio": 51.3,
+    "source": "1993-10-oaks-the-great-plan-of-happiness",
+    "kind": "talk",
+    "sample": "r resolvida entre o homem, a mulher e Deus” (“If I Were You, What Would I Do?” *Brigham Young University 1983-84 Fireside and Devotional Speeches,* Provo, Utah: Univer"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 39,
+  "en_talks": 38,
+  "en_verses": 0,
+  "uncovered_paragraphs": 11,
+  "renderings": [
+   {
+    "term": "charla fogonera",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 28,
+    "talks": 27,
+    "verses": 0,
+    "first_year": 1992,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1992,
+      "conference": "1992 April General Conference",
+      "talk": "1992-04-ashton-the-tongue-can-be-a-sharp-sword",
+      "para": 22,
+      "en": "During an informal fireside address held with a group of adult Latter-day Saints, the …",
+      "tr": "Durante una charla fogonera informal con un grupo de Santos de los Últimos …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 October General Conference",
+      "talk": "2011-10-waddell-the-opportunity-of-a-lifetime",
+      "para": 5,
+      "en": "At the conclusion of a stake fireside where he and his companion had been invited to participate, …",
+      "tr": "Al término de una charla fogonera de estaca, donde él y su compañero habían sido …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 October General Conference",
+      "talk": "2024-10-browning-seeking-answers-to-spiritual-questions",
+      "para": 27,
+      "en": "… Uchtdorf, “[The Reflection in the Water](https://www.churchofjesuschrist.org/broadcasts/watch/ces-devotionals/2009/01?lang=eng&vid=2176253771001)” (Church Educational System fireside for young adults, Nov. 1, 2009), CESdevotionals.ChurchofJesusChrist.org.\n[^6]: Russell M. …",
+      "tr": "… [^5]: Dieter F. Uchtdorf, \"[El reflejo en el agua](https://www.churchofjesuschrist.org/broadcasts/watch/ces-devotionals/2009/01?lang=eng&vid=2176253771001)\", charla fogonera del Sistema Educativo de la Iglesia para jóvenes adultos, …"
+     }
+    ],
+    "earliest": {
+     "year": 1992,
+     "conference": "1992 April General Conference",
+     "talk": "1992-04-ashton-the-tongue-can-be-a-sharp-sword",
+     "para": 22,
+     "en": "During an informal fireside address held with a group of adult Latter-day Saints, the …",
+     "tr": "Durante una charla fogonera informal con un grupo de Santos de los Últimos …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "speeches",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.636,
+    "ratio": 181.9,
+    "source": "2004-10-burton-more-holiness-give-me",
+    "kind": "talk",
+    "sample": "nched in Destiny”, en *Brigham Young University 1982–83 Fireside and Devotional Speeches*, 1983, pág. 2). Tener más mansedumbre nos permitirá ser dóciles a la enseñanza"
+   },
+   {
+    "term": "byu",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.545,
+    "ratio": 155.9,
+    "source": "2011-10-dalton-love-her-mother",
+    "kind": "talk",
+    "sample": "]: Harold B. Lee, \"Be Loyal to the Royal within You,\" en *Speeches of the Year: BYU Devotional and Ten-Stake Fireside Addresses 1973*, 1973, pág. 101."
+   },
+   {
+    "term": "pág",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.727,
+    "ratio": 25.8,
+    "source": "2004-10-burton-more-holiness-give-me",
+    "kind": "talk",
+    "sample": ", en *Brigham Young University 1982–83 Fireside and Devotional Speeches*, 1983, pág. 2). Tener más mansedumbre nos permitirá ser dóciles a la enseñanza del Espírit"
+   }
+  ]
+ }
+}

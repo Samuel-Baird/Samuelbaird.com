@@ -1,0 +1,15 @@
+id: concept.ward-missionary-fund
+category: Finances
+en:
+  term: ward missionary fund
+  match:
+  - ward missionary fund
+sources: {}
+candidates:
+  pt:
+  - term: fundo missionário da ala
+    hint: pulpit-glossary:standard
+  es:
+  - term: fondo misional de barrio
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,194 @@
+{
+ "id": "concept.plan-of-salvation",
+ "pt": {
+  "en_paragraphs": 263,
+  "en_talks": 205,
+  "en_verses": 4,
+  "uncovered_paragraphs": 17,
+  "renderings": [
+   {
+    "term": "plano de salvação",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 246,
+    "talks": 195,
+    "verses": 4,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Alma 42:5",
+      "ref_en": "Alma 42:5",
+      "en": "For behold, if Adam had put forth his hand immediately, and partaken of the tree of life, he would have lived forever, according to the word of God, having no space for repentance; yea, and also the word of God would have been void, and the great plan of salvation would have been frustrated.",
+      "tr": "Porque eis que se Adão houvesse estendido imediatamente a mão e comido da árvore da vida, teria vivido eternamente, de acordo com a palavra de Deus, não tendo tempo para o arrependimento; sim, e também a palavra de Deus teria sido vã e estaria frustrado o grande plano de salvação.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/42?lang=por&id=p5"
+     },
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 October General Conference",
+      "talk": "1991-10-ballard-be-an-example-of-the-believers",
+      "para": 32,
+      "en": "… for being, or their prominent role in the plan of salvation.",
+      "tr": "… de sua existência, ou seu proeminente papel no plano de salvação."
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 October General Conference",
+      "talk": "2014-10-oaks-loving-others-and-living-with-differences",
+      "para": 31,
+      "en": "… teachings upon which they are based. The Father’s plan of salvation, which we know by prophetic revelation, places us …",
+      "tr": "… os ensinamentos sobre os quais se baseiam. O plano de salvação do Pai, que conhecemos por revelação profética, coloca-nos em …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 October General Conference",
+     "talk": "1990-10-mickelsen-what-is-truth",
+     "para": 12,
+     "en": "… you sent from him?” Then Ammon explained the plan of salvation to him, and he was able to understand because …",
+     "tr": "… enviado por ele?” Então Amon lhe explicou o plano de salvação e ele entendeu, porque tinha a mente aberta ao …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "the-plan",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.471,
+    "ratio": 1882.8,
+    "source": "2019-10-franco-finding-joy-in-sharing-the-gospel",
+    "kind": "talk",
+    "sample": "christ.org/study/manual/preach-my-gospel-a-guide-to-missionary-service/lesson-2-the-plan-of-salvation?lang=por), rev. ed. 2018, capítulo 3.\n[^3]: Dallin H. Oaks, \"[Comp"
+   },
+   {
+    "term": "service/lesson",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.412,
+    "ratio": 1647.5,
+    "source": "2019-10-franco-finding-joy-in-sharing-the-gospel",
+    "kind": "talk",
+    "sample": "www.churchofjesuschrist.org/study/manual/preach-my-gospel-a-guide-to-missionary-service/lesson-2-the-plan-of-salvation?lang=por), rev. ed. 2018, capítulo 3.\n[^3]: Dallin H. O"
+   },
+   {
+    "term": "salvation",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.471,
+    "ratio": 627.6,
+    "source": "2019-10-franco-finding-joy-in-sharing-the-gospel",
+    "kind": "talk",
+    "sample": "tudy/manual/preach-my-gospel-a-guide-to-missionary-service/lesson-2-the-plan-of-salvation?lang=por), rev. ed. 2018, capítulo 3.\n[^3]: Dallin H. Oaks, \"[Compartilhar o ev"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 251,
+  "en_talks": 195,
+  "en_verses": 4,
+  "uncovered_paragraphs": 15,
+  "renderings": [
+   {
+    "term": "Plan de Salvación",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 236,
+    "talks": 187,
+    "verses": 4,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Alma 42:5",
+      "ref_en": "Alma 42:5",
+      "en": "For behold, if Adam had put forth his hand immediately, and partaken of the tree of life, he would have lived forever, according to the word of God, having no space for repentance; yea, and also the word of God would have been void, and the great plan of salvation would have been frustrated.",
+      "tr": "Porque he aquí, si Adán hubiese extendido su mano inmediatamente, y comido del árbol de la vida, habría vivido para siempre, según la palabra de Dios, sin tener un tiempo para arrepentirse; sí, y también habría sido vana la palabra de Dios, y se habría frustrado el gran plan de salvación.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/42?lang=spa&id=p5"
+     },
+     {
+      "kind": "talk",
+      "year": 1997,
+      "conference": "1997 October General Conference",
+      "talk": "1997-10-maxwell-apply-the-atoning-blood-of-christ",
+      "para": 6,
+      "en": "… we enter with faith that pavilion of perspective—the plan of salvation. Then the search for meaning is ended, even …",
+      "tr": "… con fe en ese pabellón de perspectiva: el plan de salvación. Entonces finalizara toda búsqueda del significado de nuestra …"
+     },
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 April General Conference",
+      "talk": "2017-04-oaks-the-godhead-and-the-plan-of-salvation",
+      "para": 31,
+      "en": "… enjoy the ultimate blessings that come through God’s plan of salvation. How do we know all of this? We …",
+      "tr": "… bendiciones supremas que se obtienen por medio del Plan de Salvación de Dios. ¿Cómo sabemos todo esto? Lo sabemos por …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 October General Conference",
+     "talk": "1990-10-camargo-in-all-things-give-thanks",
+     "para": 8,
+     "en": "… and filling in that marvelous portion of the plan of salvation created by our Father in Heaven for the happiness …",
+     "tr": "… de Dios y explicando esa parte maravillosa del plan de salvación creado por nuestro Padre Celestial para la felicidad de …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "plan",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 15,
+    "share_of_uncovered": 1.0,
+    "ratio": 36.4,
+    "source": "1997-10-maxwell-apply-the-atoning-blood-of-christ",
+    "kind": "talk",
+    "sample": "mbre del amor rescatador y a la misericordia del Padre, atributos que colman Su plan de felicidad."
+   },
+   {
+    "term": "salvation",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.533,
+    "ratio": 426.8,
+    "source": "2019-10-franco-finding-joy-in-sharing-the-gospel",
+    "kind": "talk",
+    "sample": "tudy/manual/preach-my-gospel-a-guide-to-missionary-service/lesson-2-the-plan-of-salvation?lang=spa), act. de 2018, pág. 48.\n[^3]: Dallin H. Oaks, \"[Compartir el Evangeli"
+   },
+   {
+    "term": "service/lesson",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.467,
+    "ratio": 933.6,
+    "source": "2019-10-franco-finding-joy-in-sharing-the-gospel",
+    "kind": "talk",
+    "sample": "www.churchofjesuschrist.org/study/manual/preach-my-gospel-a-guide-to-missionary-service/lesson-2-the-plan-of-salvation?lang=spa), act. de 2018, pág. 48.\n[^3]: Dallin H. Oaks,"
+   }
+  ]
+ }
+}

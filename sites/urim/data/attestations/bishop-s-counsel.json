@@ -1,0 +1,50 @@
+{
+ "id": "concept.bishop-s-counsel",
+ "pt": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "conselho do bispo",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2007,
+    "last_year": 2007,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2007,
+      "conference": "2007 April General Conference",
+      "talk": "2007-04-oaks-divorce",
+      "para": 32,
+      "en": "In contrast, the couples who followed this bishop’s counsel and stayed together emerged with their marriages even stronger. …",
+      "tr": "Por outro lado, os casais que seguiram o conselho do bispo e permaneceram juntos tornaram seu casamento ainda mais sólido. …"
+     }
+    ],
+    "earliest": {
+     "year": 2007,
+     "conference": "2007 April General Conference",
+     "talk": "2007-04-oaks-divorce",
+     "para": 32,
+     "en": "In contrast, the couples who followed this bishop’s counsel and stayed together emerged with their marriages even stronger. …",
+     "tr": "Por outro lado, os casais que seguiram o conselho do bispo e permaneceram juntos tornaram seu casamento ainda mais sólido. …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 1,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": []
+ }
+}

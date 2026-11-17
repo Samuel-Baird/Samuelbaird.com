@@ -1,0 +1,13 @@
+id: concept.confirmed-a-member
+category: Baptism, Confirmation & Blessings
+en:
+  term: confirmed a member
+  match:
+  - confirmed a member
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: confirmar miembro de la Iglesia
+    hint: pulpit-glossary:verified
+related: []

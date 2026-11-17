@@ -1,0 +1,118 @@
+{
+ "id": "concept.heavenly-father",
+ "pt": {
+  "en_paragraphs": 2814,
+  "en_talks": 1143,
+  "en_verses": 12,
+  "uncovered_paragraphs": 53,
+  "renderings": [
+   {
+    "term": "Pai Celestial",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2761,
+    "talks": 1130,
+    "verses": 12,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Mateus 6:14",
+      "ref_en": "Matthew 6:14",
+      "en": "For if ye forgive men their trespasses, your heavenly Father will also forgive you:",
+      "tr": "Porque, se perdoardes aos homens as suas ofensas, também vosso Pai Celestial vos perdoará a vós;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/nt/matt/6?lang=por&id=p14"
+     },
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 October General Conference",
+      "talk": "1991-10-ballard-be-an-example-of-the-believers",
+      "para": 37,
+      "en": "… to those around you. You are daughters of your Heavenly Father, who loves you. May each one of you …",
+      "tr": "… luz para aqueles com quem conviveis. Sois filhas do Pai Celestial, que vos ama. Manifestai vosso amor a ele, …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-bednar-we-believe-in-being-chaste",
+      "para": 2,
+      "en": "… only be understood within the overarching context of our Heavenly Father’s plan of happiness for His children. “All human …",
+      "tr": "… dentro do contexto abrangente do plano de felicidade do Pai Celestial para Seus filhos. “Todos os seres humanos — homem …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-ashton-neither-boast-of-faith-nor-of-mighty-works",
+     "para": 14,
+     "en": "… I must have been to others and to my Heavenly Father to assume that I had brought all of these …",
+     "tr": "… quão ofensiva deve ter parecido aos outros e ao Pai Celestial a presunção de ter realizado tudo por mim mesmo. …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 2803,
+  "en_talks": 1142,
+  "en_verses": 12,
+  "uncovered_paragraphs": 55,
+  "renderings": [
+   {
+    "term": "Padre Celestial",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 2748,
+    "talks": 1130,
+    "verses": 12,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "3 Nefi 13:14",
+      "ref_en": "3 Nephi 13:14",
+      "en": "For, if ye forgive men their trespasses your heavenly Father will also forgive you;",
+      "tr": "Porque si perdonáis a los hombres sus ofensas, os perdonará también a vosotros vuestro Padre Celestial;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/13?lang=spa&id=p14"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-monson-days-never-to-be-forgotten",
+      "para": 46,
+      "en": "Did our Heavenly Father honor such abiding faith? The branch prospered. The membership …",
+      "tr": "¿Recompensó nuestro Padre Celestial esa fe tan firme? La rama prosperó. Los miembros …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 April General Conference",
+      "talk": "2015-04-gibson-fatherhoodour-eternal-destiny",
+      "para": 54,
+      "en": "I know that Heavenly Father is concerned about each of us individually and has …",
+      "tr": "Sé que nuestro Padre Celestial se interesa por cada uno de nosotros en forma …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-ashton-neither-boast-of-faith-nor-of-mighty-works",
+     "para": 14,
+     "en": "… I must have been to others and to my Heavenly Father to assume that I had brought all of these …",
+     "tr": "… sido para con los demás y para con mi Padre Celestial al suponer que lo había logrado todo sin la …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

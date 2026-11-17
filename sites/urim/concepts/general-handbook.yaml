@@ -1,0 +1,15 @@
+id: concept.general-handbook
+category: Education & Publications
+en:
+  term: General Handbook
+  match:
+  - General Handbook
+sources: {}
+candidates:
+  pt:
+  - term: Manual Geral
+    hint: pulpit-glossary:verified
+  es:
+  - term: Manual General
+    hint: pulpit-glossary:verified
+related: []

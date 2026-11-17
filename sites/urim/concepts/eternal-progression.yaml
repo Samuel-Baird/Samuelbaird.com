@@ -1,0 +1,15 @@
+id: concept.eternal-progression
+category: Plan of Salvation
+en:
+  term: eternal progression
+  match:
+  - eternal progression
+sources: {}
+candidates:
+  pt:
+  - term: progresso eterno
+    hint: pulpit-glossary:verified
+  es:
+  - term: progreso eterno
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,141 @@
+{
+ "id": "concept.byu-pathway-worldwide",
+ "pt": {
+  "en_paragraphs": 6,
+  "en_talks": 5,
+  "en_verses": 0,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "BYU-Pathway",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2025,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-rasband-right-before-our-eyes",
+      "para": 23,
+      "en": "… the growing reach of education in the Church is BYU–Pathway Worldwide. Across the world, enrollment has reached nearly 75,000 …",
+      "tr": "… o alcance crescente dos estudos na Igreja é a BYU-Pathway Worldwide. Em todo o mundo, chegamos a aproximadamente 75 mil …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-godoy-smiling-faces-and-grateful-hearts",
+      "para": 2,
+      "en": "… the Church. Programs such as Succeed in School, EnglishConnect, BYU–Pathway Worldwide, and the Perpetual Education Fund bless many lives, …",
+      "tr": "… oferecidas pela Igreja. Programas como Succeed in School, EnglishConnect, BYU-Pathway Worldwide e o Fundo Perpétuo de Educação abençoam muitas vidas, …"
+     }
+    ],
+    "earliest": {
+     "year": 2025,
+     "conference": "2025 April General Conference",
+     "talk": "2025-04-rasband-right-before-our-eyes",
+     "para": 23,
+     "en": "… the growing reach of education in the Church is BYU–Pathway Worldwide. Across the world, enrollment has reached nearly 75,000 …",
+     "tr": "… o alcance crescente dos estudos na Igreja é a BYU-Pathway Worldwide. Em todo o mundo, chegamos a aproximadamente 75 mil …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "pathway worldwide",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 1.0,
+    "ratio": 4001.0,
+    "source": "2021-10-gilbert-becoming-more-in-christ-the-parable-of-the-slope",
+    "kind": "talk",
+    "sample": "cesso de elevar seu coeficiente angular. Durante meu serviço como reitor da BYU–Pathway Worldwide, lembro-me de participar de um grande devocional em Lima, Peru, no qual o élder"
+   },
+   {
+    "term": "byu–pathway",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 1.0,
+    "ratio": 4001.0,
+    "source": "2021-10-gilbert-becoming-more-in-christ-the-parable-of-the-slope",
+    "kind": "talk",
+    "sample": "processo de elevar seu coeficiente angular. Durante meu serviço como reitor da BYU–Pathway Worldwide, lembro-me de participar de um grande devocional em Lima, Peru, no qu"
+   },
+   {
+    "term": "how",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 333.4,
+    "source": "2021-10-gilbert-becoming-more-in-christ-the-parable-of-the-slope",
+    "kind": "talk",
+    "sample": "/scriptures/ot/deut/6?lang=por&id=p11#p11).\n[^13]: Ver Clayton M. Christensen, \"How Will You Measure Your Life?\", Harvard Business Review, julho–agosto de 2010 Ess"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 6,
+  "en_talks": 5,
+  "en_verses": 0,
+  "uncovered_paragraphs": 6,
+  "renderings": [
+   {
+    "term": "BYU–Pathway Worldwide",
+    "evidence": [],
+    "hint": "pulpit-glossary:verified"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "pathway",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 1.0,
+    "ratio": 4001.0,
+    "source": "2021-10-gilbert-becoming-more-in-christ-the-parable-of-the-slope",
+    "kind": "talk",
+    "sample": "el proceso de elevar su pendiente. Cuando prestaba servicio como rector de BYU–Pathway Worldwide, recuerdo estar sentado en un concurrido devocional en Lima, Perú, do"
+   },
+   {
+    "term": "byu",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 1.0,
+    "ratio": 285.8,
+    "source": "2021-10-gilbert-becoming-more-in-christ-the-parable-of-the-slope",
+    "kind": "talk",
+    "sample": "r en el proceso de elevar su pendiente. Cuando prestaba servicio como rector de BYU–Pathway Worldwide, recuerdo estar sentado en un concurrido devocional en Lima,"
+   },
+   {
+    "term": "worldwide",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.833,
+    "ratio": 555.7,
+    "source": "2021-10-gilbert-becoming-more-in-christ-the-parable-of-the-slope",
+    "kind": "talk",
+    "sample": "eso de elevar su pendiente. Cuando prestaba servicio como rector de BYU–Pathway Worldwide, recuerdo estar sentado en un concurrido devocional en Lima, Perú, donde el éld"
+   }
+  ]
+ }
+}

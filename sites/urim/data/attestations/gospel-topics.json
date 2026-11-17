@@ -1,0 +1,195 @@
+{
+ "id": "concept.gospel-topics",
+ "pt": {
+  "en_paragraphs": 37,
+  "en_talks": 35,
+  "en_verses": 0,
+  "uncovered_paragraphs": 12,
+  "renderings": [
+   {
+    "term": "Tópicos do Evangelho",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 25,
+    "talks": 23,
+    "verses": 0,
+    "first_year": 2003,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 April General Conference",
+      "talk": "2003-04-faust-the-devils-throat",
+      "para": 17,
+      "en": "… the garment in the military, priesthood ordinances and blessings, gospel topics, and a few selected hymns. We had a …",
+      "tr": "… nas forças armadas, ordenanças e bênçãos do sacerdócio, tópicos do evangelho e alguns hinos escolhidos. Tínhamos um material semelhante para …"
+     },
+     {
+      "kind": "talk",
+      "year": 2020,
+      "conference": "2020 October General Conference",
+      "talk": "2020-10-waddell-there-was-bread",
+      "para": 31,
+      "en": "… Ensign or Liahona, Nov. 2005, 62.\n[^17]: “[Emergency Preparedness](https://www.churchofjesuschrist.org/study/manual/gospel-topics/emergency-preparedness?lang=eng),” Gospel Topics, topics.ChurchofJesusChrist.org.\n[^18]: David A. Bednar, “[Exercise Faith …",
+      "tr": "… de 2005, p. 62.\n[^17]: \"[Preparação para emergências](https://www.churchofjesuschrist.org/study/manual/gospel-topics/emergency-preparedness?lang=por)\", Tópicos do Evangelho, topics.ChurchofJesusChrist.org.\n[^18]: David A. Bednar, \"[Exercer Fé em …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 October General Conference",
+      "talk": "2024-10-andersen-the-triumph-of-hope",
+      "para": 52,
+      "en": "… Young University devotional, Jan. 8, 1995], 3, speeches.byu.edu).\n[^4]: Gospel Topics, “[Hope](https://www.churchofjesuschrist.org/study/manual/gospel-topics/hope?lang=eng&id=p1#p1),” Gospel Library.\n[^5]: “Wherefore, whoso believeth in …",
+      "tr": "… de janeiro de 1995, p. 3, speeches.byu.edu).\n[^4]: Tópicos do Evangelho, \"[Esperança](https://www.churchofjesuschrist.org/study/manual/gospel-topics/hope?lang=por&id=p1#p1)\", Biblioteca do Evangelho.\n[^5]: \"Portanto, todos os …"
+     }
+    ],
+    "earliest": {
+     "year": 2003,
+     "conference": "2003 April General Conference",
+     "talk": "2003-04-faust-the-devils-throat",
+     "para": 17,
+     "en": "… the garment in the military, priesthood ordinances and blessings, gospel topics, and a few selected hymns. We had a …",
+     "tr": "… nas forças armadas, ordenanças e bênçãos do sacerdócio, tópicos do evangelho e alguns hinos escolhidos. Tínhamos um material semelhante para …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "topics",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 12,
+    "share_of_uncovered": 1.0,
+    "ratio": 1000.2,
+    "source": "2014-04-uchtdorf-are-you-sleeping-through-the-restoration",
+    "kind": "talk",
+    "sample": "iptures/bofm/3-ne/12?lang=por&id=p29#p29).\n[^7]: Ver, por exemplo, [www.LDS.org/topics/addiction](https://www.lds.org/topics/addiction).\n[^8]: [Mateus 22:37–39](https"
+   },
+   {
+    "term": "manual/gospel",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 11,
+    "share_of_uncovered": 0.917,
+    "ratio": 1222.5,
+    "source": "2023-10-phillips-god-knows-and-loves-you",
+    "kind": "talk",
+    "sample": "ópicos e perguntas, \"[Espírito Santo](https://www.churchofjesuschrist.org/study/manual/gospel-topics/holy-ghost?lang=por&id=p6#p6)\", Biblioteca do Evangelho)."
+   },
+   {
+    "term": "tópicos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.833,
+    "ratio": 476.3,
+    "source": "2023-10-phillips-god-knows-and-loves-you",
+    "kind": "talk",
+    "sample": "hurchofjesuschrist.org/study/scriptures/dc-testament/dc/36?lang=por&id=p2#p2)) (Tópicos e perguntas, \"[Espírito Santo](https://www.churchofjesuschrist.org/study/manual"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 37,
+  "en_talks": 35,
+  "en_verses": 0,
+  "uncovered_paragraphs": 15,
+  "renderings": [
+   {
+    "term": "Temas del Evangelio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 22,
+    "talks": 20,
+    "verses": 0,
+    "first_year": 2003,
+    "last_year": 2023,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 April General Conference",
+      "talk": "2003-04-faust-the-devils-throat",
+      "para": 17,
+      "en": "… the garment in the military, priesthood ordinances and blessings, gospel topics, and a few selected hymns. We had a …",
+      "tr": "… servicio militar, las ordenanzas y bendiciones del sacerdocio, temas del Evangelio y algunos himnos selectos. Los que servimos en las …"
+     },
+     {
+      "kind": "talk",
+      "year": 2020,
+      "conference": "2020 October General Conference",
+      "talk": "2020-10-waddell-there-was-bread",
+      "para": 31,
+      "en": "… Ensign or Liahona, Nov. 2005, 62.\n[^17]: “[Emergency Preparedness](https://www.churchofjesuschrist.org/study/manual/gospel-topics/emergency-preparedness?lang=eng),” Gospel Topics, topics.ChurchofJesusChrist.org.\n[^18]: David A. Bednar, “[Exercise Faith …",
+      "tr": "… [^17]: \"[Preparación y respuesta en caso de emergencia](https://www.churchofjesuschrist.org/study/manual/gospel-topics/emergency-preparedness?lang=spa)\", Temas del Evangelio, topics.ChurchofJesusChrist.org\n[^18]: David A. Bednar, \"[Ejerza fe en …"
+     },
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 April General Conference",
+      "talk": "2023-04-corbitt-do-you-know-why-i-as-a-christian-believe-in-christ",
+      "para": 15,
+      "en": "… “in God’s presence and to continue as families” (Gospel Topics, “[Eternal Life](https://www.churchofjesuschrist.org/study/manual/gospel-topics/eternal-life?lang=eng),” topics.ChurchofJesusChrist.org; see also [Doctrine and Covenants …",
+      "tr": "… presencia de Dios y continuar en familia\" (Temas del Evangelio, \"[Vida eterna](https://www.churchofjesuschrist.org/study/manual/gospel-topics/eternal-life?lang=spa)\", topics.ChurchofJesusChrist.org; véase también [Doctrina y Convenios …"
+     }
+    ],
+    "earliest": {
+     "year": 2003,
+     "conference": "2003 April General Conference",
+     "talk": "2003-04-faust-the-devils-throat",
+     "para": 17,
+     "en": "… the garment in the military, priesthood ordinances and blessings, gospel topics, and a few selected hymns. We had a …",
+     "tr": "… servicio militar, las ordenanzas y bendiciones del sacerdocio, temas del Evangelio y algunos himnos selectos. Los que servimos en las …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "topics",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 14,
+    "share_of_uncovered": 0.933,
+    "ratio": 1244.8,
+    "source": "2014-04-uchtdorf-are-you-sleeping-through-the-restoration",
+    "kind": "talk",
+    "sample": "criptures/bofm/3-ne/12?lang=spa&id=p29#p29).\n[^7]: Véase, por ejemplo, [lds.org/topics/addiction?lang=spa](https://www.lds.org/topics/addiction).\n[^8]: [Mateo 22:37–3"
+   },
+   {
+    "term": "manual/gospel",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.867,
+    "ratio": 1155.8,
+    "source": "2023-10-phillips-god-knows-and-loves-you",
+    "kind": "talk",
+    "sample": "(Temas y preguntas, \"[Espiritu Santo](https://www.churchofjesuschrist.org/study/manual/gospel-topics/holy-ghost?lang=spa&id=p6#p6)\", Biblioteca del Evangelio)."
+   },
+   {
+    "term": "temas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 12,
+    "share_of_uncovered": 0.8,
+    "ratio": 266.7,
+    "source": "2023-10-phillips-god-knows-and-loves-you",
+    "kind": "talk",
+    "sample": "urchofjesuschrist.org/study/scriptures/dc-testament/dc/36?lang=spa&id=p2#p2))\" (Temas y preguntas, \"[Espiritu Santo](https://www.churchofjesuschrist.org/study/manual"
+   }
+  ]
+ }
+}

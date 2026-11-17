@@ -1,0 +1,17 @@
+id: concept.council-on-the-disposition-of-the-tithes
+category: Finances
+en:
+  term: Council on the Disposition of the Tithes
+  match:
+  - Council on the Disposition of the Tithes
+sources: {}
+candidates:
+  pt:
+  - term: Conselho de Disposição dos Dízimos
+    hint: pulpit-glossary:verified
+  es:
+  - term: Consejo sobre la Disposición de los Diezmos
+    hint: pulpit-glossary:verified
+related: []
+note: Named governing body per D&C 120 (First Presidency, Quorum of the Twelve, Presiding Bishopric);
+  official name only

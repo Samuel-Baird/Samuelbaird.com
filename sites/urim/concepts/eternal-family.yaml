@@ -1,0 +1,15 @@
+id: concept.eternal-family
+category: The Family
+en:
+  term: eternal family
+  match:
+  - eternal family
+sources: {}
+candidates:
+  pt:
+  - term: família eterna
+    hint: pulpit-glossary:verified
+  es:
+  - term: familia eterna
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,23 @@
+id: concept.word-of-wisdom
+category: Commandments & Laws
+en:
+  term: Word of Wisdom
+  match:
+  - Word of Wisdom
+sources:
+  GS:
+  - word-of-wisdom
+  Topics:
+  - word-of-wisdom
+  TtF:
+  - word-of-wisdom
+  GH:
+  - 38-church-policies-and-guidelines#title_number131
+candidates:
+  pt:
+  - term: Palavra de Sabedoria
+    hint: pulpit-glossary:verified
+  es:
+  - term: Palabra de Sabiduría
+    hint: approved-terms
+related: []

@@ -1,0 +1,195 @@
+{
+ "id": "concept.compassionate-service",
+ "pt": {
+  "en_paragraphs": 19,
+  "en_talks": 13,
+  "en_verses": 0,
+  "uncovered_paragraphs": 12,
+  "renderings": [
+   {
+    "term": "serviço de solidariedade",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 7,
+    "talks": 5,
+    "verses": 0,
+    "first_year": 1991,
+    "last_year": 2009,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 October General Conference",
+      "talk": "1991-10-clyde-charity-suffereth-long",
+      "para": 17,
+      "en": "Charitable, compassionate service is the central mission of our Church’s Relief Society …",
+      "tr": "O serviço de solidariedade é a missão central da organização da Sociedade de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 October General Conference",
+      "talk": "2009-10-beck-relief-society-a-sacred-work",
+      "para": 33,
+      "en": "… as marriage and family, homemaking, provident living and self-reliance, compassionate service, temple and family history, sharing the gospel, and …",
+      "tr": "… família; cuidar da casa; viver previdente e autossuficiência; serviço de solidariedade; templo e história da família; compartilhar o evangelho …"
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 October General Conference",
+      "talk": "2009-10-eyring-the-enduring-legacy-of-relief-society",
+      "para": 28,
+      "en": "… organized members who they knew had faith to give compassionate service when it was beyond the power of two assigned …",
+      "tr": "… que elas sabiam que teriam fé para prestar serviço de solidariedade quando isso estivesse além das forças de duas professoras …"
+     }
+    ],
+    "earliest": {
+     "year": 1991,
+     "conference": "1991 October General Conference",
+     "talk": "1991-10-clyde-charity-suffereth-long",
+     "para": 17,
+     "en": "Charitable, compassionate service is the central mission of our Church’s Relief Society …",
+     "tr": "O serviço de solidariedade é a missão central da organização da Sociedade de …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "compassivo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.417,
+    "ratio": 416.8,
+    "source": "1990-04-ashton-neither-boast-of-faith-nor-of-mighty-works",
+    "kind": "talk",
+    "sample": "e, muito menos, servir de motivo de vanglória. O serviço humilde, silencioso e compassivo é muito alentador para a alma; quem precisa ressaltar o objeto ou local de boas"
+   },
+   {
+    "term": "serviço",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.75,
+    "ratio": 24.2,
+    "source": "1990-04-ashton-neither-boast-of-faith-nor-of-mighty-works",
+    "kind": "talk",
+    "sample": "almente não deve ser discutido e, muito menos, servir de motivo de vanglória. O serviço humilde, silencioso e compassivo é muito alentador para a alma; quem precisa re"
+   },
+   {
+    "term": "irmãs",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.583,
+    "ratio": 15.3,
+    "source": "1995-10-okazaki-a-living-network",
+    "kind": "talk",
+    "sample": "Olhe para as irmãs que estão assis­tin­do a esta trans­mis­são com você. Você faz parte da irman­d"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 13,
+  "en_talks": 11,
+  "en_verses": 0,
+  "uncovered_paragraphs": 8,
+  "renderings": [
+   {
+    "term": "servicio compasivo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 5,
+    "talks": 5,
+    "verses": 0,
+    "first_year": 1991,
+    "last_year": 2011,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 October General Conference",
+      "talk": "1991-10-clyde-charity-suffereth-long",
+      "para": 17,
+      "en": "Charitable, compassionate service is the central mission of our Church’s Relief Society …",
+      "tr": "El servicio compasivo y caritativo es la misión principal de nuestra Sociedad …"
+     },
+     {
+      "kind": "talk",
+      "year": 1997,
+      "conference": "1997 October General Conference",
+      "talk": "1997-10-monson-home-teachinga-divine-service",
+      "para": 45,
+      "en": "… Ezra Taft Benson said that home teaching is “priesthood compassionate service.”[^8] Not long ago I received a touching letter …",
+      "tr": "… Taft Benson dijo que la orientación familiar es \"un servicio compasivo del sacerdocio\".[^8] Hace poco recibí una conmovedora carta de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 October General Conference",
+      "talk": "2011-10-uchtdorf-providing-in-the-lords-way",
+      "para": 39,
+      "en": "… more self-reliant, caring better for the needy, and rendering compassionate service.",
+      "tr": "… del velar mejor por los necesitados y de dar servicio compasivo."
+     }
+    ],
+    "earliest": {
+     "year": 1991,
+     "conference": "1991 October General Conference",
+     "talk": "1991-10-clyde-charity-suffereth-long",
+     "para": 17,
+     "en": "Charitable, compassionate service is the central mission of our Church’s Relief Society …",
+     "tr": "El servicio compasivo y caritativo es la misión principal de nuestra Sociedad …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "caritativo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.75,
+    "ratio": 600.1,
+    "source": "1990-04-ashton-neither-boast-of-faith-nor-of-mighty-works",
+    "kind": "talk",
+    "sample": "mos mencionarlo, y mucho menos jactarnos de ello. El humilde y callado servicio caritativo brinda tan grandes satisfacciones que no hace falta contarlo."
+   },
+   {
+    "term": "bienestar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.375,
+    "ratio": 62.5,
+    "source": "1993-10-clyde-relief-society-charity-the-guiding-principle",
+    "kind": "talk",
+    "sample": "abíamos que sus circunstancias eran muy variadas y que no debíamos descuidar su bienestar espiritual. Enfocamos nuestra atención en Jacob, capitulo 4, versículo 13. “… p"
+   },
+   {
+    "term": "socorro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.375,
+    "ratio": 30.0,
+    "source": "2009-10-beck-relief-society-a-sacred-work",
+    "kind": "talk",
+    "sample": "Al planificar reuniones adicionales de la Sociedad de Socorro, las líderes deben dar prioridad a temas que cumplan los propósitos de la Socie"
+   }
+  ]
+ }
+}

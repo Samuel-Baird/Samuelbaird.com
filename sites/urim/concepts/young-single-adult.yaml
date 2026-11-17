@@ -1,0 +1,17 @@
+id: concept.young-single-adult
+category: Organizations & Youth
+en:
+  term: young single adult
+  match:
+  - young single adult
+sources:
+  GH:
+  - 33-records-and-reports#title_number26
+candidates:
+  pt:
+  - term: jovem adulto solteiro
+    hint: pulpit-glossary:verified
+  es:
+  - term: jóvenes adultos solteros
+    hint: pulpit-glossary:verified
+related: []

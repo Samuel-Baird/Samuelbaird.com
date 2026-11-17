@@ -1,0 +1,15 @@
+id: concept.ensign-to-the-nations
+category: Zion & the Last Days
+en:
+  term: ensign to the nations
+  match:
+  - ensign to the nations
+sources: {}
+candidates:
+  pt:
+  - term: estandarte para as nações
+    hint: pulpit-glossary:verified
+  es:
+  - term: estandarte a las naciones
+    hint: pulpit-glossary:verified
+related: []

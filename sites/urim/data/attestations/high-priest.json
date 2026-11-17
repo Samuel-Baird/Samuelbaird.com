@@ -1,0 +1,132 @@
+{
+ "id": "concept.high-priest",
+ "pt": {
+  "en_paragraphs": 118,
+  "en_talks": 89,
+  "en_verses": 144,
+  "uncovered_paragraphs": 262,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "sumo sacerdote",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 163,
+    "share_of_uncovered": 0.652,
+    "ratio": 434.8,
+    "source": "1990-10-monson-days-never-to-be-forgotten",
+    "kind": "talk",
+    "sample": "O irmão Mabey disse sim. Hoje ele é um sumo sacerdote e vive aqui no oeste. Todos os seus familiares já estiveram no templo e receber"
+   },
+   {
+    "term": "sacerdotes",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 96,
+    "share_of_uncovered": 0.384,
+    "ratio": 96.0,
+    "source": "1990-04-lybbert-a-latter-day-samaritan",
+    "kind": "talk",
+    "sample": "semelhança entre o presidente do quorum dos élderes, o líder do grupo dos sumos sacerdotes, um membro do bispado, ou um mestre familiar, e o irmão que jaz inativo à marge"
+   },
+   {
+    "term": "sumos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 85,
+    "share_of_uncovered": 0.34,
+    "ratio": 170.0,
+    "source": "1990-04-lybbert-a-latter-day-samaritan",
+    "kind": "talk",
+    "sample": "ha de semelhança entre o presidente do quorum dos élderes, o líder do grupo dos sumos sacerdotes, um membro do bispado, ou um mestre familiar, e o irmão que jaz inat"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 111,
+  "en_talks": 84,
+  "en_verses": 144,
+  "uncovered_paragraphs": 6,
+  "renderings": [
+   {
+    "term": "sumo sacerdote",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 107,
+    "talks": 81,
+    "verses": 142,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Hebreos 7:26",
+      "ref_en": "Hebrews 7:26",
+      "en": "For such an high priest became us, who is holy, harmless, undefiled, separate from sinners, and made higher than the heavens;",
+      "tr": "Porque tal sumo sacerdote nos convenía: santo, sin mancha, limpio, apartado de los pecadores y hecho más sublime que los cielos;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/nt/heb/7?lang=spa&id=p26"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-monson-days-never-to-be-forgotten",
+      "para": 32,
+      "en": "Brother Mabey said yes. Today he is a high priest living here in the West. All of his family …",
+      "tr": "… efecto, me contestó que sí. En la actualidad es sumo sacerdote y vive cerca de aquí. Toda su familia ha …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 April General Conference",
+      "talk": "2015-04-eyring-priesthood-and-personal-prayer",
+      "para": 29,
+      "en": "… includes you, from the newest deacon to the seasoned high priest, and some, both old and young, who may …",
+      "tr": "… a ustedes, desde el diácono más nuevo hasta el sumo sacerdote con experiencia, y a algunas personas, tanto mayores como …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 October General Conference",
+     "talk": "1990-10-monson-days-never-to-be-forgotten",
+     "para": 32,
+     "en": "Brother Mabey said yes. Today he is a high priest living here in the West. All of his family …",
+     "tr": "… efecto, me contestó que sí. En la actualidad es sumo sacerdote y vive cerca de aquí. Toda su familia ha …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "ordenado",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.333,
+    "ratio": 444.6,
+    "source": "1998-10-christofferson-the-priesthood-quorum",
+    "kind": "talk",
+    "sample": "m es una hermandad … El ser parte … de su quórum es el derecho de quien ha sido ordenado a un oficio dentro del sacerdocio …” [^3]."
+   },
+   {
+    "term": "sido",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.333,
+    "ratio": 9.5,
+    "source": "1998-10-christofferson-the-priesthood-quorum",
+    "kind": "talk",
+    "sample": "quórum es una hermandad … El ser parte … de su quórum es el derecho de quien ha sido ordenado a un oficio dentro del sacerdocio …” [^3]."
+   }
+  ]
+ }
+}

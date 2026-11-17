@@ -1,0 +1,195 @@
+{
+ "id": "concept.children-s-songbook",
+ "pt": {
+  "en_paragraphs": 76,
+  "en_talks": 72,
+  "en_verses": 0,
+  "uncovered_paragraphs": 6,
+  "renderings": [
+   {
+    "term": "Músicas para Crianças",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 70,
+    "talks": 67,
+    "verses": 0,
+    "first_year": 1996,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 April General Conference",
+      "talk": "1996-04-warner-remember-how-thou-hast-received-and-heard",
+      "para": 25,
+      "en": "[“The Church of Jesus Christ,” *Children’s Songbook,* 77]",
+      "tr": "(“A Igreja de Jesus Cristo”, Músicas para Crianças, p.48.)"
+     },
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 October General Conference",
+      "talk": "2017-10-holland-be-ye-therefore-perfecteventually",
+      "para": 19,
+      "en": "… ldsmag.com.\n[^4]: “I’m Trying to Be like Jesus,” *Children’s Songbook,* 78–79.\n[^5]: See Russell M. Nelson, “[Perfection Pending](https://www.churchofjesuschrist.org/study/general-conference/1995/10/perfection-pending?lang=eng),” …",
+      "tr": "… ldsmag.com.\n[^4]: \"Eu quero ser como Cristo\", *Músicas para Crianças*, pp. 40–41.\n[^5]: Ver Russell M. Nelson, \"[Perfeição …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-oaks-closing-remarks",
+      "para": 5,
+      "en": "[^1]: “Tell Me the Stories of Jesus,” Children’s Songbook, 57.\n[^2]: “Redeemer of Israel,” Hymns, no. 6. …",
+      "tr": "[^1]: \"Conta-me histórias de Cristo\", Músicas para Crianças, p. 36\n[^2]: \"Cantando louvamos\", Hinos, nº 50. …"
+     }
+    ],
+    "earliest": {
+     "year": 1996,
+     "conference": "1996 April General Conference",
+     "talk": "1996-04-warner-remember-how-thou-hast-received-and-heard",
+     "para": 25,
+     "en": "[“The Church of Jesus Christ,” *Children’s Songbook,* 77]",
+     "tr": "(“A Igreja de Jesus Cristo”, Músicas para Crianças, p.48.)"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "songbook",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.333,
+    "ratio": 1333.7,
+    "source": "2000-04-hillam-future-leaders",
+    "kind": "talk",
+    "sample": "alvez possamos acrescentar: “Como saberão se não lhes mostrarmos?” (*Children’s Songbook*, p. 182)"
+   },
+   {
+    "term": "primária",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.5,
+    "ratio": 80.0,
+    "source": "1994-04-hunter-what-manner-of-men-ought-ye-to-be",
+    "kind": "talk",
+    "sample": "trabalho do Pai. Devemos tentar ser como Ele, assim como cantam as crianças na Primária: “Tentar, Tentar, Tentar”. Até onde nos permite nossa capacidade mortal, devemo"
+   },
+   {
+    "term": "children",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.333,
+    "ratio": 333.4,
+    "source": "2000-04-hillam-future-leaders",
+    "kind": "talk",
+    "sample": "ermos?” E talvez possamos acrescentar: “Como saberão se não lhes mostrarmos?” (*Children’s Songbook*, p. 182)"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 80,
+  "en_talks": 76,
+  "en_verses": 0,
+  "uncovered_paragraphs": 12,
+  "renderings": [
+   {
+    "term": "Canciones para los niños",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 68,
+    "talks": 65,
+    "verses": 0,
+    "first_year": 1997,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1997,
+      "conference": "1997 April General Conference",
+      "talk": "1997-04-pearce-keep-walking-and-give-time-a-chance",
+      "para": 25,
+      "en": "[^1]: “Pioneer Children Sang As They Walked,” *Children’s Songbook* (1989), 214.\n[^2]: Sculpted by Avard Fairbanks.\n[^3]: …",
+      "tr": "[^1]: Niños pioneros, Canciones para los niños, pág. 137.\n[^2]: Escultura de Avard Fairbanks. …"
+     },
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 April General Conference",
+      "talk": "2017-04-brough-his-daily-guiding-hand",
+      "para": 37,
+      "en": "… May 2009, 22.\n[^15]: See “A Child’s Prayer,” *Children’s Songbook,* 12–13.",
+      "tr": "… 22.\n[^15]: Véase \"Oración de un niño\", *Canciones para los niños,* págs. 6–7."
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-chibota-a-child-of-god",
+      "para": 23,
+      "en": "… Liahona, May 2026, 85.\n[^5]: “Jesus Said Love Everyone,” Children’s Songbook, 61.\n[^6]: [Teachings of Presidents of the Church: …",
+      "tr": "… 85.\n[^5]: \"Ama a todos, dijo el Señor\", Canciones para los niños, pág. 39.\n[^6]: Enseñanzas de los Presidentes …"
+     }
+    ],
+    "earliest": {
+     "year": 1997,
+     "conference": "1997 April General Conference",
+     "talk": "1997-04-pearce-keep-walking-and-give-time-a-chance",
+     "para": 25,
+     "en": "[^1]: “Pioneer Children Sang As They Walked,” *Children’s Songbook* (1989), 214.\n[^2]: Sculpted by Avard Fairbanks.\n[^3]: …",
+     "tr": "[^1]: Niños pioneros, Canciones para los niños, pág. 137.\n[^2]: Escultura de Avard Fairbanks. …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "pág",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.75,
+    "ratio": 26.6,
+    "source": "2000-04-hillam-future-leaders",
+    "kind": "talk",
+    "sample": "agregar: “¿Cómo lo sabrán a menos que se lo mostremos?” (*Children’s Songbook*, pág. 182)."
+   },
+   {
+    "term": "marcos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.333,
+    "ratio": 58.0,
+    "source": "2007-04-nelson-repentance-and-conversion",
+    "kind": "talk",
+    "sample": "Smith de la Biblia en inglés, Génesis 4:8.\n[^7]: Véase Apocalipsis 2:16.\n[^8]: Marcos 1:15; véase también Mateo 4:17.\n[^9]: Lucas 13:3.\n[^10]: La palabra* arrepentir"
+   },
+   {
+    "term": "mateo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.417,
+    "ratio": 23.8,
+    "source": "2007-04-nelson-repentance-and-conversion",
+    "kind": "talk",
+    "sample": "és, Génesis 4:8.\n[^7]: Véase Apocalipsis 2:16.\n[^8]: Marcos 1:15; véase también Mateo 4:17.\n[^9]: Lucas 13:3.\n[^10]: La palabra* arrepentirse* (enseñar la doctrina d"
+   }
+  ]
+ }
+}

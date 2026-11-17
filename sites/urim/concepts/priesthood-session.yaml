@@ -1,0 +1,15 @@
+id: concept.priesthood-session
+category: Councils & Conferences
+en:
+  term: priesthood session
+  match:
+  - priesthood session
+sources: {}
+candidates:
+  pt:
+  - term: sessão do sacerdócio
+    hint: pulpit-glossary:verified
+  es:
+  - term: sesión del sacerdocio
+    hint: pulpit-glossary:verified
+related: []

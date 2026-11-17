@@ -1,0 +1,94 @@
+{
+ "id": "concept.patriarchal-blessing",
+ "pt": {
+  "en_paragraphs": 134,
+  "en_talks": 61,
+  "en_verses": 1,
+  "uncovered_paragraphs": 135,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "patriarcal",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 119,
+    "share_of_uncovered": 0.881,
+    "ratio": 503.8,
+    "source": "1993-10-inouye-be-of-good-cheer",
+    "kind": "talk",
+    "sample": "Aos dezessete anos, recebi uma bênção patriarcal. Fui aconselhada a procurar um companheiro que me levasse ao templo e abençoada"
+   },
+   {
+    "term": "bênção",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 123,
+    "share_of_uncovered": 0.911,
+    "ratio": 49.3,
+    "source": "1992-04-maxwell-my-servant-joseph",
+    "kind": "talk",
+    "sample": "eu essas chaves de Elias e também de Pedro, Tiago, João e muitos outros. Em uma bênção dada em dezembro de 1834, Joseph Smith, Pai, confirmou ao filho que o antigo Jo"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 127,
+  "en_talks": 57,
+  "en_verses": 1,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "bendición patriarcal",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 125,
+    "talks": 55,
+    "verses": 1,
+    "first_year": 1993,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 124:92",
+      "ref_en": "Doctrine and Covenants 124:92",
+      "en": "That from henceforth he shall hold the keys of the patriarchal blessings upon the heads of all my people,",
+      "tr": "para que desde ahora en adelante tenga las llaves de las bendiciones patriarcales sobre la cabeza de todo mi pueblo;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/124?lang=spa&id=p92"
+     },
+     {
+      "kind": "talk",
+      "year": 2002,
+      "conference": "2002 October General Conference",
+      "talk": "2002-10-packer-the-stake-patriarch",
+      "para": 11,
+      "en": "… no fixed age at which one may receive a patriarchal blessing. The bishop ensures that the member is of …",
+      "tr": "… a hacerlo. No hay edad determinada para recibir la bendición patriarcal. El obispo se asegura de que el miembro …"
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 April General Conference",
+      "talk": "2019-04-cook-great-love-for-our-fathers-children",
+      "para": 3,
+      "en": "… When I was 11 years old, I received a patriarchal blessing from a patriarch who was also my grandfather.[^6] That …",
+      "tr": "… y el amor. Cuando tenía 11 años, recibí una bendición patriarcal de un patriarca que también era mi abuelo[^6]. Esa …"
+     }
+    ],
+    "earliest": {
+     "year": 1993,
+     "conference": "1993 October General Conference",
+     "talk": "1993-10-inouye-be-of-good-cheer",
+     "para": 0,
+     "en": "When I was seventeen years old, I received a patriarchal blessing. I was admonished to seek a companion who …",
+     "tr": "Recibí mi bendición patriarcal a los diecisiete años de edad. Se me exhortó …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

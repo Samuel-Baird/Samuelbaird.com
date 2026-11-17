@@ -1,0 +1,11 @@
+id: concept.child-of-record
+category: Membership Records
+en:
+  term: child of record
+  match:
+  - child of record
+sources: {}
+candidates:
+  pt: []
+  es: []
+related: []

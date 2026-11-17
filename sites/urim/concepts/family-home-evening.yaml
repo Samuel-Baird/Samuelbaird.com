@@ -1,0 +1,19 @@
+id: concept.family-home-evening
+category: Sacrament & Meetings
+en:
+  term: family home evening
+  match:
+  - family home evening
+sources:
+  Topics:
+  - family-home-evening
+  TtF:
+  - family-home-evening
+candidates:
+  pt:
+  - term: noite familiar
+    hint: pulpit-glossary:verified
+  es:
+  - term: noche de hogar
+    hint: approved-terms
+related: []

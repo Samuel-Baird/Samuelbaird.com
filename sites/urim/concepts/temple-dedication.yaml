@@ -1,0 +1,15 @@
+id: concept.temple-dedication
+category: Temple & Family History
+en:
+  term: temple dedication
+  match:
+  - temple dedication
+sources: {}
+candidates:
+  pt:
+  - term: rededicação do Templo
+    hint: pulpit-glossary:verified
+  es:
+  - term: dedicación del templo
+    hint: pulpit-glossary:verified
+related: []

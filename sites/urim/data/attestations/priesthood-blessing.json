@@ -1,0 +1,195 @@
+{
+ "id": "concept.priesthood-blessing",
+ "pt": {
+  "en_paragraphs": 133,
+  "en_talks": 97,
+  "en_verses": 0,
+  "uncovered_paragraphs": 18,
+  "renderings": [
+   {
+    "term": "bênção do sacerdócio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 115,
+    "talks": 84,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-hillam-no-more-strangers-and-foreigners",
+      "para": 7,
+      "en": "… his dear, sweet faith, he was asking for a priesthood blessing, the same that is taught of and recorded …",
+      "tr": "… preciosa e terna fé ele estava pedindo uma bênção do sacerdócio, a mesma que a Bíblia registra e nos …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 April General Conference",
+      "talk": "2015-04-monson-the-priesthooda-sacred-gift",
+      "para": 22,
+      "en": "I had never before given a priesthood blessing, I had never received a blessing, and I …",
+      "tr": "Eu nunca tinha dado uma bênção do sacerdócio, nunca tinha recebido uma bênção e nunca tinha …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-eyring-comfort-from-the-holy-ghost",
+      "para": 15,
+      "en": "… young couple’s twin baby, the new mother received a priesthood blessing. The husband, however, did not. After our dinner …",
+      "tr": "… perder um dos gêmeos, a mãe recebeu uma bênção do sacerdócio. O marido, no entanto, não recebeu. Depois do …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-lindsay-ye-have-done-it-unto-me",
+     "para": 20,
+     "en": "… fatherless family to give wise counsel and encouragement and priesthood blessings. His example and personal concern, coupled with the …",
+     "tr": "… freqüentemente nossa família, dando-nos conselhos sábios, incentivo e bênçãos do sacerdócio. Seu exemplo e interesse, e a bondade demonstrada …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "bênção",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.333,
+    "ratio": 18.0,
+    "source": "1996-10-jack-partakers-of-the-glories",
+    "kind": "talk",
+    "sample": "Quando, pela imposição das mãos, recebo uma bênção pessoal do sacerdócio, sinto o amor do Salvador envolver-me. Sei que o irmão qu"
+   },
+   {
+    "term": "espirituais",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.222,
+    "ratio": 14.6,
+    "source": "1996-10-jack-partakers-of-the-glories",
+    "kind": "talk",
+    "sample": "azem-nos lembrar de nosso compromisso. Todos nós podemos usufruir essas bênçãos espirituais."
+   },
+   {
+    "term": "tinha",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.222,
+    "ratio": 8.2,
+    "source": "1995-10-jack-relief-society-a-balm-in-gilead",
+    "kind": "talk",
+    "sample": "er­ce­bo que elas esta­vam sem­pre pre­sen­tes em minha vida. Meu que­ri­do pai tinha um tes­te­mu­nho ina­ba­lá­vel, e aos oiten­ta e oito anos deu sua últi­ma bên­"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 130,
+  "en_talks": 93,
+  "en_verses": 0,
+  "uncovered_paragraphs": 9,
+  "renderings": [
+   {
+    "term": "bendición del sacerdocio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 121,
+    "talks": 88,
+    "verses": 0,
+    "first_year": 1993,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1993,
+      "conference": "1993 October General Conference",
+      "talk": "1993-10-inouye-be-of-good-cheer",
+      "para": 8,
+      "en": "… After praying earnestly about the matter, I sought a priesthood blessing from my husband. The blessing promised that I would …",
+      "tr": "… pedí a mi esposo que me diera una bendición del sacerdocio. En ella se me prometió que podría tomar …"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 October General Conference",
+      "talk": "2012-10-christensen-an-unspeakable-gift-from-god",
+      "para": 16,
+      "en": "… had visited with Sister Watson and given her a priesthood blessing, he shook her hand, said good-bye, and prepared …",
+      "tr": "… la hermana Watson y le hubo dado una bendición del sacerdocio, le estrechó la mano, se despidió y se …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-rasband-he-is-risen",
+      "para": 17,
+      "en": "… first time Paxton’s father and I gave him a priesthood blessing that, as it says in the scriptures, “the works …",
+      "tr": "… padre de Paxton y yo le dimos una bendición del sacerdocio para que, como leemos en las Escrituras, “las obras …"
+     }
+    ],
+    "earliest": {
+     "year": 1993,
+     "conference": "1993 October General Conference",
+     "talk": "1993-10-inouye-be-of-good-cheer",
+     "para": 8,
+     "en": "… After praying earnestly about the matter, I sought a priesthood blessing from my husband. The blessing promised that I would …",
+     "tr": "… pedí a mi esposo que me diera una bendición del sacerdocio. En ella se me prometió que podría tomar …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "adicionales",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.222,
+    "ratio": 111.1,
+    "source": "2000-10-holland-sanctify-yourselves",
+    "kind": "talk",
+    "sample": "contarnos en otra ocasión sobre las continuas oraciones, milagros y bendiciones adicionales del sacerdocio relacionadas con toda esa experiencia --incluso un viaje por amb"
+   },
+   {
+    "term": "agradecimiento",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.222,
+    "ratio": 31.8,
+    "source": "2002-10-monson-peace-be-still",
+    "kind": "talk",
+    "sample": "Ofrecí una callada oración de agradecimiento a nuestro Padre Celestial por Su guía que me impulsó a visitar St. Joseph Villa"
+   },
+   {
+    "term": "fiel",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.222,
+    "ratio": 25.4,
+    "source": "2013-10-stephens-do-we-know-what-we-have",
+    "kind": "talk",
+    "sample": "tamos a una querida hermana que está casada y tiene dos hermosos niños. Ella es fiel y activa en la Iglesia y está enseñando a sus hijos a hacer lo justo. Su esposo"
+   }
+  ]
+ }
+}

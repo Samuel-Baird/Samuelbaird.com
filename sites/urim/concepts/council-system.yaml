@@ -1,0 +1,15 @@
+id: concept.council-system
+category: Councils & Conferences
+en:
+  term: council system
+  match:
+  - council system
+sources: {}
+candidates:
+  pt:
+  - term: sistema de conselhos
+    hint: pulpit-glossary:verified
+  es:
+  - term: sistema de consejos
+    hint: pulpit-glossary:verified
+related: []

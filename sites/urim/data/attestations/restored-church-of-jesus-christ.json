@@ -1,0 +1,195 @@
+{
+ "id": "concept.restored-church-of-jesus-christ",
+ "pt": {
+  "en_paragraphs": 51,
+  "en_talks": 43,
+  "en_verses": 0,
+  "uncovered_paragraphs": 10,
+  "renderings": [
+   {
+    "term": "Igreja restaurada de Jesus Cristo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 41,
+    "talks": 36,
+    "verses": 0,
+    "first_year": 1996,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 April General Conference",
+      "talk": "1996-04-beckham-sustaining-the-living-prophets",
+      "para": 9,
+      "en": "… the Restoration, and I explained that the restored Church of Jesus Christ has a living prophet today. This really seemed …",
+      "tr": "… respeito da Restauração e expliquei que a Igreja restaurada de Jesus Cristo tem um profeta vivo hoje. Isso realmente pareceu …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 October General Conference",
+      "talk": "2018-10-nelson-the-correct-name-of-the-church",
+      "para": 31,
+      "en": "… of Jesus Christ’ are encouraged. The ‘restored Church of Jesus Christ’ is also accurate and encouraged.”[^15]",
+      "tr": "… Igreja de Jesus Cristo’. O termo ‘a Igreja restaurada de Jesus Cristo’ também é correto e seu uso é …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-causs-the-gift-of-testimony",
+      "para": 8,
+      "en": "Today, in the restored Church of Jesus Christ, the apostolic witness remains central to our …",
+      "tr": "Hoje, na Igreja restaurada de Jesus Cristo, o testemunho apostólico continua sendo essencial para …"
+     }
+    ],
+    "earliest": {
+     "year": 1996,
+     "conference": "1996 April General Conference",
+     "talk": "1996-04-beckham-sustaining-the-living-prophets",
+     "para": 9,
+     "en": "… the Restoration, and I explained that the restored Church of Jesus Christ has a living prophet today. This really seemed …",
+     "tr": "… respeito da Restauração e expliquei que a Igreja restaurada de Jesus Cristo tem um profeta vivo hoje. Isso realmente pareceu …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "restaurada",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 1.0,
+    "ratio": 200.1,
+    "source": "2008-04-packer-the-twelve",
+    "kind": "talk",
+    "sample": "A Igreja de Jesus Cristo dos Santos dos Últimos Dias acabara de ser restaurada quando foi organizada a Primeira Presidência. Em seguida, veio o Quórum dos Doz"
+   },
+   {
+    "term": "últimos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.7,
+    "ratio": 21.2,
+    "source": "2008-04-packer-the-twelve",
+    "kind": "talk",
+    "sample": "A Igreja de Jesus Cristo dos Santos dos Últimos Dias acabara de ser restaurada quando foi organizada a Primeira Presidência. Em"
+   },
+   {
+    "term": "visto neste momento",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.2,
+    "ratio": 800.2,
+    "source": "2016-10-ballard-to-whom-shall-we-go",
+    "kind": "talk",
+    "sample": "s escolhidos do Senhor terá um impacto de longo alcance que nem sempre pode ser visto neste momento. Pode haver algumas doutrinas ou normas, alguns trechos da história que não est"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 56,
+  "en_talks": 47,
+  "en_verses": 0,
+  "uncovered_paragraphs": 5,
+  "renderings": [
+   {
+    "term": "Iglesia restaurada de Jesucristo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 51,
+    "talks": 44,
+    "verses": 0,
+    "first_year": 1996,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 April General Conference",
+      "talk": "1996-04-beckham-sustaining-the-living-prophets",
+      "para": 9,
+      "en": "… the Restoration, and I explained that the restored Church of Jesus Christ has a living prophet today. This really seemed …",
+      "tr": "… la Restauración y luego le. explique que la Iglesia restaurada de Jesucristo tenía un Profeta. Eso le despertó el interés …"
+     },
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 October General Conference",
+      "talk": "2017-10-eyring-the-lord-leads-his-church",
+      "para": 41,
+      "en": "… serve so willingly and well in the restored Church of Jesus Christ, which He leads personally. I testify that …",
+      "tr": "… tan buena gana y tan bien en la Iglesia restaurada de Jesucristo, que Él dirige personalmente. Testifico que José …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-causs-the-gift-of-testimony",
+      "para": 8,
+      "en": "Today, in the restored Church of Jesus Christ, the apostolic witness remains central to our …",
+      "tr": "Hoy, en la Iglesia restaurada de Jesucristo, el testimonio apostólico sigue siendo fundamental para …"
+     }
+    ],
+    "earliest": {
+     "year": 1996,
+     "conference": "1996 April General Conference",
+     "talk": "1996-04-beckham-sustaining-the-living-prophets",
+     "para": 9,
+     "en": "… the Restoration, and I explained that the restored Church of Jesus Christ has a living prophet today. This really seemed …",
+     "tr": "… la Restauración y luego le. explique que la Iglesia restaurada de Jesucristo tenía un Profeta. Eso le despertó el interés …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "restaurada",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 1.0,
+    "ratio": 250.1,
+    "source": "2013-04-oaks-followers-of-christ",
+    "kind": "talk",
+    "sample": "e Jesucristo de los Santos de los Últimos Días, siendo la Iglesia de Jesucristo restaurada, sigue este modelo en su organización y al conferir las llaves y la autoridad a"
+   },
+   {
+    "term": "últimos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 1.0,
+    "ratio": 26.5,
+    "source": "2013-04-oaks-followers-of-christ",
+    "kind": "talk",
+    "sample": "/nt/luke/6?lang=spa&id=p13#p13)). La Iglesia de Jesucristo de los Santos de los Últimos Días, siendo la Iglesia de Jesucristo restaurada, sigue este modelo en su organ"
+   },
+   {
+    "term": "santos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 1.0,
+    "ratio": 25.0,
+    "source": "2013-04-oaks-followers-of-christ",
+    "kind": "talk",
+    "sample": "udy/scriptures/nt/luke/6?lang=spa&id=p13#p13)). La Iglesia de Jesucristo de los Santos de los Últimos Días, siendo la Iglesia de Jesucristo restaurada, sigue este mod"
+   }
+  ]
+ }
+}

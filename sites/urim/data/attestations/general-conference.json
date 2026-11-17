@@ -1,0 +1,194 @@
+{
+ "id": "concept.general-conference",
+ "pt": {
+  "en_paragraphs": 1397,
+  "en_talks": 954,
+  "en_verses": 3,
+  "uncovered_paragraphs": 864,
+  "renderings": [
+   {
+    "term": "conferência geral",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 533,
+    "talks": 397,
+    "verses": 3,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 124:144",
+      "ref_en": "Doctrine and Covenants 124:144",
+      "en": "And a commandment I give unto you, that you should fill all these offices and approve of those names which I have mentioned, or else disapprove of them at my general conference;",
+      "tr": "E dou-vos o mandamento de preencherdes todos esses cargos e aprovardes ou desaprovardes, na minha conferência geral, os nomes que mencionei;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/124?lang=por&id=p144"
+     },
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 April General Conference",
+      "talk": "1991-04-maxwell-lest-ye-be-wearied-and-faint-in-your-minds",
+      "para": 0,
+      "en": "Having all been richly nourished by this general conference, it is fitting to focus prescriptively on the …",
+      "tr": "Tendo sido todos fartamente alimentados por esta conferência geral, é adequado concentrarmo-nos no intento de ajudar as …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-teh-where-your-treasure-is",
+      "para": 0,
+      "en": "Shortly after general conference in October 2007, one of my brethren told me …",
+      "tr": "Pouco depois da conferência geral de outubro de 2007, um dos meus irmãos me …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-cuthbert-the-spirituality-of-service",
+     "para": 4,
+     "en": "… Taft Benson, in Conference Report, Apr. 1979, [p. 48](https://www.churchofjesuschrist.org/study/general-conference/1979/04/this-is-a-day-of-sacrifice?lang=eng&id=p43#p43); or *Ensign,* May 1979, p. 34). We have a …",
+     "tr": "… descobrireis o segredo da vida plena e feliz.” (Conferência Geral de abril de 1979.) Perto de nossa casa mora …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "liahona",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 215,
+    "share_of_uncovered": 0.86,
+    "ratio": 39.1,
+    "source": "2022-10-eddy-the-virtue-of-the-word",
+    "kind": "talk",
+    "sample": "e alegria de seus filhos\" (Gordon B. Hinckley, \"Deleitar-se nas escrituras\", A Liahona, junho de 1986, p. 2).\n[^27]: Russell M. Nelson, \"[Como seria sua vida sem o Li"
+   },
+   {
+    "term": "conference",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 182,
+    "share_of_uncovered": 0.728,
+    "ratio": 51.1,
+    "source": "2022-10-eddy-the-virtue-of-the-word",
+    "kind": "talk",
+    "sample": "vida sem o Livro de Mórmon?](https://www.churchofjesuschrist.org/study/general-conference/2017/10/the-book-of-mormon-what-would-your-life-be-like-without-it?lang=por&id="
+   },
+   {
+    "term": "general",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 176,
+    "share_of_uncovered": 0.704,
+    "ratio": 54.2,
+    "source": "2022-10-eddy-the-virtue-of-the-word",
+    "kind": "talk",
+    "sample": "eria sua vida sem o Livro de Mórmon?](https://www.churchofjesuschrist.org/study/general-conference/2017/10/the-book-of-mormon-what-would-your-life-be-like-without-it?l"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 1407,
+  "en_talks": 961,
+  "en_verses": 3,
+  "uncovered_paragraphs": 869,
+  "renderings": [
+   {
+    "term": "conferencia general",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 538,
+    "talks": 397,
+    "verses": 3,
+    "first_year": 1991,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 124:144",
+      "ref_en": "Doctrine and Covenants 124:144",
+      "en": "And a commandment I give unto you, that you should fill all these offices and approve of those names which I have mentioned, or else disapprove of them at my general conference;",
+      "tr": "Y un mandamiento os doy, que llenéis todos estos oficios, y aprobéis o desaprobéis en mi conferencia general a las personas cuyos nombres he mencionado;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/124?lang=spa&id=p144"
+     },
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 April General Conference",
+      "talk": "1996-04-beckham-sustaining-the-living-prophets",
+      "para": 14,
+      "en": "… uphold you by our confidence, faith, and prayers. In general conference next week, as we young women and leaders raise …",
+      "tr": "… nuestra fe y nuestras oraciones. Sabemos que en la conferencia general de la semana próxima, cuando las jovencitas y sus …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-ballard-family-councils",
+      "para": 3,
+      "en": "Until now, however, I have never talked in general conference about the most basic and fundamental—and perhaps the most …",
+      "tr": "Sin embargo, hasta ahora, nunca había hablado en la conferencia general acerca del consejo más básico y fundamental, y probablemente …"
+     }
+    ],
+    "earliest": {
+     "year": 1991,
+     "conference": "1991 October General Conference",
+     "talk": "1991-10-hinckley-our-mission-of-saving",
+     "para": 0,
+     "en": "… happy circumstances. As I have thought of this October general conference and of the inspired talks we have heard and …",
+     "tr": "… estas condiciones cómodas y felices. Al meditar sobre esta Conferencia General de octubre y en los inspirados discursos que hemos …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "liahona",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 231,
+    "share_of_uncovered": 0.924,
+    "ratio": 42.0,
+    "source": "2024-04-soares-covenant-confidence-through-jesus-christ",
+    "kind": "talk",
+    "sample": "esuschrist.org/study/general-conference/2019/10/57nelson?lang=spa&id=p32#p32)\", Liahona, noviembre de 2019, pág. 122.\n[^9]: [Doctrina y Convenios 121:45](https://www.c"
+   },
+   {
+    "term": "pág",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 226,
+    "share_of_uncovered": 0.904,
+    "ratio": 32.0,
+    "source": "2024-04-soares-covenant-confidence-through-jesus-christ",
+    "kind": "talk",
+    "sample": "-conference/2019/10/57nelson?lang=spa&id=p32#p32)\", Liahona, noviembre de 2019, pág. 122.\n[^9]: [Doctrina y Convenios 121:45](https://www.churchofjesuschrist.org/s"
+   },
+   {
+    "term": "conference",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 193,
+    "share_of_uncovered": 0.772,
+    "ratio": 50.6,
+    "source": "2024-04-soares-covenant-confidence-through-jesus-christ",
+    "kind": "talk",
+    "sample": "lson, \"[Palabras de clausura](https://www.churchofjesuschrist.org/study/general-conference/2019/10/57nelson?lang=spa&id=p32#p32)\", Liahona, noviembre de 2019, pág. 122.\n["
+   }
+  ]
+ }
+}

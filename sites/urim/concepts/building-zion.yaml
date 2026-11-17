@@ -1,0 +1,15 @@
+id: concept.building-zion
+category: Zion & the Last Days
+en:
+  term: building Zion
+  match:
+  - building Zion
+sources: {}
+candidates:
+  pt:
+  - term: edificar Sião
+    hint: pulpit-glossary:standard
+  es:
+  - term: edificar Sion
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,21 @@
+id: concept.seventy
+category: Priesthood Offices & Quorums
+en:
+  term: Seventy
+  match:
+  - Seventy
+sources:
+  GS:
+  - seventy
+  TtF:
+  - seventy
+  GH:
+  - 35#title_number6
+candidates:
+  pt:
+  - term: Setenta
+    hint: pulpit-glossary:verified
+  es:
+  - term: Setenta
+    hint: approved-terms
+related: []

@@ -1,0 +1,15 @@
+id: concept.primary-class
+category: Sacrament & Meetings
+en:
+  term: Primary class
+  match:
+  - Primary class
+sources: {}
+candidates:
+  pt:
+  - term: classe da Primária
+    hint: pulpit-glossary:verified
+  es:
+  - term: clase de la Primaria
+    hint: pulpit-glossary:verified
+related: []

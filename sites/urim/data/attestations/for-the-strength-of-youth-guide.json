@@ -1,0 +1,106 @@
+{
+ "id": "concept.for-the-strength-of-youth-guide",
+ "pt": {
+  "en_paragraphs": 7,
+  "en_talks": 5,
+  "en_verses": 0,
+  "uncovered_paragraphs": 7,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "guia força",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 1.0,
+    "ratio": 4001.0,
+    "source": "2022-10-uchtdorf-jesus-christ-is-the-strength-of-youth",
+    "kind": "talk",
+    "sample": "Liahona, maio de 2020, p. 88.\n[^16]: A abordagem com base em princípios do novo guia Força dos Jovens é consistente com outras iniciativas recentes apresentadas pela Igre"
+   },
+   {
+    "term": "força dos jovens",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 1.0,
+    "ratio": 1333.7,
+    "source": "2022-10-uchtdorf-jesus-christ-is-the-strength-of-youth",
+    "kind": "talk",
+    "sample": "na, maio de 2020, p. 88.\n[^16]: A abordagem com base em princípios do novo guia Força dos Jovens é consistente com outras iniciativas recentes apresentadas pela Igreja do Salva"
+   },
+   {
+    "term": "jovens, lemos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.286,
+    "ratio": 1143.1,
+    "source": "2024-04-spannaus-faithful-to-the-end",
+    "kind": "talk",
+    "sample": "Quarto, a pedra do *meu arrependimento diário*. No guia Força dos Jovens, lemos: “O arrependimento não é o castigo para o pecado; é a maneira pela qual o Salva"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 7,
+  "en_talks": 5,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "guía Para la Fortaleza de la Juventud",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 5,
+    "talks": 3,
+    "verses": 0,
+    "first_year": 2022,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2022,
+      "conference": "2022 October General Conference",
+      "talk": "2022-10-uchtdorf-jesus-christ-is-the-strength-of-youth",
+      "para": 58,
+      "en": "… [^16]: The principle-based approach of the new For the Strength of Youth guide is consistent with other recent initiatives introduced …",
+      "tr": "… basado en principios de la nueva guía Para la Fortaleza de la Juventud concuerda con otras iniciativas recientes que ha …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-spannaus-faithful-to-the-end",
+      "para": 26,
+      "en": "… stone of *my daily repentance*. In the For the Strength of Youth guide, we read: “Repentance isn’t punishment for …",
+      "tr": "… de *mi arrepentimiento diario*. En la guía Para la Fortaleza de la Juventud leemos: “El arrepentimiento no es un castigo …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 October General Conference",
+      "talk": "2024-10-wilcox-o-youth-of-the-noble-birthright",
+      "para": 14,
+      "en": "… thing entirely to be trusted. In the For the Strength of Youth guide, we read: “Your Father in Heaven …",
+      "tr": "… ser digno de confianza. En la guía Para la Fortaleza de la Juventud, leemos: “Tu Padre Celestial confía en …"
+     }
+    ],
+    "earliest": {
+     "year": 2022,
+     "conference": "2022 October General Conference",
+     "talk": "2022-10-uchtdorf-jesus-christ-is-the-strength-of-youth",
+     "para": 58,
+     "en": "… [^16]: The principle-based approach of the new For the Strength of Youth guide is consistent with other recent initiatives introduced …",
+     "tr": "… basado en principios de la nueva guía Para la Fortaleza de la Juventud concuerda con otras iniciativas recientes que ha …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

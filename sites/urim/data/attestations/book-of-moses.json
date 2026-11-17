@@ -1,0 +1,117 @@
+{
+ "id": "concept.book-of-moses",
+ "pt": {
+  "en_paragraphs": 15,
+  "en_talks": 14,
+  "en_verses": 7,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "livro de Moisés",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 14,
+    "talks": 13,
+    "verses": 7,
+    "first_year": 2001,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Neemias 13:1",
+      "ref_en": "Nehemiah 13:1",
+      "en": "On that day they read in the book of Moses in the audience of the people; and therein was found written, that the Ammonite and the Moabite should not come into the congregation of God for ever;",
+      "tr": "Naquele dia leu-se no livro de Moisés, aos ouvidos do povo, e achou-se escrito nele que os amonitas e os moabitas não entrassem jamais na congregação de Deus,",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/ot/neh/13?lang=por&id=p1"
+     },
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 October General Conference",
+      "talk": "2001-10-didier-building-a-bridge-of-faith",
+      "para": 6,
+      "en": "… our Heavenly Father, as we read in the book of Moses: “This is the plan of salvation unto all …",
+      "tr": "… prometida com nosso Pai Celestial, conforme lemos no livro de Moisés: “(…) Este é o plano de salvação para …"
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 October General Conference",
+      "talk": "2009-10-hales-seeking-to-know-god-our-heavenly-father-and-his-son-jesus-christ",
+      "para": 10,
+      "en": "… have voices. As recorded in Genesis and the book of Moses, Adam and Eve “heard the voice of the …",
+      "tr": "… têm voz. Conforme registrado em Gênesis e no Livro de Moisés, Adão e Eva “ouviram a voz do Senhor …"
+     }
+    ],
+    "earliest": {
+     "year": 2001,
+     "conference": "2001 October General Conference",
+     "talk": "2001-10-didier-building-a-bridge-of-faith",
+     "para": 6,
+     "en": "… our Heavenly Father, as we read in the book of Moses: “This is the plan of salvation unto all …",
+     "tr": "… prometida com nosso Pai Celestial, conforme lemos no livro de Moisés: “(…) Este é o plano de salvação para …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 16,
+  "en_talks": 15,
+  "en_verses": 7,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "libro de Moisés",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 15,
+    "talks": 14,
+    "verses": 7,
+    "first_year": 1999,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Esdras 6:18",
+      "ref_en": "Ezra 6:18",
+      "en": "And they set the priests in their divisions, and the Levites in their courses, for the service of God, which is at Jerusalem; as it is written in the book of Moses.",
+      "tr": "Y pusieron a los sacerdotes en sus turnos y a los levitas en sus grupos, para el servicio de Dios que está en Jerusalén, conforme a lo escrito en el libro de Moisés.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/ot/ezra/6?lang=spa&id=p18"
+     },
+     {
+      "kind": "talk",
+      "year": 1999,
+      "conference": "1999 October General Conference",
+      "talk": "1999-10-nelson-a-testimony-of-the-book-of-mormon",
+      "para": 9,
+      "en": "… the plates of brass, which contained “the five books of Moses, … a record of the Jews … ; …",
+      "tr": "… las planchas de bronce que contenían “los cinco libros de Moisés… la historia de los judíos… [y] las profecías …"
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 October General Conference",
+      "talk": "2009-10-hales-seeking-to-know-god-our-heavenly-father-and-his-son-jesus-christ",
+      "para": 10,
+      "en": "… have voices. As recorded in Genesis and the book of Moses, Adam and Eve “heard the voice of the …",
+      "tr": "… Según se registra en Génesis y en el libro de Moisés, Adán y Eva “oyeron la voz de Dios …"
+     }
+    ],
+    "earliest": {
+     "year": 1999,
+     "conference": "1999 October General Conference",
+     "talk": "1999-10-nelson-a-testimony-of-the-book-of-mormon",
+     "para": 9,
+     "en": "… the plates of brass, which contained “the five books of Moses, … a record of the Jews … ; …",
+     "tr": "… las planchas de bronce que contenían “los cinco libros de Moisés… la historia de los judíos… [y] las profecías …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

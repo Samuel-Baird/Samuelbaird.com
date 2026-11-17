@@ -1,0 +1,19 @@
+id: concept.agency
+category: Plan of Salvation
+en:
+  term: agency
+  match:
+  - agency
+sources:
+  GS:
+  - agency
+  TtF:
+  - agency
+candidates:
+  pt:
+  - term: arbítrio
+    hint: pulpit-glossary:verified
+  es:
+  - term: albedrío
+    hint: approved-terms
+related: []

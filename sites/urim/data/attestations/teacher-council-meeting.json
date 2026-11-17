@@ -1,0 +1,83 @@
+{
+ "id": "concept.teacher-council-meeting",
+ "pt": {
+  "en_paragraphs": 2,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "reunião de conselho dos professores",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2017,
+    "last_year": 2017,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 April General Conference",
+      "talk": "2017-04-hoyos-that-our-light-may-be-a-standard-for-the-nations",
+      "para": 23,
+      "en": "… the Savior’s way. In this context the new teacher council meeting is a way to rise and shine as the …",
+      "tr": "… maneira do Salvador. Nesse contexto, a nova reunião de conselho dos professores é uma forma de erguer-se e brilhar para …"
+     }
+    ],
+    "earliest": {
+     "year": 2017,
+     "conference": "2017 April General Conference",
+     "talk": "2017-04-hoyos-that-our-light-may-be-a-standard-for-the-nations",
+     "para": 23,
+     "en": "… the Savior’s way. In this context the new teacher council meeting is a way to rise and shine as the …",
+     "tr": "… maneira do Salvador. Nesse contexto, a nova reunião de conselho dos professores é uma forma de erguer-se e brilhar para …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 2,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "consejo de enseñanza",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2017,
+    "last_year": 2017,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 April General Conference",
+      "talk": "2017-04-hoyos-that-our-light-may-be-a-standard-for-the-nations",
+      "para": 23,
+      "en": "… the Savior’s way. In this context the new teacher council meeting is a way to rise and shine as the …",
+      "tr": "… manera del Salvador. En este contexto, el nuevo consejo de enseñanza del barrio es una manera de levantarse y brillar …"
+     }
+    ],
+    "earliest": {
+     "year": 2017,
+     "conference": "2017 April General Conference",
+     "talk": "2017-04-hoyos-that-our-light-may-be-a-standard-for-the-nations",
+     "para": 23,
+     "en": "… the Savior’s way. In this context the new teacher council meeting is a way to rise and shine as the …",
+     "tr": "… manera del Salvador. En este contexto, el nuevo consejo de enseñanza del barrio es una manera de levantarse y brillar …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

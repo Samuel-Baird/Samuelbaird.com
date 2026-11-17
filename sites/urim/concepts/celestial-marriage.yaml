@@ -1,0 +1,15 @@
+id: concept.celestial-marriage
+category: Temple & Family History
+en:
+  term: celestial marriage
+  match:
+  - celestial marriage
+sources: {}
+candidates:
+  pt:
+  - term: casamento celestial
+    hint: pulpit-glossary:verified
+  es:
+  - term: matrimonio celestial
+    hint: pulpit-glossary:verified
+related: []

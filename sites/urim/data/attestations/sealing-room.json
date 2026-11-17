@@ -1,0 +1,157 @@
+{
+ "id": "concept.sealing-room",
+ "pt": {
+  "en_paragraphs": 17,
+  "en_talks": 13,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "sala de selamento",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 16,
+    "talks": 13,
+    "verses": 0,
+    "first_year": 1994,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1994,
+      "conference": "1994 April General Conference",
+      "talk": "1994-04-melchin-decisions",
+      "para": 9,
+      "en": "… family group sheet and completing the work in the sealing room. We can also be called as ordinance workers …",
+      "tr": "… de grupo familiar e finalizando o trabalho na sala de selamento. Podemos também ser chamados como oficiantes para excursões …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-cook-prepare-to-meet-god",
+      "para": 29,
+      "en": "In the sacred sealing room, the eternal marriage ordinance is the same for …",
+      "tr": "Na sagrada sala de selamento, a ordenança do casamento eterno é a mesma …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-cook-keys-covenants-and-easter",
+      "para": 20,
+      "en": "When we entered the sealing room, Elder Holland was overcome with emotion and, with …",
+      "tr": "Quando entramos na sala de selamento, o élder Holland, muito emocionado e com lágrimas …"
+     }
+    ],
+    "earliest": {
+     "year": 1994,
+     "conference": "1994 April General Conference",
+     "talk": "1994-04-melchin-decisions",
+     "para": 9,
+     "en": "… family group sheet and completing the work in the sealing room. We can also be called as ordinance workers …",
+     "tr": "… de grupo familiar e finalizando o trabalho na sala de selamento. Podemos também ser chamados como oficiantes para excursões …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 17,
+  "en_talks": 13,
+  "en_verses": 0,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "sala de sellamiento",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 13,
+    "talks": 9,
+    "verses": 0,
+    "first_year": 2011,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-dalton-guardians-of-virtue",
+      "para": 1,
+      "en": "… since she was born. As I sat in the sealing room, looking at the beautiful chandelier sparkling in the …",
+      "tr": "… conozco desde que nació. Al sentarme en la sala de sellamientos y mirar la hermosa lámpara de cristal que brillaba …"
+     },
+     {
+      "kind": "talk",
+      "year": 2018,
+      "conference": "2018 April General Conference",
+      "talk": "2018-04-renlund-family-history-and-temple-work-sealing-and-healing",
+      "para": 26,
+      "en": "… did so, and the proxy work culminated in a sealing room in the St. George Utah Temple. Betty was sealed …",
+      "tr": "… agradecimiento, y la obra vicaria culminó en una sala de sellamientos en el Templo de St. George, Utah. Betty fue …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-cook-keys-covenants-and-easter",
+      "para": 20,
+      "en": "When we entered the sealing room, Elder Holland was overcome with emotion and, with …",
+      "tr": "Cuando entramos en la sala de sellamientos, el élder Holland se sintió sumamente conmovido y, …"
+     }
+    ],
+    "earliest": {
+     "year": 2011,
+     "conference": "2011 April General Conference",
+     "talk": "2011-04-dalton-guardians-of-virtue",
+     "para": 1,
+     "en": "… since she was born. As I sat in the sealing room, looking at the beautiful chandelier sparkling in the …",
+     "tr": "… conozco desde que nació. Al sentarme en la sala de sellamientos y mirar la hermosa lámpara de cristal que brillaba …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "espejos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 666.8,
+    "source": "2000-10-dunn-testimony",
+    "kind": "talk",
+    "sample": "En el templo, en los cuartos de sellamiento, hay espejos colocados en paredes opuestas. Cuando una persona mira en el espejo, puedever s"
+   },
+   {
+    "term": "sellamiento",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 222.3,
+    "source": "2000-10-dunn-testimony",
+    "kind": "talk",
+    "sample": "En el templo, en los cuartos de sellamiento, hay espejos colocados en paredes opuestas. Cuando una persona mira en el espej"
+   },
+   {
+    "term": "cuarto",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 111.1,
+    "source": "2011-04-eyring-a-living-testimony",
+    "kind": "talk",
+    "sample": "ibieron esta tarde. Es por eso que a sus ojos se les señaló un día futuro en un cuarto de sellamiento del templo. Es por eso que esta noche se les ayudó a visualizar"
+   }
+  ]
+ }
+}

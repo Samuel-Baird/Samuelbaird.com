@@ -1,0 +1,144 @@
+{
+ "id": "concept.oath-and-covenant-of-the-priesthood",
+ "pt": {
+  "en_paragraphs": 15,
+  "en_talks": 11,
+  "en_verses": 0,
+  "uncovered_paragraphs": 15,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "juramento",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.867,
+    "ratio": 693.5,
+    "source": "2004-10-faust-the-key-of-the-knowledge-of-god",
+    "kind": "talk",
+    "sample": "e chegar a um conhecimento completo de Deus, o homem precisa fazer e guardar o juramento e convênio do sacerdócio.[^9] O Presidente Marion G. Romney ensinou, com grande"
+   },
+   {
+    "term": "convênio",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 14,
+    "share_of_uncovered": 0.933,
+    "ratio": 39.7,
+    "source": "1993-10-faust-keeping-covenants-and-honoring-the-priesthood",
+    "kind": "talk",
+    "sample": "As bênçãos que coroam nossa vida são resultado da obediência aos convênios e do respeito às ordenanças recebidas no templo sagrado, incluindo-se o novo e"
+   },
+   {
+    "term": "fiéis",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.4,
+    "ratio": 24.6,
+    "source": "2004-10-faust-the-key-of-the-knowledge-of-god",
+    "kind": "talk",
+    "sample": "recebermos a plenitude das bênçãos que o Senhor tem reservadas para Seus filhos fiéis. O segundo convênio como agentes Dele nesta autoridade sagrada é sermos fiéis a"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 18,
+  "en_talks": 13,
+  "en_verses": 0,
+  "uncovered_paragraphs": 10,
+  "renderings": [
+   {
+    "term": "Juramento y convenio del sacerdocio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 8,
+    "talks": 7,
+    "verses": 0,
+    "first_year": 2004,
+    "last_year": 2016,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2004,
+      "conference": "2004 October General Conference",
+      "talk": "2004-10-faust-the-key-of-the-knowledge-of-god",
+      "para": 30,
+      "en": "… Carlos E. Asay, in Conference Report, Oct. 1985, [56–60](https://www.churchofjesuschrist.org/study/general-conference/1985/10/the-oath-and-covenant-of-the-priesthood?lang=eng); or *Ensign,* Nov. 1985, 43–45.\n[^7]: See [3 Nephi …",
+      "tr": "… 42:61.\n[^6]: Véase Carlos E. Asay \"El juramento y convenios del sacerdocio\", *Liahona*, enero de 1986 [*Informe de la …"
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 October General Conference",
+      "talk": "2009-10-monson-school-thy-feelings-o-my-brother",
+      "para": 43,
+      "en": "… holder of the priesthood of God. The oath and covenant of the priesthood pertains to all of us. To those …",
+      "tr": "… un poseedor del sacerdocio de Dios. El juramento y convenio del sacerdocio nos concierne a todos. Para los que poseen …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 October General Conference",
+      "talk": "2016-10-eyring-that-he-may-become-strong-also",
+      "para": 38,
+      "en": "… will go home and study carefully the oath and covenant of the priesthood, found in [Doctrine and Covenants section …",
+      "tr": "… llamamiento fuera del que ahora tienen. El juramento y convenio del sacerdocio les da poder, autoridad y dirección. Ruego que …"
+     }
+    ],
+    "earliest": {
+     "year": 2004,
+     "conference": "2004 October General Conference",
+     "talk": "2004-10-faust-the-key-of-the-knowledge-of-god",
+     "para": 30,
+     "en": "… Carlos E. Asay, in Conference Report, Oct. 1985, [56–60](https://www.churchofjesuschrist.org/study/general-conference/1985/10/the-oath-and-covenant-of-the-priesthood?lang=eng); or *Ensign,* Nov. 1985, 43–45.\n[^7]: See [3 Nephi …",
+     "tr": "… 42:61.\n[^6]: Véase Carlos E. Asay \"El juramento y convenios del sacerdocio\", *Liahona*, enero de 1986 [*Informe de la …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "juramento",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 1.0,
+    "ratio": 1000.2,
+    "source": "2002-04-faust-the-lifeline-of-prayer",
+    "kind": "talk",
+    "sample": "ínco mantenerme fiel a los sagrados convenios que había hecho al bautizarme, al juramento y el convenio del sacerdocio, y a mis promesas del templo."
+   },
+   {
+    "term": "convenio",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 1.0,
+    "ratio": 66.7,
+    "source": "2002-04-faust-the-lifeline-of-prayer",
+    "kind": "talk",
+    "sample": "a mi esposa y mi familia, procuraría con ahínco mantenerme fiel a los sagrados convenios que había hecho al bautizarme, al juramento y el convenio del sacerdocio, y a"
+   },
+   {
+    "term": "sacerdocios",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.3,
+    "ratio": 1200.3,
+    "source": "2004-10-faust-the-key-of-the-knowledge-of-god",
+    "kind": "talk",
+    "sample": "eberá realizar dos convenios. El primero consiste en ser fiel hasta obtener los sacerdocios Aarónico y de Melquisedec[^11]. El Sacerdocio Aarónico forma y prepara al posee"
+   }
+  ]
+ }
+}

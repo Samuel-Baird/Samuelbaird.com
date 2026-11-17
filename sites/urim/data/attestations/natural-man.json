@@ -1,0 +1,194 @@
+{
+ "id": "concept.natural-man",
+ "pt": {
+  "en_paragraphs": 147,
+  "en_talks": 106,
+  "en_verses": 5,
+  "uncovered_paragraphs": 17,
+  "renderings": [
+   {
+    "term": "homem natural",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 130,
+    "talks": 95,
+    "verses": 5,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Alma 26:21",
+      "ref_en": "Alma 26:21",
+      "en": "And now behold, my brethren, what natural man is there that knoweth these things? I say unto you, there is none that knoweth these things, save it be the penitent.",
+      "tr": "E agora, meus irmãos, que homem natural existe que conheça essas coisas? Digo-vos que não existe quem conheça essas coisas, a não ser o penitente.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/26?lang=por&id=p21"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-maxwell-put-off-the-natural-man-and-come-off-conqueror",
+      "para": 28,
+      "en": "… selfishness presents us with a sobering scene as the natural man acts out his wants. Many assert their needs—but where …",
+      "tr": "… coloca diante de uma cena realística, em que o homem natural age de acordo com seus desejos. Muitos declaram suas …"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 October General Conference",
+      "talk": "2012-10-perkins-beware-concerning-yourselves",
+      "para": 5,
+      "en": "… knows that lurking within priesthood holders is a “natural man”[^6] “prone to wander.”[^7] Thus, prophets invite us to …",
+      "tr": "… interior de cada portador do sacerdócio há um “homem natural”,[^6] “propenso a desviar-se do rumo”.[^7] Portanto, os profetas …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-cuthbert-the-spirituality-of-service",
+     "para": 25,
+     "en": "… service, it helps us grow spiritually, “[put] off the natural man and [become] a saint” ([Mosiah 3:19](https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/3?lang=eng&id=p19#p19))—that is, one who …",
+     "tr": "… quando prestamos serviço cristão, crescemos espiritualmente, “se (despojando) do homem natural, tornando-se santo” ([Mosiah 3:19](https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/3?lang=por&id=p19#p19)) — ou seja, aquele …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "mulher natural",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.588,
+    "ratio": 1176.8,
+    "source": "2012-10-burton-is-faith-in-the-atonement-of-jesus-christ-written-in-our-hearts",
+    "kind": "talk",
+    "sample": "## Princípio 2: Há poder na Expiação para capacitar-nos a vencer o homem ou mulher natural e a tornar-nos verdadeiros discípulos de Jesus Cristo.[^9]"
+   },
+   {
+    "term": "homem",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.765,
+    "ratio": 19.6,
+    "source": "1990-10-maxwell-put-off-the-natural-man-and-come-off-conqueror",
+    "kind": "talk",
+    "sample": "r&id=p5#p5)). Mas não podemos “sair vencedores” se não nos despojarmos antes do homem egoísta e natural!"
+   },
+   {
+    "term": "ajuda",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.294,
+    "ratio": 8.5,
+    "source": "1990-10-maxwell-put-off-the-natural-man-and-come-off-conqueror",
+    "kind": "talk",
+    "sample": "ísmo está sendo eliminado — mesmo que seja apenas gradualmente? Recebemos muita ajuda divina para nosdespojarmos do egoísmo, “porque, que filho há a quem o pai não c"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 134,
+  "en_talks": 103,
+  "en_verses": 5,
+  "uncovered_paragraphs": 13,
+  "renderings": [
+   {
+    "term": "hombre natural",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 121,
+    "talks": 95,
+    "verses": 5,
+    "first_year": 1993,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Alma 26:21",
+      "ref_en": "Alma 26:21",
+      "en": "And now behold, my brethren, what natural man is there that knoweth these things? I say unto you, there is none that knoweth these things, save it be the penitent.",
+      "tr": "Y he aquí, hermanos míos, ¿qué hombre natural hay que conozca estas cosas? Os digo que no hay quien conozca estas cosas sino el compungido.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/26?lang=spa&id=p21"
+     },
+     {
+      "kind": "talk",
+      "year": 1993,
+      "conference": "1993 October General Conference",
+      "talk": "1993-10-condie-a-mighty-change-of-heart",
+      "para": 3,
+      "en": "… *enticings* of the Spirit in order to overcome the natural man, who is an enemy to God (see [Mosiah …",
+      "tr": "… al influjo del Espíritu a fin de despojarnos del hombre natural, que es un enemigo de Dios (véase Mosíah …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-uchtdorf-the-hope-of-gods-light",
+      "para": 18,
+      "en": "… darkness, and the darkness comprehendeth it not.”[^3] For “the natural man receiveth not the things of the Spirit of God: …",
+      "tr": "… tinieblas, y las tinieblas no la comprenden”[^3]. Porque “el hombre natural no percibe las cosas que son del Espíritu de …"
+     }
+    ],
+    "earliest": {
+     "year": 1993,
+     "conference": "1993 October General Conference",
+     "talk": "1993-10-condie-a-mighty-change-of-heart",
+     "para": 3,
+     "en": "… *enticings* of the Spirit in order to overcome the natural man, who is an enemy to God (see [Mosiah …",
+     "tr": "… al influjo del Espíritu a fin de despojarnos del hombre natural, que es un enemigo de Dios (véase Mosíah …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "mujer natural",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.692,
+    "ratio": 1385.0,
+    "source": "2012-10-burton-is-faith-in-the-atonement-of-jesus-christ-written-in-our-hearts",
+    "kind": "talk",
+    "sample": "io 2: La Expiación tiene un poder que nos habilita para vencer al hombre o a la mujer natural y llegar a ser verdaderos discípulos de Jesucristo[^9]."
+   },
+   {
+    "term": "influjo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.231,
+    "ratio": 230.8,
+    "source": "2008-10-causs-even-a-child-can-understand",
+    "kind": "talk",
+    "sample": "os que el hombre carnal o natural “es enemigo de Dios… a menos que se someta al influjo del Santo Espíritu”. Para ello, debemos volvernos “como un niño: sumiso, manso,"
+   },
+   {
+    "term": "enemigo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.231,
+    "ratio": 61.6,
+    "source": "2008-10-causs-even-a-child-can-understand",
+    "kind": "talk",
+    "sample": "Sabemos que el hombre carnal o natural “es enemigo de Dios… a menos que se someta al influjo del Santo Espíritu”. Para ello, debem"
+   }
+  ]
+ }
+}

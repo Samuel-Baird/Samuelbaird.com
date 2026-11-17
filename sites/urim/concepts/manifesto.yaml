@@ -1,0 +1,17 @@
+id: concept.manifesto
+category: Church History
+en:
+  term: Manifesto
+  match:
+  - Manifesto
+sources:
+  GS:
+  - manifesto
+candidates:
+  pt:
+  - term: Manifesto
+    hint: pulpit-glossary:standard
+  es:
+  - term: Manifiesto
+    hint: approved-terms
+related: []

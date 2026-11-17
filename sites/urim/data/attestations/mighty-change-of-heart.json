@@ -1,0 +1,195 @@
+{
+ "id": "concept.mighty-change-of-heart",
+ "pt": {
+  "en_paragraphs": 59,
+  "en_talks": 47,
+  "en_verses": 0,
+  "uncovered_paragraphs": 48,
+  "renderings": [
+   {
+    "term": "poderosa mudança de coração",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 11,
+    "talks": 9,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-condie-some-scriptural-lessons-on-leadership",
+      "para": 13,
+      "en": "… Lord and high expectations can bring about a mighty change of heart* among an entire people.",
+      "tr": "… no Senhor e grandes expectativas podem ocasionar uma poderosa mudança de coração* numa nação inteira."
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-christofferson-the-testimony-of-jesus",
+      "para": 24,
+      "en": "… yielding their hearts unto God.”[^29] It is this mighty change of heart—yielding our hearts to God and being spiritually …",
+      "tr": "… entrega de seu coração a Deus”.[^29] É essa poderosa mudança de coração que buscamos: entregar nosso coração a Deus e …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-christofferson-the-character-of-christ",
+      "para": 7,
+      "en": "… in our lives.[^12] This transformative power produces a mighty change of heart and the character qualities that accompany it.",
+      "tr": "… em nossa vida.[^12] Esse poder transformador produz uma poderosa mudança de coração e das qualidades de caráter que a acompanham."
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-condie-some-scriptural-lessons-on-leadership",
+     "para": 13,
+     "en": "… Lord and high expectations can bring about a mighty change of heart* among an entire people.",
+     "tr": "… no Senhor e grandes expectativas podem ocasionar uma poderosa mudança de coração* numa nação inteira."
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "mudança",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 46,
+    "share_of_uncovered": 0.958,
+    "ratio": 112.8,
+    "source": "1993-10-condie-a-mighty-change-of-heart",
+    "kind": "talk",
+    "sample": "vro de Mórmon é a de que *podemos,* e na verdade *devemos*), efetuar uma grande mudança em nossos corações (vide [Mosiah 5:2](https://www.churchofjesuschrist.org/study"
+   },
+   {
+    "term": "vigorosa",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 28,
+    "share_of_uncovered": 0.583,
+    "ratio": 259.3,
+    "source": "2001-04-faust-born-again",
+    "kind": "talk",
+    "sample": "os dignos de receber Sua imagem em nosso semblante.[^10] Devemos passar por uma vigorosa mudança de coração[^11] para que nos tornemos “novas criaturas”[^12] e exerçamo"
+   },
+   {
+    "term": "bofm",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 12,
+    "share_of_uncovered": 0.25,
+    "ratio": 6.9,
+    "source": "1993-10-condie-a-mighty-change-of-heart",
+    "kind": "talk",
+    "sample": "orações (vide [Mosiah 5:2](https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/5?lang=por&id=p2#p2); [Alma 5:14](https://www.churchofjesuschrist.org/st"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 58,
+  "en_talks": 46,
+  "en_verses": 0,
+  "uncovered_paragraphs": 51,
+  "renderings": [
+   {
+    "term": "gran cambio de corazón",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 7,
+    "talks": 7,
+    "verses": 0,
+    "first_year": 2008,
+    "last_year": 2022,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2008,
+      "conference": "2008 October General Conference",
+      "talk": "2008-10-nelson-celestial-marriage",
+      "para": 25,
+      "en": "… it to the best choice. That requires a mighty change of heart[^37] and a permanent personal upgrade.[^38] Blessings so …",
+      "tr": "… elevarla a la mejor categoría. Eso requiere un gran cambio de corazón[^37] y constante mejoramiento personal [^38]. Las bendiciones …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-samuelson-testimony",
+      "para": 11,
+      "en": "Second, while we believe fully in the mighty change of heart described in the scriptures (see [Mosiah 5:2](https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/5?lang=eng&id=p2#p2); [Alma …",
+      "tr": "Segundo, aunque creamos plenamente en el gran cambio de corazón que se describe en las Escrituras (véase [Mosíah …"
+     },
+     {
+      "kind": "talk",
+      "year": 2022,
+      "conference": "2022 April General Conference",
+      "talk": "2022-04-hamilton-then-will-i-make-weak-things-become-strong",
+      "para": 33,
+      "en": "… Keysor has always impressed me with his own mighty change of heart.[^22] Born of faithful Latter-day Saint pioneer ancestors …",
+      "tr": "… B. Keysor, siempre me ha impresionado por su gran cambio de corazón[^22]. Nació de fieles antepasados pioneros Santos de …"
+     }
+    ],
+    "earliest": {
+     "year": 2008,
+     "conference": "2008 October General Conference",
+     "talk": "2008-10-nelson-celestial-marriage",
+     "para": 25,
+     "en": "… it to the best choice. That requires a mighty change of heart[^37] and a permanent personal upgrade.[^38] Blessings so …",
+     "tr": "… elevarla a la mejor categoría. Eso requiere un gran cambio de corazón[^37] y constante mejoramiento personal [^38]. Las bendiciones …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "cambio",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 50,
+    "share_of_uncovered": 0.98,
+    "ratio": 80.1,
+    "source": "1993-10-condie-a-mighty-change-of-heart",
+    "kind": "talk",
+    "sample": "rinas del Libro de Mormón es que podemos y, en verdad, debemos efectuar un gran cambio en nuestro corazón (véase Mosíah 5:2; [Alma 5:14](https://www.churchofjesuschri"
+   },
+   {
+    "term": "potente",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 29,
+    "share_of_uncovered": 0.569,
+    "ratio": 151.7,
+    "source": "1993-10-condie-a-mighty-change-of-heart",
+    "kind": "talk",
+    "sample": "Leyó la exhortación de despedida del rey Benjamín, de realizar un potente cambio en el corazón-no un cambio leve-sino un potente cambio. Recibió esperanz"
+   },
+   {
+    "term": "experimentar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 12,
+    "share_of_uncovered": 0.235,
+    "ratio": 52.3,
+    "source": "2000-10-ballard-now-is-the-time",
+    "kind": "talk",
+    "sample": "y algunos miembros que no se han convertido totalmente y que todavía tienen que experimentar el ”gran cambio en su corazón” que se describe en las Escrituras (véase Alma 5:"
+   }
+  ]
+ }
+}

@@ -1,0 +1,17 @@
+id: concept.tithing-settlement
+category: Interviews, Repentance & Membership Councils
+en:
+  term: tithing settlement
+  match:
+  - tithing settlement
+sources: {}
+candidates:
+  pt:
+  - term: acerto do dízimo
+    hint: pulpit-glossary:verified
+  es:
+  - term: ajuste de diezmo
+    hint: approved-terms
+  - term: ajuste de diezmos
+    hint: pulpit-glossary:verified
+related: []

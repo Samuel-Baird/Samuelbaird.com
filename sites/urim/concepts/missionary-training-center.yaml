@@ -1,0 +1,15 @@
+id: concept.missionary-training-center
+category: Missionary Work
+en:
+  term: Missionary Training Center
+  match:
+  - Missionary Training Center
+sources: {}
+candidates:
+  pt:
+  - term: Centro de Treinamento Missionário
+    hint: pulpit-glossary:verified
+  es:
+  - term: Centro de Capacitación Misional
+    hint: pulpit-glossary:verified
+related: []

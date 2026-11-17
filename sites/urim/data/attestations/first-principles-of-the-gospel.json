@@ -1,0 +1,68 @@
+{
+ "id": "concept.first-principles-of-the-gospel",
+ "pt": {
+  "en_paragraphs": 2,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": []
+ },
+ "es": {
+  "en_paragraphs": 4,
+  "en_talks": 4,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "Primeros principios del Evangelio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 3,
+    "talks": 3,
+    "verses": 0,
+    "first_year": 2004,
+    "last_year": 2019,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2004,
+      "conference": "2004 April General Conference",
+      "talk": "2004-04-vias-applying-the-simple-and-plain-gospel-principles-in-the-family",
+      "para": 2,
+      "en": "… are the most simple and plain. The first principles of the gospel which lead us unto eternal life are the …",
+      "tr": "… nosotros son los más sencillos y claros. Los primeros principios del Evangelio que los conducirán a la vida eterna son …"
+     },
+     {
+      "kind": "talk",
+      "year": 2004,
+      "conference": "2004 October General Conference",
+      "talk": "2004-10-ballard-pure-testimony",
+      "para": 5,
+      "en": "… to be anchored very early to the first principles of the gospel.",
+      "tr": "… desde temprana edad, deben estar afianzados en los primeros principios del Evangelio."
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 April General Conference",
+      "talk": "2019-04-ballard-the-true-pure-and-simple-gospel-of-jesus-christ",
+      "para": 12,
+      "en": "The first principles of the gospel are faith in the Lord Jesus Christ, repentance, …",
+      "tr": "Los primeros principios del Evangelio son: fe en el Señor Jesucristo, arrepentimiento, bautismo, …"
+     }
+    ],
+    "earliest": {
+     "year": 2004,
+     "conference": "2004 April General Conference",
+     "talk": "2004-04-vias-applying-the-simple-and-plain-gospel-principles-in-the-family",
+     "para": 2,
+     "en": "… are the most simple and plain. The first principles of the gospel which lead us unto eternal life are the …",
+     "tr": "… nosotros son los más sencillos y claros. Los primeros principios del Evangelio que los conducirán a la vida eterna son …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

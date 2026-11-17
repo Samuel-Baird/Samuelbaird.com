@@ -1,0 +1,94 @@
+{
+ "id": "concept.scattering-of-israel",
+ "pt": {
+  "en_paragraphs": 3,
+  "en_talks": 1,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "dispersão de Israel",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2023,
+    "last_year": 2023,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 April General Conference",
+      "talk": "2023-04-cook-safely-gathered-home",
+      "para": 14,
+      "en": "… After 200 years of separate existence, the first scattering of Israel occurred in 721 BC when the ten tribes of …",
+      "tr": "… Após 200 anos de existência separada, a primeira dispersão de Israel ocorreu em 721 a.C., quando as dez tribos foram …"
+     }
+    ],
+    "earliest": {
+     "year": 2023,
+     "conference": "2023 April General Conference",
+     "talk": "2023-04-cook-safely-gathered-home",
+     "para": 14,
+     "en": "… After 200 years of separate existence, the first scattering of Israel occurred in 721 BC when the ten tribes of …",
+     "tr": "… Após 200 anos de existência separada, a primeira dispersão de Israel ocorreu em 721 a.C., quando as dez tribos foram …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 4,
+  "en_talks": 2,
+  "en_verses": 0,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "dispersión de Israel",
+    "evidence": [],
+    "hint": "pulpit-glossary:verified"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "esparcimiento",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 1.0,
+    "ratio": 4001.0,
+    "source": "2006-10-nelson-the-gathering-of-scattered-israel",
+    "kind": "talk",
+    "sample": "as Escrituras, se cumplirá tan ciertamente como se cumplieron las profecías del esparcimiento de Israel[^9]."
+   },
+   {
+    "term": "israel",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 1.0,
+    "ratio": 83.4,
+    "source": "2006-10-nelson-the-gathering-of-scattered-israel",
+    "kind": "talk",
+    "sample": "cumplirá tan ciertamente como se cumplieron las profecías del esparcimiento de Israel[^9]."
+   },
+   {
+    "term": "recogimiento",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 181.9,
+    "source": "2006-10-nelson-the-gathering-of-scattered-israel",
+    "kind": "talk",
+    "sample": "Esa promesa del recogimiento, que se encuentra por todas las Escrituras, se cumplirá tan ciertamente como se"
+   }
+  ]
+ }
+}

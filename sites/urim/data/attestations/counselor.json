@@ -1,0 +1,170 @@
+{
+ "id": "concept.counselor",
+ "pt": {
+  "en_paragraphs": 488,
+  "en_talks": 274,
+  "en_verses": 27,
+  "uncovered_paragraphs": 25,
+  "renderings": [
+   {
+    "term": "conselheiro",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 463,
+    "talks": 256,
+    "verses": 27,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 30:7",
+      "ref_en": "Doctrine and Covenants 30:7",
+      "en": "And none have I appointed to be his counselor over him in the church, concerning church matters, except it is his brother, Joseph Smith, Jun.",
+      "tr": "E a ninguém designei como seu conselheiro, para estar acima dele na igreja no que se refere aos negócios da igreja, exceto seu irmão Joseph Smith Júnior.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/30?lang=por&id=p7"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-hinckley-in-counsellors-there-is-safety",
+      "para": 11,
+      "en": "It is imperative that the president himself select his counselors because theirs must be a compatible relationship. He must have …",
+      "tr": "E imperativo que o próprio presidente escolha seus conselheiros, porque o relacionamento entre eles deve ser compatível. O …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-uchtdorf-the-sustaining-of-church-officers",
+      "para": 0,
+      "en": "… Christ of Latter-day Saints; Henry Bennion Eyring as First Counselor in the First Presidency; and Dieter Friedrich Uchtdorf as Second …",
+      "tr": "… Santos dos Últimos Dias; Henry Bennion Eyring como Primeiro Conselheiro na Primeira Presidência; e Dieter Friedrich Uchtdorf como Segundo Conselheiro …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-hinckley-keeping-the-temple-holy",
+     "para": 33,
+     "en": "… be remembered that no President of this church, no Counselor in the Presidency, no General Authority, no member of a …",
+     "tr": "… É preciso lembrar sempre que nenhum Presidente da Igreja, conselheiro na Presidência, autoridade geral, membro de uma presidência de estaca …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "bispo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.2,
+    "ratio": 16.0,
+    "source": "1999-04-packer-the-bishop-and-his-counselors",
+    "kind": "talk",
+    "sample": "O bispo é responsável pelos rapazes do Sacerdócio Aarônico e também pelas moças. Também"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 456,
+  "en_talks": 267,
+  "en_verses": 27,
+  "uncovered_paragraphs": 11,
+  "renderings": [
+   {
+    "term": "consejero",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 445,
+    "talks": 259,
+    "verses": 27,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 58:18",
+      "ref_en": "Doctrine and Covenants 58:18",
+      "en": "And to judge his people by the testimony of the just, and by the assistance of his counselors, according to the laws of the kingdom which are given by the prophets of God.",
+      "tr": "y para juzgar a su pueblo por el testimonio de los justos, y con la ayuda de sus consejeros, conforme a las leyes del reino dadas por los profetas de Dios.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/58?lang=spa&id=p18"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-jack-i-will-go-and-do",
+      "para": 4,
+      "en": "… me to grow. I have served happily as a counselor in the Young Women organization.",
+      "tr": "… progresar. Ha sido un placer para mi servir como consejera de la organización de las Mujeres Jóvenes."
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-uchtdorf-the-sustaining-of-church-officers",
+      "para": 6,
+      "en": "It is proposed that we sustain the counselors in the First Presidency and the Twelve Apostles as prophets, …",
+      "tr": "Se propone que sostengamos a los consejeros de la Primera Presidencia y a los Doce Apóstoles como …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-hinckley-keeping-the-temple-holy",
+     "para": 33,
+     "en": "… be remembered that no President of this church, no Counselor in the Presidency, no General Authority, no member of a …",
+     "tr": "… Recordemos siempre que ningún Presidente de la Iglesia, ningún Consejero de la Presidencia, ninguna Autoridad General, ningún miembro de la …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "pág",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.364,
+    "ratio": 12.9,
+    "source": "1991-04-monson-a-royal-priesthood",
+    "kind": "talk",
+    "sample": "”, en Speeches of the Year, I 973, Provo: Brigham Young University Press, 1973, pág. 100)."
+   },
+   {
+    "term": "lideres",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.273,
+    "ratio": 13.5,
+    "source": "1991-04-monson-a-royal-priesthood",
+    "kind": "talk",
+    "sample": "Uno de los grandes lideres de nuestra época, el presidente Harold B. Lee, al hablar en la Universidad Brig"
+   },
+   {
+    "term": "the",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.273,
+    "ratio": 12.1,
+    "source": "1991-04-monson-a-royal-priesthood",
+    "kind": "talk",
+    "sample": "Y yo tampoco, porque pertenezco a la casa real del Reino de Dios” (“Be Loyal to the Royal within You”, en Speeches of the Year, I 973, Provo: Brigham Young Univers"
+   }
+  ]
+ }
+}

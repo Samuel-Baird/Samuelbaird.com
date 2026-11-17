@@ -1,0 +1,15 @@
+id: concept.genealogical-society
+category: Temple & Family History
+en:
+  term: Genealogical Society
+  match:
+  - Genealogical Society
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: Sociedad Genealógica
+    hint: pulpit-glossary:verified
+related: []
+note: Historical (pre-FamilySearch) name of the Church's genealogical organization; official name only,
+  do not translate literally

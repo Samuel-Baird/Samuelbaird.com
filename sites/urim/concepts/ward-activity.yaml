@@ -1,0 +1,15 @@
+id: concept.ward-activity
+category: Sacrament & Meetings
+en:
+  term: ward activity
+  match:
+  - ward activity
+sources: {}
+candidates:
+  pt:
+  - term: atividade da ala
+    hint: pulpit-glossary:standard
+  es:
+  - term: actividad de barrio
+    hint: pulpit-glossary:verified
+related: []

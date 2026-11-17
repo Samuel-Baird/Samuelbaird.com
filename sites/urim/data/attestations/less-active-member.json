@@ -1,0 +1,145 @@
+{
+ "id": "concept.less-active-member",
+ "pt": {
+  "en_paragraphs": 34,
+  "en_talks": 26,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "membro menos ativo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 33,
+    "talks": 25,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-rector-the-resurrection",
+      "para": 21,
+      "en": "The nicest thing we can do for less-active members of the Church is to reach out to them …",
+      "tr": "… coisa mais generosa que podemos fazer por um membro menos ativo da Igreja é estender-lhe a mão com amor, brandura …"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 April General Conference",
+      "talk": "2012-04-edgley-the-rescue-for-real-growth",
+      "para": 13,
+      "en": "- I learned we have less-active members who are trying and willing to find the path …",
+      "tr": "- Aprendi que temos membros menos ativos que estão dispostos a voltar e procurando encontrar o …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-palmer-return-unto-me-that-i-may-heal-you",
+      "para": 25,
+      "en": "… Learn from Amulek, who described his time as a less-active member by saying, “I was called many times and I …",
+      "tr": "… Aprendam com Amuleque, que descreveu seu tempo como membro menos ativo dizendo: “Fui chamado muitas vezes e não quis ouvir”.[^11]"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 October General Conference",
+     "talk": "1990-10-rector-the-resurrection",
+     "para": 21,
+     "en": "The nicest thing we can do for less-active members of the Church is to reach out to them …",
+     "tr": "… coisa mais generosa que podemos fazer por um membro menos ativo da Igreja é estender-lhe a mão com amor, brandura …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 31,
+  "en_talks": 23,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "miembro menos activo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 28,
+    "talks": 21,
+    "verses": 0,
+    "first_year": 1997,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1997,
+      "conference": "1997 April General Conference",
+      "talk": "1997-04-monson-they-will-come",
+      "para": 45,
+      "en": "… bridge to the investigator, the new convert, or the less-active member, when we do our part the Lord does …",
+      "tr": "… investigadores, a los nuevos conversos o a los miembros menos activos, cuando hacemos nuestra parte, el Señor hace la …"
+     },
+     {
+      "kind": "talk",
+      "year": 2012,
+      "conference": "2012 April General Conference",
+      "talk": "2012-04-edgley-the-rescue-for-real-growth",
+      "para": 15,
+      "en": "- I learned that a less-active member deserves to be treated as an equal and be …",
+      "tr": "- Aprendí que un miembro menos activo merece que se lo trate como a un igual …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-palmer-return-unto-me-that-i-may-heal-you",
+      "para": 25,
+      "en": "… Learn from Amulek, who described his time as a less-active member by saying, “I was called many times and I …",
+      "tr": "… de Amulek, quien describió así su época como miembro menos activo: “Fui llamado muchas veces, y no quise oír”[^11]."
+     }
+    ],
+    "earliest": {
+     "year": 1997,
+     "conference": "1997 April General Conference",
+     "talk": "1997-04-monson-they-will-come",
+     "para": 45,
+     "en": "… bridge to the investigator, the new convert, or the less-active member, when we do our part the Lord does …",
+     "tr": "… investigadores, a los nuevos conversos o a los miembros menos activos, cuando hacemos nuestra parte, el Señor hace la …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "menos activos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 666.8,
+    "source": "2004-04-arnold-strengthen-thy-brethren",
+    "kind": "talk",
+    "sample": "y el obispado se la dividen y las visitan regularmente. No sólo visitamos a los menos activos, sino también a los no miembros en las familias menos activas o en las que no t"
+   },
+   {
+    "term": "obra",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 17.4,
+    "source": "2004-04-arnold-strengthen-thy-brethren",
+    "kind": "talk",
+    "sample": "“Nuestra obra de rescate es el centro de atención de los tres quórumes del Sacerdocio Aarónic"
+   }
+  ]
+ }
+}

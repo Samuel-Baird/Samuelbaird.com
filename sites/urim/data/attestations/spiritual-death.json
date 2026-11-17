@@ -1,0 +1,144 @@
+{
+ "id": "concept.spiritual-death",
+ "pt": {
+  "en_paragraphs": 41,
+  "en_talks": 35,
+  "en_verses": 5,
+  "uncovered_paragraphs": 46,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "morte espiritual",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 39,
+    "share_of_uncovered": 0.848,
+    "ratio": 3392.2,
+    "source": "1990-04-packer-the-library-of-the-lord",
+    "kind": "talk",
+    "sample": "Em suas páginas são explicados justiça e misericórdia, a Queda e a Expiação, a morte espiritual e carnal. Aprendereis sobre as fragilidades e consumada bondade de homens e de"
+   },
+   {
+    "term": "morte física",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 21,
+    "share_of_uncovered": 0.457,
+    "ratio": 365.3,
+    "source": "1996-10-wirthlin-christians-in-belief-and-action",
+    "kind": "talk",
+    "sample": "nidade retornar à presença de Deus. Como parte da Expiação, o Salvador venceu a morte física e concedeu a imortalidade a todos os filhos de Deus por meio da Ressurreição. T"
+   },
+   {
+    "term": "queda",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.283,
+    "ratio": 102.8,
+    "source": "1990-04-packer-the-library-of-the-lord",
+    "kind": "talk",
+    "sample": "Em suas páginas são explicados justiça e misericórdia, a Queda e a Expiação, a morte espiritual e carnal. Aprendereis sobre as fragilidades e"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 41,
+  "en_talks": 36,
+  "en_verses": 5,
+  "uncovered_paragraphs": 12,
+  "renderings": [
+   {
+    "term": "muerte espiritual",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 29,
+    "talks": 25,
+    "verses": 5,
+    "first_year": 1991,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Alma 12:16",
+      "ref_en": "Alma 12:16",
+      "en": "And now behold, I say unto you then cometh a death, even a second death, which is a spiritual death; then is a time that whosoever dieth in his sins, as to a temporal death, shall also die a spiritual death; yea, he shall die as to things pertaining unto righteousness.",
+      "tr": "Y ahora bien, he aquí, os digo que entonces viene una muerte, sí, una segunda muerte, la cual es una muerte espiritual; entonces es cuando aquel que muera en sus pecados, en cuanto a la muerte temporal, padecerá también una muerte espiritual; sí, morirá en cuanto a las cosas que atañen a la rectitud.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/12?lang=spa&id=p16"
+     },
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 October General Conference",
+      "talk": "1991-10-oaks-joy-and-mercy",
+      "para": 34,
+      "en": "… only degradation and increased momentum along the way to spiritual death.",
+      "tr": "… del impulso que lleva por el camino de la muerte espiritual."
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-christofferson-redemption",
+      "para": 26,
+      "en": "… and are resurrected to immortality. In addition, all overcome spiritual death by being brought back into the presence of God …",
+      "tr": "… y resucitan a la inmortalidad. Además, todos vencen la muerte espiritual al ser llevados de regreso a la presencia de …"
+     }
+    ],
+    "earliest": {
+     "year": 1991,
+     "conference": "1991 October General Conference",
+     "talk": "1991-10-oaks-joy-and-mercy",
+     "para": 34,
+     "en": "… only degradation and increased momentum along the way to spiritual death.",
+     "tr": "… del impulso que lleva por el camino de la muerte espiritual."
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "muerte física",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.667,
+    "ratio": 666.8,
+    "source": "2000-10-dew-stand-tall-and-stand-together",
+    "kind": "talk",
+    "sample": "hermanos y nuestras hermanas, que se han perdido y se enfrentan no sólo con la muerte física sino también con la espiritual? El Evangelio de Jesucristo se centra en la gent"
+   },
+   {
+    "term": "espiritual",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.833,
+    "ratio": 28.5,
+    "source": "1998-10-holland-personal-purity",
+    "kind": "talk",
+    "sample": "etamente, porque es el pecado el que al final será la causa de la muerte, tanto espiritual como física) y la razón por la que la resurrección del cuerpo es tan importante"
+   },
+   {
+    "term": "pecados",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.417,
+    "ratio": 26.9,
+    "source": "2002-04-nelson-how-firm-our-foundation",
+    "kind": "talk",
+    "sample": "os consejos preterrenales, Él fue preordenado por Su Padre para expiar nuestros pecados y romper las ligaduras de la muerte física y de la espiritual[^5]. Jesús declar"
+   }
+  ]
+ }
+}

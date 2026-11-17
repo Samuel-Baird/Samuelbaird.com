@@ -1,0 +1,119 @@
+{
+ "id": "concept.zone-conference",
+ "pt": {
+  "en_paragraphs": 6,
+  "en_talks": 5,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "conferência de zona",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 6,
+    "talks": 5,
+    "verses": 0,
+    "first_year": 2004,
+    "last_year": 2021,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2004,
+      "conference": "2004 April General Conference",
+      "talk": "2004-04-mask-standing-spotless-before-the-lord",
+      "para": 0,
+      "en": "… where in the world they were going so early. Zone conference! And they were determined to do whatever it …",
+      "tr": "… subiram, perguntamos onde estavam indo tão cedo. À conferência de zona! E eles estavam determinados a fazer o que …"
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 October General Conference",
+      "talk": "2009-10-nielson-a-call-to-the-rising-generation",
+      "para": 4,
+      "en": "… the Soviet Union and was renamed Vyborg. In our zone conferences, Sister Mahoney would tell us of those left …",
+      "tr": "… Soviética e passou a chamar-se Vyborg. Em nossas conferências de zona, a irmã Mahoney nos contava a respeito dos …"
+     },
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 October General Conference",
+      "talk": "2021-10-kyungu-to-be-a-follower-of-christ",
+      "para": 14,
+      "en": "… on these roads to visit the missionaries and hold zone conferences. We did not know how long it was …",
+      "tr": "… essas estradas para visitar os missionários e presidir conferências de zona. Não sabíamos quanto tempo isso iria durar. Elaborei …"
+     }
+    ],
+    "earliest": {
+     "year": 2004,
+     "conference": "2004 April General Conference",
+     "talk": "2004-04-mask-standing-spotless-before-the-lord",
+     "para": 0,
+     "en": "… where in the world they were going so early. Zone conference! And they were determined to do whatever it …",
+     "tr": "… subiram, perguntamos onde estavam indo tão cedo. À conferência de zona! E eles estavam determinados a fazer o que …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 5,
+  "en_talks": 5,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "conferencia de zona",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 5,
+    "talks": 5,
+    "verses": 0,
+    "first_year": 1992,
+    "last_year": 2021,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1992,
+      "conference": "1992 October General Conference",
+      "talk": "1992-10-jensen-remember-also-the-promises",
+      "para": 6,
+      "en": "… to a distant city to interview missionaries, hold a zone conference, and conduct a district conference. I discovered among …",
+      "tr": "… distante para entrevistar a los misioneros, efectuar una conferencia de zona y dirigir una conferencia de distrito. Descubrí que entre …"
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 October General Conference",
+      "talk": "2009-10-nielson-a-call-to-the-rising-generation",
+      "para": 4,
+      "en": "… the Soviet Union and was renamed Vyborg. In our zone conferences, Sister Mahoney would tell us of those left …",
+      "tr": "… le cambió el nombre a Víborg. Durante las conferencias de zona, la hermana Mahoney nos contaba de aquellas personas …"
+     },
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 October General Conference",
+      "talk": "2021-10-kyungu-to-be-a-follower-of-christ",
+      "para": 14,
+      "en": "… on these roads to visit the missionaries and hold zone conferences. We did not know how long it was …",
+      "tr": "… a los misioneros y llevar a cabo las conferencias de zona. Además, no sabíamos cuánto tiempo iba a durar …"
+     }
+    ],
+    "earliest": {
+     "year": 1992,
+     "conference": "1992 October General Conference",
+     "talk": "1992-10-jensen-remember-also-the-promises",
+     "para": 6,
+     "en": "… to a distant city to interview missionaries, hold a zone conference, and conduct a district conference. I discovered among …",
+     "tr": "… distante para entrevistar a los misioneros, efectuar una conferencia de zona y dirigir una conferencia de distrito. Descubrí que entre …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

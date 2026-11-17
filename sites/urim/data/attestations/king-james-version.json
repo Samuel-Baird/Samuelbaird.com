@@ -1,0 +1,150 @@
+{
+ "id": "concept.king-james-version",
+ "pt": {
+  "en_paragraphs": 22,
+  "en_talks": 20,
+  "en_verses": 0,
+  "uncovered_paragraphs": 8,
+  "renderings": [
+   {
+    "term": "Rei Jaime",
+    "hint": "pulpit-glossary:standard",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 14,
+    "talks": 13,
+    "verses": 0,
+    "first_year": 2005,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2005,
+      "conference": "2005 October General Conference",
+      "talk": "2005-10-hales-preparations-for-the-restoration-and-the-second-coming-my-hand-shall-be-over-thee",
+      "para": 13,
+      "en": "… and Joshua through Chronicles) were retained in the King James Version.[^7] In time, that version would find its way …",
+      "tr": "… de Josué a Crônicas) foram mantidas na versão do rei Jaime.[^7] Com o tempo, essa versão chegaria a uma …"
+     },
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 April General Conference",
+      "talk": "2017-04-uchtdorf-the-greatest-among-you",
+      "para": 62,
+      "en": "… See [Mark 10:35–40](https://www.churchofjesuschrist.org/study/scriptures/nt/mark/10?lang=eng&id=p35-p40#p35), New International Version (2011) and King James Version.\n[^4]: See [Mark 10:42–44](https://www.churchofjesuschrist.org/study/scriptures/nt/mark/10?lang=eng&id=p42-p44#p42).\n[^5]: See [Matthew 6:4](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/6?lang=eng&id=p4#p4). …",
+      "tr": "… [Marcos 10:35–40](https://www.churchofjesuschrist.org/study/scriptures/nt/mark/10?lang=por&id=p35-p40#p35), Nova Versão Internacional (2011) e versão do rei Jaime da Bíblia.\n[^4]: Ver [Marcos 10:42–44](https://www.churchofjesuschrist.org/study/scriptures/nt/mark/10?lang=por&id=p42-p44#p42).\n[^5]: Ver [Mateus …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-rasband-love-like-jesus",
+      "para": 27,
+      "en": "… The phrase “pressed out of measure” in the King James Version of [2 Corinthians 1:8](https://www.churchofjesuschrist.org/study/scriptures/nt/2-cor/1?lang=eng&id=p8#p8) is translated as “burdened excessively” …",
+      "tr": "… 4:14](https://www.churchofjesuschrist.org/study/scriptures/nt/eph/4?lang=por&id=p14#p14).\n[^2]: A frase \"pressionado sobremaneira\" na versão do rei Jaime de [2 Coríntios 1:8](https://www.churchofjesuschrist.org/study/scriptures/nt/2-cor/1?lang=por&id=p8#p8) é traduzida como \"excessivamente sobrecarregado\" …"
+     }
+    ],
+    "earliest": {
+     "year": 2005,
+     "conference": "2005 October General Conference",
+     "talk": "2005-10-hales-preparations-for-the-restoration-and-the-second-coming-my-hand-shall-be-over-thee",
+     "para": 13,
+     "en": "… and Joshua through Chronicles) were retained in the King James Version.[^7] In time, that version would find its way …",
+     "tr": "… de Josué a Crônicas) foram mantidas na versão do rei Jaime.[^7] Com o tempo, essa versão chegaria a uma …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "new king james",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.375,
+    "ratio": 1500.4,
+    "source": "2025-04-uchtdorf-by-this-all-will-know-that-you-are-my-disciples",
+    "kind": "talk",
+    "sample": "[^1]: João 13:34–35, New King James Version; tradução livre.\n[^2]: [Doutrina e Convênios 1:21](https://www.churchof"
+   },
+   {
+    "term": "king james version",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.375,
+    "ratio": 1500.4,
+    "source": "2025-04-uchtdorf-by-this-all-will-know-that-you-are-my-disciples",
+    "kind": "talk",
+    "sample": "[^1]: João 13:34–35, New King James Version; tradução livre.\n[^2]: [Doutrina e Convênios 1:21](https://www.churchofjesuschr"
+   },
+   {
+    "term": "lucas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.625,
+    "ratio": 50.0,
+    "source": "2017-04-uchtdorf-perfect-love-casteth-out-fear",
+    "kind": "talk",
+    "sample": "ilho do Homem não veio para destruir a alma dos homens, mas para salvá-la\" (ver Lucas 9:51–56).\n[^5]: Ver [Moisés 1:39](https://www.churchofjesuschrist.org/study/scr"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 21,
+  "en_talks": 17,
+  "en_verses": 0,
+  "uncovered_paragraphs": 21,
+  "renderings": [
+   {
+    "term": "Versión del Rey Jacobo",
+    "evidence": [],
+    "hint": "pulpit-glossary:verified"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "versión",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 18,
+    "share_of_uncovered": 0.857,
+    "ratio": 571.6,
+    "source": "1999-10-nelson-a-testimony-of-the-book-of-mormon",
+    "kind": "talk",
+    "sample": "nement” en inglés] (en cualquiera de sus formas) se menciona sólo una vez en la Versión del Rey Santiago del Nuevo Testamento en inglés[^23], ¡En el Libro de Mormón ap"
+   },
+   {
+    "term": "rey santiago",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 14,
+    "share_of_uncovered": 0.667,
+    "ratio": 666.8,
+    "source": "1999-10-nelson-a-testimony-of-the-book-of-mormon",
+    "kind": "talk",
+    "sample": "nglés] (en cualquiera de sus formas) se menciona sólo una vez en la Versión del Rey Santiago del Nuevo Testamento en inglés[^23], ¡En el Libro de Mormón aparece 35 veces![^"
+   },
+   {
+    "term": "inglés",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 12,
+    "share_of_uncovered": 0.571,
+    "ratio": 285.8,
+    "source": "1999-10-nelson-a-testimony-of-the-book-of-mormon",
+    "kind": "talk",
+    "sample": "o no se obtiene de la Biblia únicamente. La palabra *expiación* [“atonement” en inglés] (en cualquiera de sus formas) se menciona sólo una vez en la Versión del Rey S"
+   }
+  ]
+ }
+}

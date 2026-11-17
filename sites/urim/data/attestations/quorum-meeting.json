@@ -1,0 +1,195 @@
+{
+ "id": "concept.quorum-meeting",
+ "pt": {
+  "en_paragraphs": 18,
+  "en_talks": 14,
+  "en_verses": 0,
+  "uncovered_paragraphs": 8,
+  "renderings": [
+   {
+    "term": "reunião do quórum",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 10,
+    "talks": 8,
+    "verses": 0,
+    "first_year": 2004,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2004,
+      "conference": "2004 October General Conference",
+      "talk": "2004-10-monson-anxiously-engaged",
+      "para": 23,
+      "en": "I answered, “I’ll have him at quorum meeting this week.”",
+      "tr": "… “Vou fazer com que ele venha para a reunião do quórum nesta semana”."
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-beck-your-sacred-duty-to-minister",
+      "para": 28,
+      "en": "… The youth curriculum encourages these kinds of interactions in quorum meetings, but this can happen only when every member …",
+      "tr": "… dos jovens incentiva esse tipo de interação nas reuniões do quórum, mas isso só pode acontecer quando todo membro …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-lund-divine-authority-sublime-young-men",
+      "para": 27,
+      "en": "And one day in quorum meeting, he tenderly asked them to pray for him …",
+      "tr": "E um dia na reunião do quórum, ele carinhosamente pediu que orassem por ele para …"
+     }
+    ],
+    "earliest": {
+     "year": 2004,
+     "conference": "2004 October General Conference",
+     "talk": "2004-10-monson-anxiously-engaged",
+     "para": 23,
+     "en": "I answered, “I’ll have him at quorum meeting this week.”",
+     "tr": "… “Vou fazer com que ele venha para a reunião do quórum nesta semana”."
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "quórum",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 1.0,
+    "ratio": 61.6,
+    "source": "2004-10-perry-what-is-a-quorum",
+    "kind": "talk",
+    "sample": "Vejo essa característica expressamente manifesta nas funções do Quórum dos Doze Apóstolos. Somos uma sala de aula, ao estudarmos juntos as doutrinas d"
+   },
+   {
+    "term": "reuniões",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.625,
+    "ratio": 78.1,
+    "source": "2010-04-beck-the-magnificent-aaronic-priesthood",
+    "kind": "talk",
+    "sample": "membros do quórum têm um importante papel no programa Dever para com Deus. Suas reuniões dominicais do quórum proporcionarão oportunidades regulares de aprender, agir e"
+   },
+   {
+    "term": "reunião",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.5,
+    "ratio": 31.8,
+    "source": "2004-10-perry-what-is-a-quorum",
+    "kind": "talk",
+    "sample": "doutrinas do reino. Podem imaginar que experiência especial seria estar em uma reunião de quórum e aprender as doutrinas do evangelho com os Élderes Ezra Taft Benson,"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 19,
+  "en_talks": 15,
+  "en_verses": 0,
+  "uncovered_paragraphs": 11,
+  "renderings": [
+   {
+    "term": "reunión de quórum",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 8,
+    "talks": 7,
+    "verses": 0,
+    "first_year": 1997,
+    "last_year": 2013,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1997,
+      "conference": "1997 April General Conference",
+      "talk": "1997-04-hinckley-may-we-be-faithful-and-true",
+      "para": 14,
+      "en": "… only limited opportunities for them to come together in quorum meetings, the Presidents of the Seventy will communicate with …",
+      "tr": "… solo tendrán oportunidades limitadas para reunirse juntos en reuniones de quórum, los Presidentes de los Setenta se comunicaran con …"
+     },
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 April General Conference",
+      "talk": "2010-04-beck-the-magnificent-aaronic-priesthood",
+      "para": 17,
+      "en": "… role in the Duty to God program. Your Sunday quorum meetings will provide regular opportunities to learn, act, and share. …",
+      "tr": "… en el programa *Mi Deber a Dios*. Las reuniones de quórum los domingos les darán oportunidades de aprender, actuar y …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-beck-your-sacred-duty-to-minister",
+      "para": 28,
+      "en": "… The youth curriculum encourages these kinds of interactions in quorum meetings, but this can happen only when every member …",
+      "tr": "… jóvenes alienta esa clase de interacciones en las reuniones de quórum, pero eso sucede sólo cuando cada miembro del …"
+     }
+    ],
+    "earliest": {
+     "year": 1997,
+     "conference": "1997 April General Conference",
+     "talk": "1997-04-hinckley-may-we-be-faithful-and-true",
+     "para": 14,
+     "en": "… only limited opportunities for them to come together in quorum meetings, the Presidents of the Seventy will communicate with …",
+     "tr": "… solo tendrán oportunidades limitadas para reunirse juntos en reuniones de quórum, los Presidentes de los Setenta se comunicaran con …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "cuórum",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.636,
+    "ratio": 106.1,
+    "source": "2018-04-holmes-what-every-aaronic-priesthood-holder-needs-to-understand",
+    "kind": "talk",
+    "sample": "convencer a los hombres”[^14]. Eso podría ocurrir al enseñar en una reunión del cuórum o durante una visita a un miembro en su casa. Podría ser en una situación más i"
+   },
+   {
+    "term": "reunión",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.727,
+    "ratio": 53.9,
+    "source": "1999-10-featherstone-one-link-still-holds",
+    "kind": "talk",
+    "sample": "Pero esa mañana, en la reunión de mi quórum, un miembro del obispado dijo: “El próximo jueves es el Día de Acc"
+   },
+   {
+    "term": "quórum",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.273,
+    "ratio": 25.4,
+    "source": "1999-10-featherstone-one-link-still-holds",
+    "kind": "talk",
+    "sample": "Pero esa mañana, en la reunión de mi quórum, un miembro del obispado dijo: “El próximo jueves es el Día de Acción de Gracia"
+   }
+  ]
+ }
+}

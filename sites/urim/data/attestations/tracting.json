@@ -1,0 +1,144 @@
+{
+ "id": "concept.tracting",
+ "pt": {
+  "en_paragraphs": 5,
+  "en_talks": 5,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "proselitismo",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 2,
+    "talks": 2,
+    "verses": 0,
+    "first_year": 2001,
+    "last_year": 2009,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 October General Conference",
+      "talk": "2001-10-perry-the-returned-missionary",
+      "para": 9,
+      "en": "… prayer as we left our apartment to go out tracting, and, of course, special prayers when special guidance was …",
+      "tr": "… de estudar, antes de sair do apartamento para fazer proselitismo e, claro, orávamos quando precisávamos de uma orientação especial no …"
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 April General Conference",
+      "talk": "2009-04-perry-bring-souls-unto-me",
+      "para": 4,
+      "en": "… is … no substitute for a member-oriented proselyting program. Tracting will not substitute for it. Golden questions will not substitute …",
+      "tr": "… disse: “Não existe (…) substituto para um programa de proselitismo que envolva os membros. Bater em portas não substitui esse …"
+     }
+    ],
+    "earliest": {
+     "year": 2001,
+     "conference": "2001 October General Conference",
+     "talk": "2001-10-perry-the-returned-missionary",
+     "para": 9,
+     "en": "… prayer as we left our apartment to go out tracting, and, of course, special prayers when special guidance was …",
+     "tr": "… de estudar, antes de sair do apartamento para fazer proselitismo e, claro, orávamos quando precisávamos de uma orientação especial no …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "porta",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 92.0,
+    "source": "2009-04-monson-be-your-best-self",
+    "kind": "talk",
+    "sample": "mesma tarde em que ela fizera aquela oração simples, mas fervorosa, ela abriu a porta e disse aquilo que todo missionário mais gosta de ouvir: “Élderes, podem entrar"
+   },
+   {
+    "term": "missionário",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 46.0,
+    "source": "2009-04-monson-be-your-best-self",
+    "kind": "talk",
+    "sample": "Enquanto isso, dois missionários que vinham orando com sinceridade e que se empenhavam para encontrar pessoas p"
+   },
+   {
+    "term": "enquanto",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 28.4,
+    "source": "2009-04-monson-be-your-best-self",
+    "kind": "talk",
+    "sample": "Enquanto isso, dois missionários que vinham orando com sinceridade e que se empenhavam p"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 5,
+  "en_talks": 5,
+  "en_verses": 0,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "golpear puertas",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 1,
+    "talks": 1,
+    "verses": 0,
+    "first_year": 2001,
+    "last_year": 2001,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 October General Conference",
+      "talk": "2001-10-perry-the-returned-missionary",
+      "para": 9,
+      "en": "… prayer as we left our apartment to go out tracting, and, of course, special prayers when special guidance was …",
+      "tr": "… antes de estudiar, una oración antes de salir a golpear puertas y, por supuesto, oraciones especiales cuando necesitábamos guía especial …"
+     }
+    ],
+    "earliest": {
+     "year": 2001,
+     "conference": "2001 October General Conference",
+     "talk": "2001-10-perry-the-returned-missionary",
+     "para": 9,
+     "en": "… prayer as we left our apartment to go out tracting, and, of course, special prayers when special guidance was …",
+     "tr": "… antes de estudiar, una oración antes de salir a golpear puertas y, por supuesto, oraciones especiales cuando necesitábamos guía especial …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "puertas",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 133.4,
+    "source": "2009-04-perry-bring-souls-unto-me",
+    "kind": "talk",
+    "sample": "o para un programa proselitista basado en el trabajo con los miembros. El tocar puertas no lo sustituirá. Las preguntas de oro no lo sustituirán. Un programa basado en"
+   }
+  ]
+ }
+}

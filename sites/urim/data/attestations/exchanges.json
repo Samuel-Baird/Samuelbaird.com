@@ -1,0 +1,63 @@
+{
+ "id": "concept.exchanges",
+ "pt": {
+  "en_paragraphs": 3,
+  "en_talks": 3,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "divisões",
+    "evidence": [],
+    "hint": "pulpit-glossary:standard"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "nunca",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 20.8,
+    "source": "1990-04-wirthlin-personal-integrity",
+    "kind": "talk",
+    "sample": "Como Jó, na antigüidade, precisamos dizer: “Até que eu expire, nunca apartarei de mim a minha sinceridade.” ([Jó 27:5](https://www.churchofjesuschri"
+   },
+   {
+    "term": "tão",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 20.4,
+    "source": "1990-04-wirthlin-personal-integrity",
+    "kind": "talk",
+    "sample": "uma vantagem temporária. Maridos ou mulheres infiéis ao cônjuge trocam esse bem tão desejado por uma diversão momentânea. A integridade é tão preciosa que não tem"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 3,
+  "en_talks": 3,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "tan",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 20.1,
+    "source": "1990-04-wirthlin-personal-integrity",
+    "kind": "talk",
+    "sample": "ecan su inapreciable integridad por un fugaz momento de alegría. Esta virtud es tan preciosa que no tiene precio, es invalorable."
+   }
+  ]
+ }
+}

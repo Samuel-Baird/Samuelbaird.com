@@ -1,0 +1,157 @@
+{
+ "id": "concept.terrestrial-kingdom",
+ "pt": {
+  "en_paragraphs": 11,
+  "en_talks": 9,
+  "en_verses": 2,
+  "uncovered_paragraphs": 7,
+  "renderings": [
+   {
+    "term": "reino terrestrial",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 6,
+    "talks": 6,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-oaks-witnesses-of-christ",
+      "para": 29,
+      "en": "… Joseph Smith described those souls who go to the terrestrial kingdom as the “honorable men of the earth,” who were …",
+      "tr": "… Joseph Smith descreveu as almas que vão para o reino terrestrial como “os homens honrados da terra” que “não são …"
+     },
+     {
+      "kind": "talk",
+      "year": 2022,
+      "conference": "2022 October General Conference",
+      "talk": "2022-10-cook-be-true-to-god-and-his-work",
+      "para": 8,
+      "en": "… is reflected light or “borrowed light.” Speaking of the terrestrial kingdom, [verse 79](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/76?lang=eng&id=p79#p79) states, “These are they who are …",
+      "tr": "… refletida, ou seja, com “luz emprestada”. Falando sobre o reino terrestrial, o [versículo 79](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/76?lang=por&id=p79#p79) declara: “Estes são os que …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-christofferson-the-testimony-of-jesus",
+      "para": 10,
+      "en": "… some of those who will be found in the terrestrial kingdom also accept the testimony of Jesus, but they are …",
+      "tr": "Pelo menos alguns dos que estarão no reino terrestrial também aceitam o testemunho de Jesus, mas se distinguem …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 October General Conference",
+     "talk": "1990-10-oaks-witnesses-of-christ",
+     "para": 29,
+     "en": "… Joseph Smith described those souls who go to the terrestrial kingdom as the “honorable men of the earth,” who were …",
+     "tr": "… Joseph Smith descreveu as almas que vão para o reino terrestrial como “os homens honrados da terra” que “não são …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "terrestre",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.714,
+    "ratio": 2857.9,
+    "source": "2009-10-oaks-love-and-law",
+    "kind": "talk",
+    "sample": "E aquele que não consegue viver a lei de um reino terrestre não consegue suportar uma glória terrestre."
+   },
+   {
+    "term": "reino",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.857,
+    "ratio": 41.3,
+    "source": "2009-10-oaks-love-and-law",
+    "kind": "talk",
+    "sample": "E aquele que não consegue viver a lei de um reino terrestre não consegue suportar uma glória terrestre."
+   },
+   {
+    "term": "suportar uma glória",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.429,
+    "ratio": 571.6,
+    "source": "2009-10-oaks-love-and-law",
+    "kind": "talk",
+    "sample": "E aquele que não consegue viver a lei de um reino terrestre não consegue suportar uma glória terrestre."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 11,
+  "en_talks": 9,
+  "en_verses": 2,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "Reino Terrestre",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 9,
+    "talks": 7,
+    "verses": 2,
+    "first_year": 2002,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 88:23",
+      "ref_en": "Doctrine and Covenants 88:23",
+      "en": "And he who cannot abide the law of a terrestrial kingdom cannot abide a terrestrial glory.",
+      "tr": "Y el que no puede obedecer la ley de un reino terrestre, no puede soportar una gloria terrestre.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/88?lang=spa&id=p23"
+     },
+     {
+      "kind": "talk",
+      "year": 2002,
+      "conference": "2002 April General Conference",
+      "talk": "2002-04-maxwell-consecrate-thy-performance",
+      "para": 10,
+      "en": "Shrinking occurs in so many ways. The terrestrial kingdom, for example, will include the “honorable,” clearly not …",
+      "tr": "El no consagrarse completamente ocurre de muchas maneras: el reino terrestre, por ejemplo, incluirá a los “honorables”, quienes obviamente …"
+     },
+     {
+      "kind": "talk",
+      "year": 2022,
+      "conference": "2022 October General Conference",
+      "talk": "2022-10-cook-be-true-to-god-and-his-work",
+      "para": 7,
+      "en": "… celestial glory to the sun. It then compares the terrestrial kingdom to the moon.[^7]",
+      "tr": "… gloria celestial con el sol; luego se compara el Reino Terrestre con la luna[^7]."
+     }
+    ],
+    "earliest": {
+     "year": 2002,
+     "conference": "2002 April General Conference",
+     "talk": "2002-04-maxwell-consecrate-thy-performance",
+     "para": 10,
+     "en": "Shrinking occurs in so many ways. The terrestrial kingdom, for example, will include the “honorable,” clearly not …",
+     "tr": "El no consagrarse completamente ocurre de muchas maneras: el reino terrestre, por ejemplo, incluirá a los “honorables”, quienes obviamente …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

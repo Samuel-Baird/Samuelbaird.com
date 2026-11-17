@@ -1,0 +1,15 @@
+id: concept.the-family-a-proclamation-to-the-world
+category: The Family
+en:
+  term: 'The Family: A Proclamation to the World'
+  match:
+  - 'The Family: A Proclamation to the World'
+sources: {}
+candidates:
+  pt:
+  - term: 'A Família: Proclamação ao Mundo'
+    hint: pulpit-glossary:verified
+  es:
+  - term: 'La Familia: Una Proclamación para el Mundo'
+    hint: pulpit-glossary:verified
+related: []

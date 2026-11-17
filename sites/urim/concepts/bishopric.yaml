@@ -1,0 +1,17 @@
+id: concept.bishopric
+category: Local Leadership & Callings
+en:
+  term: bishopric
+  match:
+  - bishopric
+sources:
+  GH:
+  - 10-aaronic-priesthood#title_number22
+candidates:
+  pt:
+  - term: bispado
+    hint: pulpit-glossary:verified
+  es:
+  - term: obispado
+    hint: approved-terms
+related: []

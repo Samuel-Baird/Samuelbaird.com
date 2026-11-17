@@ -1,0 +1,17 @@
+id: concept.emeritus-status
+category: Presiding Quorums & General Leadership
+en:
+  term: emeritus status
+  match:
+  - emeritus status
+sources: {}
+candidates:
+  pt:
+  - term: condição de emérito
+    hint: pulpit-glossary:verified
+  es:
+  - term: condición de emérito
+    hint: pulpit-glossary:verified
+related: []
+note: Church-administrative retirement status for released senior leaders; distinct from the general "release"
+  entry

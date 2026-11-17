@@ -1,0 +1,15 @@
+id: concept.ordinance-work
+category: Temple & Family History
+en:
+  term: ordinance work
+  match:
+  - ordinance work
+sources: {}
+candidates:
+  pt:
+  - term: realização das ordenanças
+    hint: pulpit-glossary:verified
+  es:
+  - term: obra de las ordenanzas
+    hint: pulpit-glossary:verified
+related: []

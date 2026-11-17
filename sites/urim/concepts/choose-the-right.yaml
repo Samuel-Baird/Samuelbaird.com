@@ -1,0 +1,16 @@
+id: concept.choose-the-right
+category: Organizations & Youth
+en:
+  term: Choose the Right
+  match:
+  - Choose the Right
+sources: {}
+candidates:
+  pt:
+  - term: escolher o certo
+    hint: pulpit-glossary:verified
+  es:
+  - term: hagan lo justo
+    hint: pulpit-glossary:verified
+related: []
+note: Also the CTR motto/emblem in Primary

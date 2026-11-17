@@ -1,0 +1,106 @@
+{
+ "id": "concept.conference-center",
+ "pt": {
+  "en_paragraphs": 105,
+  "en_talks": 102,
+  "en_verses": 0,
+  "uncovered_paragraphs": 105,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "conferências",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 104,
+    "share_of_uncovered": 0.99,
+    "ratio": 283.1,
+    "source": "2000-04-ballard-how-is-it-with-us",
+    "kind": "talk",
+    "sample": "os e irmãs, reunirmo-nos em nome do Senhor Jesus Cristo neste notável Centro de Conferências novo, na aurora de um novo milênio."
+   },
+   {
+    "term": "centro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 105,
+    "share_of_uncovered": 1.0,
+    "ratio": 129.1,
+    "source": "2000-04-ballard-how-is-it-with-us",
+    "kind": "talk",
+    "sample": "meus irmãos e irmãs, reunirmo-nos em nome do Senhor Jesus Cristo neste notável Centro de Conferências novo, na aurora de um novo milênio."
+   },
+   {
+    "term": "aqui",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 38,
+    "share_of_uncovered": 0.362,
+    "ratio": 19.1,
+    "source": "2000-04-faust-the-power-of-self-mastery",
+    "kind": "talk",
+    "sample": "pensação. Regozijamo-nos com a audiência das centenas de milhares que não estão aqui, dentro deste grande Centro de Conferências. A primeira reunião neste prédio no"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 107,
+  "en_talks": 103,
+  "en_verses": 0,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "Centro de Conferencias",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 107,
+    "talks": 103,
+    "verses": 0,
+    "first_year": 1999,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1999,
+      "conference": "1999 October General Conference",
+      "talk": "1999-10-hinckley-good-bye-to-this-wonderful-old-tabernacle",
+      "para": 17,
+      "en": "… look forward to opening the doors of the new Conference Center next April, we do so with love, with appreciation, …",
+      "tr": "… en que se abran las puertas del nuevo Centro de Conferencias el próximo abril, lo hacemos con amor, con agradecimiento, …"
+     },
+     {
+      "kind": "talk",
+      "year": 2007,
+      "conference": "2007 April General Conference",
+      "talk": "2007-04-tingey-prophetspioneer-and-modern-day",
+      "para": 26,
+      "en": "… And he had the inspiration to build the majestic Conference Center.",
+      "tr": "… él tuvo la inspiración de construir el majestuoso Centro de Conferencias."
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-rasband-right-before-our-eyes",
+      "para": 3,
+      "en": "… We could fit dozens of those schoolhouses in this Conference Center, with room to spare. Joseph Smith said, “It …",
+      "tr": "… lado. Cabrían decenas de escuelas así en este Centro de Conferencias y sobraría espacio. José Smith dijo: “Lo que ven …"
+     }
+    ],
+    "earliest": {
+     "year": 1999,
+     "conference": "1999 October General Conference",
+     "talk": "1999-10-hinckley-good-bye-to-this-wonderful-old-tabernacle",
+     "para": 10,
+     "en": "… the adjoining block and which we have named the Conference Center, will seat 21,000—with its adjoining theater, 22,000—nearly three …",
+     "tr": "… enfrente y al que hemos dado el nombre Centro de Conferencias, tendrá cupo para 21.000 personas — con el …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

@@ -1,0 +1,195 @@
+{
+ "id": "concept.called-to-serve",
+ "pt": {
+  "en_paragraphs": 113,
+  "en_talks": 98,
+  "en_verses": 0,
+  "uncovered_paragraphs": 40,
+  "renderings": [
+   {
+    "term": "chamado para servir",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 73,
+    "talks": 67,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-condie-some-scriptural-lessons-on-leadership",
+      "para": 1,
+      "en": "… of you newly baptized members will soon be called to serve as leaders at different times in various Church callings, …",
+      "tr": "Como muitos de vós, recém-batizados, sereis chamados para servir como líderes em diferentes ocasiões nos chamados da Igreja, …"
+     },
+     {
+      "kind": "talk",
+      "year": 2015,
+      "conference": "2015 April General Conference",
+      "talk": "2015-04-renlund-latter-day-saints-keep-on-trying",
+      "para": 15,
+      "en": "… ago a wonderful young man named Curtis was called to serve a mission. He was the kind of missionary every …",
+      "tr": "… um excelente jovem que se chama Curtis foi chamado para servir missão. Ele era o tipo de missionário pelo qual …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-becerra-tithingputting-god-first",
+      "para": 7,
+      "en": "… life. As a young married father, I was called to serve in a branch presidency. Elder Clinton L. Cutler of …",
+      "tr": "… vida. Quando era um jovem pai casado, fui chamado para servir na presidência de um ramo. O élder Clinton L. …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-condie-some-scriptural-lessons-on-leadership",
+     "para": 1,
+     "en": "… of you newly baptized members will soon be called to serve as leaders at different times in various Church callings, …",
+     "tr": "Como muitos de vós, recém-batizados, sereis chamados para servir como líderes em diferentes ocasiões nos chamados da Igreja, …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "chamados",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 23,
+    "share_of_uncovered": 0.575,
+    "ratio": 50.0,
+    "source": "1990-04-jack-i-will-go-and-do",
+    "kind": "talk",
+    "sample": "Benson é um profeta de Deus. Eu seguirei seus conselhos, bem como os dos Irmãos chamados a servir com ele. Sei que Jesus é o Cristo, e que dirigirá meus passos, se for"
+   },
+   {
+    "term": "servir",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 27,
+    "share_of_uncovered": 0.675,
+    "ratio": 26.5,
+    "source": "1990-04-jack-i-will-go-and-do",
+    "kind": "talk",
+    "sample": "profeta de Deus. Eu seguirei seus conselhos, bem como os dos Irmãos chamados a servir com ele. Sei que Jesus é o Cristo, e que dirigirá meus passos, se for digna de"
+   },
+   {
+    "term": "missionários",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 12,
+    "share_of_uncovered": 0.3,
+    "ratio": 17.4,
+    "source": "2001-04-hinckley-the-miracle-of-faith",
+    "kind": "talk",
+    "sample": "avia cerca de 180 pessoas na reunião. Na primeira fileira estavam sentados oito missionários — seis élderes e duas sísteres. Na congregação havia homens e mulheres, meninos"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 114,
+  "en_talks": 99,
+  "en_verses": 0,
+  "uncovered_paragraphs": 60,
+  "renderings": [
+   {
+    "term": "llamado a servir",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 54,
+    "talks": 49,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-jack-i-will-go-and-do",
+      "para": 7,
+      "en": "… the counsel of those Brethren who have been called to serve with him. I know that Jesus is the Christ, …",
+      "tr": "… de las demás Autoridades Generales que han sido llamadas a servir con el. Se que Jesús es el Cristo y …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 October General Conference",
+      "talk": "2013-10-funk-called-of-him-to-declare-his-word",
+      "para": 1,
+      "en": "… the Church for only two years, he was called to serve in the India Bangalore Mission, an English-speaking mission. He …",
+      "tr": "… de la Iglesia por sólo dos años, fue llamado a servir en la Misión India Bangalore, de habla inglesa. Él …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-causs-the-gift-of-testimony",
+      "para": 3,
+      "en": "… promise under remarkable circumstances. I had just been called to serve as one of the Lord’s Apostles and was invited …",
+      "tr": "… misma promesa en circunstancias extraordinarias. Acababa de ser llamado a servir como uno de los Apóstoles del Señor y se …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-jack-i-will-go-and-do",
+     "para": 7,
+     "en": "… the counsel of those Brethren who have been called to serve with him. I know that Jesus is the Christ, …",
+     "tr": "… de las demás Autoridades Generales que han sido llamadas a servir con el. Se que Jesús es el Cristo y …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "prestar",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 23,
+    "share_of_uncovered": 0.383,
+    "ratio": 56.8,
+    "source": "1994-10-pinegar-teach-the-children",
+    "kind": "talk",
+    "sample": "entos de gozo, gratitud y responsabilidad por el llamamiento que he recibido de prestar servicio a los niños de la Primaria de la Iglesia."
+   },
+   {
+    "term": "servir",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 31,
+    "share_of_uncovered": 0.517,
+    "ratio": 19.7,
+    "source": "1997-04-monson-they-will-come",
+    "kind": "talk",
+    "sample": "llamada telefónica informándome que Richard había recibido el llamamiento para servir en una misión en México y la familia me invitaba a hablar en su reunión de desp"
+   },
+   {
+    "term": "misión",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 18,
+    "share_of_uncovered": 0.3,
+    "ratio": 11.2,
+    "source": "1996-10-eyring-witnesses-for-god",
+    "kind": "talk",
+    "sample": "to ese mismo milagro en un hombre y en una mujer maduros llamados a cumplir una misión proselitista como matrimonio, en las circunstancias mas difíciles que podrían h"
+   }
+  ]
+ }
+}

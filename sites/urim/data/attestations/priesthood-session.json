@@ -1,0 +1,195 @@
+{
+ "id": "concept.priesthood-session",
+ "pt": {
+  "en_paragraphs": 36,
+  "en_talks": 30,
+  "en_verses": 0,
+  "uncovered_paragraphs": 11,
+  "renderings": [
+   {
+    "term": "sessão do sacerdócio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 25,
+    "talks": 19,
+    "verses": 0,
+    "first_year": 1991,
+    "last_year": 2021,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 October General Conference",
+      "talk": "1991-10-ballard-be-an-example-of-the-believers",
+      "para": 35,
+      "en": "… last October I spoke to the men in the priesthood session of general conference, talking to them primarily about morals. …",
+      "tr": "Moças, em outubro passado falei aos homens na sessão do sacerdócio da conferência geral, abordando primordialmente princípios morais. Disse aos …"
+     },
+     {
+      "kind": "talk",
+      "year": 2007,
+      "conference": "2007 October General Conference",
+      "talk": "2007-10-perry-raising-the-bar",
+      "para": 31,
+      "en": "… this will be your desire as you leave this priesthood session of general conference and start now to prepare yourself …",
+      "tr": "… esse seja o seu desejo, ao saírem desta sessão do sacerdócio da conferência geral, e que comecem agora a se …"
+     },
+     {
+      "kind": "talk",
+      "year": 2021,
+      "conference": "2021 April General Conference",
+      "talk": "2021-04-nelson-what-we-are-learning-and-will-never-forget",
+      "para": 0,
+      "en": "… meeting with you. The last time we held a priesthood session of general conference was in April 2019. Much has …",
+      "tr": "… vocês. A última vez em que realizamos a sessão do sacerdócio da conferência geral foi em abril de 2019. Muitas …"
+     }
+    ],
+    "earliest": {
+     "year": 1991,
+     "conference": "1991 October General Conference",
+     "talk": "1991-10-ballard-be-an-example-of-the-believers",
+     "para": 35,
+     "en": "… last October I spoke to the men in the priesthood session of general conference, talking to them primarily about morals. …",
+     "tr": "Moças, em outubro passado falei aos homens na sessão do sacerdócio da conferência geral, abordando primordialmente princípios morais. Disse aos …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "sessão geral",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.636,
+    "ratio": 1273.0,
+    "source": "2010-04-ballard-mothers-and-daughters",
+    "kind": "talk",
+    "sample": "Irmãos e irmãs, há seis meses, falei na sessão geral do sacerdócio da conferência geral para os pais e os filhos. Como era de se esp"
+   },
+   {
+    "term": "conferência",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.455,
+    "ratio": 18.2,
+    "source": "2010-04-ballard-mothers-and-daughters",
+    "kind": "talk",
+    "sample": "Irmãos e irmãs, há seis meses, falei na sessão geral do sacerdócio da conferência geral para os pais e os filhos. Como era de se esperar, minhas cinco filhas, 24"
+   },
+   {
+    "term": "liahona*, maio",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.364,
+    "ratio": 36.4,
+    "source": "2014-04-andersen-spiritual-whirlwinds",
+    "kind": "talk",
+    "sample": "1954, p. 72.\n[^3]: Ver Dallin H. Oaks, \"A Preparação para a Segunda Vinda\", *A Liahona*, maio de 2004, p. 7.\n[^4]: Ver A. Stokes, A. H. Fitter, and M. P. Coutts, \"Responses"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 37,
+  "en_talks": 30,
+  "en_verses": 0,
+  "uncovered_paragraphs": 14,
+  "renderings": [
+   {
+    "term": "sesión del sacerdocio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 23,
+    "talks": 17,
+    "verses": 0,
+    "first_year": 1996,
+    "last_year": 2022,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1996,
+      "conference": "1996 October General Conference",
+      "talk": "1996-10-porter-the-spirit-of-prophecy",
+      "para": 17,
+      "en": "And then at the general conference priesthood session held in October of last year, he said, speaking …",
+      "tr": "También nos dijo en la sesión del sacerdocio de la conferencia general de octubre del año pasado, …"
+     },
+     {
+      "kind": "talk",
+      "year": 2010,
+      "conference": "2010 April General Conference",
+      "talk": "2010-04-ballard-mothers-and-daughters",
+      "para": 0,
+      "en": "… and sisters, six months ago I spoke in the priesthood session of general conference to fathers and sons. As you …",
+      "tr": "… y hermanas, hace seis meses hablé en la sesión del sacerdocio de la conferencia general a padres e hijos. Como …"
+     },
+     {
+      "kind": "talk",
+      "year": 2022,
+      "conference": "2022 April General Conference",
+      "talk": "2022-04-ballard-missionary-service-blessed-my-life-forever",
+      "para": 8,
+      "en": "… general conference, I was assigned to speak in the priesthood session. I directed my remarks to the young men. …",
+      "tr": "… de 1985 se me asignó hablar en la sesión del sacerdocio. Dirigí mis palabras a los hombres jóvenes y …"
+     }
+    ],
+    "earliest": {
+     "year": 1996,
+     "conference": "1996 October General Conference",
+     "talk": "1996-10-porter-the-spirit-of-prophecy",
+     "para": 17,
+     "en": "And then at the general conference priesthood session held in October of last year, he said, speaking …",
+     "tr": "También nos dijo en la sesión del sacerdocio de la conferencia general de octubre del año pasado, …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "sesión general",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.571,
+    "ratio": 762.1,
+    "source": "1999-10-monson-priesthood-power",
+    "kind": "talk",
+    "sample": "presidente en esa época de la Estaca Ogden Sur, dirigirse a los hermanos en la sesión general del sacerdocio de una conferencia y relatar una historia acerca de la confianza"
+   },
+   {
+    "term": "conferencia",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.5,
+    "ratio": 23.5,
+    "source": "1999-10-monson-priesthood-power",
+    "kind": "talk",
+    "sample": "Ogden Sur, dirigirse a los hermanos en la sesión general del sacerdocio de una conferencia y relatar una historia acerca de la confianza, el honor y el deber. Permítanme"
+   },
+   {
+    "term": "reunión",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.429,
+    "ratio": 31.8,
+    "source": "2005-10-johnson-the-blessings-of-general-conference",
+    "kind": "talk",
+    "sample": "Es una sagrada responsabilidad dirigirme a ustedes en esta reunión general del sacerdocio. Siempre espero con ansias asistir a estas reuniones del"
+   }
+  ]
+ }
+}

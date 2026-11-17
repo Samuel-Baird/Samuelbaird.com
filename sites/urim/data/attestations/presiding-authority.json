@@ -1,0 +1,157 @@
+{
+ "id": "concept.presiding-authority",
+ "pt": {
+  "en_paragraphs": 10,
+  "en_talks": 9,
+  "en_verses": 0,
+  "uncovered_paragraphs": 1,
+  "renderings": [
+   {
+    "term": "autoridade presidente",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 9,
+    "talks": 8,
+    "verses": 0,
+    "first_year": 1994,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1994,
+      "conference": "1994 October General Conference",
+      "talk": "1994-10-haight-solemn-assemblies",
+      "para": 12,
+      "en": "… body, the Quorum of the Twelve Apostles, becomes the presiding authority. The president of the quorum becomes the *Acting* …",
+      "tr": "… na hierarquia, o Quórum dos Doze Apóstolos, torna-se a autoridade presidente. O presidente do quórum torna-se Presidente Interino da …"
+     },
+     {
+      "kind": "talk",
+      "year": 2008,
+      "conference": "2008 April General Conference",
+      "talk": "2008-04-monson-looking-back-and-moving-forward",
+      "para": 3,
+      "en": "… of the Twelve Apostles, and that quorum became the presiding authority of the Church.",
+      "tr": "… no Quórum dos Doze Apóstolos, que se tornou a autoridade presidente da Igreja."
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-farnes-divine-appointments",
+      "para": 2,
+      "en": "At a midday leadership meeting, the presiding authority invited questions. I gathered my courage and asked a …",
+      "tr": "Em uma reunião de liderança realizada ao meio-dia, a autoridade presidente abriu espaço para perguntas. Depois de criar coragem, fiz …"
+     }
+    ],
+    "earliest": {
+     "year": 1994,
+     "conference": "1994 October General Conference",
+     "talk": "1994-10-haight-solemn-assemblies",
+     "para": 12,
+     "en": "… body, the Quorum of the Twelve Apostles, becomes the presiding authority. The president of the quorum becomes the *Acting* …",
+     "tr": "… na hierarquia, o Quórum dos Doze Apóstolos, torna-se a autoridade presidente. O presidente do quórum torna-se Presidente Interino da …"
+    },
+    "share": 1.0
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 8,
+  "en_talks": 7,
+  "en_verses": 0,
+  "uncovered_paragraphs": 5,
+  "renderings": [
+   {
+    "term": "autoridad que presidía",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 3,
+    "talks": 3,
+    "verses": 0,
+    "first_year": 2001,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 October General Conference",
+      "talk": "2001-10-workman-beware-of-murmuring",
+      "para": 24,
+      "en": "… to murmur. I attended a meeting once when the presiding authority invited members of the congregation to come forward in …",
+      "tr": "… Una vez asistí a una reunión donde la autoridad que presidía invitó a los miembros de la congregación a sentarse …"
+     },
+     {
+      "kind": "talk",
+      "year": 2008,
+      "conference": "2008 April General Conference",
+      "talk": "2008-04-monson-looking-back-and-moving-forward",
+      "para": 3,
+      "en": "… of the Twelve Apostles, and that quorum became the presiding authority of the Church.",
+      "tr": "… Apóstoles, y ese quórum se convirtió en la autoridad que presidía la Iglesia."
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 October General Conference",
+      "talk": "2026-10-farnes-divine-appointments",
+      "para": 2,
+      "en": "At a midday leadership meeting, the presiding authority invited questions. I gathered my courage and asked a …",
+      "tr": "En una reunión de liderazgo al mediodía, la autoridad que presidía invitó a hacer preguntas. Me armé de valor e …"
+     }
+    ],
+    "earliest": {
+     "year": 2001,
+     "conference": "2001 October General Conference",
+     "talk": "2001-10-workman-beware-of-murmuring",
+     "para": 24,
+     "en": "… to murmur. I attended a meeting once when the presiding authority invited members of the congregation to come forward in …",
+     "tr": "… Una vez asistí a una reunión donde la autoridad que presidía invitó a los miembros de la congregación a sentarse …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "autoridades que presiden",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.6,
+    "ratio": 1200.3,
+    "source": "2009-04-edgley-this-is-your-phone-call",
+    "kind": "talk",
+    "sample": "idad”. Por lo general, sólo se necesitan unas pocas llamadas telefónicas de las autoridades que presiden a los líderes locales de la Iglesia para movilizar a cientos y en ocasiones a m"
+   },
+   {
+    "term": "asuntos",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.4,
+    "ratio": 106.7,
+    "source": "2004-04-perry-fatherhood-an-eternal-calling",
+    "kind": "talk",
+    "sample": "“No hay autoridad más alta en los asuntos relacionados con la organización familiar que la del padre, especialmente cuand"
+   },
+   {
+    "term": "pregunta",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.4,
+    "ratio": 38.1,
+    "source": "2001-10-workman-beware-of-murmuring",
+    "kind": "talk",
+    "sample": "cuestionaban por qué deberían dejar su comodidad. “¿Por qué yo?“ Sin duda, esa pregunta fue seguida pronto de una excusa o una racionalización del por qué no importaba"
+   }
+  ]
+ }
+}

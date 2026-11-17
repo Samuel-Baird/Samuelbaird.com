@@ -1,0 +1,195 @@
+{
+ "id": "concept.ward-mission-leader",
+ "pt": {
+  "en_paragraphs": 13,
+  "en_talks": 12,
+  "en_verses": 0,
+  "uncovered_paragraphs": 6,
+  "renderings": [
+   {
+    "term": "líder da missão da ala",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 7,
+    "talks": 6,
+    "verses": 0,
+    "first_year": 2007,
+    "last_year": 2019,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2007,
+      "conference": "2007 October General Conference",
+      "talk": "2007-10-packer-the-weak-and-the-simple-of-the-church",
+      "para": 40,
+      "en": "Recently one of our sons was sustained as ward mission leader. His wife told us how thrilled he was …",
+      "tr": "Recentemente, um de nossos filhos foi apoiado líder da missão da ala. Sua esposa contou-nos como ele vibrou com …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-eyring-we-are-one",
+      "para": 32,
+      "en": "… every member became a missionary. He called a ward mission leader. He met with the missionaries himself every Saturday …",
+      "tr": "… se tornaria um missionário. Ele chamou um líder da missão da ala. Reunia-se com os missionários todos os sábados …"
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 April General Conference",
+      "talk": "2019-04-waddell-just-as-he-did",
+      "para": 3,
+      "en": "… arrival, Mike was visited by John Holbrook, the ward mission leader of the ward that served the care facility where …",
+      "tr": "… recebeu a visita de John Holbrook, o líder da missão da ala onde ficava o centro de tratamento em que …"
+     }
+    ],
+    "earliest": {
+     "year": 2007,
+     "conference": "2007 October General Conference",
+     "talk": "2007-10-packer-the-weak-and-the-simple-of-the-church",
+     "para": 40,
+     "en": "Recently one of our sons was sustained as ward mission leader. His wife told us how thrilled he was …",
+     "tr": "Recentemente, um de nossos filhos foi apoiado líder da missão da ala. Sua esposa contou-nos como ele vibrou com …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "ala",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.833,
+    "ratio": 77.5,
+    "source": "2003-04-ballard-the-essential-role-of-member-missionary-work",
+    "kind": "talk",
+    "sample": "Bispos, envolvam toda a ala na proclamação do evangelho. Vocês verão que o Senhor os abençoará e a seus mem"
+   },
+   {
+    "term": "líder",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.667,
+    "ratio": 127.0,
+    "source": "2003-04-ballard-the-essential-role-of-member-missionary-work",
+    "kind": "talk",
+    "sample": "ade de pais e mães, juntamente com os filhos. Assim, o trabalho missionário dos líderes do sacerdócio e das auxiliares deve ser coordenado pelo líder da obra mission"
+   },
+   {
+    "term": "socorro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.667,
+    "ratio": 43.7,
+    "source": "1995-10-hinckley-stand-strong-against-the-wiles-of-the-world",
+    "kind": "talk",
+    "sample": "e minhas duas filhas ser­vi­ram na pre­si­dên­cia da Primária e da Sociedade de Socorro. Quatro de meus lin­dos filhos encon­tra­ram pes­soas mara­vi­lho­sas com as qu"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 13,
+  "en_talks": 12,
+  "en_verses": 0,
+  "uncovered_paragraphs": 5,
+  "renderings": [
+   {
+    "term": "líder misional de barrio",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 8,
+    "talks": 7,
+    "verses": 0,
+    "first_year": 1997,
+    "last_year": 2025,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1997,
+      "conference": "1997 October General Conference",
+      "talk": "1997-10-scott-why-every-member-a-missionary",
+      "para": 23,
+      "en": "… service such as a stake missionary or a ward mission leader. There are also a wide variety of other …",
+      "tr": "… el servicio tradicional como misionero de estaca o líder misional de barrio. Hay también una amplia variedad de otras …"
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-eyring-we-are-one",
+      "para": 32,
+      "en": "… every member became a missionary. He called a ward mission leader. He met with the missionaries himself every Saturday …",
+      "tr": "… miembro se convertía en misionero. Llamó a un líder misional de barrio; se reunía personalmente con los misioneros cada …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 October General Conference",
+      "talk": "2025-10-jackson-remembering-the-sheep",
+      "para": 13,
+      "en": "… as a ward missionary. We had a great ward mission leader and were doing exciting things and teaching wonderful people. …",
+      "tr": "… servir como misionero de barrio. Teníamos un extraordinario líder misional de barrio y estábamos haciendo cosas emocionantes y enseñando a …"
+     }
+    ],
+    "earliest": {
+     "year": 1997,
+     "conference": "1997 October General Conference",
+     "talk": "1997-10-scott-why-every-member-a-missionary",
+     "para": 23,
+     "en": "… service such as a stake missionary or a ward mission leader. There are also a wide variety of other …",
+     "tr": "… el servicio tradicional como misionero de estaca o líder misional de barrio. Hay también una amplia variedad de otras …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "misional del barrio",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.6,
+    "ratio": 1200.3,
+    "source": "2003-04-ballard-the-essential-role-of-member-missionary-work",
+    "kind": "talk",
+    "sample": "es del sacerdocio y de las organizaciones auxiliares la debe coordinar el líder misional del barrio y el obispo mediante el consejo de barrio. Al obrar así, los conversos serán pl"
+   },
+   {
+    "term": "líder misional",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.6,
+    "ratio": 1200.3,
+    "source": "2003-04-ballard-the-essential-role-of-member-missionary-work",
+    "kind": "talk",
+    "sample": "líderes del sacerdocio y de las organizaciones auxiliares la debe coordinar el líder misional del barrio y el obispo mediante el consejo de barrio. Al obrar así, los convers"
+   },
+   {
+    "term": "líderes misionales",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.4,
+    "ratio": 1600.4,
+    "source": "2013-04-nelson-catch-the-wave",
+    "kind": "talk",
+    "sample": "al del barrio[^4]. Me gustaría dirigirme específicamente a cada uno de ustedes, líderes misionales. Ustedes han sido llamados por su obispo para dirigir la obra misional del barr"
+   }
+  ]
+ }
+}

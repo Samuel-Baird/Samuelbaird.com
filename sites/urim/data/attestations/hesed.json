@@ -1,0 +1,105 @@
+{
+ "id": "concept.hesed",
+ "pt": {
+  "en_paragraphs": 16,
+  "en_talks": 10,
+  "en_verses": 2,
+  "uncovered_paragraphs": 18,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "hesed",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 16,
+    "share_of_uncovered": 0.889,
+    "ratio": 1185.5,
+    "source": "2022-04-nelson-the-power-of-spiritual-momentum",
+    "kind": "talk",
+    "sample": "?lang=por&id=p10#p10). A palavra *benignidade* foi traduzida do termo hebraico *hesed*, uma palavra poderosa com significado profundo que engloba os significados ben"
+   },
+   {
+    "term": "convênio",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 15,
+    "share_of_uncovered": 0.833,
+    "ratio": 35.5,
+    "source": "2022-04-nelson-the-power-of-spiritual-momentum",
+    "kind": "talk",
+    "sample": "hrist.org/study/scriptures/bofm/3-ne/12?lang=por&id=p44#p44).\n[^3]: [Doutrina e Convênios 64:10](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/64"
+   },
+   {
+    "term": "misericórdia",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.556,
+    "ratio": 45.4,
+    "source": "2022-04-nelson-the-power-of-spiritual-momentum",
+    "kind": "talk",
+    "sample": "avra poderosa com significado profundo que engloba os significados benignidade, misericórdia, amor proveniente de convênios e mais.\n[^12]: É possível fazer a restituição pa"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 16,
+  "en_talks": 10,
+  "en_verses": 2,
+  "uncovered_paragraphs": 0,
+  "renderings": [
+   {
+    "term": "hesed",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 16,
+    "talks": 10,
+    "verses": 2,
+    "first_year": 2022,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "1 Crónicas 3:20",
+      "ref_en": "1 Chronicles 3:20",
+      "en": "And Hashubah, and Ohel, and Berechiah, and Hasadiah, Jushab-hesed, five.",
+      "tr": "Y también estos cinco: Hasuba, y Ohel, y Berequías, y Hasadías y Jusab-hesed.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/ot/1-chr/3?lang=spa&id=p20"
+     },
+     {
+      "kind": "talk",
+      "year": 2022,
+      "conference": "2022 April General Conference",
+      "talk": "2022-04-nelson-the-power-of-spiritual-momentum",
+      "para": 38,
+      "en": "… 22:10](https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/22?lang=eng&id=p10#p10). *Kindness* is translated from the Hebrew term *hesed*, a powerful word with deep meaning that encompasses kindness, …",
+      "tr": "… *bondad* es una traducción de la palabra hebrea *hesed*, una palabra impactante con un profundo significado que abarca …"
+     },
+     {
+      "kind": "talk",
+      "year": 2025,
+      "conference": "2025 April General Conference",
+      "talk": "2025-04-rasband-the-plan-of-mercy",
+      "para": 29,
+      "en": "… is an expression of God’s love and kindness—His *hesed*. Whereas *mercy* is focused on withholding a punishment we …",
+      "tr": "… del amor y la bondad de Dios: Su *hesed*. Mientras que la *misericordia* se centra en detener un …"
+     }
+    ],
+    "earliest": {
+     "year": 2022,
+     "conference": "2022 April General Conference",
+     "talk": "2022-04-nelson-the-power-of-spiritual-momentum",
+     "para": 38,
+     "en": "… 22:10](https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/22?lang=eng&id=p10#p10). *Kindness* is translated from the Hebrew term *hesed*, a powerful word with deep meaning that encompasses kindness, …",
+     "tr": "… *bondad* es una traducción de la palabra hebrea *hesed*, una palabra impactante con un profundo significado que abarca …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

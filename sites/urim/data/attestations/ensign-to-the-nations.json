@@ -1,0 +1,194 @@
+{
+ "id": "concept.ensign-to-the-nations",
+ "pt": {
+  "en_paragraphs": 7,
+  "en_talks": 6,
+  "en_verses": 2,
+  "uncovered_paragraphs": 5,
+  "renderings": [
+   {
+    "term": "estandarte para as nações",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 4,
+    "talks": 3,
+    "verses": 0,
+    "first_year": 2003,
+    "last_year": 2007,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 October General Conference",
+      "talk": "2003-10-hinckley-an-ensign-to-the-nations-a-light-to-the-world",
+      "para": 14,
+      "en": "… mission of this Church to stand as an ensign to the nations and a light to the world. We have …",
+      "tr": "… testifico que é missão desta Igreja ser um estandarte para as nações e uma luz para o mundo. Recebemos um …"
+     },
+     {
+      "kind": "talk",
+      "year": 2006,
+      "conference": "2006 October General Conference",
+      "talk": "2006-10-packer-a-defense-and-a-refuge",
+      "para": 0,
+      "en": "… thought it a good place to raise an ensign to the nations. Heber C. Kimball wore a yellow bandana. …",
+      "tr": "… Acharam ser um bom lugar para erguerem um estandarte para as nações. Heber C. Kimball usava um grande lenço …"
+     },
+     {
+      "kind": "talk",
+      "year": 2007,
+      "conference": "2007 April General Conference",
+      "talk": "2007-04-tingey-prophetspioneer-and-modern-day",
+      "para": 32,
+      "en": "… (1954), 458.\n[^8]: In Conference Report, Oct. 2003, [85](https://www.churchofjesuschrist.org/study/general-conference/2003/10/an-ensign-to-the-nations-a-light-to-the-world?lang=eng&id=p9#p9); or *Ensign,* Nov. 2003, 82.\n[^9]: [D&C 1:30](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/1?lang=eng&id=p30#p30).\n[^10]: …",
+      "tr": "… A. Widtsoe, (1954), p. 458.\n[^8]: Ver \"Um Estandarte para as Nações, uma Luz para o Mundo\", *A Liahona*, …"
+     }
+    ],
+    "earliest": {
+     "year": 2003,
+     "conference": "2003 October General Conference",
+     "talk": "2003-10-hinckley-an-ensign-to-the-nations-a-light-to-the-world",
+     "para": 14,
+     "en": "… mission of this Church to stand as an ensign to the nations and a light to the world. We have …",
+     "tr": "… testifico que é missão desta Igreja ser um estandarte para as nações e uma luz para o mundo. Recebemos um …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "estandarte",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.6,
+    "ratio": 480.1,
+    "source": "2025-04-rasband-right-before-our-eyes",
+    "kind": "talk",
+    "sample": "sto. É o reino de Deus, nosso Pai Eterno. É a edificação de Sião na Terra\" (\"Um estandarte para a nação\", A Liahona, janeiro de 1990, p. 64).\n[^14]: Em Orson F. Whitney,"
+   },
+   {
+    "term": "eis que virão",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.4,
+    "ratio": 1600.4,
+    "source": "isa/5/26",
+    "kind": "scripture",
+    "sample": "ções de longe, e lhes assobiará para que venham desde a extremidade da terra; e eis que virão apressada e ligeiramente."
+   },
+   {
+    "term": "novembro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.6,
+    "ratio": 51.1,
+    "source": "1993-04-okazaki-cats-cradle-of-kindness",
+    "kind": "talk",
+    "sample": "grande tapeçaria cujo desenho foi criado para nós pelo Deus do céu”. (*ENSIGN,* novembro de 1989, p. 54)."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 8,
+  "en_talks": 6,
+  "en_verses": 2,
+  "uncovered_paragraphs": 4,
+  "renderings": [
+   {
+    "term": "estandarte a las naciones",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 4,
+    "talks": 3,
+    "verses": 2,
+    "first_year": 2003,
+    "last_year": 2007,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Isaías 5:26",
+      "ref_en": "Isaiah 5:26",
+      "en": "¶ And he will lift up an ensign to the nations from far, and will hiss unto them from the end of the earth: and, behold, they shall come with speed swiftly:",
+      "tr": "Y alzará estandarte a las naciones lejanas y les silbará desde el extremo de la tierra; y he aquí que vendrán pronto y velozmente.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/5?lang=spa&id=p26"
+     },
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 October General Conference",
+      "talk": "2003-10-hinckley-an-ensign-to-the-nations-a-light-to-the-world",
+      "para": 14,
+      "en": "… mission of this Church to stand as an ensign to the nations and a light to the world. We have …",
+      "tr": "… la misión de esta Iglesia es ser un estandarte a las naciones y una luz al mundo. Se nos ha …"
+     },
+     {
+      "kind": "talk",
+      "year": 2006,
+      "conference": "2006 October General Conference",
+      "talk": "2006-10-packer-a-defense-and-a-refuge",
+      "para": 0,
+      "en": "… thought it a good place to raise an ensign to the nations. Heber C. Kimball wore a yellow bandana. …",
+      "tr": "… que consideraron un buen lugar para alzar un estandarte a las naciones. Heber C. Kimball llevaba puesto un pañuelo …"
+     }
+    ],
+    "earliest": {
+     "year": 2003,
+     "conference": "2003 October General Conference",
+     "talk": "2003-10-hinckley-an-ensign-to-the-nations-a-light-to-the-world",
+     "para": 14,
+     "en": "… mission of this Church to stand as an ensign to the nations and a light to the world. We have …",
+     "tr": "… la misión de esta Iglesia es ser un estandarte a las naciones y una luz al mundo. Se nos ha …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "pendón",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 1.0,
+    "ratio": 4001.0,
+    "source": "2002-10-mcmullin-come-to-zion-come-to-zion",
+    "kind": "talk",
+    "sample": "ón en justicia es el sello de su sociedad. Su paz y armonía se convierten en un pendón a las naciones. El profeta José Smith dijo:"
+   },
+   {
+    "term": "naciones\", liahona, enero",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.75,
+    "ratio": 3000.7,
+    "source": "2002-10-mcmullin-come-to-zion-come-to-zion",
+    "kind": "talk",
+    "sample": "68:25–31; 82:14; 115:1–6.\n[^9]: Véase D. y C. 65:2, 6.\n[^10]: \"Un pendón a las naciones\", Liahona, enero de 1990, pág. 54.\n[^11]: \"Nuestra misión salvadora\", Liahona, enero de 1992, pá"
+   },
+   {
+    "term": "smith, mateo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.5,
+    "ratio": 1000.2,
+    "source": "2002-10-mcmullin-come-to-zion-come-to-zion",
+    "kind": "talk",
+    "sample": "lesia: Brigham Young, págs. 50, 251; cursiva agregada.\n[^2]: Traducción de José Smith, Mateo 6:38.\n[^3]: \"Israel, Jesús os llama\", Himnos, Nº 6.\n[^4]: D. y C. 97:21.\n[^5]:"
+   }
+  ]
+ }
+}

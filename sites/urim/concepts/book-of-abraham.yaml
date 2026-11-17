@@ -1,0 +1,17 @@
+id: concept.book-of-abraham
+category: Scriptures & Study Helps
+en:
+  term: Book of Abraham
+  match:
+  - Book of Abraham
+sources:
+  Topics:
+  - abraham-book-of
+candidates:
+  pt:
+  - term: livro de Abraão
+    hint: pulpit-glossary:verified
+  es:
+  - term: Libro de Abraham
+    hint: pulpit-glossary:verified
+related: []

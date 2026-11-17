@@ -1,0 +1,144 @@
+{
+ "id": "concept.worldwide-leadership-training-meeting",
+ "pt": {
+  "en_paragraphs": 40,
+  "en_talks": 34,
+  "en_verses": 0,
+  "uncovered_paragraphs": 40,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "liderança",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 38,
+    "share_of_uncovered": 0.95,
+    "ratio": 223.6,
+    "source": "2003-04-ballard-the-essential-role-of-member-missionary-work",
+    "kind": "talk",
+    "sample": "pria ala”. (“Trabalho Missionário”, *Primeira Reunião Mundial de Treinamento de Liderança*, 11 de janeiro de 2003, p. 19)"
+   },
+   {
+    "term": "reunião mundial",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 32,
+    "share_of_uncovered": 0.8,
+    "ratio": 533.5,
+    "source": "2003-04-ballard-the-essential-role-of-member-missionary-work",
+    "kind": "talk",
+    "sample": "s que estão trabalhando em sua própria ala”. (“Trabalho Missionário”, *Primeira Reunião Mundial de Treinamento de Liderança*, 11 de janeiro de 2003, p. 19)"
+   },
+   {
+    "term": "treinamento",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 38,
+    "share_of_uncovered": 0.95,
+    "ratio": 190.0,
+    "source": "2003-04-ballard-the-essential-role-of-member-missionary-work",
+    "kind": "talk",
+    "sample": "ando em sua própria ala”. (“Trabalho Missionário”, *Primeira Reunião Mundial de Treinamento de Liderança*, 11 de janeiro de 2003, p. 19)"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 42,
+  "en_talks": 36,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "reunión mundial de capacitación de líderes",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 39,
+    "talks": 33,
+    "verses": 0,
+    "first_year": 2003,
+    "last_year": 2023,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2003,
+      "conference": "2003 April General Conference",
+      "talk": "2003-04-garn-preparing-for-missionary-service",
+      "para": 5,
+      "en": "… Jesus Christ to the world” (“Missionary Service,” *First Worldwide Leadership Training Meeting,* Jan. 2003, 17).",
+      "tr": "… en el mundo” (“El servicio misional”, *Primera reunión mundial de capacitación de líderes*, enero de 2003)."
+     },
+     {
+      "kind": "talk",
+      "year": 2007,
+      "conference": "2007 October General Conference",
+      "talk": "2007-10-thompson-i-will-strengthen-thee-i-will-help-thee",
+      "para": 35,
+      "en": "[^1]: “Challenges Facing the Family,” *Worldwide Leadership Training Meeting,* Jan. 10, 2004, 2.\n[^2]: See *Liahona,* …",
+      "tr": "… los que se enfrenta la familia\", *Reunión Mundial de Capacitación de Líderes,* 10 de enero de 2004, pág. …"
+     },
+     {
+      "kind": "talk",
+      "year": 2023,
+      "conference": "2023 April General Conference",
+      "talk": "2023-04-yamashita-when-to-receive-your-patriarchal-blessing",
+      "para": 27,
+      "en": "… 1986, 65.\n[^8]: Dallin H. Oaks, “Patriarchal Blessings,” Worldwide Leadership Training Meeting: The Patriarch, Jan. 8, 2005, 10.",
+      "tr": "… Véase Dallin H. Oaks, \"Las bendiciones patriarcales\", Reunión Mundial de Capacitación de Líderes, 8 de enero de 2005, pág. …"
+     }
+    ],
+    "earliest": {
+     "year": 2003,
+     "conference": "2003 April General Conference",
+     "talk": "2003-04-garn-preparing-for-missionary-service",
+     "para": 5,
+     "en": "… Jesus Christ to the world” (“Missionary Service,” *First Worldwide Leadership Training Meeting,* Jan. 2003, 17).",
+     "tr": "… en el mundo” (“El servicio misional”, *Primera reunión mundial de capacitación de líderes*, enero de 2003)."
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "enero",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 105.3,
+    "source": "2003-04-ballard-the-essential-role-of-member-missionary-work",
+    "kind": "talk",
+    "sample": "ios barrios” (Transmisión de la capacitación para líderes del sacerdocio, 11 de enero de 2003)."
+   },
+   {
+    "term": "liahona*, julio",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 222.3,
+    "source": "2005-10-mcmullin-be-prepared-be-ye-strong-from-henceforth",
+    "kind": "talk",
+    "sample": "pág. 89.\n[^19]: Romanos 13:12–14.\n[^20]: Véase \"Ésta es la obra del Maestro\", *Liahona*, julio de 1995, pág. 8; véase también \"Discurso de apertura\", *Liahona*, mayo de 2005,"
+   },
+   {
+    "term": "discurso",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 2,
+    "share_of_uncovered": 0.667,
+    "ratio": 78.5,
+    "source": "2005-10-mcmullin-be-prepared-be-ye-strong-from-henceforth",
+    "kind": "talk",
+    "sample": "\"Ésta es la obra del Maestro\", *Liahona*, julio de 1995, pág. 8; véase también \"Discurso de apertura\", *Liahona*, mayo de 2005, pág. 4.\n[^21]: Filipenses 4:7."
+   }
+  ]
+ }
+}

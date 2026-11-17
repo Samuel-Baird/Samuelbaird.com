@@ -1,0 +1,194 @@
+{
+ "id": "concept.first-presidency",
+ "pt": {
+  "en_paragraphs": 707,
+  "en_talks": 413,
+  "en_verses": 11,
+  "uncovered_paragraphs": 30,
+  "renderings": [
+   {
+    "term": "Primeira Presidência",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 677,
+    "talks": 404,
+    "verses": 11,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 124:126",
+      "ref_en": "Doctrine and Covenants 124:126",
+      "en": "I give unto him for counselors my servant Sidney Rigdon and my servant William Law, that these may constitute a quorum and First Presidency, to receive the oracles for the whole church.",
+      "tr": "Dou-lhe como conselheiros meu servo Sidney Rigdon e meu servo William Law, para constituírem um quórum e Primeira Presidência, a fim de receberem os oráculos para toda a igreja.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/124?lang=por&id=p126"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-pinegar-home-first",
+      "para": 19,
+      "en": "In recent instruction from the First Presidency and the Twelve, President Thomas S. Monson pointed out …",
+      "tr": "Em instruções recentes da Primeira Presidência e dos Doze, o Presidente Thomas S. Monson explicou …"
+     },
+     {
+      "kind": "talk",
+      "year": 2009,
+      "conference": "2009 April General Conference",
+      "talk": "2009-04-stevenson-sacred-homes-sacred-temples",
+      "para": 0,
+      "en": "… blessed we are to hear the counsel of the First Presidency and the Quorum of the Twelve, whom we sustain …",
+      "tr": "… tendo! Como somos abençoados por ouvir os conselhos da Primeira Presidência e do Quórum dos Doze, a quem apoiamos como …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-cuthbert-the-spirituality-of-service",
+     "para": 13,
+     "en": "… of thousands of Church members who responded to the First Presidency’s call for a special fast. This year’s famine …",
+     "tr": "… de membros da Igreja que atenderam ao pedido da Primeira Presidência, de fazer um jejum especial. Espera-se que neste …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "presidency",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 16,
+    "share_of_uncovered": 0.533,
+    "ratio": 1066.9,
+    "source": "1999-04-faust-this-is-our-day",
+    "kind": "talk",
+    "sample": "of the Church,* 4:609-610.\n[^2]: James R. Clark (org.), *Messages of the First Presidency of The Church of Jesus Christ of Latter-day Saints,* 6 volumes, 1966, 3:333.\n[^"
+   },
+   {
+    "term": "first",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 16,
+    "share_of_uncovered": 0.533,
+    "ratio": 533.5,
+    "source": "1999-04-faust-this-is-our-day",
+    "kind": "talk",
+    "sample": "istory of the Church,* 4:609-610.\n[^2]: James R. Clark (org.), *Messages of the First Presidency of The Church of Jesus Christ of Latter-day Saints,* 6 volumes, 1966"
+   },
+   {
+    "term": "saints",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.3,
+    "ratio": 400.1,
+    "source": "1999-04-faust-this-is-our-day",
+    "kind": "talk",
+    "sample": ", *Messages of the First Presidency of The Church of Jesus Christ of Latter-day Saints,* 6 volumes, 1966, 3:333.\n[^3]: Jacob M. Braude (org.), *Braude's Treasury of W"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 659,
+  "en_talks": 391,
+  "en_verses": 11,
+  "uncovered_paragraphs": 37,
+  "renderings": [
+   {
+    "term": "Primera Presidencia",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 622,
+    "talks": 373,
+    "verses": 11,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 68:15",
+      "ref_en": "Doctrine and Covenants 68:15",
+      "en": "Wherefore they shall be high priests who are worthy, and they shall be appointed by the First Presidency of the Melchizedek Priesthood, except they be literal descendants of Aaron.",
+      "tr": "Por consiguiente, han de ser sumos sacerdotes dignos, y serán nombrados por la Primera Presidencia del Sacerdocio de Melquisedec, a menos que sean descendientes literales de Aarón;",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/68?lang=spa&id=p15"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-hinckley-keeping-the-temple-holy",
+      "para": 20,
+      "en": "… brethren, Wilford Woodruff, George Q. Cannon, Joseph F. Smith, First Presidency of the Church of Jesus Christ of Latter-day Saints” …",
+      "tr": "… hermanos, Wilford Woodruff, George Q. Cannon, Joseph F: Smith, Primera Presidencia de La Iglesia de Jesucristo de los Santos de …"
+     },
+     {
+      "kind": "talk",
+      "year": 2011,
+      "conference": "2011 April General Conference",
+      "talk": "2011-04-andersen-preparing-the-world-for-the-second-coming",
+      "para": 32,
+      "en": "… Elder Sidney Going, Mar. 2011.\n[^22]: “Message from the First Presidency,” in *For the Strength of Youth: Fulfilling Our …",
+      "tr": "… Going, marzo de 2011.\n[^22]: Véase \"Mensaje de la Primera Presidencia\", *Para la Fortaleza de la Juventud: Cumplir nuestro …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-hinckley-keeping-the-temple-holy",
+     "para": 9,
+     "en": "… are eternal. For this reason, many years ago the First Presidency determined that a convert to the Church should wait …",
+     "tr": "… Por esa razón, hace ya muchos años que la Primera Presidencia determinó que un converso debe esperar un año después …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "first presidency",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 27,
+    "share_of_uncovered": 0.73,
+    "ratio": 486.6,
+    "source": "1996-04-hinckley-remember-thy-church-o-lord",
+    "kind": "talk",
+    "sample": "adas en cuanto a nosotros” (publicada en James R. Clark, comp., Messages of the First Presidency of The Church of Jesus Christ of Latter day Saints, 6 tomos [1965-1975], tomo I"
+   },
+   {
+    "term": "the first",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 21,
+    "share_of_uncovered": 0.568,
+    "ratio": 378.5,
+    "source": "1996-04-hinckley-remember-thy-church-o-lord",
+    "kind": "talk",
+    "sample": "ngañadas en cuanto a nosotros” (publicada en James R. Clark, comp., Messages of the First Presidency of The Church of Jesus Christ of Latter day Saints, 6 tomos [1965-19"
+   },
+   {
+    "term": "church",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 21,
+    "share_of_uncovered": 0.568,
+    "ratio": 90.8,
+    "source": "1996-04-hinckley-remember-thy-church-o-lord",
+    "kind": "talk",
+    "sample": "s” (publicada en James R. Clark, comp., Messages of the First Presidency of The Church of Jesus Christ of Latter day Saints, 6 tomos [1965-1975], tomo III, págs. 267-"
+   }
+  ]
+ }
+}

@@ -1,0 +1,13 @@
+id: concept.cancellation-of-sealing
+category: Temple & Family History
+en:
+  term: cancellation of sealing
+  match:
+  - cancellation of sealing
+sources: {}
+candidates:
+  pt:
+  - term: cancelamento de selamento
+    hint: pulpit-glossary:verified
+  es: []
+related: []

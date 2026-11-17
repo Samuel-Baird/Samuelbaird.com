@@ -1,0 +1,13 @@
+id: concept.farewell-talk
+category: Missionary Work
+en:
+  term: farewell talk
+  match:
+  - farewell talk
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: discurso de despedida
+    hint: pulpit-glossary:verified
+related: []

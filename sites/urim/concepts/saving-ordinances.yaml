@@ -1,0 +1,15 @@
+id: concept.saving-ordinances
+category: Priesthood Authority & Ordinances
+en:
+  term: saving ordinances
+  match:
+  - saving ordinances
+sources: {}
+candidates:
+  pt:
+  - term: ordenanças de salvação
+    hint: pulpit-glossary:verified
+  es:
+  - term: ordenanzas salvadoras
+    hint: pulpit-glossary:verified
+related: []

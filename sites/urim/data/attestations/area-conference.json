@@ -1,0 +1,157 @@
+{
+ "id": "concept.area-conference",
+ "pt": {
+  "en_paragraphs": 8,
+  "en_talks": 8,
+  "en_verses": 0,
+  "uncovered_paragraphs": 3,
+  "renderings": [
+   {
+    "term": "conferência de área",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 5,
+    "talks": 5,
+    "verses": 0,
+    "first_year": 1991,
+    "last_year": 2020,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1991,
+      "conference": "1991 October General Conference",
+      "talk": "1991-10-dvila-the-conversion-process",
+      "para": 11,
+      "en": "President Ezra Taft Benson, at an area conference in Sweden in 1974, said: “It is not on …",
+      "tr": "O Presidente Ezra Taft Benson, numa conferência de área na Suécia em 1974, declarou: “Não é no auge …"
+     },
+     {
+      "kind": "talk",
+      "year": 2016,
+      "conference": "2016 April General Conference",
+      "talk": "2016-04-mazzagardi-the-sacred-place-of-restoration",
+      "para": 6,
+      "en": "… wonderful opportunity yet. The following day we attended an area conference.",
+      "tr": "… oportunidade maravilhosa. No dia seguinte, participamos de uma conferência de área."
+     },
+     {
+      "kind": "talk",
+      "year": 2020,
+      "conference": "2020 October General Conference",
+      "talk": "2020-10-stevenson-highly-favored-of-the-lord",
+      "para": 0,
+      "en": "… invited to Tokyo to hear the prophet at an area conference. With branch members, my companion and I excitedly …",
+      "tr": "… a Tóquio para ouvir o profeta em uma conferência de área. Com entusiasmo, os membros do ramo, meu companheiro …"
+     }
+    ],
+    "earliest": {
+     "year": 1991,
+     "conference": "1991 October General Conference",
+     "talk": "1991-10-dvila-the-conversion-process",
+     "para": 11,
+     "en": "President Ezra Taft Benson, at an area conference in Sweden in 1974, said: “It is not on …",
+     "tr": "O Presidente Ezra Taft Benson, numa conferência de área na Suécia em 1974, declarou: “Não é no auge …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "report",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 307.8,
+    "source": "1990-10-hinckley-this-work-will-go-forward",
+    "kind": "talk",
+    "sample": "do, falar sobre o evangelho com outras pessoas” (In Tokyo Japan Area Conference Report, 10 de Agosto de 1957, p. 57)."
+   },
+   {
+    "term": "area",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 125.0,
+    "source": "1990-10-hinckley-this-work-will-go-forward",
+    "kind": "talk",
+    "sample": "estemunho ao mundo, falar sobre o evangelho com outras pessoas” (In Tokyo Japan Area Conference Report, 10 de Agosto de 1957, p. 57)."
+   },
+   {
+    "term": "conference",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 1.0,
+    "ratio": 70.2,
+    "source": "1990-10-hinckley-this-work-will-go-forward",
+    "kind": "talk",
+    "sample": "unho ao mundo, falar sobre o evangelho com outras pessoas” (In Tokyo Japan Area Conference Report, 10 de Agosto de 1957, p. 57)."
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 15,
+  "en_talks": 13,
+  "en_verses": 0,
+  "uncovered_paragraphs": 2,
+  "renderings": [
+   {
+    "term": "conferencia de área",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 13,
+    "talks": 11,
+    "verses": 0,
+    "first_year": 1990,
+    "last_year": 2024,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 October General Conference",
+      "talk": "1990-10-hinckley-this-work-will-go-forward",
+      "para": 4,
+      "en": "… the gospel with others” (in Conference Report, Tokyo Japan Area Conference 1975, p. 57).",
+      "tr": "… el evangelio a los demás.” (Informe de la Conferencia de Area de Tokio, Japón, 10 de agosto de 1975, pág. …"
+     },
+     {
+      "kind": "talk",
+      "year": 2002,
+      "conference": "2002 October General Conference",
+      "talk": "2002-10-mcmullin-come-to-zion-come-to-zion",
+      "para": 34,
+      "en": "… [Moses 7:18](https://www.churchofjesuschrist.org/study/scriptures/pgp/moses/7?lang=eng&id=p18#p18); emphasis added.\n[^7]: In Conference Report, Paris Area Conference 1976, 3.\n[^8]: [D&C 105:32](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/105?lang=eng&id=p32#p32); see also [68:25–31](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/68?lang=eng&id=p25-p31#p25); [82:14](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/82?lang=eng&id=p14#p14); …",
+      "tr": "… cursiva agregada.\n[^7]: En el informe de la Conferencia de Área de París, 1976, pág. 3.\n[^8]: D. y C. …"
+     },
+     {
+      "kind": "talk",
+      "year": 2024,
+      "conference": "2024 April General Conference",
+      "talk": "2024-04-dushku-pillars-and-rays",
+      "para": 37,
+      "en": "… [^7]: Spencer W. Kimball, in Conference Report, Munich Germany Area Conference, 1973, 77; quoted in Graham W. Doxey, “[The …",
+      "tr": "… 122.\n[^7]: Spencer W. Kimball, en Conference Report, Conferencia de Área en Múnich, Alemania, 1973, pág. 77; citado en Graham …"
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 October General Conference",
+     "talk": "1990-10-hinckley-this-work-will-go-forward",
+     "para": 4,
+     "en": "… the gospel with others” (in Conference Report, Tokyo Japan Area Conference 1975, p. 57).",
+     "tr": "… el evangelio a los demás.” (Informe de la Conferencia de Area de Tokio, Japón, 10 de agosto de 1975, pág. …"
+    },
+    "share": 1.0
+   }
+  ]
+ }
+}

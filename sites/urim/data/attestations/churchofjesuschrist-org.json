@@ -1,0 +1,93 @@
+{
+ "id": "concept.churchofjesuschrist-org",
+ "pt": {
+  "en_paragraphs": 6444,
+  "en_talks": 1855,
+  "en_verses": 0,
+  "uncovered_paragraphs": 6444,
+  "renderings": [
+   {
+    "term": "churchofjesuschrist.org",
+    "evidence": [],
+    "hint": "pulpit-glossary:verified"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "bofm",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 62,
+    "share_of_uncovered": 0.248,
+    "ratio": 6.8,
+    "source": "2019-10-pace-come-follow-methe-lords-counterstrategy-and-proactive-plan",
+    "kind": "talk",
+    "sample": "não cairão” ([Helamã 5:12](https://www.churchofjesuschrist.org/study/scriptures/bofm/hel/5?lang=por&id=p12#p12))."
+   },
+   {
+    "term": "testament",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 54,
+    "share_of_uncovered": 0.216,
+    "ratio": 8.6,
+    "source": "2017-10-marriott-abiding-in-god-and-repairing-the-breach",
+    "kind": "talk",
+    "sample": "rina e Convênios 88:63](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/88?lang=por&id=p63#p63).\n[^8]: [Jacó 4:11](https://www.churchofjesuschrist.o"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 6023,
+  "en_talks": 1824,
+  "en_verses": 0,
+  "uncovered_paragraphs": 6023,
+  "renderings": [
+   {
+    "term": "churchofjesuschrist.org",
+    "evidence": [],
+    "hint": "pulpit-glossary:verified"
+   }
+  ],
+  "inferred": [
+   {
+    "term": "pág",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 68,
+    "share_of_uncovered": 0.272,
+    "ratio": 9.6,
+    "source": "2016-04-oscarson-do-i-believe",
+    "kind": "talk",
+    "sample": "/2014/10/stay-in-the-boat-and-hold-on?lang=spa)\",* Liahona,* noviembre de 2014, pág. 92."
+   },
+   {
+    "term": "testament",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 60,
+    "share_of_uncovered": 0.24,
+    "ratio": 10.2,
+    "source": "2011-04-christofferson-as-many-as-i-love-i-rebuke-and-chasten",
+    "kind": "talk",
+    "sample": "migo” ([D. y C. 121:43](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/121?lang=spa&id=p43#p43))."
+   },
+   {
+    "term": "bofm",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 62,
+    "share_of_uncovered": 0.248,
+    "ratio": 9.1,
+    "source": "2016-04-oscarson-do-i-believe",
+    "kind": "talk",
+    "sample": "p7#p7).\n[^3]: [Mosíah 5:2](https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/5?lang=spa&id=p2#p2).\n[^4]: [1 Nefi 8:26](https://www.churchofjesuschris"
+   }
+  ]
+ }
+}

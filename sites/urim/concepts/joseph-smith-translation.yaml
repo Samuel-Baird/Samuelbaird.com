@@ -1,0 +1,15 @@
+id: concept.joseph-smith-translation
+category: Scriptures & Study Helps
+en:
+  term: Joseph Smith Translation
+  match:
+  - Joseph Smith Translation
+sources: {}
+candidates:
+  pt:
+  - term: Tradução de Joseph Smith
+    hint: pulpit-glossary:verified
+  es:
+  - term: Traducción de José Smith
+    hint: pulpit-glossary:verified
+related: []

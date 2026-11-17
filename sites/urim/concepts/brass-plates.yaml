@@ -1,0 +1,17 @@
+id: concept.brass-plates
+category: Scriptures & Study Helps
+en:
+  term: brass plates
+  match:
+  - brass plates
+sources:
+  GS:
+  - brass-plates
+candidates:
+  pt:
+  - term: placas de latão
+    hint: pulpit-glossary:verified
+  es:
+  - term: planchas de bronce
+    hint: pulpit-glossary:verified
+related: []

@@ -1,0 +1,19 @@
+id: concept.sons-of-perdition
+category: Plan of Salvation
+en:
+  term: Sons of Perdition
+  match:
+  - Sons of Perdition
+sources:
+  GS:
+  - sons-of-perdition
+candidates:
+  pt:
+  - term: filhos de perdição
+    hint: pulpit-glossary:verified
+  es:
+  - term: Hijos de perdición
+    hint: pulpit-glossary:verified
+related: []
+note: Specific category of the unforgivable/unredeemed — distinct from "telestial kingdom" or general
+  damnation language

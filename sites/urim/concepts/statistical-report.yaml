@@ -1,0 +1,15 @@
+id: concept.statistical-report
+category: Finances
+en:
+  term: Statistical Report
+  match:
+  - Statistical Report
+sources: {}
+candidates:
+  pt: []
+  es:
+  - term: Informe Estadístico
+    hint: pulpit-glossary:verified
+related: []
+note: Recurring annual conference report genre (membership/growth statistics) — fixed title, not a generic
+  phrase

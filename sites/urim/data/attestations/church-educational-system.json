@@ -1,0 +1,195 @@
+{
+ "id": "concept.church-educational-system",
+ "pt": {
+  "en_paragraphs": 32,
+  "en_talks": 32,
+  "en_verses": 0,
+  "uncovered_paragraphs": 9,
+  "renderings": [
+   {
+    "term": "Sistema Educacional da Igreja",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 23,
+    "talks": 23,
+    "verses": 0,
+    "first_year": 2002,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2002,
+      "conference": "2002 April General Conference",
+      "talk": "2002-04-lund-the-opportunity-to-serve",
+      "para": 0,
+      "en": "After 34 years in the Church Educational System, my wife and I decided about three years …",
+      "tr": "Depois de 34 anos no Sistema Educacional da Igreja, minha mulher e eu decidimos nos aposentar …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 October General Conference",
+      "talk": "2014-10-packer-the-book",
+      "para": 33,
+      "en": "… Classroom of Faith, Hope, and Charity” (address to Church Educational System religious educators), [lds.org/broadcasts](https://rsc.byu.edu/vol-15-no-3-2014/classroom-faith-hope-charity); Neil L. Andersen, “Find Our Cousins!” …",
+      "tr": "… Esperança e Caridade], discurso para educadores religiosos do Sistema Educacional da Igreja, [LDS.org/broadcasts](http://www.lds.org/prophets-and-apostles/unto-all-the-world/a-classroom-of-faith-hope-and-charity); Neil L. Andersen, \"Find Our Cousins!\" …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-causs-love-all-love-each",
+      "para": 36,
+      "en": "… Are the Architects of Our Own Happiness](https://www.churchofjesuschrist.org/study/broadcasts/article/ces-devotionals/2012/01/we-are-the-architects-of-our-own-happiness?lang=eng&id=p27-p34#p27)” (Church Educational System devotional for young adults, Nov. 4, 2012), Gospel Library. …",
+      "tr": "… os arquitetos de nossa própria felicidade](https://www.churchofjesuschrist.org/study/broadcasts/article/ces-devotionals/2012/01/we-are-the-architects-of-our-own-happiness?lang=por&id=p27-p34#p27)\", Devocional do Sistema Educacional da Igreja para jovens adultos, 4 de novembro de 2012, …"
+     }
+    ],
+    "earliest": {
+     "year": 2002,
+     "conference": "2002 April General Conference",
+     "talk": "2002-04-lund-the-opportunity-to-serve",
+     "para": 0,
+     "en": "After 34 years in the Church Educational System, my wife and I decided about three years …",
+     "tr": "Depois de 34 anos no Sistema Educacional da Igreja, minha mulher e eu decidimos nos aposentar …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "fevereiro",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 5,
+    "share_of_uncovered": 0.556,
+    "ratio": 158.8,
+    "source": "2009-04-oaks-unselfish-service",
+    "kind": "talk",
+    "sample": "sign*, novembro de 1997, p. 110.\n[^13]: Mark Skousen para Dallin H. Oaks, 15 de fevereiro de 2009."
+   },
+   {
+    "term": "broadcasts",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.444,
+    "ratio": 222.3,
+    "source": "2012-10-oaks-protect-the-children",
+    "kind": "talk",
+    "sample": "onal do Sistema Educacional para jovens adultos, 9 de setembro de 2012) LDS.org/broadcasts; ver também R. Scott Lloyd, \"Zion Not Only Where, but How We Live, Says Elder H"
+   },
+   {
+    "term": "liahona",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.667,
+    "ratio": 30.3,
+    "source": "2001-10-golden-our-fathers-plan",
+    "kind": "talk",
+    "sample": "es/dc-testament/dc/1?lang=por&id=p30#p30) \"Testemunhas Especiais de Cristo\", A *Liahona,* abril de 2001, p. 24.\n[^15]: Ver [Moisés 4:3-4](https://www.churchofjesuschri"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 33,
+  "en_talks": 33,
+  "en_verses": 0,
+  "uncovered_paragraphs": 8,
+  "renderings": [
+   {
+    "term": "Sistema Educativo de la Iglesia",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 25,
+    "talks": 25,
+    "verses": 0,
+    "first_year": 2001,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "talk",
+      "year": 2001,
+      "conference": "2001 October General Conference",
+      "talk": "2001-10-hinckley-reaching-down-to-lift-another",
+      "para": 20,
+      "en": "… bishops and the stake presidents. It involves the Church Educational System, the Employment Services offices, and others who work …",
+      "tr": "… y los presidentes de estaca; incluye al Sistema Educativo de la Iglesia, las oficinas de Servicios de Empleo y …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 October General Conference",
+      "talk": "2014-10-klebingat-approaching-the-throne-of-god-with-confidence",
+      "para": 6,
+      "en": "… Mind and the Foundation of Your Character” [Church Educational System fireside, Feb. 2, 2003], 2; [speeches.byu.edu](https://speeches.byu.edu/talks/boyd-k-packer/instrument-mind-foundation-character)). Therefore, please use …",
+      "tr": "… the Foundation of Your Character” [Devocional del Sistema Educativo de la Iglesia, 2 de febrero de 2003], pág. 2, …"
+     },
+     {
+      "kind": "talk",
+      "year": 2026,
+      "conference": "2026 April General Conference",
+      "talk": "2026-04-causs-love-all-love-each",
+      "para": 36,
+      "en": "… Are the Architects of Our Own Happiness](https://www.churchofjesuschrist.org/study/broadcasts/article/ces-devotionals/2012/01/we-are-the-architects-of-our-own-happiness?lang=eng&id=p27-p34#p27)” (Church Educational System devotional for young adults, Nov. 4, 2012), Gospel Library. …",
+      "tr": "… arquitectos de nuestra propia felicidad\", devocional del Sistema Educativo de la Iglesia para jóvenes adultos, 4 de noviembre de 2012, …"
+     }
+    ],
+    "earliest": {
+     "year": 2001,
+     "conference": "2001 October General Conference",
+     "talk": "2001-10-hinckley-reaching-down-to-lift-another",
+     "para": 20,
+     "en": "… bishops and the stake presidents. It involves the Church Educational System, the Employment Services offices, and others who work …",
+     "tr": "… y los presidentes de estaca; incluye al Sistema Educativo de la Iglesia, las oficinas de Servicios de Empleo y …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "pág",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 7,
+    "share_of_uncovered": 0.875,
+    "ratio": 31.0,
+    "source": "2001-10-golden-our-fathers-plan",
+    "kind": "talk",
+    "sample": "Moisés 4:2.\n[^10]: Doctrina del Evangelio, Manual del alumno, Religión 231 –232,pág. 26.\n[^11]: Véase Mosíah 3:19.\n[^12]: Mosíah 5:15; véase también Moroni 10:32."
+   },
+   {
+    "term": "sei",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.375,
+    "ratio": 1500.4,
+    "source": "2005-04-tanner-glad-tidings-from-cumorah",
+    "kind": "talk",
+    "sample": "iunfar” (“Terror, triunfo y una fiesta de bodas”, Transmisión vía satélite, del SEI, 12 de septiembre de 2004; véase www.ldsces.org). Nosotras tenemos esa enorme r"
+   },
+   {
+    "term": "html",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.375,
+    "ratio": 375.1,
+    "source": "2005-10-hales-preparations-for-the-restoration-and-the-second-coming-my-hand-shall-be-over-thee",
+    "kind": "talk",
+    "sample": "Hugh Latimer, Bishop and Martyr\", http://justus.anglican .org/resources/bio/269.html.\n[^7]: Véase, Wilcox, *Fire in the Bones,* páginas 125–126, 197; *Fox's Book of"
+   }
+  ]
+ }
+}

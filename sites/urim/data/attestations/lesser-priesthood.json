@@ -1,0 +1,93 @@
+{
+ "id": "concept.lesser-priesthood",
+ "pt": {
+  "en_paragraphs": 17,
+  "en_talks": 11,
+  "en_verses": 5,
+  "uncovered_paragraphs": 22,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "menor",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 21,
+    "share_of_uncovered": 0.955,
+    "ratio": 238.7,
+    "source": "1997-04-haight-the-basics-have-not-changed",
+    "kind": "talk",
+    "sample": "bemos o sacerdócio aos doze anos de idade. Passamos pelos ofícios do sacerdócio menor: diácono, mestre e sacerdote; aprendendo gradativamente, um pouco aqui, um pouc"
+   },
+   {
+    "term": "aarônico",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 10,
+    "share_of_uncovered": 0.455,
+    "ratio": 56.8,
+    "source": "1997-04-haight-the-basics-have-not-changed",
+    "kind": "talk",
+    "sample": "ido. Meu pai batizou-me, mas não estava mais conosco quando recebi o Sacerdócio Aarônico. Lembro-me da emoção que senti quando tornei-me diácono e passei a ser um porta"
+   },
+   {
+    "term": "melquisedeque",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 8,
+    "share_of_uncovered": 0.364,
+    "ratio": 85.6,
+    "source": "2003-04-haight-growing-into-the-priesthood",
+    "kind": "talk",
+    "sample": "uem o Sacerdócio Aarônico, o sacerdócio menor, e os que possuem o Sacerdócio de Melquisedeque, o sacerdócio maior. Não é interessante visualizar como o Senhor e Seu Pai Cele"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 17,
+  "en_talks": 11,
+  "en_verses": 5,
+  "uncovered_paragraphs": 22,
+  "renderings": [],
+  "inferred": [
+   {
+    "term": "menor",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 20,
+    "share_of_uncovered": 0.909,
+    "ratio": 181.9,
+    "source": "2003-04-haight-growing-into-the-priesthood",
+    "kind": "talk",
+    "sample": "an reunido esta noche tenemos poseedores del Sacerdocio Aarónico, el sacerdocio menor, y del Sacerdocio de Melquisedec, el sacerdocio mayor. Es interesante pensar qu"
+   },
+   {
+    "term": "melquisedec",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.409,
+    "ratio": 116.9,
+    "source": "1998-10-christofferson-the-priesthood-quorum",
+    "kind": "talk",
+    "sample": "s para poder enseñar mejor”.[^11] Desde principios de este año el Sacerdocio de Melquisedec tiene un programa de estudios, que la Sociedad de Socorro comparte hasta cierto"
+   },
+   {
+    "term": "aarónico",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.409,
+    "ratio": 54.6,
+    "source": "2003-04-haight-growing-into-the-priesthood",
+    "kind": "talk",
+    "sample": "congregaciones que se han reunido esta noche tenemos poseedores del Sacerdocio Aarónico, el sacerdocio menor, y del Sacerdocio de Melquisedec, el sacerdocio mayor. Es"
+   }
+  ]
+ }
+}

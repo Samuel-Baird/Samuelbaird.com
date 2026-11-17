@@ -1,0 +1,15 @@
+id: concept.relief-society-president
+category: Local Leadership & Callings
+en:
+  term: Relief Society president
+  match:
+  - Relief Society president
+sources: {}
+candidates:
+  pt:
+  - term: presidente da Sociedade de Socorro
+    hint: pulpit-glossary:verified
+  es:
+  - term: presidenta de la Sociedad de Socorro
+    hint: pulpit-glossary:verified
+related: []

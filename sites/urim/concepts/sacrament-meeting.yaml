@@ -1,0 +1,21 @@
+id: concept.sacrament-meeting
+category: Sacrament & Meetings
+en:
+  term: sacrament meeting
+  match:
+  - sacrament meeting
+sources:
+  Topics:
+  - sacrament-meeting
+  TtF:
+  - sacrament-meeting
+  GH:
+  - 29-meetings-in-the-church#title_number4
+candidates:
+  pt:
+  - term: reunião sacramental
+    hint: pulpit-glossary:verified
+  es:
+  - term: reunión sacramental
+    hint: approved-terms
+related: []

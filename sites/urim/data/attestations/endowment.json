@@ -1,0 +1,194 @@
+{
+ "id": "concept.endowment",
+ "pt": {
+  "en_paragraphs": 144,
+  "en_talks": 99,
+  "en_verses": 5,
+  "uncovered_paragraphs": 13,
+  "renderings": [
+   {
+    "term": "investidura",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 131,
+    "talks": 91,
+    "verses": 5,
+    "first_year": 1990,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doutrina e Convênios 105:12",
+      "ref_en": "Doctrine and Covenants 105:12",
+      "en": "For behold, I have prepared a great endowment and blessing to be poured out upon them, inasmuch as they are faithful and continue in humility before me.",
+      "tr": "Pois eis que preparei uma grande investidura e bênção para derramar sobre eles, se forem fiéis e perseverarem em humildade diante de mim.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/105?lang=por&id=p12"
+     },
+     {
+      "kind": "talk",
+      "year": 1990,
+      "conference": "1990 April General Conference",
+      "talk": "1990-04-packer-the-library-of-the-lord",
+      "para": 41,
+      "en": "… and fall of man, the foundation for the temple endowment. You learn what a prophet is. You become familiar …",
+      "tr": "… criação e da queda do homem, o fundamento da investidura do templo. Aprendeis o que é um profeta. Termos como …"
+     },
+     {
+      "kind": "talk",
+      "year": 2017,
+      "conference": "2017 October General Conference",
+      "talk": "2017-10-renlund-the-priesthood-and-the-saviors-atoning-power",
+      "para": 16,
+      "en": "… show only his original baptism, confirmation, priesthood ordination, and endowment dates. He choked up again.",
+      "tr": "… sua confirmação, das ordenações ao sacerdócio e de sua investidura. Novamente ele ficou emocionado."
+     }
+    ],
+    "earliest": {
+     "year": 1990,
+     "conference": "1990 April General Conference",
+     "talk": "1990-04-packer-the-library-of-the-lord",
+     "para": 41,
+     "en": "… and fall of man, the foundation for the temple endowment. You learn what a prophet is. You become familiar …",
+     "tr": "… criação e da queda do homem, o fundamento da investidura do templo. Aprendeis o que é um profeta. Termos como …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "precisa",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.231,
+    "ratio": 18.1,
+    "source": "1990-04-hinckley-blessed-are-the-merciful",
+    "kind": "talk",
+    "sample": "Como é divina a misericórdia. Não pode ser legislada; precisa emanar do coração, brotar do íntimo. É parte do dom recebido por todos nós, com"
+   },
+   {
+    "term": "dom",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.231,
+    "ratio": 15.6,
+    "source": "1990-04-hinckley-blessed-are-the-merciful",
+    "kind": "talk",
+    "sample": "Não pode ser legislada; precisa emanar do coração, brotar do íntimo. É parte do dom recebido por todos nós, como filhos de Deus e participantes de um direito de na"
+   },
+   {
+    "term": "quórum",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 3,
+    "share_of_uncovered": 0.231,
+    "ratio": 14.2,
+    "source": "1996-10-packer-the-twelve-apostles",
+    "kind": "talk",
+    "sample": "Com a organização da Primeira Presidência e do Quórum dos Doze, com os ofícios de Setenta e o Bispado Presidente revelados, fica esta"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 127,
+  "en_talks": 87,
+  "en_verses": 5,
+  "uncovered_paragraphs": 20,
+  "renderings": [
+   {
+    "term": "investidura",
+    "hint": "approved-terms",
+    "evidence": [
+     "approved_term",
+     "attested"
+    ],
+    "paragraphs": 107,
+    "talks": 75,
+    "verses": 5,
+    "first_year": 1997,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Doctrina y Convenios 105:12",
+      "ref_en": "Doctrine and Covenants 105:12",
+      "en": "For behold, I have prepared a great endowment and blessing to be poured out upon them, inasmuch as they are faithful and continue in humility before me.",
+      "tr": "Pues he aquí, he preparado una magna investidura y bendición que derramaré sobre ellos, si son fieles y siguen siendo humildes delante de mí.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/105?lang=spa&id=p12"
+     },
+     {
+      "kind": "talk",
+      "year": 1997,
+      "conference": "1997 April General Conference",
+      "talk": "1997-04-scott-jesus-christ-our-redeemer",
+      "para": 13,
+      "en": "… the ordinances of the temple, including one’s own personal endowment. They embody the sealing ordinance of the temple where …",
+      "tr": "… implica también todas las ordenanzas del templo, incluso la investidura personal; y abarca la ordenanza selladora del templo en la …"
+     },
+     {
+      "kind": "talk",
+      "year": 2019,
+      "conference": "2019 October General Conference",
+      "talk": "2019-10-nelson-closing-remarks",
+      "para": 25,
+      "en": "… including wearing the temple garment as instructed in the endowment?",
+      "tr": "… del templo de acuerdo con las instrucciones de la investidura?"
+     }
+    ],
+    "earliest": {
+     "year": 1997,
+     "conference": "1997 April General Conference",
+     "talk": "1997-04-scott-jesus-christ-our-redeemer",
+     "para": 13,
+     "en": "… the ordinances of the temple, including one’s own personal endowment. They embody the sealing ordinance of the temple where …",
+     "tr": "… implica también todas las ordenanzas del templo, incluso la investidura personal; y abarca la ordenanza selladora del templo en la …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "atributo",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.2,
+    "ratio": 800.2,
+    "source": "2001-10-dew-are-we-not-all-mothers",
+    "kind": "talk",
+    "sample": "o Padre Celestial bendijera a Sus hijos con la ordenación al sacerdocio. Era el atributo más enaltecedor que podía conceder a Sus hijas, una confianza sagrada que dio a"
+   },
+   {
+    "term": "don",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 6,
+    "share_of_uncovered": 0.3,
+    "ratio": 16.0,
+    "source": "2001-04-faust-born-again",
+    "kind": "talk",
+    "sample": "Aquellos que poseen el don del Espíritu Santo después del bautismo y la confirmación pueden recibir más lu"
+   },
+   {
+    "term": "divino",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 4,
+    "share_of_uncovered": 0.2,
+    "ratio": 25.0,
+    "source": "2001-10-dew-are-we-not-all-mothers",
+    "kind": "talk",
+    "sample": "ado. Como dijo el presidente J. Reuben Clark, hijo, la maternidad “es de origen divino y eternamente tan importante en el lugar que ocupa como lo es el sacerdocio mis"
+   }
+  ]
+ }
+}

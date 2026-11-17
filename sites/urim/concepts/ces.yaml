@@ -1,0 +1,15 @@
+id: concept.ces
+category: Education & Publications
+en:
+  term: CES
+  match:
+  - CES
+sources: {}
+candidates:
+  pt:
+  - term: Sistema Educacional da Igreja
+    hint: pulpit-glossary:verified
+  es:
+  - term: Sistema Educativo de la Iglesia
+    hint: pulpit-glossary:verified
+related: []

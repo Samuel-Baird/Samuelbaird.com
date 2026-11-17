@@ -1,0 +1,17 @@
+id: concept.young-women
+category: Organizations & Youth
+en:
+  term: Young Women
+  match:
+  - Young Women
+sources:
+  GH:
+  - 6-stake-leadership#title_number32
+candidates:
+  pt:
+  - term: Moças
+    hint: pulpit-glossary:standard
+  es:
+  - term: Mujeres Jóvenes
+    hint: approved-terms
+related: []

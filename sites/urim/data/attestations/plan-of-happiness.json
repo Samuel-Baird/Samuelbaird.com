@@ -1,0 +1,193 @@
+{
+ "id": "concept.plan-of-happiness",
+ "pt": {
+  "en_paragraphs": 324,
+  "en_talks": 242,
+  "en_verses": 2,
+  "uncovered_paragraphs": 30,
+  "renderings": [
+   {
+    "term": "plano de felicidade",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 294,
+    "talks": 226,
+    "verses": 2,
+    "first_year": 1992,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Alma 42:8",
+      "ref_en": "Alma 42:8",
+      "en": "Now behold, it was not expedient that man should be reclaimed from this temporal death, for that would destroy the great plan of happiness.",
+      "tr": "Agora, eis que não era conveniente que o homem fosse resgatado dessa morte física, porque isso destruiria o grande plano de felicidade.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/42?lang=por&id=p8"
+     },
+     {
+      "kind": "talk",
+      "year": 1993,
+      "conference": "1993 October General Conference",
+      "talk": "1993-10-packer-for-time-and-all-eternity",
+      "para": 15,
+      "en": "… complementing differences are the very key to the plan of happiness.",
+      "tr": "… que se complementam são as verdadeiras chaves do plano de felicidade."
+     },
+     {
+      "kind": "talk",
+      "year": 2013,
+      "conference": "2013 April General Conference",
+      "talk": "2013-04-bednar-we-believe-in-being-chaste",
+      "para": 22,
+      "en": "… physical body is so central to the Father’s plan of happiness and our spiritual development, Lucifer seeks to frustrate our …",
+      "tr": "… o corpo físico é uma parte essencial do plano de felicidade estabelecido pelo Pai e de nosso desenvolvimento espiritual, Lúcifer …"
+     }
+    ],
+    "earliest": {
+     "year": 1992,
+     "conference": "1992 April General Conference",
+     "talk": "1992-04-bradford-unclutter-your-life",
+     "para": 27,
+     "en": "… to choose to live in exactness to God’s plan of happiness and exaltation.",
+     "tr": "… de escolher viver exatamente de acordo com o plano de felicidade e exaltação de Deus."
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "plano",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 24,
+    "share_of_uncovered": 0.8,
+    "ratio": 33.0,
+    "source": "1993-10-nelson-constancy-amid-change",
+    "kind": "talk",
+    "sample": "Falo agora da segunda categoria: planos imutáveis. Um grande conselho reuniu-se nos céus e parece-me que todos partici"
+   },
+   {
+    "term": "felicidade",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 17,
+    "share_of_uncovered": 0.567,
+    "ratio": 31.9,
+    "source": "1993-10-nelson-constancy-amid-change",
+    "kind": "talk",
+    "sample": "eidade ou para demonstrar seu amplo alcance, ele foi também chamado de plano da felicidade,[^10] plano de salvação,[^11] plano da redenção,[^12] plano da restauração,[^13"
+   },
+   {
+    "term": "eterno",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 11,
+    "share_of_uncovered": 0.367,
+    "ratio": 23.3,
+    "source": "1993-10-nelson-constancy-amid-change",
+    "kind": "talk",
+    "sample": "tauração,[^13] plano de misericórdia,[^14] plano de libertação[^15] e evangelho eterno.[^16] Os profetas têm usado esses termos alternadamente, com o mesmo sentido. I"
+   }
+  ]
+ },
+ "es": {
+  "en_paragraphs": 325,
+  "en_talks": 249,
+  "en_verses": 2,
+  "uncovered_paragraphs": 26,
+  "renderings": [
+   {
+    "term": "plan de felicidad",
+    "hint": "pulpit-glossary:verified",
+    "evidence": [
+     "attested"
+    ],
+    "paragraphs": 300,
+    "talks": 233,
+    "verses": 1,
+    "first_year": 1991,
+    "last_year": 2026,
+    "snippets": [
+     {
+      "kind": "scripture",
+      "ref": "Alma 42:8",
+      "ref_en": "Alma 42:8",
+      "en": "Now behold, it was not expedient that man should be reclaimed from this temporal death, for that would destroy the great plan of happiness.",
+      "tr": "Y he aquí, no era prudente que el hombre fuese rescatado de esta muerte temporal, porque esto habría destruido el gran plan de felicidad.",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/42?lang=spa&id=p8"
+     },
+     {
+      "kind": "talk",
+      "year": 1994,
+      "conference": "1994 October General Conference",
+      "talk": "1994-10-pinegar-teach-the-children",
+      "para": 18,
+      "en": "… truths and all of the truths of the plan of happiness that Heavenly Father wants his children to understand and …",
+      "tr": "… del evangelio y todas las demás verdades del plan de felicidad que nuestro Padre Celestial desea que Sus hijos comprendan …"
+     },
+     {
+      "kind": "talk",
+      "year": 2014,
+      "conference": "2014 April General Conference",
+      "talk": "2014-04-eyring-a-priceless-heritage-of-hope",
+      "para": 10,
+      "en": "… when he had so recently found the Lord’s plan of happiness, he knew that his hope for eternal joy …",
+      "tr": "… cuando hacía poco tiempo que había encontrado el plan de felicidad del Señor, sabía que su esperanza de tener gozo …"
+     }
+    ],
+    "earliest": {
+     "year": 1991,
+     "conference": "1991 October General Conference",
+     "talk": "1991-10-oaks-joy-and-mercy",
+     "para": 39,
+     "en": "… Son Jesus Christ, the authors of the great plan of happiness and mercy. I pray that we may do those …",
+     "tr": "… de Su Hijo Jesucristo, los autores del gran plan de felicidad y misericordia. Ruego que hagamos lo necesario para lograr …"
+    },
+    "share": 1.0
+   }
+  ],
+  "inferred": [
+   {
+    "term": "plan",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 23,
+    "share_of_uncovered": 0.885,
+    "ratio": 32.2,
+    "source": "1995-10-eyring-to-touch-a-life-with-faith",
+    "kind": "talk",
+    "sample": "pués de oír la palabra de Dios así ensenada, en lo que las Escrituras llaman el plan de la felicidad, el viejo rey dijo que estaba dispuesto a dar todo lo que tenía"
+   },
+   {
+    "term": "felicidad",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 13,
+    "share_of_uncovered": 0.5,
+    "ratio": 22.5,
+    "source": "1991-10-oaks-joy-and-mercy",
+    "kind": "talk",
+    "sample": "¿Cómo buscamos la felicidad o el gozo? El Rey Benjamin invitó a su pueblo a que considerara “el bendito y f"
+   },
+   {
+    "term": "liahona,enero",
+    "evidence": [
+     "inferred"
+    ],
+    "paragraphs": 9,
+    "share_of_uncovered": 0.346,
+    "ratio": 55.4,
+    "source": "2001-10-dew-it-is-not-good-for-man-or-woman-to-be-alone",
+    "kind": "talk",
+    "sample": "ld B. Lee, 1966, pág. 292.\n[^15]: Véase \"Lo que significa ser una hija de Dios\",Liahona,enero de 2000, pág. 123.\n[^16]: Moisés 4:12.\n[^17]: \"El gran plan de salvación\",Liaho"
+   }
+  ]
+ }
+}

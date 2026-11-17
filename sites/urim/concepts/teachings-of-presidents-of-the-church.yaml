@@ -1,0 +1,15 @@
+id: concept.teachings-of-presidents-of-the-church
+category: Education & Publications
+en:
+  term: Teachings of Presidents of the Church
+  match:
+  - Teachings of Presidents of the Church
+sources: {}
+candidates:
+  pt:
+  - term: Ensinamentos dos Presidentes da Igreja
+    hint: pulpit-glossary:verified
+  es:
+  - term: Enseñanzas de los Presidentes de la Iglesia
+    hint: pulpit-glossary:verified
+related: []
