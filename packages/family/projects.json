@@ -51,7 +51,16 @@
       "schemaType": "WebSite",
       "since": "2026",
       "formerUrl": "https://latterdaystats.samuelbaird.com",
-      "basePath": "/latter-day-stats"
+      "basePath": "/latter-day-stats",
+      "privatePaths": [
+        "/admin",
+        "/api",
+        "/me",
+        "/login",
+        "/auth"
+      ],
+      "sitemap": "/sitemap.xml",
+      "origin": "https://latterdaystats.samuelbaird.com"
     },
     {
       "id": "deseret-wiki",
@@ -143,7 +152,11 @@
       "schemaType": "WebSite",
       "since": "2026",
       "formerUrl": "https://urim.samuelbaird.com",
-      "basePath": "/urim"
+      "basePath": "/urim",
+      "privatePaths": [
+        "/api"
+      ],
+      "origin": "https://urim.samuelbaird.com"
     },
     {
       "id": "pulpit",
@@ -232,7 +245,11 @@
       "schemaType": "SoftwareApplication",
       "since": "2026",
       "formerUrl": "https://peepstone.vercel.app",
-      "basePath": "/peepstone"
+      "basePath": "/peepstone",
+      "privatePaths": [
+        "/mcp"
+      ],
+      "origin": "https://peepstone.vercel.app"
     },
     {
       "id": "omni",
@@ -259,7 +276,11 @@
       "schemaType": "SoftwareApplication",
       "since": "2026",
       "formerUrl": "https://omni.samuelbaird.com",
-      "basePath": "/omni"
+      "basePath": "/omni",
+      "privatePaths": [
+        "/api"
+      ],
+      "origin": "https://omni.samuelbaird.com"
     },
     {
       "id": "sacred-sites",

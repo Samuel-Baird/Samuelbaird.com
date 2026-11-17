@@ -1,5 +1,7 @@
 # Latter-day Stats Branding and Design Guidelines
 
+> **Superseded for colour, type and page chrome (November 2026).** Every Samuel Baird site now shares the Deseret Wiki's style and one sidebar: see `packages/family/STYLE.md` at the monorepo root. The token names below are kept and mapped onto the family palette in `src/app/globals.css`; the component and voice guidance still applies.
+
 Last updated: August 10, 2026
 
 This document is the design source of truth for the site. Read it before building

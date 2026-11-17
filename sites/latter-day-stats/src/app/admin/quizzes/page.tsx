@@ -16,6 +16,7 @@ import {
   type ReligionGroup,
 } from "@/lib/evangelical-quiz/demographics";
 import { QUIZ_DATA } from "@/lib/evangelical-quiz";
+import { BASE_PATH } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 
@@ -191,7 +192,7 @@ function EvangelicalQuizSection({ runs }: { runs: RunRow[] }) {
           How evangelical are you?
         </h2>
         <a
-          href="/api/exports/admin-evangelical-quiz-runs.csv"
+          href={`${BASE_PATH}/api/exports/admin-evangelical-quiz-runs.csv`}
           className="text-xs font-medium text-[color:var(--accent)] hover:underline"
           download
         >

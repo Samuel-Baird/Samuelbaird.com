@@ -3,6 +3,7 @@ import { SubmitButton } from "@/components/submit-button";
 import { requireAdmin } from "@/lib/auth";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 import { fmtDateTime } from "@/lib/format";
+import { BASE_PATH } from "@/lib/site";
 
 type SearchParams = { confirm?: string; refreshed?: string };
 
@@ -50,7 +51,7 @@ export default async function AdminRefreshPage({
           </form>
         ) : (
           <a
-            href="/admin/refresh?confirm=1"
+            href={`${BASE_PATH}/admin/refresh?confirm=1`}
             className="inline-flex h-10 items-center rounded-full bg-[color:var(--accent)] px-4 text-sm font-medium text-white hover:opacity-90"
           >
             Continue to confirmation

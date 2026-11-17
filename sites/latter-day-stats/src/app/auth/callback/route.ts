@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { BASE_PATH } from "@/lib/site";
 
 export async function GET(request: NextRequest) {
   const code = request.nextUrl.searchParams.get("code");
@@ -8,14 +9,14 @@ export async function GET(request: NextRequest) {
     nextParam.startsWith("/") && !nextParam.startsWith("//") ? nextParam : "/";
 
   if (!code) {
-    return NextResponse.redirect(new URL("/login?error=oauth", request.url));
+    return NextResponse.redirect(new URL(`${BASE_PATH}/login?error=oauth`, request.nextUrl.origin));
   }
 
   const supabase = await createSupabaseServerClient();
   const { data, error } = await supabase.auth.exchangeCodeForSession(code);
 
   if (error) {
-    return NextResponse.redirect(new URL("/login?error=oauth", request.url));
+    return NextResponse.redirect(new URL(`${BASE_PATH}/login?error=oauth`, request.nextUrl.origin));
   }
 
   // COPPA: every sign-in path (the /login page and the AuthPromptProvider
@@ -40,7 +41,8 @@ export async function GET(request: NextRequest) {
     }
   }
 
-  const redirectUrl = new URL(next, request.nextUrl.origin);
+  // `next` is an app path from usePathname(), without the base path.
+  const redirectUrl = new URL(BASE_PATH + (next === "/" ? "" : next), request.nextUrl.origin);
   if (needsAgeGate) {
     redirectUrl.searchParams.set("age_gate", "1");
   }

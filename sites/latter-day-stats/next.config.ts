@@ -21,10 +21,20 @@ const securityHeaders = [
   },
 ];
 
+// Served at https://samuelbaird.com/latter-day-stats (proxied from samuelbaird.com's vercel.json).
+// The old host 301s every page there; its /api and /auth paths keep working (vercel.json rewrites) so
+// webhooks, crons, the MCP endpoint and in-flight sign-ins are not broken.
+const LEGACY = [{ type: "host" as const, value: "latterdaystats.samuelbaird.com" }];
+
 const nextConfig: NextConfig = {
+  basePath: "/latter-day-stats",
   async redirects() {
-    // Compare was removed; keep old links and bookmarks working.
-    return [{ source: "/compare", destination: "/channels", permanent: true }];
+    return [
+      // Compare was removed; keep old links and bookmarks working.
+      { source: "/compare", destination: "/channels", permanent: true },
+      { source: "/", has: LEGACY, destination: "https://samuelbaird.com/latter-day-stats", permanent: true, basePath: false },
+      { source: "/:path((?!latter-day-stats(?:/|$)|api/|auth/|_next/).+)", has: LEGACY, destination: "https://samuelbaird.com/latter-day-stats/:path", permanent: true, basePath: false },
+    ];
   },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
@@ -34,6 +44,8 @@ const nextConfig: NextConfig = {
       // Default is 1MB, which rejects the 25MB study PDF uploads that
       // createStudy accepts.
       bodySizeLimit: "30mb",
+      // Pages are proxied from samuelbaird.com, so the browser Origin differs from the deployment host.
+      allowedOrigins: ["samuelbaird.com", "latterdaystats.samuelbaird.com"],
     },
   },
   images: {

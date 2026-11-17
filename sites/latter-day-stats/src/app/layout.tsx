@@ -1,26 +1,32 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/react";
-import { Inter, Fraunces, Noto_Sans_Deseret } from "next/font/google";
+import { Libre_Baskerville, IM_Fell_English, Noto_Sans_Deseret } from "next/font/google";
+import { FAMILY_CSS, FAMILY_FONTS, FAMILY_FOOT, FAMILY_JS } from "@/components/family-chrome.generated";
 import Script from "next/script";
 import { Suspense } from "react";
 import { AgeGateModal } from "@/components/age-gate-modal";
 import { AuthPromptProvider } from "@/components/auth-prompt";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, BASE_PATH } from "@/lib/site";
 import "./globals.css";
 
-const inter = Inter({
+// Family style (packages/family): body in Libre Baskerville, display in IM Fell English. The variable
+// names are historical (--font-inter / --font-fraunces) and used throughout the Tailwind theme.
+const inter = Libre_Baskerville({
   variable: "--font-inter",
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
   subsets: ["latin"],
   display: "swap",
 });
 
-const fraunces = Fraunces({
+const fraunces = IM_Fell_English({
   variable: "--font-fraunces",
+  weight: "400",
+  style: ["normal", "italic"],
   subsets: ["latin"],
   display: "swap",
-  axes: ["opsz"],
 });
 
 // Decorative only — the title reveal in <DeseretTitle>. Not preloaded: the
@@ -100,6 +106,8 @@ export default function RootLayout({
             this layout's alternates object rather than merging into it, so
             feed discovery would silently vanish on every page that sets
             its own canonical. */}
+        <link rel="stylesheet" href={FAMILY_FONTS} />
+        <link rel="stylesheet" href={FAMILY_CSS} />
         <link
           rel="alternate"
           type="application/rss+xml"
@@ -111,13 +119,15 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <AuthPromptProvider>
             <SiteNav />
-            <main className="flex-1 lg:pl-64">{children}</main>
+            <main className="flex-1">{children}</main>
             <SiteFooter />
+            <div dangerouslySetInnerHTML={{ __html: FAMILY_FOOT }} />
             <AgeGateModal />
           </AuthPromptProvider>
         </Suspense>
         <Analytics />
-        <Script src="/bg/glyph-field.js" strategy="afterInteractive" charSet="utf-8" />
+        <Script src={`${BASE_PATH}/bg/glyph-field.js`} strategy="afterInteractive" charSet="utf-8" />
+        <Script src={FAMILY_JS} strategy="afterInteractive" />
       </body>
     </html>
   );

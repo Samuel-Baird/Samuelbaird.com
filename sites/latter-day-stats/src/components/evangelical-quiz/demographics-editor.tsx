@@ -9,6 +9,7 @@ import {
   type Demographics,
 } from "@/lib/evangelical-quiz/demographics";
 import { DemographicsFields } from "./demographics-fields";
+import { BASE_PATH } from "@/lib/site";
 
 /**
  * The account's own copy of the quiz intake, for changing an answer (or
@@ -99,7 +100,7 @@ export function DemographicsEditor({ initial }: { initial: Demographics }) {
         what you said at the time; changing them here does not rewrite it. Deleting a run
         from{" "}
         <a
-          href="/how-evangelical/history"
+          href={`${BASE_PATH}/how-evangelical/history`}
           className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
         >
           your quiz history

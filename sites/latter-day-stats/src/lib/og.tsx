@@ -74,7 +74,7 @@ export function OgFrame({
       {children}
       <div style={FOOTER}>
         <BeehiveGlyph />
-        <span>latterdaystats.samuelbaird.com</span>
+        <span>samuelbaird.com/latter-day-stats</span>
       </div>
     </div>
   );

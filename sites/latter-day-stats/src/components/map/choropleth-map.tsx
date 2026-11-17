@@ -35,7 +35,7 @@ type Props = {
   rankItems?: MapItem[];
 };
 
-const SITE = "latterdaystats.samuelbaird.com";
+const SITE = "samuelbaird.com/latter-day-stats";
 const MIN_K = 1;
 const MAX_K = 40;
 const SERIF = "'Roboto Slab', Georgia, 'Times New Roman', serif";

@@ -292,6 +292,6 @@ function buildShareText(
         : `I answer most like ${match.top.tradition} (runner-up: ${match.runnerUp.tradition}).`,
     );
   }
-  lines.push("Take the quiz: https://latterdaystats.samuelbaird.com/how-evangelical");
+  lines.push("Take the quiz: https://samuelbaird.com/latter-day-stats/how-evangelical");
   return lines.join("\n");
 }

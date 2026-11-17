@@ -11,6 +11,7 @@ import {
   useState,
 } from "react";
 import { createSupabaseBrowserClient } from "@/lib/supabase/browser";
+import { BASE_PATH } from "@/lib/site";
 
 type AuthPromptContextValue = {
   requestLogin: (reason?: string) => void;
@@ -65,7 +66,7 @@ export function AuthPromptProvider({ children }: { children: React.ReactNode }) 
   async function continueWithGoogle() {
     setPending(true);
     const supabase = createSupabaseBrowserClient();
-    const redirectTo = `${window.location.origin}/auth/callback?next=${encodeURIComponent(currentPath)}`;
+    const redirectTo = `${window.location.origin}${BASE_PATH}/auth/callback?next=${encodeURIComponent(currentPath)}`;
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: { redirectTo },

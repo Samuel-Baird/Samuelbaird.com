@@ -4,6 +4,7 @@ import { Loader2 } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { Suspense, useState } from "react";
 import { createSupabaseBrowserClient } from "@/lib/supabase/browser";
+import { BASE_PATH } from "@/lib/site";
 
 export default function LoginPage() {
   return (
@@ -22,7 +23,7 @@ function LoginContent() {
   async function continueWithGoogle() {
     setPending(true);
     const supabase = createSupabaseBrowserClient();
-    const redirectTo = `${window.location.origin}/auth/callback?next=${encodeURIComponent(nextParam)}`;
+    const redirectTo = `${window.location.origin}${BASE_PATH}/auth/callback?next=${encodeURIComponent(nextParam)}`;
     const { error: oauthError } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: { redirectTo },

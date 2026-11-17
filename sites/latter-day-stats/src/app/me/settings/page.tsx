@@ -2,6 +2,7 @@ import { requireUser } from "@/lib/auth";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 import { NewsletterToggle } from "@/components/newsletter-toggle";
 import { DeleteAccountButton } from "@/components/delete-account-button";
+import { BASE_PATH } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 
@@ -61,7 +62,7 @@ export default async function SettingsPage() {
         </p>
         <div className="mt-4">
           <a
-            href="/api/me/export"
+            href={`${BASE_PATH}/api/me/export`}
             className="inline-flex h-10 items-center rounded-[var(--radius)] border border-[color:var(--border)] bg-white px-4 text-sm font-medium hover:bg-[color:var(--muted-soft)]"
           >
             Export my data

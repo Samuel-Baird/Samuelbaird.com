@@ -6,20 +6,21 @@
   /* Dark stone only (the light "aged paper" theme was removed). The page is a
      low-frequency mottle with sparse pale specks; cards sit on it as flat
      sheets. This is the same canvas samuelbaird.com uses. */
-  /* The one radius. Archive surfaces are flat panels, not pills. */
-  --radius: 3px;
+  /* Samuel Baird family style (packages/family): the Deseret Wiki's lamplight palette.
+     The token names are the old Archive ones so every utility keeps working. */
+  --radius: 2px;
   /* Dark stone: a broad low-frequency mottle plus sparse pale specks. */
-  --background: #0f1115;
-  --surface: #161a20;
-  --foreground: #e9e7e2;
-  --muted: #9a9a9a;
-  --muted-soft: #1d2027;
-  --border: #2a2e36;
-  --accent: #7fb0d8;
-  --accent-soft: #1a2733;
-  --honey: #d9a441;
+  --background: #16161a;
+  --surface: rgb(18 18 22 / 0.62);
+  --foreground: #ede3cb;
+  --muted: #b9ae96;
+  --muted-soft: #26221d;
+  --border: #4a4134;
+  --accent: #d9b46a;
+  --accent-soft: #2b2416;
+  --honey: #bf9a55;
   --honey-soft: #2b230f;
-  --oxblood: #d98787;
+  --oxblood: #c9787a;
   --oxblood-soft: #2a1a1a;
   /* Same ramp, reauthored for the dark surface: increasing intensity means
      increasing brightness against the dark background, the opposite
@@ -69,8 +70,8 @@ body {
   background-color: var(--background);
   background-image: var(--page-texture);
   color: var(--foreground);
-  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  font-feature-settings: "ss01", "cv11";
+  font-family: var(--font-inter), Georgia, serif;
+  font-feature-settings: "kern", "liga", "onum";
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -196,3 +197,11 @@ body {
 @media print {
   .glyph-bg { display: none; }
 }
+
+/* ---- Samuel Baird family style ----
+   The shared sidebar, top bar and colophon come from /latter-day-stats/_family/family.css (synced from
+   packages/family). Headings take the Deseret Wiki's IM Fell English at its single weight. */
+h1, h2, h3, .serif { font-weight: 400; }
+.serif.font-semibold, .serif.font-bold, h1.font-semibold, h2.font-semibold, h3.font-semibold { font-weight: 400; }
+.small-caps { font-family: var(--f-formal, "Cinzel", Georgia, serif); font-variant-caps: normal; text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.82em; }
+.lds-accountbar { display: flex; justify-content: flex-end; align-items: center; gap: 0.75rem; padding-top: 0.6rem; padding-bottom: 0.2rem; position: relative; z-index: 3; }

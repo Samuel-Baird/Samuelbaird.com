@@ -619,13 +619,15 @@ patch('sacred-sites/traditions/index.html', '/sacred-sites/traditions');
 
 // robots.txt: allow everything, and say so explicitly for the crawlers that feed AI search and assistants.
 const BOTS = ['Googlebot', 'Bingbot', 'GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-User', 'Claude-SearchBot', 'anthropic-ai', 'PerplexityBot', 'Perplexity-User', 'Google-Extended', 'Applebot', 'Applebot-Extended', 'DuckAssistBot', 'Amazonbot', 'MistralAI-User', 'cohere-ai', 'Meta-ExternalAgent', 'CCBot', 'YouBot'];
+// Apps served under samuelbaird.com/<project> can only be steered from here (robots.txt is per host).
+const DISALLOW = FAMILY.filter((x) => x.basePath).flatMap((x) => (x.privatePaths || []).map((q) => `Disallow: ${x.basePath}${q}\n`)).join('');
 write('robots.txt', `# ${BASE}: all crawlers welcome, including search and AI assistants. Please attribute and link back.
-${BOTS.map((b) => `User-agent: ${b}\nAllow: /\n`).join('\n')}
+${BOTS.map((b) => `User-agent: ${b}\nAllow: /\n${DISALLOW}`).join('\n')}
 User-agent: *
 Allow: /
-
+${DISALLOW}
 Sitemap: ${BASE}/sitemap.xml
-`);
+${FAMILY.filter((x) => x.basePath && x.sitemap).map((x) => `Sitemap: ${x.url}${x.sitemap}\n`).join('')}`);
 
 // sitemap.xml
 const urls = [['/', 1.0, 'weekly'], ['/projects', 0.9, 'weekly'], ...FAMILY.filter((x) => x.kind !== 'page').map((x) => ['/projects/' + x.id, 0.8, 'monthly']), ['/about', 0.8, 'monthly'], ['/faq', 0.9, 'weekly'], ['/data', 0.9, 'weekly'], ['/sacred-sites', 0.8, 'weekly'], ['/sacred-sites/sites', 0.8, 'weekly'], ['/sacred-sites/photos', 0.6, 'weekly'], ['/sacred-sites/traditions', 0.6, 'weekly'], ['/books', 0.7, 'weekly'], ['/collection', 0.6, 'monthly'], ['/donate', 0.3, 'yearly'], ['/wishlist', 0.3, 'weekly'], ['/data/sacred-sites.csv', 0.4, 'weekly'], ['/data/sacred-sites.json', 0.4, 'weekly'], ['/data/reading-list.csv', 0.4, 'weekly'], ['/data/reading-list.json', 0.4, 'weekly'], ['/llms.txt', 0.3, 'monthly']];

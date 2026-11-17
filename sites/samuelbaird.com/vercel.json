@@ -105,5 +105,39 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/latter-day-stats",
+      "destination": "https://latterdaystats.samuelbaird.com/latter-day-stats"
+    },
+    {
+      "source": "/latter-day-stats/:path*",
+      "destination": "https://latterdaystats.samuelbaird.com/latter-day-stats/:path*"
+    },
+    {
+      "source": "/urim",
+      "destination": "https://urim.samuelbaird.com/urim"
+    },
+    {
+      "source": "/urim/:path*",
+      "destination": "https://urim.samuelbaird.com/urim/:path*"
+    },
+    {
+      "source": "/peepstone",
+      "destination": "https://peepstone.vercel.app/peepstone"
+    },
+    {
+      "source": "/peepstone/:path*",
+      "destination": "https://peepstone.vercel.app/peepstone/:path*"
+    },
+    {
+      "source": "/omni",
+      "destination": "https://omni.samuelbaird.com/omni"
+    },
+    {
+      "source": "/omni/:path*",
+      "destination": "https://omni.samuelbaird.com/omni/:path*"
+    }
   ]
 }

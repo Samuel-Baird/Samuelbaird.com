@@ -4,7 +4,7 @@ import { DATASETS, categorySlug, graphicId } from "@/lib/data-explorer";
 import { getGraphicPostMap, isPublished } from "@/lib/graphic-posts";
 import { STUDY_GRAPHICS } from "@/lib/study-graphics";
 
-const BASE = "https://latterdaystats.samuelbaird.com";
+import { SITE_URL as BASE } from "@/lib/site";
 
 export const revalidate = 3600;
 
