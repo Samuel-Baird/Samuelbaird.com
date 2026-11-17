@@ -15,3 +15,6 @@ courses/*/work/*/figures/
 courses/*/work/*/figs/
 courses/*/work/*/assets/*.step
 courses/*/work/*/assets/*.xml
+
+# Team capstone documents (private, local only)
+courses/capstone/

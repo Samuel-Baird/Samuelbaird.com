@@ -1,0 +1,61 @@
+WARNING - GRPC_dns:///127.0.0.1:10000_[8adaff38] -  mechanical - log_warning - 2026-11-17 14:42:52.184897 (Thread 0x00009f38) [DESIGNSPACE, warning] ---------- : CWBStringTable::get_String: Cannot find Meshing Completed on... 1/1 Parts
+
+WARNING - GRPC_dns:///127.0.0.1:10000_[8adaff38] -  mechanical - log_warning - 2026-11-17 14:42:53.097239 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:42:53.099671 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:42:53.207884 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:42:53.211438 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+
+WARNING - GRPC_dns:///127.0.0.1:10000_[8adaff38] -  mechanical - log_warning - 2026-11-17 14:43:29.114907 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+
+WARNING - GRPC_dns:///127.0.0.1:10000_[8adaff38] -  mechanical - log_warning - 2026-11-17 14:43:32.321707 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+
+WARNING - GRPC_dns:///127.0.0.1:10000_[8adaff38] -  mechanical - log_warning - 2026-11-17 14:43:33.683802 (Thread 0x0000bbd4) [DESIGNSPACE, warning] ---------- : CWBStringTable::get_String: Cannot find Meshing Completed on... 1/1 Parts
+2026-11-17 14:43:34.565326 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:43:34.565326 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:43:34.654970 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:43:34.656744 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+
+WARNING - GRPC_dns:///127.0.0.1:10000_[8adaff38] -  mechanical - log_warning - 2026-11-17 14:44:12.420586 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+
+WARNING - GRPC_dns:///127.0.0.1:10000_[8adaff38] -  mechanical - log_warning - 2026-11-17 14:44:15.671274 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:44:17.007594 (Thread 0x0000c320) [DESIGNSPACE, warning] ---------- : CWBStringTable::get_String: Cannot find Meshing Completed on... 1/1 Parts
+
+WARNING - GRPC_dns:///127.0.0.1:10000_[8adaff38] -  mechanical - log_warning - 2026-11-17 14:44:17.899046 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:44:17.901983 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:44:17.989914 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:44:17.992488 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+
+WARNING - GRPC_dns:///127.0.0.1:10000_[8adaff38] -  mechanical - log_warning - 2026-11-17 14:44:58.504262 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+
+WARNING - GRPC_dns:///127.0.0.1:10000_[8adaff38] -  mechanical - log_warning - 2026-11-17 14:45:01.692690 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:45:03.110388 (Thread 0x0000818c) [DESIGNSPACE, warning] ---------- : CWBStringTable::get_String: Cannot find Meshing Completed on... 1/1 Parts
+
+WARNING - GRPC_dns:///127.0.0.1:10000_[8adaff38] -  mechanical - log_warning - 2026-11-17 14:45:03.915808 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:45:03.918675 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:45:03.992743 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:45:03.998808 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+
+WARNING - GRPC_dns:///127.0.0.1:10000_[8adaff38] -  mechanical - log_warning - 2026-11-17 14:45:42.530499 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+
+WARNING - GRPC_dns:///127.0.0.1:10000_[8adaff38] -  mechanical - log_warning - 2026-11-17 14:45:44.744004 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+
+WARNING - GRPC_dns:///127.0.0.1:10000_[8adaff38] -  mechanical - log_warning - 2026-11-17 14:45:46.315854 (Thread 0x00002a9c) [DESIGNSPACE, warning] ---------- : CWBStringTable::get_String: Cannot find Meshing Completed on... 1/1 Parts
+2026-11-17 14:45:47.048940 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:45:47.050950 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:45:47.137221 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:45:47.140738 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+
+WARNING - GRPC_dns:///127.0.0.1:10000_[8adaff38] -  mechanical - log_warning - 2026-11-17 14:46:24.627165 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+
+WARNING - GRPC_dns:///127.0.0.1:10000_[8adaff38] -  mechanical - log_warning - 2026-11-17 14:46:27.950927 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+
+WARNING - GRPC_dns:///127.0.0.1:10000_[8adaff38] -  mechanical - log_warning - 2026-11-17 14:46:30.685636 (Thread 0x00006224) [DESIGNSPACE, warning] ---------- : CWBStringTable::get_String: Cannot find Meshing Completed on... 1/1 Parts
+2026-11-17 14:46:31.363692 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:46:31.363692 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:46:31.440008 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:46:31.442378 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+
+WARNING - GRPC_dns:///127.0.0.1:10000_[8adaff38] -  mechanical - log_warning - 2026-11-17 14:47:14.218203 (Thread 0x00005d84) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+
+[phase 2] setup 3d: [57, 67]
+{"conv": [[8.0, 1019, 1.9950539219378415e-07, 0.0017851304751364105, "UnderDefined", null], [5.0, 2427, 1.9983438986415709e-07, 0.0019572166922530378, "UnderDefined", null], [3.5, 6140, 2.0040409647658246e-07, 0.0019055870571613341, "UnderDefined", null], [2.5, 14797, 2.0080932207073716e-07, 0.001969588760625847, "UnderDefined", null], [1.75, 40653, 2.0114933524522654e-07, 0.0019781507014589939, "UnderDefined", null], [1.4, 78009, 2.013089606434205e-07, 0.0019878560723797936, "UnderDefined", null]], "states": {"eqv_bore": "Solved", "sr": "Solved", "solution": "UnderDefined", "td": "Solved", "uz": "Solved", "eqv": "Solved", "ur": "Solved", "sh": "Solved"}, "problems": []}

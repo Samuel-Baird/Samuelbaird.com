@@ -162,10 +162,13 @@ ITEMS = [
               "EαΔT/(1−ν) = 190 MPa); the 548 MPa peak is a singular fixed-face edge. Verdict: does not fail."),
     dict(id="hw9", title="HW 9: 3D modeling", cid=9163934, group="Assignments", pts=10,
          due="2026-12-03T06:59:59Z", plan="2026-11-24", hrs=4, kind="Axisymmetric vs 3D + 3D bracket",
-         status="todo", pdf="HW9_3D_Modeling.docx",
+         status="pdf_ready", pdf="HW9_3D_Modeling.docx",
          deliver=["Q1 rotating part at 100 rpm: axisymmetric model", "Q1 3D model", "Q1 compare total deformation and equivalent stress",
                   "Q2 lifting bracket: half model", "Q2 full model",
-                  "Q2 for both: FEM with BCs, total deformation, Y deformation, equivalent stress, shear stress"]),
+                  "Q2 for both: FEM with BCs, total deformation, Y deformation, equivalent stress, shear stress"],
+         note="Word file ready. Q1 at 100 rpm: axisymmetric and 3D wedge agree to 0.18% (max deformation 2.02e-7 mm, bore "
+              "von Mises 2.0 kPa); corner peaks are singular. Q2: half model (symmetry, 10 kN) matches the full model "
+              "(deformation 0.0130 mm, von Mises 79 MPa at the eye hole, max tau-xy 36 MPa, n = 3.2)."),
     dict(id="post", title="Post-term project assessment (individual)", cid=9351753, group="Assignments", pts=10,
          due="2026-12-05T06:59:59Z", plan="2026-12-03", hrs=2, kind="Statics / MoM / FEA questions",
          status="todo", pdf="Post_Term_Assessment_FormB.docx",
