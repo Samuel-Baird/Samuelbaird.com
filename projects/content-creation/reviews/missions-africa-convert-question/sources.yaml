@@ -1,0 +1,94 @@
+sources:
+- id: verified-pmg-purpose
+  type: official
+  title: Preach My Gospel, Chapter 1
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '2023'
+  locator: https://www.churchofjesuschrist.org/study/manual/preach-my-gospel-2023/03-chapter-1?lang=eng
+  accessed: '2026-10-01'
+  inspected: true
+  inspected_via: web.run open, direct page text
+  quote: null
+  verification:
+    tool: web.run open
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/manual/preach-my-gospel-2023/03-chapter-1?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: Tier 3 missionary manual. Purpose and responsibility to establish and build
+    up the Church.
+  found_by: script research
+  claims:
+  - 1
+  - 2
+- id: verified-pmg-lesson1
+  type: official
+  title: Preach My Gospel, Lesson 1
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '2023'
+  locator: https://www.churchofjesuschrist.org/study/manual/preach-my-gospel-2023/04-chapter-3/08-chapter-3-lesson-1?lang=eng
+  accessed: '2026-10-01'
+  inspected: true
+  inspected_via: web.run open, direct page text
+  quote: null
+  verification:
+    tool: web.run open
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/manual/preach-my-gospel-2023/04-chapter-3/08-chapter-3-lesson-1?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: Tier 3 missionary manual. Lesson covers Jesus Christ, Joseph Smith and the
+    Book of Mormon.
+  found_by: script research
+  claims:
+  - 1
+- id: verified-african-missionaries
+  type: official
+  title: African Members Strengthen International Church
+  author: Church Newsroom
+  date: '2007-02-26'
+  locator: https://newsroom.churchofjesuschrist.org/article/african-members-strengthen-international-church
+  accessed: '2026-10-01'
+  inspected: true
+  inspected_via: web.run open, direct page text
+  quote: null
+  verification:
+    tool: web.run open
+    verdict: direct-read
+    link: https://newsroom.churchofjesuschrist.org/article/african-members-strengthen-international-church
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: Documented example of three Ghanaian missionaries serving in Ghana and Nigeria.
+    Does not establish a current continent-wide majority.
+  found_by: script research
+  claims:
+  - 1
+- id: verified-nelson-gathering
+  type: primary
+  title: The Gathering of Scattered Israel
+  author: Russell M. Nelson
+  date: 2006-10
+  locator: https://www.churchofjesuschrist.org/study/ensign/2006/11/the-gathering-of-scattered-israel?lang=eng
+  accessed: '2026-10-01'
+  inspected: true
+  inspected_via: web.run open, direct page text
+  quote: But now the gathering takes place in each nation.
+  verification:
+    tool: web.run open
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/ensign/2006/11/the-gathering-of-scattered-israel?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: Tier 4 dated leader statement. Preceding sentence acknowledges historical
+    emigration. Does not prove absence of enclaves or measure relocation.
+  found_by: script research
+  claims:
+  - 2

@@ -1,0 +1,144 @@
+version: 1
+slug: jesus-died-for-you-child-abuse
+title: Does teaching children the Atonement require shame?
+hook: Children are innocent in Christ. What should that change about how we teach?
+summary: A response to Ashley Buckner on children, the Atonement, and shame. LDS scripture affirms little
+  children’s innocence; dated curriculum and accountability at eight still require careful teaching. Independent
+  project. Not affiliated with or endorsed by The Church of Jesus Christ of Latter-day Saints.
+format:
+  width: 1080
+  height: 1920
+  fps: 30
+  min_seconds: 60
+  max_seconds: 180
+voice:
+  engine: chatterbox
+  ref: assets/saint-capybara/voices/host_andrew_kennedy.wav
+  speed: 1.25
+  exaggeration: 0.5
+  cfg_weight: 0.5
+sensitive: true
+music: null
+tags:
+- atonement
+- children
+- ldstheology
+beats:
+- id: c01
+  kind: clip
+  start: 0
+  end: 8.95
+  speed: 1.0
+  speaker: Ashley Buckner
+  pose: concerned
+- id: n01
+  kind: narration
+  text: If teaching leaves a child feeling bad as a person or responsible for Jesus’s suffering, that
+    needs correction. Ashley’s clip addresses Christianity generally. I’ll answer from a Latter-day Saint
+    perspective. Children need explanations they can understand; scripture alone cannot settle their developmental
+    capacity.
+  pose: solemn
+  stage: blank
+  opinion: true
+  sources:
+  - verified-critic
+- id: c02
+  kind: clip
+  start: 36.2
+  end: 48.6
+  speed: 1.0
+  speaker: Ashley Buckner
+  pose: thoughtful
+- id: n02
+  kind: narration
+  text: She says children may hear that they caused someone’s suffering. I accept that possibility. Good
+    intentions don’t settle what a child actually hears. But that interpretation is not the only way to
+    teach the Atonement. Here is a different doctrinal starting point.
+  pose: concerned
+  stage: blank
+  opinion: true
+  sources:
+  - verified-critic
+- id: q01
+  kind: card
+  text: Moroni eight says, “little children are whole.” The chapter says they need neither repentance
+    nor baptism and are alive in Christ. The Atonement is the basis for their protected status.
+  pose: source
+  card:
+    quote: little children are whole
+    attribution: Moroni 8:8
+    source: verified-moroni8
+  sources:
+  - verified-moroni8
+- id: n03
+  kind: narration
+  text: That is theology, not a safety study. Moses six says “conceived in sin,” but the previous verse
+    rejects holding parents’ sins against their children. Mosiah three treats children’s ability to sin
+    hypothetically and calls them blessed through Christ. My reading is that these passages affirm Christ’s
+    protection rather than personal blame.
+  pose: teaching
+  stage: blank
+  opinion: false
+  sources:
+  - verified-moroni8
+  - verified-moses6
+  - verified-mosiah3
+- id: n04
+  kind: narration
+  text: And this concern does reach our curriculum. The 2023 Primary manual tells younger children that
+    because Jesus suffered and died for them, they can repent and be forgiven. It also says children under
+    eight are not accountable. Teachers need to explain that distinction clearly.
+  pose: pointing
+  stage: blank
+  opinion: false
+  sources:
+  - verified-primary2023
+- id: n05
+  kind: narration
+  text: Doctrine and Covenants sixty-eight requires teaching faith and repentance and specifies baptism
+    for the remission of sins at eight. That religious threshold does not demonstrate developmental readiness.
+    Moroni’s protection of little children does not answer every concern about an eight-year-old. We still
+    need to listen.
+  pose: thoughtful
+  stage: blank
+  opinion: false
+  sources:
+  - verified-dc68
+  - verified-moroni8
+- id: c03
+  kind: clip
+  start: 48.75
+  end: 58.38
+  speed: 1.0
+  speaker: Ashley Buckner
+  pose: solemn
+- id: n06
+  kind: narration
+  text: Repentance should mean recognizing a wrong choice, apologizing, and making repairs while knowing
+    you are loved. I reject using Jesus’s suffering to pressure a child into obedience, or making worthiness
+    sound like whether they deserve love. These are teaching recommendations, not descriptions of every
+    message children receive.
+  pose: concerned
+  stage: blank
+  opinion: true
+- id: n07
+  kind: narration
+  text: Elsewhere in the reel she asks about love becoming an unrepayable debt. I would not teach Christ’s
+    sacrifice as a debt a child must repay through perfect obedience. Her alternative of compassion, accountability,
+    and repair belongs in our teaching.
+  pose: teaching
+  stage: blank
+  opinion: true
+  sources:
+  - verified-critic
+- id: n99
+  kind: narration
+  text: Within LDS teaching, little children are already alive in Christ. That gives believers a doctrinal
+    reason to teach compassion and repair without calling a child inherently bad. This is a case for improving
+    how we teach our faith; it does not establish psychological superiority over secular teaching. God
+    bless.
+  pose: encouraging
+  stage: blank
+  opinion: true
+  sources:
+  - verified-moroni8
