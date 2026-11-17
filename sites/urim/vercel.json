@@ -1,1 +1,34 @@
-{ "cleanUrls": true, "trailingSlash": false, "outputDirectory": "site", "functions": { "api/mcp.js": { "includeFiles": "{data/api.json,deseret/**}" } } }
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "outputDirectory": "site",
+  "functions": {
+    "api/mcp.js": {
+      "includeFiles": "{data/api.json,deseret/**}"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/urim",
+      "destination": "/"
+    },
+    {
+      "source": "/urim/:path*",
+      "destination": "/:path*"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/:path((?!urim(?:/|$)|api/).*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "urim.samuelbaird.com"
+        }
+      ],
+      "destination": "https://samuelbaird.com/urim/:path",
+      "permanent": true
+    }
+  ],
+  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- . ../../packages/family"
+}

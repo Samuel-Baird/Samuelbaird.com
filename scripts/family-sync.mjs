@@ -10,7 +10,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { SITES, renderHead, renderTop, renderFoot, renderAll, familyData } from '../packages/family/render.mjs';
+import { SITES, renderHead, renderTop, renderFoot, renderAll, familyData, siteBase } from '../packages/family/render.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PKG = path.join(ROOT, 'packages/family/assets');
@@ -27,6 +27,14 @@ function put(file, data) {
   fs.mkdirSync(path.dirname(abs), { recursive: true });
   fs.writeFileSync(abs, next);
   console.log('  wrote', file);
+}
+// Sites served under a base path (samuelbaird.com/<project>) keep root-relative links in their source;
+// prefix them here, outside the family regions (which are rendered with the right paths already).
+const ATTR = /(\s(?:href|src|action|poster)=")(\/(?!\/)[^"]*)"/g;
+function prefix(html, bp) {
+  if (!bp) return html;
+  return html.split(/(<!--family:(?:head|top|foot)-->[\s\S]*?<!--\/family:(?:head|top|foot)-->)/).map((part, i) => (i % 2 ? part
+    : part.replace(ATTR, (m, a, u) => (u === bp || u.startsWith(bp + '/') ? m : `${a}${u === '/' ? bp : bp + u}"`)))).join('');
 }
 const region = (html, tag, content) => html.replace(new RegExp(`<!--family:${tag}-->[\\s\\S]*?<!--/family:${tag}-->`), () => `<!--family:${tag}-->${content}<!--/family:${tag}-->`);
 
@@ -51,12 +59,12 @@ for (const [id, site] of Object.entries(SITES)) {
 
   if (t.type === 'static') {
     const dir = path.join(ROOT, t.dir);
-    const head = renderHead(), foot = renderFoot(id);
+    const head = renderHead(id), foot = renderFoot(id), { bp } = siteBase(id);
     let n = 0;
     for (const f of htmlFiles(dir, t.skip)) {
       const html = fs.readFileSync(f, 'utf8');
       if (!html.includes('<!--family:top-->')) continue;
-      const out = region(region(region(html, 'head', head), 'top', renderTop(id, urlPath(dir, f))), 'foot', foot);
+      const out = prefix(region(region(region(html, 'head', head), 'top', renderTop(id, urlPath(dir, f))), 'foot', foot), bp);
       n++;
       if (out !== html) put(path.relative(ROOT, f), out);
     }

@@ -78,29 +78,8 @@ code{font-size:.9em;background:var(--muted-soft);padding:1px 5px;border-radius:v
 footer{border-top:1px solid var(--border);padding:24px 0;color:var(--muted);font-size:.88rem}
 .lang h3{margin-top:26px}
 
-/* ---- app shell: left sidebar (desktop) / hamburger bar (mobile), like latterdaystats */
+/* ---- page frame: the shared Samuel Baird family chrome (sidebar, top bar, colophon) is in /_family/family.css */
 .ic{width:18px;height:18px;flex:none}
-.shell{display:block}
-.mobilebar{position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;padding:0 20px;border-bottom:1px solid var(--border);background:rgba(15,17,21,.9);backdrop-filter:blur(6px)}
-.menubtn{display:inline-grid;place-items:center;width:40px;height:40px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);color:var(--foreground);cursor:pointer}
-.sidebar{display:none;flex-direction:column;gap:12px;padding:16px 12px;background:rgba(15,17,21,.96);border-bottom:1px solid var(--border)}
-.sidebar.open{display:flex}
-.sidebar .wordmark{display:none}
-.side-search{display:flex;align-items:center;gap:8px;padding:0 12px;min-height:40px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);color:var(--muted)}
-.side-search:focus-within{border-color:var(--accent)}
-.side-search input{flex:1;min-width:0;border:0;background:none;color:var(--foreground);font:500 .9rem var(--font-sans);outline:none}
-.side-nav{display:grid;gap:2px}
-.side-nav a{display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;border-radius:var(--radius);color:var(--muted);text-decoration:none;font:500 .9rem var(--font-sans);border:1px solid transparent}
-.side-nav a:hover{background:var(--muted-soft);color:var(--foreground)}
-.side-nav a[aria-current=page]{background:var(--muted-soft);color:var(--foreground);border-color:var(--border)}
-.side-nav.lower{padding-top:12px;border-top:1px solid var(--border)}
-.side-nav.last{padding-top:12px;border-top:1px solid var(--border)}
-.content{min-width:0}
-footer .rail{max-width:var(--rail)}
-@media (min-width:900px){
-  .mobilebar{display:none}
-  .shell{display:grid;grid-template-columns:13rem minmax(0,1fr);min-height:100vh}
-  .sidebar{display:flex;position:sticky;top:0;height:100vh;overflow-y:auto;border-bottom:0;border-right:1px solid var(--border);padding:18px 12px}
-  .sidebar .wordmark{display:inline-flex;padding:0 4px 6px}
-  .side-nav.lower{margin-top:auto}
-}
+.rail{max-width:var(--wide)}
+.disclaimer{margin-top:3rem;color:var(--ink-soft);font-size:.82rem}
+h1{font-family:var(--f-display);font-weight:400}

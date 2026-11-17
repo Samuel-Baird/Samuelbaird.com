@@ -1,12 +1,13 @@
 // Client-side search over /data/index.json: English term or any Church rendering (reverse lookup).
 (function () {
+  var BASE = '/urim'; // served at samuelbaird.com/urim
   var q = document.getElementById('q'), out = document.getElementById('results');
   if (!q || !out) return;
   var data = [];
   try { var pre = new URLSearchParams(location.search).get('q'); if (pre) q.value = pre; } catch (e) {}
   function fold(s) { return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim(); }
   function esc(s) { return s.replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
-  fetch('/data/index.json').then(function (r) { return r.json(); }).then(function (d) {
+  fetch(BASE + '/data/index.json').then(function (r) { return r.json(); }).then(function (d) {
     data = d.map(function (c) {
       c._k = [fold(c.en)].concat(c.pt.map(fold), c.es.map(fold));
       return c;
@@ -33,7 +34,7 @@
     if (!hits.length) { out.innerHTML = '<li class="muted">No match. Try another spelling or the English term.</li>'; return; }
     out.innerHTML = hits.map(function (x) {
       var c = x[1];
-      return '<li><a href="/c/' + c.s + '"><span><b>' + esc(c.en) + '</b><small>' + esc(c.cat) + '</small></span>' +
+      return '<li><a href="' + BASE + '/c/' + c.s + '"><span><b>' + esc(c.en) + '</b><small>' + esc(c.cat) + '</small></span>' +
         '<span><small lang="pt">Português</small><span lang="pt">' + (esc(c.pt.join(', ')) || '&mdash;') + '</span></span>' +
         '<span><small lang="es">Español</small><span lang="es">' + (esc(c.es.join(', ')) || '&mdash;') + '</span></span></a></li>';
     }).join('');

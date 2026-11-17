@@ -195,12 +195,9 @@ def _link(href, label, ic, current, ext=False):
 
 
 def page(title, body, desc, path="", current=""):
-    top = [("/", "Atlas", "home"), ("/variants", "Variants", "variants"), ("/proclamations", "Proclamations", "scroll")]
-    low = [("/connect", "Use with AI", "ai"), ("/about", "Method &amp; data", "about"),
-           ("mailto:ithinksamofficial@gmail.com?subject=Urim", "Contact", "mail"), ("/donate", "Donate", "heart")]
-    top_html = "".join(_link(h, n, i, current) for h, n, i in top)
-    low_html = ("".join(_link(h, n, i, current) for h, n, i in low))
-    gh = _link("https://github.com/Samuel-Baird/urim", "Source", "code", current, ext=True)
+    # The sidebar, top bar and footer are the shared Samuel Baird family chrome. They are stamped into the
+    # <!--family:*--> markers, and every root-relative link gets the /urim base path, by
+    # `node scripts/family-sync.mjs` at the monorepo root. Run it after every build.
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -211,40 +208,24 @@ def page(title, body, desc, path="", current=""):
 <meta property="og:title" content="{E(title)}">
 <meta property="og:description" content="{E(desc)}">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#0f1115">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=Noto+Sans+Deseret&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='6' fill='%230f1115'/%3E%3Crect x='4' y='4' width='92' height='92' rx='4' fill='none' stroke='%23d9a441' stroke-width='3'/%3E%3Ctext x='50' y='66' font-size='50' text-anchor='middle' fill='%23d9a441' font-family='Georgia,serif' font-weight='600'%3EU%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#16161A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='4' fill='%2316161A'/%3E%3Crect x='5' y='5' width='90' height='90' rx='2' fill='none' stroke='%23BF9A55' stroke-width='3'/%3E%3Ctext x='50' y='68' font-size='54' text-anchor='middle' fill='%23E8DCC0' font-family='Georgia,serif'%3EU%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="/tokens.css">
 <link rel="stylesheet" href="/site.css">
 <link rel="stylesheet" href="/pages.css">
 <link rel="stylesheet" href="/bg/bg.css">
+<!--family:head--><!--/family:head-->
 <script src="/bg/glyphwind.js" charset="utf-8" defer></script><script src="/bg/bg.js" defer></script>
 <script src="/deseret.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="mobilebar">
-  <a class="wordmark" href="/" aria-label="Urim, home"><span class="mono" aria-hidden="true">U</span>Urim</a>
-  <button type="button" class="menubtn" id="menubtn" aria-expanded="false" aria-controls="sidebar" aria-label="Menu">{icon("menu")}</button>
-</header>
-<div class="shell">
-<aside class="sidebar" id="sidebar">
-  <a class="wordmark" href="/" aria-label="Urim, home"><span class="mono" aria-hidden="true">U</span>Urim</a>
-  <form class="side-search" action="/" method="get" role="search">{icon("search")}<input type="search" name="q" placeholder="Search&hellip;" aria-label="Search terms" autocomplete="off"></form>
-  <nav class="side-nav" aria-label="Main">{top_html}</nav>
-  <nav class="side-nav lower" aria-label="More">{low_html}</nav>
-  <nav class="side-nav last" aria-label="Source">{gh}</nav>
-</aside>
-<div class="content">
+<!--family:top--><!--/family:top-->
 <main id="main" class="rail">
 {body}
 </main>
-<footer><div class="rail">Urim is an independent project by <a href="https://samuelbaird.com">Samuel Baird</a> and is not affiliated with The Church of Jesus Christ of Latter-day Saints. Evidence is drawn only from Church-published translations.</div></footer>
-</div>
-</div>
-<script src="/nav.js" defer></script>
+<p class="rail disclaimer">Urim is independent and not affiliated with The Church of Jesus Christ of Latter-day Saints. Evidence is drawn only from Church-published translations.</p>
+<!--family:foot--><!--/family:foot-->
 </body>
 </html>
 """

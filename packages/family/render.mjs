@@ -36,11 +36,12 @@ const icon = (id) => {
 export const FONTS_HREF = 'https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=IM+Fell+English:ital@0;1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Grenze+Gotisch:wght@500;600&display=swap';
 
 /** <head> additions: fonts and the family stylesheet. */
-export function renderHead() {
+export function renderHead(siteId = 'samuelbaird.com') {
+  const bp = SITES[siteId] ? siteBase(siteId).bp : '';
   return `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="${FONTS_HREF}">
-<link rel="preload" href="/_family/NotoSansDeseret.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="stylesheet" href="/_family/family.css">`;
+<link rel="preload" href="${bp}/_family/NotoSansDeseret.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="${bp}/_family/family.css">`;
 }
 
 function current(item, pagePath) {
@@ -136,12 +137,12 @@ export function renderFoot(siteId) {
     </div>
   </div>
 </footer>
-<script src="/_family/family.js" defer></script>`;
+<script src="${bp}/_family/family.js" defer></script>`;
 }
 
 /** Everything a framework site needs, for the generated component. */
 export function renderAll(siteId) {
-  return { head: renderHead(), top: renderTop(siteId), foot: renderFoot(siteId).replace(/<script[^>]*><\/script>$/, '') };
+  return { head: renderHead(siteId), top: renderTop(siteId), foot: renderFoot(siteId).replace(/<script[^>]*><\/script>$/, '') };
 }
 
 /** Plain data for the Deseret Wiki's own Astro sidebar. */
