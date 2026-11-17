@@ -1,15 +1,21 @@
 ---
 import Base from '../layouts/Base.astro';
+import Title from '../components/Title.astro';
 import fonts from '../data/fonts.json';
 const sample = Array.from({ length: 80 }, (_, i) => String.fromCodePoint(0x10400 + i)).join('');
 const faces = fonts.map((f) => `@font-face{font-family:"dw-${f.id}";src:url("${f.file}");font-display:swap}`).join('');
 const kb = (b) => (b >= 1048576 ? (b / 1048576).toFixed(1) + ' MB' : Math.round(b / 1024) + ' KB');
 ---
 <Base title="Fonts — Deseret Wiki">
-  <h1>Fonts</h1>
-  <p>Download and install a font to see the Deseret alphabet in Word, Excel or anywhere else. {fonts.length} fonts. Samples show all 80 letters (U+10400–1044F); a font may lack some.</p>
+  <div class="wrap">
+  <header class="page-head">
+    <p class="kicker">Typefaces</p>
+    <Title text="Fonts" />
+    <p class="lede-text">Download and install a font to see the Deseret alphabet in Word, Excel or anywhere else. {fonts.length} fonts.</p>
+    <p class="small">Samples show all 80 letters (U+10400–1044F); a font may lack some.</p>
+  </header>
   <style set:html={faces}></style>
-  <table class="fonts">
+  <table class="fonts" data-no-dsrt>
     <thead><tr><th>Font</th><th>Sample</th><th></th></tr></thead>
     <tbody>
       {fonts.map((f) => (
@@ -35,6 +41,7 @@ const kb = (b) => (b >= 1048576 ? (b / 1048576).toFixed(1) + ' MB' : Math.round(
       ))}
     </tbody>
   </table>
+  </div>
   <script>
     document.querySelectorAll('button.info').forEach((b) => b.addEventListener('click', () => {
       const row = document.getElementById('info-' + b.dataset.info);
@@ -43,12 +50,23 @@ const kb = (b) => (b >= 1048576 ? (b / 1048576).toFixed(1) + ' MB' : Math.round(
     }));
   </script>
   <style>
-    .fonts { display: table; width: 100%; font-size: 1rem; }
-    .fonts th { text-align: left; background: #d8c79e; }
-    .fonts td.sample { font-size: 1.4rem; line-height: 1.3; word-break: break-all; }
-    .fonts td.btns { white-space: nowrap; text-align: right; }
-    .fonts .info, .fonts .dl { display: inline-block; width: 2rem; height: 2rem; line-height: 2rem; text-align: center; border: 1px solid #7a2e1d; background: #efe3c6; color: #7a2e1d; cursor: pointer; font: inherit; text-decoration: none; padding: 0; }
-    .fonts .dl { background: #7a2e1d; color: #efe3c6; }
-    .fonts .detail td { font-size: .9rem; background: #e6d7b0; }
+    .fonts { width: 100%; border-collapse: collapse; font-size: 1rem; border-top: 3px double var(--rule); }
+    .fonts th { text-align: left; font: 600 .62rem/1.3 var(--f-formal); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); border-bottom: 1px solid var(--rule); padding: .7rem .6rem; }
+    .fonts td { border-bottom: 1px solid var(--rule); padding: .8rem .6rem; vertical-align: middle; }
+    .fonts td:first-child { font: 1.08rem/1.3 var(--f-display); color: var(--heading); width: 13rem; }
+    .fonts td.sample { font-size: 1.4rem; line-height: 1.35; word-break: break-all; color: var(--ink); }
+    .fonts td.btns { white-space: nowrap; text-align: right; width: 5.5rem; }
+    .fonts .info, .fonts .dl { display: inline-grid; place-items: center; width: 2rem; height: 2rem; border: 1px solid var(--heading); border-radius: 1px; background: transparent; color: var(--heading); cursor: pointer; font: italic 1rem/1 var(--f-display); text-decoration: none; padding: 0; margin-left: .25rem; }
+    .fonts .dl { background: var(--heading); color: var(--paper); font-style: normal; }
+    .fonts .info:hover { background: var(--paper-2); }
+    .fonts .detail td { font-size: .9rem; background: var(--paper-2); }
+    @media (max-width: 640px) {
+      .fonts thead { display: none; }
+      .fonts tr:not(.detail) { display: grid; grid-template-columns: 1fr auto; }
+      .fonts tr:not(.detail) td { border: 0; }
+      .fonts tr:not(.detail) { border-bottom: 1px solid var(--rule); }
+      .fonts td:first-child { width: auto; }
+      .fonts td.sample { grid-column: 1 / -1; grid-row: 2; padding-top: 0; }
+    }
   </style>
 </Base>

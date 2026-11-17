@@ -1,5 +1,31 @@
 ---
-const { title = 'Deseret Wiki' } = Astro.props;
+import '../styles/global.css';
+import Sprite from '../components/Sprite.astro';
+import Seal from '../components/Seal.astro';
+import Mountains from '../components/Mountains.astro';
+import DeseretMap from '../components/DeseretMap.astro';
+import Ornament from '../components/Ornament.astro';
+import { roman, MONTHS } from '../lib/roman.js';
+import { toDeseret, revealParts } from '../lib/dsrt.js';
+
+interface Props { title?: string; description?: string; masthead?: boolean; frontmatter?: any }
+const fm = Astro.props.frontmatter ?? {};
+const title = Astro.props.title ?? fm.title ?? 'Deseret Wiki';
+const description = Astro.props.description ?? fm.description ?? 'A library, encyclopedia and primer for the Deseret Alphabet, the 1854 phonetic script of the University of Deseret.';
+const masthead = Astro.props.masthead ?? false;
+
+const path = Astro.url.pathname;
+const nav = [
+  { href: '/wiki/deseret-alphabet/', label: 'The Alphabet' },
+  { href: '/fonts/', label: 'Fonts' },
+  { href: '/resources/', label: 'Resources' },
+  { href: '/videos/', label: 'Videos' },
+  { href: '/buy/', label: 'Books & Prints' },
+  { href: '/about/', label: 'About' },
+];
+const now = new Date();
+const dateline = `${roman(now.getDate())} ${MONTHS[now.getMonth()]} ${roman(now.getFullYear())}`;
+const mastTitle = 'The Deseret Wiki';
 ---
 <!doctype html>
 <html lang="en">
@@ -7,24 +33,232 @@ const { title = 'Deseret Wiki' } = Astro.props;
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{title}</title>
-  <style is:global>
-    @font-face { font-family: 'Noto Sans Deseret'; src: url('/fonts/NotoSansDeseret.ttf'); unicode-range: U+10400-1044F; }
-    body { margin:0; background:#efe3c6; color:#2a2118; font:18px/1.6 Georgia, 'Times New Roman', serif; }
-    header, main, footer { max-width: 52rem; margin: 0 auto; padding: 1rem; }
-    header { border-bottom: 3px double #7a2e1d; display:flex; gap:1.5rem; align-items:baseline; flex-wrap:wrap; }
-    header a.brand { font-size:1.6rem; font-weight:bold; color:#7a2e1d; text-decoration:none; }
-    a { color:#7a2e1d; } nav a { margin-right:1rem; }
-    .deseret { font-family:'Noto Sans Deseret', serif; }
-    table { border-collapse:collapse; max-width:100%; display:block; overflow-x:auto; } td, th { border:1px solid #d8c79e; padding:.2rem .5rem; }
-    footer { border-top:3px double #7a2e1d; font-size:.85rem; margin-top:2rem; }
-  </style>
+  <meta name="description" content={description} />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#F3E9D2" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#1E1B17" media="(prefers-color-scheme: dark)" />
+  <link rel="preload" href="/fonts/NotoSansDeseret.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=IM+Fell+English:ital@0;1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=UnifrakturMaguntia&display=swap" />
+  <script is:inline>
+    (function () {
+      var d = document.documentElement, t = null, s = null;
+      try { t = localStorage.getItem('theme'); s = localStorage.getItem('script'); } catch (e) {}
+      if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      d.dataset.theme = t;
+      if (s === 'dsrt') d.dataset.scriptPending = 'dsrt';
+    })();
+  </script>
 </head>
 <body>
-  <header>
-    <a class="brand" href="/">Deseret Wiki <span class="deseret">𐐔𐐯𐑅𐐮𐑉𐐯𐐻</span></a>
-    <nav><a href="/wiki/deseret-alphabet/">Wiki</a><a href="/fonts/">Fonts</a><a href="/resources/">Resources</a><a href="/videos/">Videos</a><a href="/buy/">Buy</a><a href="/about/">About</a></nav>
+  <Sprite />
+  <a class="skip" href="#main">Skip to the text</a>
+
+  <header class="site-head">
+    <div class="topbar wrap">
+      <a class="brand" href="/" aria-label="Deseret Wiki, home">
+        <Seal size="2.5rem" ring={false} />
+        <span class="brand-name">Deseret Wiki</span>
+      </a>
+      <div class="tools">
+        <div class="search" role="search">
+          <label class="visually-hidden" for="q">Search the wiki</label>
+          <svg class="search-glass" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-glass" /></svg>
+          <input id="q" type="search" placeholder="Search the wiki" autocomplete="off" spellcheck="false" />
+          <div class="search-results" id="search-results" hidden></div>
+        </div>
+        <button class="iconbtn script-toggle" type="button" aria-pressed="false" data-tip="Read in the Deseret alphabet" aria-label="Show text in the Deseret alphabet">
+          <span class="st-dsrt dsrt" aria-hidden="true">𐐔</span><span class="st-latn" aria-hidden="true">A</span>
+        </button>
+        <button class="iconbtn lamp" type="button" aria-pressed="false" data-tip="Light the lamp" aria-label="Dark mode">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7.5 22h9M9 22c0-2.2 1.3-3.3 3-3.3s3 1.1 3 3.3" stroke-width="1.2" />
+              <ellipse cx="12" cy="15.6" rx="5" ry="3" stroke-width="1.2" />
+              <path d="M10 12.8h4" stroke-width="1.4" />
+              <path d="M10.3 12.6C9 10.6 9.2 8.6 10.6 6.8V3.5h2.8v3.3C14.8 8.6 15 10.6 13.7 12.6" stroke-width="1" />
+              <path d="M17 15c2.4 0 2.4 3.4 0 3.4" stroke-width="1" />
+            </g>
+            <circle class="glow" cx="12" cy="9.6" r="4.5" />
+            <path class="flame" d="M12 11.4c-1.1-.9-1-2.3 0-3.7c1 1.4 1.1 2.8 0 3.7Z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    {masthead ? (
+      <div class="masthead wrap">
+        <div class="rule-heavy"></div>
+        <div class="ears smallcaps">
+          <span>Vol. <span class="rn">I</span> · No. <span class="rn">I</span></span>
+          <span class="ears-mid">Established {roman(2026)}</span>
+          <span>Free to all</span>
+        </div>
+        <h1 class="masthead-title" data-dsrt={JSON.stringify(revealParts(mastTitle))}>{mastTitle}</h1>
+        <p class="masthead-dsrt dsrt" lang="en-Dsrt" data-no-dsrt>{toDeseret('Deseret Wiki')}</p>
+        <p class="motto">A Library, Encyclopædia &amp; Primer of the Deseret Alphabet</p>
+        <Mountains />
+        <div class="rule-double"></div>
+        <div class="dateline smallcaps">
+          <span>Great Salt Lake Valley</span>
+          <span>{dateline}</span>
+          <span class="dateline-motto">Holiness to the Lord</span>
+        </div>
+        <div class="rule-double"></div>
+      </div>
+    ) : <div class="wrap"><div class="rule-double"></div></div>}
+
+    <nav class="contents wrap" aria-label="Contents">
+      <button class="contents-toggle smallcaps" type="button" aria-expanded="false" aria-controls="contents-list">Contents</button>
+      <ol id="contents-list">
+        {nav.map((n, i) => (
+          <li>
+            <a href={n.href} aria-current={path.startsWith(n.href) ? 'page' : undefined}>
+              <span class="num">{roman(i + 1)}.</span>
+              <span class="label">{n.label}</span>
+              <span class="leader" aria-hidden="true"></span>
+              <span class="dsrt-label dsrt" aria-hidden="true" data-no-dsrt>{toDeseret(n.label)}</span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
   </header>
-  <main><slot /></main>
-  <footer>deseret.wiki · work in progress · <a href="https://github.com/Samuel-Baird/deseret">source</a></footer>
+
+  <main id="main">
+    <slot />
+  </main>
+
+  <footer class="site-foot">
+    <div class="foot-map" aria-hidden="true"><DeseretMap /></div>
+    <div class="wrap foot-inner">
+      <Ornament />
+      <div class="colophon">
+        <Seal size="5.5rem" />
+        <div>
+          <p class="foot-title">The Deseret Wiki</p>
+          <p class="foot-dsrt dsrt" lang="en-Dsrt" data-no-dsrt>{toDeseret('Deseret Wiki')}</p>
+          <p class="small">Set in IM Fell English, Libre Baskerville, Cinzel, UnifrakturMaguntia &amp; Noto Sans Deseret. Article text from Wikipedia under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Printed {roman(now.getFullYear())}.</p>
+          <p class="small foot-links"><a href="/about/">About</a> · <a href="/fonts/">Fonts</a> · <a href="https://github.com/Samuel-Baird/deseret">Source</a> · <a href="https://samuelbaird.com">samuelbaird.com</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <template id="bee-loader-tpl">
+    <span class="bee-loader" role="status">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+          <path class="wing" d="M14.5 15C9 14 5.5 7 9.5 4.5C13.5 2.2 17 9 14.5 15Z" stroke-width=".9" />
+          <path class="wing" d="M16.5 15C16.5 9 21.5 3.6 25 5.4C28.4 7.6 22.5 13.6 16.5 15Z" stroke-width=".9" />
+          <g clip-path="url(#bee-abdomen)" fill="currentColor" stroke="none"><rect x="7" y="13" width="2.1" height="14" /><rect x="10.8" y="13" width="2.1" height="14" /><rect x="14.6" y="13" width="2.1" height="14" /></g>
+          <ellipse cx="11.5" cy="19.5" rx="8" ry="5.4" stroke-width="1.1" />
+          <circle cx="21.6" cy="18.4" r="3.6" fill="url(#hatch)" stroke-width="1" />
+          <circle cx="26.6" cy="17.2" r="2.6" stroke-width="1" />
+          <path d="M27.8 14.9c.8-2.1 2-3.1 3.4-3.3M26.4 14.8c.3-2.3 1.1-3.5 2.3-4.1" stroke-width=".7" />
+        </g>
+      </svg>
+      <span class="bee-loader-text"></span>
+    </span>
+  </template>
+
+  <script>
+    import '../scripts/site.js';
+  </script>
 </body>
 </html>
+
+<style>
+  /* top bar */
+  .topbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 1rem; padding-bottom: .9rem; }
+  .brand { display: inline-flex; align-items: center; gap: .7rem; color: var(--heading); text-decoration: none; }
+  .brand-name { font: 600 .78rem/1 var(--f-formal); letter-spacing: .2em; text-transform: uppercase; }
+  .tools { display: flex; align-items: center; gap: .35rem; }
+  .script-toggle { font: 400 1.05rem/1 var(--f-text); }
+  .script-toggle .st-latn { display: none; font-family: var(--f-display); font-size: 1.15rem; }
+  :global(:root[data-script='dsrt']) .script-toggle .st-dsrt { display: none; }
+  :global(:root[data-script='dsrt']) .script-toggle .st-latn { display: inline; }
+  .lamp .flame { fill: currentColor; opacity: 0; transition: opacity .3s; }
+  .lamp .glow { fill: #E8B65A; opacity: 0; transition: opacity .3s; }
+  :global(:root[data-theme='dark']) .lamp .flame { fill: #F2C86E; opacity: 1; }
+  :global(:root[data-theme='dark']) .lamp .glow { opacity: .22; animation: flicker 3s ease-in-out infinite; }
+  @keyframes flicker { 0%,100% { opacity: .2; } 40% { opacity: .28; } 60% { opacity: .17; } }
+
+  /* search: magnifying glass on a parchment slip */
+  .search { position: relative; margin-right: .4rem; }
+  .search input {
+    width: min(15rem, 38vw); font: italic .9rem/1 var(--f-display); color: var(--ink);
+    background: #F7EFDC; border: 1px solid var(--rule); border-radius: 1px;
+    padding: .55rem .7rem .55rem 2.1rem;
+    box-shadow: inset 0 1px 2px rgb(80 60 20 / .12);
+  }
+  :global(:root[data-theme='dark']) .search input { background: var(--paper-2); }
+  .search input::placeholder { color: var(--ink-soft); }
+  .search input:focus { outline: none; border-color: var(--accent); }
+  .search-glass { position: absolute; left: .55rem; top: 50%; width: 1.1rem; height: 1.1rem; transform: translateY(-50%); color: var(--accent); pointer-events: none; }
+  .search-results {
+    position: absolute; right: 0; top: calc(100% + 6px); width: min(26rem, 90vw); z-index: 40;
+    background: var(--paper); border: 3px double var(--rule); padding: .5rem; box-shadow: 0 10px 30px rgb(40 30 10 / .18);
+    max-height: 70vh; overflow: auto;
+  }
+  .search-results :global(a) { display: block; padding: .5rem .6rem; text-decoration: none; color: var(--ink); border-bottom: 1px dotted var(--rule); }
+  .search-results :global(a:last-child) { border-bottom: 0; }
+  .search-results :global(a:hover), .search-results :global(a[aria-selected='true']) { background: var(--paper-2); }
+  .search-results :global(.r-title) { display: block; font: 1rem/1.3 var(--f-display); color: var(--heading); }
+  .search-results :global(.r-where) { font: 600 .6rem/1.4 var(--f-formal); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); }
+  .search-results :global(.r-empty) { padding: .6rem; font-style: italic; color: var(--ink-soft); margin: 0; }
+  @media (max-width: 640px) {
+    .brand-name { display: none; }
+    .search input { width: 9.5rem; }
+    .search input:focus { width: 13rem; }
+  }
+
+  /* masthead */
+  .masthead { text-align: center; padding-top: .5rem; }
+  .ears { display: flex; justify-content: space-between; gap: 1rem; padding: .7rem 0 0; color: var(--ink-soft); font-size: .62rem; }
+  .masthead-title {
+    font: 400 clamp(2.8rem, 10.5vw, 7rem)/1 var(--f-masthead);
+    color: var(--heading); margin: 1.6rem 0 .3rem; letter-spacing: 0;
+    text-shadow: 0 0 1px color-mix(in srgb, var(--heading) 40%, transparent);
+  }
+  .masthead-dsrt { font-size: clamp(1rem, 2.4vw, 1.35rem); letter-spacing: .14em; color: var(--accent); margin: 0 0 .35rem; }
+  .motto { font: italic 400 clamp(1rem, 2vw, 1.2rem)/1.4 var(--f-display); color: var(--ink-soft); margin: 0 0 1rem; }
+  .dateline { display: flex; justify-content: space-between; gap: 1rem; padding: .45rem 0; font-size: .62rem; color: var(--ink-soft); }
+  @media (max-width: 640px) { .ears-mid, .dateline-motto { display: none; } }
+
+  /* contents: a printed table of contents */
+  .contents { position: relative; }
+  .contents ol { list-style: none; margin: 0; padding: .55rem 0; display: flex; flex-wrap: wrap; justify-content: center; gap: .2rem 1.6rem; border-bottom: 1px solid var(--rule); }
+  .contents a { display: flex; align-items: baseline; gap: .4rem; padding: .3rem 0; text-decoration: none; color: var(--heading); font: 400 1.02rem/1.2 var(--f-display); }
+  .contents .num { font: 600 .66rem/1 var(--f-formal); letter-spacing: .08em; color: var(--accent); }
+  .contents a:hover .label, .contents a[aria-current='page'] .label { text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: .25em; text-decoration-thickness: 1px; }
+  .contents .leader, .contents .dsrt-label { display: none; }
+  .contents-toggle { display: none; }
+  @media (max-width: 720px) {
+    .contents-toggle {
+      display: flex; width: 100%; justify-content: space-between; align-items: center;
+      background: none; border: 0; border-bottom: 1px solid var(--rule); padding: .8rem 0; color: var(--heading); cursor: pointer; font-size: .7rem;
+    }
+    .contents-toggle::after { content: '＋'; font-size: .9rem; color: var(--accent); }
+    .contents-toggle[aria-expanded='true']::after { content: '－'; }
+    .contents ol { display: none; flex-direction: column; gap: 0; padding: .3rem 0 .8rem; }
+    .contents.open ol { display: flex; }
+    .contents a { padding: .55rem 0; }
+    .contents .num { width: 2.4rem; }
+    .contents .leader { display: block; flex: 1; border-bottom: 1px dotted var(--rule); transform: translateY(-.25em); }
+    .contents .dsrt-label { display: inline; font-size: .8rem; color: var(--ink-soft); }
+  }
+
+  /* footer */
+  .site-foot { position: relative; margin-top: 6rem; padding: 1rem 0 4rem; overflow: hidden; }
+  .foot-map { position: absolute; right: max(0rem, calc((100vw - var(--wide)) / 2)); top: 6.5rem; width: min(30rem, 80vw); opacity: var(--map-opacity); pointer-events: none; }
+  .foot-inner { position: relative; min-height: 30rem; }
+  @media (max-width: 860px) { .foot-map { right: -10%; top: 9rem; } .foot-inner { min-height: 0; padding-bottom: 14rem; } }
+  .colophon { display: flex; gap: 1.6rem; align-items: center; max-width: 40rem; color: var(--heading); }
+  .colophon p { margin: 0 0 .4rem; }
+  .foot-title { font: 400 1.8rem/1.1 var(--f-masthead); }
+  .foot-dsrt { color: var(--accent); letter-spacing: .1em; font-size: .9rem; }
+  .foot-links a { color: var(--ink-soft); }
+  @media (max-width: 520px) { .colophon { flex-direction: column; align-items: flex-start; } }
+</style>

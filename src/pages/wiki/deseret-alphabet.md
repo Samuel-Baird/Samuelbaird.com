@@ -1,6 +1,9 @@
 ---
-layout: ../../layouts/Base.astro
+layout: ../../layouts/Article.astro
 title: Deseret alphabet — Deseret Wiki
+heading: Deseret alphabet
+description: History, letters, printed works and Unicode encoding of the Deseret alphabet, the 1854 phonemic English script of the University of Deseret.
+deck: The phonemic English script devised by the Board of Regents of the University of Deseret, 1847–1854.
 ---
 
 *Text from [Wikipedia: Deseret alphabet](https://en.wikipedia.org/wiki/Deseret_alphabet), revision 1383466169, licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).*

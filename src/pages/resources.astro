@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Title from '../components/Title.astro';
 const links = [
   { title: 'Deseret Alphabet (Facebook group)', url: 'https://www.facebook.com/groups/DeseretAlphabet/', note: 'Community of Deseret Alphabet readers and writers.' },
   { title: 'Deseret Alphabet Trainer', url: 'https://dezgames.itch.io/deseret-alphabet-trainer', note: 'A game for learning the letters, by Dez Games on itch.io.' },
@@ -13,9 +14,20 @@ const links = [
 ];
 ---
 <Base title="Resources — Deseret Wiki">
-  <h1>Resources</h1>
-  <ul>
-    {links.map((l) => <li><a href={l.url} rel="noopener">{l.title}</a> — {l.note}</li>)}
-  </ul>
-  <p>See also <a href="/videos/">Videos</a> and <a href="/buy/">Buy</a>.</p>
+  <div class="wrap">
+    <header class="page-head">
+      <p class="kicker">The Hive</p>
+      <Title text="Resources" />
+      <p class="lede-text">Communities, games and places to practise the alphabet.</p>
+    </header>
+    <ol class="register">
+      {links.map((l) => (
+        <li>
+          <a href={l.url} rel="noopener"><span class="reg-title">{l.title}</span></a>
+          <span class="reg-note">{l.note}</span>
+        </li>
+      ))}
+    </ol>
+    <p class="see-also small">See also <a href="/videos/">Videos</a> and <a href="/buy/">Books &amp; Prints</a>.</p>
+  </div>
 </Base>

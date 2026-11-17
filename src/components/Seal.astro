@@ -1,0 +1,28 @@
+---
+// The house seal: an engraved skep inside a circular territorial seal.
+interface Props { size?: string; class?: string; ring?: boolean }
+const { size = '3rem', class: cls = '', ring = true } = Astro.props;
+const id = 'seal-' + Math.random().toString(36).slice(2, 7);
+const beads = Array.from({ length: 48 }, (_, i) => {
+  const a = (i / 48) * Math.PI * 2;
+  return [+(60 + 41 * Math.cos(a)).toFixed(2), +(60 + 41 * Math.sin(a)).toFixed(2)];
+});
+---
+<svg class:list={['seal', cls]} viewBox="0 0 120 120" style={`width:${size};height:${size}`} aria-hidden="true">
+  <defs><path id={id} d="M60 60m-47 0a47 47 0 1 1 94 0a47 47 0 1 1 -94 0" /></defs>
+  <g fill="none" stroke="currentColor">
+    <circle cx="60" cy="60" r="58" stroke-width="1.6" />
+    <circle cx="60" cy="60" r="55" stroke-width=".6" />
+    <circle cx="60" cy="60" r="38" stroke-width="1.1" />
+  </g>
+  {ring && (
+    <text font-family="Cinzel, serif" font-size="9.4" letter-spacing="2.6" fill="currentColor">
+      <textPath href={`#${id}`} startOffset="0">THE DESERET WIKI ✦ MDCCCLIV ✦ HOLINESS TO THE LORD ✦</textPath>
+    </text>
+  )}
+  {!ring && <g fill="currentColor">{beads.map(([x, y]) => <circle cx={x} cy={y} r=".9" />)}</g>}
+  <use href="#i-skep" x="33" y="30" width="54" height="54" />
+  <use href="#i-star" x="56" y="24" width="8" height="8" />
+  <use href="#i-star" x="44" y="27" width="5" height="5" />
+  <use href="#i-star" x="71" y="27" width="5" height="5" />
+</svg>
