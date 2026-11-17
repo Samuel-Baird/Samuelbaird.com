@@ -6,6 +6,7 @@ import Mountains from '../components/Mountains.astro';
 import DeseretMap from '../components/DeseretMap.astro';
 import Ornament from '../components/Ornament.astro';
 import Sidebar from '../components/Sidebar.astro';
+import Emblems from '../components/Emblems.astro';
 import { roman, MONTHS } from '../lib/roman.js';
 import { toDeseret, revealParts } from '../lib/dsrt.js';
 
@@ -57,6 +58,7 @@ const mastTitle = 'The Deseret Wiki';
   <div id="margins" aria-hidden="true"></div>
   <div id="critters" aria-hidden="true"></div>
   <Sprite />
+  <Emblems />
   <a class="skip" href="#main">Skip to the text</a>
 
   <header class="site-head">
@@ -159,7 +161,7 @@ const mastTitle = 'The Deseret Wiki';
 
 <style>
   /* top bar */
-  .topbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 1rem; padding-bottom: .9rem; }
+  .topbar { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 1rem; padding-bottom: .9rem; }
   .topbar-left { display: flex; align-items: center; gap: .6rem; }
   /* leave room for the fixed menu button when the margin is narrow */
   @media (max-width: 1240px) { .topbar-left { padding-left: 2.9rem; } }
@@ -206,7 +208,8 @@ const mastTitle = 'The Deseret Wiki';
   :global(body.home) .site-head { min-height: 100svh; display: flex; flex-direction: column; }
   :global(body.home) .masthead { flex: 1; display: flex; flex-direction: column; width: 100%; }
   .masthead-center { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 1rem 0; }
-  .panorama { width: 100%; }
+  /* the sky over the ridge may rise above the strip (a high sun, the moon), but never past its sides */
+  .panorama { width: 100%; overflow-x: clip; overflow-y: visible; position: relative; z-index: 1; }
   :global(body.home) .panorama :global(.mountains) { height: clamp(150px, 26vh, 300px); }
   .panorama :global(.mountains) { height: clamp(80px, 10vw, 140px); }
   .ears { display: flex; justify-content: space-between; gap: 1rem; padding: .7rem 0 0; color: var(--ink-soft); font-size: .62rem; }

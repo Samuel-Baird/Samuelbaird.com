@@ -67,7 +67,7 @@ const id = 'mtn-' + Math.random().toString(36).slice(2, 6);
       <stop offset="0" stop-color="#E8DFC6" stop-opacity=".22" />
       <stop offset="1" stop-color="#E8DFC6" stop-opacity="0" />
     </radialGradient>
-    <clipPath id={`${id}-sky`}><path d={line(back) + `L${W} 0L0 0Z`} /></clipPath>
+    <clipPath id={`${id}-sky`}><path d={line(back) + `L${W + 400} 112L${W + 400} -400L-400 -400L-400 112Z`} /></clipPath>
   </defs>
   <g fill="none" stroke="currentColor" stroke-linecap="round">
     <g clip-path={`url(#${id}-sky)`}>
@@ -96,7 +96,7 @@ const id = 'mtn-' + Math.random().toString(36).slice(2, 6);
   </g>
 </svg>
 <style>
-  .mountains { display: block; width: 100%; height: clamp(80px, 11vw, 150px); color: var(--heading); }
+  .mountains { display: block; overflow: visible; width: 100%; height: clamp(80px, 11vw, 150px); color: var(--heading); }
   .mtn-paper { fill: #16171A; }
   .sun { color: #D9B46A; }
   .sun-disc { fill: rgb(217 180 106 / .14); }

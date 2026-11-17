@@ -7,6 +7,7 @@
 // A flock of gulls comes down on them; a gull that has eaten two or three flies to a ditch or the
 // creek, drinks, and brings up the hard parts as a pellet, then goes back for more.
 import { sunPhase, dayIndex, swarmDay, swarmAt } from './clock.js';
+import { onSmoothScroll, smoothY } from './smooth.js';
 
 const land = document.getElementById('land');
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -267,8 +268,8 @@ function layout() {
 }
 
 // Each depth sits at the same spot when the page is scrolled to its band, and drifts at its own rate either side.
-function place() {
-  const sy = scrollY, anchor = H * 0.72 - GY;
+function place(sy = smoothY()) {
+  const anchor = H * 0.72 - GY;
   for (const b of bands) for (const d in b.layers) {
     const y = anchor + (b.focus - sy) * SPEED[d];
     b.layers[d].style.transform = `translate3d(0, ${y.toFixed(1)}px, 0)`;
@@ -315,7 +316,7 @@ function stepCricket(c, dt) {
     const near = gulls.find((g) => g.state === 'dive' && Math.hypot(g.x - c.x, g.y - c.y) < 46);
     if (near && Math.random() < dt * 3) c.t = 0; // a gull coming down: jump for it
     if (c.t <= 0) {
-      const f = c.swarm && c.band.field;
+      const f = c.swarm && c.field;
       if (c.goal) {
         const dx = c.goal.x - c.x, dy = c.goal.y - c.y, dist = Math.hypot(dx, dy), stepL = Math.min(dist, rand(22, 42));
         if (dist < 4) { c.goal = null; c.t = rand(0.3, 1); return; }
@@ -445,21 +446,22 @@ function stepPellet(p, dt) {
 }
 
 /* ---------- the swarm ---------- */
-function startSwarm() {
-  const band = bands.find((b) => b.type === 'farm');
+function startSwarm(opts = {}) {
+  const band = opts.band || bands.find((b) => b.type === 'farm');
   if (!band || swarm) return;
-  swarm = { band, t: 0, spawned: 0, total: W < 700 ? 22 : 34, sent: 0, flock: W < 700 ? 4 : 6 };
+  swarm = { band, field: opts.field || band.field, t: 0, spawned: 0, total: opts.total ?? (W < 700 ? 22 : 34), sent: 0, flock: opts.flock ?? (W < 700 ? 4 : 6), raid: !!opts.raid };
 }
 function stepSwarm(dt) {
   const s = swarm; s.t += dt;
-  const f = s.band.field;
-  while (s.spawned < s.total * Math.min(1, s.t / 5)) { // they come hopping in over the fence and out of the brush
+  const f = s.field;
+  while (s.spawned < s.total * Math.min(1, s.t / (s.raid ? 6 : 5))) { // they come hopping in over the fence and out of the brush
     s.spawned++;
     const fromLeft = Math.random() < 0.6;
-    const x = fromLeft ? f.x0 - rand(10, 90) : f.x1 + rand(10, 70), y = rand(f.y0, f.y1);
-    addCricket(s.band, x, y, { swarm: true, goal: { x: rand(f.x0 + 8, f.x1 - 8), y: rand(f.y0, f.y1) } });
+    const x = s.raid ? (fromLeft ? -rand(10, 140) : W + rand(10, 140)) : fromLeft ? f.x0 - rand(10, 90) : f.x1 + rand(10, 70), y = rand(f.y0, f.y1);
+    addCricket(s.band, x, y, { swarm: true, field: f, goal: { x: rand(f.x0 + 8, f.x1 - 8), y: rand(f.y0, f.y1) } });
   }
-  if (s.t > 10 && s.sent < s.flock && s.t > 10 + s.sent * 1.6) { // then the gulls, out of the west
+  const gullsAt = s.raid ? 4 : 10, gap = s.raid ? 0.45 : 1.6;
+  if (s.t > gullsAt && s.sent < s.flock && s.t > gullsAt + s.sent * gap) { // then the gulls, out of the west
     s.sent++;
     addGull(s.band, rand(W * 0.05, W * 0.5), -s.band.y - rand(40, 120));
   }
@@ -471,6 +473,32 @@ function nightfall() {
   for (const g of gulls) if (!g.gone && g.state !== 'drink') g.state = g.eaten ? 'toWater' : 'leave';
   swarm = null;
 }
+
+/* ↑ ↑ ↓ ↓ ← → ← → B A: a cricket raid on whatever ground is in view */
+let looping = false;
+function raid() {
+  if (!bands.length) return;
+  const mid = H * 0.6;
+  const b = bands.filter(onScreen)[0] || bands.reduce((a, c) => (Math.abs(c.y + GY - mid) < Math.abs(a.y + GY - mid) ? c : a));
+  if (!onScreen(b)) scrollTo({ top: b.focus, behavior: 'smooth' });
+  swarm = null; // a raid overrides a swarm already under way; its gulls will hunt the stragglers too
+  startSwarm({ band: b, field: { x0: W * 0.03, x1: W * 0.97, y0: GY + 8, y1: GY + (50 * BH) / 260 }, total: W < 700 ? 40 : 90, flock: W < 700 ? 7 : 14, raid: true });
+  if (!looping) { looping = true; requestAnimationFrame(frame); }
+  const note = document.createElement('div');
+  note.className = 'raid-note';
+  note.setAttribute('role', 'status');
+  note.innerHTML = '<span class="smallcaps">Extra</span> The crickets are upon the wheat! Send for the gulls.';
+  document.body.append(note);
+  setTimeout(() => note.classList.add('gone'), 4200);
+  setTimeout(() => note.remove(), 5200);
+}
+const CODE = 'ArrowUp ArrowUp ArrowDown ArrowDown ArrowLeft ArrowRight ArrowLeft ArrowRight b a';
+let keys = [];
+addEventListener('keydown', (e) => {
+  if (e.target.closest?.('input, textarea, select, [contenteditable]')) return;
+  keys = [...keys, e.key.length === 1 ? e.key.toLowerCase() : e.key].slice(-10);
+  if (keys.join(' ') === CODE) { keys = []; raid(); }
+});
 
 /* a single cricket hops on, and a gull swoops down for it */
 function lone() {
@@ -541,19 +569,18 @@ function every(fn, first, min, max) { setTimeout(function tick() { fn(); setTime
 if (land) {
   land.innerHTML = '<div class="depth d-far"></div><div class="depth d-mid"></div><div class="depth d-near"></div>';
   layout();
-  let ticking = false;
-  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { place(); ticking = false; }); } }, { passive: true });
+  onSmoothScroll(place);
   let rt, lastW = innerWidth, lastH = document.documentElement.scrollHeight;
   const relayout = () => { clearTimeout(rt); rt = setTimeout(() => { if (innerWidth !== lastW || document.documentElement.scrollHeight !== lastH) { lastW = innerWidth; lastH = document.documentElement.scrollHeight; layout(); } else { H = innerHeight; place(); } }, 250); };
   addEventListener('resize', relayout);
   addEventListener('load', relayout);
   tickClock(); setInterval(tickClock, 1000);
   if (!reduced) {
-    requestAnimationFrame(frame);
+    looping = true; requestAnimationFrame(frame);
     every(rollTumbleweed, rand(8000, 16000), 30000, 60000);
     every(lone, rand(10000, 22000), 32000, 70000);
     if (new URLSearchParams(location.search).has('swarm')) setTimeout(startSwarm, 800);
   }
   // for poking at from the console: deseretLand.swarm(), deseretLand.cricket()
-  window.deseretLand = { swarm: startSwarm, cricket: lone, tumbleweed: rollTumbleweed };
+  window.deseretLand = { swarm: startSwarm, raid, cricket: lone, tumbleweed: rollTumbleweed };
 }

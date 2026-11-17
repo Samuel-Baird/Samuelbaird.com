@@ -218,7 +218,8 @@ main { display: block; min-height: 50vh; }
 /* Infobox: a framed archival record */
 .infobox {
   float: right; width: min(20rem, 100%); margin: .3rem 0 1.5rem 2rem;
-  border: 3px double var(--rule); background: var(--paper-2);
+  border: 3px double var(--rule); background: rgb(38 34 29 / .5);
+  backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
   padding: .9rem 1rem 1rem; font-size: .8rem; line-height: 1.45;
 }
 .infobox-head { text-align: center; border-bottom: 1px solid var(--rule); padding-bottom: .6rem; margin-bottom: .5rem; }
@@ -233,7 +234,7 @@ main { display: block; min-height: 50vh; }
 .infobox tr:last-child td { border-bottom: 0; }
 @media (max-width: 1199px) { .infobox { float: none; width: 100%; margin: 0 0 2rem; } }
 /* wide screens: the record hangs in the right margin, leaving the text its full measure */
-@media (min-width: 1200px) { .infobox { width: 16rem; margin: .3rem -18.5rem 1.5rem 1.5rem; } }
+@media (min-width: 1200px) { .infobox { width: 12rem; margin: .3rem -16.5rem 1.5rem 1.5rem; padding: .8rem .8rem .9rem; font-size: .74rem; border-radius: 10px; } .infobox tr { display: block; padding: .35rem 0; border-bottom: 1px dotted var(--rule); } .infobox th, .infobox td { display: block; width: auto !important; border: 0; padding: 0; } .infobox td:first-child { font-size: .55rem; margin-bottom: .1rem; } }
 
 /* In long articles, links stay quiet: ink-coloured with a brass hairline. */
 .prose a { color: inherit; text-decoration-color: color-mix(in srgb, var(--accent) 60%, transparent); }
@@ -285,9 +286,9 @@ body::before { z-index: -2; }
 #land .d-mid { opacity: .26; }
 #land .d-near .scenery, #land .d-near .tumbleweed { opacity: .5; } /* the critters read brighter than the ground they cross */
 @media (min-width: 900px) {
-  #land { -webkit-mask-image: linear-gradient(90deg, #000 0 16%, rgb(0 0 0 / .38) 32% 68%, #000 84% 100%); mask-image: linear-gradient(90deg, #000 0 16%, rgb(0 0 0 / .38) 32% 68%, #000 84% 100%); }
+  #land { -webkit-mask-image: linear-gradient(90deg, #000 0 16%, rgb(0 0 0 / .6) 32% 68%, #000 84% 100%); mask-image: linear-gradient(90deg, #000 0 16%, rgb(0 0 0 / .6) 32% 68%, #000 84% 100%); }
 }
-@media (max-width: 899px) { #land { opacity: .55; } }
+@media (max-width: 899px) { #land { opacity: .8; } }
 #land .win { fill: #E9B862; opacity: 0; transition: opacity 5s; }
 #land.night .win { opacity: .85; }
 #land .smoke circle { transform-box: fill-box; transform-origin: center; animation: smoke 6s linear infinite; opacity: 0; }
@@ -311,3 +312,34 @@ body::before { z-index: -2; }
 body.home .glyph-bg { color: rgb(201 164 92 / .7); }
 .glyph-bg .absolute { position: absolute; }
 .glyph-bg .block { display: block; }
+
+/* ---------- glass: the text sits on translucent panes so the sky and the land show through ---------- */
+.panel {
+  background: rgb(18 18 22 / .46);
+  backdrop-filter: blur(3px) saturate(1.1); -webkit-backdrop-filter: blur(3px) saturate(1.1);
+  border: 1px solid rgb(201 164 92 / .16); border-radius: 12px;
+  box-shadow: 0 12px 40px rgb(0 0 0 / .22), inset 0 1px 0 rgb(255 240 210 / .04);
+}
+/* every page but the articles (which lay out their own panes) is one pane */
+main:not(:has(> .article)) {
+  width: min(calc(100% - 1rem), 64rem); margin: 1.5rem auto 3rem; padding: clamp(1.4rem, 4vw, 2.75rem) clamp(1.1rem, 4vw, 2.75rem);
+  background: rgb(18 18 22 / .46);
+  backdrop-filter: blur(3px) saturate(1.1); -webkit-backdrop-filter: blur(3px) saturate(1.1);
+  border: 1px solid rgb(201 164 92 / .16); border-radius: 12px;
+  box-shadow: 0 12px 40px rgb(0 0 0 / .22), inset 0 1px 0 rgb(255 240 210 / .04);
+}
+main:not(:has(> .article)) .wrap { padding-inline: 0; max-width: none; }
+main:not(:has(> .article)) .page-head { padding-top: .25rem; }
+
+/* the cricket-raid notice (land.js) */
+.raid-note {
+  position: fixed; left: 50%; bottom: 1.5rem; z-index: 80; transform: translateX(-50%);
+  max-width: calc(100vw - 2rem); padding: .6rem 1rem; border-radius: 8px;
+  background: rgb(20 20 24 / .82); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgb(201 164 92 / .35); color: var(--heading);
+  font: italic 1rem/1.3 var(--f-display); text-align: center;
+  animation: note-in .35s ease-out; transition: opacity .9s, transform .9s;
+}
+.raid-note .smallcaps { font-style: normal; color: var(--seal); margin-right: .4rem; }
+.raid-note.gone { opacity: 0; transform: translate(-50%, 8px); }
+@keyframes note-in { from { opacity: 0; transform: translate(-50%, 10px); } }

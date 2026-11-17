@@ -10,6 +10,7 @@ const D = Math.PI / 180;
 const LAT = 40.76 * D, LON = -111.89; // Great Salt Lake City
 const VIEW_AZ = 95 * D, VIEW_ALT = 36 * D; // looking east, toward the Wasatch
 import { sunPhase, moonPhase, moonLit } from './clock.js';
+import { onSmoothScroll, smoothY } from './smooth.js';
 const rand = (a, b) => a + Math.random() * (b - a);
 
 /* ---------- light (the clock itself is in clock.js, shared with the land) ---------- */
@@ -209,10 +210,14 @@ if (layer && !reduced) {
 
 /* ---------- engraved emblems in the margins, with parallax ---------- */
 const margins = document.getElementById('margins');
+// The wagon, the Deseret primer and the skep, and the symbols drawn in components/Emblems.astro.
+const SQ = '0 0 64 64';
 const EMBLEMS = [
-  ['i-sego', '0 0 48 64'], ['i-skep', '0 0 64 64'], ['i-eye', '0 0 64 64'], ['i-sunmoon', '0 0 64 64'],
-  ['i-comb', '0 0 64 64'], ['i-wagon', '0 0 100 64'], ['i-hands', '0 0 64 64'], ['i-primer', '0 0 64 48'], ['i-sorts', '0 0 64 64'],
+  ['i-wagon', '0 0 100 64'], ['i-primer', '0 0 64 48'], ['i-skep', SQ],
+  ...['daystar', 'hexagram', 'octagram', 'sun', 'moon', 'squaredcircle', 'rainbow', 'squarecompass', 'wheat', 'cup', 'grapes',
+    'olive', 'waters', 'flame', 'horn', 'crown', 'serpent', 'dove', 'ox', 'tree', 'keystone', 'keyring', 'handclasp'].map((n) => [`e-${n}`, SQ]),
 ];
+function shuffled(a) { a = [...a]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
 let items = [];
 function layoutMargins() {
   if (!margins) return;
@@ -223,9 +228,10 @@ function layoutMargins() {
   const gutter = (innerWidth - cw) / 2;
   const docH = document.documentElement.scrollHeight;
   const start = document.body.classList.contains('home') ? innerHeight * 1.05 : 340;
-  let y = start, i = Math.floor(rand(0, EMBLEMS.length)), side = 0;
+  let y = start, i = 0, side = 0;
+  const deck = shuffled(EMBLEMS);
   while (y < docH * 0.6 + innerHeight) {
-    const [id, vb] = EMBLEMS[i++ % EMBLEMS.length];
+    const [id, vb] = deck[i++ % deck.length];
     const size = rand(86, 130);
     const speed = rand(0.42, 0.62);
     const x = Math.max(-size * 0.4, gutter / 2 - size / 2 + rand(-12, 12));
@@ -240,12 +246,10 @@ function layoutMargins() {
   }
   place();
 }
-function place() {
-  const sy = scrollY;
+function place(sy = smoothY()) {
   for (const it of items) it.el.style.transform = `translate3d(0, ${(it.y - sy * it.speed).toFixed(1)}px, 0)`;
 }
-let ticking = false;
-addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { place(); ticking = false; }); } }, { passive: true });
+onSmoothScroll(place);
 if (margins) {
   addEventListener('load', layoutMargins);
   let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(layoutMargins, 200); });

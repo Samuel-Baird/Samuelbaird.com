@@ -1,0 +1,351 @@
+---
+// The margin emblems: Latter-day Saint symbols drawn afresh in the site's engraved line,
+// after the catalogue at ldssymbols.com (each one our own drawing, not a copy). sky.js scatters
+// them down the margins; use one anywhere as <svg viewBox="0 0 64 64"><use href="#e-dove"/></svg>.
+const f = (n) => +n.toFixed(2);
+const polar = (cx, cy, r, a) => [f(cx + r * Math.cos(a)), f(cy + r * Math.sin(a))];
+const P = (pts) => 'M' + pts.map(([x, y]) => `${x} ${y}`).join('L');
+const poly = (cx, cy, R, n, rot) => P(Array.from({ length: n }, (_, i) => polar(cx, cy, R, rot + (i * 2 * Math.PI) / n))) + 'Z';
+const starP = (cx, cy, R, r, n, rot) => P(Array.from({ length: 2 * n }, (_, i) => polar(cx, cy, i % 2 ? r : R, rot + (i * Math.PI) / n))) + 'Z';
+const PI = Math.PI;
+
+// day star: the inverted star of the temple walls, with small rays in its hollows
+const dayRays = Array.from({ length: 5 }, (_, i) => {
+  const a = PI / 2 + PI / 5 + (i * 2 * PI) / 5;
+  return P([polar(32, 33, 12.5, a), polar(32, 33, 17, a)]);
+}).join('');
+
+// sun with a face, rays alternately straight and flickering
+const sunRays = Array.from({ length: 20 }, (_, i) => {
+  const a = (i / 20) * 2 * PI;
+  if (i % 2) return P([polar(32, 32, 15, a), polar(32, 32, 22, a)]);
+  const [x1, y1] = polar(32, 32, 15, a), [x2, y2] = polar(32, 32, 28, a);
+  const [c1x, c1y] = polar(32, 32, 19, a + 0.13), [c2x, c2y] = polar(32, 32, 24, a - 0.13);
+  return `M${x1} ${y1}C${c1x} ${c1y} ${c2x} ${c2y} ${x2} ${y2}`;
+}).join('');
+
+// crescent: one circle less another
+function crescent(c1, R1, c2, R2) {
+  const dx = c2[0] - c1[0], dy = c2[1] - c1[1], d = Math.hypot(dx, dy);
+  const a = (R1 * R1 - R2 * R2 + d * d) / (2 * d), h = Math.sqrt(R1 * R1 - a * a);
+  const bx = c1[0] + (a * dx) / d, by = c1[1] + (a * dy) / d;
+  const p = [f(bx - (h * dy) / d), f(by + (h * dx) / d)], q = [f(bx + (h * dy) / d), f(by - (h * dx) / d)];
+  return `M${p[0]} ${p[1]}A${R1} ${R1} 0 1 1 ${q[0]} ${q[1]}A${R2} ${R2} 0 0 0 ${p[0]} ${p[1]}Z`;
+}
+const moon = crescent([29, 33], 21, [38, 27], 17.5);
+const moonHatch = Array.from({ length: 9 }, (_, i) => `M${f(12 + i * 2.4)} ${f(40 + i * 0.9)}l${f(3 + i * 0.3)} ${f(6 - i * 0.2)}`).join('');
+
+// a lanceolate leaf from (x, y) at angle a
+function leaf(x, y, a, len, w) {
+  const [tx, ty] = [x + Math.cos(a) * len, y + Math.sin(a) * len];
+  const [mx, my] = [x + Math.cos(a) * len * 0.5, y + Math.sin(a) * len * 0.5];
+  const [px, py] = [-Math.sin(a) * w, Math.cos(a) * w];
+  return `M${f(x)} ${f(y)}Q${f(mx + px)} ${f(my + py)} ${f(tx)} ${f(ty)}Q${f(mx - px)} ${f(my - py)} ${f(x)} ${f(y)}M${f(x)} ${f(y)}L${f(mx + (tx - mx) * 0.6)} ${f(my + (ty - my) * 0.6)}`;
+}
+// olive branch along a curve
+const bez = (p0, p1, p2, p3, t) => [0, 1].map((k) => (1 - t) ** 3 * p0[k] + 3 * (1 - t) ** 2 * t * p1[k] + 3 * (1 - t) * t * t * p2[k] + t ** 3 * p3[k]);
+const branch = [[12, 54], [22, 42], [36, 28], [54, 10]];
+const oliveLeaves = [0.18, 0.3, 0.42, 0.54, 0.66, 0.78, 0.9].map((t, i) => {
+  const [x, y] = bez(...branch, t), [x2, y2] = bez(...branch, t + 0.01);
+  const dir = Math.atan2(y2 - y, x2 - x);
+  return leaf(x, y, dir + (i % 2 ? 0.75 : -0.75), 11 - i * 0.4, 2.6);
+}).join('');
+const olives = [0.36, 0.6, 0.84].map((t, i) => { const [x, y] = bez(...branch, t); const s = i % 2 ? 1 : -1; return { x: f(x + 4 * s), y: f(y + 4), sx: f(x), sy: f(y) }; });
+
+// wheat sheaf: stalks fanned above the band, splayed below it
+const wheatHeads = [-3, -2, -1, 0, 1, 2, 3].map((k) => {
+  const top = [32 + k * 5.4, 11 + Math.abs(k) * 2.6];
+  const ang = (Math.atan2(top[1] - 37, top[0] - 32) * 180) / PI + 90;
+  let grains = '';
+  for (let j = 0; j < 4; j++) grains += `M0 ${f(-j * 2.4)}q-2.6 -1 -2.4 -3.4M0 ${f(-j * 2.4)}q2.6 -1 2.4 -3.4`;
+  return { stalk: `M32 37Q${f(32 + k * 2.2)} 26 ${f(top[0])} ${f(top[1])}`, head: `<g transform="translate(${f(top[0])} ${f(top[1])}) rotate(${f(ang)})"><path d="${grains}M0 -9.6v-5"/></g>` };
+});
+const wheatStems = [-3, -2, -1, 0, 1, 2, 3].map((k) => `M32 38L${f(32 + k * 2.8)} 56`).join('');
+
+// grapes: an inverted triangle of berries
+const berries = [[20, 25], [28.5, 25], [37, 25], [45.5, 25], [24.2, 32.5], [32.7, 32.5], [41.2, 32.5], [28.4, 40], [36.9, 40], [32.6, 47.5]];
+
+// horn: two curves closing on a point, ringed
+const hornOut = [[50, 12], [32, 9], [14, 19], [13, 36]], hornIn = [[51, 24], [36, 22], [23, 30], [22, 40]];
+const hornRings = [0.12, 0.28, 0.44, 0.6, 0.74, 0.86].map((t) => { const a = bez(...hornOut, t), b = bez(...hornIn, t); return P([a.map(f), b.map(f)]); }).join('');
+const hornPath = (pts) => `M${pts[0]}C${pts[1]} ${pts[2]} ${pts[3]}`;
+
+// keystones: an arch and a keystoned ring
+function voussoirs(cx, cy, r1, r2, from, to, n) {
+  const big = to - from > PI ? 1 : 0;
+  let d = `M${polar(cx, cy, r1, from)}A${r1} ${r1} 0 ${big} 1 ${polar(cx, cy, r1, to)}M${polar(cx, cy, r2, from)}A${r2} ${r2} 0 ${big} 1 ${polar(cx, cy, r2, to)}`;
+  for (let i = 0; i <= n; i++) { const a = from + ((to - from) * i) / n; d += P([polar(cx, cy, r1, a), polar(cx, cy, r2, a)]); }
+  return d.replace(/(\d),(\d|-)/g, '$1 $2');
+}
+const archStones = voussoirs(32, 46, 14, 24, PI, PI * 1.4, 3) + voussoirs(32, 46, 14, 24, PI * 1.6, PI * 2, 3);
+const archKey = P([polar(32, 46, 13, PI * 1.4), polar(32, 46, 27.5, PI * 1.37), polar(32, 46, 27.5, PI * 1.63), polar(32, 46, 13, PI * 1.6)]) + 'Z';
+const ringStones = voussoirs(32, 33, 14, 23, -PI / 2 + 0.36, PI * 1.5 - 0.36, 10);
+const ringKey = P([polar(32, 33, 11.5, -PI / 2 - 0.3), polar(32, 33, 26.5, -PI / 2 - 0.4), polar(32, 33, 26.5, -PI / 2 + 0.4), polar(32, 33, 11.5, -PI / 2 + 0.3)]) + 'Z';
+
+// tree of life: a scalloped crown
+const crown = Array.from({ length: 16 }, (_, i) => {
+  const a1 = (i / 16) * 2 * PI, a2 = ((i + 1) / 16) * 2 * PI;
+  const [x1, y1] = [32 + 21 * Math.cos(a1), 25 + 17 * Math.sin(a1)], [x2, y2] = [32 + 21 * Math.cos(a2), 25 + 17 * Math.sin(a2)];
+  return `${i ? '' : `M${f(x1)} ${f(y1)}`}A4.6 4.6 0 0 1 ${f(x2)} ${f(y2)}`;
+}).join('');
+const fruit = [[22, 20], [30, 14], [41, 18], [45, 28], [36, 26], [25, 31], [19, 27], [33, 34]];
+
+const waves = [18, 28, 38, 48].map((y, r) => {
+  const o = (r % 2) * 4;
+  let d = `M${6 + o} ${y}`;
+  for (let x = 6 + o; x < 56; x += 8) d += `q2 -5 4 -2.2q1.4 2.2 4 2.2`;
+  return d;
+}).join('');
+---
+<svg class="sprite" aria-hidden="true" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden">
+  <defs>
+    <clipPath id="e-cup-bowl"><path d="M17 13H47C47 26 41 33 32 33C23 33 17 26 17 13Z" /></clipPath>
+  </defs>
+
+  <!-- The day star, points down -->
+  <symbol id="e-daystar" viewBox="0 0 64 64">
+    <g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round">
+      <path d={starP(32, 33, 25, 10, 5, PI / 2)} stroke-width="1.8" />
+      <path d={starP(32, 33, 18.5, 7.2, 5, PI / 2)} stroke-width=".7" />
+      <path d={dayRays} stroke-width=".9" />
+      <circle cx="32" cy="33" r="2" fill="currentColor" stroke="none" />
+    </g>
+  </symbol>
+
+  <!-- Hexagram, its triangles drawn in double line -->
+  <symbol id="e-hexagram" viewBox="0 0 64 64">
+    <g fill="none" stroke="currentColor" stroke-linejoin="round">
+      <path d={poly(32, 32, 25, 3, -PI / 2)} stroke-width="1.7" />
+      <path d={poly(32, 32, 25, 3, PI / 2)} stroke-width="1.7" />
+      <path d={poly(32, 32, 20.5, 3, -PI / 2) + poly(32, 32, 20.5, 3, PI / 2)} stroke-width=".6" />
+      <circle cx="32" cy="32" r="29" stroke-width=".6" stroke-dasharray="1 2.4" />
+    </g>
+  </symbol>
+
+  <!-- Eight-pointed star -->
+  <symbol id="e-octagram" viewBox="0 0 64 64">
+    <g fill="none" stroke="currentColor" stroke-linejoin="round">
+      <path d={poly(32, 32, 26, 4, PI / 4) + poly(32, 32, 26, 4, 0)} stroke-width="1.7" />
+      <path d={poly(32, 32, 13.6, 8, PI / 8)} stroke-width=".7" />
+      <circle cx="32" cy="32" r="6" stroke-width="1.1" />
+      <circle cx="32" cy="32" r="1.6" fill="currentColor" stroke="none" />
+    </g>
+  </symbol>
+
+  <!-- Sun with a face -->
+  <symbol id="e-sun" viewBox="0 0 64 64">
+    <g fill="none" stroke="currentColor" stroke-linecap="round">
+      <path d={sunRays} stroke-width="1.1" />
+      <circle cx="32" cy="32" r="12.5" stroke-width="1.7" />
+      <path d="M25.6 29.4q2.3-2.2 4.6 0M33.8 29.4q2.3-2.2 4.6 0M32 30.5v4.6q-.8 1-2.2.6M27.8 38.2q4.2 2.6 8.4 0" stroke-width="1" />
+    </g>
+  </symbol>
+
+  <!-- Crescent moon and a star -->
+  <symbol id="e-moon" viewBox="0 0 64 64">
+    <defs><clipPath id="e-moon-clip"><path d={moon} /></clipPath></defs>
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d={moon} stroke-width="1.8" />
+      <path d={moonHatch} stroke-width=".55" clip-path="url(#e-moon-clip)" opacity=".8" />
+      <path d={starP(47, 21, 5.5, 2.2, 5, -PI / 2)} stroke-width="1" />
+      <circle cx="53" cy="36" r=".9" fill="currentColor" stroke="none" />
+    </g>
+  </symbol>
+
+  <!-- The squared circle: a circle and a square of equal area -->
+  <symbol id="e-squaredcircle" viewBox="0 0 64 64">
+    <g fill="none" stroke="currentColor">
+      <circle cx="32" cy="32" r="20" stroke-width="1.6" />
+      <rect x="14.28" y="14.28" width="35.44" height="35.44" stroke-width="1.6" />
+      <path d="M32 6v6M32 52v6M6 32h6M52 32h6" stroke-width=".8" />
+      <circle cx="32" cy="32" r="1.4" fill="currentColor" stroke="none" />
+    </g>
+  </symbol>
+
+  <!-- The bow in the cloud -->
+  <symbol id="e-rainbow" viewBox="0 0 64 64">
+    <g fill="none" stroke="currentColor" stroke-linecap="round">
+      <path d="M10 42A22 22 0 0 1 54 42M14.5 42A17.5 17.5 0 0 1 49.5 42M19 42A13 13 0 0 1 45 42" stroke-width="1.5" />
+      <path d="M5 46c-1-4 3-7 6-5c1-3 6-3 7 0c3-1 5 2 4 5z" fill="#16161A" stroke-width="1.2" />
+      <path d="M42 46c-1-4 3-7 6-5c1-3 6-3 7 0c3-1 5 2 4 5z" fill="#16161A" stroke-width="1.2" />
+      <path d="M9 50l-1.4 4M14 50l-1.4 4M19 50l-1.4 4M46 50l-1.4 4M51 50l-1.4 4M56 50l-1.4 4" stroke-width=".8" />
+    </g>
+  </symbol>
+
+  <!-- Square and compass -->
+  <symbol id="e-squarecompass" viewBox="0 0 64 64">
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M32 54L11 33l3-3 18 18 18-18 3 3z" stroke-width="1.4" />
+      <circle cx="32" cy="10" r="3.2" stroke-width="1.4" />
+      <path d="M30.4 12.8L13 50M33.6 12.8L51 50M28.6 13.6L12 49.2M35.4 13.6L52 49.2" stroke-width="1.2" />
+      <path d="M13 50l-1-.8M51 50l1-.8" stroke-width="1.4" />
+    </g>
+  </symbol>
+
+  <!-- A sheaf of wheat -->
+  <symbol id="e-wheat" viewBox="0 0 64 64">
+    <g fill="none" stroke="currentColor" stroke-linecap="round">
+      {wheatHeads.map((w) => <path d={w.stalk} stroke-width="1" />)}
+      <g stroke-width=".9" set:html={wheatHeads.map((w) => w.head).join('')} />
+      <path d={wheatStems} stroke-width="1" />
+      <path d="M25.5 36.5Q32 40.5 38.5 36.5M25.5 40Q32 44 38.5 40" stroke-width="1.6" />
+    </g>
+  </symbol>
+
+  <!-- The cup -->
+  <symbol id="e-cup" viewBox="0 0 64 64">
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M17 13H47C47 26 41 33 32 33C23 33 17 26 17 13Z" stroke-width="1.7" />
+      <g clip-path="url(#e-cup-bowl)"><path d="M38 13c0 9-2 15-6 19M41 13c0 9-2 15-5.5 19M44 13c0 8-2 13-5 17" stroke-width=".55" /></g>
+      <ellipse cx="32" cy="13" rx="15" ry="2.4" stroke-width="1" />
+      <path d="M30 33v11M34 33v11" stroke-width="1.3" />
+      <ellipse cx="32" cy="38.5" rx="4.4" ry="2.2" stroke-width="1.2" />
+      <path d="M30 44c-1.6 4-6.6 6-12 8h28c-5.4-2-10.4-4-12-8" stroke-width="1.5" />
+      <path d="M15 55h34" stroke-width="1.2" />
+    </g>
+  </symbol>
+
+  <!-- Grapes on the vine -->
+  <symbol id="e-grapes" viewBox="0 0 64 64">
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      {berries.map(([x, y]) => <circle cx={x} cy={y} r="4.2" stroke-width="1.3" />)}
+      {berries.map(([x, y]) => <path d={`M${x - 2.2} ${y - .4}a2.4 2.4 0 0 1 1.8-1.8`} stroke-width=".7" />)}
+      <path d="M33 21c0-4 1-8 4-11" stroke-width="1.4" />
+      <path d="M34 14C27 7 19 8 14 12C18 13.4 20 16.4 22 19C26 19.4 30.5 17.8 34 14Z" stroke-width="1.3" />
+      <path d="M34 14L19 12.6M27 13.4l-3-3.4M25 13.2l-1 4.2" stroke-width=".6" />
+      <path d="M37 11c4-3.4 8.6-.4 6.6 2.8c-1.2 1.8-4 .8-3-1.2" stroke-width=".9" />
+    </g>
+  </symbol>
+
+  <!-- The olive branch -->
+  <symbol id="e-olive" viewBox="0 0 64 64">
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d={`M${branch[0]}C${branch[1]} ${branch[2]} ${branch[3]}`.replace(/,/g, ' ')} stroke-width="1.5" />
+      <path d={oliveLeaves} stroke-width="1" />
+      {olives.map((o) => <><path d={`M${o.sx} ${o.sy}L${o.x} ${o.y - 3}`} stroke-width=".7" /><ellipse cx={o.x} cy={o.y} rx="2.6" ry="3.4" stroke-width="1.1" /></>)}
+    </g>
+  </symbol>
+
+  <!-- Living waters -->
+  <symbol id="e-waters" viewBox="0 0 64 64">
+    <g fill="none" stroke="currentColor" stroke-linecap="round">
+      <path d={waves} stroke-width="1.3" />
+      <path d="M8 13q4-6 9-3q-3 0-3 2.6M40 13q4-6 9-3q-3 0-3 2.6" stroke-width="1" />
+      <circle cx="32" cy="32" r="29" stroke-width=".6" stroke-dasharray="1 2.4" />
+    </g>
+  </symbol>
+
+  <!-- Fire -->
+  <symbol id="e-flame" viewBox="0 0 64 64">
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M32 6C36 16 46 22 46 35C46 45 40 53 32 53C24 53 18 45 18 36C18 28 23 24 26 16C27.6 21.6 29.6 24 31 25.2C31 18 30 12 32 6Z" stroke-width="1.7" />
+      <path d="M32 27C35 33 39 36.6 39 42C39 47 36 50 32 50C28 50 25 47 25 43C25 39 28 36.4 29.4 32.4C30.4 35.4 31.2 36.4 32.2 36.6C32.4 33 31.4 30 32 27Z" stroke-width="1" />
+      <path d="M21 57.5h22" stroke-width="1.2" />
+    </g>
+  </symbol>
+
+  <!-- The horn -->
+  <symbol id="e-horn" viewBox="0 0 64 64">
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d={hornPath(hornOut.map((p) => p.join(' '))) + `C13 44 17 49 22 46` } stroke-width="1.6" />
+      <path d={hornPath(hornIn.map((p) => p.join(' '))) + `C22 43 22.4 45 22 46`} stroke-width="1.6" />
+      <ellipse cx="50.5" cy="18" rx="2.6" ry="6.1" stroke-width="1.4" />
+      <path d={hornRings} stroke-width=".8" />
+    </g>
+  </symbol>
+
+  <!-- A crown -->
+  <symbol id="e-crown" viewBox="0 0 64 64">
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 44L11.5 22L22 32.5L27 15.5L32 28L37 15.5L42 32.5L52.5 22L50 44Z" stroke-width="1.6" />
+      <path d="M14 44H50V52H14Z" stroke-width="1.6" />
+      <circle cx="11.5" cy="19.6" r="2.3" stroke-width="1.2" /><circle cx="27" cy="13" r="2.3" stroke-width="1.2" /><circle cx="37" cy="13" r="2.3" stroke-width="1.2" /><circle cx="52.5" cy="19.6" r="2.3" stroke-width="1.2" /><circle cx="32" cy="24" r="1.8" stroke-width="1" />
+      <circle cx="32" cy="48" r="2.1" stroke-width="1" /><path d="M22 45.8l2.2 2.2-2.2 2.2-2.2-2.2zM42 45.8l2.2 2.2-2.2 2.2-2.2-2.2z" stroke-width=".9" />
+      <path d="M12 55.5h40" stroke-width="1" />
+    </g>
+  </symbol>
+
+  <!-- The serpent lifted on the pole -->
+  <symbol id="e-serpent" viewBox="0 0 64 64">
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M31 8v50M33 8v50" stroke-width="1.1" />
+      <path d="M38 12C30 12 24 15.4 25 19.6C26.4 24.6 40 22.6 40 28.6C40 34.6 24 32 24 38.4C24 44.6 40 42.4 40 48.4C40 52.4 35 54.6 29 54" stroke-width="2.6" />
+      <path d="M27.6 18.8l1.6-2M33 22.6l.8-2.2M37 27l2-1M28.6 33.4l-.4-2.2M26.6 39.6l1.8-1.6M34.6 43.6l.4-2.2M38.8 49.4l-1.8-1" stroke="#16161A" stroke-width=".8" />
+      <ellipse cx="40.4" cy="11.8" rx="3.6" ry="2.5" stroke-width="1.3" />
+      <path d="M44 11.8l2.6-.9M44 11.8l2.6.9" stroke-width=".8" />
+      <circle cx="41" cy="11" r=".6" fill="currentColor" stroke="none" />
+      <path d="M24 58h16" stroke-width="1.2" />
+    </g>
+  </symbol>
+
+  <!-- The dove, descending -->
+  <symbol id="e-dove" viewBox="0 0 64 64">
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M32 49C28.4 49 27.4 45.4 28 41.6C28.8 34.6 30 28.6 32 22.6C34 28.6 35.2 34.6 36 41.6C36.6 45.4 35.6 49 32 49Z" stroke-width="1.5" />
+      <path d="M30 24L25.6 11.6Q32 8.4 38.4 11.6L34 24M32 22.6V10.4M29.4 22L28.2 11.2M34.6 22L35.8 11.2" stroke-width="1" />
+      <path d="M29 37C21.6 35 11.6 30.4 6 18C11.6 22 15.6 22.2 18.4 22C14.6 18 13.4 14 14 9.6C18.4 16 22.6 20.8 29.4 29" stroke-width="1.3" />
+      <path d="M35 37C42.4 35 52.4 30.4 58 18C52.4 22 48.4 22.2 45.6 22C49.4 18 50.6 14 50 9.6C45.6 16 41.4 20.8 34.6 29" stroke-width="1.3" />
+      <path d="M12 23.6c4 3.6 9 6.4 14 8.4M18 17c3 5 6 8.4 10 11M52 23.6c-4 3.6-9 6.4-14 8.4M46 17c-3 5-6 8.4-10 11" stroke-width=".55" />
+      <circle cx="30.6" cy="45" r=".7" fill="currentColor" stroke="none" />
+      <path d="M32 49v2.4" stroke-width="1.2" />
+      <path d={leaf(32, 51.6, 2.4, 7, 1.8) + leaf(32, 51.6, 0.7, 7, 1.8)} stroke-width=".8" />
+    </g>
+  </symbol>
+
+  <!-- The ox -->
+  <symbol id="e-ox" viewBox="0 0 64 64">
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M23 20C15 20 9 15 9.6 7C12.6 13 17 15.6 24 16M41 20C49 20 55 15 54.4 7C51.4 13 47 15.6 40 16" stroke-width="1.5" />
+      <path d="M23.4 22.6C17.6 22 14 24.6 13.4 27.6C17.6 28.6 21 27 23.6 25.4M40.6 22.6C46.4 22 50 24.6 50.6 27.6C46.4 28.6 43 27 40.4 25.4" stroke-width="1.2" />
+      <path d="M24 16.4C23 26 24 36 26 44C27 50.6 29 54 32 54C35 54 37 50.6 38 44C40 36 41 26 40 16.4C36 14.6 28 14.6 24 16.4Z" stroke-width="1.6" />
+      <ellipse cx="32" cy="48.4" rx="6.6" ry="4.6" stroke-width="1.1" />
+      <path d="M29 48.4q.4-1.4 1.6-.6M35 48.4q-.4-1.4-1.6-.6" stroke-width="1" />
+      <path d="M26 28.2q1.6-1.4 3.2 0M34.8 28.2q1.6-1.4 3.2 0" stroke-width="1" />
+      <path d="M29 18.4q1.6 2.6 3 0q1.4 2.6 3 0M30.4 21q1.6 2 3.2 0" stroke-width=".7" />
+      <path d="M36.6 31c.6 4 .2 8-.8 12M38.4 30.4c.6 3.4.4 6.4-.2 9.4" stroke-width=".55" />
+    </g>
+  </symbol>
+
+  <!-- The tree of life, with its white fruit -->
+  <symbol id="e-tree" viewBox="0 0 64 64">
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d={crown} stroke-width="1.3" />
+      <path d="M30 55C31 47 31 41 29.4 35M34 55C33 47 33 41 34.6 35M29.4 35C25 31 21 29.4 17.6 26M34.6 35C39 31 43 29.4 46.4 26M31 35V19M30.2 31C26.6 25.6 25.6 20 26.6 15.6M33.8 31C37.4 25.6 38.4 20 37.4 15.6" stroke-width="1.2" />
+      <path d="M30 55c-4 .4-7.4 1.8-10 4M30 55c-1.6 1.6-2.6 3-3.2 4.6M34 55c4 .4 7.4 1.8 10 4M34 55c1.6 1.6 2.6 3 3.2 4.6" stroke-width="1" />
+      {fruit.map(([x, y]) => <circle cx={x} cy={y} r="2" stroke-width="1" fill="#E8DFC6" fill-opacity=".25" />)}
+    </g>
+  </symbol>
+
+  <!-- The keystone in its arch -->
+  <symbol id="e-keystone" viewBox="0 0 64 64">
+    <defs><pattern id="e-hatch" width="2.6" height="2.6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0V2.6" stroke="currentColor" stroke-width=".6" /></pattern></defs>
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d={archStones} stroke-width="1.3" />
+      <path d={archKey} stroke-width="1.6" fill="url(#e-hatch)" />
+      <path d="M4 46h14M46 46h14M4 46v10M60 46v10M18 46v10M46 46v10M2 56h60" stroke-width="1.3" />
+    </g>
+  </symbol>
+
+  <!-- The keystoned circle -->
+  <symbol id="e-keyring" viewBox="0 0 64 64">
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d={ringStones} stroke-width="1.2" />
+      <path d={ringKey} stroke-width="1.6" fill="url(#e-hatch)" />
+      <circle cx="32" cy="33" r="3" stroke-width="1" />
+    </g>
+  </symbol>
+
+  <!-- Hands clasped in fellowship -->
+  <symbol id="e-handclasp" viewBox="0 0 64 64">
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="32" cy="32" r="28" stroke-width="1" />
+      <circle cx="32" cy="32" r="25.6" stroke-width=".5" />
+      <path d="M6.6 26h12v14h-12M57.4 24h-12v14h12" stroke-width="1.3" />
+      <path d="M15 26v14M49 24v14" stroke-width="1" />
+      <path d="M18.6 27C25 25 31 24.6 37 26.4C40 27.4 41 30 39.4 32L37.4 35.6C34.4 38.6 26 39.4 18.6 39" stroke-width="1.5" />
+      <path d="M27.4 39q1.6 4 5 3.4M30.6 39q1.8 3.8 5 2.8M33.6 38.4q1.8 3.2 4.4 1.6" stroke-width="1.1" />
+      <path d="M45.4 24.4C41 23 35.6 22.4 30.6 23.6C27.6 24.4 27.4 27 30 27.4C33 27.8 36 27 38.4 27.6" stroke-width="1.5" />
+      <path d="M45.4 37.6C42 38.6 39.6 38.4 37.4 35.6" stroke-width="1.5" />
+    </g>
+  </symbol>
+</svg>
