@@ -28,7 +28,7 @@ scripts/
   kb_check.py                           copyright guardrail: flags verbatim runs of book text in committed notes
   build_toc.py            PDF bookmarks -> toc.json (page offset: printed = PDF - 24 for Bergman 8e)
   problem_index.py        problem numbers by section heading (rough; headings can be off)
-  publish.mjs             validate course.json and copy it to ../Samuelbaird.com/learn/<id>/
+  publish.mjs             validate course.json and copy it to ../../sites/samuelbaird.com/learn/<id>/
 ```
 The page itself (`learn/<id>/index.html`) lives in the `Samuelbaird.com` repo; `learn/me3320/index.html` is the template for new courses.
 

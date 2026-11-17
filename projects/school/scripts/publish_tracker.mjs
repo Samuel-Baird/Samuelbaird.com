@@ -1,10 +1,10 @@
 // Validate courses/<course>/tracker.json and copy it to the site repo.
-// usage: node scripts/publish_tracker.mjs me3410 [../Samuelbaird.com]
+// usage: node scripts/publish_tracker.mjs me3410 [../../sites/samuelbaird.com]  (run from projects/school in the monorepo)
 import fs from 'node:fs';
 import path from 'node:path';
 
 const course = process.argv[2] || 'me3410';
-const site = path.resolve(process.argv[3] || '../Samuelbaird.com');
+const site = path.resolve(process.argv[3] || '../../sites/samuelbaird.com');
 const src = path.resolve('courses', course, 'tracker.json');
 const dst = path.join(site, 'learn', course, 'tracker.json');
 const d = JSON.parse(fs.readFileSync(src, 'utf8'));

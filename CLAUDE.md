@@ -30,3 +30,13 @@ All sites share the Deseret Wiki's look and one sidebar: see `packages/family/ST
 - Never link the Gospel Scholar Archive (corpus.restorationcommons.org or its MCP host) on a public page.
 - antimormonstories and neomormonism are separate and must never be mentioned here or share this branding.
 - Each site's own CLAUDE.md/README still applies inside its folder.
+
+## Retired repos
+
+All nine old repos (deseret-mcp, omni, Peepstone, urim, deseret, collector-items, school, content_creation, latter-day-stats) are archived on GitHub. Nothing was lost:
+
+- `archive/<repo>/<branch>`: every branch that was not merged into its old main, exactly as it was.
+- `port/<repo>/<branch>`: those branches merged onto the monorepo layout (paths moved under the project's folder), ready to review and merge. `port/school/local-wip` and `port/deseret/local-buy-json` hold uncommitted work found in the old local folders.
+- Latter-day Stats branches without a port were already in main (squash-merged) or superseded; `archive/latter-day-stats/*` keeps them.
+- `archive/content_creation/review/ig-dd4ahhgy8zj` and `archive/content_creation/saint-capybara-visual-overhaul` conflict with later tooling changes and were not ported.
+- The old local folders (`AI projects/<repo>`) can no longer push. Work in this repo instead.
