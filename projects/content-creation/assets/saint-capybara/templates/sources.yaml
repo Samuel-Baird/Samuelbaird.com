@@ -1,0 +1,64 @@
+# Saint Capybara research/sources.yaml template. One entry per source
+# actually consulted (whether or not it ends up cited on screen -- unused
+# sources are fine, capy_check_sources.py reports them as info).
+#
+# See docs/saint-capybara/research-protocol.md sec 13 for the field
+# reference and sec 2 for the type hierarchy.
+#
+# Optional fields (article sources, plan Part 4.2): `source_kind`, `url`,
+# `archive_url`, `publication`. The article a project responds to is its
+# `type: critic` entry with `source_kind: article` -- see the commented
+# example at the bottom. capy_check_sources.py requires that entry (with
+# `url`; `archive_url` is a warning, --strict error) on any project whose
+# source/source_info.json says `kind: article`.
+
+sources:
+  - id: REPLACE-source-id                 # short, kebab-case, referenced from beats.yaml `sources:` lists
+    type: primary                         # primary | scholarly | official | scripture | dataset | apologetic-lead | critic | other
+    title: "REPLACE: full title"
+    author: "REPLACE: author/speaker, or null for an institutional document"
+    date: "REPLACE: YYYY or YYYY-MM-DD"
+    locator: "REPLACE: url, Pulpit cite URL, GSA path+page, or dataset slug"
+    accessed: "REPLACE: YYYY-MM-DD"
+    inspected: false                      # true only once you've actually read/verified this source yourself
+    inspected_via: "REPLACE: e.g. mcp Pulpit read_paragraphs, GSA read_pages, direct url fetch"
+    quote: null                           # verbatim quote used on screen, or null if not directly quoted
+    verification:                         # required if `quote` is set and attributed
+      tool: "REPLACE: e.g. verify_quote, cite_page"
+      verdict: "REPLACE: verify_quote returns exact | word-forms | not-verbatim | not-found;
+                GSA context-checks are page-read; a plain web fetch is direct-read"
+      link: "REPLACE: url the tool returned"
+    grade_supports: fact                  # fact | inference | disputed | speculation
+    traced_to: null                       # REQUIRED (a source id) if type is apologetic-lead
+    used_on_screen: false
+    counter: false                        # true if this source is used to push back against the claim rather than support the response's framing
+    notes: "REPLACE: anything else worth recording"
+    found_by: null                        # optional; set by tools/capy_merge_briefs.py to the
+                                           # researcher role (e.g. capy-historian) that found this
+                                           # source -- see research-protocol.md sec 15. Ignored by
+                                           # capy_check_sources.py.
+    claims: []                            # optional; claim number(s) (research/claims.md) this
+                                           # source supports. Set by capy_merge_briefs.py. Ignored
+                                           # by capy_check_sources.py.
+
+  # --- Article project: the responded-to article itself (delete for video projects) ---
+  # - id: critic-article
+  #   type: critic
+  #   source_kind: article                # video (default) | article
+  #   title: "REPLACE: headline"
+  #   author: "REPLACE: byline, or null"
+  #   publication: "REPLACE: e.g. The Salt Lake Tribune"
+  #   date: "REPLACE: YYYY-MM-DD"
+  #   url: "REPLACE: canonical url (same as source_info.json url)"
+  #   archive_url: "REPLACE: https://web.archive.org/web/<timestamp>/<url> (from capy_ingest.py --archive / --archive-url)"
+  #   locator: source/source.md           # the numbered, sha256-pinned text excerpt beats are checked against
+  #   accessed: "REPLACE: YYYY-MM-DD"
+  #   inspected: true
+  #   inspected_via: "capy_ingest.py --article-file (agent WebFetch / user paste), read in full"
+  #   quote: null                         # excerpt beats quote source.md directly; keep this null
+  #   verification: null
+  #   grade_supports: fact
+  #   traced_to: null
+  #   used_on_screen: true
+  #   counter: false
+  #   notes: "The article itself. Excerpt beats (kind: excerpt, para: N) are validated against source/source.md."

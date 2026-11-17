@@ -1,0 +1,28 @@
+# Install with: pip install -r requirements.txt
+# (openai-whisper, torch, python-docx, and Pillow are already present on this
+# machine as of 2026-09-08; this file documents the pin, not a fresh install.)
+openai-whisper>=20250625
+python-docx>=1.2.0
+Pillow>=12.3.0
+
+# Saint Capybara type (docs/types/saint-capybara.md) -- also already
+# present on this machine as of 2026-09-08.
+pyyaml>=6.0.3
+kokoro>=0.7.16
+misaki[en]>=0.7.17
+soundfile>=0.13.1
+yt-dlp>=2026.07.04
+
+# Saint Capybara article (text-source) mode: tools/capy_ingest.py
+# --article/--fetch and --archive. Also already present on this machine
+# as of 2026-09-09 (trafilatura 2.1.0, requests 2.34.2); documenting the
+# pin, not a fresh install.
+trafilatura>=2.1.0
+requests>=2.32.0
+
+# Presentation type (docs/types/presentation.md, tools/presentation/): faster-whisper
+# for transcription + the filler pass, numpy for sync/levels. Present on this machine as of
+# 2026-11-01 (faster-whisper 1.2.1, numpy 2.5.4). Also needs ffmpeg on PATH or via
+# `winget install --id Gyan.FFmpeg -e` (full build: libass for burned captions).
+faster-whisper>=1.2.0
+numpy>=2.0

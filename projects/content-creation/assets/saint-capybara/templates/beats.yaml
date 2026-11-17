@@ -1,0 +1,84 @@
+# Saint Capybara beats.yaml template. Copy into a project's script/ folder
+# (tools/new_project.ps1 -Type saint-capybara does this for you with the
+# slug already substituted) and replace the example content below.
+#
+# See docs/saint-capybara/script-format.md for the full field reference.
+# Every video's closing beat must end on "...God bless." (brand.md sec
+# 5a) -- capy_check_sources.py hard-errors if the last beat's text
+# doesn't.
+
+version: 1
+slug: REPLACE-WITH-SLUG
+title: "REPLACE: the on-screen/description title"
+hook: "REPLACE: a short, curiosity-driving line for the first 3 seconds"
+summary: "REPLACE: 1-2 sentence summary for the video description (Step 7, post-Gate-A)"
+# One of the three Saint Capybara video types: short (9:16, 60-180s, the
+# default) | long-instagram (9:16, 180-1200s) | long-youtube (16:9,
+# 180-1200s). Long types only when the user explicitly asks --
+# tools/new_project.ps1 -VideoType <type> rewrites these lines and adds
+# `long_form_requested:` (script-format.md "Video types").
+video_type: short
+format: { width: 1080, height: 1920, fps: 30, min_seconds: 60, max_seconds: 180 }
+voice: { name: am_michael, speed: 1.5 }
+# Quote voices for `excerpt` beats (article sources -- see
+# templates/beats.article.yaml). Optional here; defaults live in
+# capy.excerpts.DEFAULT_VOICES and are tentative until the voice bake-off.
+# voices:
+#   quote_male:    { name: bm_george, speed: 1.0 }
+#   quote_female:  { name: af_heart, speed: 1.0 }
+#   quote_default: quote_male
+sensitive: false
+music: null
+tags: [ldshistory]
+
+beats:
+  # Hook: the source clip that states the claim.
+  - id: c01
+    kind: clip
+    start: 0.0
+    end: 8.0
+    speed: 1.0
+    speaker: "Source video"
+    captions: source
+    pose: listening
+
+  # Article source instead of a clip? Use an `excerpt` beat (the source's
+  # verbatim words, anchored to a paragraph of source/source.md, read by
+  # a quote voice, budgeted like a clip). Requires source_info.json
+  # kind: article (capy_ingest.py --article-file). Example:
+  # - id: x01
+  #   kind: excerpt
+  #   text: "The church's response, she wrote, was [...] a pattern critics have long described."
+  #   para: 12                 # int, or [12, 13] when spanning one paragraph boundary
+  #   pose: reading
+  #   voice: quote_female      # quote_male | quote_female | inline {name, speed}; default voices.quote_default
+  #   cite_byline: false       # opt-in for op-eds where the author is the point
+
+  # Response: 2-4 evidence/narration/card beats. Example shapes below --
+  # delete/replace with the real content for this project.
+  - id: n01
+    kind: narration
+    text: "REPLACE: response narration, cite a source id below."
+    function: evidence
+    stage: freeze
+    sources: [REPLACE-source-id]
+    opinion: false
+
+  - id: e01
+    kind: evidence
+    text: "REPLACE: narration accompanying the on-screen receipt."
+    pose: reading_source
+    evidence:
+      image: images/REPLACE.png
+      credit: "REPLACE: citation line shown on the receipt"
+      crop: [0, 0, 0, 0]
+      placement: panel
+    sources: [REPLACE-source-id]
+
+  # Closing beat -- must end on "...God bless."
+  - id: n99
+    kind: narration
+    text: "REPLACE: closing line. God bless."
+    function: closing
+    pose: encouraging
+    opinion: true

@@ -1,0 +1,59 @@
+{
+  "3": {
+    "class_type": "KSampler",
+    "inputs": {
+      "seed": 100001,
+      "steps": 24,
+      "cfg": 7.5,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "karras",
+      "denoise": 1,
+      "model": ["4", 0],
+      "positive": ["6", 0],
+      "negative": ["7", 0],
+      "latent_image": ["5", 0]
+    }
+  },
+  "4": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "v1-5-pruned-emaonly-fp16.safetensors"
+    }
+  },
+  "5": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 1
+    }
+  },
+  "6": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "8-bit pixel art icon of a chibi capybara monk mascot, front-facing, neutral calm pose, continuous low wide body fused directly to the head with no visible neck, small rounded ears tucked into the top of the silhouette, wide flat two-tone muzzle patch across the lower face, small close-set eyes above the muzzle, calm peaceful expression, brown fur, small golden halo above the head, simple crucifix pendant necklace resting on bare chest fur, no robe, no clothing, no held objects, muted warm color palette, thick dark pixel outlines, minimal flat shading, clean simple silhouette, retro 16-bit SNES RPG sprite, tiny medieval religious icon as a video game character, plain solid pastel background, centered, symmetrical, pixel art, sprite sheet icon",
+      "clip": ["4", 1]
+    }
+  },
+  "7": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "realistic, photo, 3d render, anime, meme, angry, elaborate background, scenery, robe, clothing, held object, book, bible, text, watermark, signature, blurry, deformed, extra limbs, bad anatomy, neck, long neck, humanoid, bear",
+      "clip": ["4", 1]
+    }
+  },
+  "8": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": ["3", 0],
+      "vae": ["4", 2]
+    }
+  },
+  "9": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "filename_prefix": "capy_candidate_A_sd15",
+      "images": ["8", 0]
+    }
+  }
+}

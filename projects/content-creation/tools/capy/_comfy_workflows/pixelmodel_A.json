@@ -1,0 +1,59 @@
+{
+  "3": {
+    "class_type": "KSampler",
+    "inputs": {
+      "seed": 100001,
+      "steps": 24,
+      "cfg": 7.5,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "karras",
+      "denoise": 1,
+      "model": ["4", 0],
+      "positive": ["6", 0],
+      "negative": ["7", 0],
+      "latent_image": ["5", 0]
+    }
+  },
+  "4": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "Public-Prompts-Pixel-Model.ckpt"
+    }
+  },
+  "5": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 1
+    }
+  },
+  "6": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "pixelsprite, a chibi capybara monk mascot icon, front facing, neutral calm pose, continuous low wide body fused directly to the head with no visible neck, small rounded ears tucked into the top of the silhouette, wide flat two-tone muzzle patch across the lower face, small close-set eyes above the muzzle, calm peaceful expression, brown fur, small golden halo above the head, simple crucifix pendant necklace resting on bare chest fur, no robe, no clothing, no held objects, muted warm colors, dark outlines, clean silhouette, plain solid color background, centered, symmetrical",
+      "clip": ["4", 1]
+    }
+  },
+  "7": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "realistic, photo, 3d render, anime, meme, angry, elaborate background, scenery, robe, clothing, held object, book, bible, text, watermark, signature, blurry, deformed, extra limbs, bad anatomy, neck, long neck, humanoid, bear, cross stitch, embroidery, knitting pattern, grid lines, graph paper",
+      "clip": ["4", 1]
+    }
+  },
+  "8": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": ["3", 0],
+      "vae": ["4", 2]
+    }
+  },
+  "9": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "filename_prefix": "capy_candidate_A_pixelmodel",
+      "images": ["8", 0]
+    }
+  }
+}

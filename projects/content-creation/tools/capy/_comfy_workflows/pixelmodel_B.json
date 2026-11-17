@@ -1,0 +1,59 @@
+{
+  "3": {
+    "class_type": "KSampler",
+    "inputs": {
+      "seed": 240501,
+      "steps": 28,
+      "cfg": 8.0,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "karras",
+      "denoise": 1,
+      "model": ["4", 0],
+      "positive": ["6", 0],
+      "negative": ["7", 0],
+      "latent_image": ["5", 0]
+    }
+  },
+  "4": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "Public-Prompts-Pixel-Model.ckpt"
+    }
+  },
+  "5": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 1
+    }
+  },
+  "6": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "pixelsprite, close up full body portrait of a capybara character, filling the frame, large subject, low wide flat body fused directly into the head with no visible neck, small rounded ears at the top of the head, wide flat two-tone muzzle patch across the lower face like a real capybara, small close-set eyes, calm peaceful expression, brown fur, glowing golden halo ring floating above the head, small crucifix cross pendant on bare chest fur, no clothing, plain flat solid pastel background, no border, no frame, no badge, no coin, no circle border, no vignette, centered",
+      "clip": ["4", 1]
+    }
+  },
+  "7": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "realistic, photo, 3d render, anime, meme, angry, elaborate background, scenery, robe, clothing, held object, book, bible, text, watermark, signature, blurry, deformed, extra limbs, bad anatomy, neck, long neck, humanoid, bear, pig, boar, cross stitch, embroidery, knitting pattern, grid lines, graph paper, badge, coin, medallion, circular frame, border, ring frame, vignette, small subject, distant, full scene",
+      "clip": ["4", 1]
+    }
+  },
+  "8": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": ["3", 0],
+      "vae": ["4", 2]
+    }
+  },
+  "9": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "filename_prefix": "capy_candidate_B_pixelmodel",
+      "images": ["8", 0]
+    }
+  }
+}

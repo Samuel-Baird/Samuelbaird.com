@@ -1,0 +1,1391 @@
+# Saint Capybara -- Book of Mormon proper-noun pronunciation guide
+# Auto-generated 2026-09-09 from the Church's official pronunciation guide:
+# https://www.churchofjesuschrist.org/study/scriptures/bofm/pronunciation?lang=eng
+#
+# IPA here is a MECHANICAL, RULE-BASED conversion from the guide's own
+# diacritic respelling (a-with-macron etc, stress mark after the stressed
+# syllable) to IPA, not independently verified by ear against a real
+# Kokoro render -- every entry is intentionally `status: unverified`.
+# `respelling:` preserves the Church guide's own notation as the source of
+# truth; if a rendered word sounds wrong, that field is the first place to
+# check (this conversion table can misjudge stress or vowel quality),
+# fix the `ipa:` field by ear, and flip status to `verified-by-ear <date>`.
+#
+# This is a separate, much larger list (342 entries) from
+# templates/pronunciations.yaml (the general ~35-term seed list copied into
+# every new project) -- pull individual entries from here into a project's
+# script/pronunciations.yaml as its narration actually needs them, rather
+# than copying all 342 wholesale. Where a name also appears in the general
+# seed list (Nephi, Moroni, Lehi, Mosiah, Zarahemla, Cumorah, ...), that
+# seed entry is the one already in projects -- treat it as authoritative
+# over this file's mechanical conversion of the same name.
+
+entries:
+  - word: Aaron
+    ipa: "/ˈɛran/"
+    respelling: "ĕrʹan"
+    status: unverified
+  - word: Abel
+    ipa: "/ˈeɪbul/"
+    respelling: "āʹbul"
+    status: unverified
+  - word: Abinadi
+    ipa: "/aˈbɪnadaɪ/"
+    respelling: "a-bĭnʹa-dī"
+    status: unverified
+  - word: Abinadom
+    ipa: "/aˈbɪnadum/"
+    respelling: "a-bĭnʹa-dum"
+    status: unverified
+  - word: Abish
+    ipa: "/ˈeɪbɪʃ/"
+    respelling: "āʹbĭsh"
+    status: unverified
+  - word: Ablom
+    ipa: "/ˈæblum/"
+    respelling: "ăbʹlum"
+    status: unverified
+  - word: Abraham
+    ipa: "/ˈeɪbrahæm/"
+    respelling: "āʹbra-hăm"
+    status: unverified
+  - word: Adam
+    ipa: "/ˈædum/"
+    respelling: "ădʹum"
+    status: unverified
+  - word: Agosh
+    ipa: "/ˈeɪgɑʃ/"
+    respelling: "āʹgäsh"
+    status: unverified
+  - word: Aha
+    ipa: "/ˈeɪhɑ/"
+    respelling: "āʹhä"
+    status: unverified
+  - word: Ahah
+    ipa: "/ˈeɪhɑ/"
+    respelling: "āʹhä"
+    status: unverified
+  - word: Ahaz
+    ipa: "/ˈeɪhæz/"
+    respelling: "āʹhăz"
+    status: unverified
+  - word: Aiath
+    ipa: "/ˈaɪuθ/"
+    respelling: "īʹuth"
+    status: unverified
+  - word: Akish
+    ipa: "/ˈeɪkɪʃ/"
+    respelling: "āʹkĭsh"
+    status: unverified
+  - word: Alma
+    ipa: "/ˈælma/"
+    respelling: "ălʹma"
+    status: unverified
+  - word: Alpha
+    ipa: "/ˈælfa/"
+    respelling: "ălʹfa"
+    status: unverified
+  - word: Amaleki
+    ipa: "/aˈmælakaɪ/"
+    respelling: "a-mălʹa-kī"
+    status: unverified
+  - word: Amalekite
+    ipa: "/aˈmælakaɪt/"
+    respelling: "a-mălʹa-kīt"
+    status: unverified
+  - word: Amalickiah
+    ipa: "/aˈmælaˈkaɪa/"
+    respelling: "a-mălʹa-kīʹa"
+    status: unverified
+  - word: Amalickiahite
+    ipa: "/aˈmælaˈkaɪaaɪt/"
+    respelling: "a-mălʹa-kīʹa-īt"
+    status: unverified
+  - word: Amaron
+    ipa: "/aˈmeɪrɑn/"
+    respelling: "a-māʹrän"
+    status: unverified
+  - word: Amgid
+    ipa: "/ˈæmgɪd/"
+    respelling: "ămʹgĭd"
+    status: unverified
+  - word: Aminadab
+    ipa: "/aˈmɪnadæb/"
+    respelling: "a-mĭnʹa-dăb"
+    status: unverified
+  - word: Aminadi
+    ipa: "/aˈmɪnadaɪ/"
+    respelling: "a-mĭnʹa-dī"
+    status: unverified
+  - word: Amlici
+    ipa: "/ˈæmlɪsaɪ/"
+    respelling: "ămʹlĭ-sī"
+    status: unverified
+  - word: Amlicite
+    ipa: "/ˈæmlɪsaɪt/"
+    respelling: "ămʹlĭ-sīt"
+    status: unverified
+  - word: Ammah
+    ipa: "/ˈæmmɑ/"
+    respelling: "ămʹmä"
+    status: unverified
+  - word: Ammaron
+    ipa: "/ˈæmarɑn/"
+    respelling: "ămʹa-rän"
+    status: unverified
+  - word: Ammon
+    ipa: "/ˈæmun/"
+    respelling: "ămʹun"
+    status: unverified
+  - word: Ammonihah
+    ipa: "/æmaˈnaɪhɑ/"
+    respelling: "ăm-a-nīʹhä"
+    status: unverified
+  - word: Ammonihahite
+    ipa: "/æmaˈnaɪhɑaɪt/"
+    respelling: "ăm-a-nīʹhä-īt"
+    status: unverified
+  - word: Ammonite
+    ipa: "/ˈæmanaɪt/"
+    respelling: "ămʹa-nīt"
+    status: unverified
+  - word: Ammoron
+    ipa: "/ˈæmoʊrɑn/"
+    respelling: "ămʹōr-än"
+    status: unverified
+  - word: Amnigaddah
+    ipa: "/æmnɪˈgædɑ/"
+    respelling: "ăm-nĭ-gădʹä"
+    status: unverified
+  - word: Amnihu
+    ipa: "/æmˈnaɪhuː/"
+    respelling: "ăm-nīʹhū"
+    status: unverified
+  - word: Amnor
+    ipa: "/ˈæmnoʊr/"
+    respelling: "ămʹnōr"
+    status: unverified
+  - word: Amoron
+    ipa: "/aˈmoʊrɑn/"
+    respelling: "a-mōrʹän"
+    status: unverified
+  - word: Amos
+    ipa: "/ˈeɪmus/"
+    respelling: "āʹmus"
+    status: unverified
+  - word: Amoz
+    ipa: "/ˈeɪmuz/"
+    respelling: "āʹmuz"
+    status: unverified
+  - word: Amulek
+    ipa: "/ˈæmjuːlɛk/"
+    respelling: "ămʹyū-lĕk"
+    status: unverified
+  - word: Amulon
+    ipa: "/ˈæmjuːlɑn/"
+    respelling: "ămʹyū-län"
+    status: unverified
+  - word: Amulonites
+    ipa: "/ˈæmjaˈlɑnaɪts/"
+    respelling: "ămʹya-länʹīts"
+    status: unverified
+  - word: Anathoth
+    ipa: "/ˈænatoʊθ/"
+    respelling: "ănʹa-tōth"
+    status: unverified
+  - word: Angola
+    ipa: "/ænˈgoʊla/"
+    respelling: "ăn-gōʹla"
+    status: unverified
+  - word: Ani-Anti
+    ipa: "/ˈænaɪˈæntaɪ/"
+    respelling: "ănʹī–ănʹtī"
+    status: unverified
+  - word: Anti-Nephi-Lehi
+    ipa: "/ˈæntaɪˈniːfaɪˈliːhaɪ/"
+    respelling: "ănʹtī–nēʹfī–lēʹhī"
+    status: unverified
+  - word: Anti-Nephi-Lehies
+    ipa: "/ˈæntaɪˈniːfaɪˈliːhaɪz/"
+    respelling: "ănʹtī–nēʹfī–lēʹhīz"
+    status: unverified
+  - word: Antiomno
+    ipa: "/æntiːˈɑmnoʊ/"
+    respelling: "ăn-tē-ämʹnō"
+    status: unverified
+  - word: Antion
+    ipa: "/ˈæntiːɑn/"
+    respelling: "ănʹtē-än"
+    status: unverified
+  - word: Antionah
+    ipa: "/æntiːˈɑna/"
+    respelling: "ăn-tē-änʹa"
+    status: unverified
+  - word: Antionum
+    ipa: "/æntiːˈoʊnum/"
+    respelling: "ăn-tē-ōʹnum"
+    status: unverified
+  - word: Antiparah
+    ipa: "/æntɪˈpɑra/"
+    respelling: "ăn-tĭ-pärʹa"
+    status: unverified
+  - word: Antipas
+    ipa: "/ˈæntɪpɑs/"
+    respelling: "ănʹtĭ-päs"
+    status: unverified
+  - word: Antipus
+    ipa: "/ˈæntɪpus/"
+    respelling: "ănʹtĭ-pus"
+    status: unverified
+  - word: Antum
+    ipa: "/ˈæntum/"
+    respelling: "ănʹtum"
+    status: unverified
+  - word: Archeantus
+    ipa: "/ɑrkiːˈæntus/"
+    respelling: "är-kē-ănʹtus"
+    status: unverified
+  - word: Arpad
+    ipa: "/ˈɑrpæd/"
+    respelling: "ärʹpăd"
+    status: unverified
+  - word: Assyria
+    ipa: "/aˈsɪriːa/"
+    respelling: "a-sĭrʹē-a"
+    status: unverified
+  - word: Babylon
+    ipa: "/ˈbæbɪlɑn/"
+    respelling: "băbʹĭ-län"
+    status: unverified
+  - word: Bashan
+    ipa: "/ˈbeɪʃɑn/"
+    respelling: "bāʹshän"
+    status: unverified
+  - word: Benjamin
+    ipa: "/ˈbɛndʒamɪn/"
+    respelling: "bĕnʹja-mĭn"
+    status: unverified
+  - word: Bethabara
+    ipa: "/bɛθˈæbara/"
+    respelling: "bĕth-ăbʹa-ra"
+    status: unverified
+  - word: Boaz
+    ipa: "/ˈboʊæz/"
+    respelling: "bōʹăz"
+    status: unverified
+  - word: Bountiful
+    ipa: "/ˈbountɪful/"
+    respelling: "bounʹtĭ-ful"
+    status: unverified
+  - word: Cain
+    ipa: "/keɪn/"
+    respelling: "kān"
+    status: unverified
+  - word: Calno
+    ipa: "/ˈkælnoʊ/"
+    respelling: "kălʹnō"
+    status: unverified
+  - word: Carchemish
+    ipa: "/kɑrˈkɛmɪʃ/"
+    respelling: "kär-kĕmʹĭsh"
+    status: unverified
+  - word: Cezoram
+    ipa: "/siːˈzoʊrum/"
+    respelling: "sē-zōrʹum"
+    status: unverified
+  - word: Chaldeans
+    ipa: "/kælˈdiːunz/"
+    respelling: "kăl-dēʹunz"
+    status: unverified
+  - word: Chaldees
+    ipa: "/kælˈdiːz/"
+    respelling: "kăl-dēzʹ"
+    status: unverified
+  - word: Chemish
+    ipa: "/ˈkɛmɪʃ/"
+    respelling: "kĕmʹĭsh"
+    status: unverified
+  - word: Cherubim
+    ipa: "/ˈtʃɛrabɪm/"
+    respelling: "chĕrʹa-bĭm"
+    status: unverified
+  - word: Cohor
+    ipa: "/ˈkoʊhoʊr/"
+    respelling: "kōʹhōr"
+    status: unverified
+  - word: Com
+    ipa: "/koʊm/"
+    respelling: "kōm"
+    status: unverified
+  - word: Comnor
+    ipa: "/ˈkoʊmnoʊr/"
+    respelling: "kōmʹnōr"
+    status: unverified
+  - word: Corianton
+    ipa: "/koʊriːˈæntun/"
+    respelling: "kōr-ē-ănʹtun"
+    status: unverified
+  - word: Coriantor
+    ipa: "/koʊriːˈæntoʊr/"
+    respelling: "kōr-ē-ănʹtōr"
+    status: unverified
+  - word: Coriantum
+    ipa: "/koʊriːˈæntum/"
+    respelling: "kōr-ē-ănʹtum"
+    status: unverified
+  - word: Coriantumr
+    ipa: "/koʊriːˈæntamer/"
+    respelling: "kōr-ē-ănʹta-mer"
+    status: unverified
+  - word: Corihor
+    ipa: "/ˈkoʊrɪhoʊr/"
+    respelling: "kōrʹĭ-hōr"
+    status: unverified
+  - word: Corom
+    ipa: "/ˈkoʊrum/"
+    respelling: "kōrʹum"
+    status: unverified
+  - word: Cumeni
+    ipa: "/ˈkuːmanaɪ/"
+    respelling: "kūʹma-nī"
+    status: unverified
+  - word: Cumenihah
+    ipa: "/kuːmaˈnaɪhɑ/"
+    respelling: "kū-ma-nīʹhä"
+    status: unverified
+  - word: Cumom
+    ipa: "/ˈkuːmum/"
+    respelling: "kūʹmum"
+    status: unverified
+  - word: Cumorah
+    ipa: "/kaˈmoʊra/"
+    respelling: "ka-mōrʹa"
+    status: unverified
+  - word: Curelom
+    ipa: "/kuːˈriːlum/"
+    respelling: "kū-rēʹlum"
+    status: unverified
+  - word: Deseret
+    ipa: "/dɛzaˈrɛt/"
+    respelling: "dĕz-a-rĕtʹ"
+    status: unverified
+  - word: Desolation
+    ipa: "/dɛsoʊˈleɪʃun/"
+    respelling: "dĕs-ō-lāʹshun"
+    status: unverified
+  - word: Edom
+    ipa: "/ˈiːdum/"
+    respelling: "ēʹdum"
+    status: unverified
+  - word: Egypt
+    ipa: "/ˈiːdʒɪpt/"
+    respelling: "ēʹjĭpt"
+    status: unverified
+  - word: Egyptian
+    ipa: "/iːˈdʒɪpʃun/"
+    respelling: "ē-jĭpʹshun"
+    status: unverified
+  - word: Elam
+    ipa: "/ˈiːlum/"
+    respelling: "ēʹlum"
+    status: unverified
+  - word: Elijah
+    ipa: "/iːˈlaɪdʒa/"
+    respelling: "ē-līʹja"
+    status: unverified
+  - word: Emer
+    ipa: "/ˈiːmer/"
+    respelling: "ēʹmer"
+    status: unverified
+  - word: Emron
+    ipa: "/ˈɛmrɑn/"
+    respelling: "ĕmʹrän"
+    status: unverified
+  - word: Enos
+    ipa: "/ˈiːnus/"
+    respelling: "ēʹnus"
+    status: unverified
+  - word: Ephah
+    ipa: "/ˈiːfɑ/"
+    respelling: "ēʹfä"
+    status: unverified
+  - word: Ephraim
+    ipa: "/ˈiːfrɛm/"
+    respelling: "ēʹfrĕm"
+    status: unverified
+  - word: Esrom
+    ipa: "/ˈɛzrum/"
+    respelling: "ĕzʹrum"
+    status: unverified
+  - word: Ethem
+    ipa: "/ˈiːθum/"
+    respelling: "ēʹthum"
+    status: unverified
+  - word: Ether
+    ipa: "/ˈiːθer/"
+    respelling: "ēʹther"
+    status: unverified
+  - word: Eve
+    ipa: "/iːv/"
+    respelling: "ēv"
+    status: unverified
+  - word: Ezias
+    ipa: "/iːˈzaɪus/"
+    respelling: "ē-zīʹus"
+    status: unverified
+  - word: Ezrom
+    ipa: "/ˈɛzrum/"
+    respelling: "ĕzʹrum"
+    status: unverified
+  - word: Gad
+    ipa: "/gæd/"
+    respelling: "găd"
+    status: unverified
+  - word: Gadiandi
+    ipa: "/gædiːˈændaɪ/"
+    respelling: "găd-ē-ănʹdī"
+    status: unverified
+  - word: Gadianton
+    ipa: "/gædiːˈæntun/"
+    respelling: "găd-ē-ănʹtun"
+    status: unverified
+  - word: Gadiomnah
+    ipa: "/gædiːˈɑmna/"
+    respelling: "găd-ē-ämʹna"
+    status: unverified
+  - word: Gallim
+    ipa: "/ˈgælɪm/"
+    respelling: "gălʹĭm"
+    status: unverified
+  - word: Gazelem
+    ipa: "/gaˈzeɪlɪm/"
+    respelling: "ga-zāʹlĭm"
+    status: unverified
+  - word: Geba
+    ipa: "/ˈgiːba/"
+    respelling: "gēʹba"
+    status: unverified
+  - word: Gebim
+    ipa: "/ˈgiːbɪm/"
+    respelling: "gēʹbĭm"
+    status: unverified
+  - word: Gibeah
+    ipa: "/ˈgɪbiːa/"
+    respelling: "gĭbʹē-a"
+    status: unverified
+  - word: Gid
+    ipa: "/gɪd/"
+    respelling: "gĭd"
+    status: unverified
+  - word: Giddianhi
+    ipa: "/gɪdiːˈænhaɪ/"
+    respelling: "gĭd-ē-ănʹhī"
+    status: unverified
+  - word: Giddonah
+    ipa: "/gɪdˈdoʊnɑ/"
+    respelling: "gĭd-dōʹnä"
+    status: unverified
+  - word: Gideon
+    ipa: "/ˈgɪdiːun/"
+    respelling: "gĭdʹē-un"
+    status: unverified
+  - word: Gidgiddonah
+    ipa: "/gɪdgɪdˈdoʊnɑ/"
+    respelling: "gĭd-gĭd-dōʹnä"
+    status: unverified
+  - word: Gidgiddoni
+    ipa: "/gɪdgɪdˈdoʊnaɪ/"
+    respelling: "gĭd-gĭd-dōʹnī"
+    status: unverified
+  - word: Gilead
+    ipa: "/ˈgɪliːud/"
+    respelling: "gĭlʹē-ud"
+    status: unverified
+  - word: Gilgah
+    ipa: "/ˈgɪlgɑ/"
+    respelling: "gĭlʹgä"
+    status: unverified
+  - word: Gilgal
+    ipa: "/ˈgɪlgɑl/"
+    respelling: "gĭlʹgäl"
+    status: unverified
+  - word: Gimgimno
+    ipa: "/gɪmˈgɪmnoʊ/"
+    respelling: "gĭm-gĭmʹnō"
+    status: unverified
+  - word: Gomorrah
+    ipa: "/gaˈmoʊra/"
+    respelling: "ga-mōrʹa"
+    status: unverified
+  - word: Hagoth
+    ipa: "/ˈheɪgɑθ/"
+    respelling: "hāʹgäth"
+    status: unverified
+  - word: Hamath
+    ipa: "/ˈheɪmuθ/"
+    respelling: "hāʹmuth"
+    status: unverified
+  - word: Hearthom
+    ipa: "/hiːˈɑrθum/"
+    respelling: "hē-ärʹthum"
+    status: unverified
+  - word: Helam
+    ipa: "/ˈhiːlum/"
+    respelling: "hēʹlum"
+    status: unverified
+  - word: Helaman
+    ipa: "/ˈhiːlamun/"
+    respelling: "hēʹla-mun"
+    status: unverified
+  - word: Helem
+    ipa: "/ˈhiːlɛm/"
+    respelling: "hēʹlĕm"
+    status: unverified
+  - word: Helorum
+    ipa: "/hiːˈloʊrum/"
+    respelling: "hē-lōrʹum"
+    status: unverified
+  - word: Hem
+    ipa: "/hɛm/"
+    respelling: "hĕm"
+    status: unverified
+  - word: Hermounts
+    ipa: "/ˈhermounts/"
+    respelling: "herʹmounts"
+    status: unverified
+  - word: Heshlon
+    ipa: "/ˈhɛʃlɑn/"
+    respelling: "hĕshʹlän"
+    status: unverified
+  - word: Heth
+    ipa: "/hɛθ/"
+    respelling: "hĕth"
+    status: unverified
+  - word: Himni
+    ipa: "/ˈhɪmnaɪ/"
+    respelling: "hĭmʹnī"
+    status: unverified
+  - word: Horeb
+    ipa: "/ˈhoʊrɛb/"
+    respelling: "hōrʹĕb"
+    status: unverified
+  - word: Immanuel
+    ipa: "/ɪmˈmænjuːɛl/"
+    respelling: "ĭm-mănʹyū-ĕl"
+    status: unverified
+  - word: Irreantum
+    ipa: "/ɪriːˈæntum/"
+    respelling: "ĭ-rē-ănʹtum"
+    status: unverified
+  - word: Isaac
+    ipa: "/ˈaɪzɪk/"
+    respelling: "īʹzĭk"
+    status: unverified
+  - word: Isabel
+    ipa: "/ˈɪzabɛl/"
+    respelling: "ĭzʹa-bĕl"
+    status: unverified
+  - word: Isaiah
+    ipa: "/aɪˈzeɪa/"
+    respelling: "ī-zāʹa"
+    status: unverified
+  - word: Ishmael
+    ipa: "/ˈɪʃmɛl/"
+    respelling: "ĭshʹmĕl"
+    status: unverified
+  - word: Ishmaelite
+    ipa: "/ˈɪʃmɛlaɪt/"
+    respelling: "ĭshʹmĕl-īt"
+    status: unverified
+  - word: Israel
+    ipa: "/ˈɪzrul/"
+    respelling: "ĭzʹrul"
+    status: unverified
+  - word: Israelite
+    ipa: "/ˈɪzrulaɪt/"
+    respelling: "ĭzʹrul-īt"
+    status: unverified
+  - word: Jacob
+    ipa: "/ˈdʒeɪkub/"
+    respelling: "jāʹkub"
+    status: unverified
+  - word: Jacobite
+    ipa: "/ˈdʒeɪkubaɪt/"
+    respelling: "jāʹkub-īt"
+    status: unverified
+  - word: Jacobugath
+    ipa: "/ˈdʒeɪkaˈbuːgæθ/"
+    respelling: "jāʹka-būʹgăth"
+    status: unverified
+  - word: Jacom
+    ipa: "/ˈdʒeɪkum/"
+    respelling: "jāʹkum"
+    status: unverified
+  - word: Jared
+    ipa: "/ˈdʒɛrud/"
+    respelling: "jĕrʹud"
+    status: unverified
+  - word: Jaredite
+    ipa: "/ˈdʒɛradaɪt/"
+    respelling: "jĕrʹa-dīt"
+    status: unverified
+  - word: Jarom
+    ipa: "/ˈdʒɛrum/"
+    respelling: "jĕrʹum"
+    status: unverified
+  - word: Jashon
+    ipa: "/ˈdʒeɪʃɑn/"
+    respelling: "jāʹshän"
+    status: unverified
+  - word: Jeberechiah
+    ipa: "/dʒɛbaraˈkaɪa/"
+    respelling: "jĕb-a-ra-kīʹa"
+    status: unverified
+  - word: Jehovah
+    ipa: "/dʒiːˈhoʊva/"
+    respelling: "jē-hōʹva"
+    status: unverified
+  - word: Jeneum
+    ipa: "/ˈdʒɛniːum/"
+    respelling: "jĕnʹē-um"
+    status: unverified
+  - word: Jeremiah
+    ipa: "/dʒɛraˈmaɪa/"
+    respelling: "jĕr-a-mīʹa"
+    status: unverified
+  - word: Jershon
+    ipa: "/ˈdʒɛrʃɑn/"
+    respelling: "jĕrʹshän"
+    status: unverified
+  - word: Jerusalem
+    ipa: "/dʒaˈruːsalɛm/"
+    respelling: "ja-rūʹsa-lĕm"
+    status: unverified
+  - word: Jesse
+    ipa: "/ˈdʒɛsiː/"
+    respelling: "jĕsʹē"
+    status: unverified
+  - word: Jew
+    ipa: "/dʒuː/"
+    respelling: "jū"
+    status: unverified
+  - word: John
+    ipa: "/dʒɑn/"
+    respelling: "jän"
+    status: unverified
+  - word: Jonas
+    ipa: "/ˈdʒoʊnus/"
+    respelling: "jōʹnus"
+    status: unverified
+  - word: Jordan
+    ipa: "/ˈdʒoʊrdun/"
+    respelling: "jōrʹdun"
+    status: unverified
+  - word: Joseph
+    ipa: "/ˈdʒoʊzɛf/"
+    respelling: "jōʹzĕf"
+    status: unverified
+  - word: Josephite
+    ipa: "/ˈdʒoʊzɛfaɪt/"
+    respelling: "jōʹzĕf-īt"
+    status: unverified
+  - word: Josh
+    ipa: "/dʒɑʃ/"
+    respelling: "jäsh"
+    status: unverified
+  - word: Joshua
+    ipa: "/ˈdʒɑʃuːwa/"
+    respelling: "jäshʹū-wa"
+    status: unverified
+  - word: Jotham
+    ipa: "/ˈdʒoʊθum/"
+    respelling: "jōʹthum"
+    status: unverified
+  - word: Judah
+    ipa: "/ˈdʒuːda/"
+    respelling: "jūʹda"
+    status: unverified
+  - word: Judea
+    ipa: "/dʒuːˈdiːa/"
+    respelling: "jū-dēʹa"
+    status: unverified
+  - word: Kib
+    ipa: "/kɪb/"
+    respelling: "kĭb"
+    status: unverified
+  - word: Kim
+    ipa: "/kɪm/"
+    respelling: "kĭm"
+    status: unverified
+  - word: Kimnor
+    ipa: "/ˈkɪmnoʊr/"
+    respelling: "kĭmʹnōr"
+    status: unverified
+  - word: Kish
+    ipa: "/kɪʃ/"
+    respelling: "kĭsh"
+    status: unverified
+  - word: Kishkumen
+    ipa: "/kɪʃˈkuːmun/"
+    respelling: "kĭsh-kūʹmun"
+    status: unverified
+  - word: Korihor
+    ipa: "/ˈkoʊrɪhoʊr/"
+    respelling: "kōʹrĭ-hōr"
+    status: unverified
+  - word: Kumen
+    ipa: "/ˈkuːmun/"
+    respelling: "kūʹmun"
+    status: unverified
+  - word: Kumenonhi
+    ipa: "/ˈkuːmaˈnɑnhaɪ/"
+    respelling: "kūʹma-nänʹhī"
+    status: unverified
+  - word: Laban
+    ipa: "/ˈleɪbun/"
+    respelling: "lāʹbun"
+    status: unverified
+  - word: Lachoneus
+    ipa: "/laˈkoʊniːus/"
+    respelling: "la-kōʹnē-us"
+    status: unverified
+  - word: Laish
+    ipa: "/ˈleɪɪʃ/"
+    respelling: "lāʹĭsh"
+    status: unverified
+  - word: Lamah
+    ipa: "/ˈleɪmɑ/"
+    respelling: "lāʹmä"
+    status: unverified
+  - word: Laman
+    ipa: "/ˈleɪmun/"
+    respelling: "lāʹmun"
+    status: unverified
+  - word: Lamanite
+    ipa: "/ˈleɪmunaɪt/"
+    respelling: "lāʹmun-īt"
+    status: unverified
+  - word: Lamoni
+    ipa: "/laˈmoʊnaɪ/"
+    respelling: "la-mōʹnī"
+    status: unverified
+  - word: Lebanon
+    ipa: "/ˈlɛbanɑn/"
+    respelling: "lĕbʹa-nän"
+    status: unverified
+  - word: Lehi
+    ipa: "/ˈliːhaɪ/"
+    respelling: "lēʹhī"
+    status: unverified
+  - word: Lehi-Nephi
+    ipa: "/ˈliːhaɪˈniːfaɪ/"
+    respelling: "lēʹhī–nēʹfī"
+    status: unverified
+  - word: Lehonti
+    ipa: "/liːˈhɑntaɪ/"
+    respelling: "lē-hänʹtī"
+    status: unverified
+  - word: Lemuel
+    ipa: "/ˈlɛmjuːl/"
+    respelling: "lĕmʹyūl"
+    status: unverified
+  - word: Lemuelite
+    ipa: "/ˈlɛmjuːlaɪt/"
+    respelling: "lĕmʹyūl-īt"
+    status: unverified
+  - word: Levi
+    ipa: "/ˈliːvaɪ/"
+    respelling: "lēʹvī"
+    status: unverified
+  - word: Liahona
+    ipa: "/ˈliːaˈhoʊna/"
+    respelling: "lēʹa-hōʹna"
+    status: unverified
+  - word: Lib
+    ipa: "/lɪb/"
+    respelling: "lĭb"
+    status: unverified
+  - word: Limhah
+    ipa: "/ˈlɪmhɑ/"
+    respelling: "lĭmʹhä"
+    status: unverified
+  - word: Limher
+    ipa: "/ˈlɪmher/"
+    respelling: "lĭmʹher"
+    status: unverified
+  - word: Limhi
+    ipa: "/ˈlɪmhaɪ/"
+    respelling: "lĭmʹhī"
+    status: unverified
+  - word: Limnah
+    ipa: "/ˈlɪmnɑ/"
+    respelling: "lĭmʹnä"
+    status: unverified
+  - word: Luram
+    ipa: "/ˈluːrum/"
+    respelling: "lūrʹum"
+    status: unverified
+  - word: Madmenah
+    ipa: "/mædˈmɛna/"
+    respelling: "măd-mĕnʹa"
+    status: unverified
+  - word: Mahah
+    ipa: "/ˈmeɪhɑ/"
+    respelling: "māʹhä"
+    status: unverified
+  - word: Malachi
+    ipa: "/ˈmælakaɪ/"
+    respelling: "mălʹa-kī"
+    status: unverified
+  - word: Manasseh
+    ipa: "/maˈnæsa/"
+    respelling: "ma-năsʹa"
+    status: unverified
+  - word: Manti
+    ipa: "/ˈmæntaɪ/"
+    respelling: "mănʹtī"
+    status: unverified
+  - word: Mary
+    ipa: "/ˈmɛriː/"
+    respelling: "mĕʹrē"
+    status: unverified
+  - word: Mathoni
+    ipa: "/maˈθoʊnaɪ/"
+    respelling: "ma-thōʹnī"
+    status: unverified
+  - word: Mathonihah
+    ipa: "/mæθoʊˈnaɪhɑ/"
+    respelling: "măth-ō-nīʹhä"
+    status: unverified
+  - word: Medes
+    ipa: "/miːdz/"
+    respelling: "mēdz"
+    status: unverified
+  - word: Melchizedek
+    ipa: "/mɛlˈkɪzadɪk/"
+    respelling: "mĕl-kĭzʹa-dĭk"
+    status: unverified
+  - word: Melek
+    ipa: "/ˈmiːlɛk/"
+    respelling: "mēʹlĕk"
+    status: unverified
+  - word: Michmash
+    ipa: "/ˈmɪkmæʃ/"
+    respelling: "mĭkʹmăsh"
+    status: unverified
+  - word: Middoni
+    ipa: "/mɪdˈdoʊnaɪ/"
+    respelling: "mĭd-dōʹnī"
+    status: unverified
+  - word: Midian
+    ipa: "/ˈmɪdiːun/"
+    respelling: "mĭdʹē-un"
+    status: unverified
+  - word: Migron
+    ipa: "/ˈmaɪgrɑn/"
+    respelling: "mīʹgrän"
+    status: unverified
+  - word: Minon
+    ipa: "/ˈmaɪnɑn/"
+    respelling: "mīʹnän"
+    status: unverified
+  - word: Moab
+    ipa: "/ˈmoʊæb/"
+    respelling: "mōʹăb"
+    status: unverified
+  - word: Mocum
+    ipa: "/ˈmoʊkum/"
+    respelling: "mōʹkum"
+    status: unverified
+  - word: Moriancumer
+    ipa: "/moʊriːˈænkamer/"
+    respelling: "mōr-ē-ănʹka-mer"
+    status: unverified
+  - word: Morianton
+    ipa: "/moʊriːˈæntun/"
+    respelling: "mōr-ē-ănʹtun"
+    status: unverified
+  - word: Moriantum
+    ipa: "/moʊriːˈæntum/"
+    respelling: "mōr-ē-ănʹtum"
+    status: unverified
+  - word: Mormon
+    ipa: "/ˈmoʊrmun/"
+    respelling: "mōrʹmun"
+    status: unverified
+  - word: Moron
+    ipa: "/ˈmoʊrun/"
+    respelling: "mōrʹun"
+    status: unverified
+  - word: Moroni
+    ipa: "/moʊˈroʊnaɪ/"
+    respelling: "mō-rōʹnī"
+    status: unverified
+  - word: Moronihah
+    ipa: "/moʊroʊˈnaɪhɑ/"
+    respelling: "mō-rō-nīʹhä"
+    status: unverified
+  - word: Moses
+    ipa: "/ˈmoʊzus/"
+    respelling: "mōʹzus"
+    status: unverified
+  - word: Mosiah
+    ipa: "/moʊˈsaɪa/"
+    respelling: "mō-sīʹa"
+    status: unverified
+  - word: Mulek
+    ipa: "/ˈmjuːlɛk/"
+    respelling: "myūʹlĕk"
+    status: unverified
+  - word: Muloki
+    ipa: "/ˈmjuːlakaɪ/"
+    respelling: "myūʹla-kī"
+    status: unverified
+  - word: Nahom
+    ipa: "/ˈneɪhum/"
+    respelling: "nāʹhum"
+    status: unverified
+  - word: Naphtali
+    ipa: "/ˈnæftalaɪ/"
+    respelling: "năfʹta-lī"
+    status: unverified
+  - word: Nazareth
+    ipa: "/ˈnæzarɛθ/"
+    respelling: "năzʹa-rĕth"
+    status: unverified
+  - word: Neas
+    ipa: "/ˈniːɑs/"
+    respelling: "nēʹäs"
+    status: unverified
+  - word: Nehor
+    ipa: "/ˈniːhoʊr/"
+    respelling: "nēʹhōr"
+    status: unverified
+  - word: Nephi
+    ipa: "/ˈniːfaɪ/"
+    respelling: "nēʹfī"
+    status: unverified
+  - word: Nephihah
+    ipa: "/niːˈfaɪhɑ/"
+    respelling: "nē-fīʹhä"
+    status: unverified
+  - word: Nephite
+    ipa: "/ˈniːfaɪt/"
+    respelling: "nēʹfīt"
+    status: unverified
+  - word: Neum
+    ipa: "/ˈniːum/"
+    respelling: "nēʹum"
+    status: unverified
+  - word: Nimrah
+    ipa: "/ˈnɪmrɑ/"
+    respelling: "nĭmʹrä"
+    status: unverified
+  - word: Nimrod
+    ipa: "/ˈnɪmrɑd/"
+    respelling: "nĭmʹräd"
+    status: unverified
+  - word: Noah
+    ipa: "/ˈnoʊa/"
+    respelling: "nōʹa"
+    status: unverified
+  - word: Ogath
+    ipa: "/ˈoʊgæθ/"
+    respelling: "ōʹgăth"
+    status: unverified
+  - word: Omega
+    ipa: "/oʊˈmeɪga/"
+    respelling: "ō-māʹga"
+    status: unverified
+  - word: Omer
+    ipa: "/ˈoʊmer/"
+    respelling: "ōʹmer"
+    status: unverified
+  - word: Omner
+    ipa: "/ˈɑmner/"
+    respelling: "ämʹner"
+    status: unverified
+  - word: Omni
+    ipa: "/ˈɑmnaɪ/"
+    respelling: "ämʹnī"
+    status: unverified
+  - word: Onidah
+    ipa: "/oʊˈnaɪda/"
+    respelling: "ō-nīʹda"
+    status: unverified
+  - word: Onihah
+    ipa: "/oʊˈnaɪhɑ/"
+    respelling: "ō-nīʹhä"
+    status: unverified
+  - word: Onti
+    ipa: "/ˈɑntaɪ/"
+    respelling: "änʹtī"
+    status: unverified
+  - word: Ophir
+    ipa: "/ˈoʊfer/"
+    respelling: "ōʹfer"
+    status: unverified
+  - word: Oreb
+    ipa: "/ˈoʊrɛb/"
+    respelling: "ōrʹĕb"
+    status: unverified
+  - word: Orihah
+    ipa: "/oʊˈraɪhɑ/"
+    respelling: "ō-rīʹhä"
+    status: unverified
+  - word: Paanchi
+    ipa: "/peɪˈænkaɪ/"
+    respelling: "pā-ănʹkī"
+    status: unverified
+  - word: Pachus
+    ipa: "/ˈpeɪkus/"
+    respelling: "pāʹkus"
+    status: unverified
+  - word: Pacumeni
+    ipa: "/peɪˈkjuːmɛnaɪ/"
+    respelling: "pā-kyūʹmĕn-ī"
+    status: unverified
+  - word: Pagag
+    ipa: "/ˈpeɪgɑg/"
+    respelling: "pāʹgäg"
+    status: unverified
+  - word: Pahoran
+    ipa: "/paˈhoʊrun/"
+    respelling: "pa-hōrʹun"
+    status: unverified
+  - word: Palestina
+    ipa: "/pælaˈstaɪna/"
+    respelling: "păl-a-stīʹna"
+    status: unverified
+  - word: Pathros
+    ipa: "/ˈpeɪθroʊs/"
+    respelling: "pāʹthrōs"
+    status: unverified
+  - word: Pekah
+    ipa: "/ˈpiːkɑ/"
+    respelling: "pēʹkä"
+    status: unverified
+  - word: Pharaoh
+    ipa: "/ˈfeɪroʊ/"
+    respelling: "fāʹrō"
+    status: unverified
+  - word: Philistine
+    ipa: "/ˈfɪlastiːn/"
+    respelling: "fĭlʹa-stēn"
+    status: unverified
+  - word: Rabbanah
+    ipa: "/raˈbæna/"
+    respelling: "ra-bănʹa"
+    status: unverified
+  - word: Rahab
+    ipa: "/ˈreɪhæb/"
+    respelling: "rāʹhăb"
+    status: unverified
+  - word: Ramah
+    ipa: "/ˈrɑmɑ/"
+    respelling: "räʹmä"
+    status: unverified
+  - word: Ramath
+    ipa: "/ˈreɪmuθ/"
+    respelling: "rāʹmuth"
+    status: unverified
+  - word: Rameumptom
+    ipa: "/ræmiːˈumptum/"
+    respelling: "răm-ē-umpʹtum"
+    status: unverified
+  - word: Remaliah
+    ipa: "/rɛmaˈlaɪa/"
+    respelling: "rĕm-a-līʹa"
+    status: unverified
+  - word: Rezin
+    ipa: "/ˈriːzɪn/"
+    respelling: "rēʹzĭn"
+    status: unverified
+  - word: Riplah
+    ipa: "/ˈrɪplɑ/"
+    respelling: "rĭpʹlä"
+    status: unverified
+  - word: Riplakish
+    ipa: "/rɪpˈleɪkɪʃ/"
+    respelling: "rĭp-lāʹkĭsh"
+    status: unverified
+  - word: Ripliancum
+    ipa: "/rɪpliːˈænkum/"
+    respelling: "rĭp-lē-ănʹkum"
+    status: unverified
+  - word: Salem
+    ipa: "/ˈseɪlɛm/"
+    respelling: "sāʹlĕm"
+    status: unverified
+  - word: Sam
+    ipa: "/sæm/"
+    respelling: "săm"
+    status: unverified
+  - word: Samaria
+    ipa: "/saˈmɛriːa/"
+    respelling: "sa-mĕrʹē-a"
+    status: unverified
+  - word: Samuel
+    ipa: "/ˈsæmjuːɛl/"
+    respelling: "sămʹyū-ĕl"
+    status: unverified
+  - word: Sarah
+    ipa: "/ˈsɛra/"
+    respelling: "sĕrʹa"
+    status: unverified
+  - word: Sariah
+    ipa: "/saˈraɪa/"
+    respelling: "sa-rīʹa"
+    status: unverified
+  - word: Saul
+    ipa: "/sɑl/"
+    respelling: "säl"
+    status: unverified
+  - word: Seantum
+    ipa: "/siːˈæntum/"
+    respelling: "sē-ănʹtum"
+    status: unverified
+  - word: Sebus
+    ipa: "/ˈsiːbus/"
+    respelling: "sēʹbus"
+    status: unverified
+  - word: Seezoram
+    ipa: "/siːˈzoʊrum/"
+    respelling: "sē-zōrʹum"
+    status: unverified
+  - word: Senine
+    ipa: "/ˈsiːnaɪn/"
+    respelling: "sēʹnīn"
+    status: unverified
+  - word: Senum
+    ipa: "/ˈsiːnum/"
+    respelling: "sēʹnum"
+    status: unverified
+  - word: Seraphim
+    ipa: "/ˈsɛrafɪm/"
+    respelling: "sĕrʹa-fĭm"
+    status: unverified
+  - word: Seth
+    ipa: "/sɛθ/"
+    respelling: "sĕth"
+    status: unverified
+  - word: Shared
+    ipa: "/ˈʃeɪrud/"
+    respelling: "shāʹrud"
+    status: unverified
+  - word: Shazer
+    ipa: "/ˈʃeɪzer/"
+    respelling: "shāʹzer"
+    status: unverified
+  - word: Shearjashub
+    ipa: "/ʃɪrˈdʒeɪʃub/"
+    respelling: "shĭr-jāʹshub"
+    status: unverified
+  - word: Shelem
+    ipa: "/ˈʃiːlɛm/"
+    respelling: "shēʹlĕm"
+    status: unverified
+  - word: Shem
+    ipa: "/ʃɛm/"
+    respelling: "shĕm"
+    status: unverified
+  - word: Shemlon
+    ipa: "/ˈʃɛmlɑn/"
+    respelling: "shĕmʹlän"
+    status: unverified
+  - word: Shemnon
+    ipa: "/ˈʃɛmnɑn/"
+    respelling: "shĕmʹnän"
+    status: unverified
+  - word: Sherem
+    ipa: "/ˈʃɛrum/"
+    respelling: "shĕrʹum"
+    status: unverified
+  - word: Sherrizah
+    ipa: "/ʃɛrˈaɪza/"
+    respelling: "shĕr-īʹza"
+    status: unverified
+  - word: Sheum
+    ipa: "/ˈʃiːum/"
+    respelling: "shēʹum"
+    status: unverified
+  - word: Shez
+    ipa: "/ʃɛz/"
+    respelling: "shĕz"
+    status: unverified
+  - word: Shiblom
+    ipa: "/ˈʃɪblum/"
+    respelling: "shĭbʹlum"
+    status: unverified
+  - word: Shiblon
+    ipa: "/ˈʃɪblun/"
+    respelling: "shĭbʹlun"
+    status: unverified
+  - word: Shiblum
+    ipa: "/ˈʃɪblum/"
+    respelling: "shĭbʹlum"
+    status: unverified
+  - word: Shiloah
+    ipa: "/ʃaɪˈloʊa/"
+    respelling: "shī-lōʹa"
+    status: unverified
+  - word: Shilom
+    ipa: "/ˈʃaɪlum/"
+    respelling: "shīʹlum"
+    status: unverified
+  - word: Shim
+    ipa: "/ʃɪm/"
+    respelling: "shĭm"
+    status: unverified
+  - word: Shimnilom
+    ipa: "/ʃɪmˈnaɪlɑm/"
+    respelling: "shĭm-nīʹläm"
+    status: unverified
+  - word: Shinar
+    ipa: "/ˈʃaɪnɑr/"
+    respelling: "shīʹnär"
+    status: unverified
+  - word: Shiz
+    ipa: "/ʃɪz/"
+    respelling: "shĭz"
+    status: unverified
+  - word: Shule
+    ipa: "/ʃuːl/"
+    respelling: "shūl"
+    status: unverified
+  - word: Shum
+    ipa: "/ʃum/"
+    respelling: "shum"
+    status: unverified
+  - word: Shurr
+    ipa: "/ʃer/"
+    respelling: "sher"
+    status: unverified
+  - word: Sidom
+    ipa: "/ˈsaɪdum/"
+    respelling: "sīʹdum"
+    status: unverified
+  - word: Sidon
+    ipa: "/ˈsaɪdun/"
+    respelling: "sīʹdun"
+    status: unverified
+  - word: Sinai
+    ipa: "/ˈsaɪnaɪ/"
+    respelling: "sīʹnī"
+    status: unverified
+  - word: Sinim
+    ipa: "/ˈsaɪnɪm/"
+    respelling: "sīʹnĭm"
+    status: unverified
+  - word: Siron
+    ipa: "/ˈsaɪrun/"
+    respelling: "sīʹrun"
+    status: unverified
+  - word: Syria
+    ipa: "/ˈsɪriːa/"
+    respelling: "sĭrʹē-a"
+    status: unverified
+  - word: Tarshish
+    ipa: "/ˈtɑrʃɪʃ/"
+    respelling: "tärʹshĭsh"
+    status: unverified
+  - word: Teancum
+    ipa: "/tiːˈænkum/"
+    respelling: "tē-ănʹkum"
+    status: unverified
+  - word: Teomner
+    ipa: "/tiːˈɑmner/"
+    respelling: "tē-ämʹner"
+    status: unverified
+  - word: Thummim
+    ipa: "/ˈθumɪm/"
+    respelling: "thumʹĭm"
+    status: unverified
+  - word: Timothy
+    ipa: "/ˈtɪmaθiː/"
+    respelling: "tĭmʹa-thē"
+    status: unverified
+  - word: Tubaloth
+    ipa: "/ˈtuːbalɑθ/"
+    respelling: "tūʹba-läth"
+    status: unverified
+  - word: Uriah
+    ipa: "/juːˈraɪa/"
+    respelling: "yū-rīʹa"
+    status: unverified
+  - word: Urim
+    ipa: "/ˈjuːrɪm/"
+    respelling: "yūrʹĭm"
+    status: unverified
+  - word: Uzziah
+    ipa: "/juːˈzaɪa/"
+    respelling: "yū-zīʹa"
+    status: unverified
+  - word: Zarahemla
+    ipa: "/zɛraˈhɛmla/"
+    respelling: "zĕr-a-hĕmʹla"
+    status: unverified
+  - word: Zebulun
+    ipa: "/ˈzɛbjuːlun/"
+    respelling: "zĕbʹyū-lun"
+    status: unverified
+  - word: Zechariah
+    ipa: "/ˈzɛkaˈraɪa/"
+    respelling: "zĕkʹa-rīʹa"
+    status: unverified
+  - word: Zedekiah
+    ipa: "/ˈzɛdaˈkaɪa/"
+    respelling: "zĕdʹa-kīʹa"
+    status: unverified
+  - word: Zeezrom
+    ipa: "/ziːˈɛzrum/"
+    respelling: "zē-ĕzʹrum"
+    status: unverified
+  - word: Zemnarihah
+    ipa: "/zɛmnaˈraɪhɑ/"
+    respelling: "zĕm-na-rīʹhä"
+    status: unverified
+  - word: Zenephi
+    ipa: "/ˈziːnafaɪ/"
+    respelling: "zēnʹa-fī"
+    status: unverified
+  - word: Zeniff
+    ipa: "/ˈziːnɪf/"
+    respelling: "zēʹnĭf"
+    status: unverified
+  - word: Zenock
+    ipa: "/ˈziːnuk/"
+    respelling: "zēʹnuk"
+    status: unverified
+  - word: Zenos
+    ipa: "/ˈziːnus/"
+    respelling: "zēʹnus"
+    status: unverified
+  - word: Zerahemnah
+    ipa: "/zɛraˈhɛmnɑ/"
+    respelling: "zĕr-a-hĕmʹnä"
+    status: unverified
+  - word: Zeram
+    ipa: "/ˈziːrum/"
+    respelling: "zēʹrum"
+    status: unverified
+  - word: Zerin
+    ipa: "/ˈziːrɪn/"
+    respelling: "zēʹrĭn"
+    status: unverified
+  - word: Ziff
+    ipa: "/zɪf/"
+    respelling: "zĭf"
+    status: unverified
+  - word: Zion
+    ipa: "/ˈzaɪun/"
+    respelling: "zīʹun"
+    status: unverified
+  - word: Zoram
+    ipa: "/ˈzoʊrum/"
+    respelling: "zōʹrum"
+    status: unverified
+  - word: Zoramite
+    ipa: "/ˈzoʊrumaɪt/"
+    respelling: "zōrʹum-īt"
+    status: unverified

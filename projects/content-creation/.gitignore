@@ -1,0 +1,14 @@
+# Saint Capybara anonymity: this file must never be committed with real
+# content. It holds the creator's other names/handles/brands so
+# tools/capy_check_brand.py can scan for accidental leakage without that
+# list itself living in the (potentially public) repo. See
+# docs/saint-capybara/brand.md "Operational anonymity checklist".
+assets/saint-capybara/banned.txt
+
+# Optional royalty-free music bed for Saint Capybara shorts (off by
+# default; see docs/saint-capybara/brand.md). Kept out of git because
+# audio files are large and licensing varies per track.
+assets/saint-capybara/music/
+
+__pycache__/
+*.pyc
