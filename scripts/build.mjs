@@ -34,6 +34,7 @@ const EXT = {
 };
 const LDS = 'https://latterdaystats.samuelbaird.com';
 const PULPIT = 'https://pulpit.restorationcommons.org';
+const DESERET = 'https://deseret.wiki';
 const YT = 'https://www.youtube.com/@ithinkthereforeisam?sub_confirmation=1';
 const SUBSTACK = 'https://ithinkisam.substack.com/';
 const IG = 'https://www.instagram.com/ithinkisam/';
@@ -141,7 +142,7 @@ const NAV_ITEMS = [
 ];
 const nav = (p) => {
   const links = NAV_ITEMS.map(([h, t]) => `<a href="${h}"${h.split('#')[0] === p && !h.includes('#') || (h === '/sacred-sites' && p.startsWith('/sacred-sites')) ? ' aria-current="page"' : ''}>${t}</a>`).join('');
-  return `<div class="netbar"><div class="rail"><span>Also by ${NAME}</span><a href="${LDS}/">Latter-day Stats</a><a href="${PULPIT}/">Pulpit</a><a href="${YT}" rel="me noopener">YouTube</a><a href="${SUBSTACK}" rel="me noopener">Substack</a></div></div>
+  return `<div class="netbar"><div class="rail"><span>Also by ${NAME}</span><a href="${LDS}/">Latter-day Stats</a><a href="${PULPIT}/">Pulpit</a><a href="${DESERET}/">Deseret Wiki</a><a href="${YT}" rel="me noopener">YouTube</a><a href="${SUBSTACK}" rel="me noopener">Substack</a></div></div>
 <header class="topbar"><div class="rail">
   <a class="wordmark" href="/" aria-label="${NAME}, home"><span class="mono" aria-hidden="true">SB</span>${NAME}</a>
   <nav class="nav" aria-label="Main">${links}<a class="nav-cta" href="/donate"${p === '/donate' ? ' aria-current="page"' : ''}>Donate</a></nav>
@@ -150,7 +151,7 @@ const nav = (p) => {
 const foot = () => `<footer class="sitefoot"><div class="rail">
   <div class="cols">
     <div><h2 class="small-caps">Projects</h2><ul>
-      <li><a href="${LDS}/">Latter-day Stats</a></li><li><a href="${PULPIT}/">Pulpit</a> <small>(contributor)</small></li>
+      <li><a href="${LDS}/">Latter-day Stats</a></li><li><a href="${PULPIT}/">Pulpit</a> <small>(contributor)</small></li><li><a href="${DESERET}/">Deseret Wiki</a></li>
       <li><a href="/sacred-sites">Sacred Sites Visited</a></li><li><a href="/books">My Reading</a></li><li><a href="/collection">Collection</a></li></ul></div>
     <div><h2 class="small-caps">Learn</h2><ul>
       <li><a href="/about">About</a></li><li><a href="/faq">FAQ</a></li><li><a href="/data">Open data</a></li>
@@ -412,6 +413,7 @@ function aboutPage() {
   <ul class="plain">
     <li><a href="${LDS}/"><b>Latter-day Stats</b></a>: a public hub for statistics, research and creator data on the Latter-day Saint community. As of ${EXT.asOf} it tracks ${EXT.lds.channels} YouTube channels (${EXT.lds.subs} combined subscribers), ${EXT.lds.studies} studies and ${EXT.lds.graphics} survey graphics.</li>
     <li><a href="${PULPIT}/"><b>Pulpit</b></a>: a Restoration Commons critical edition of all ${EXT.pulpit.discourses.toLocaleString('en-US')} General Conference discourses since 1830, each traced to its best surviving witness. I contributed to it.</li>
+    <li><a href="${DESERET}/"><b>Deseret Wiki</b></a>: a wiki, document library and learning toolkit for the Deseret Alphabet (work in progress).</li>
     <li><a href="/sacred-sites"><b>Sacred Sites Visited</b></a>: a map, photo gallery and statistics of the ${F.sites} places of worship I have visited in person since January 2025, across ${F.traditions} traditions.</li>
     <li><a href="/books"><b>My Reading</b></a>: ${plural(F.books, 'book')} and ${plural(F.articles, 'article')} with the date I finished each.</li>
     <li><a href="/collection"><b>Collection</b></a>: historic Latter-day Saint books, periodicals and artifacts I own.</li>
