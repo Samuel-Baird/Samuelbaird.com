@@ -1,8 +1,54 @@
 ---
 import Base from '../layouts/Base.astro';
+import fonts from '../data/fonts.json';
+const sample = Array.from({ length: 80 }, (_, i) => String.fromCodePoint(0x10400 + i)).join('');
+const faces = fonts.map((f) => `@font-face{font-family:"dw-${f.id}";src:url("${f.file}");font-display:swap}`).join('');
+const kb = (b) => (b >= 1048576 ? (b / 1048576).toFixed(1) + ' MB' : Math.round(b / 1024) + ' KB');
 ---
 <Base title="Fonts — Deseret Wiki">
   <h1>Fonts</h1>
-  <p class="deseret" style="font-size:1.6rem">𐐔𐐯𐑅𐐮𐑉𐐯𐐻 𐐁𐑊𐑁𐐲𐐺𐐯𐐻</p>
-  <p>Specimen shown in Noto Sans Deseret (SIL OFL). <a href="/fonts/NotoSansDeseret.ttf">Download</a>. More fonts are collected in the <a href="https://github.com/Samuel-Baird/deseret/tree/main/assets/fonts">repository</a>.</p>
+  <p>Download and install a font to see the Deseret alphabet in Word, Excel or anywhere else. {fonts.length} fonts. Samples show all 80 letters (U+10400–1044F); a font may lack some.</p>
+  <style set:html={faces}></style>
+  <table class="fonts">
+    <thead><tr><th>Font</th><th>Sample</th><th></th></tr></thead>
+    <tbody>
+      {fonts.map((f) => (
+        <>
+          <tr>
+            <td>{f.name}</td>
+            <td class="sample" style={`font-family:"dw-${f.id}", serif`} lang="und">{sample}</td>
+            <td class="btns">
+              <button type="button" class="info" aria-label={`About ${f.name}`} aria-expanded="false" data-info={f.id}>i</button>
+              <a class="dl" href={f.file} download aria-label={`Download ${f.name}`}>⤓</a>
+            </td>
+          </tr>
+          <tr class="detail" id={`info-${f.id}`} hidden>
+            <td colspan="3">
+              <b>{f.name}</b> — {f.category}, {f.license} license, {kb(f.bytes)}.
+              {f.creator && <> By {f.creator}.</>}
+              {f.source && <> <a href={f.source} rel="noopener">Source</a>.</>}
+              {f.note && <> {f.note}</>}
+              {f.license === 'Free' && <> <small>Redistribution terms unverified; check the source before reusing.</small></>}
+            </td>
+          </tr>
+        </>
+      ))}
+    </tbody>
+  </table>
+  <script>
+    document.querySelectorAll('button.info').forEach((b) => b.addEventListener('click', () => {
+      const row = document.getElementById('info-' + b.dataset.info);
+      row.hidden = !row.hidden;
+      b.setAttribute('aria-expanded', String(!row.hidden));
+    }));
+  </script>
+  <style>
+    .fonts { display: table; width: 100%; font-size: 1rem; }
+    .fonts th { text-align: left; background: #d8c79e; }
+    .fonts td.sample { font-size: 1.4rem; line-height: 1.3; word-break: break-all; }
+    .fonts td.btns { white-space: nowrap; text-align: right; }
+    .fonts .info, .fonts .dl { display: inline-block; width: 2rem; height: 2rem; line-height: 2rem; text-align: center; border: 1px solid #7a2e1d; background: #efe3c6; color: #7a2e1d; cursor: pointer; font: inherit; text-decoration: none; padding: 0; }
+    .fonts .dl { background: #7a2e1d; color: #efe3c6; }
+    .fonts .detail td { font-size: .9rem; background: #e6d7b0; }
+  </style>
 </Base>
