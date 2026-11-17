@@ -1,4 +1,4 @@
-// Site behaviour: lamp (dark mode), Latin/Deseret toggle, Deseret title reveal, search, contents menu.
+// Site behaviour: Latin/Deseret toggle, Deseret title reveal, search, contents menu.
 const root = document.documentElement;
 const store = {
   get: (k) => { try { return localStorage.getItem(k); } catch { return null; } },
@@ -12,20 +12,6 @@ function beeLoader(text) {
   el.querySelector('.bee-loader-text').textContent = text;
   return el;
 }
-
-/* ---------- lamp ---------- */
-const lamp = document.querySelector('.lamp');
-function syncLamp() {
-  const dark = root.dataset.theme === 'dark';
-  lamp.setAttribute('aria-pressed', String(dark));
-  lamp.dataset.tip = dark ? 'Snuff the lamp' : 'Light the lamp';
-}
-lamp?.addEventListener('click', () => {
-  root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-  store.set('theme', root.dataset.theme);
-  syncLamp();
-});
-if (lamp) syncLamp();
 
 /* ---------- Latin / Deseret ---------- */
 // Swaps visible text word by word using the build-time table at /deseret-words.json.

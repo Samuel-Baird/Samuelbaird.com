@@ -44,11 +44,11 @@ const frontHatch = hatch(front, 2.6, 11, 0.04);
 // Light contour strokes following the front ridge, like an engraver's horizontal ground lines.
 const contours = [8, 15].map((dy) => line(front.filter((_, i) => i % 2 === 0).map(([x, y]) => [x, f(y + dy + Math.sin(x / 50) * 2)]))).join('');
 
-const sunX = 760, sunY = 52;
-const rays = Array.from({ length: 31 }, (_, i) => {
-  const a = Math.PI + (i / 30) * Math.PI;
-  const r1 = 24, r2 = i % 2 ? 48 : 70;
-  return `M${f(sunX + r1 * Math.cos(a))} ${f(sunY + r1 * Math.sin(a))}L${f(sunX + r2 * Math.cos(a))} ${f(sunY + r2 * Math.sin(a))}`;
+// The sun is drawn at the origin and moved along its arc by src/scripts/sky.js.
+const rays = Array.from({ length: 32 }, (_, i) => {
+  const a = (i / 32) * Math.PI * 2;
+  const r1 = 25, r2 = i % 2 ? 44 : 62;
+  return `M${f(r1 * Math.cos(a))} ${f(r1 * Math.sin(a))}L${f(r2 * Math.cos(a))} ${f(r2 * Math.sin(a))}`;
 }).join('');
 const shore = Array.from({ length: 22 }, () => {
   const x = rand() * (W - 60), y = 141 + rand() * 7, l = 20 + rand() * 50;
@@ -58,12 +58,21 @@ const id = 'mtn-' + Math.random().toString(36).slice(2, 6);
 ---
 <svg class="mountains" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="xMidYMax slice" aria-hidden="true">
   <defs>
+    <radialGradient id={`${id}-glow`}>
+      <stop offset="0" stop-color="#C9974B" stop-opacity=".55" />
+      <stop offset=".45" stop-color="#8A4A2E" stop-opacity=".22" />
+      <stop offset="1" stop-color="#8A4A2E" stop-opacity="0" />
+    </radialGradient>
     <clipPath id={`${id}-sky`}><path d={line(back) + `L${W} 0L0 0Z`} /></clipPath>
   </defs>
   <g fill="none" stroke="currentColor" stroke-linecap="round">
-    <g clip-path={`url(#${id}-sky)`} opacity=".55">
-      <path d={rays} stroke-width=".7" />
-      <circle cx={sunX} cy={sunY} r="20" stroke-width="1" />
+    <g clip-path={`url(#${id}-sky)`}>
+      <ellipse class="sun-glow" cx="600" cy="150" rx="460" ry="160" fill={`url(#${id}-glow)`} stroke="none" style="opacity:0" />
+      <g class="sun" transform="translate(760 52)" style="opacity:0">
+        <g class="sun-rays"><path d={rays} stroke-width=".8" opacity=".75" /></g>
+        <circle r="20" stroke-width="1.2" class="sun-disc" />
+        <circle r="15.5" stroke-width=".5" opacity=".7" />
+      </g>
     </g>
     <path d={fill(back)} class="mtn-paper" stroke="none" />
     <path d={backHatch} stroke-width=".55" opacity=".6" />
@@ -76,6 +85,8 @@ const id = 'mtn-' + Math.random().toString(36).slice(2, 6);
   </g>
 </svg>
 <style>
-  .mountains { display: block; width: 100%; height: clamp(70px, 11vw, 140px); color: var(--heading); }
-  .mtn-paper { fill: var(--paper); }
+  .mountains { display: block; width: 100%; height: clamp(80px, 11vw, 150px); color: var(--heading); }
+  .mtn-paper { fill: #16171A; }
+  .sun { color: #D9B46A; }
+  .sun-disc { fill: rgb(217 180 106 / .14); }
 </style>

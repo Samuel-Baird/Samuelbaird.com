@@ -7,11 +7,11 @@ import { roman } from '../lib/roman.js';
 // The 38 letters of the 1854 alphabet: name, sound, key word.
 const LETTERS = [
   ['Long I', 'iː', 'eat'], ['Long E', 'eɪ', 'ate'], ['Long A', 'ɑː', 'art'], ['Long Ah', 'ɔː', 'aught'], ['Long O', 'oʊ', 'oat'], ['Long Oo', 'uː', 'ooze'],
-  ['Short I', 'ɪ', 'it'], ['Short E', 'ɛ', 'et'], ['Short A', 'æ', 'at'], ['Short Ah', 'ɒ', 'ot'], ['Short O', 'ʌ', 'ut'], ['Short Oo', 'ʊ', 'book'],
+  ['Short I', 'ɪ', 'it'], ['Short E', 'ɛ', 'egg'], ['Short A', 'æ', 'at'], ['Short Ah', 'ɒ', 'odd'], ['Short O', 'ʌ', 'up'], ['Short Oo', 'ʊ', 'book'],
   ['Ay', 'aɪ', 'ice'], ['Ow', 'aʊ', 'owl'], ['Wu', 'w', 'woe'], ['Yee', 'j', 'ye'], ['H', 'h', 'hay'], ['Pee', 'p', 'pay'], ['Bee', 'b', 'bee'],
   ['Tee', 't', 'tea'], ['Dee', 'd', 'day'], ['Chee', 'tʃ', 'cheese'], ['Jee', 'dʒ', 'jay'], ['Kay', 'k', 'key'], ['Gay', 'ɡ', 'gay'],
   ['Ef', 'f', 'fee'], ['Vee', 'v', 'vie'], ['Eth', 'θ', 'thigh'], ['Thee', 'ð', 'thy'], ['Es', 's', 'sea'], ['Zee', 'z', 'zeal'],
-  ['Esh', 'ʃ', 'shee'], ['Zhee', 'ʒ', 'vision'], ['Er', 'r', 'ray'], ['El', 'l', 'lay'], ['Em', 'm', 'may'], ['En', 'n', 'nay'], ['Eng', 'ŋ', 'sing'],
+  ['Esh', 'ʃ', 'she'], ['Zhee', 'ʒ', 'vision'], ['Er', 'r', 'ray'], ['El', 'l', 'lay'], ['Em', 'm', 'may'], ['En', 'n', 'nay'], ['Eng', 'ŋ', 'sing'],
 ].map(([name, ipa, word], i) => ({ name, ipa, word, glyph: String.fromCodePoint(0x10400 + i) }));
 
 const CATEGORIES = [
@@ -37,11 +37,11 @@ const CATEGORIES = [
     <figure class="specimen frame frame--corners">
       <figcaption class="smallcaps">The Thirty-Eight Letters</figcaption>
       <ol class="letters" lang="en-Dsrt" data-no-dsrt>
-        {LETTERS.map((l) => (
-          <li tabindex="0" data-tip={`${l.name} · /${l.ipa}/ · ${l.word}`} aria-label={`${l.name}, as in ${l.word}`}><span class="dsrt">{l.glyph}</span></li>
+        {LETTERS.map((l, i) => (
+          <li tabindex="0" role="button" data-i={i} data-tip={`${l.name} · /${l.ipa}/ · ${l.word}`} aria-label={`${l.name}, as in ${l.word}. Play sound`}><span class="dsrt">{l.glyph}</span></li>
         ))}
       </ol>
-      <p class="specimen-note small">Hover or tab through a letter for its name and sound.</p>
+      <p class="specimen-note small">Hover or tap a letter to hear its name and key word.</p>
     </figure>
   </section>
 
@@ -109,6 +109,9 @@ const CATEGORIES = [
   .letters li { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); display: grid; place-items: center; aspect-ratio: 1; font-size: 1.45rem; color: var(--heading); cursor: default; transition: background-color .15s, color .15s; }
   .letters li:hover, .letters li:focus-visible { background: var(--heading); color: var(--paper); outline: none; }
   .specimen-note { text-align: center; margin: .9rem 0 0; font-style: italic; }
+  .letters li { cursor: pointer; }
+  .letters li.speaking { background: var(--accent); color: var(--paper); animation: hum .35s ease-in-out infinite alternate; }
+  @keyframes hum { from { box-shadow: inset 0 0 0 0 rgb(255 230 180 / .0); } to { box-shadow: inset 0 0 0 3px rgb(255 230 180 / .35); } }
   @media (max-width: 860px) { .intro { grid-template-columns: 1fr; } }
 
   .featured-top .kicker { margin-bottom: .6rem; }
@@ -142,3 +145,38 @@ const CATEGORIES = [
   .card-title { grid-area: title; font: 1.35rem/1.25 var(--f-display); color: var(--heading); margin: .25rem 0 .2rem; }
   .card-text { grid-area: text; font-size: .85rem; line-height: 1.5; color: var(--ink-soft); }
 </style>
+
+<script>
+  // Each letter speaks its name and key word (clips made with Kokoro by scripts/letter-audio.py).
+  // Browsers only allow sound after the visitor has interacted with the page, so hovering is silent
+  // until the first click, tap or key press; clicking always plays.
+  const cache = new Map();
+  let current: HTMLAudioElement | null = null;
+  let currentLi: Element | null = null;
+  function play(li: HTMLElement, fromHover = false) {
+    const i = Number(li.dataset.i);
+    if (fromHover && !(navigator as any).userActivation?.hasBeenActive) return;
+    let a = cache.get(i);
+    if (!a) { a = new Audio(`/audio/letters/${String(i).padStart(2, '0')}.mp3`); a.preload = 'auto'; cache.set(i, a); }
+    if (current && current !== a) { current.pause(); current.currentTime = 0; currentLi?.classList.remove('speaking'); }
+    current = a; currentLi = li;
+    a.currentTime = 0;
+    li.classList.add('speaking');
+    a.onended = () => li.classList.remove('speaking');
+    a.play().catch(() => li.classList.remove('speaking'));
+  }
+  const list = document.querySelector('.letters');
+  let hoverTimer = 0;
+  list?.addEventListener('pointerover', (e) => {
+    const li = (e.target as Element).closest('li');
+    if (!li || (e as PointerEvent).pointerType !== 'mouse') return;
+    clearTimeout(hoverTimer);
+    hoverTimer = window.setTimeout(() => play(li as HTMLElement, true), 120); // skip letters merely crossed
+  });
+  list?.addEventListener('pointerout', () => clearTimeout(hoverTimer));
+  list?.addEventListener('click', (e) => { const li = (e.target as Element).closest('li'); if (li) play(li as HTMLElement); });
+  list?.addEventListener('keydown', (e) => {
+    const li = (e.target as Element).closest('li');
+    if (li && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); play(li as HTMLElement); }
+  });
+</script>

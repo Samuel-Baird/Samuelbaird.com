@@ -1,0 +1,273 @@
+// The living backdrop: the real night sky over Great Salt Lake City, a sun that rises and sets over
+// the Wasatch panorama, tumbleweeds, a passing honeybee, and engraved emblems drifting in the margins.
+//
+// Stars: NASA HEASARC's Yale Bright Star Catalogue (public/stars.json, built by scripts/stars.mjs).
+// Their positions are computed for the real time and place, so the sky turns at the Earth's true rate
+// (one degree every four minutes) as you read. The sun is a separate, faster loop drawn into the
+// engraving, so its rising and setting can be watched.
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const D = Math.PI / 180;
+const LAT = 40.76 * D, LON = -111.89; // Great Salt Lake City
+const VIEW_AZ = 95 * D, VIEW_ALT = 36 * D; // looking east, toward the Wasatch
+const SUN_CYCLE = 150_000; // ms for one day in the engraving
+const DAY_SHARE = 0.62; // of the cycle the sun is above the ridge
+const rand = (a, b) => a + Math.random() * (b - a);
+
+/* ---------- sun clock (shared by the panorama and the sky) ---------- */
+let daylight = 0, sunLow = 0;
+function sunPhase(now) {
+  const p = (now % SUN_CYCLE) / SUN_CYCLE;
+  if (p >= DAY_SHARE) return { up: false, p: (p - DAY_SHARE) / (1 - DAY_SHARE) };
+  return { up: true, p: p / DAY_SHARE };
+}
+
+/* ---------- stars ---------- */
+const canvas = document.getElementById('sky');
+const ctx = canvas?.getContext('2d');
+let stars = null, W = 0, H = 0, dpr = 1;
+const dim = document.body.classList.contains('home') ? 1 : 0.6;
+
+function resize() {
+  dpr = Math.min(2, devicePixelRatio || 1);
+  W = innerWidth; H = innerHeight;
+  canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
+}
+
+function bvColor(bv) {
+  // B−V to a muted star tint, pulled toward cream so it sits with the engraving.
+  const stops = [[-0.4, [175, 196, 255]], [0, [222, 230, 255]], [0.6, [255, 246, 228]], [1.1, [255, 222, 176]], [2, [255, 190, 135]]];
+  let i = 0; while (i < stops.length - 2 && bv > stops[i + 1][0]) i++;
+  const [b0, c0] = stops[i], [b1, c1] = stops[i + 1];
+  const t = Math.max(0, Math.min(1, (bv - b0) / (b1 - b0)));
+  return c0.map((v, k) => Math.round(v + (c1[k] - v) * t));
+}
+
+function siderealDeg(ms) {
+  const jd = ms / 86400000 + 2440587.5;
+  const gmst = 280.46061837 + 360.98564736629 * (jd - 2451545);
+  return ((gmst + LON) % 360 + 360) % 360;
+}
+
+// observer basis: forward, right, up (east, north, up coordinates)
+const F = [Math.cos(VIEW_ALT) * Math.sin(VIEW_AZ), Math.cos(VIEW_ALT) * Math.cos(VIEW_AZ), Math.sin(VIEW_ALT)];
+const R = [Math.cos(VIEW_AZ), -Math.sin(VIEW_AZ), 0];
+const U = [R[1] * F[2] - R[2] * F[1], R[2] * F[0] - R[0] * F[2], R[0] * F[1] - R[1] * F[0]];
+
+let prepared = null; // per-star constants
+function prepare(flat) {
+  const out = [];
+  for (let i = 0; i < flat.length; i += 4) {
+    const [ra, dec, mag, bv] = [flat[i], flat[i + 1], flat[i + 2], flat[i + 3]];
+    const [r, g, b] = bvColor(bv);
+    out.push({
+      ra: ra * D, sd: Math.sin(dec * D), cd: Math.cos(dec * D), mag,
+      rad: Math.max(0.45, 2.3 - 0.36 * mag), a: Math.max(0.18, Math.min(1, 1.05 - 0.13 * mag)),
+      rgb: `${r},${g},${b}`, tw: rand(0, 6.28), tf: rand(0.6, 1.6),
+    });
+  }
+  return out;
+}
+
+function drawSky(now) {
+  const sl = Math.sin(LAT), cl = Math.cos(LAT);
+  const lst = siderealDeg(now) * D;
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+  // sky wash: deep night above, warm at the horizon, gilded when the sun is low
+  const g = ctx.createLinearGradient(0, 0, 0, H);
+  g.addColorStop(0, '#0A0F16');
+  g.addColorStop(0.65, '#141519');
+  g.addColorStop(1, `rgb(${21 + 34 * sunLow * daylight},${21 + 18 * sunLow * daylight},${24 + 2 * sunLow * daylight})`);
+  ctx.fillStyle = g;
+  ctx.fillRect(0, 0, W, H);
+  if (daylight > 0) { ctx.fillStyle = `rgba(60,72,92,${0.22 * daylight * (1 - sunLow)})`; ctx.fillRect(0, 0, W, H); }
+  if (!prepared) return;
+
+  const s = Math.max(W, H * 0.9) / 2 / 1.155; // ±60° across the wider side
+  const cx = W / 2, cy = H * 0.6;
+  const fade = (1 - 0.65 * daylight) * dim;
+  const t = now / 1000;
+  for (const st of prepared) {
+    const ha = lst - st.ra;
+    const sinAlt = st.sd * sl + st.cd * cl * Math.cos(ha);
+    if (sinAlt < 0) continue; // below the horizon
+    // direction in east / north / up
+    const d0 = -st.cd * Math.sin(ha), d1 = st.sd * cl - st.cd * Math.cos(ha) * sl, d2 = sinAlt;
+    const Z = d0 * F[0] + d1 * F[1] + d2 * F[2];
+    if (Z < -0.1) continue;
+    const k = 2 / (1 + Z);
+    const px = cx + s * k * (d0 * R[0] + d1 * R[1]);
+    const py = cy - s * k * (d0 * U[0] + d1 * U[1] + d2 * U[2]);
+    if (px < -4 || px > W + 4 || py < -4 || py > H + 4) continue;
+    // twinkle, stronger near the horizon
+    const tw = reduced ? 1 : 1 - (0.12 + 0.25 * (1 - sinAlt)) * (0.5 + 0.5 * Math.sin(t * st.tf * 2.2 + st.tw));
+    const a = st.a * fade * tw * Math.min(1, sinAlt * 6);
+    ctx.fillStyle = `rgba(${st.rgb},${a})`;
+    ctx.beginPath(); ctx.arc(px, py, st.rad, 0, 6.2832); ctx.fill();
+    if (st.mag < 1.2) { // engraver's glint on the brightest
+      const l = 4 + (1.2 - st.mag) * 3;
+      ctx.strokeStyle = `rgba(${st.rgb},${a * 0.45})`; ctx.lineWidth = 0.6;
+      ctx.beginPath(); ctx.moveTo(px - l, py); ctx.lineTo(px + l, py); ctx.moveTo(px, py - l); ctx.lineTo(px, py + l); ctx.stroke();
+    }
+  }
+}
+
+/* ---------- sun in the panorama ---------- */
+const panoramas = [...document.querySelectorAll('.mountains')];
+function drawSun(now) {
+  const { up, p } = sunPhase(now);
+  const h = up ? Math.sin(Math.PI * p) : 0;
+  daylight = up ? Math.pow(h, 0.5) : 0;
+  sunLow = up ? Math.pow(1 - h, 2) : 0;
+  for (const svg of panoramas) {
+    const sun = svg.querySelector('.sun'), glow = svg.querySelector('.sun-glow'), rays = svg.querySelector('.sun-rays');
+    if (!sun) continue;
+    const x = 90 + 1020 * (up ? p : 0), y = 168 - 138 * h;
+    sun.setAttribute('transform', `translate(${x.toFixed(1)} ${y.toFixed(1)})`);
+    sun.style.opacity = up ? 1 : 0;
+    rays?.setAttribute('transform', `rotate(${((now / 400) % 360).toFixed(1)})`);
+    if (glow) {
+      glow.setAttribute('cx', x.toFixed(1));
+      glow.style.opacity = (up ? 0.25 + 0.55 * sunLow : 0).toFixed(3);
+    }
+  }
+}
+
+/* ---------- loop ---------- */
+let last = 0;
+function frame(now) {
+  const ms = Date.now();
+  if (now - last > (reduced ? 60000 : 50)) { // ~20 fps is plenty for drifting stars
+    last = now;
+    drawSun(ms);
+    if (ctx) drawSky(ms);
+  }
+  requestAnimationFrame(frame);
+}
+if (ctx) {
+  resize();
+  addEventListener('resize', () => { resize(); drawSky(Date.now()); });
+  const load = () => fetch('/stars.json').then((r) => r.json()).then((f) => { stars = f; prepared = prepare(f); }).catch(() => {});
+  ('requestIdleCallback' in window) ? requestIdleCallback(load, { timeout: 1500 }) : setTimeout(load, 300);
+}
+requestAnimationFrame(frame);
+
+/* ---------- tumbleweeds and a honeybee ---------- */
+const layer = document.getElementById('critters');
+const NS = 'http://www.w3.org/2000/svg';
+
+function tumbleweedSvg(size) {
+  const svg = document.createElementNS(NS, 'svg');
+  svg.setAttribute('viewBox', '-50 -50 100 100');
+  svg.setAttribute('width', size); svg.setAttribute('height', size);
+  let d = '';
+  for (let i = 0; i < 34; i++) { // a ball of looping, crossing twigs
+    const a1 = rand(0, 6.28), a2 = a1 + rand(1.2, 3.2), r1 = rand(18, 46), r2 = rand(18, 46);
+    const c = rand(-40, 40);
+    d += `M${(r1 * Math.cos(a1)).toFixed(1)} ${(r1 * Math.sin(a1)).toFixed(1)}Q${c.toFixed(1)} ${rand(-40, 40).toFixed(1)} ${(r2 * Math.cos(a2)).toFixed(1)} ${(r2 * Math.sin(a2)).toFixed(1)}`;
+  }
+  const p = document.createElementNS(NS, 'path');
+  p.setAttribute('d', d); p.setAttribute('fill', 'none'); p.setAttribute('stroke', 'currentColor');
+  p.setAttribute('stroke-width', '1.4'); p.setAttribute('stroke-linecap', 'round');
+  svg.append(p);
+  return svg;
+}
+
+function rollTumbleweed() {
+  if (document.hidden) return;
+  const size = rand(38, 70);
+  const el = document.createElement('div');
+  el.className = 'tumbleweed';
+  el.append(tumbleweedSvg(size));
+  layer.append(el);
+  const dist = innerWidth + size * 2 + 80;
+  const dur = dist / rand(110, 170) * 1000;
+  const turns = dist / (Math.PI * size) * 360;
+  const frames = [];
+  const hops = Math.round(dist / rand(160, 260));
+  for (let i = 0; i <= hops * 4; i++) {
+    const t = i / (hops * 4), q = (i % 4) / 4;
+    const hop = Math.sin(Math.PI * q) * size * rand(0.35, 0.8) * (1 - t * 0.4);
+    frames.push({ transform: `translate(${(-size - 40 + dist * t).toFixed(1)}px, ${(-hop).toFixed(1)}px) rotate(${(turns * t).toFixed(0)}deg)`, offset: t });
+  }
+  el.animate(frames, { duration: dur, easing: 'linear' }).finished.then(() => el.remove());
+}
+
+const BEE = `<svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+<path class="wing" d="M14.5 15C9 14 5.5 7 9.5 4.5C13.5 2.2 17 9 14.5 15Z" stroke-width=".9"/><path class="wing" d="M16.5 15C16.5 9 21.5 3.6 25 5.4C28.4 7.6 22.5 13.6 16.5 15Z" stroke-width=".9"/>
+<g clip-path="url(#bee-abdomen)" fill="currentColor" stroke="none"><rect x="7" y="13" width="2.1" height="14"/><rect x="10.8" y="13" width="2.1" height="14"/><rect x="14.6" y="13" width="2.1" height="14"/></g>
+<ellipse cx="11.5" cy="19.5" rx="8" ry="5.4" stroke-width="1.1"/><circle cx="21.6" cy="18.4" r="3.6" fill="url(#hatch)" stroke-width="1"/><circle cx="26.6" cy="17.2" r="2.6" stroke-width="1"/>
+<path d="M27.8 14.9c.8-2.1 2-3.1 3.4-3.3M26.4 14.8c.3-2.3 1.1-3.5 2.3-4.1" stroke-width=".7"/></g></svg>`;
+
+function flyBee() {
+  if (document.hidden) return;
+  const el = document.createElement('div');
+  el.className = 'sky-bee';
+  el.innerHTML = BEE;
+  layer.append(el);
+  const ltr = Math.random() < 0.6;
+  const y0 = innerHeight * rand(0.1, 0.4), amp = rand(18, 50), waves = rand(2.5, 5);
+  const dist = innerWidth + 120, dur = rand(8000, 13000);
+  const frames = [];
+  for (let i = 0; i <= 40; i++) {
+    const t = i / 40;
+    const x = ltr ? -60 + dist * t : innerWidth + 60 - dist * t;
+    const y = y0 + Math.sin(t * Math.PI * 2 * waves) * amp + Math.sin(t * 37) * 4; // wander, with a little jitter
+    const tilt = Math.cos(t * Math.PI * 2 * waves) * 14;
+    frames.push({ transform: `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px) scaleX(${ltr ? 1 : -1}) rotate(${tilt.toFixed(1)}deg)`, offset: t });
+  }
+  el.animate(frames, { duration: dur, easing: 'linear' }).finished.then(() => el.remove());
+}
+
+function every(fn, first, min, max) {
+  setTimeout(function tick() { fn(); setTimeout(tick, rand(min, max)); }, first);
+}
+if (layer && !reduced) {
+  every(rollTumbleweed, rand(6000, 14000), 28000, 55000);
+  every(flyBee, rand(14000, 26000), 38000, 75000);
+}
+
+/* ---------- engraved emblems in the margins, with parallax ---------- */
+const margins = document.getElementById('margins');
+const EMBLEMS = [
+  ['i-sego', '0 0 48 64'], ['i-skep', '0 0 64 64'], ['i-eye', '0 0 64 64'], ['i-sunmoon', '0 0 64 64'],
+  ['i-comb', '0 0 64 64'], ['i-wagon', '0 0 100 64'], ['i-hands', '0 0 64 64'], ['i-primer', '0 0 64 48'], ['i-sorts', '0 0 64 64'],
+];
+let items = [];
+function layoutMargins() {
+  if (!margins) return;
+  margins.replaceChildren(); items = [];
+  if (innerWidth < 900) return;
+  const content = document.querySelector('main .article, main .wrap');
+  const cw = content ? Math.min(content.getBoundingClientRect().width, innerWidth) : 1088;
+  const gutter = (innerWidth - cw) / 2;
+  const docH = document.documentElement.scrollHeight;
+  const start = document.body.classList.contains('home') ? innerHeight * 1.05 : 340;
+  let y = start, i = Math.floor(rand(0, EMBLEMS.length)), side = 0;
+  while (y < docH * 0.6 + innerHeight) {
+    const [id, vb] = EMBLEMS[i++ % EMBLEMS.length];
+    const size = rand(86, 130);
+    const speed = rand(0.42, 0.62);
+    const x = Math.max(-size * 0.4, gutter / 2 - size / 2 + rand(-12, 12));
+    const el = document.createElement('div');
+    el.className = 'emblem';
+    el.style.cssText = `width:${size}px;${side ? 'right' : 'left'}:${x.toFixed(0)}px;opacity:${rand(0.08, 0.14).toFixed(2)}`;
+    el.innerHTML = `<svg viewBox="${vb}" style="transform:rotate(${rand(-9, 9).toFixed(1)}deg)"><use href="#${id}"/></svg>`;
+    margins.append(el);
+    items.push({ el, y, speed });
+    side ^= 1;
+    y += rand(300, 420);
+  }
+  place();
+}
+function place() {
+  const sy = scrollY;
+  for (const it of items) it.el.style.transform = `translate3d(0, ${(it.y - sy * it.speed).toFixed(1)}px, 0)`;
+}
+let ticking = false;
+addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { place(); ticking = false; }); } }, { passive: true });
+if (margins) {
+  addEventListener('load', layoutMargins);
+  let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(layoutMargins, 200); });
+  layoutMargins();
+}

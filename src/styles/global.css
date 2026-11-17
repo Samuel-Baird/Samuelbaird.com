@@ -42,7 +42,7 @@
 
 /* Lamplight: warm charcoal, cream ink, muted gold. */
 :root[data-theme='dark'] {
-  --paper: #1E1B17;
+  --paper: #16161A;
   --paper-2: #26221D;
   --ink: #EDE3CB;
   --ink-soft: #B9AE96;
@@ -262,3 +262,15 @@ main { display: block; min-height: 50vh; }
   background: repeating-radial-gradient(circle at 50% 50%, transparent 0 2px, color-mix(in srgb, var(--heading) 10%, transparent) 2px 2.6px), var(--paper-2);
   color: var(--heading); font: 400 1.5rem/1 var(--f-display); letter-spacing: .04em;
 }
+
+
+/* ---------- the living backdrop (src/scripts/sky.js) ---------- */
+#sky { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: -3; display: block; pointer-events: none; }
+#margins, #critters { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+#margins .emblem { position: absolute; top: 0; color: var(--accent); will-change: transform; }
+#margins .emblem svg { display: block; width: 100%; height: auto; }
+.tumbleweed { position: absolute; left: 0; bottom: 14px; color: #8C7A5A; opacity: .75; will-change: transform; }
+.tumbleweed svg { display: block; }
+.sky-bee { position: absolute; left: 0; top: 0; color: #D9B46A; will-change: transform; filter: drop-shadow(0 0 3px rgb(217 180 106 / .35)); }
+.sky-bee .wing { transform-origin: 50% 90%; transform-box: fill-box; animation: wing 70ms linear infinite alternate; }
+body::before { z-index: -2; }
