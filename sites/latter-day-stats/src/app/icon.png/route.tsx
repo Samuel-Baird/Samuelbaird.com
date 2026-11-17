@@ -6,20 +6,21 @@ import {
   BEEHIVE_BAR_WIDTH,
 } from "@/lib/beehive-stats-mark";
 
-// Code-generated favicon/app icon per Next's `icon.tsx` file convention.
+// Code-generated favicon/app icon, served at /latter-day-stats/icon.png. A route handler rather than
+// Next's `icon.tsx` convention, because the convention's <link> tag ignores basePath (declared in
+// layout.tsx metadata instead).
 // A filled beehive-and-bar-chart mark: the site's identity (a skep, per
 // src/components/beehive-mark.tsx) plus its subject (stats), solid rather
 // than line-drawn so it stays legible at 16-32px. Transparent background —
 // browsers paint their own tab chrome behind it in both themes. Shares its
 // geometry with src/components/beehive-stats-mark.tsx (the same mark, used
 // as the nav-bar logo) so the two can't drift apart.
-export const size = { width: 32, height: 32 };
-export const contentType = "image/png";
+const size = { width: 32, height: 32 };
 
 const HONEY = "#d9a441"; // brand honey (dark-mode value — reads well on any tab background)
 const INK = "#1a1a1a"; // brand foreground
 
-export default function Icon() {
+export function GET() {
   return new ImageResponse(
     (
       <div

@@ -48,11 +48,12 @@ export const metadata: Metadata = {
   },
   description:
     "Statistics, research, and creator data on the Latter-day Saint community.",
+  icons: { icon: [{ url: `${SITE_URL}/icon.png`, type: "image/png", sizes: "32x32" }] },
 };
 
 export const viewport: Viewport = {
   colorScheme: "dark",
-  themeColor: "#0f1115",
+  themeColor: "#16161a",
 };
 
 // Site-wide structured data. Kept minimal and factual — no aggregate
