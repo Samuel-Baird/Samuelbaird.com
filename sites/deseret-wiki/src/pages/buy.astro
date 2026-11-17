@@ -1,0 +1,39 @@
+---
+import Base from '../layouts/Base.astro';
+import items from '../data/buy.json';
+const rank = (a, b) => (b.reviews - a.reviews) || ((b.rating ?? 0) - (a.rating ?? 0)) || a.title.localeCompare(b.title);
+const books = items.filter((i) => i.kind === 'book').sort(rank);
+const prints = items.filter((i) => i.kind === 'print').sort(rank);
+const stars = (r) => (r == null ? '' : '★'.repeat(Math.round(r)) + '☆'.repeat(5 - Math.round(r)));
+const sections = [
+  { id: 'books', title: 'Books', list: books },
+  { id: 'prints', title: 'Prints & posters', list: prints },
+];
+---
+<Base title="Buy — Deseret Wiki">
+  <h1>Buy</h1>
+  <p>Books and prints in the Deseret Alphabet, ordered by number of Amazon customer reviews. <small>As an Amazon Associate I earn from qualifying purchases; links below are affiliate links.</small></p>
+  <p><a href="#books">Books ({books.length})</a> · <a href="#prints">Prints &amp; posters ({prints.length})</a></p>
+  {sections.map((s) => (
+    <section id={s.id}>
+      <h2>{s.title}</h2>
+      <ul class="buy">
+        {s.list.map((i) => (
+          <li>
+            {i.image && <a href={i.url} rel="sponsored noopener"><img src={i.image} alt="" width="80" loading="lazy" /></a>}
+            <div>
+              <a href={i.url} rel="sponsored noopener"><b>{i.title}</b></a><br />
+              <small>{i.author}{i.price ? ` · ${i.price}` : ''}</small><br />
+              <small>{i.rating != null ? `${stars(i.rating)} ${i.rating} (${i.reviews} reviews)` : 'No reviews yet'}</small>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+  <style>
+    .buy { list-style: none; padding: 0; }
+    .buy li { display: flex; gap: 1rem; padding: .75rem 0; border-bottom: 1px solid #d8c79e; }
+    .buy img { height: auto; border: 1px solid #d8c79e; }
+  </style>
+</Base>

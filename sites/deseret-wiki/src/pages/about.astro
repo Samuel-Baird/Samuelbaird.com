@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import Title from '../components/Title.astro';
+---
+<Base title="About — Deseret Wiki">
+  <div class="wrap narrow">
+    <header class="page-head">
+      <p class="kicker">Colophon</p>
+      <Title text="About" />
+    </header>
+    <p class="dropcap">Deseret Wiki collects documents, entries and learning tools for the Deseret Alphabet, the phonetic English script approved by the Regents of the University of Deseret in 1854. It is a work in progress, set in the manner of the territory's early printing and kept light enough to read at length.</p>
+    <div class="compiler">
+      <span class="avatar" aria-hidden="true">SB</span>
+      <div>
+        <p class="smallcaps compiler-label">Compiled by</p>
+        <p class="compiler-name">Samuel Baird</p>
+        <p class="small">Part of <a href="https://samuelbaird.com">samuelbaird.com</a>. Source and plan on <a href="https://github.com/Samuel-Baird/deseret">GitHub</a>; corrections welcome.</p>
+      </div>
+    </div>
+    <svg class="sego" viewBox="0 0 48 64" aria-hidden="true"><use href="#i-sego" /></svg>
+    <p class="small sego-cap">The sego lily, <i>Calochortus nuttallii</i>.</p>
+  </div>
+</Base>
+<style>
+  .compiler { display: flex; gap: 1.6rem; align-items: center; margin: 2.5rem 0; padding: 1.6rem 0; border-top: 3px double var(--rule); border-bottom: 3px double var(--rule); }
+  .compiler p { margin: 0 0 .2rem; }
+  .compiler-label { font-size: .62rem; color: var(--ink-soft); }
+  .compiler-name { font: 1.6rem/1.2 var(--f-display); color: var(--heading); }
+  .sego { display: block; width: 3.5rem; height: auto; margin: 3rem auto .4rem; color: var(--heading); opacity: .8; }
+  .sego-cap { text-align: center; font-style: italic; }
+</style>

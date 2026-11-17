@@ -1,0 +1,206 @@
+---
+import Base from '../layouts/Base.astro';
+import Ornament from '../components/Ornament.astro';
+import QUOTES from '../data/quotes.json';
+const Q = QUOTES[0]; // Brigham Young, October 1867: the home page card and the og:image
+import WaxSeal from '../components/WaxSeal.astro';
+import { roman } from '../lib/roman.js';
+
+// The 38 letters of the 1854 alphabet: name, sound, key word.
+const LETTERS = [
+  ['Long I', 'iː', 'eat'], ['Long E', 'eɪ', 'ate'], ['Long A', 'ɑː', 'art'], ['Long Ah', 'ɔː', 'aught'], ['Long O', 'oʊ', 'oat'], ['Long Oo', 'uː', 'ooze'],
+  ['Short I', 'ɪ', 'it'], ['Short E', 'ɛ', 'egg'], ['Short A', 'æ', 'at'], ['Short Ah', 'ɒ', 'odd'], ['Short O', 'ʌ', 'up'], ['Short Oo', 'ʊ', 'book'],
+  ['Ay', 'aɪ', 'ice'], ['Ow', 'aʊ', 'owl'], ['Wu', 'w', 'woe'], ['Yee', 'j', 'ye'], ['H', 'h', 'hay'], ['Pee', 'p', 'pay'], ['Bee', 'b', 'bee'],
+  ['Tee', 't', 'tea'], ['Dee', 'd', 'day'], ['Chee', 'tʃ', 'cheese'], ['Jee', 'dʒ', 'jay'], ['Kay', 'k', 'key'], ['Gay', 'ɡ', 'gay'],
+  ['Ef', 'f', 'fee'], ['Vee', 'v', 'vie'], ['Eth', 'θ', 'thigh'], ['Thee', 'ð', 'thy'], ['Es', 's', 'sea'], ['Zee', 'z', 'zeal'],
+  ['Esh', 'ʃ', 'she'], ['Zhee', 'ʒ', 'vision'], ['Er', 'r', 'ray'], ['El', 'l', 'lay'], ['Em', 'm', 'may'], ['En', 'n', 'nay'], ['Eng', 'ŋ', 'sing'],
+].map(([name, ipa, word], i) => ({ name, ipa, word, glyph: String.fromCodePoint(0x10400 + i) }));
+
+const CATEGORIES = [
+  { icon: 'i-wagon', vb: '0 0 100 64', title: 'History', text: 'Pioneers, Regents and the State of Deseret, 1847–1869.', href: '/wiki/deseret-alphabet/#history' },
+  { icon: 'i-primer', vb: '0 0 64 48', title: 'The Letters', text: 'Thirty-eight characters, one for every sound of English.', href: '/wiki/deseret-alphabet/#alphabet' },
+  { icon: 'i-sorts', vb: '0 0 64 64', title: 'Typefaces', text: 'Fonts for setting Deseret, from the 1850s to Unicode.', href: '/fonts/' },
+  { icon: 'i-comb', vb: '0 0 64 64', title: 'The Hive', text: 'Communities, games and places to practise.', href: '/resources/' },
+  { icon: 'i-sunmoon', vb: '0 0 64 64', title: 'Moving Pictures', text: 'Lectures and short documentaries on the alphabet.', href: '/videos/' },
+  { icon: 'i-hands', vb: '0 0 64 64', title: 'Books & Prints', text: 'Editions set in the Deseret Alphabet, old and new.', href: '/buy/' },
+];
+---
+<Base title="Deseret Wiki — the Deseret Alphabet" masthead>
+  <section class="wrap intro">
+    <div class="intro-text">
+      <p class="dropcap intro-lede">In 1854 the Board of Regents of the University of Deseret approved a new alphabet for English: thirty-eight letters, one for each sound, so that a word could be read exactly as it was written. It was cut in type, taught in schools, struck on a gold coin and printed in four books, and then it was set aside.</p>
+      <p>This is a library and primer for the Deseret Alphabet: its history, its letters, the fonts that set it, and the books printed in it.</p>
+      <p class="intro-actions">
+        <a class="btn" href="/wiki/deseret-alphabet/">Read the article</a>
+        <a class="btn btn--quiet" href="/fonts/">See the fonts</a>
+      </p>
+    </div>
+
+    <figure class="specimen frame frame--corners">
+      <figcaption class="smallcaps">The Thirty-Eight Letters</figcaption>
+      <ol class="letters" lang="en-Dsrt" data-no-dsrt>
+        {LETTERS.map((l, i) => (
+          <li tabindex="0" role="button" data-i={i} data-tip={`${l.name} · /${l.ipa}/ · ${l.word}`} aria-label={`${l.name}, as in ${l.word}. Play sound`}><span class="dsrt">{l.glyph}</span></li>
+        ))}
+      </ol>
+      <p class="specimen-note small">Hover or tap a letter to hear its name and key word.</p>
+    </figure>
+  </section>
+
+  <div class="wrap"><Ornament /></div>
+
+  <section class="wrap featured" aria-labelledby="featured-title">
+    <div class="featured-top">
+      <p class="kicker">Featured Article · No. <span class="rn">{roman(1)}</span></p>
+      <div class="rule-double"></div>
+    </div>
+    <div class="featured-grid">
+      <div class="featured-main">
+        <div class="featured-heading">
+          <h2 id="featured-title"><a href="/wiki/deseret-alphabet/">The Deseret Alphabet</a></h2>
+          <WaxSeal label="Featured" />
+        </div>
+        <p class="deck">How the Regents of a frontier university set out to remake English spelling, and why the new letters never took.</p>
+        <div class="columns">
+          <p class="dropcap">The alphabet grew out of the utopian programme of the early Latter-day Saints in the Great Basin. Its makers, Brigham Young, Parley P. Pratt, Heber C. Kimball and the shorthand reporter George D. Watt among them, hoped a phonetic script would help immigrants learn English and be a first step back toward a pure language.</p>
+          <p>Watt drew most of the novel characters after Willard Richards objected to an alphabet adapted from Isaac Pitman's phonotypy: the board wanted letters “entirely different from any alphabet in use.” The first thirty-eight letters were approved in January 1854.</p>
+          <p>For fifteen years the letters appeared in the <em>Deseret News</em>, in records, diaries and on an 1860 gold coin. In 1868–69 four books were printed: two readers, part of the Book of Mormon as a third reader, and the whole book. The alphabet has since been revived as a cultural heirloom, now encoded in Unicode.</p>
+        </div>
+        <p><a class="btn" href="/wiki/deseret-alphabet/">Continue reading</a></p>
+      </div>
+      <aside class="record frame">
+        <svg class="record-art" viewBox="0 0 64 48" aria-hidden="true"><use href="#i-primer" /></svg>
+        <p class="smallcaps record-label">From the Record</p>
+        <dl>
+          <dt>Approved</dt><dd>19 January {roman(1854)}</dd>
+          <dt>Letters</dt><dd>Thirty-eight</dd>
+          <dt>Designer</dt><dd>George D. Watt</dd>
+          <dt>Books printed</dt><dd>Four, <span class="rn">{roman(1868)}–IX</span></dd>
+          <dt>Unicode</dt><dd>U+10400–1044F</dd>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <div class="wrap"><Ornament bee={false} /></div>
+
+  <!-- the social card; it follows the Latin / Deseret toggle -->
+  <figure class="wrap quote-card">
+    <a class="qc-img" href={Q.url} aria-label={`${Q.by} in General Conference, October 1867: read the discourse`}>
+      <img class="qc-latn" src="/social/deseret-alphabet-quote.webp" srcset="/social/deseret-alphabet-quote.webp 1x, /social/deseret-alphabet-quote@2x.webp 2x" width="1200" height="630" loading="lazy" alt={`“${Q.text}” — ${Q.by}, General Conference, October 1867.`} />
+      <img class="qc-dsrt" src="/social/deseret-alphabet-quote-dsrt.webp" srcset="/social/deseret-alphabet-quote-dsrt.webp 1x, /social/deseret-alphabet-quote-dsrt@2x.webp 2x" width="1200" height="630" loading="lazy" alt={`The same words in the Deseret Alphabet: “${Q.text}” — ${Q.by}, General Conference, October 1867.`} />
+    </a>
+    <figcaption class="small">
+      <a href={Q.url}>{Q.note}</a>
+      <span class="qc-share" data-no-dsrt>Share it: <a href="/social/deseret-alphabet-quote@2x.png" download>Latin</a> · <a href="/social/deseret-alphabet-quote-dsrt@2x.png" download>Deseret</a> · <a href="/quotes/">More quotes</a></span>
+    </figcaption>
+  </figure>
+
+
+  <section class="wrap" aria-labelledby="subjects">
+    <p class="kicker" id="subjects">Browse by Subject</p>
+    <ul class="cards">
+      {CATEGORIES.map((c, i) => (
+        <li>
+          <a class="card" href={c.href}>
+            <span class="card-art"><svg viewBox={c.vb} aria-hidden="true"><use href={`#${c.icon}`} /></svg></span>
+            <span class="card-num">{roman(i + 1)}</span>
+            <span class="card-title">{c.title}</span>
+            <span class="card-text">{c.text}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .quote-card { margin: 0 auto 2.5rem; }
+  .qc-img { display: block; border-radius: 8px; overflow: hidden; box-shadow: 0 0 0 1px rgb(201 164 92 / .35), 0 14px 40px rgb(0 0 0 / .35); }
+  .qc-img img { display: block; width: 100%; height: auto; }
+  .qc-dsrt { display: none !important; }
+  :global(html[data-script='dsrt']) .qc-dsrt { display: block !important; }
+  :global(html[data-script='dsrt']) .qc-latn { display: none !important; }
+  .quote-card figcaption { margin-top: .8rem; color: var(--ink-soft); line-height: 1.5; text-align: center; }
+  .quote-card figcaption > a { color: inherit; text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent); }
+  .qc-share { display: block; margin-top: .35rem; font-family: var(--f-formal); font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; }
+  .intro { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: start; padding-top: clamp(2.5rem, 6vw, 4.5rem); }
+  .intro-lede { font-size: 1.2rem; line-height: 1.7; }
+  .intro-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.8rem; }
+  .specimen { margin: 0; }
+  .specimen figcaption { text-align: center; color: var(--ink-soft); margin-bottom: 1rem; font-size: .66rem; }
+  .letters { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(2.5rem, 1fr)); border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); }
+  .letters li { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); display: grid; place-items: center; aspect-ratio: 1; font-size: 1.45rem; color: var(--heading); cursor: default; transition: background-color .15s, color .15s; }
+  .letters li:hover, .letters li:focus-visible { background: var(--heading); color: var(--paper); outline: none; }
+  .specimen-note { text-align: center; margin: .9rem 0 0; font-style: italic; }
+  .letters li { cursor: pointer; }
+  .letters li.speaking { background: var(--accent); color: var(--paper); animation: hum .35s ease-in-out infinite alternate; }
+  @keyframes hum { from { box-shadow: inset 0 0 0 0 rgb(255 230 180 / .0); } to { box-shadow: inset 0 0 0 3px rgb(255 230 180 / .35); } }
+  @media (max-width: 860px) { .intro { grid-template-columns: 1fr; } }
+
+  .featured-top .kicker { margin-bottom: .6rem; }
+  .featured-grid { display: grid; grid-template-columns: minmax(0, 1fr) 17rem; gap: clamp(2rem, 4vw, 3.5rem); padding-top: 1.5rem; }
+  .featured-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+  .featured h2 { font-size: clamp(2.2rem, 5vw, 3.4rem); margin: 0 0 .4rem; line-height: 1.05; }
+  .featured h2 a { color: inherit; text-decoration: none; }
+  .featured h2 a:hover { text-decoration: underline; text-decoration-thickness: 1px; text-decoration-color: var(--accent); }
+  .deck { font: italic 1.2rem/1.5 var(--f-display); color: var(--ink-soft); margin: 0 0 1.6rem; max-width: 36rem; }
+  .columns { columns: 2 17rem; column-gap: 2.5rem; column-rule: 1px solid var(--rule); font-size: .97rem; }
+  .columns p { break-inside: avoid-column; }
+  .record { align-self: start; text-align: center; background: var(--paper-2); }
+  .record-art { width: 6.5rem; height: auto; color: var(--heading); }
+  .record-label { color: var(--ink-soft); font-size: .62rem; margin: .4rem 0 .8rem; }
+  .record dl { margin: 0; text-align: left; font-size: .85rem; }
+  .record dt { font: 600 .6rem/1.4 var(--f-formal); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); border-top: 1px dotted var(--rule); padding-top: .45rem; }
+  .record dd { margin: .1rem 0 .5rem; font-family: var(--f-display); font-size: 1rem; color: var(--heading); }
+  @media (max-width: 860px) { .featured-grid { grid-template-columns: 1fr; } .record { max-width: 22rem; } }
+
+  .cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); gap: 1.25rem; }
+  .card {
+    display: grid; grid-template-columns: auto 1fr; grid-template-areas: 'art num' 'art title' 'art text';
+    column-gap: 1.2rem; align-content: center; height: 100%;
+    padding: 1.2rem 1.25rem; border: 3px double var(--rule); text-decoration: none; color: var(--ink);
+    transition: border-color .2s, background-color .2s;
+  }
+  .card:hover { border-color: var(--accent); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='48.5' viewBox='0 0 28 48.5'%3E%3Cpath d='M14 0l14 8.08v16.17L14 32.33 0 24.25V8.08zM14 32.33v16.17' fill='none' stroke='%23A98442' stroke-width='.6' opacity='.35'/%3E%3C/svg%3E"); }
+  .card-art { grid-area: art; width: 5rem; height: 5rem; border-radius: 50%; border: 1px solid var(--rule); box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--rule); display: grid; place-items: center; color: var(--heading); background: var(--paper); }
+  .card-art svg { width: 3.6rem; height: 3.6rem; }
+  .card-num { grid-area: num; font: 600 .6rem/1 var(--f-formal); letter-spacing: .16em; color: var(--accent); }
+  .card-title { grid-area: title; font: 1.35rem/1.25 var(--f-display); color: var(--heading); margin: .25rem 0 .2rem; }
+  .card-text { grid-area: text; font-size: .85rem; line-height: 1.5; color: var(--ink-soft); }
+</style>
+
+<script>
+  // Each letter speaks its name and key word (clips made with Kokoro by scripts/letter-audio.py).
+  // Browsers only allow sound after the visitor has interacted with the page, so hovering is silent
+  // until the first click, tap or key press; clicking always plays.
+  const cache = new Map();
+  let current: HTMLAudioElement | null = null;
+  let currentLi: Element | null = null;
+  function play(li: HTMLElement, fromHover = false) {
+    const i = Number(li.dataset.i);
+    if (fromHover && !(navigator as any).userActivation?.hasBeenActive) return;
+    let a = cache.get(i);
+    if (!a) { a = new Audio(`/audio/letters/${String(i).padStart(2, '0')}.mp3`); a.preload = 'auto'; cache.set(i, a); }
+    if (current && current !== a) { current.pause(); current.currentTime = 0; currentLi?.classList.remove('speaking'); }
+    current = a; currentLi = li;
+    a.currentTime = 0;
+    li.classList.add('speaking');
+    a.onended = () => li.classList.remove('speaking');
+    a.play().catch(() => li.classList.remove('speaking'));
+  }
+  const list = document.querySelector('.letters');
+  let hoverTimer = 0;
+  list?.addEventListener('pointerover', (e) => {
+    const li = (e.target as Element).closest('li');
+    if (!li || (e as PointerEvent).pointerType !== 'mouse') return;
+    clearTimeout(hoverTimer);
+    hoverTimer = window.setTimeout(() => play(li as HTMLElement, true), 120); // skip letters merely crossed
+  });
+  list?.addEventListener('pointerout', () => clearTimeout(hoverTimer));
+  list?.addEventListener('click', (e) => { const li = (e.target as Element).closest('li'); if (li) play(li as HTMLElement); });
+  list?.addEventListener('keydown', (e) => {
+    const li = (e.target as Element).closest('li');
+    if (li && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); play(li as HTMLElement); }
+  });
+</script>

@@ -1,0 +1,466 @@
+/* The reader (DESIGN.md Appendix E): PDF.js 6 draws the
+   pages; everything you touch is ours, on the site's tokens. Loaded by the
+   vendored viewer page after its viewer.css, with tokens.css and fonts.css
+   before it. Not base.css: its resets would reach into PDF.js's own layout,
+   so the few primitives the chrome needs (the icon button, the segmented
+   control, the frost) are scoped under #gsa-reader here.
+
+   The bars are the shell's (DESIGN.md §9 rule 5): the same 58px, the same
+   three zones, the same plates; on phones every popover and panel is a
+   sheet in the layer system's shape (layers.css). */
+
+/* ---------- 1. the engine's palette, for what it still draws ---------- */
+:root {
+  --main-color: var(--ink); --body-bg-color: var(--bg); --toolbar-bg-color: var(--surface); --toolbar-border-color: var(--rule);
+  --toolbar-box-shadow: none; --button-hover-color: var(--fill); --toggled-btn-color: var(--accent); --toggled-btn-bg-color: var(--fill);
+  --dropdown-btn-bg-color: var(--bg); --separator-color: var(--rule); --field-color: var(--ink); --field-bg-color: var(--bg);
+  --field-border-color: var(--edge); --sidebar-bg-color: var(--bg); --sidebar-border-color: var(--rule); --dialog-bg-color: var(--surface);
+  --dialog-border-color: var(--rule); --doorhanger-bg-color: var(--surface); --doorhanger-border-color: var(--rule);
+  --doorhanger-hover-bg-color: var(--fill); --progressBar-color: var(--accent); --scrollbar-color: var(--ink-3); --scrollbar-bg-color: transparent;
+}
+/* v6 sets these inside nested blocks, so order can't win: !important on the property is the sanctioned hammer */
+.sidebar { --sidebar-bg-color: var(--bg) !important; --sidebar-border-color: var(--rule) !important; }
+#viewsManagerHeader { background-color: var(--bg) !important; }
+/* a reading room, not an annotation studio; no print, no secondary menu */
+#editorModeButtons, #editorModeSeparator, #editorCommentParamsToolbar, #editorHighlightParamsToolbar, #editorFreeTextParamsToolbar,
+#editorInkParamsToolbar, #editorStampParamsToolbar, #editorSignatureParamsToolbar, #editorCommentsSidebar, #editorUndoBar,
+#secondaryOpenFile, #imageAltTextSettings, #imageAltTextSettingsSeparator, #printButton, #secondaryToolbarToggleButton,
+#secondaryToolbarToggle, #secondaryToolbar { display: none !important; }
+
+/* ---------- 2. the desk, and the engine's chrome retired ---------- */
+/* the shell's frost is tuned over the dark canvas; over a paper-white page it goes grey and its
+   white words fade, so here it is the canvas itself, denser (the blur and hairline unchanged) */
+html.gsa { --desk: var(--bg); color-scheme: dark; --frost: color-mix(in srgb, var(--bg) 84%, transparent); }
+html.gsa.app, html.gsa.app body { height: 100lvh; }   /* the home-screen app: the whole screen, not a status bar short (reader.js) */
+html.gsa body { font: 400 var(--t-md)/var(--lh-ui) var(--sans); color: var(--ink); background: var(--desk);
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-variant-numeric: tabular-nums; -webkit-tap-highlight-color: transparent; }
+html.gsa #outerContainer .toolbar, html.gsa #toolbarContainer, html.gsa #viewsManager,
+html.gsa #sidebarContainer, html.gsa #findbar, html.gsa #loadingBar { display: none !important; }
+html.gsa #viewerContainer { inset: 0 !important; top: 0 !important; background: var(--desk); outline: none;
+  scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--ink-3) 55%, transparent) transparent; }
+html.gsa #viewerContainer::-webkit-scrollbar { width: 10px; height: 10px; }
+html.gsa #viewerContainer::-webkit-scrollbar-thumb { background: color-mix(in srgb, var(--ink-3) 50%, transparent); border-radius: var(--r-pill); border: 3px solid var(--desk); }
+/* Scroll: the pages run under both bars, which frost over them */
+html.gsa:not(.flow-pages) .pdfViewer { padding: calc(var(--bar-h) + var(--safe-top) + var(--s-2)) 0 calc(var(--bar-h) + env(safe-area-inset-bottom) + var(--s-5)); }
+/* Pages: one page or spread at a time, fitted between the bars (the bands stay when they step aside: a calm margin) */
+html.gsa.flow-pages #viewerContainer { top: calc(var(--bar-h) + var(--safe-top)) !important; bottom: calc(var(--bar-h) + env(safe-area-inset-bottom)) !important;
+  touch-action: pan-y pinch-zoom; }
+html.gsa.flow-pages .pdfViewer { min-height: 100%; display: flex; flex-direction: column; justify-content: center; }
+html.gsa.flow-pages #viewerContainer.r-pan { touch-action: pan-x pan-y pinch-zoom; }   /* a magnified page pans first */
+/* Scroll mode: never a sideways rubber band; a fitted or held page has no sideways travel at all (reader.js sync, .r-lock) */
+html.gsa:not(.flow-pages) #viewerContainer { overscroll-behavior-x: none; }
+html.gsa:not(.flow-pages) #viewerContainer.r-lock { overflow-x: hidden !important; }
+html.gsa:not(.flow-pages) #viewerContainer.r-lock.r-shift .page { translate: var(--r-shift, 0) 0; }   /* where a locked page sits sideways (reader.js place) */
+html.gsa #viewer.r-spring { transition: transform var(--d-panel) var(--ease); }
+
+/* ---------- 3. the page: a sheet on the desk, in its tone ----------
+   Paper is the scan as it is. Sepia warms it. Night inverts luminance and
+   keeps hue, with a curve that sends tinted scan paper to near-black and ink
+   to soft off-white (calibrated on eight kinds of page, 2026-10-07); pages
+   judged pictures (.gsa-pic, reader.js) are dimmed instead, so photographs
+   and maps don't turn into negatives. The page's own background matches
+   the tone, so nothing flashes white while it draws. */
+html.gsa .pdfViewer .page::before { content: ""; position: absolute; inset: 0; pointer-events: none; box-shadow: var(--page-shadow); }
+html.gsa[data-tone="sepia"] .pdfViewer .page { --page-bg-color: var(--page-sepia); }
+html.gsa[data-tone="sepia"] .pdfViewer .page .canvasWrapper, html.gsa[data-tone="sepia"] .r-thc canvas,
+html.gsa[data-tone="sepia"] .r-cin, html.gsa[data-tone="sepia"] #r-instant img { filter: sepia(.38) brightness(.95) contrast(.94); }
+html.gsa[data-tone="night"] { --desk: var(--desk-night); }
+html.gsa[data-tone="night"] .pdfViewer .page { --page-bg-color: var(--page-night); }
+html.gsa[data-tone="night"] .pdfViewer .page:not(.gsa-pic) .canvasWrapper, html.gsa[data-tone="night"] .r-thc canvas,
+html.gsa[data-tone="night"] .r-cpg:not(.pic) .r-cin, html.gsa[data-tone="night"] #r-instant img { filter: invert(1) hue-rotate(180deg) contrast(1.3) brightness(.86) sepia(.16); }
+html.gsa[data-tone="night"] .pdfViewer .page.gsa-pic .canvasWrapper, html.gsa[data-tone="night"] .r-cpg.pic .r-cin { filter: brightness(.58) sepia(.22); }
+html.gsa[data-tone="night"] .pdfViewer .page::before { box-shadow: var(--page-shadow-night); }
+html.gsa[data-tone="night"] .pdfViewer .page.loadingIcon::after { filter: invert(1); opacity: .5; }
+html.gsa .textLayer ::selection { background: var(--accent-wash); }
+/* found words: every match washed in the accent, the one you're on stronger. PDF.js brings a
+   match into view with scrollIntoView, so it lands below the bar and the find pill, never under them */
+html.gsa .textLayer .highlight { --highlight-bg-color: var(--find-wash); --highlight-selected-bg-color: var(--find-here);
+  scroll-margin-top: calc(var(--bar-h) + var(--safe-top) + var(--plate) + var(--s-2) + var(--s-6)); }
+
+/* ---------- 4. the page turn, drawn over the viewer (reader.js, wirePageTurns) ---------- */
+.r-curl { position: fixed; z-index: var(--z-player); overflow: hidden; pointer-events: none; background: var(--desk); contain: strict; }
+.r-curl.out { opacity: 0; transition: opacity var(--d-fast) linear; }
+.r-cbase { position: absolute; inset: 0; }
+.r-ccast { position: absolute; overflow: hidden; }
+.r-cface { position: absolute; overflow: hidden; transform-origin: 0 0; will-change: transform, clip-path; }
+.r-cpg { position: absolute; box-shadow: var(--page-shadow); }
+.r-cin { position: absolute; inset: 0; overflow: hidden; background: var(--page); }
+.r-cin canvas { display: block; width: 100%; height: 100%; }
+.r-cwash { position: absolute; inset: 0; background: var(--page); opacity: .86; }
+.r-cshade { position: absolute; left: 0; top: 0; width: 100px; height: 400vmax; transform-origin: 0 0; pointer-events: none; }
+.r-cshade.front { background: var(--curl-front); }
+.r-cshade.back { background: var(--curl-back); }
+.r-cshade.cast { background: var(--curl-cast); }
+html.gsa[data-tone="night"] .r-cshade.back { background: var(--curl-back-night); }
+
+/* ---------- 5. the chrome's primitives, scoped ---------- */
+#gsa-reader { position: relative; z-index: var(--z-panel); font: 400 var(--t-md)/var(--lh-ui) var(--sans); color: var(--ink); }
+#gsa-reader *, #gsa-reader *::before, #gsa-reader *::after { box-sizing: border-box; }
+/* the resets sit in :where() so every class below outranks them */
+:where(#gsa-reader) button { font: inherit; color: inherit; background: none; border: 0; padding: 0; margin: 0; cursor: pointer; text-align: inherit; }
+:where(#gsa-reader) a { color: inherit; text-decoration: none; }
+:where(#gsa-reader) :is(p, ol, ul, h2, blockquote) { margin: 0; padding: 0; }
+#gsa-reader :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+#gsa-reader :is(input, textarea):focus-visible { outline: none; }   /* a field shows focus on its own shape (focus-within) */
+#gsa-reader [hidden] { display: none !important; }
+#gsa-reader svg.i { width: var(--icon-md); height: var(--icon-md); display: block; flex: none; fill: currentColor; }
+#gsa-reader svg.i.sm { width: var(--icon-sm); height: var(--icon-sm); }
+.r-frost { background: var(--frost); -webkit-backdrop-filter: var(--frost-filter); backdrop-filter: var(--frost-filter); box-shadow: var(--frost-edge), var(--shadow-float); }
+/* the shell's icon button (base.css .ib): a 44px target, a rounded-rect plate on hover, never a circle */
+.r-ib { position: relative; flex: none; width: var(--hit); height: var(--hit); display: flex; align-items: center; justify-content: center;
+  color: var(--ink-2); transition: color var(--d-fast); }
+.r-ib::before { content: ""; position: absolute; inset: calc((var(--hit) - var(--plate)) / 2); border-radius: var(--r-ctl);
+  background: var(--fill); opacity: 0; transition: opacity var(--d-fast); }
+.r-ib > * { position: relative; }
+@media (hover: hover) { .r-ib:hover { color: var(--ink); } .r-ib:hover::before { opacity: 1; } }
+.r-ib:active::before, .r-ib[aria-expanded="true"]::before { opacity: 1; background: var(--fill-2); }
+.r-ib[aria-expanded="true"] { color: var(--ink); }
+.r-ib[aria-pressed="true"] { color: var(--ink); } .r-ib[aria-pressed="true"]::before { opacity: 1; background: var(--fill-2); }
+.r-fl { display: flex; align-items: center; min-width: 0; }   /* the foot's left zone: Contents, Hold */
+.r-ib:disabled { color: var(--ink-3); cursor: default; }
+.r-ib:disabled::before { opacity: 0; }
+/* the shell's segmented control (base.css .seg) */
+.r-seg { --seg-pad: 3px; display: flex; gap: 2px; padding: var(--seg-pad); border-radius: var(--r-ctl); background: var(--fill); min-width: 0; }
+.r-seg button { flex: 1; height: 32px; padding: 0 var(--s-2); text-align: center; border-radius: calc(var(--r-ctl) - var(--seg-pad));
+  font: 500 var(--t-sm) var(--sans); color: var(--ink-2); white-space: nowrap; transition: background var(--d-fast), color var(--d-fast); }
+@media (hover: hover) { .r-seg button:hover { color: var(--ink); } }
+.r-seg button[aria-checked="true"], .r-seg button[aria-selected="true"] { background: var(--fill-2); color: var(--ink); }
+/* a filled button: the composer's send, Go, Make an audiobook */
+.r-fill { flex: none; display: inline-flex; align-items: center; justify-content: center; gap: var(--s-2); height: 36px; padding: 0 var(--s-4);
+  border-radius: var(--r-ctl); background: var(--ink); color: var(--bg); font: 500 var(--t-md) var(--sans); transition: opacity var(--d-fast); }
+.r-fill:disabled { opacity: .3; cursor: default; }
+
+/* ---------- 6. the bars: the shell's, in three zones ---------- */
+.r-bar, .r-foot { position: fixed; left: 0; right: 0; z-index: var(--z-bar); background: var(--frost);
+  -webkit-backdrop-filter: var(--frost-filter); backdrop-filter: var(--frost-filter);
+  transition: transform var(--d-panel) var(--ease), opacity var(--d-panel) var(--ease); }
+.r-bar { top: 0; height: calc(var(--bar-h) + var(--safe-top)); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+  padding: var(--safe-top) calc(var(--edge-pad) + env(safe-area-inset-right)) 0 calc(var(--edge-pad) + env(safe-area-inset-left));
+  box-shadow: inset 0 -.5px 0 var(--edge); }
+.r-foot { bottom: 0; height: calc(var(--bar-h) + env(safe-area-inset-bottom)); display: grid; grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center; gap: var(--s-3); padding: 0 calc(var(--edge-pad) + var(--s-2) + env(safe-area-inset-right)) env(safe-area-inset-bottom) calc(var(--edge-pad) + env(safe-area-inset-left));
+  box-shadow: inset 0 .5px 0 var(--edge); }
+html.chrome-off .r-bar { transform: translateY(-102%); opacity: 0; pointer-events: none; }
+html.chrome-off .r-foot { transform: translateY(102%); opacity: 0; pointer-events: none; }
+.r-zone { display: flex; align-items: center; gap: 2px; min-width: 0; }
+.r-zone.r { justify-content: flex-end; }
+.r-slot { flex: none; width: var(--hit); height: var(--hit); }   /* where the shell's sidebar toggle stands */
+html:not(.in-shell) .r-slot, html.in-shell.side-open .r-slot { display: none; }
+.r-backto { min-width: 0; font: 500 var(--t-md) var(--sans); color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; pointer-events: none; }
+/* where you are: the book (the Listen view's .place) */
+.r-place { min-width: 0; max-width: min(46vw, 560px); display: flex; flex-direction: column; align-items: center; text-align: center; }
+.r-place b { max-width: 100%; font: 500 var(--t-md)/var(--lh-snug) var(--sans); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.r-place small { max-width: 100%; font-size: var(--t-xs); color: var(--ink-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.r-place b .sub { color: var(--ink-2); font-weight: 400; }
+#r-ask { color: var(--accent); }   /* the Librarian is the one thing here in the accent */
+#r-ask.on { color: var(--accent); }
+
+/* the hairline: loading in the accent, reading progress while the bars are away */
+/* along the bar's bottom edge; at the top of the safe area once the bars are away (Noah, 2026-10-31: top: 0 sat under a phone's notch) */
+.r-prog { position: fixed; top: calc(var(--bar-h) + var(--safe-top) - 2px); left: 0; right: 0; height: 2px; z-index: var(--z-chip); pointer-events: none;
+  transition: top var(--d-panel) var(--ease); }
+html.chrome-off .r-prog { top: var(--safe-top); }
+.r-prog i { display: block; height: 100%; width: 0; background: var(--ink-3); opacity: 0; transition: opacity var(--d-panel), width var(--d-panel); }
+html.chrome-off .r-prog i { opacity: .7; }
+.r-prog::after { content: ""; position: absolute; left: 0; top: 0; height: 100%; width: var(--load, 4%); background: var(--accent); opacity: 0;
+  transition: width var(--d-pop) ease-out, opacity var(--d-panel); }
+.r-prog.loading::after { opacity: 1; }
+
+/* the foot: Contents, the scrubber, the page */
+.r-scrub { position: relative; display: flex; align-items: center; min-width: 0; height: 100%; }
+.r-scrub input { -webkit-appearance: none; appearance: none; width: 100%; height: var(--hit); margin: 0; background: none; cursor: pointer; }
+.r-scrub input::-webkit-slider-runnable-track { height: 4px; border-radius: var(--r-pill);
+  background: linear-gradient(to right, var(--ink-2) var(--fill, 0%), var(--edge) var(--fill, 0%)); }
+.r-scrub input::-moz-range-track { height: 4px; border-radius: var(--r-pill); background: var(--edge); }
+.r-scrub input::-moz-range-progress { height: 4px; border-radius: var(--r-pill); background: var(--ink-2); }
+.r-scrub input::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; margin-top: -7px; border-radius: 50%; background: var(--ink);
+  box-shadow: var(--shadow-sm); transition: transform var(--d-fast); }
+.r-scrub input::-moz-range-thumb { width: 18px; height: 18px; border: 0; border-radius: 50%; background: var(--ink); }
+.r-scrub input:active::-webkit-slider-thumb { transform: scale(1.15); }
+.r-scrubtag { position: absolute; bottom: calc(100% + var(--s-1)); left: var(--x, 0); transform: translateX(-50%); display: flex; flex-direction: column; align-items: center;
+  max-width: 280px; padding: var(--s-2) var(--s-3); border-radius: var(--r-md); background: var(--ink); color: var(--bg); box-shadow: var(--shadow-float);
+  opacity: 0; pointer-events: none; transition: opacity var(--d-fast); white-space: nowrap; }
+.r-scrubtag.on { opacity: 1; }
+.r-scrubtag b { font: 600 var(--t-sm) var(--sans); }
+.r-scrubtag span { font-size: var(--t-xs); opacity: .75; max-width: 256px; overflow: hidden; text-overflow: ellipsis; }
+.r-ticks { position: absolute; left: 9px; right: 9px; top: 50%; height: 0; pointer-events: none; z-index: 1; }
+.r-ticks i { position: absolute; left: var(--x, 0); top: -7px; width: 2px; height: 14px; margin-left: -1px; border-radius: var(--r-xs); background: var(--accent); }
+.r-where { display: flex; align-items: center; gap: var(--s-2); min-width: 0; white-space: nowrap; }
+.r-sec { font: 400 var(--t-md) var(--serif); color: var(--ink-2); max-width: 320px; overflow: hidden; text-overflow: ellipsis; }
+/* the page opens Go to page: a plate like any control, its words in place of an icon */
+.r-pg { position: relative; flex: none; height: var(--hit); padding: 0 var(--s-3); font: 500 var(--t-sm) var(--sans); color: var(--ink-2); white-space: nowrap;
+  font-variant-numeric: tabular-nums; }
+.r-pg::before { content: ""; position: absolute; inset: calc((var(--hit) - var(--plate)) / 2) 0; border-radius: var(--r-ctl); background: var(--fill);
+  opacity: 0; transition: opacity var(--d-fast); }
+.r-pg > * { position: relative; }
+@media (hover: hover) { .r-pg:hover { color: var(--ink); } .r-pg:hover::before { opacity: 1; } }
+.r-pg[aria-expanded="true"] { color: var(--ink); }
+.r-pg[aria-expanded="true"]::before { opacity: 1; background: var(--fill-2); }
+html.coarse .r-pg::before { opacity: 1; }   /* no hover on glass: show it's a button, so a thumb knows the page is a way to jump */
+
+/* Pages: the side buttons, and the page tag that passes while the bars are away */
+.r-turn { position: fixed; top: 50%; z-index: var(--z-bar); width: var(--hit); height: var(--hit); margin-top: calc(var(--hit) / -2);
+  border-radius: var(--r-md); display: none !important; align-items: center; justify-content: center; color: var(--ink-2); transition: opacity var(--d-panel), color var(--d-fast); }
+.r-turn.prev { left: var(--s-3); } .r-turn.next { right: var(--s-3); }
+@media (hover: hover) { .r-turn:hover { color: var(--ink); } }
+html.fine.flow-pages .r-turn { display: flex !important; }
+html.chrome-off .r-turn { opacity: 0; }
+html.chrome-off .r-turn:hover { opacity: 1; }
+.r-tag { position: fixed; left: 50%; bottom: calc(var(--s-5) + env(safe-area-inset-bottom)); z-index: var(--z-bar); transform: translateX(-50%);
+  padding: 6px var(--s-3); border-radius: var(--r-pill); color: var(--ink-2); font-size: var(--t-sm); opacity: 0; pointer-events: none; transition: opacity var(--d-panel); }
+.r-tag.on { opacity: 1; }
+
+/* the find you're reading with: under the bar, or at the top once the bars step aside, so its close is always there */
+.r-find { position: fixed; z-index: var(--z-bar); left: 50%; top: calc(var(--bar-h) + var(--safe-top) + var(--s-2)); transform: translateX(-50%);
+  display: flex; align-items: center; max-width: min(560px, calc(100vw - 2 * var(--s-3))); height: calc(var(--plate) + 2 * var(--s-1));
+  padding: 0 calc(var(--s-1) - (var(--hit) - var(--plate)) / 2); border-radius: calc(var(--r-ctl) + var(--s-1)); transition: top var(--d-panel) var(--ease); }
+html.chrome-off .r-find { top: calc(var(--safe-top) + var(--s-2)); }
+.r-flabel { position: relative; display: flex; align-items: center; gap: var(--s-2); min-width: 0; height: var(--hit); padding: 0 var(--s-3) 0 var(--s-3); color: var(--ink-2); }
+.r-flabel::before { content: ""; position: absolute; inset: calc((var(--hit) - var(--plate)) / 2) 0; border-radius: var(--r-ctl); background: var(--fill); opacity: 0; transition: opacity var(--d-fast); }
+.r-flabel > * { position: relative; }
+@media (hover: hover) { .r-flabel:hover::before { opacity: 1; } }
+.r-fq { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font: 400 var(--t-lg)/1.2 var(--serif); color: var(--ink); }
+.r-fn { flex: none; font-size: var(--t-xs); color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.r-fn:empty { display: none; }
+
+/* a selection's Copy link */
+.r-pass { position: fixed; z-index: var(--z-chip); box-shadow: var(--shadow-float); }
+
+/* ---------- 7. layers: popovers and panels on desktop ---------- */
+/* a popover grows from its control (layers.css .popover): tools pad 14 for their 10px plates, menus 6 */
+.r-pop { position: fixed; z-index: var(--z-sheet); top: calc(var(--bar-h) + var(--safe-top) + var(--s-1)); right: var(--card-inset);
+  width: 360px; max-width: calc(100vw - 2 * var(--card-inset)); padding: calc(var(--r-xl) - var(--r-ctl)); border-radius: var(--r-xl);
+  transform-origin: top right; animation: r-pop var(--d-pop) var(--ease); }
+@keyframes r-pop { from { opacity: 0; transform: scale(.97) translateY(-4px); } }
+.r-pop.r-menu { width: 280px; padding: var(--card-pad); border-radius: var(--r-lg); }
+.r-goto { top: auto; bottom: calc(var(--bar-h) + env(safe-area-inset-bottom) + var(--s-1)); transform-origin: bottom right; width: 320px; }
+.r-grab { display: none; }
+.r-phead { flex: none; display: flex; align-items: center; justify-content: space-between; gap: var(--s-2);
+  height: calc(var(--plate) + 2 * var(--card-pad)); padding: 0 calc(var(--card-pad) - (var(--hit) - var(--plate)) / 2) 0 18px; }
+.r-phead b { font: 500 var(--t-lg) var(--sans); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.r-phead .r-seg { flex: 1; }
+
+/* More: rows with their icons, in words */
+.r-menu > button, .r-menu > a { display: flex; align-items: center; gap: var(--s-3); width: 100%; min-height: 40px; padding: 0 var(--s-3);
+  border-radius: var(--r-ctl); color: var(--ink-2); font-size: var(--t-md); transition: background var(--d-fast), color var(--d-fast); }
+.r-menu > button svg.i, .r-menu > a svg.i { color: var(--ink-3); }
+@media (hover: hover) { .r-menu > button:hover, .r-menu > a:hover { background: var(--fill); color: var(--ink); } }
+.r-menu small { margin-left: auto; padding-left: var(--s-3); font-size: var(--t-xs); color: var(--ink-3); white-space: nowrap; }
+html.coarse .r-menu small.key { display: none; }   /* a key means nothing to a thumb */
+.r-menu hr { border: 0; border-top: .5px solid var(--rule); margin: var(--s-1) var(--s-3); }
+.r-menu .on svg.i { color: var(--accent); }
+
+/* Display */
+.r-row { display: grid; grid-template-columns: 68px minmax(0, 1fr); align-items: center; gap: var(--s-3); padding: var(--s-2) 0; }
+.r-row + .r-row { border-top: .5px solid var(--rule); }
+.r-label { font-size: var(--t-sm); color: var(--ink-3); }
+.r-tones { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-2); }
+.r-tone { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 6px 0; border-radius: var(--r-ctl); color: var(--ink-2); font-size: var(--t-sm); }
+.r-tone i { position: relative; width: 44px; height: 30px; border-radius: var(--r-sm); box-shadow: inset 0 0 0 1px var(--edge); overflow: hidden; }
+.r-tone i::after { content: "Aa"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font: 500 var(--t-sm) var(--serif); font-style: normal; }
+.r-tone.paper i { background: var(--page); } .r-tone.paper i::after { color: var(--ink-paper); }
+.r-tone.sepia i { background: var(--page-sepia); } .r-tone.sepia i::after { color: var(--ink-sepia); }
+.r-tone.night i { background: var(--page-night); } .r-tone.night i::after { color: var(--ink-night); }
+@media (hover: hover) { .r-tone:hover { color: var(--ink); } }
+.r-tone[aria-checked="true"] { color: var(--ink); }
+.r-tone[aria-checked="true"] i { box-shadow: 0 0 0 2px var(--surface), 0 0 0 3.5px var(--ink); }
+/* Layout and Reading are tiles like the tones (Noah, 2026-10-31: show, don't tell): a glyph of what the page will do, its name under it */
+.r-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-2); }
+.r-tiles.two { grid-template-columns: repeat(2, 1fr); }
+.r-tile { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 6px 0; border-radius: var(--r-ctl); color: var(--ink-2); font-size: var(--t-sm); }
+.r-tile i { display: flex; align-items: center; justify-content: center; width: 44px; height: 30px; border-radius: var(--r-sm); box-shadow: inset 0 0 0 1px var(--edge); background: var(--fill); font-style: normal; }
+@media (hover: hover) { .r-tile:hover { color: var(--ink); } }
+.r-tile[aria-checked="true"] { color: var(--ink); }
+.r-tile[aria-checked="true"] i { box-shadow: 0 0 0 2px var(--surface), 0 0 0 3.5px var(--ink); }
+.r-zoom { display: flex; align-items: center; gap: 2px; }
+.r-zoom .r-seg { flex: 1; }
+.r-zval { width: 44px; text-align: right; font-size: var(--t-sm); color: var(--ink-3); }
+
+/* Go to page */
+.r-gform { display: flex; gap: var(--s-2); }
+.r-gform input { flex: 1; min-width: 0; height: 40px; padding: 0 var(--s-3); margin: 0; border: 0; border-radius: var(--r-ctl); outline: none; background: var(--fill); color: var(--ink);
+  font: 500 var(--t-body) var(--sans); font-variant-numeric: tabular-nums; }
+.r-gform input::placeholder { color: var(--ink-3); font-weight: 400; }
+#gsa-reader .r-gform input:focus { outline: none; background: var(--bg); box-shadow: inset 0 0 0 1px var(--edge-hover); }
+.r-gform .r-fill { height: 40px; }
+.r-glist { display: flex; flex-direction: column; gap: 2px; }
+.r-glist:not(:empty) { margin-top: var(--s-2); }
+.r-gopt { display: flex; align-items: baseline; gap: var(--s-3); width: 100%; min-height: 40px; padding: 10px var(--s-3); border-radius: var(--r-ctl); }
+.r-gopt b { flex: none; font: 500 var(--t-md) var(--sans); color: var(--ink); }
+.r-gopt span { flex: 1; min-width: 0; text-align: right; font-size: var(--t-sm); color: var(--ink-3); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.r-gopt:hover, .r-gopt[aria-selected="true"] { background: var(--fill); }
+.r-gopt[aria-selected="true"] b::before { content: "→ "; color: var(--ink-3); }
+.r-ghint { margin: var(--s-2) var(--s-1) 0; font-size: var(--t-sm); line-height: 1.4; color: var(--ink-3); }
+
+/* Listen: making an audiobook, read by an AI voice */
+.r-audio { display: flex; flex-direction: column; gap: var(--s-3); }
+.r-atitle { display: flex; align-items: center; gap: var(--s-2); font: 500 var(--t-lg) var(--sans); color: var(--ink); }
+.r-atext { font-size: var(--t-md); line-height: 1.45; color: var(--ink-2); }
+.r-abar { height: 3px; border-radius: var(--r-pill); background: var(--edge); overflow: hidden; }
+.r-abar i { display: block; height: 100%; width: 0; background: var(--accent); transition: width var(--d-sheet) var(--ease); }
+.r-abar.r-awork i { width: 30% !important; animation: r-awork 1.1s ease-in-out infinite alternate; }
+@keyframes r-awork { from { transform: translateX(-100%); } to { transform: translateX(330%); } }
+.r-audio .r-fill { align-self: flex-start; }
+
+/* a panel: the shell's (layers.css .panel), floating, frosted; Contents on the left, Search and Ask on the right */
+.r-panel { position: fixed; z-index: var(--z-panel); top: calc(var(--card-inset) + var(--safe-top)); bottom: var(--card-inset);
+  width: 380px; max-width: calc(100vw - 2 * var(--card-inset)); display: flex; flex-direction: column; border-radius: var(--r-lg);
+  animation: r-in var(--d-panel) var(--ease); }
+.r-panel.left { left: var(--card-inset); --from: calc(-1 * var(--s-3)); }
+.r-panel.right { right: var(--card-inset); --from: var(--s-3); }
+@keyframes r-in { from { opacity: 0; transform: translateX(var(--from, 0)); } }
+.r-pbody { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 0 var(--card-pad) var(--card-pad); }
+
+/* Contents: the outline, Pages, Bookmarks */
+.r-toc, .r-toc ol { list-style: none; margin: 0; padding: 0; }
+.r-toc ol { padding-left: var(--s-4); display: none; }
+.r-toc li.open > ol { display: block; }
+.r-toc li { position: relative; }
+.r-tw { position: absolute; left: 0; top: 4px; width: 24px; height: 28px; display: flex; align-items: center; justify-content: center; color: var(--ink-3); }
+.r-tw svg.i { transition: transform var(--d-fast) var(--ease); }
+.r-toc li.open > .r-tw svg.i { transform: rotate(90deg); }
+.r-ti { display: flex; align-items: baseline; justify-content: space-between; gap: var(--s-3); width: 100%; padding: var(--s-2) 10px var(--s-2) 26px; border-radius: var(--r-ctl);
+  font: 400 var(--t-lg)/1.35 var(--serif); color: var(--ink-2); }
+@media (hover: hover) { .r-ti:hover { background: var(--fill); color: var(--ink); } }
+.r-ti.on { background: var(--fill-2); color: var(--ink); }
+.r-ti i { flex: none; font: 400 var(--t-xs) var(--sans); font-style: normal; color: var(--ink-3); }
+.r-marks { list-style: none; margin: 0; padding: 0; }
+.r-marks li { display: flex; align-items: center; gap: 2px; }
+.r-mk { flex: 1; min-width: 0; display: flex; align-items: baseline; gap: var(--s-3); padding: 10px; border-radius: var(--r-ctl); text-align: left; color: var(--ink-2); }
+@media (hover: hover) { .r-mk:hover { background: var(--fill); color: var(--ink); } }
+.r-mk b { flex: none; font: 500 var(--t-sm) var(--sans); color: var(--ink); }
+.r-mk span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font: 400 var(--t-md) var(--serif); }
+.r-thumbs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 14px; padding: var(--s-3) 10px var(--s-6); }
+.r-th { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.r-thc { display: block; width: 100%; aspect-ratio: var(--ar, 3/4); border-radius: var(--r-xs); overflow: hidden; background: var(--fill);
+  box-shadow: var(--shadow-sm); transition: box-shadow var(--d-fast); }
+.r-thc canvas { display: block; width: 100%; height: 100%; object-fit: fill; }
+.r-th b { font-weight: 400; font-size: var(--t-xs); color: var(--ink-3); }
+@media (hover: hover) { .r-th:hover .r-thc { box-shadow: 0 0 0 1.5px var(--edge-hover), var(--shadow-sm); } }
+.r-th.on .r-thc { box-shadow: 0 0 0 2px var(--accent); }
+.r-th.on b { color: var(--ink); }
+
+/* Search in book */
+.r-sform { flex: 1; display: flex; align-items: center; gap: var(--s-2); height: 36px; padding: 0 var(--s-3); border-radius: var(--r-ctl); background: var(--fill); color: var(--ink-3); }
+.r-sform:focus-within { background: var(--bg); box-shadow: inset 0 0 0 1px var(--edge-hover); }
+.r-sform input { flex: 1; min-width: 0; height: 100%; border: 0; outline: none; background: none; color: var(--ink); font: 400 var(--t-lg) var(--sans); -webkit-appearance: none; appearance: none; }
+.r-sform input::placeholder { color: var(--ink-3); }
+.r-sform input::-webkit-search-cancel-button { display: none; }
+.r-searchp .r-phead { padding-left: calc(var(--card-pad) + 4px); }
+.r-ssum { flex: none; padding: var(--s-2) 18px var(--s-1); font-size: var(--t-xs); color: var(--ink-3); min-height: 24px; }
+html.searching .r-ssum::before { content: ""; display: block; height: 2px; width: 40%; background: var(--accent); border-radius: var(--r-pill); animation: r-work 1s ease-in-out infinite alternate; }
+@keyframes r-work { from { margin-left: 0; } to { margin-left: 60%; } }
+.r-hits { list-style: none; margin: 0; padding: 0; }
+.r-hits li + li { margin-top: 2px; }
+.r-hit { display: block; width: 100%; padding: 10px var(--s-3); border-radius: var(--r-md); text-align: left; }
+@media (hover: hover) { .r-hit:hover { background: var(--fill); } }
+.r-hit.on { background: var(--fill-2); }
+.r-hp { display: block; font: 500 var(--t-xs) var(--sans); color: var(--ink-2); margin-bottom: 2px; }
+.r-hs { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; font: 400 var(--t-lg)/1.5 var(--serif); color: var(--ink-2); }
+.r-hs mark { background: none; color: var(--ink); font-weight: 600; }
+
+/* Ask the Librarian about this page: questions and short answers, the field at the foot */
+.r-askbody { padding: 0 18px var(--s-3); overflow-wrap: break-word; }
+.r-askhint { padding: var(--s-1) 0 var(--s-3); font-size: var(--t-sm); line-height: 1.45; color: var(--ink-3); }
+.r-aturn { padding: var(--s-3) 0 var(--s-1); }
+.r-aturn + .r-aturn { border-top: .5px solid var(--rule); margin-top: var(--s-2); }
+.r-aq { margin-bottom: 10px; font: italic 400 var(--t-lg)/1.45 var(--serif); color: var(--ink-2); }
+.r-astep { font: var(--t-xs)/1.5 var(--sans); color: var(--ink-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: var(--s-2); }
+.r-astep:empty { height: 2px; width: 40%; border-radius: var(--r-pill); background: var(--accent); animation: r-work 1s ease-in-out infinite alternate; }
+.r-aans { font: 400 var(--t-body)/1.6 var(--serif); color: var(--ink); }
+.r-aans p + p, .r-aans blockquote { margin-top: .7em; }
+.r-aans blockquote { padding-left: 14px; border-left: 2px solid var(--edge-hover); font-style: italic; }
+.r-cite { display: inline-flex; align-items: center; height: 22px; padding: 0 var(--s-2); margin: 0 1px; border-radius: var(--r-sm); vertical-align: 1px;
+  background: var(--accent-wash); font: 500 var(--t-xs)/1 var(--sans); color: var(--accent); white-space: nowrap; }
+@media (hover: hover) { .r-cite:hover { background: var(--find-wash); } }
+.r-astate { display: inline-block; font: var(--t-sm) var(--sans); color: var(--ink-3); padding: var(--s-1) var(--s-3); border-radius: var(--r-ctl); background: var(--fill); }
+/* the composer's shape (home.css): a rounded rect, its send concentric in the corner */
+.r-aform { flex: none; display: flex; align-items: flex-end; gap: var(--s-2); margin: 0 var(--card-pad) var(--card-pad); padding: var(--card-pad) var(--card-pad) var(--card-pad) 14px;
+  border-radius: calc(var(--r-ctl) + var(--card-pad)); background: var(--fill); }
+.r-aform:focus-within { background: var(--bg); box-shadow: inset 0 0 0 1px var(--edge-hover); }
+.r-aform textarea { flex: 1; min-width: 0; resize: none; border: 0; outline: none; background: none; color: var(--ink); font: 400 var(--t-lg)/1.45 var(--sans); padding: 7px 0; max-height: 140px; }
+.r-aform textarea::placeholder { color: var(--ink-3); }
+.r-aform textarea:focus, .r-aform textarea:focus-visible { outline: none !important; box-shadow: none !important; }
+.r-aform button { flex: none; display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: var(--r-ctl); background: var(--ink); color: var(--bg); }
+.r-aform button:disabled { background: var(--fill-2); color: var(--ink-3); cursor: default; }
+.r-scrim { display: none; }
+
+/* ---------- 8. in the shell ---------- */
+/* the full-window book: the player rests in the foot's right end, beside the scrubber, never over the page */
+html.in-shell.player-on .r-foot { padding-right: calc(var(--player-w) + 2 * var(--card-inset)); }
+html.in-shell.player-on .r-goto { right: calc(var(--player-w) + 2 * var(--card-inset)); }
+html.in-shell { --player-w: min(520px, 45vw); }   /* book.css places the player by the same sum (100vw here is the frame: the shell's width less its sidebar) */
+
+/* ---------- 9. phones: the bar as the shell's, every layer a sheet ---------- */
+@media (max-width: 720px) {
+  .r-bar { grid-template-columns: auto minmax(0, 1fr) auto; gap: var(--s-1); }
+  .r-backto, .r-sec { display: none; }
+  .r-place { max-width: none; align-items: flex-start; text-align: left; }
+  .r-foot { grid-template-columns: auto minmax(0, 1fr) auto; gap: var(--s-2); padding-right: calc(var(--edge-pad) + env(safe-area-inset-right)); }
+  .r-turn { display: none !important; }
+
+  /* a fit sheet (layers.css .sheet at fit): inset, one radius all round, frosted, a grabber; dragged down it goes */
+  .r-pop, .r-panel { position: fixed; z-index: var(--z-sheet); left: var(--s-2); right: var(--s-2); top: auto; bottom: max(var(--s-2), env(safe-area-inset-bottom));
+    width: auto; max-width: none; border-radius: var(--r-sheet); padding: 0 calc(var(--r-sheet) - var(--r-ctl)) calc(var(--r-sheet) - var(--r-ctl));
+    animation: r-up var(--d-sheet) var(--ease-sheet); transform-origin: 50% 100%; transition: transform var(--d-sheet) var(--ease-sheet); touch-action: pan-y; }
+  .r-pop.r-menu { width: auto; padding: 0 var(--s-3) var(--s-3); border-radius: var(--r-sheet); }
+  .r-goto { width: auto; }
+  .r-goto { bottom: calc(var(--kb, 0px) + max(var(--s-2), env(safe-area-inset-bottom))); }
+  .r-pop.out, .r-panel.out { transform: translateY(calc(100% + var(--s-5))) !important; transition-duration: var(--d-sheet-out); }
+  .r-pop.dragging, .r-panel.dragging { transition: none; }
+  @keyframes r-up { from { transform: translateY(calc(100% + var(--s-5))); } }
+  .r-grab { display: block; flex: none; position: relative; width: 36px; height: 5px; margin: var(--s-2) auto var(--s-2);
+    border-radius: var(--r-pill); background: color-mix(in srgb, var(--ink) 30%, transparent); }
+  .r-grab::after { content: ""; position: absolute; inset: -12px -40px; }
+  /* a panel is a large sheet: near the top, opaque, edge to edge */
+  .r-panel { top: calc(var(--safe-top) + 10px); left: 0; right: 0; bottom: 0; padding: 0; background: var(--surface);
+    -webkit-backdrop-filter: none; backdrop-filter: none; border-radius: var(--r-sheet) var(--r-sheet) 0 0; overflow: hidden; }
+  .r-panel .r-pbody { padding-bottom: max(var(--s-4), env(safe-area-inset-bottom)); }
+  #panel-ask { top: 38dvh; }   /* the medium detent: the page you're asking about stays in sight above it */
+  .r-panel .r-aform { margin-bottom: max(var(--card-pad), env(safe-area-inset-bottom)); }
+  .r-phead [data-close] { display: none; }                            /* drag or the scrim closes it */
+  .r-menu > button, .r-menu > a { min-height: 52px; font-size: var(--t-body); }
+  .r-gopt { min-height: 48px; }
+  .r-row { grid-template-columns: 1fr; gap: var(--s-2); }
+  .r-layout { display: none; }                                         /* a phone shows one page at a time */
+  .r-scrim { display: block; position: fixed; inset: 0; z-index: var(--z-scrim); background: var(--scrim); opacity: 0; pointer-events: none; transition: opacity var(--d-panel); }
+  html.sheet-open .r-scrim { opacity: 1; pointer-events: auto; }
+  .r-aform textarea, .r-sform input, .r-gform input { font-size: var(--t-body); }   /* under 16px, iOS zooms the page on focus */
+}
+/* the Scrubber setting (Display): phones only; on desktop the player rests in the foot */
+.r-fab, .r-row.r-scrubrow { display: none; }
+@media (max-width: 720px) {
+  html.gsa .r-row.r-scrubrow { display: grid; }
+  /* Button: the foot tucked behind a small frosted rounded rect in the corner, naming the page */
+  html.scrub-button .r-fab { position: fixed; z-index: var(--z-bar); right: max(var(--s-2), env(safe-area-inset-right)); bottom: max(var(--s-2), env(safe-area-inset-bottom));
+    display: flex; align-items: center; height: var(--hit); padding: 0 var(--s-4); border-radius: var(--r-md); color: var(--ink);
+    font: 500 var(--t-sm) var(--sans); font-variant-numeric: tabular-nums; white-space: nowrap; transform-origin: 100% 100%;
+    transition: opacity var(--d-panel) var(--ease), transform var(--d-panel) var(--ease); }
+  html.scrub-button.chrome-off .r-fab, html.scrub-button.scrub-open .r-fab { opacity: 0; transform: scale(.92); pointer-events: none; }
+  /* open, the foot is a floating card grown from the button: inset like the player's capsule, its
+     plates concentric with its corners (radius = plate 10 + their offset 11) */
+  html.scrub-button .r-foot { left: max(var(--s-2), env(safe-area-inset-left)); right: max(var(--s-2), env(safe-area-inset-right));
+    bottom: max(var(--s-2), env(safe-area-inset-bottom)); height: var(--player-h);
+    padding: 0 calc(var(--card-pad) - (var(--hit) - var(--plate)) / 2 + var(--s-1));
+    border-radius: calc(var(--r-ctl) + var(--card-pad) + (var(--hit) - var(--plate)) / 2); box-shadow: var(--frost-edge), var(--shadow-float);
+    transform-origin: 100% 100%; transform: scale(.92); opacity: 0; pointer-events: none; }
+  html.scrub-button.scrub-open .r-foot { transform: none; opacity: 1; pointer-events: auto; }
+}
+@media (min-width: 721px) { .r-tocfoot { display: none !important; } }
+@media (prefers-reduced-motion: reduce) {
+  .r-bar, .r-foot, .r-panel, .r-pop, .r-prog i, .r-prog::after, .r-tag { transition: none !important; animation: none !important; }
+}
+
+/* ---------- 10. opening: before the engine downloads, and if it never does ---------- */
+#r-opening { position: fixed; inset: 2px 0 0; z-index: var(--z-cover); display: flex; flex-wrap: wrap; align-content: center; justify-content: center;
+  gap: var(--s-2) var(--s-3); padding: var(--s-6); background: var(--bg); color: var(--ink-2); text-align: center; font: 400 var(--t-md)/var(--lh-ui) var(--sans); }
+#r-opening[hidden], #r-opening [hidden] { display: none; }
+/* the instant page (Opening): the server's JPEG of the page you asked for, on the desk under the bars, until PDF.js draws it */
+#r-instant { position: fixed; inset: calc(var(--bar-h) + var(--safe-top)) 0 calc(var(--bar-h) + env(safe-area-inset-bottom)); z-index: var(--z-cover);
+  display: flex; justify-content: center; align-items: flex-start; overflow: hidden; background: var(--desk); transition: opacity var(--d-pop) var(--ease); }
+#r-instant[hidden] { display: none; }
+#r-instant.out { opacity: 0; pointer-events: none; }
+#r-instant img { display: block; width: 100%; height: auto; }            /* a phone reads at page width */
+#r-instant.wide img { width: auto; max-width: 100%; max-height: 100%; }  /* a desk shows the page */
+#r-opening p { flex-basis: 100%; }
+#r-opening a { color: var(--ink); padding: var(--s-2) var(--s-3); border-radius: var(--r-ctl); background: var(--fill); }

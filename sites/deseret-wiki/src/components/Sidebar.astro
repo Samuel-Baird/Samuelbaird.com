@@ -1,0 +1,165 @@
+---
+// Side menu, after a design by Noah Airmet: a floating panel opened from the top-left button,
+// with the main pages up top, the "shelves" marked by coloured bars, and secondary links at the foot.
+// Engraved icons come from the sprite (Sprite.astro); behaviour is the script at the bottom.
+import { toDeseret } from '../lib/dsrt.js';
+interface Props { path: string }
+const { path } = Astro.props;
+
+const main = [
+  { href: '/', label: 'Home', icon: 'i-skep', vb: '0 0 64 64', exact: true },
+  { search: true, label: 'Search', icon: 'i-glass', vb: '0 0 24 24' },
+  { href: '/wiki/deseret-alphabet/', label: 'The Alphabet', icon: 'i-primer', vb: '0 0 64 48' },
+  { href: '/library/', label: 'Library', icon: 'i-books', vb: '0 0 24 24' },
+  { href: '/quotes/', label: 'Quotes', icon: 'i-quote', vb: '0 0 24 24' },
+];
+const shelves = [
+  { href: '/fonts/', label: 'Fonts', color: '#C9A45C' },
+  { href: '/resources/', label: 'Resources', color: '#8DA27A' },
+  { href: '/videos/', label: 'Videos', color: '#7E9BBB' },
+  { href: '/buy/', label: 'Books & Prints', color: '#B8645A' },
+];
+const foot = [
+  { href: '/about/', label: 'About this wiki', icon: 'i-eye', vb: '0 0 64 64' },
+  { href: 'https://github.com/Samuel-Baird/deseret', label: 'Source on GitHub', icon: 'i-sorts', vb: '0 0 64 64', ext: true },
+  { href: 'https://samuelbaird.com', label: 'samuelbaird.com', icon: 'i-star', vb: '0 0 10 10', ext: true },
+];
+const current = (href: string, exact = false) => (exact ? path === href : path.startsWith(href)) ? 'page' : undefined;
+---
+<button class="side-toggle iconbtn" type="button" aria-expanded="false" aria-controls="sidebar" aria-label="Open menu" data-tip="Menu">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-panel" /></svg>
+</button>
+
+<div class="side-scrim" hidden></div>
+<aside id="sidebar" class="sidebar" aria-label="Menu" hidden>
+  <div class="side-top">
+    <button class="side-close iconbtn" type="button" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-panel" /></svg>
+    </button>
+  </div>
+
+  <nav class="side-nav" aria-label="Site">
+    <ul class="side-list">
+      {main.map((m) => (
+        <li>
+          {m.search ? (
+            <button type="button" class="side-link side-search"><svg viewBox={m.vb} aria-hidden="true"><use href={`#${m.icon}`} /></svg><span>{m.label}</span></button>
+          ) : (
+            <a class="side-link" href={m.href} aria-current={current(m.href!, m.exact)}><svg viewBox={m.vb} aria-hidden="true"><use href={`#${m.icon}`} /></svg><span>{m.label}</span></a>
+          )}
+        </li>
+      ))}
+    </ul>
+
+    <p class="side-label">Shelves</p>
+    <ul class="side-list">
+      {shelves.map((s) => (
+        <li><a class="side-link" href={s.href} aria-current={current(s.href)}><i class="bar" style={`background:${s.color}`}></i><span>{s.label}</span></a></li>
+      ))}
+    </ul>
+  </nav>
+
+  <div class="side-foot">
+    <ul class="side-list">
+      {foot.map((f) => (
+        <li><a class="side-link" href={f.href} aria-current={f.ext ? undefined : current(f.href)} rel={f.ext ? 'noopener' : undefined}><svg viewBox={f.vb} aria-hidden="true"><use href={`#${f.icon}`} /></svg><span>{f.label}</span></a></li>
+      ))}
+    </ul>
+    <p class="side-dsrt dsrt" lang="en-Dsrt" data-no-dsrt>{toDeseret('Deseret Wiki')}</p>
+  </div>
+</aside>
+
+<style>
+  /* fixed in the corner, where the panel's own close button sits, so it is always to hand */
+  .side-toggle {
+    position: fixed; top: 1rem; left: 1rem; z-index: 60;
+    background: rgb(20 20 24 / .55); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgb(201 164 92 / .18);
+  }
+  .side-toggle:hover { border-color: rgb(201 164 92 / .45); }
+  .sidebar {
+    position: fixed; z-index: 70; top: .5rem; left: .5rem; bottom: .5rem; width: min(16rem, calc(100vw - 1rem));
+    display: flex; flex-direction: column; overflow: hidden auto; scrollbar-width: thin; isolation: isolate;
+    background: rgb(20 20 24 / .82); backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2);
+    border: 1px solid rgb(201 164 92 / .28); border-radius: 6px;
+    box-shadow: 0 0 0 3px rgb(20 20 24 / .5), 0 0 0 4px rgb(201 164 92 / .12), 0 20px 50px rgb(0 0 0 / .45);
+    padding: .5rem; color: var(--ink);
+    opacity: 0; transform: translateX(-10px); transition: opacity .18s ease, transform .18s ease;
+  }
+  /* a warm lamp-glow at the foot, as the corpus panel has */
+  .sidebar::after {
+    content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 45%; pointer-events: none; z-index: -1; border-radius: 6px; overflow: hidden;
+    background: radial-gradient(ellipse at 30% 70%, rgb(201 140 70 / .22), transparent 60%), radial-gradient(ellipse at 80% 90%, rgb(90 120 170 / .14), transparent 55%);
+  }
+  .sidebar.open { opacity: 1; transform: none; }
+  .sidebar[hidden], .side-scrim[hidden] { display: none; }
+  .sidebar:not(.open) { pointer-events: none; }
+  .side-top { display: flex; align-items: center; height: 2.25rem; margin-bottom: .5rem; }
+  .side-close { border: 1px solid transparent; }
+  .side-list { list-style: none; margin: 0; padding: 0; }
+  .side-link {
+    display: flex; align-items: center; gap: .75rem; width: 100%;
+    padding: .5rem .6rem; border: 0; border-radius: 4px; background: none; cursor: pointer;
+    color: var(--ink); text-decoration: none; text-align: left;
+    font: 400 .92rem/1.2 var(--f-text);
+  }
+  .side-link svg { flex: none; width: 1.15rem; height: 1.15rem; color: var(--accent); }
+  .side-link:hover { background: rgb(237 227 203 / .06); }
+  .side-link[aria-current='page'] { background: rgb(201 164 92 / .14); color: var(--heading); box-shadow: inset 0 0 0 1px rgb(201 164 92 / .18); }
+  .side-link:focus-visible { outline: 1px solid var(--accent); outline-offset: -1px; }
+  .bar { flex: none; display: block; width: 3px; height: 1rem; margin: 0 .5rem 0 .45rem; border-radius: 1px; }
+  .side-label { margin: 1.4rem .6rem .4rem; font: 600 .62rem/1 var(--f-formal); letter-spacing: .2em; text-transform: uppercase; color: var(--ink-soft); }
+  .side-foot { margin-top: auto; padding-top: 1.2rem; border-top: 1px solid rgb(201 164 92 / .14); }
+  .side-foot .side-link { font-size: .85rem; color: var(--ink-soft); }
+  .side-foot .side-link:hover { color: var(--ink); }
+  .side-dsrt { margin: .6rem .6rem .2rem; font-size: .75rem; letter-spacing: .12em; color: rgb(201 164 92 / .55); }
+  .side-scrim { position: fixed; inset: 0; z-index: 65; background: rgb(5 6 8 / .45); opacity: 0; transition: opacity .18s; }
+  .side-scrim.open { opacity: 1; }
+  @media (min-width: 900px) { .side-scrim { background: transparent; } }
+</style>
+
+<script>
+  const btn = document.querySelector<HTMLButtonElement>('.side-toggle')!;
+  const panel = document.getElementById('sidebar')!;
+  const scrim = document.querySelector<HTMLElement>('.side-scrim')!;
+  const closeBtn = panel.querySelector<HTMLButtonElement>('.side-close')!;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let lastFocus: HTMLElement | null = null;
+
+  function open() {
+    lastFocus = document.activeElement as HTMLElement;
+    panel.hidden = false; scrim.hidden = false;
+    requestAnimationFrame(() => { panel.classList.add('open'); scrim.classList.add('open'); });
+    btn.setAttribute('aria-expanded', 'true');
+    (panel.querySelector('[aria-current="page"]') as HTMLElement || panel.querySelector('.side-link') as HTMLElement)?.focus({ preventScroll: true });
+  }
+  function close(restore = true) {
+    panel.classList.remove('open'); scrim.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    setTimeout(() => { panel.hidden = true; scrim.hidden = true; }, reduced ? 0 : 190);
+    if (restore) (lastFocus || btn).focus({ preventScroll: true });
+  }
+  const isOpen = () => btn.getAttribute('aria-expanded') === 'true';
+  btn.addEventListener('click', () => (isOpen() ? close() : open()));
+  closeBtn.addEventListener('click', () => close());
+  scrim.addEventListener('click', () => close(false));
+  document.addEventListener('keydown', (e) => {
+    if (!isOpen()) return;
+    if (e.key === 'Escape') { e.preventDefault(); close(); }
+    if (e.key === 'Tab') { // keep focus inside the open panel
+      const f = [...panel.querySelectorAll<HTMLElement>('a, button')];
+      const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+  panel.querySelector('.side-search')?.addEventListener('click', () => {
+    close(false);
+    const q = document.getElementById('q') as HTMLInputElement | null;
+    q?.focus(); q?.scrollIntoView({ block: 'nearest' });
+  });
+  // "/" opens search, as many reading sites do
+  document.addEventListener('keydown', (e) => {
+    if (e.key === '/' && !(e.target as Element).closest('input, textarea, [contenteditable]')) { e.preventDefault(); (document.getElementById('q') as HTMLInputElement)?.focus(); }
+  });
+</script>

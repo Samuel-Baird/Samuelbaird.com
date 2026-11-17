@@ -1,0 +1,107 @@
+---
+// Engraved Wasatch panorama: two ridges shaded with hatch strokes on their shadow faces,
+// a rising sun, and the lake shore in the foreground. Generated at build time (seeded, so stable).
+const W = 1200, H = 150;
+let seed = 1849;
+const rand = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+const f = (n) => +n.toFixed(1);
+
+function ridge(base, amp, peaks, step) {
+  const pts = [];
+  for (let x = 0; x <= W; x += step) {
+    let y = base;
+    for (const [px, ph, pw] of peaks) y -= ph * Math.exp(-(((x - px) / pw) ** 2));
+    y -= amp * (Math.sin(x / 37) * 0.5 + Math.sin(x / 13 + 1) * 0.25) + (rand() - 0.5) * amp * 0.6;
+    pts.push([x, f(y)]);
+  }
+  return pts;
+}
+// Back range: the high Wasatch (Timpanogos-like massif right of centre, Lone Peak, Ben Lomond far left).
+const back = ridge(112, 4, [[90, 46, 70], [300, 38, 90], [470, 30, 60], [760, 70, 85], [690, 40, 50], [980, 50, 90], [1140, 30, 70]], 6);
+const front = ridge(132, 3, [[180, 34, 80], [420, 22, 100], [600, 30, 70], [880, 26, 90], [1080, 36, 80]], 5);
+
+const line = (pts) => 'M' + pts.map(([x, y]) => `${x} ${y}`).join('L');
+const fill = (pts) => line(pts) + `L${W} ${H}L0 ${H}Z`;
+
+// Hatching: short downward strokes on faces that fall away to the right (light from the left).
+function hatch(pts, spacing, len, minSlope) {
+  let d = '';
+  for (let i = 1; i < pts.length; i++) {
+    const [x0, y0] = pts[i - 1], [x1, y1] = pts[i];
+    const slope = (y1 - y0) / (x1 - x0);
+    if (slope <= minSlope) continue;
+    for (let x = x0; x < x1; x += spacing) {
+      const y = y0 + slope * (x - x0);
+      const l = len * Math.min(1, 0.35 + slope * 1.6) * (0.75 + rand() * 0.4);
+      // strokes run down and back into the face, roughly along the fall line
+      d += `M${f(x)} ${f(y + 1.2)}l${f(-l * 0.55)} ${f(l * 0.8)}`;
+    }
+  }
+  return d;
+}
+const backHatch = hatch(back, 3.2, 14, 0.05);
+const frontHatch = hatch(front, 2.6, 11, 0.04);
+// Light contour strokes following the front ridge, like an engraver's horizontal ground lines.
+const contours = [8, 15].map((dy) => line(front.filter((_, i) => i % 2 === 0).map(([x, y]) => [x, f(y + dy + Math.sin(x / 50) * 2)]))).join('');
+
+// The sun is drawn at the origin and moved along its arc by src/scripts/sky.js.
+const rays = Array.from({ length: 32 }, (_, i) => {
+  const a = (i / 32) * Math.PI * 2;
+  const r1 = 25, r2 = i % 2 ? 44 : 62;
+  return `M${f(r1 * Math.cos(a))} ${f(r1 * Math.sin(a))}L${f(r2 * Math.cos(a))} ${f(r2 * Math.sin(a))}`;
+}).join('');
+const shore = Array.from({ length: 22 }, () => {
+  const x = rand() * (W - 60), y = 141 + rand() * 7, l = 20 + rand() * 50;
+  return `M${f(x)} ${f(y)}h${f(l)}`;
+}).join('');
+const id = 'mtn-' + Math.random().toString(36).slice(2, 6);
+---
+<svg class="mountains" viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+  <defs>
+    <radialGradient id={`${id}-glow`}>
+      <stop offset="0" stop-color="#C9974B" stop-opacity=".55" />
+      <stop offset=".45" stop-color="#8A4A2E" stop-opacity=".22" />
+      <stop offset="1" stop-color="#8A4A2E" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id={`${id}-moonglow`}>
+      <stop offset="0" stop-color="#E8DFC6" stop-opacity=".22" />
+      <stop offset="1" stop-color="#E8DFC6" stop-opacity="0" />
+    </radialGradient>
+    <clipPath id={`${id}-sky`}><path d={line(back) + `L${W + 400} 112L${W + 400} -400L-400 -400L-400 112Z`} /></clipPath>
+  </defs>
+  <g fill="none" stroke="currentColor" stroke-linecap="round">
+    <g clip-path={`url(#${id}-sky)`}>
+      <ellipse class="sun-glow" cx="600" cy="150" rx="460" ry="160" fill={`url(#${id}-glow)`} stroke="none" style="opacity:0" />
+      <g class="sun" transform="translate(760 52)" style="opacity:0">
+        <g class="sun-rays"><path d={rays} stroke-width=".8" opacity=".75" /></g>
+        <circle r="20" stroke-width="1.2" class="sun-disc" />
+        <circle r="15.5" stroke-width=".5" opacity=".7" />
+      </g>
+      <!-- the moon: rises at nightfall; its lit part is redrawn for the phase by sky.js -->
+      <g class="moon" transform="translate(600 60)" style="opacity:0">
+        <circle r="50" fill={`url(#${id}-moonglow)`} stroke="none" class="moon-halo" />
+        <circle r="16" class="moon-dark" stroke-width=".6" />
+        <path class="moon-lit" stroke="none" d="" />
+        <g class="moon-marks" stroke="none"><circle cx="-5" cy="-4" r="3.2" /><circle cx="5" cy="5" r="2.2" /><circle cx="4" cy="-7" r="1.5" /><circle cx="-6" cy="6" r="1.2" /></g>
+      </g>
+    </g>
+    <path d={fill(back)} class="mtn-paper" stroke="none" />
+    <path d={backHatch} stroke-width=".55" opacity=".6" />
+    <path d={line(back)} stroke-width="1.1" />
+    <path d={fill(front)} class="mtn-paper" stroke="none" />
+    <path d={frontHatch} stroke-width=".7" opacity=".85" />
+    <path d={contours} stroke-width=".4" opacity=".5" />
+    <path d={line(front)} stroke-width="1.3" />
+    <path d={shore} stroke-width=".5" opacity=".6" />
+  </g>
+</svg>
+<style>
+  .mountains { display: block; overflow: visible; width: 100%; height: clamp(80px, 11vw, 150px); color: var(--heading); }
+  .mtn-paper { fill: #16171A; }
+  .sun { color: #D9B46A; }
+  .sun-disc { fill: rgb(217 180 106 / .14); }
+  .moon { color: #E8DFC6; }
+  .moon-dark { fill: #1A1B20; stroke: rgb(232 223 198 / .35); }
+  .moon-lit { fill: #E6DDC4; }
+  .moon-marks { fill: rgb(26 27 32 / .16); }
+</style>

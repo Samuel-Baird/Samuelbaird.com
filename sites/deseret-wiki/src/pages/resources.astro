@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import Title from '../components/Title.astro';
+const links = [
+  { title: 'Deseret Alphabet (Facebook group)', url: 'https://www.facebook.com/groups/DeseretAlphabet/', note: 'Community of Deseret Alphabet readers and writers.' },
+  { title: 'Deseret Alphabet Trainer', url: 'https://dezgames.itch.io/deseret-alphabet-trainer', note: 'A game for learning the letters, by Dez Games on itch.io.' },
+  { title: 'Post by @neilalexanderw1 on X', url: 'https://x.com/neilalexanderw1/status/1892515575751958609', note: 'Deseret Alphabet post by Neil Alexander Walker.' },
+  { title: 'Deseret Alphabet Stencil (MakerWorld)', url: 'https://makerworld.com/en/models/3620823-deseret-alphabet-stencil', note: '3D-printable Deseret Alphabet stencil.' },
+  { title: 'Proclamations in Deseret Alphabet (Urim)', url: 'https://urim.samuelbaird.com/proclamations/deseret', note: "The Church's proclamations in the Deseret Alphabet, laid out for printing." },
+  { title: 'BeeCrypt', url: 'https://beecrypt.vercel.app', note: 'Community word puzzle game in the Deseret Alphabet.' },
+  { title: 'Baybayin Project: Deseret transliterator', url: 'https://cmckinney-59.github.io/the-baybayin-project/#/transliterator/deseret', note: 'Type English and see it in Deseret.' },
+  { title: '@deseret_alphabet (Instagram)', url: 'https://www.instagram.com/deseret_alphabet/', note: 'Deseret Alphabet on Instagram.' },
+  { title: '@deseretalphabet (Instagram)', url: 'https://www.instagram.com/deseretalphabet/', note: 'Deseret Alphabet on Instagram.' },
+  { title: 'Deseret keyboard (Keyman)', url: 'https://keyman.com/en/keyboards/deseret', note: 'Free Deseret Alphabet keyboard for Windows, macOS, Linux, iOS, Android and web.' },
+];
+---
+<Base title="Resources — Deseret Wiki">
+  <div class="wrap">
+    <header class="page-head">
+      <p class="kicker">The Hive</p>
+      <Title text="Resources" />
+      <p class="lede-text">Communities, games and places to practise the alphabet.</p>
+    </header>
+    <ol class="register">
+      {links.map((l) => (
+        <li>
+          <a href={l.url} rel="noopener"><span class="reg-title">{l.title}</span></a>
+          <span class="reg-note">{l.note}</span>
+        </li>
+      ))}
+    </ol>
+    <p class="see-also small">See also <a href="/videos/">Videos</a> and <a href="/buy/">Books &amp; Prints</a>.</p>
+  </div>
+</Base>

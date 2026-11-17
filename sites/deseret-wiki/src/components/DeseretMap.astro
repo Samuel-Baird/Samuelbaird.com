@@ -1,0 +1,51 @@
+---
+// The State of Deseret as proposed in 1849, drawn faintly for the footer.
+// A stylised outline (Sierra Nevada crest, the Pacific near San Diego, the Gila, the Continental
+// Divide), filled with a township grid. Not a survey: positions are approximate.
+const LON0 = -122, LAT0 = 44, K = 40, COS = Math.cos((38 * Math.PI) / 180);
+const p = ([lon, lat]) => [+((lon - LON0) * K * COS).toFixed(1), +((LAT0 - lat) * K).toFixed(1)];
+const path = (pts, close = true) => 'M' + pts.map(p).map(([x, y]) => `${x} ${y}`).join('L') + (close ? 'Z' : '');
+
+const border = [
+  [-120.6, 43.0], [-118.0, 42.6], [-115.0, 42.3], [-112.5, 43.2], [-111.0, 43.4], [-109.8, 43.0],
+  [-107.2, 41.8], [-106.2, 40.2], [-106.0, 38.6], [-106.9, 37.3], [-107.6, 35.2], [-108.6, 33.0],
+  [-111.0, 32.9], [-114.6, 32.7], [-117.1, 32.55], [-117.6, 33.4], [-118.4, 33.9], [-118.8, 34.6],
+  [-118.3, 35.7], [-119.2, 37.3], [-120.1, 38.8], [-120.6, 40.3], [-121.2, 41.4],
+];
+const colorado = [[-108.5, 39.1], [-109.6, 38.6], [-110.0, 38.1], [-111.5, 36.9], [-112.5, 36.2], [-113.8, 36.1], [-114.7, 35.5], [-114.5, 34.3], [-114.6, 32.7]];
+const green = [[-109.9, 42.4], [-109.5, 41.2], [-109.3, 40.5], [-110.1, 39.3], [-110.0, 38.1]];
+const humboldt = [[-115.0, 41.0], [-116.5, 40.9], [-118.0, 40.6], [-118.6, 40.0]];
+const sevier = [[-112.0, 38.0], [-112.2, 39.0], [-112.7, 39.4]];
+const lake = [[-112.9, 41.6], [-112.3, 41.5], [-112.0, 41.1], [-112.3, 40.7], [-112.8, 40.9], [-113.1, 41.3]];
+const utahLake = [[-111.85, 40.4], [-111.7, 40.25], [-111.8, 40.05], [-111.95, 40.2]];
+const [slcX, slcY] = p([-111.89, 40.76]);
+const [W, H] = p([-104, 31]);
+const id = 'dmap-' + Math.random().toString(36).slice(2, 6);
+---
+<svg class="deseret-map" viewBox={`0 0 ${W} ${H}`} aria-hidden="true">
+  <defs>
+    <clipPath id={id}><path d={path(border)} /></clipPath>
+    <pattern id={`${id}-grid`} width="12" height="12" patternUnits="userSpaceOnUse">
+      <path d="M12 0H0V12" fill="none" stroke="currentColor" stroke-width=".35" />
+    </pattern>
+  </defs>
+  <g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round">
+    <rect width={W} height={H} fill={`url(#${id}-grid)`} clip-path={`url(#${id})`} />
+    <path d={path(border)} stroke-width="2.4" stroke-dasharray="7 3 1.5 3" />
+    <path d={path(border)} stroke-width="5" opacity=".18" />
+    <path d={path(colorado, false) + path(green, false) + path(humboldt, false) + path(sevier, false)} stroke-width="1.1" />
+    <path d={path(lake)} stroke-width="1.1" fill="currentColor" fill-opacity=".25" />
+    <path d={path(utahLake)} stroke-width="1" fill="currentColor" fill-opacity=".25" />
+    <circle cx={slcX} cy={slcY} r="3.2" fill="currentColor" />
+    <circle cx={slcX} cy={slcY} r="6" stroke-width=".8" />
+  </g>
+  <g fill="currentColor" font-family="Cinzel, serif" text-anchor="middle">
+    <text x={W * 0.46} y={H * 0.5} font-size="26" letter-spacing="9">STATE OF DESERET</text>
+    <text x={W * 0.46} y={H * 0.5 + 24} font-size="12" letter-spacing="6">MDCCCXLIX</text>
+    <text x={slcX + 8} y={slcY - 12} font-size="9" letter-spacing="1.5" text-anchor="start" font-style="italic">G. S. L. City</text>
+    <text x={p([-118.9, 33.4])[0]} y={p([-118.9, 33.4])[1] + 26} font-size="9" letter-spacing="3">PACIFIC</text>
+  </g>
+</svg>
+<style>
+  .deseret-map { display: block; width: 100%; height: auto; color: var(--heading); }
+</style>

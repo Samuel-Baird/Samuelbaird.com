@@ -1,0 +1,103 @@
+---
+import Base from '../layouts/Base.astro';
+import Title from '../components/Title.astro';
+
+// Downloadable PDFs (hosted in /public/library).
+const pdfs = [
+  { title: 'Journal of Discourses, vol. 12 (1867–68): Brigham Young and George A. Smith on the Deseret Alphabet', note: 'Excerpt, pp. 139–141 (G. A. Smith, Oct. 1867, "the system of phonetics, or the Deseret alphabet") and pp. 297–301 (Young, Oct. 1868, "Southern Missions—Deseret Alphabet—Relief Societies—Home Manufactures"). Public domain.', file: 'JoD-12_Young-and-G-A-Smith_Deseret-Alphabet_1867-1868.pdf' },
+  { title: 'Ronald G. Watt, "Sailing the Old Ship Zion: The Life of George D. Watt," BYU Studies 18:1 (1977)', note: 'Excerpt (the article only). Watt, the Pitman shorthand reporter, was a developer of the alphabet.', file: 'BYU-Studies-18-1_Watt_Sailing-the-Old-Ship-Zion_1977.pdf' },
+  { title: 'Interpreter 15 (2015): the Deseret Alphabet and the Book of Mormon pronunciation guide', note: 'Full issue. A brief history of the alphabet and the 1868 Deseret News pronunciation guide, pp. 49–65.', file: 'Interpreter-15_Deseret-Alphabet-Pronunciation-Guide_2015.pdf' },
+  { title: 'Wilcox, Brown et al., "Comparing Phonemic Patterns in Book of Mormon Personal Names," Interpreter 33 (2019)', note: 'Excerpt. Uses Deseret Alphabet spellings of the 1869 Book of Mormon as one of its pronunciation sources.', file: 'Interpreter-33_Wilcox-et-al_Phonemic-Patterns_2019.pdf' },
+  { title: 'Brian D. Stubbs, review of Beesley & Elzinga, An 1860 English-Hopi Vocabulary Written in the Deseret Alphabet, BYU Studies 55:4 (2016)', note: 'Excerpt, pp. 189–192.', file: 'BYU-Studies-55-4_Stubbs-review-English-Hopi-Vocabulary_2016.pdf' },
+  { title: 'Ricks, Hoskisson, Smith & Gee, Dictionary of Proper Names & Foreign Words in the Book of Mormon (Interpreter Foundation, 2022)', note: 'Full volume. About 290 entries give a Deseret Alphabet spelling with IPA.', file: 'Ricks-Hoskisson-Smith-Gee_Dictionary-of-Proper-Names_2022.pdf' },
+];
+
+// Opens a hosted PDF in the reader (public/pdfjs + public/web/reader; reader by Noah Airmet)
+const read = (p) => `/pdfjs/web/viewer.html?file=${encodeURIComponent('/library/' + p.file)}&title=${encodeURIComponent(p.title)}`;
+
+// General Conference / Journal of Discourses talks (the Pulpit corpus).
+const talks = [
+  { who: 'Parley P. Pratt', date: '26 Dec 1853', title: 'Education', note: '"The Regency are getting out a new alphabet…" An early mention, a year before the first characters.', url: 'https://pulpit.restorationcommons.org/talks/1853-12-26-pratt-pp-education/#p5' },
+  { who: 'Walter Gibson', date: '18 Nov 1860', title: 'His Conversion and Approaching Mission to Japan, Siam and the Malay Islands', note: 'Mentions the Deseret alphabet as a tool for recording a foreign language.', url: 'https://pulpit.restorationcommons.org/talks/1860-11-18-gibson-conversion-and-mission-to-asia/#p1' },
+  { who: 'Brigham Young', date: '7 Oct 1867', title: 'Texts for the Elders', note: 'Said the Deseret Alphabet "should be taught" to the youth.', url: 'https://pulpit.restorationcommons.org/talks/1867-10-07-young-texts-for-the-elders/#p1' },
+  { who: 'George A. Smith', date: '9 Oct 1867', title: 'Education, Phonetics, Storing Up Grain, Home Manufactures', note: 'Commends "the system of phonetics, or the Deseret alphabet."', url: 'https://pulpit.restorationcommons.org/talks/1867-10-smith-educationphoneticsstoring-up-grainhome-manufactures/#p2' },
+  { who: 'Brigham Young', date: '22 Feb 1868', title: 'Education of the Rising Generation: The Deseret Alphabet', note: 'Minute: moved that the Deseret Alphabet "be introduced" (passed unanimously).', url: 'https://pulpit.restorationcommons.org/talks/1868-02-22-young-deseret-alphabet-education/#p1' },
+  { who: 'Brigham Young', date: '8 Oct 1868', title: 'Southern Missions, Deseret Alphabet, Relief Societies, Home Manufactures', note: '"One of these items is to present to the congregation the Deseret Alphabet." Also hosted below as a PDF excerpt.', url: 'https://pulpit.restorationcommons.org/talks/1868-10-young-southern-missionsdeseret-alphabetrelief-societieshome-manufactures/#p3' },
+  { who: 'Conference record', date: '6 Oct 1868', title: 'Minutes of the October 1868 General Conference', note: 'Records Young’s address on the alphabet.', url: 'https://pulpit.restorationcommons.org/talks/1868-10-conference-record-minutes/#p8' },
+  { who: 'Brigham Young', date: '3 Jul 1870', title: 'Debts, Ingratitude, Confidence, Our Religion', note: 'On Saints abroad receiving the alphabet.', url: 'https://pulpit.restorationcommons.org/talks/1870-07-young-debtsingratitudeconfidenceour-religion/#p4' },
+  { who: 'Orson Pratt', date: '5 Oct 1877', title: 'The Savior Among the Nephites; Printing of the Book of Mormon', note: 'Pratt recalls adopting "the American phonetic alphabet" for his own phonetic work.', url: 'https://pulpit.restorationcommons.org/talks/1877-10-pratt-the-savior-among-the-nephites/#p5' },
+  { who: 'Orson F. Whitney', date: 'Oct 1911', title: 'Memorial Address in Honor of Orson Pratt', note: 'Notes Pratt transcribed the Book of Mormon into the characters of "The Deseret Alphabet."', url: 'https://pulpit.restorationcommons.org/talks/1911-10-19-orson-f-whitney-remarks-19/#p25' },
+  { who: 'George Albert Smith', date: 'Apr 1936', title: 'Membership in Christ’s Church a Privilege', note: 'Lists the Book of Mormon translations, including one "in the Deseret alphabet."', url: 'https://pulpit.restorationcommons.org/talks/1936-04-george-albert-smith-obedience-to-the-teachings-of-jesus/#p11' },
+];
+
+// In copyright: not hosted. Linked to Amazon (ISBN pages).
+const books = [
+  { title: "The Complete Discourses of Brigham Young, vols. 2–5 (Van Wagoner, ed.)", note: "Regents, spelling reform and the alphabet in school and Church; see vol. 4 pp. 430–434, 467, 580–581.", url: "https://www.amazon.com/Complete-Discourses-Brigham-Young-Book/dp/B07LC27ZXS" },
+  { title: "Allen & Leonard, The Story of the Latter-day Saints (2nd ed., 1992)", note: "Pp. 282, 365.", url: "https://www.amazon.com/dp/087579565X" },
+  { title: "Arrington, Brigham Young: American Moses", note: "P. 336.", url: "https://www.amazon.com/dp/0345803213" },
+  { title: "Givens & Grow, Parley P. Pratt: The Apostle Paul of Mormonism", note: "Pp. 410–411, on Pratt and the Deseret News editorial on the alphabet.", url: "https://www.amazon.com/dp/0195375734" },
+  { title: "Griffiths & Woodger, 50 Relics of the Restoration", note: "Pp. 79, 92–94: the Deseret Alphabet reader.", url: "https://www.amazon.com/dp/1462138160" },
+  { title: "Reeve & Parshall, Mormonism: A Historical Encyclopedia", note: "P. 324.", url: "https://www.amazon.com/dp/1598841076" },
+  { title: "Kimball, Heber C. Kimball: Mormon Patriarch and Pioneer", note: "Pp. 245–247, on the purpose of the alphabet.", url: "https://www.amazon.com/dp/0252012992" },
+];
+
+// Free to read from the publisher or institution (BYU, Maxwell Institute, Dialogue). Linked, not copied.
+const freeBooks = [
+  { title: "Encyclopedia of Mormonism: \"Deseret Alphabet\" (Eleanor Knowles)", note: "Vol. 1, pp. 465–466, with the table of thirty-eight symbols. Free at BYU.", url: "https://eom.byu.edu/index.php/Deseret_Alphabet" },
+  { title: "Nibley, Temple and Cosmos (Collected Works, vol. 12)", note: "P. 456. Free from the Maxwell Institute, BYU.", url: "https://mi.byu.edu/temple-and-cosmos" },
+  { title: "Flake & Draper, A Mormon Bibliography, 1830–1930 (2nd ed., 2004)", note: "Bibliographic entries for the printings. Free from BYU Religious Studies Center.", url: "https://rsc.byu.edu/book/mormon-bibliography-1830-1930" },
+  { title: "Dialogue: A Journal of Mormon Thought", note: "Several issues discuss the alphabet; every issue is free on the journal site.", url: "https://www.dialoguejournal.com/" },
+];
+---
+<Base title="Library — Deseret Wiki">
+  <div class="wrap">
+    <header class="page-head">
+      <p class="kicker">The Archive</p>
+      <Title text="Library" />
+      <p class="lede-text">Primary sources and scholarship on the Deseret Alphabet, with the sermons where Church leaders spoke of it.</p>
+    </header>
+
+    <h2>Downloadable PDFs</h2>
+    <ol class="register">
+      {pdfs.map((p) => (
+        <li>
+          <a href={read(p)}><span class="reg-title">{p.title}</span></a>
+          <span class="reg-note">{p.note} <a href={read(p)}>Read</a> · <a href={`/library/${p.file}`} download>Download PDF</a></span>
+        </li>
+      ))}
+    </ol>
+
+    <h2>Sermons and conference addresses</h2>
+    <p class="small">Links go to the Pulpit corpus, which gives the text with the fidelity of each source.</p>
+    <ol class="register">
+      {talks.map((t) => (
+        <li>
+          <a href={t.url} rel="noopener"><span class="reg-title">{t.who}, “{t.title}”</span></a>
+          <span class="reg-note">{t.date}. {t.note}</span>
+        </li>
+      ))}
+    </ol>
+
+    <h2>Free to read online</h2>
+    <p class="small">Published open-access by BYU and others, so these link straight to the publisher.</p>
+    <ol class="register">
+      {freeBooks.map((b) => (
+        <li>
+          <a href={b.url} rel="noopener"><span class="reg-title">{b.title}</span></a>
+          <span class="reg-note">{b.note}</span>
+        </li>
+      ))}
+    </ol>
+
+    <h2>Books to buy</h2>
+    <p class="small">These are in copyright, so they are linked to Amazon rather than copied. Each note gives the pages that mention the alphabet.</p>
+    <ol class="register">
+      {books.map((b) => (
+        <li>
+          <a href={b.url} rel="noopener"><span class="reg-title">{b.title}</span></a>
+          <span class="reg-note">{b.note}</span>
+        </li>
+      ))}
+    </ol>
+  </div>
+</Base>

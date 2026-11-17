@@ -1,0 +1,63 @@
+---
+import Base from './Base.astro';
+import Title from '../components/Title.astro';
+import Ornament from '../components/Ornament.astro';
+import { roman } from '../lib/roman.js';
+import { toDeseret } from '../lib/dsrt.js';
+const { frontmatter, headings = [] } = Astro.props;
+const heading = frontmatter.heading ?? frontmatter.title;
+const sections = headings.filter((h) => h.depth === 2);
+---
+<Base title={frontmatter.title} description={frontmatter.description}>
+  <article class="article">
+    <div class="article-grid">
+      {sections.length > 2 && (
+        <nav class="toc panel" aria-label="In this article">
+          <p class="smallcaps toc-label">Contents</p>
+          <ol>
+            {sections.map((h, i) => (
+              <li><a href={`#${h.slug}`}><span class="num">{roman(i + 1)}</span><span>{h.text}</span></a></li>
+            ))}
+          </ol>
+        </nav>
+      )}
+      <div class="article-body panel">
+        <header class="page-head article-head">
+          <p class="kicker">Encyclopædia · Article <span class="rn">{frontmatter.number ?? 'I'}</span></p>
+          <Title text={heading} />
+          <p class="article-dsrt dsrt" lang="en-Dsrt" data-no-dsrt>{toDeseret(heading)}</p>
+          {frontmatter.deck && <p class="lede-text">{frontmatter.deck}</p>}
+        </header>
+        <div class="prose">
+          <slot />
+          <Ornament />
+        </div>
+      </div>
+    </div>
+  </article>
+</Base>
+<style>
+  .article-head { max-width: var(--measure); margin-left: auto; margin-right: auto; text-align: center; padding-bottom: 2rem; }
+  .article-head :global(h1) { margin-bottom: .2em; }
+  .article-dsrt { color: var(--accent); font-size: 1.2rem; letter-spacing: .1em; margin: 0 0 1rem; }
+  /* the text on one pane of glass; the contents (left) and the record (right) on their own, either side */
+  .article { width: min(calc(100% - 1rem), 74rem); margin: 1.5rem auto 3rem; }
+  .article-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; justify-content: center; }
+  .article-body { padding: clamp(1.4rem, 4vw, 3rem); }
+  .article-body .page-head { padding-top: .5rem; }
+  .article-grid .prose { margin: 0 auto; width: 100%; }
+  .toc { padding: 1rem 1.2rem; width: 100%; }
+  .toc-label { margin: 0 0 .4rem; color: var(--ink-soft); font-size: .62rem; }
+  .toc ol { list-style: none; margin: 0; padding: 0; columns: 2 12rem; column-gap: 2rem; }
+  .toc li { break-inside: avoid; }
+  .toc a { display: flex; gap: .7rem; padding: .22rem 0; color: var(--heading); text-decoration: none; font: .98rem/1.35 var(--f-display); }
+  .toc a:hover span:last-child { text-decoration: underline; text-decoration-color: var(--accent); }
+  .toc .num { font: 600 .62rem/2.2 var(--f-formal); color: var(--accent); width: 2rem; flex: none; text-align: right; }
+  @media (min-width: 1200px) {
+    .article-grid { grid-template-columns: 12rem minmax(0, calc(var(--measure) + 6rem)) 12rem; gap: 1.5rem; }
+    .article-grid:not(:has(.toc))::before { content: ''; }
+    .toc { position: sticky; top: 4.5rem; align-self: start; padding: 1rem .9rem 1rem .4rem; max-height: calc(100vh - 6rem); overflow: auto; scrollbar-width: thin; }
+    .toc ol { columns: 1; }
+    .toc a { font-size: .9rem; }
+  }
+</style>

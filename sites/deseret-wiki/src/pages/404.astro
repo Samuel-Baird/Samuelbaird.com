@@ -1,0 +1,49 @@
+---
+import Base from '../layouts/Base.astro';
+import Title from '../components/Title.astro';
+// A covered wagon lost in the desert: mesas, a pale sun, and tracks that loop back on themselves.
+let s = 404;
+const rand = () => ((s = (s * 16807) % 2147483647) / 2147483647);
+const sage = Array.from({ length: 16 }, () => {
+  const x = 30 + rand() * 740, y = 232 + rand() * 40, w = 6 + rand() * 8;
+  return `M${x.toFixed(0)} ${y.toFixed(0)}c${(w * .2).toFixed(1)} -${w.toFixed(1)} ${(w * .6).toFixed(1)} -${w.toFixed(1)} ${w.toFixed(1)} 0M${(x + w * .3).toFixed(0)} ${y.toFixed(0)}l${(w * .25).toFixed(1)} -${(w * .8).toFixed(1)}`;
+}).join('');
+const rays = Array.from({ length: 24 }, (_, i) => {
+  const a = (i / 24) * Math.PI * 2, r1 = 30, r2 = i % 2 ? 42 : 52;
+  return `M${(640 + r1 * Math.cos(a)).toFixed(1)} ${(70 + r1 * Math.sin(a)).toFixed(1)}L${(640 + r2 * Math.cos(a)).toFixed(1)} ${(70 + r2 * Math.sin(a)).toFixed(1)}`;
+}).join('');
+const ground = Array.from({ length: 30 }, () => `M${(rand() * 780).toFixed(0)} ${(250 + rand() * 50).toFixed(0)}h${(10 + rand() * 40).toFixed(0)}`).join('');
+---
+<Base title="Not found — Deseret Wiki">
+  <div class="wrap lost">
+    <header class="page-head">
+      <p class="kicker">Error · {'CDIV'}</p>
+      <Title text="This trail goes nowhere" />
+      <p class="lede-text">The page you were looking for has wandered off the map, or never was surveyed.</p>
+    </header>
+    <svg class="desert" viewBox="0 0 800 300" role="img" aria-label="A covered wagon lost in the desert, its tracks circling back on themselves">
+      <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+        <path d={rays} stroke-width=".8" opacity=".6" />
+        <circle cx="640" cy="70" r="24" stroke-width="1.2" />
+        <path d="M0 196h60l14-34h70l12 34h120M330 196l22-58h96l18 58h120l10-22h40l10 22h154" stroke-width="1.3" />
+        <path d="M74 162l-8 34M88 162l-4 34M102 162l2 34M118 162l6 34M134 162l10 34M352 138l-10 58M372 138l-4 58M392 138v58M412 138l4 58M432 138l8 58" stroke-width=".5" opacity=".7" />
+        <path d="M0 220h800" stroke-width="1" />
+        <path d={ground} stroke-width=".5" opacity=".6" />
+        <path d={sage} stroke-width=".8" opacity=".85" />
+        <path d="M268 262c-60 0-100-12-100-26s40-24 100-24 110 10 110 24-40 22-80 22c-36 0-64-8-64-18" stroke-width="1" stroke-dasharray="2 5" />
+        <path d="M286 270c-70 0-128-14-128-34s58-34 128-34 128 14 128 34-42 30-92 30" stroke-width="1" stroke-dasharray="2 5" />
+        <path d="M80 250l6 -3 6 3M90 256l6 -3 6 3" stroke-width=".8" opacity=".7" />
+      </g>
+      <use href="#i-wagon" x="372" y="150" width="170" height="109" />
+      <use href="#i-skep" x="18" y="236" width="22" height="22" opacity=".5" />
+    </svg>
+    <p class="actions"><a class="btn" href="/">Return to the front page</a> <a class="btn btn--quiet" href="/wiki/deseret-alphabet/">Read the article</a></p>
+  </div>
+</Base>
+<style>
+  .lost { text-align: center; }
+  .lost .page-head { max-width: 40rem; margin: 0 auto; }
+  .lost .lede-text { margin: 0 auto; }
+  .desert { display: block; width: 100%; max-width: 50rem; height: auto; margin: 1rem auto 2rem; color: var(--heading); }
+  .actions { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; }
+</style>
