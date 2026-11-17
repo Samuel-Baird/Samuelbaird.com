@@ -45,6 +45,7 @@ before touching that type at all.
 - `docs/saint-capybara/` — brand bible, research protocol, script format, review checklist, pronunciation dictionary (Saint Capybara only).
 - `tools/` — the scripts the pipeline calls at each stage (see each file's docstring); `tools/capy/` and `tools/capy_*.py` are Saint-Capybara-only; `tools/presentation/` is the ffmpeg presentation pipeline (sync, transcribe, long-form, shorts, thumbnails, verify).
 - `assets/presentation/` — a complete worked `project.json` (State of Theology + the St. George story short).
+- `tools/` — the scripts the pipeline calls at each stage (see each file's docstring); `tools/capy/` and `tools/capy_*.py` are Saint-Capybara-only. `tools/capy_fetch_queue.py` batch-downloads the Saint Capybara reaction queue (`docs/types/saint-capybara.md` "Batch-downloading URL-only queue rows").
 
 ## Video types
 
