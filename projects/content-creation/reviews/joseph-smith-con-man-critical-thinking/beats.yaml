@@ -1,0 +1,85 @@
+version: 1
+slug: joseph-smith-con-man-critical-thinking
+title: "Was Joseph Smith a Freemason in 1823, and has no one in the Bible seen God?"
+caption: "A reel stacks labels on Joseph Smith and says no one in the Bible has seen God. What do the Masonic dates, the 1826 record and the Bible itself say?"
+hook: "Joseph Smith joined the Freemasons in 1842, not 1823, and the Bible says people saw God."
+summary: "A Christian-leaning reel calls Joseph Smith a freemason, known con man and gold painter in 1823, and says no one in the Bible has seen God. We check the Masonic dates, what the 1826 South Bainbridge charge does and does not show, and what the Bible says about seeing God. The reel's plural-wives line is left for a separate video."
+format: { width: 1080, height: 1920, fps: 30, min_seconds: 60, max_seconds: 180 }
+voice: { name: am_michael, speed: 1.5 }
+sensitive: false
+music: null
+tags: [ldshistory]
+exemplars: [peterson-breaking-the-rules, mcclellan-delivery]
+
+beats:
+  # Claim 1: freemason, known con man, gold painter, 1823.
+  - id: c01
+    kind: clip
+    start: 4.1
+    end: 14.4
+    speed: 1.0
+    speaker: "Source video"
+    pose: skeptical
+
+  - id: n01
+    kind: narration
+    text: "Joseph Smith was not a Freemason in 1823. He was initiated as an entered apprentice in March 1842, in Nauvoo, nineteen years later. No source supports gold painter. And con man rests on one real event: an 1826 hearing in South Bainbridge, New York, where he was charged as a disorderly person. That was a misdemeanor charge."
+    function: questionable_premise
+    pose: skeptical
+    sources: [dialogue-34-1-masonry-timeline, quinn-magic-worldview-bainbridge, jsp-histories-1832-1844-note157]
+    opinion: false
+
+  - id: q01
+    kind: card
+    text: "This is the Masonic timeline, from the journal Dialogue."
+    pose: reading
+    card: { quote: "Joseph was formally initiated as an entered apprentice Mason on 15 March 1842 and received the fellow craft and master degrees the next day.", attribution: "Dialogue: A Journal of Mormon Thought, vol. 34, no. 1", source: dialogue-34-1-masonry-timeline }
+    sources: [dialogue-34-1-masonry-timeline]
+
+  - id: n02
+    kind: narration
+    text: "Treasure seeking and seer stone use are documented, and the Church's own essay says so. What is disputed is the verdict. Benton, a hostile source, wrote in 1831 that he was tried and condemned. A label like con man is a verdict. The record shows a practice and a charge, and it does not show that he deceived people."
+    function: explain
+    pose: teaching
+    sources: [vogel-edm4-benton-1831, lds-essay-book-of-mormon-translation, quinn-magic-worldview-bainbridge]
+    opinion: false
+
+  # Claim 4: nobody in the Bible has seen God.
+  - id: c03
+    kind: clip
+    start: 35.0
+    end: 44.8
+    speed: 1.0
+    speaker: "Source video"
+    pose: skeptical
+
+  - id: n03
+    kind: narration
+    text: "The Bible says both things. John one eighteen says no one has ever seen God. Exodus twenty-four says Moses and the elders saw the God of Israel, and they ate and drank. Jacob says he saw God face to face. Isaiah says his eyes have seen the King. So the reel's claim that no one but Jesus has seen God is not what the text says."
+    function: evidence
+    pose: pointing
+    sources: [nrsvue-exod-24-33-2026, nrsvue-genesis-theophanies-2026, nrsvue-visions-isa-ezek-dan-2026]
+    opinion: false
+
+  - id: q03
+    kind: card
+    text: "This is Jacob, in Genesis chapter thirty-two."
+    pose: quote
+    card: { quote: "For I have seen God face to face, yet my life is preserved.", attribution: "Genesis 32:30 (NRSVue)", source: nrsvue-genesis-theophanies-2026 }
+    sources: [nrsvue-genesis-theophanies-2026]
+
+  - id: n04
+    kind: narration
+    text: "Commentators reconcile these verses by saying the people saw visions adapted to human capacity, not the divine nature itself. That is a reasonable rule, and it is a rule brought to the text. The text does not state it. Revelation four also does not say the four creatures see God. John sees one seated on the throne. This removes the reel's premise. It does not prove the First Vision."
+    function: explain
+    pose: teaching
+    sources: [accs-john-1-10-vision-of-god, nrsvue-revelation-4-22-2026]
+    opinion: false
+
+  - id: n99
+    kind: narration
+    text: "A rule that says trust only what the Bible plainly says has to start with Exodus twenty-four. God bless."
+    function: closing
+    pose: encouraging
+    sources: [nrsvue-exod-24-33-2026]
+    opinion: true
