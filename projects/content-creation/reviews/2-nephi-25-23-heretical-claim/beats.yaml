@@ -1,0 +1,135 @@
+version: 1
+slug: 2-nephi-25-23-heretical-claim
+title: "Does 2 Nephi 25:23 make works a prerequisite for grace?"
+caption: "A reel says 2 Nephi 25:23 contradicts the Bible because works come before grace. What does the verse say, and what does her own tradition say about works?"
+hook: "The word after carries her whole argument, and a French grammar book from 1829 shows what it meant."
+summary: "A Protestant reel says 2 Nephi 25:23 makes works a prerequisite for grace and so contradicts 2 Timothy 1:9. We look at the verse itself, how a scholar and Church leaders have read the word after, what 2 Timothy 1:9 does and does not say, and how the same New Testament letters and Reformed writers place works beside grace."
+format: { width: 1080, height: 1920, fps: 30, min_seconds: 60, max_seconds: 180 }
+voice: { name: am_michael, speed: 1.5 }
+sensitive: false
+music: null
+tags: [ldshistory]
+exemplars: [peterson-breaking-the-rules, mcclellan-delivery]
+
+beats:
+  # The claim: heresy, and a verse that "seems" to make works a prerequisite.
+  - id: c01
+    kind: clip
+    start: 4.3
+    end: 21.7
+    speed: 1.0
+    speaker: "Source video"
+    pose: skeptical
+
+  # Frame: position first. No agreement in the opening sentence.
+  - id: n01
+    kind: narration
+    text: "The verse says it is by grace that we are saved. It does not say works come first, and her argument depends on that. In the English of Joseph Smith's day, after all we can do meant despite all we can do. A French grammar book from eighteen twenty-nine shows the idiom at work."
+    function: questionable_premise
+    pose: skeptical
+    sources: [scripture-2ne-25-23, mcclellan-2020-2nephi-25-23]
+    opinion: false
+
+  # The user-requested French grammar example (McClellan pp. 8-9, quoting Cobbett 1829 pp. 68-69).
+  - id: q01
+    kind: card
+    text: "Here is William Cobbett, A French Grammar, eighteen twenty-nine, quoted in McClellan's article."
+    pose: reading
+    card: { quote: "And this, after all that Grammarians can do; after all the rules that they can give, is the only sure way of learning (from books) the Gender of the French Nouns.", attribution: "William Cobbett, A French Grammar, 1829, p. 69, as quoted by Daniel O. McClellan", source: cobbett-1829-french-grammar }
+    sources: [cobbett-1829-french-grammar, mcclellan-2020-2nephi-25-23]
+
+  - id: n02
+    kind: narration
+    text: "Memorizing doesn't become the only way after the grammarians finish. It's the only way despite everything they do. That is the same idiom as after all we can do. If after all we can do were a temporal condition, the sentence would make no sense."
+    function: explain
+    pose: teaching
+    sources: [cobbett-1829-french-grammar, mcclellan-2020-2nephi-25-23]
+    opinion: false
+
+  - id: q02
+    kind: card
+    text: "And here is where McClellan lands, in a 2020 scholarly article."
+    pose: reading
+    card: { quote: "The original intended sense of our clause in 2 Nephi 25:23 was “it is by grace that we are saved, despite all we can do.”", attribution: "Daniel O. McClellan, 2 Nephi 25:23 in Literary and Rhetorical Context, 2020", source: mcclellan-2020-2nephi-25-23 }
+    sources: [mcclellan-2020-2nephi-25-23]
+
+  # The other reading, stated fairly, without implying a leader taught "despite".
+  - id: n03
+    kind: narration
+    text: "Church leaders have also read the word after as a sequence. President Packer said in nineteen ninety-five that grace comes only after all we can do. President Uchtdorf said in twenty fifteen that after does not equal because. Both are leaders speaking, not scripture, and McClellan's reading is a scholar's, not an official one."
+    function: explain
+    pose: teaching
+    sources: [packer-1995-brilliant-morning, uchtdorf-2015-gift-of-grace, mcclellan-2020-2nephi-25-23]
+    opinion: false
+
+  - id: q03
+    kind: card
+    text: "This is President Uchtdorf, April 2015."
+    pose: quote
+    card: { quote: "We must understand that “after” does not equal “because.”", attribution: "Dieter F. Uchtdorf, General Conference, April 2015", source: uchtdorf-2015-gift-of-grace }
+    sources: [uchtdorf-2015-gift-of-grace]
+
+  # Second half of the reel: she reads 2 Timothy 1:9 and concludes.
+  - id: c02
+    kind: clip
+    start: 44.3
+    end: 55.9
+    speed: 1.0
+    speaker: "Source video"
+    pose: listening
+
+  # Positive case: the Book of Mormon says works do not earn salvation.
+  - id: n04
+    kind: narration
+    text: "Second Timothy one nine, the verse she reads, says salvation is not according to our works, and the Book of Mormon says the same. Alma twenty-two says man could not merit anything of himself. Second Nephi thirty-one says we come only by relying wholly upon the merits of Christ. On that point her verse and its verse agree."
+    function: explain
+    pose: pointing
+    sources: [nrsvue-2021-2tim-1, scripture-alma-22-14, scripture-2ne-31-19]
+    opinion: false
+
+  - id: q04
+    kind: card
+    text: "This is Second Nephi chapter thirty-one, verse nineteen."
+    pose: quote
+    card: { quote: "relying wholly upon the merits of him who is mighty to save.", attribution: "2 Nephi 31:19", source: scripture-2ne-31-19 }
+    sources: [scripture-2ne-31-19]
+
+  # Her real question is whether works come BEFORE grace. The letters she cites put them after.
+  - id: n05
+    kind: narration
+    text: "Her question is whether works come before grace. The letters she cites put them after. Ephesians says we are saved not by works, then says we are created in Christ Jesus for good works. Philippians says work on your own salvation, because it is God who is at work in you. The Westminster Confession says justifying faith is never alone."
+    function: explain
+    pose: teaching
+    sources: [nrsvue-eph-2-8-10, nrsvue-phil-2-12-13, wcf-1647-ch11-16]
+    opinion: false
+
+  - id: q05
+    kind: card
+    text: "Here is Philippians chapter two, in the New Revised Standard Version Updated Edition."
+    pose: reading
+    card: { quote: "work on your own salvation with fear and trembling, for it is God who is at work in you, enabling you both to will and to work for his good pleasure.", attribution: "Philippians 2:12–13 (NRSVue)", source: nrsvue-phil-2-12-13 }
+    sources: [nrsvue-phil-2-12-13]
+
+  # LDS position with its tier, and the real difference.
+  - id: n06
+    kind: narration
+    text: "Latter-day Saint leaders say works do not earn salvation. Elder Bednar said our works and desires alone do not and cannot save us. That is leader teaching, not scripture. The real difference is whether obedience and ordinances are only the fruit of faith or also how we receive grace. That is not works coming before grace."
+    function: explain
+    pose: teaching
+    sources: [bednar-2015-hushed-fears]
+    opinion: false
+
+  - id: q06
+    kind: card
+    text: "This is Elder Bednar, April 2015."
+    pose: quote
+    card: { quote: "Our works and desires alone do not and cannot save us.", attribution: "David A. Bednar, General Conference, April 2015", source: bednar-2015-hushed-fears }
+    sources: [bednar-2015-hushed-fears]
+
+  - id: n99
+    kind: narration
+    text: "A one-verse test has to read Romans two six too. He will repay according to each one's deeds. God bless."
+    function: closing
+    pose: encouraging
+    sources: [nrsvue-2021-rom-2]
+    opinion: true

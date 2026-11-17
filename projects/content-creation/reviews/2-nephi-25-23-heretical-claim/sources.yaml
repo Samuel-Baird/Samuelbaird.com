@@ -1,0 +1,968 @@
+sources:
+- id: mcclellan-2020-2nephi-25-23
+  type: scholarly
+  title: 2 Nephi 25:23 in Literary and Rhetorical Context
+  author: Daniel O. McClellan
+  date: '2020-01-01'
+  locator: https://corpus.restorationcommons.org/b/2-nephi-25-23-in-literary-and-rhetorical-context-3135/18
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e... read_pages(path='Read/Articles/Dan McClellan/2 Nephi 25:23 in Literary and Rhetorical Context.pdf', from_page=1, to_page=20)
+  quote: The original intended sense of our clause in 2 Nephi 25:23 was “it is by grace that we are saved, despite all we can do.”
+  verification:
+    tool: cite_page
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/2-nephi-25-23-in-literary-and-rhetorical-context-3135/18
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Journal of Book of Mormon Studies 29 (2020) 1-19. McClellan is a Church scripture translation supervisor; the article states the views are his own. Pages 3-5 survey leader readings; 7-12 give
+    1710-1840 ''after all ... can do'' parallels (secondary: the underlying 18th/19th-c. texts were NOT opened by me); 17-18 give 2 Ne 10:24 and conclusion; 19 gives the ''long-normative'' comment. Note
+    p. 8: ''The sense of following in time is not precluded in this usage'' and p. 19 ''natural ambiguity of the idiom''.'
+  found_by: capy-historian
+  claims:
+  - 2
+- id: uchtdorf-2015-gift-of-grace
+  type: primary
+  title: The Gift of Grace
+  author: Dieter F. Uchtdorf
+  date: '2015-04-01'
+  locator: https://pulpit.restorationcommons.org/talks/2015-04-uchtdorf-the-gift-of-grace/#p53
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__2b2805da... read_paragraphs(talk_id='2015-04-uchtdorf-the-gift-of-grace', from_paragraph=49, count=8); verify_quote
+  quote: We must understand that “after” does not equal “because.”
+  verification:
+    tool: verify_quote
+    verdict: exact
+    link: https://pulpit.restorationcommons.org/talks/2015-04-uchtdorf-the-gift-of-grace/#p53
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Next sentence (p54): ''We are not saved “because” of all that we can do.'' (read via read_paragraphs; a verify_quote of the two sentences joined returned not-verbatim only because of quote-mark
+    placement, so quote the single sentence). P51: ''Grace is a gift of God, and our desire to be obedient ... is the reaching out of our mortal hand to receive this sacred gift.'' Uchtdorf does not say
+    ''despite''.'
+  found_by: capy-historian
+  claims:
+  - 2
+- id: packer-1995-brilliant-morning
+  type: primary
+  title: The Brilliant Morning of Forgiveness
+  author: Boyd K. Packer
+  date: '1995-10-01'
+  locator: https://pulpit.restorationcommons.org/talks/1995-10-packer-the-brilliant-morning-of-forgiveness/#p22
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__2b2805da... read_paragraphs(talk_id='1995-10-packer-the-brilliant-morning-of-forgiveness', from_paragraph=20, count=5); verify_quote
+  quote: Even that grace of God promised in the scriptures comes only “after all we can do.”
+  verification:
+    tool: verify_quote
+    verdict: exact
+    link: https://pulpit.restorationcommons.org/talks/1995-10-packer-the-brilliant-morning-of-forgiveness/#p22
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: 'Counter to the ''despite'' reading, and the best match for the reel''s characterisation. Context p20-21: relief ''can be earned through repentance''; Isaiah 1 ''if ye be willing and obedient''.
+    Same speaker also says p23 ''You cannot do that. And you don''t have to do it.'' (about self-justifying transgression), so read in context.'
+  found_by: capy-historian
+  claims:
+  - 2
+- id: lee-1970-time-to-prepare
+  type: primary
+  title: This Morning In My Remarks I Desire... (Conference Report Oct 1970)
+  author: Harold B. Lee
+  date: '1970-10-04'
+  locator: https://pulpit.restorationcommons.org/talks/1970-10-lee-this-morning-in-my-remarks-i-desire/#p35
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__2b2805da... verify_quote('Truly we are redeemed by the atoning blood of the Savior of the world, but only after each has done all he can to work out his own salvation.')
+  quote: Truly we are redeemed by the atoning blood of the Savior of the world, but only after each has done all he can to work out his own salvation.
+  verification:
+    tool: verify_quote
+    verdict: exact
+    link: https://pulpit.restorationcommons.org/talks/1970-10-lee-this-morning-in-my-remarks-i-desire/#p35
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: Paragraph-level surrounding context not read beyond the verify_quote snippet; read p33-37 before using on screen. Authoritative print, not verbatim audio.
+  found_by: capy-historian
+  claims:
+  - 2
+- id: romney-1955-repentance
+  type: primary
+  title: Conference Report Oct 1955 (Marion G. Romney)
+  author: Marion G. Romney
+  date: '1955-10-02'
+  locator: https://pulpit.restorationcommons.org/talks/1955-10-romney-my-beloved-brothers-and-sisters-president/#p4
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__2b2805da... verify_quote('after all, it is by the grace of Christ that men are saved, after all they can do. The thing they can and must do is repent.')
+  quote: after all, it is by the grace of Christ that men are saved, after all they can do. The thing they can and must do is repent.
+  verification:
+    tool: verify_quote
+    verdict: exact
+    link: https://pulpit.restorationcommons.org/talks/1955-10-romney-my-beloved-brothers-and-sisters-president/#p4
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Earliest explicit Conference quotation per McClellan p3; he reads 'all we can do' as repentance (Alma 24:11 lens). Surrounding paragraphs not read.
+  found_by: capy-historian
+  claims:
+  - 2
+- id: oaks-1998-have-you-been-saved
+  type: primary
+  title: Have You Been Saved?
+  author: Dallin H. Oaks
+  date: '1998-04-01'
+  locator: https://pulpit.restorationcommons.org/talks/1998-04-oaks-have-you-been-saved/#p13
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__2b2805da... read_paragraphs(talk_id='1998-04-oaks-have-you-been-saved', from_paragraph=12, count=4)
+  quote: And what is “all we can do”? It surely includes repentance (see Alma 24:11) and baptism, keeping the commandments, and enduring to the end.
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://pulpit.restorationcommons.org/talks/1998-04-oaks-have-you-been-saved/#p13
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: 'Oaks introduces it as an answer to ''Some Christians accuse Latter-day Saints ... of denying the grace of God through claiming they can earn their own salvation.'' P12: ''they will not be saved
+    finally until they have completed their mortal probation with the required continuing repentance, faithfulness, service, and enduring to the end.'' Strongest text for the reel''s reading; also shows
+    the apostle explicitly rejecting ''earn''. Note quote omits the Oaks text''s final ''see'' formatting only; run verify_quote before on-screen use.'
+  found_by: capy-historian
+  claims:
+  - 2
+- id: christofferson-2014-free-forever
+  type: primary
+  title: Free Forever, to Act for Themselves
+  author: D. Todd Christofferson
+  date: '2014-10-01'
+  locator: https://pulpit.restorationcommons.org/talks/2014-10-christofferson-free-forever-to-act-for-themselves/#p27
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__2b2805da... read_paragraphs(talk_id='2014-10-christofferson-free-forever-to-act-for-themselves', from_paragraph=26, count=3)
+  quote: And we do not need to achieve some minimum level of capacity or goodness before God will help
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://pulpit.restorationcommons.org/talks/2014-10-christofferson-free-forever-to-act-for-themselves/#p27
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Mediating: p27 also says ''beyond desiring His help, we must exert ourselves, repent, and choose God for Him to be able to act''. Not a ''despite'' reading.'
+  found_by: capy-historian
+  claims:
+  - 2
+- id: kimball-1978-eternal-hope
+  type: primary
+  title: An Eternal Hope in Christ
+  author: Spencer W. Kimball
+  date: '1978-10-01'
+  locator: https://pulpit.restorationcommons.org/talks/1978-10-kimball-an-eternal-hope-in-christ/#p37
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__2b2805da... read_paragraphs(talk_id='1978-10-kimball-an-eternal-hope-in-christ', from_paragraph=36, count=3)
+  quote: null
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://pulpit.restorationcommons.org/talks/1978-10-kimball-an-eternal-hope-in-christ/#p37
+  grade_supports: inference
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Kimball quotes 2 Ne 25:23, 26 with italics added but offers no gloss on 'after' in the paragraphs read, so he cannot be cited for either reading. P36 sets it inside Mosiah 3:18, salvation 'in and
+    through the atoning blood of Christ'.
+  found_by: capy-historian
+  claims:
+  - 2
+- id: gospel-topics-grace
+  type: official
+  title: Grace (Gospel Topics)
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '2026-10-15'
+  locator: https://www.churchofjesuschrist.org/study/manual/gospel-topics/grace?lang=eng
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: WebFetch(https://www.churchofjesuschrist.org/study/manual/gospel-topics/grace?lang=eng)
+  quote: null
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/manual/gospel-topics/grace?lang=eng
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Excerpt found (WebFetch limits quotes to under 125 chars): "To receive this enabling power, we must obey the gospel of Jesus Christ, which includes having faith in Him,". Page does not reproduce
+    2 Ne 25:23; it cites it only in a footnote ("See Ephesians 2:8-9; James 2:17-22; 2 Nephi 25:23; 31:20"). The 20-word excerpt rule is therefore met only by the first line plus continuation as summarised;
+    the fuller wording also appears in McClellan p3-4 (secondary). I also could not retrieve the ''Bible Dictionary'' sentence directly.'
+  found_by: capy-historian
+  claims:
+  - 2
+- id: mcclellan-2020-2ne-25-23-context
+  type: scholarly
+  title: 2 Nephi 25:23 in Literary and Rhetorical Context
+  author: Daniel O. McClellan
+  date: '2020-01-01'
+  locator: https://corpus.restorationcommons.org/b/2-nephi-25-23-in-literary-and-rhetorical-context-3135/18
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages(path='Read/Articles/Dan McClellan/2 Nephi 25:23 in Literary and Rhetorical Context.pdf', from_page=1, to_page=20)
+  quote: The original intended sense of our clause in 2 Nephi 25:23 was "it is by grace that we are saved, despite all we can do."
+  verification:
+    tool: read_pages
+    verdict: direct-read
+    link: https://corpus.restorationcommons.org/b/2-nephi-25-23-in-literary-and-rhetorical-context-3135/18
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Journal of Book of Mormon Studies vol. 29 (2020) pp. 1-19. Key pages: p.5 (Uchtdorf ''after does not equal because''), p.7-8 (OED ''in spite of''; 1840 Church history example), p.9 (three 1710-1777
+    ''unprofitable servant'' quotes), p.10 (Mosiah 2:21 / Luke 17:10), p.11-12 (Brainerd 1822, Hersey 1831, Evangelical Magazine 1834, Fireside Friend 1840), p.17 (2 Ne 10:24; D&C 20:30-32), p.18-19 (conclusion).
+    Author is a Church scripture translation supervisor and BYU adjunct; views stated as his own. Second-hand quotes inside it (Hersey, Brainerd, etc.) are McClellan''s quotations of period texts, NOT independently
+    opened by me.'
+  found_by: capy-scripture-theologian
+  claims:
+  - 2
+- id: spencer-2014-what-can-we-do
+  type: scholarly
+  title: What Can We Do? Reflections on 2 Nephi 25:23
+  author: Joseph M. Spencer
+  date: '2014-01-01'
+  locator: https://corpus.restorationcommons.org/b/spencer-what-can-we-do-d804/8
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages(path='Read/Articles/Ben Spackman/Spencer- What Can we Do.pdf', from_page=1, to_page=8)
+  quote: for we know, after all we can do, that it is by grace that we are saved.
+  verification:
+    tool: read_pages
+    verdict: direct-read
+    link: https://corpus.restorationcommons.org/b/spencer-what-can-we-do-d804/8
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Religious Educator 15/2 (2014). Pages 1-8 of 15 read; pp. 9-15 not read. Offers a rearranged-clause reading (Spencer''s own rewording of the verse, not Nephi''s text) via 2 Ne 10:24. Differs from
+    McClellan: ''after'' stays chronological. Note the quoted phrase above is Spencer''s paraphrase, not scripture.'
+  found_by: capy-scripture-theologian
+  claims:
+  - 2
+- id: scripture-2ne-25-23
+  type: scripture
+  title: 2 Nephi 25:23-29
+  author: Nephi
+  date: '2026-10-15'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/25?lang=eng
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: WebFetch https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/25?lang=eng
+  quote: for we know that it is by grace that we are saved, after all we can do.
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/25?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'WebFetch returns only short excerpts. v.23 matches the full verse as printed in McClellan p.1 and Spencer p.3 (both opened this run: ''For we labor diligently to write... for we know that it is
+    by grace that we are saved, after all we can do.''). v.24-25 (keep the law of Moses; ''look forward with steadfastness unto Christ'') seen as summary plus one excerpt: ''we keep the law of Moses, and
+    look forward with steadfastness unto Christ, until the law shall be fulfilled.'' Context is Mosaic law, not general works.'
+  found_by: capy-scripture-theologian
+  claims:
+  - 2
+- id: scripture-2ne-10-24
+  type: scripture
+  title: 2 Nephi 10:24
+  author: Jacob
+  date: '2026-10-15'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/10?lang=eng
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: WebFetch https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/10?lang=eng
+  quote: and remember, after ye are reconciled unto God, that it is only in and through the grace of God that ye are saved.
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/10?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Same wording appears in McClellan p.17 and Spencer p.6.
+  found_by: capy-scripture-theologian
+  claims:
+  - 2
+- id: scripture-alma-22-14
+  type: scripture
+  title: Alma 22:14
+  author: Aaron / Mormon
+  date: '2026-10-15'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/22?lang=eng
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: WebFetch https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/22?lang=eng
+  quote: And since man had fallen he could not merit anything of himself
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/bofm/alma/22?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Excerpt is short of 20 words; read the surrounding verse in the fetch (atonement 'through faith and repentance, and so forth').
+  found_by: capy-scripture-theologian
+  claims:
+  - 2
+- id: scripture-moroni-10-32
+  type: scripture
+  title: Moroni 10:32-33
+  author: Moroni
+  date: '2026-10-15'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/bofm/moro/10?lang=eng
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: WebFetch https://www.churchofjesuschrist.org/study/scriptures/bofm/moro/10?lang=eng
+  quote: and if ye shall deny yourselves of all ungodliness, and love God with all your might, mind and strength, then is his grace sufficient for you, that by his grace ye may be perfect in Christ
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/bofm/moro/10?lang=eng
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: 'Counter material: reads as conditional. Assembled from two WebFetch excerpts (v.32 second half); verify the joined wording against the full verse before on-screen use. v.33: ''And again, if ye
+    by the grace of God are perfect in Christ, and deny not his power''.'
+  found_by: capy-scripture-theologian
+  claims:
+  - 2
+- id: scripture-2ne-31-19
+  type: scripture
+  title: 2 Nephi 31:19-20
+  author: Nephi
+  date: '2026-10-15'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/31?lang=eng
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: WebFetch https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/31?lang=eng
+  quote: ye have not come thus far save it were by the word of Christ with unshaken faith in him, relying wholly upon the merits of him who is mighty to save.
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/31?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Two WebFetch excerpts joined; v.20 'press forward with a steadfastness in Christ... endure to the end' is the conditional-sounding counterpart.
+  found_by: capy-scripture-theologian
+  claims:
+  - 2
+- id: scripture-mosiah-2-21
+  type: scripture
+  title: Mosiah 2:21 (as quoted in secondary literature)
+  author: King Benjamin
+  date: '2026-10-15'
+  locator: https://corpus.restorationcommons.org/b/2-nephi-25-23-in-literary-and-rhetorical-context-3135/10
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages (McClellan p.10 quotes the verse in full)
+  quote: I say, if ye should serve him with all your whole souls yet ye would be unprofitable servants.
+  verification:
+    tool: read_pages
+    verdict: page-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/2?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'WebFetch of Mosiah 2 returned only a summary (v.21: even serving with whole soul, still unprofitable servants; v.24 ''indebted''), not verbatim text. Verbatim text here comes from McClellan p.10.
+    Re-check against the scripture site before on-screen use. Mosiah 4 (v.6-7, v.11, v.20) was only seen as excerpts/summary; not relied on.'
+  found_by: capy-scripture-theologian
+  claims:
+  - 2
+- id: nrsvue-eph-2-8-10
+  type: scripture
+  title: Ephesians 2:8-10 (NRSVue)
+  author: Paul (disputed authorship)
+  date: '2026-10-15'
+  locator: https://www.biblegateway.com/passage/?search=Ephesians+2%3A8-10&version=NRSVUE
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: WebFetch https://www.biblegateway.com/passage/?search=Ephesians+2%3A8-10&version=NRSVUE
+  quote: For by grace you have been saved through faith, and this is not your own doing; it is the gift of God-- not the result of works, so that no one may boast. For we are what he has made us, created
+    in Christ Jesus for good works, which God prepared beforehand so that we may walk in them.
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.biblegateway.com/passage/?search=Ephesians+2%3A8-10&version=NRSVUE
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: Version label NRSVUE confirmed on page. Excerpts returned in pieces and joined by me; confirm punctuation against the printed NRSVue before on-screen use. Verse 10 is the 'created for good works'
+    half Protestants themselves must read alongside v.8-9.
+  found_by: capy-scripture-theologian
+  claims:
+  - 2
+- id: nrsvue-phil-2-12-13
+  type: scripture
+  title: Philippians 2:12-13 (NRSVue)
+  author: Paul
+  date: '2026-10-15'
+  locator: https://www.biblegateway.com/passage/?search=Philippians+2%3A12-13&version=NRSVUE
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: WebFetch https://www.biblegateway.com/passage/?search=Philippians+2%3A12-13&version=NRSVUE
+  quote: work on your own salvation with fear and trembling, for it is God who is at work in you, enabling you both to will and to work for his good pleasure.
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.biblegateway.com/passage/?search=Philippians+2%3A12-13&version=NRSVUE
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: NRSVUE confirmed on page.
+  found_by: capy-scripture-theologian
+  claims:
+  - 2
+- id: nrsvue-james-2
+  type: scripture
+  title: James 2:17, 22, 24 (NRSVue)
+  author: James
+  date: '2026-10-15'
+  locator: https://www.biblegateway.com/passage/?search=James+2%3A14-24&version=NRSVUE
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: WebFetch https://www.biblegateway.com/passage/?search=James+2%3A14-24&version=NRSVUE
+  quote: You see that faith was active along with his works, and by works faith was brought to completion.
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.biblegateway.com/passage/?search=James+2%3A14-24&version=NRSVUE
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: v.17 'So faith by itself, if it has no works, is dead.' v.24 'You see that a person is justified by works and not by faith alone.' NRSVUE confirmed on page.
+  found_by: capy-scripture-theologian
+  claims:
+  - 2
+- id: nrsvue-luke-17-10
+  type: scripture
+  title: Luke 17:10 (NRSVue)
+  author: Luke
+  date: '2026-10-15'
+  locator: https://www.biblegateway.com/passage/?search=Luke+17%3A10&version=NRSVUE
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: WebFetch https://www.biblegateway.com/passage/?search=Luke+17%3A10&version=NRSVUE
+  quote: So you also, when you have done all that you were ordered to do, say, 'We are worthless slaves; we have done only what we ought to have done!'
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.biblegateway.com/passage/?search=Luke+17%3A10&version=NRSVUE
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: NRSVUE renders 'worthless slaves'; the KJV 'unprofitable servants' is what McClellan's 1710-1777 sources and Mosiah 2:21 echo. Use KJV label if the wording 'unprofitable servants' is shown.
+  found_by: capy-scripture-theologian
+  claims:
+  - 2
+- id: wcf-1647-ch11-16
+  type: primary
+  title: Westminster Confession of Faith, ch. 11.2 and 16.2
+  author: Westminster Assembly
+  date: '1647-01-01'
+  locator: https://www.opc.org/wcf.html
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: WebFetch https://www.opc.org/wcf.html
+  quote: yet is it not alone in the person justified, but is ever accompanied with all other saving graces
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.opc.org/wcf.html
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: '11.2: ''Faith, thus receiving and resting on Christ and his righteousness, is the alone instrument of justification''. 16.2: ''These good works, done in obedience to God''s commandments, are the
+    fruits and evidences of a true and lively faith''. Reformed/Presbyterian standard; no Baptist (1689) or Lutheran confession opened this run.'
+  found_by: capy-scripture-theologian
+  claims:
+  - 2
+- id: bednar-2015-hushed-fears
+  type: primary
+  title: Therefore They Hushed Their Fears
+  author: David A. Bednar
+  date: '2015-04-01'
+  locator: https://pulpit.restorationcommons.org/talks/2015-04-bednar-therefore-they-hushed-their-fears/#p42
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: Pulpit read_paragraphs, verify_quote
+  quote: Our works and desires alone do not and cannot save us.
+  verification:
+    tool: verify_quote
+    verdict: exact
+    link: https://pulpit.restorationcommons.org/talks/2015-04-bednar-therefore-they-hushed-their-fears/#p42
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Same paragraph quotes Articles of Faith 1:3 'through the Atonement of Christ, all mankind may be saved, by obedience to the laws and ordinances of the Gospel' (read, not separately verify_quoted)
+    -- the conditions-vs-earning distinction in one paragraph. Same sentence repeated by Bednar 2025-10-01 (#p24, verify_quote exact).
+  found_by: capy-doctrine-scholar
+  claims:
+  - 3
+- id: holland-2017-be-ye-perfect
+  type: primary
+  title: Be Ye Therefore Perfect-Eventually
+  author: Jeffrey R. Holland
+  date: '2017-10-01'
+  locator: https://pulpit.restorationcommons.org/talks/2017-10-holland-be-ye-therefore-perfecteventually/#p8
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: Pulpit read_paragraphs, verify_quote
+  quote: Our only hope for true perfection is in receiving it as a gift from heaven—we can’t “earn” it.
+  verification:
+    tool: verify_quote
+    verdict: exact
+    link: https://pulpit.restorationcommons.org/talks/2017-10-holland-be-ye-therefore-perfecteventually/#p8
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'p7 in the same talk: focusing on God''s achievements ''does not give us one ounce of justification for undisciplined lives'' -- grace without license.'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 3
+- id: faust-2001-atonement
+  type: primary
+  title: 'The Atonement: Our Greatest Hope'
+  author: James E. Faust
+  date: '2001-10-01'
+  locator: https://pulpit.restorationcommons.org/talks/2001-10-faust-the-atonement-our-greatest-hope/#p3
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: Pulpit read_paragraphs, verify_quote
+  quote: We cannot be saved by grace alone, “for we know that it is by grace that we are saved, after all we can do.”
+  verification:
+    tool: verify_quote
+    verdict: exact
+    link: https://pulpit.restorationcommons.org/talks/2001-10-faust-the-atonement-our-greatest-hope/#p3
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: 'COUNTER: the critic''s best LDS-source ammunition. Context (same paragraph): aimed at ''Many people [who] think they need only confess that Jesus is the Christ and then they are saved by grace
+    alone.'' He does not say works earn grace; but he rejects ''grace alone.'' Tier 4, 2001. Pre-dates and reads differently from Uchtdorf 2015 on ''after.'''
+  found_by: capy-doctrine-scholar
+  claims:
+  - 3
+- id: oaks-2019-cleansed
+  type: primary
+  title: Cleansed by Repentance
+  author: Dallin H. Oaks
+  date: '2019-04-01'
+  locator: https://pulpit.restorationcommons.org/talks/2019-04-oaks-cleansed-by-repentance/#p17
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: Pulpit read_paragraphs
+  quote: null
+  verification:
+    tool: verify_quote
+    verdict: not-found
+    link: null
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: 'Paraphrase only (not run through verify_quote this run): p17 says the scriptures state all will be judged ''according to their works'' (3 Ne 27:15) and ''according to the desire[s] of their hearts''
+    (D&C 137:9); p18 says the purpose of Final Judgment is to determine whether we have achieved a ''mighty change of heart.'' Genuine difference from Protestant forensic justification-as-final-verdict.
+    Needs verify_quote before any on-screen attribution.'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 3
+- id: maxwell-1985-premortality
+  type: primary
+  title: Premortality, a Glorious Reality
+  author: Neal A. Maxwell
+  date: '1985-10-01'
+  locator: https://pulpit.restorationcommons.org/talks/1985-10-maxwell-premortality-a-glorious-reality/#p4
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: Pulpit read_paragraphs
+  quote: null
+  verification:
+    tool: verify_quote
+    verdict: not-found
+    link: null
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Paraphrase: Maxwell lists 2 Tim 1:9 (with Jer 1:5, Eph 1:4-5) among biblical places where premortal existence is ''surely there.'' So an Apostle (tier 4) already reads the verse as the video does,
+    as about what God did before the world, and as not conflicting with LDS teaching.'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 3
+- id: brough-1997-holy-calling
+  type: primary
+  title: A Holy Calling
+  author: Monte J. Brough
+  date: '1997-04-01'
+  locator: https://pulpit.restorationcommons.org/talks/1997-04-brough-a-holy-calling/#p8
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: Pulpit read_paragraphs, verify_quote
+  quote: hath saved us, and called us with an holy calling, not according to our works, but according to his own purpose and grace, which was given us in Christ Jesus before the world began
+  verification:
+    tool: verify_quote
+    verdict: exact
+    link: https://pulpit.restorationcommons.org/talks/1997-04-brough-a-holy-calling/#p8
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'KJV wording of 2 Tim 1:9 as quoted by a Seventy to describe a ''holy calling'' (Paul to Timothy). This is KJV, not NRSVue and not the NIV the critic may read from; confirm translation before any
+    on-screen quote. Same KJV text also appears in Conference reports from 1866 (B. Young), 1929 and 1934: the verse has long been quoted in LDS pulpits.'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 3
+- id: young-1866-kingdom
+  type: primary
+  title: The Kingdom of God on Earth is a Living, Moving, Effective Institution
+  author: Brigham Young
+  date: '1866-06-17'
+  locator: https://pulpit.restorationcommons.org/talks/1866-06-young-the-kingdom-of-god-on-earth-is-a-living-moving-effective-institution/#p17
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: Pulpit read_paragraphs
+  quote: null
+  verification:
+    tool: verify_quote
+    verdict: not-found
+    link: null
+  grade_supports: speculation
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: Tier 5 (older historical belief, Journal of Discourses). Young quotes 2 Tim 1:9 for foreordination and adds 'The Lord has ordained some men to the performance of good and some to the performance
+    of evil' (Pharaoh). Not current teaching; keep off screen. A red-team Protestant could cite it to say LDS 'before the world' readings are inconsistent.
+  found_by: capy-doctrine-scholar
+  claims:
+  - 3
+- id: gospel-topics-grace-2023
+  type: official
+  title: Grace (Gospel Topics)
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '2023-01-01'
+  locator: https://www.churchofjesuschrist.org/study/manual/gospel-topics/grace?lang=eng
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: WebFetch
+  quote: null
+  verification:
+    tool: none
+    verdict: not-found
+    link: null
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'WebFetch returns a model-written summary, not raw text: treat as paraphrase and re-check on the live page before quoting. Summary: grace is divine help/enabling power through the Atonement; strengthens
+    one to do good works one could not do alone; receiving that enabling power requires obeying the gospel (faith, repentance, baptism, Holy Ghost, discipleship). Date ''2023'' as reported by the fetch;
+    confirm. This is the long-form essay entry, not the older short Gospel Topics essays index, which the fetch showed lacks a Grace essay.'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 3
+- id: bible-dictionary-grace
+  type: official
+  title: 'Bible Dictionary: Grace'
+  author: The Church of Jesus Christ of Latter-day Saints (LDS edition of the King James Bible, 1979/2013)
+  date: '2013-01-01'
+  locator: https://www.churchofjesuschrist.org/study/scriptures/bd/grace?lang=eng
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: WebFetch
+  quote: null
+  verification:
+    tool: none
+    verdict: not-found
+    link: null
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: 'WebFetch paraphrase only; confirm the entry''s exact words on the live page. Reported content: grace is divine help/strength through Christ; makes resurrection universal; needed because of the
+    Fall; operates ''after'' the recipient''s best efforts and ''cannot suffice without total effort on the part of the recipient.'' COUNTER: this effort-conditional framing is what the critic would use.
+    It is a study aid, not canon. Publication date not verified (the 1979 edition is my recollection, unverified).'
+  found_by: capy-doctrine-scholar
+  claims:
+  - 3
+- id: nrsvue-2021-2tim-1
+  type: scripture
+  title: New Revised Standard Version Updated Edition (NRSVue), 2 Timothy 1:1-13
+  author: National Council of Churches
+  date: '2021'
+  locator: https://corpus.restorationcommons.org/b/new-revised-standard-version-updated-edition-db46/4321
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages(path=Read/Bible/Translations/New Revised Standard Version Updated Edition (NRSVue).pdf, from_page=4321, to_page=4321)
+  quote: who saved us and called us with a holy calling, not according to our works but according to his own purpose and grace, and this grace was given to us in Christ Jesus before the ages began
+  verification:
+    tool: cite_page
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/new-revised-standard-version-updated-edition-db46/4321
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 2 Tim 1:9 (NRSVue). Page read in GSA; also matches NCBC p. 147 and Matera p. 91.
+  found_by: capy-scripture-theologian
+  claims:
+  - 3
+- id: nrsvue-2021-eph-2
+  type: scripture
+  title: NRSVue, Ephesians 2:10
+  author: National Council of Churches
+  date: '2021'
+  locator: https://corpus.restorationcommons.org/b/new-revised-standard-version-updated-edition-db46/4252
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__search_concordance(query="created in Christ Jesus for good works", volume=NRSVue pdf); full verse text also from WebFetch of Bible Gateway
+  quote: For we are what he has made us, created in Christ Jesus for good works, which God prepared beforehand so that we may walk in them.
+  verification:
+    tool: cite_page
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/new-revised-standard-version-updated-edition-db46/4252
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: GSA hit confirms first half of v.10; second half via Bible Gateway fetch. Eph 2:9 'not the result of works, so that no one may boast' via Bible Gateway only. Re-read p. 4252 with read_pages before
+    on-screen use.
+  found_by: capy-scripture-theologian
+  claims:
+  - 3
+- id: nrsvue-2021-titus-3
+  type: scripture
+  title: NRSVue, Titus 3:5 and 3:8
+  author: National Council of Churches
+  date: '2021'
+  locator: https://corpus.restorationcommons.org/b/new-revised-standard-version-updated-edition-db46/4333
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__search_concordance(volume=NRSVue pdf); WebFetch https://www.biblegateway.com/passage/?search=Titus+3%3A8&version=NRSVUE
+  quote: he saved us, not because of any works of righteousness that we had done
+  verification:
+    tool: cite_page
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/new-revised-standard-version-updated-edition-db46/4333
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 3:5 confirmed in GSA; 3:8 ('may be careful to devote themselves to good works') only via Bible Gateway fetch.
+  found_by: capy-scripture-theologian
+  claims:
+  - 3
+- id: nrsvue-2021-rom-2
+  type: scripture
+  title: NRSVue, Romans 2:6-8
+  author: National Council of Churches
+  date: '2021'
+  locator: https://corpus.restorationcommons.org/b/new-revised-standard-version-updated-edition-db46/4115
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__search_concordance(volume=NRSVue pdf); WebFetch https://www.biblegateway.com/passage/?search=Romans+2%3A6-8&version=NRSVUE
+  quote: He will repay according to each one's deeds
+  verification:
+    tool: cite_page
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/new-revised-standard-version-updated-edition-db46/4115
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 6 confirmed in GSA snippet; 7 'to those who by patiently doing good seek for glory and honor and immortality, he will give eternal life' via Bible Gateway only.
+  found_by: capy-scripture-theologian
+  claims:
+  - 3
+- id: nrsvue-2021-phil-2cor-matt-james
+  type: scripture
+  title: NRSVue, Philippians 2:12-13; 2 Corinthians 5:10; Matthew 25:35, 25:46; James 2:14, 2:24; Ephesians 1:4
+  author: National Council of Churches
+  date: '2021'
+  locator: https://corpus.restorationcommons.org/b/new-revised-standard-version-updated-edition-db46/4270 ; /4210 ; /3738
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__search_concordance(volume=NRSVue pdf) for Phil 2:12 (p.4270), 2 Cor 5:10 (p.4210), Matt 25:46 (p.3738); WebFetch of Bible Gateway NRSVUE for the
+    rest
+  quote: null
+  verification:
+    tool: cite_page
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/new-revised-standard-version-updated-edition-db46/4270
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: James 2:14, 2:24, Matt 25:35, Eph 1:4, Phil 2:13 confirmed only via Bible Gateway fetch (a model-summarized fetch, so wording must be re-read against GSA NRSVue pages before on-screen use). James
+    2:24 search in GSA returned no hit (line-break/punctuation).
+  found_by: capy-scripture-theologian
+  claims:
+  - 3
+- id: piper-2007-future-of-justification
+  type: scholarly
+  title: 'The Future of Justification: A Response to N. T. Wright'
+  author: John Piper
+  date: '2007'
+  locator: https://corpus.restorationcommons.org/b/piper-the-future-of-justification-a-response-to-e8d5/116
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: 'mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages(path=Read/Bible/New Testament/Paul/Piper, The Future of Justification: A Response to N.T. Wright.pdf, from_page=115, to_page=117)'
+  quote: they are the essential and manifest criterion of that faith, the integral "fruits and evidences of a true and lively faith."
+  verification:
+    tool: cite_page
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/piper-the-future-of-justification-a-response-to-e8d5/116
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Piper quotes Gaffin, By Faith, Not By Sight, p. 98. A Reformed (Baptist-affiliated is not verified in the tool) source for 'future judgment according to works' alongside 'justified by faith.' p.
+    115 footnote 17 lists NT texts (Matt 6:15, John 5:28-29, Rom 8:13, Gal 6:8-9, Heb 12:14, James 2:17, 1 Jn 3:14) in ESV wording.
+  found_by: capy-scripture-theologian
+  claims:
+  - 3
+- id: rcs-2020-2tim-1-9
+  type: scholarly
+  title: 'Reformation Commentary on Scripture, NT XI: 1-2 Thessalonians, 1-2 Timothy, Titus, Philemon (on 2 Tim 1:9 and Titus 3:5-8)'
+  author: Ed. Gerald Bray et al.; includes Vermigli, Bullinger, Dickson, Cartwright, Canons of Dordrecht, Dutch Annotations, Taylor
+  date: unknown (not verified in tool)
+  locator: https://corpus.restorationcommons.org/b/1-2-thessalonians-1-2-timothy-titus-philemon-251f/281 ; /282 ; /359 ; /361
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages(path=Read/Bible/Commentaries/Reformation Commentary on Scripture (RCS, 22 vols)/New Testament/1-2 Thessalonians, 1-2 Timothy, Titus,
+    Philemon.pdf, pages 280-282 and 359-362)
+  quote: The doctrine of the reward of good works at the later day is true, but does not grow out of this ground
+  verification:
+    tool: cite_page
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/1-2-thessalonians-1-2-timothy-titus-philemon-251f/282
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: Cartwright quote is from p. 282 (the sentence continues 'where the apostle speaks not of the reward that shall then be given'). Dordt (p. 281, quoted within RCS from Acta Synodi Nationalis, Rejectio
+    Errorum 1:3) applies 2 Tim 1:9 against election-on-foreseen-faith. Dutch Annotations p. 359 excludes post-conversion works as cause of salvation (counter to a works-required reading). Dickson p. 281
+    reads 'before the ages' as covenant grace given before 'we or our works could have any being.'
+  found_by: capy-scripture-theologian
+  claims:
+  - 3
+- id: rcs-2020-eph-2-8-10
+  type: scholarly
+  title: 'Reformation Commentary on Scripture, NT X: Galatians, Ephesians (on Eph 2:8-10)'
+  author: Ed. Gerald Bray et al.; includes Ridley, Bullinger, Calvin
+  date: unknown (not verified in tool)
+  locator: https://corpus.restorationcommons.org/b/galatians-and-ephesians-078a/348 ; /349
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages(path=Read/Bible/Commentaries/Reformation Commentary on Scripture (RCS, 22 vols)/New Testament/Galatians & Ephesians.pdf, pages 342-345
+    and 347-349)
+  quote: Good works do not go before faith, but they follow faith and make us certain that we are justified.
+  verification:
+    tool: cite_page
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/galatians-and-ephesians-078a/348
+  grade_supports: inference
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: 'Ridley (p. 348). Bullinger (p. 349): two errors, ''attribute righteousness to our works'' and ''separate works from faith.'' RCS Overview, p. 343: ''Our works can do nothing to earn it, but God
+    has prepared us so that we can do good works once we have been justified by faith.'' Only Eph 2:10 commentary after p. 349 not read.'
+  found_by: capy-scripture-theologian
+  claims:
+  - 3
+- id: horton-2011-for-calvinism
+  type: scholarly
+  title: For Calvinism
+  author: Michael Horton
+  date: unknown (not verified in tool)
+  locator: https://corpus.restorationcommons.org/b/horton-for-calvinism-a341/73
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages(path=Read/Bible/Evangelicals/Horton, For Calvinism.pdf, from_page=73, to_page=73)
+  quote: This election is unchangeable and unconditional; it cannot be altered by what we do or fail to do
+  verification:
+    tool: cite_page
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/horton-for-calvinism-a341/73
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: 'Shows how a Calvinist reads 2 Tim 1:9 (election, ESV-family wording printed on p. 73). Counter-evidence: a Reformed viewer''s natural reading is unconditional election.'
+  found_by: capy-scripture-theologian
+  claims:
+  - 3
+- id: matera-2007-gods-saving-grace
+  type: scholarly
+  title: 'God''s Saving Grace: A Pauline Theology'
+  author: Frank J. Matera
+  date: unknown (not verified in tool)
+  locator: https://corpus.restorationcommons.org/b/matera-god-s-saving-grace-a-pauline-theology-37c6/91
+  accessed: '2026-10-15'
+  inspected: true
+  inspected_via: 'mcp__3302d05e-59ab-4fcc-b554-2284af2fe3d1__read_pages(path=Read/Bible/New Testament/Paul/Matera, God''s Saving Grace: A Pauline Theology.pdf, from_page=91, to_page=91)'
+  quote: null
+  verification:
+    tool: cite_page
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/matera-god-s-saving-grace-a-pauline-theology-37c6/91
+  grade_supports: inference
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Catholic NT scholar; reads 2 Tim 1:9-10 as epiphany Christology (first appearance of Christ 'now revealed'), emphasizing the temporal contrast 'before the ages' vs 'now revealed.' Not Protestant;
+    use only as non-LDS corroboration of the text.
+  found_by: capy-scripture-theologian
+  claims:
+  - 3
+
+- id: cobbett-1829-french-grammar
+  type: primary
+  title: "A French Grammar: Or Plain Instructions for the Learning of French. In a Series of Letters. A New Edition"
+  author: William Cobbett
+  date: '1829-01-01'
+  locator: https://corpus.restorationcommons.org/b/2-nephi-25-23-in-literary-and-rhetorical-context-3135/8
+  accessed: '2026-10-16'
+  inspected: true
+  inspected_via: mcp__3302d05e... read_pages (McClellan article pp. 8-9; the Cobbett quotation is read as McClellan quotes it, London 1829, pp. 68-69; the book itself was NOT opened)
+  quote: And this, after all that Grammarians can do; after all the rules that they can give, is the only sure way of learning (from books) the Gender of the French Nouns.
+  verification:
+    tool: cite_page
+    verdict: page-read
+    link: https://corpus.restorationcommons.org/b/2-nephi-25-23-in-literary-and-rhetorical-context-3135/8
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: 'Secondary quotation. McClellan p. 9 reads it as "despite" because memorizing is not the only sure way only after other methods are exhausted. McClellan p. 8 concedes the sense of following in time is not precluded in this idiom generally. One scholar''s reading of one example.'
+  found_by: user-request
+  claims:
+  - 2
