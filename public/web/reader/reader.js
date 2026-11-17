@@ -241,7 +241,7 @@ loadTarget.addEventListener("webviewerloaded", function onLoaded(e) {
   loadTarget.removeEventListener("webviewerloaded", onLoaded);
   const o = window.PDFViewerApplicationOptions;
   const p = prefs();
-  o.set("disablePreferences", true); // GSA owns preferences, including mobile canvas limits
+  o.set("disablePreferences", true); // the reader owns preferences, including mobile canvas limits
   o.set("disableHistory", true);      // its pushState jumps would land in the shell's history
   o.set("viewOnLoad", 1);             // no per-file position/zoom memory: ours is below
   o.set("sidebarViewOnLoad", 0);
@@ -2203,7 +2203,7 @@ function clearFind() {
   // and out of the address, so a reload doesn't bring it back
   const h = new URLSearchParams(location.hash.slice(1));
   if (h.has("find") || h.has("hl")) { h.delete("find"); h.delete("hl"); setHash(h); }
-  shell?.unfind?.();  // the Bookshelf's address bar, when we're its iframe
+  shell?.unfind?.();  // the parent shell, when we are its iframe
 }
 
 /* ---------- share a highlighted passage ----------
@@ -2252,7 +2252,7 @@ function wirePassage() {
 /* ---------- startup: never leave a silent blank reader ---------- */
 function openFailed(error) {
   clearTimeout(openTimer);
-  console.error("GSA book startup failed:", error);
+  console.error("Book startup failed:", error);
   loadProgress(100);
   instantGone();
   const status = $("#r-opening");

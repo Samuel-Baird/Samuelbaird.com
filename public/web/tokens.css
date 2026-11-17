@@ -1,4 +1,4 @@
-/* The GSA design tokens: the only place in the frontend (static/) where a colour, a size, a
+/* The reader's design tokens (by Noah Airmet): the only place in the frontend (static/) where a colour, a size, a
    radius, a duration or a z-index is written as a number. Everything else
    uses these (tests/design_lint.py enforces it). The reasons live in
    DESIGN.md; this file says what, briefly. The site is dark only (Noah,

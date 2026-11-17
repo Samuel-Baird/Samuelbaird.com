@@ -12,7 +12,7 @@ const pdfs = [
   { title: 'Ricks, Hoskisson, Smith & Gee, Dictionary of Proper Names & Foreign Words in the Book of Mormon (Interpreter Foundation, 2022)', note: 'Full volume. About 290 entries give a Deseret Alphabet spelling with IPA.', file: 'Ricks-Hoskisson-Smith-Gee_Dictionary-of-Proper-Names_2022.pdf' },
 ];
 
-// Opens a hosted PDF in the reader (public/pdfjs + public/web/reader, from gsa-dash)
+// Opens a hosted PDF in the reader (public/pdfjs + public/web/reader; reader by Noah Airmet)
 const read = (p) => `/pdfjs/web/viewer.html?file=${encodeURIComponent('/library/' + p.file)}&title=${encodeURIComponent(p.title)}`;
 
 // General Conference / Journal of Discourses talks (the Pulpit corpus).
