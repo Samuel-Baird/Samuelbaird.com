@@ -274,3 +274,15 @@ main { display: block; min-height: 50vh; }
 .sky-bee { position: absolute; left: 0; top: 0; color: #D9B46A; will-change: transform; filter: drop-shadow(0 0 3px rgb(217 180 106 / .35)); }
 .sky-bee .wing { transform-origin: 50% 90%; transform-box: fill-box; animation: wing 70ms linear infinite alternate; }
 body::before { z-index: -2; }
+
+/* Drifting Deseret glyphs (src/scripts/glyphs.js): very faint, tinted to the theme's brass. */
+.glyph-bg {
+  position: fixed; inset: 0; z-index: -2; pointer-events: none; contain: strict;
+  opacity: 0; transition: opacity 3s ease-out;
+  font-family: 'Noto Sans Deseret', sans-serif;
+  color: rgb(201 164 92 / .55); /* --accent, muted; the renderer reads this colour and alpha */
+  mix-blend-mode: screen;
+}
+body.home .glyph-bg { color: rgb(201 164 92 / .7); }
+.glyph-bg .absolute { position: absolute; }
+.glyph-bg .block { display: block; }
