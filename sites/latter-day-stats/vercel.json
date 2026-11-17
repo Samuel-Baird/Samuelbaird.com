@@ -19,5 +19,5 @@
       "destination": "/latter-day-stats/auth/:path*"
     }
   ],
-  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- . ../../packages/family"
+  "ignoreCommand": "bash ../../scripts/vercel-ignore.sh"
 }

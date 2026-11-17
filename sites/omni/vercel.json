@@ -6,5 +6,5 @@
       "destination": "/omni/api/mcp"
     }
   ],
-  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- . ../../packages/family"
+  "ignoreCommand": "bash ../../scripts/vercel-ignore.sh"
 }

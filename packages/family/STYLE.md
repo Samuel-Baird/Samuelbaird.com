@@ -30,4 +30,4 @@ Every public site (samuelbaird.com, Latter-day Stats, Urim, Omni, Peepstone, Des
 
 ## Deploys
 
-Each app's Vercel project skips a build unless its own folder or `packages/family` changed (`ignoreCommand` in its `vercel.json`), so a change here redeploys every site.
+Each app's Vercel project skips a build unless its own folder or `packages/family` changed since its last deploy (`scripts/vercel-ignore.sh`, set as `ignoreCommand` in its `vercel.json`), so a change here redeploys every site.
