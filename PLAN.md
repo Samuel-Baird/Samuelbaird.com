@@ -46,7 +46,7 @@ A wiki, document library and learning toolkit for the Deseret Alphabet (𐐔𐐯
 
 **`assets/source-pdfs/`** — Deseret‑alphabet renderings of The Family, The Living Christ, The Restoration, Articles of Faith (plain + parallel), from the Baybayin Project.
 
-**`assets/gsa-pdfs/`** (from the Gospel Scholar Archive; hits for "Deseret alphabet"):
+**`assets/scholarship-pdfs/`** (scholarship mentioning the Deseret alphabet):
 | File | Why |
 |---|---|
 | Ricks/Hoskisson/Smith/Gee, *Dictionary of Proper Names & Foreign Words in the BoM* (2022) | 294 entries each with a Deseret spelling + IPA — ready‑made dataset for names and the transliterator test set |
@@ -54,7 +54,7 @@ A wiki, document library and learning toolkit for the Deseret Alphabet (𐐔𐐯
 | *BYU Studies* 55‑4 (2016), pp. 189–192 | review of *English‑Hopi Vocabulary 1860* in Deseret |
 | *BYU Studies* 18‑1 (1977) | George D. Watt article (first reader, Deseret Alphabet) |
 
-Other GSA hits worth reading but not downloaded (large volumes; link instead): Complete Discourses of Brigham Young vols 3–5 (Regents, alphabet), Allen & Leonard *Story of the Latter‑day Saints* p. 365, Arrington *American Moses* p. 336, Givens & Grow *Parley P. Pratt* p. 410, *Encyclopedia of Mormonism* vol. 1 p. 19 / vol. 4 p. 367, *Journal of Discourses* vol. 12 p. 140, Griffiths & Woodger *50 Relics* p. 79–93, A Mormon Bibliography 1830–1930 p. 116.
+Other sources worth reading but not downloaded (large volumes; link instead): Complete Discourses of Brigham Young vols 3–5 (Regents, alphabet), Allen & Leonard *Story of the Latter‑day Saints* p. 365, Arrington *American Moses* p. 336, Givens & Grow *Parley P. Pratt* p. 410, *Encyclopedia of Mormonism* vol. 1 p. 19 / vol. 4 p. 367, *Journal of Discourses* vol. 12 p. 140, Griffiths & Woodger *50 Relics* p. 79–93, A Mormon Bibliography 1830–1930 p. 116.
 
 **`C:\Users\b13ll\Downloads\deseret\`** (your files, not yet copied): First & Second Readers, BoM/Bible/Apocrypha PDFs, Burton *City of the Saints*, Beadle, Remy, Watt, German book, 1854/1859 charts, comparison tables, Unicode chapter 20 + docs, SVG lineups, images.
 

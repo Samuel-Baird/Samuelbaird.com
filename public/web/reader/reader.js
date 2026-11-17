@@ -1,6 +1,5 @@
-// The reader (DESIGN.md Appendix E; §9 rule 5).
-// The gsa MCP hands agents links to a page of a book; this is what they
-// open, so everything else on the site is scaffolding around it.
+// The reader, by Noah Airmet (used with permission). Opens a PDF from
+// /library/ at a page; see public/web/README.md.
 //
 // PDF.js 6 draws the pages; everything you touch is ours. Its toolbar,
 // sidebar and find bar stay in the DOM (the engine needs them) but are
