@@ -27,3 +27,7 @@ Every public site (samuelbaird.com, Latter-day Stats, Urim, Omni, Peepstone, Des
 2. `node scripts/family-sync.mjs` from the repo root: copies the assets to every site and stamps the chrome in.
 3. For samuelbaird.com also run `node sites/samuelbaird.com/scripts/build.mjs` (it renders the chrome itself, plus the project pages).
 4. CI runs `node scripts/family-sync.mjs --check`, which fails if any site is out of date.
+
+## Deploys
+
+Each app's Vercel project skips a build unless its own folder or `packages/family` changed (`ignoreCommand` in its `vercel.json`), so a change here redeploys every site.
