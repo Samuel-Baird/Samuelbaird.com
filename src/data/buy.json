@@ -6,7 +6,8 @@
   "rating": 5.0,
   "reviews": 1,
   "price": "$25.00",
-  "image": "https://m.media-amazon.com/images/I/812nJdu0oxL._SL1500_.jpg",
+  "image": "https://m.media-amazon.com/images/I/812nJdu0oxL._SL160_.jpg",
+  "kind": "book",
   "url": "https://link.amazon/B038Tdxep"
  },
  {
@@ -16,7 +17,8 @@
   "rating": null,
   "reviews": 0,
   "price": "$35.00",
-  "image": "https://m.media-amazon.com/images/I/71UuDp3x+8L._SL1360_.jpg",
+  "image": "https://m.media-amazon.com/images/I/71UuDp3x+8L._SL160_.jpg",
+  "kind": "book",
   "url": "https://link.amazon/B0ioxV1dS"
  },
  {
@@ -27,6 +29,7 @@
   "reviews": 2,
   "price": "$15.00",
   "image": null,
+  "kind": "book",
   "url": "https://link.amazon/B0e5zh5Pn"
  },
  {
@@ -37,6 +40,7 @@
   "reviews": 5,
   "price": "$5.00",
   "image": null,
+  "kind": "book",
   "url": "https://link.amazon/B01CsBeE1"
  },
  {
@@ -46,7 +50,8 @@
   "rating": null,
   "reviews": 0,
   "price": "$7.50",
-  "image": "https://m.media-amazon.com/images/I/61H68Mm0+FS._SL1360_.jpg",
+  "image": "https://m.media-amazon.com/images/I/61H68Mm0+FS._SL160_.jpg",
+  "kind": "book",
   "url": "https://link.amazon/B098J8Vx9"
  },
  {
@@ -57,6 +62,7 @@
   "reviews": 2,
   "price": "$9.94",
   "image": null,
+  "kind": "book",
   "url": "https://link.amazon/B06rHCC9T"
  },
  {
@@ -67,6 +73,7 @@
   "reviews": 3,
   "price": "$4.00",
   "image": null,
+  "kind": "book",
   "url": "https://link.amazon/B08qqtC4m"
  },
  {
@@ -77,6 +84,7 @@
   "reviews": 0,
   "price": "$8.00",
   "image": null,
+  "kind": "book",
   "url": "https://link.amazon/B00Ph1GZl"
  },
  {
@@ -87,6 +95,7 @@
   "reviews": 1,
   "price": "$5.00",
   "image": null,
+  "kind": "book",
   "url": "https://link.amazon/B03OSsyAz"
  },
  {
@@ -96,7 +105,8 @@
   "rating": 3.4,
   "reviews": 5,
   "price": "$7.50",
-  "image": "https://m.media-amazon.com/images/I/61vyj1gyLRL._SL1360_.jpg",
+  "image": "https://m.media-amazon.com/images/I/61vyj1gyLRL._SL160_.jpg",
+  "kind": "book",
   "url": "https://link.amazon/B09qptclr"
  },
  {
@@ -106,7 +116,8 @@
   "rating": null,
   "reviews": 0,
   "price": "$17.00",
-  "image": "https://m.media-amazon.com/images/I/61W8a1PQO2L._SL1360_.jpg",
+  "image": "https://m.media-amazon.com/images/I/61W8a1PQO2L._SL160_.jpg",
+  "kind": "book",
   "url": "https://link.amazon/B00FQHBPt"
  },
  {
@@ -116,7 +127,8 @@
   "rating": null,
   "reviews": 0,
   "price": "$10.00",
-  "image": "https://m.media-amazon.com/images/I/61be49QmibL._SL1360_.jpg",
+  "image": "https://m.media-amazon.com/images/I/61be49QmibL._SL160_.jpg",
+  "kind": "book",
   "url": "https://link.amazon/B0b8wGqZL"
  },
  {
@@ -126,7 +138,8 @@
   "rating": 4.3,
   "reviews": 29,
   "price": "$15.00",
-  "image": "https://m.media-amazon.com/images/I/41DHfLuaoVL._SL1360_.jpg",
+  "image": "https://m.media-amazon.com/images/I/41DHfLuaoVL._SL160_.jpg",
+  "kind": "book",
   "url": "https://link.amazon/B0bUXWeDW"
  },
  {
@@ -136,7 +149,8 @@
   "rating": 5.0,
   "reviews": 6,
   "price": "$15.00",
-  "image": "https://m.media-amazon.com/images/I/413CJMcO+FL._SL1360_.jpg",
+  "image": "https://m.media-amazon.com/images/I/413CJMcO+FL._SL160_.jpg",
+  "kind": "book",
   "url": "https://link.amazon/B0hLgX03H"
  },
  {
@@ -146,7 +160,8 @@
   "rating": 5.0,
   "reviews": 4,
   "price": "$15.00",
-  "image": "https://m.media-amazon.com/images/I/41CX7mwNmcL._SL1360_.jpg",
+  "image": "https://m.media-amazon.com/images/I/41CX7mwNmcL._SL160_.jpg",
+  "kind": "book",
   "url": "https://link.amazon/B00yeu8y0"
  },
  {
@@ -156,7 +171,8 @@
   "rating": 5.0,
   "reviews": 4,
   "price": "$20.00",
-  "image": "https://m.media-amazon.com/images/I/419QOuwBelL._SL1360_.jpg",
+  "image": "https://m.media-amazon.com/images/I/419QOuwBelL._SL160_.jpg",
+  "kind": "book",
   "url": "https://link.amazon/B094jfxAY"
  },
  {
@@ -166,7 +182,8 @@
   "rating": 5.0,
   "reviews": 3,
   "price": "$17.00",
-  "image": "https://m.media-amazon.com/images/I/51kFE47adZL._SL1360_.jpg",
+  "image": "https://m.media-amazon.com/images/I/51kFE47adZL._SL160_.jpg",
+  "kind": "book",
   "url": "https://link.amazon/B01o72rJI"
  },
  {
@@ -176,7 +193,8 @@
   "rating": 4.7,
   "reviews": 66,
   "price": "$18.00",
-  "image": "https://m.media-amazon.com/images/I/61oRqxSUblL._SL1360_.jpg",
+  "image": "https://m.media-amazon.com/images/I/61oRqxSUblL._SL160_.jpg",
+  "kind": "book",
   "url": "https://link.amazon/B0ifAS6Fq"
  },
  {
@@ -186,7 +204,8 @@
   "rating": 2.4,
   "reviews": 4,
   "price": "$10.00",
-  "image": "https://m.media-amazon.com/images/I/61+5jxKbgNL._SL1360_.jpg",
+  "image": "https://m.media-amazon.com/images/I/61+5jxKbgNL._SL160_.jpg",
+  "kind": "book",
   "url": "https://link.amazon/B04ehKYaA"
  },
  {
@@ -196,7 +215,8 @@
   "rating": null,
   "reviews": 0,
   "price": "$12.00",
-  "image": "https://m.media-amazon.com/images/I/61+T4-xgbyL._SL1360_.jpg",
+  "image": "https://m.media-amazon.com/images/I/61+T4-xgbyL._SL160_.jpg",
+  "kind": "book",
   "url": "https://link.amazon/B0f5gGYKn"
  },
  {
@@ -206,7 +226,8 @@
   "rating": 4.1,
   "reviews": 34,
   "price": "$8.00",
-  "image": "https://m.media-amazon.com/images/I/61a3h+craBL._SL1360_.jpg",
+  "image": "https://m.media-amazon.com/images/I/61a3h+craBL._SL160_.jpg",
+  "kind": "book",
   "url": "https://link.amazon/B0d1L37KN"
  },
  {
@@ -216,7 +237,8 @@
   "rating": 4.5,
   "reviews": 2,
   "price": "$15.00",
-  "image": "https://m.media-amazon.com/images/I/61AWi4sMp4L._SL1360_.jpg",
+  "image": "https://m.media-amazon.com/images/I/61AWi4sMp4L._SL160_.jpg",
+  "kind": "book",
   "url": "https://link.amazon/B0a9fmHwE"
  },
  {
@@ -226,7 +248,8 @@
   "rating": null,
   "reviews": 0,
   "price": "$7.50",
-  "image": "https://m.media-amazon.com/images/I/61LWUV2YvDL._SL1360_.jpg",
+  "image": "https://m.media-amazon.com/images/I/61LWUV2YvDL._SL160_.jpg",
+  "kind": "book",
   "url": "https://link.amazon/B05mepwCP"
  },
  {
@@ -236,7 +259,8 @@
   "rating": 4.5,
   "reviews": 10,
   "price": "$19.95",
-  "image": "https://m.media-amazon.com/images/I/71eN3JHV3hL._SL1500_.jpg",
+  "image": "https://m.media-amazon.com/images/I/71eN3JHV3hL._SL160_.jpg",
+  "kind": "book",
   "url": "https://link.amazon/B03R2WTg8"
  },
  {
@@ -246,7 +270,8 @@
   "rating": 4.5,
   "reviews": 7,
   "price": "$15.00",
-  "image": "https://m.media-amazon.com/images/I/71FytYT84WS._SL1360_.jpg",
+  "image": "https://m.media-amazon.com/images/I/71FytYT84WS._SL160_.jpg",
+  "kind": "book",
   "url": "https://link.amazon/B01tsGt4n"
  },
  {
@@ -256,7 +281,8 @@
   "rating": 4.4,
   "reviews": 20,
   "price": "$8.00",
-  "image": "https://m.media-amazon.com/images/I/61BJwYHGSzL._SL1360_.jpg",
+  "image": "https://m.media-amazon.com/images/I/61BJwYHGSzL._SL160_.jpg",
+  "kind": "book",
   "url": "https://link.amazon/B0fFxD65m"
  },
  {
@@ -266,7 +292,8 @@
   "rating": null,
   "reviews": 0,
   "price": "$6.80",
-  "image": "https://m.media-amazon.com/images/I/71sUmxDyN+L._SL1360_.jpg",
+  "image": "https://m.media-amazon.com/images/I/71sUmxDyN+L._SL160_.jpg",
+  "kind": "book",
   "url": "https://link.amazon/B03SzTyfa"
  },
  {
@@ -276,7 +303,8 @@
   "rating": 4.4,
   "reviews": 29,
   "price": "$15.95",
-  "image": "https://m.media-amazon.com/images/I/81fABJriBoL._SL1360_.jpg",
+  "image": "https://m.media-amazon.com/images/I/81fABJriBoL._SL160_.jpg",
+  "kind": "book",
   "url": "https://link.amazon/B068AXgS5"
  },
  {
@@ -286,7 +314,8 @@
   "rating": 3.4,
   "reviews": 3,
   "price": "$32.00",
-  "image": "https://m.media-amazon.com/images/I/91JgeW-GutL._SL1500_.jpg",
+  "image": "https://m.media-amazon.com/images/I/91JgeW-GutL._SL160_.jpg",
+  "kind": "book",
   "url": "https://link.amazon/B0eFShrrS"
  },
  {
@@ -296,7 +325,8 @@
   "rating": null,
   "reviews": 0,
   "price": "$16.00",
-  "image": "https://m.media-amazon.com/images/I/61uNKPznUtL._SL1360_.jpg",
+  "image": "https://m.media-amazon.com/images/I/61uNKPznUtL._SL160_.jpg",
+  "kind": "book",
   "url": "https://link.amazon/B05ZE3sK3"
  },
  {
@@ -306,7 +336,8 @@
   "rating": null,
   "reviews": 0,
   "price": "$6.00",
-  "image": "https://m.media-amazon.com/images/I/71RGFr7VVIL._SL1360_.jpg",
+  "image": "https://m.media-amazon.com/images/I/71RGFr7VVIL._SL160_.jpg",
+  "kind": "book",
   "url": "https://link.amazon/B08oAJZ7O"
  },
  {
@@ -316,7 +347,8 @@
   "rating": 5.0,
   "reviews": 1,
   "price": "$34.90",
-  "image": "https://m.media-amazon.com/images/I/51wkfmnDcYL._SL1360_.jpg",
+  "image": "https://m.media-amazon.com/images/I/51wkfmnDcYL._SL160_.jpg",
+  "kind": "book",
   "url": "https://link.amazon/B0ct7hL4i"
  },
  {
@@ -326,7 +358,8 @@
   "rating": null,
   "reviews": 0,
   "price": "$12.95",
-  "image": "https://m.media-amazon.com/images/I/61UWiNd3yxL._SL1293_.jpg",
+  "image": "https://m.media-amazon.com/images/I/61UWiNd3yxL._SL160_.jpg",
+  "kind": "book",
   "url": "https://link.amazon/B0beNCxDc"
  },
  {
@@ -336,7 +369,8 @@
   "rating": 4.0,
   "reviews": 1,
   "price": "$8.50",
-  "image": "https://m.media-amazon.com/images/I/71dCENk5O6L._SL1293_.jpg",
+  "image": "https://m.media-amazon.com/images/I/71dCENk5O6L._SL160_.jpg",
+  "kind": "book",
   "url": "https://link.amazon/B0jevjvsq"
  },
  {
@@ -346,7 +380,8 @@
   "rating": 3.0,
   "reviews": 1,
   "price": "$8.50",
-  "image": "https://m.media-amazon.com/images/I/51jG9h8U4IL._SL1293_.jpg",
+  "image": "https://m.media-amazon.com/images/I/51jG9h8U4IL._SL160_.jpg",
+  "kind": "book",
   "url": "https://link.amazon/B065NDdoE"
  },
  {
@@ -355,9 +390,10 @@
   "author": "Sir William S Gilbert",
   "rating": null,
   "reviews": 0,
-  "price": "$10.00",
+  "price": null,
   "image": null,
-  "url": "https://www.amazon.com/dp/1481841505?tag=ithinkthereforeisam-20"
+  "kind": "book",
+  "url": "https://link.amazon/B0jblfoh4"
  },
  {
   "asin": "1387318691",
@@ -366,7 +402,536 @@
   "rating": 4.0,
   "reviews": 1,
   "price": null,
-  "image": "https://m.media-amazon.com/images/I/61DskIoQyQL._SL1360_.jpg",
-  "url": "https://www.amazon.com/dp/1387318691?tag=ithinkthereforeisam-20"
+  "image": "https://m.media-amazon.com/images/I/61DskIoQyQL._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B05bizsv5"
+ },
+ {
+  "asin": "1304603482",
+  "title": "Don Juan (Deseret Alphabet Edition)",
+  "author": "George Gordon Byron",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/61oMgzO1MuL._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B0f9VkqJv"
+ },
+ {
+  "asin": "1387761781",
+  "title": "Evensong (Deseret Alphabet Edition)",
+  "author": "John H Jenkins",
+  "rating": 3.5,
+  "reviews": 10,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/51WaL+uUoyL._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B0crKbDA4"
+ },
+ {
+  "asin": "1387801309",
+  "title": "Winnie-the-Pooh (Deseret Alphabet Edition)",
+  "author": "A A Milne",
+  "rating": 5.0,
+  "reviews": 1,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/61DatYRSleL._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B0i5YNAYq"
+ },
+ {
+  "asin": "1482701847",
+  "title": "The Importance of Being Earnest (Deseret Alphabet edition) (Deseret Alphabet Classics) (Volume 8)",
+  "author": "Oscar Wilde, John H. Jenkins",
+  "rating": 5.0,
+  "reviews": 1,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/41UfMFvT1GL._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B040GNvVP"
+ },
+ {
+  "asin": "1491261919",
+  "title": "The Yellow Wall-Paper and Herland (Deseret Alphabet Edition) (Deseret Alphabet Classics)",
+  "author": "Charlotte Perkins Gilman",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/41vZdiapprL._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B0gy4UtmT"
+ },
+ {
+  "asin": "1492856568",
+  "title": "The Articles of Faith (Deseret Alphabet Edition) (Deseret Alphabet Classics) (Volume 14)",
+  "author": "James E. Talmage",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/41EWNX-Dc3L._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B0iO4beqL"
+ },
+ {
+  "asin": "1494986744",
+  "title": "History of the Prophet Joseph (Deseret Alphabet Edition) (Deseret Alphabet Classics)",
+  "author": "Lucy Mack Smith",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/41zEmPWWTlL._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B0cgFH0kX"
+ },
+ {
+  "asin": "1497312736",
+  "title": "Whose Body? (Deseret Alphabet Edition) (Deseret Alphabet Classics)",
+  "author": "Dorothy L. Sayers",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/41qONdKSJqL._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B00Sxe1O3"
+ },
+ {
+  "asin": "1499577419",
+  "title": "The War of the Worlds (Deseret Alphabet Edition) (Deseret Alphabet Classics)",
+  "author": "H. G. Wells",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/41N8xENBylL._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B0aJT8mue"
+ },
+ {
+  "asin": "1505231523",
+  "title": "Four Christmas Books (Deseret Alphabet Edition): The Chimes; The Cricket on the Hearth; The Battle of Life; and The Haunted Man (Deseret Alphabet Classics)",
+  "author": "Charles Dickens",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/61Fky8gT46L._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B05vJLJtP"
+ },
+ {
+  "asin": "1508948712",
+  "title": "The Sign of the Four (Deseret Alphabet edition) (Deseret Alphabet Classics)",
+  "author": "Sir Arthur Conan Doyle",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/611lPEObUuL._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B0aPBW0aS"
+ },
+ {
+  "asin": "1523380195",
+  "title": "Triplanetary (Deseret Alphabet Edition) (Deseret Alphabet Classics)",
+  "author": "Edward Elmer Smith",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/61xSDn3QvOL._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B0gOzBAMu"
+ },
+ {
+  "asin": "1533647429",
+  "title": "The Adventures of Sherlock Holmes (Deseret Alphabet edition) (Deseret Alphabet Classics)",
+  "author": "Sir Arthur Conan Doyle",
+  "rating": 5.0,
+  "reviews": 1,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/614Q4A4rDWL._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B0bBsL3Br"
+ },
+ {
+  "asin": "1537480456",
+  "title": "Treasure Island (Deseret Alphabet Edition) (Deseret Alphabet Classics)",
+  "author": "Robert Louis Stevenson",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/61dh186HJZL._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B0g27FVRW"
+ },
+ {
+  "asin": "1537497170",
+  "title": "Mediation and Atonement (Deseret Alphabet Edition) (Deseret Alphabet Classics) (Volume 44)",
+  "author": "John Taylor",
+  "rating": 5.0,
+  "reviews": 1,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/61KiJYL3IjL._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B03doPtPc"
+ },
+ {
+  "asin": "1544856717",
+  "title": "Leaves From My Journal (Deseret Alphabet edition) (Deseret Alphabet Classics)",
+  "author": "Wilford Woodruff",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/61VyNGTyc5L._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B0ceiCzUP"
+ },
+ {
+  "asin": "1544927185",
+  "title": "A Midsummer Night's Dream, and Venus and Adonis (Deseret Alphabet Edition) (Deseret Alphabet Classics)",
+  "author": "William Shakespeare",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/616poj9227L._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B0fwa9vYN"
+ },
+ {
+  "asin": "1716125340",
+  "title": "All's Well That Ends Well (Deseret Alphabet Edition)",
+  "author": "William Shakespeare",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/61kISzgNXLL._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B0ip1LETn"
+ },
+ {
+  "asin": "1716461006",
+  "title": "The Turn of the Screw (Deseret Alphabet edition)",
+  "author": "Henry James",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/71HQs9y8IFL._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B05gzYwWC"
+ },
+ {
+  "asin": "1716498031",
+  "title": "Discourses by Orson Pratt, Volume 1: Deseret Alphabet edition",
+  "author": "Orson Pratt, John H. Jenkins",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/61bhFWLvCGL._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B0eQpmkzK"
+ },
+ {
+  "asin": "1716816335",
+  "title": "The Return of Sherlock Holmes (Deseret Alphabet edition)",
+  "author": "Sir Arthur Conan Doyle",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/61+w+alRg6L._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B0fElP0ns"
+ },
+ {
+  "asin": "1974587398",
+  "title": "Emma (Deseret Alphabet Edition) (Deseret Alphabet Classics)",
+  "author": "Jane Austen",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/61Nx9rb3hbL._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B03mgfEzr"
+ },
+ {
+  "asin": "1981407294",
+  "title": "The Pilgrim's Progress (Deseret Alphabet Edition) (Deseret Alphabet Classics)",
+  "author": "John Bunyan",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/61ytRzvUc+L._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B06SCR5LT"
+ },
+ {
+  "asin": "1985035545",
+  "title": "The Federalist Papers (Deseret Alphabet edition) (Deseret Alphabet Classics)",
+  "author": "Alexander Hamilton, James Madison, John Jay",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/61EHt6MeuwL._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B04QWZN7z"
+ },
+ {
+  "asin": "1985696843",
+  "title": "Julius Caesar (Deseret Alphabet edition) (Deseret Alphabet Classics)",
+  "author": "William Shakespeare",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/61PjxwnvH1L._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B0ikoj6fl"
+ },
+ {
+  "asin": "1986800164",
+  "title": "The Merchant of Venice (Deseret Alphabet edition) (Deseret Alphabet Classics)",
+  "author": "William Shakespeare",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/61pbag27iQL._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B0an1RJYQ"
+ },
+ {
+  "asin": "1987678850",
+  "title": "The Merry Wives of Windsor (Deseret Alphabet edition) (Deseret Alphabet Classics)",
+  "author": "William Shakespeare",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/61Z9L+Ht3EL._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B00i15YX0"
+ },
+ {
+  "asin": "1987732138",
+  "title": "Othello (Deseret Alphabet Edition) (Deseret Alphabet Classics)",
+  "author": "William Shakespeare",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/61oJ5dbcv1L._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B096aoxE6"
+ },
+ {
+  "asin": "0359645755",
+  "title": "The Rape of the Lock and the Dunciad (Deseret Alphabet Edition)",
+  "author": "John Jenkins",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/61FPL-EOmlL._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B0fYN8nr5"
+ },
+ {
+  "asin": "149915335X",
+  "title": "The Wind in the Willows (Deseret Alphabet Edition) (Deseret Alphabet Classics)",
+  "author": "Kenneth Grahame",
+  "rating": 3.0,
+  "reviews": 1,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/61-fEaBT54L._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B04XO1QjI"
+ },
+ {
+  "asin": "149365005X",
+  "title": "Idylls of the King (Deseret Alphabet edition) (Deseret Alphabet Classics)",
+  "author": "Alfred Tennyson",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/41yG5GyDi2L._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B07cnxiMj"
+ },
+ {
+  "asin": "141164865X",
+  "title": "A Complete Guide to Reading and Writing the Deseret Alphabet",
+  "author": "Neil Alexander Walker",
+  "rating": 3.4,
+  "reviews": 3,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/01RmK+J4pJL._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B01n5FyhM"
+ },
+ {
+  "asin": "B0079UM6B0",
+  "title": "A Study in Scarlet (Deseret Alphabet Edition)",
+  "author": "Arthur Conan Doyle",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/216b5aBen6L._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B0cdAkgJm"
+ },
+ {
+  "asin": "B00FNV7V5S",
+  "title": "The Deseret Alphabet and Reader",
+  "author": "Various",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/01RmK+J4pJL._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B0eIFQdgK"
+ },
+ {
+  "asin": "B07MJMDWX2",
+  "title": "DESERET ALPHABET: FIRST PRIMER READER MORMON 1868 (Reprint)",
+  "author": "University of Deseret",
+  "rating": 4.6,
+  "reviews": 3,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/31oPZfvSAES._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B05jTeynk"
+ },
+ {
+  "asin": "B09ZPY5X8F",
+  "title": "DESERET ALPHABET: SECOND PRIMER READER MORMON 1868 (Reprint)",
+  "author": "University of Deseret",
+  "rating": 5.0,
+  "reviews": 1,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/41dh9g6wNKL._SL160_.jpg",
+  "kind": "book",
+  "url": "https://link.amazon/B0bdXisQq"
+ },
+ {
+  "asin": "B07C8BRYYT",
+  "title": "Mormon Alphabet 1850S Deseret Alphabet Poster Print (18 x 24)",
+  "author": "Posterazzi",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/51XH7wy7-rL._SL160_.jpg",
+  "kind": "print",
+  "url": "https://link.amazon/B0ik0h8Vd"
+ },
+ {
+  "asin": "B07C4XX32M",
+  "title": "Mormon Alphabet 1850S Deseret Alphabet Poster Print (24 x 36)",
+  "author": "Posterazzi",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/51XH7wy7-rL._SL160_.jpg",
+  "kind": "print",
+  "url": "https://link.amazon/B0igY5R33"
+ },
+ {
+  "asin": "B0H116WL5X",
+  "title": "Deseret Alphabet Educational Poster Canvas, 12x08 in, Unframed",
+  "author": "Generic",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/71mVCjI79cL._SL160_.jpg",
+  "kind": "print",
+  "url": "https://link.amazon/B0hk01ewn"
+ },
+ {
+  "asin": "B0H19RWCTT",
+  "title": "Deseret Alphabet Educational Poster Canvas, 18x12 in, Unframed",
+  "author": "Generic",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/71mVCjI79cL._SL160_.jpg",
+  "kind": "print",
+  "url": "https://link.amazon/B0bdeU67V"
+ },
+ {
+  "asin": "B0H19SNZQF",
+  "title": "Deseret Alphabet Educational Poster Canvas, 24x16 in, Unframed",
+  "author": "Generic",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/71mVCjI79cL._SL160_.jpg",
+  "kind": "print",
+  "url": "https://link.amazon/B01vKaZD0"
+ },
+ {
+  "asin": "B0H11DHKFN",
+  "title": "Deseret Alphabet Educational Poster Canvas, 30x20 in, Unframed",
+  "author": "Generic",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/71mVCjI79cL._SL160_.jpg",
+  "kind": "print",
+  "url": "https://link.amazon/B03auvYm9"
+ },
+ {
+  "asin": "B0H19Z5GCJ",
+  "title": "Deseret Alphabet Educational Poster Canvas, 36x24 in, Unframed",
+  "author": "Generic",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/71mVCjI79cL._SL160_.jpg",
+  "kind": "print",
+  "url": "https://link.amazon/B0eJn3QwZ"
+ },
+ {
+  "asin": "B0H19SF5RN",
+  "title": "Deseret Alphabet Educational Poster Canvas, 12x08 in, Framed",
+  "author": "Generic",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/717l80pakyL._SL160_.jpg",
+  "kind": "print",
+  "url": "https://link.amazon/B04TOH5nF"
+ },
+ {
+  "asin": "B0H19Q432T",
+  "title": "Deseret Alphabet Educational Poster Canvas, 18x12 in, Framed",
+  "author": "Generic",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/717l80pakyL._SL160_.jpg",
+  "kind": "print",
+  "url": "https://link.amazon/B0cZq8K1G"
+ },
+ {
+  "asin": "B0H116HQHQ",
+  "title": "Deseret Alphabet Educational Poster Canvas, 24x16 in, Framed",
+  "author": "Generic",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/717l80pakyL._SL160_.jpg",
+  "kind": "print",
+  "url": "https://link.amazon/B01aTcxgj"
+ },
+ {
+  "asin": "B0H1138PP8",
+  "title": "Deseret Alphabet Educational Poster Canvas, 30x20 in, Framed",
+  "author": "Generic",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/717l80pakyL._SL160_.jpg",
+  "kind": "print",
+  "url": "https://link.amazon/B0iY1xM9c"
+ },
+ {
+  "asin": "B0H19V69ZY",
+  "title": "Deseret Alphabet Educational Poster Canvas, 36x24 in, Framed",
+  "author": "Generic",
+  "rating": null,
+  "reviews": 0,
+  "price": null,
+  "image": "https://m.media-amazon.com/images/I/717l80pakyL._SL160_.jpg",
+  "kind": "print",
+  "url": "https://link.amazon/B02p1YrEl"
  }
 ]

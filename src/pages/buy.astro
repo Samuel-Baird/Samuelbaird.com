@@ -1,44 +1,39 @@
 ---
 import Base from '../layouts/Base.astro';
-import Title from '../components/Title.astro';
 import items from '../data/buy.json';
-const sorted = [...items].sort((a, b) => (b.reviews - a.reviews) || ((b.rating ?? 0) - (a.rating ?? 0)) || a.title.localeCompare(b.title));
-const stars = (r) => r == null ? '' : '★'.repeat(Math.round(r)) + '☆'.repeat(5 - Math.round(r));
+const rank = (a, b) => (b.reviews - a.reviews) || ((b.rating ?? 0) - (a.rating ?? 0)) || a.title.localeCompare(b.title);
+const books = items.filter((i) => i.kind === 'book').sort(rank);
+const prints = items.filter((i) => i.kind === 'print').sort(rank);
+const stars = (r) => (r == null ? '' : '★'.repeat(Math.round(r)) + '☆'.repeat(5 - Math.round(r)));
+const sections = [
+  { id: 'books', title: 'Books', list: books },
+  { id: 'prints', title: 'Prints & posters', list: prints },
+];
 ---
-<Base title="Books & Prints — Deseret Wiki">
-  <div class="wrap">
-    <header class="page-head">
-      <p class="kicker">Books &amp; Prints</p>
-      <Title text="Books in the Deseret Alphabet" />
-      <p class="lede-text">Editions set in the Deseret Alphabet, ordered by number of Amazon customer reviews.</p>
-      <p class="small disclosure">As an Amazon Associate I earn from qualifying purchases; links below are affiliate links.</p>
-    </header>
-    <ol class="books">
-      {sorted.map((i) => (
-        <li>
-          <a class="cover" href={i.url} rel="sponsored noopener" tabindex="-1" aria-hidden="true">
-            {i.image ? <img src={i.image} alt="" width="84" loading="lazy" /> : <span class="cover-blank"><svg viewBox="0 0 64 64"><use href="#i-skep" /></svg></span>}
-          </a>
-          <div>
-            <a class="book-title" href={i.url} rel="sponsored noopener">{i.title}</a>
-            <p class="small">{i.author}{i.price ? ` · ${i.price}` : ''}</p>
-            <p class="small stars">{i.rating != null ? <><span aria-hidden="true">{stars(i.rating)}</span> {i.rating} ({i.reviews} {i.reviews === 1 ? 'review' : 'reviews'})</> : 'No reviews yet'}</p>
-          </div>
-        </li>
-      ))}
-    </ol>
-  </div>
+<Base title="Buy — Deseret Wiki">
+  <h1>Buy</h1>
+  <p>Books and prints in the Deseret Alphabet, ordered by number of Amazon customer reviews. <small>As an Amazon Associate I earn from qualifying purchases; links below are affiliate links.</small></p>
+  <p><a href="#books">Books ({books.length})</a> · <a href="#prints">Prints &amp; posters ({prints.length})</a></p>
+  {sections.map((s) => (
+    <section id={s.id}>
+      <h2>{s.title}</h2>
+      <ul class="buy">
+        {s.list.map((i) => (
+          <li>
+            {i.image && <a href={i.url} rel="sponsored noopener"><img src={i.image} alt="" width="80" loading="lazy" /></a>}
+            <div>
+              <a href={i.url} rel="sponsored noopener"><b>{i.title}</b></a><br />
+              <small>{i.author}{i.price ? ` · ${i.price}` : ''}</small><br />
+              <small>{i.rating != null ? `${stars(i.rating)} ${i.rating} (${i.reviews} reviews)` : 'No reviews yet'}</small>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
   <style>
-    .disclosure { margin-top: 1rem; }
-    .books { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(24rem, 100%), 1fr)); gap: 0 2.5rem; }
-    .books li { display: flex; gap: 1.1rem; padding: 1.1rem 0; border-bottom: 1px solid var(--rule); }
-    .books p { margin: .2rem 0 0; }
-    .cover { flex: none; width: 84px; }
-    .cover img { display: block; border: 1px solid var(--rule); box-shadow: 3px 3px 0 var(--paper-2), 3px 3px 0 1px var(--rule); }
-    .cover-blank { display: grid; place-items: center; width: 84px; height: 118px; border: 3px double var(--rule); color: var(--accent); }
-    .cover-blank svg { width: 2.6rem; height: 2.6rem; }
-    .book-title { font: 1.12rem/1.3 var(--f-display); color: var(--heading); text-decoration: none; }
-    .book-title:hover { text-decoration: underline; text-decoration-color: var(--accent); }
-    .stars span { color: var(--accent); letter-spacing: .1em; }
+    .buy { list-style: none; padding: 0; }
+    .buy li { display: flex; gap: 1rem; padding: .75rem 0; border-bottom: 1px solid #d8c79e; }
+    .buy img { height: auto; border: 1px solid #d8c79e; }
   </style>
 </Base>
