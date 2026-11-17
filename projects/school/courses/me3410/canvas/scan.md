@@ -30,6 +30,13 @@ All "Nov 14 / Nov 20 / Nov 21 / Dec 3 / Dec 5 / Dec 10" dates in UTC are 11:59 P
 | Post-term assessment (individual) | 9351753 | Fri Dec 4 | 10 | Assignments | AFEA_Post_Form B.docx |
 | Term project report (team) | 9351779 | Wed Dec 9 | 50 | Term project | WING_TERM_PROJECT - V2.docx |
 
+## HW 8 instructions (Canvas assignment text, paraphrased)
+The handout is the pipe-elbow thermal-stress tutorial; the assignment page changes it: use Aluminium alloy, add a
+second flange of the same dimensions at the free end. (1) Steady-state thermal with the tutorial loading: FE model with
+BCs (initial temperature, temperature, convection), temperature distribution, heat flux. (2) Static structural with
+the imported temperature and the outer faces of both flanges fixed: FE model with BCs, total deformation, equivalent
+stress, and whether the elbow fails under static loading (compute the safety factor).
+
 ## Term project
 Team project, four spars (A I-section, B C-channel, C box, D twin-web); each student takes one.
 The student's spar: **A, I-section** (H 60, B 55, tf 6, tw 4 mm, 852 mm²). Material: ANSYS Aluminum Alloy.
@@ -40,3 +47,12 @@ ANSYS Aluminum Alloy has E = 71 GPa (5.49 mm).
 ## Files
 Downloaded with permission to `canvas/files/` (gitignored), extracted with
 `python -I scripts/extract_handouts.py courses/me3410/canvas/files` into `canvas/files/_extract/<name>/{text.md,img/}`.
+
+## In-class tutorial 10-28: the problem statements (found Nov 14)
+Both 10-28 assignments (9361468, 9361471) carry the same text: submit the first problem of the in-class tutorial; the
+second earns bonus points. The problems are in **PLANE STRAIN-STRESS TUTORIAL - V2.docx** (Canvas file 135955121,
+module "Two dimensional elements"; read in the Canvas preview, not downloaded). Q1 is the L-shaped bracket (the
+stepped plate in the handwritten 10-28 notes) and Q2 is a long pressurized concrete block with a Ø50 hole (plane
+strain). Note: the handout's Q1 specifies aluminium (E 70 GPa, ν 0.33, Sy 250 MPa) and F = 10 kN, with a fatigue item,
+while the class worked it with 1000 N (notes: M = 112.5 N·m); the P1 Word file follows the class notes with
+Structural Steel.
