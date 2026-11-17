@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+const links = [
+  { title: 'Deseret Alphabet (Facebook group)', url: 'https://www.facebook.com/groups/DeseretAlphabet/', note: 'Community of Deseret Alphabet readers and writers.' },
+  { title: 'Deseret Alphabet Trainer', url: 'https://dezgames.itch.io/deseret-alphabet-trainer', note: 'A game for learning the letters, by Dez Games on itch.io.' },
+  { title: 'Post by @neilalexanderw1 on X', url: 'https://x.com/neilalexanderw1/status/1892515575751958609', note: 'Deseret Alphabet post by Neil Alexander Walker.' },
+];
+---
+<Base title="Resources — Deseret Wiki">
+  <h1>Resources</h1>
+  <ul>
+    {links.map((l) => <li><a href={l.url} rel="noopener">{l.title}</a> — {l.note}</li>)}
+  </ul>
+  <p>See also <a href="/videos/">Videos</a> and <a href="/buy/">Buy</a>.</p>
+</Base>

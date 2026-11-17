@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+const videos = [
+  { id: 'THZP0NeBSps', title: 'Mormon Alphabet Reform: Failed but Impressive (Deseret Alphabet)', by: 'Palm Springs Linguist' },
+];
+---
+<Base title="Videos — Deseret Wiki">
+  <h1>Videos</h1>
+  {videos.map((v) => (
+    <section>
+      <h2>{v.title}</h2>
+      <p><small>{v.by} · <a href={`https://www.youtube.com/watch?v=${v.id}`} rel="noopener">Watch on YouTube</a></small></p>
+      <div class="vid"><iframe src={`https://www.youtube-nocookie.com/embed/${v.id}`} title={v.title} loading="lazy" allowfullscreen></iframe></div>
+    </section>
+  ))}
+  <style>
+    .vid { position: relative; padding-top: 56.25%; }
+    .vid iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  </style>
+</Base>
