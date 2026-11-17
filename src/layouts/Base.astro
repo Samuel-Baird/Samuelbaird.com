@@ -1,0 +1,30 @@
+---
+const { title = 'Deseret Wiki' } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <style is:global>
+    @font-face { font-family: 'Noto Sans Deseret'; src: url('/fonts/NotoSansDeseret.ttf'); unicode-range: U+10400-1044F; }
+    body { margin:0; background:#efe3c6; color:#2a2118; font:18px/1.6 Georgia, 'Times New Roman', serif; }
+    header, main, footer { max-width: 52rem; margin: 0 auto; padding: 1rem; }
+    header { border-bottom: 3px double #7a2e1d; display:flex; gap:1.5rem; align-items:baseline; flex-wrap:wrap; }
+    header a.brand { font-size:1.6rem; font-weight:bold; color:#7a2e1d; text-decoration:none; }
+    a { color:#7a2e1d; } nav a { margin-right:1rem; }
+    .deseret { font-family:'Noto Sans Deseret', serif; }
+    table { border-collapse:collapse; max-width:100%; display:block; overflow-x:auto; } td, th { border:1px solid #d8c79e; padding:.2rem .5rem; }
+    footer { border-top:3px double #7a2e1d; font-size:.85rem; margin-top:2rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="/">Deseret Wiki <span class="deseret">𐐔𐐯𐑅𐐮𐑉𐐯𐐻</span></a>
+    <nav><a href="/wiki/deseret-alphabet/">Wiki</a><a href="/fonts/">Fonts</a><a href="/about/">About</a></nav>
+  </header>
+  <main><slot /></main>
+  <footer>deseret.wiki · work in progress · <a href="https://github.com/Samuel-Baird/deseret">source</a></footer>
+</body>
+</html>
