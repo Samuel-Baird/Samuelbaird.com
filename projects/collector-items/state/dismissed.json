@@ -1,0 +1,37 @@
+{
+  "_comment": "Links the owner dismissed with the X on samuelbaird.com/scout. Written by the site's /api/scout function. Key = host/path?query (no scheme, lowercase host, no www., no trailing slash, tracking params removed). Never report these again.",
+  "items": {
+    "schilbantiquarian.com/product/deseret-second-alphabet-1868": {
+      "title": "Deseret Second Reader, 1868, first edition",
+      "dismissed_at": "2026-11-11"
+    },
+    "abaa.org/book/1573023623": {
+      "title": "J. W. Barclay, Mormonism Exposed, The Other Side: An English View (1884)",
+      "dismissed_at": "2026-11-11"
+    },
+    "kensandersbooks.com/shop/rarebooks/25054.html": {
+      "title": "Hugh Weightman, Mormonism Exposed: The Other Side (1884)",
+      "dismissed_at": "2026-11-11"
+    },
+    "panoplybooks.com/selections-from-the-book-of-mormon-in-the-deseret-alphabet-brigham-young-1869-1st-ed": {
+      "title": "Selections from the Book of Mormon in the Deseret Alphabet (1869) [1st Ed.]",
+      "dismissed_at": "2026-11-11"
+    },
+    "rarenewspapers.com/newspaper/565712-brigham-young-warns-the-army-to-leave-or-be-annihilated": {
+      "title": "The Circular (Oneida, NY), 15 Apr 1858: Brigham Young tells army to leave Utah",
+      "dismissed_at": "2026-11-11"
+    },
+    "abaa.org/book/1655900921": {
+      "title": "Deseret Alphabet 1869 'first edition' (ABAA listing)",
+      "dismissed_at": "2026-11-14"
+    },
+    "reach.dog/shop/moons-rare-books/products/deseret-alphabet": {
+      "title": "Moon's Rare Books: 'Deseret Alphabet'",
+      "dismissed_at": "2026-11-14"
+    },
+    "ebay.de/itm/306319096576": {
+      "title": "'Rare 1899 Mormon Book title Peepstone Joe Exposed Old Mormon Manuscript Found'",
+      "dismissed_at": "2026-11-14"
+    }
+  }
+}

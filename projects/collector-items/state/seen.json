@@ -1,0 +1,566 @@
+{
+  "_comment": "Dedupe log maintained by the daily run. Key = canonical listing URL. Value = {title, price, scout, first_seen, last_price}.",
+  "items": {
+    "https://panoplybooks.com/the-deseret-second-book-by-the-regents-of-deseret-university-1868-original": {
+      "title": "Deseret Second Book 1868 (Panoply)",
+      "price": "$195",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "$195",
+      "verified": false
+    },
+    "https://www.schilbantiquarian.com/product/deseret-second-alphabet-1868/": {
+      "title": "Deseret Second Reader 1868 (Schilb)",
+      "price": "$750",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "$750",
+      "verified": false
+    },
+    "https://www.kensandersbooks.com/shop/rarebooks/29383.html": {
+      "title": "Orson Pratt Divine Authority 1848 (Ken Sanders)",
+      "price": "$50",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "$50",
+      "verified": false
+    },
+    "https://www.kensandersbooks.com/shop/rarebooks/25054.html": {
+      "title": "Weightman Mormonism Exposed 1884",
+      "price": "$100",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "$100",
+      "verified": false
+    },
+    "https://www.abaa.org/book/1573023623": {
+      "title": "Barclay Mormonism Exposed 1884",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://www.abaa.org/book/1212039266": {
+      "title": "Millennial Star Vol XII 1850",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://www.abaa.org/book/1769846177": {
+      "title": "Times and Seasons vols 1-6",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://www.abaa.org/book/1499257563": {
+      "title": "Journal of Discourses Vol II",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://www.abaa.org/book/1478706402": {
+      "title": "Deseret BoM Part 1 1869 (ABAA)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://www.abaa.org/book/1714859909": {
+      "title": "Deseret BoM selection 1869 (ABAA)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://www.proantic.com/en/1537849-pewter-chalice-18th-century.html": {
+      "title": "Pewter chalice 18th c.",
+      "price": "EUR310",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "EUR310",
+      "verified": false
+    },
+    "https://www.proantic.com/en/1704452-17th-century-pewter-chalice.html": {
+      "title": "Pewter chalice 17th c.",
+      "price": "EUR250",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "EUR250",
+      "verified": false
+    },
+    "https://www.kensandersbooks.com/pages/books/67057/brigham-young/governors-message-to-the-legislative-assembly-of-utah-territory-january-5-1852": {
+      "title": "Governor's Message Utah 1852",
+      "price": "$1,500",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "$1,500",
+      "verified": true
+    },
+    "https://www.rarenewspapers.com/newspaper/130049-before-utah-became-a-state": {
+      "title": "Deseret News 1880",
+      "price": "$30",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "$30",
+      "verified": true
+    },
+    "https://www.rarenewspapers.com/newspaper/565712-brigham-young-warns-the-army-to-leave-or-be-annihilated": {
+      "title": "The Circular 1858 Utah War",
+      "price": "$38",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "$38",
+      "verified": true
+    },
+    "https://panoplybooks.com/selections-from-the-book-of-mormon-in-the-deseret-alphabet-brigham-young-1869-1st-ed": {
+      "title": "Selections BoM Deseret Alphabet 1869 (Panoply)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://biblio.co.nz/book/deseret-reader-second-volume-general-conference/d/1111282842": {
+      "title": "Deseret Reader Second Vol 1868 (Biblio)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://www.abaa.org/book/1770377836": {
+      "title": "Deseret First Reader (ABAA)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://www.abaa.org/book/1770377831": {
+      "title": "Deseret Second Reader (ABAA)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://www.kensandersbooks.com/shop/rarebooks/43482.html": {
+      "title": "Journal of Discourses Vol II 1855 (Ken Sanders)",
+      "price": "$400",
+      "scout": "artifact",
+      "first_seen": "2026-11-11",
+      "last_price": "$400",
+      "verified": false
+    },
+    "https://ebornbooks.com/shop/non-fiction/mormon-lds/mormon-rare/1856-marriage-and-morals-in-utah-an-address-written-by-parley-p-pratt-rare-pamphlet": {
+      "title": "Parley P. Pratt, Marriage and Morals in Utah (Liverpool, 1856, 8pp pamphlet)",
+      "price": "$300",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "$300",
+      "verified": true
+    },
+    "https://biblio.co.uk/book/journal-discourses-brigham-young-his-two/d/439272277": {
+      "title": "Journal of Discourses Vol. 3 (1856), Orrin Schwab Books, Good+",
+      "price": "price not shown",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "price not shown",
+      "verified": false
+    },
+    "https://www.biblio.com/book/biographical-sketches-joseph/d/1375755943": {
+      "title": "Orson Pratt, Biographical Sketches of Joseph Smith (Liverpool, 1853), leather, fair",
+      "price": "price not shown",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "price not shown",
+      "verified": false
+    },
+    "https://biblio.co.nz/book/latter-day-saints-millennial-star-volume/d/1515609620": {
+      "title": "Millennial Star Vols 12 & 13 (1850-51) bound in one, Alcuin Books",
+      "price": "price not shown",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "price not shown",
+      "verified": false
+    },
+    "https://www.abaa.org/book/1674016997": {
+      "title": "Luther, Vonn der Freyheyt eyniß Christennmenschen (Wittenberg 1521), 2nd printing",
+      "price": "price not shown (likely well over budget)",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "price not shown (likely well over budget)",
+      "verified": false
+    },
+    "https://www.schilbantiquarian.com/?p=133497": {
+      "title": "Luther Small Catechism, Dresden/Leipzig 1688 (Schilb)",
+      "price": "price not shown",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "price not shown",
+      "verified": false
+    },
+    "https://heliosauctions.com/?p=37467": {
+      "title": "Russian Orthodox gilt-brass chalice, 18th c. (Helios Auctions, start $200, est $300-400)",
+      "price": "$200 start",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "$200 start",
+      "verified": false
+    },
+    "https://www.ebay.com/itm/306041126025": {
+      "title": "RARE Folio German Luther Bible leaf 1567, Daniel Fiery Furnace woodcut (dalebooks, eBay)",
+      "price": "$345 or Best Offer",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "$345",
+      "verified": true
+    },
+    "https://www.ebay.com/itm/306680166003": {
+      "title": "RARE Folio German Luther Bible leaf 1567, Book John 17-18 (dalebooks, eBay)",
+      "price": "$145 or Best Offer",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "$145",
+      "verified": true
+    },
+    "https://www.abaa.org/book/726149017": {
+      "title": "Millennial Star Vol XIV 1852 (Richards, Weller Book Works)",
+      "price": "$300",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "$300",
+      "verified": true
+    },
+    "https://local-pec.com/product/large-pewter-goblet-chalice-hand-forged/": {
+      "title": "Large pewter goblet/chalice, probable 18th c. Scottish communion cup (The Local Store PEC)",
+      "price": "$225",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "$225",
+      "verified": true
+    },
+    "https://www.1stdibs.com/furniture/dining-entertaining/sterling-silver/queen-anne-period-antique-sterling-silver-chalice-hallmarked-1705/id-f_24075602": {
+      "title": "Queen Anne sterling chalice, London 1705, William Gamble (1stdibs)",
+      "price": "price not shown",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "price not shown",
+      "verified": false
+    },
+    "https://auction.potterauctions.com/online-auctions/potter-potter/mormons-deseret-alphabet-deseret-second-reader-salt-lake-city-regents-of-the-deseret-university-1868-9016575": {
+      "title": "Deseret Second Reader 1868 (Potter & Potter, lot 332)",
+      "price": "$480 (sold)",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "$480",
+      "verified": true,
+      "status": "sold"
+    },
+    "https://cascobayauctions.com/auction/247-eclectic-collections/lot-295-1868-mormon/": {
+      "title": "1868 Mormon First Reader in Deseret Language (Casco Bay lot 295)",
+      "price": "$120 (sold)",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "$120",
+      "verified": true,
+      "status": "sold"
+    },
+    "https://www.liveauctioneers.com/item/176632196_1882-mormon-1ed-joseph-smith-questions-and-answers-lds-brigham-young-utah-rare": {
+      "title": "1882 Joseph Smith Questions & Answers (Schilb, LiveAuctioneers)",
+      "price": "sold June 2024",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "sold",
+      "verified": true,
+      "status": "sold"
+    },
+    "https://www.kensandersbooks.com/shop/rarebooks/29758.html": {
+      "title": "Journal of Discourses Vol II (Ken Sanders 29758)",
+      "price": "~$200 (earlier)",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "~$200 (earlier)",
+      "verified": false,
+      "status": "gone"
+    },
+    "https://www.kensandersbooks.com/shop/rarebooks/69589/deseret-alphabet/deseret-second-bok-by-the-regents-of-the-deseret-yionivursiti-deseret-alphabet-second-primer": {
+      "title": "Deseret Second Bok 1868 (Ken Sanders 69589)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "?",
+      "verified": false,
+      "status": "gone"
+    },
+    "https://www.kensandersbooks.com/pages/books/62390/brigham-young/governors-message-to-the-legislative-assembly-of-utah-territory-january-5-1852": {
+      "title": "Governor's Message 1852 second copy (Ken Sanders 62390)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "?",
+      "verified": false,
+      "status": "gone"
+    },
+    "https://www.kensandersbooks.com/pages/books/67058/james-linforth/the-rev-c-w-lawrences-few-words-from-a-pastor-to-his-people-on-the-subject-of-the-latter-day-saints": {
+      "title": "Linforth reply to C.W. Lawrence, Liverpool c.1851 (Ken Sanders)",
+      "price": "$1,500",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "$1,500",
+      "verified": true,
+      "status": "over_budget"
+    },
+    "https://www.abaa.org/book/726157908": {
+      "title": "Millennial Star Vols XV-XVI 1853-54 (ABAA)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "?",
+      "verified": false,
+      "status": "gone"
+    },
+    "https://www.sellingantiques.co.uk/1061200/near-pair-of-very-large-pewter-communion-flagons-jugs-1845": {
+      "title": "Near pair pewter communion flagons 1845 (David Pickett)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "?",
+      "verified": true,
+      "status": "sold"
+    },
+    "https://www.thehoarde.com/product/collier-antiques/georgian-lidded-pewter-chalice-rj02699/print": {
+      "title": "Georgian lidded pewter chalice (Collier Antiques rj02699)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "?",
+      "verified": false,
+      "status": "gone"
+    },
+    "https://www.inessa.com/religious-antiques/19th-century-coin-silver-communion-plate-47427.html": {
+      "title": "19th c. coin silver communion plate (Inessa 47427)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "?",
+      "verified": false,
+      "status": "gone"
+    },
+    "https://www.chairish.com/product/32063593/antique-1800s-pewter-methodist-episcopal-church-presentation-tankard-flagon": {
+      "title": "Methodist Episcopal pewter presentation flagon, 19th c. (Dusty Treasures, Chairish) - presentation piece, not reported",
+      "price": "$385",
+      "scout": "artifact",
+      "first_seen": "2026-11-12",
+      "last_price": "$385",
+      "verified": true,
+      "status": "not_reported"
+    },
+    "https://www.sellingantiques.co.uk/pdf.asp?id=1154177": {
+      "title": "Pair Old Sheffield Plate communion goblets, Ardrossan Free Church 1844",
+      "price": "£345",
+      "scout": "artifact",
+      "first_seen": "2026-11-13",
+      "last_price": "£345",
+      "verified": true
+    },
+    "https://www.sellingantiques.co.uk/pdf.asp?id=1154178": {
+      "title": "Pair Old Sheffield Plate communion chalices 1843",
+      "price": "£325",
+      "scout": "artifact",
+      "first_seen": "2026-11-13",
+      "last_price": "£325",
+      "verified": true
+    },
+    "https://www.schilbantiquarian.com/product/luther-schriften-1567-jena/": {
+      "title": "Luther Schriften, Jena 1567 (Schilb)",
+      "price": "unknown",
+      "scout": "artifact",
+      "first_seen": "2026-11-13",
+      "last_price": "unknown",
+      "verified": false
+    },
+    "https://www.abaa.org/book/1655900921": {
+      "title": "Deseret Alphabet 1869 first edition (ABAA)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-14",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://reach.dog/shop/moons-rare-books/products/deseret-alphabet": {
+      "title": "Moon's Deseret Alphabet",
+      "price": "$450",
+      "scout": "artifact",
+      "first_seen": "2026-11-14",
+      "last_price": "$450",
+      "verified": false
+    },
+    "https://www.ebay.de/itm/306319096576": {
+      "title": "1899 Peepstone Joe Exposed (eBay.de)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-14",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://www.kensandersbooks.com/shop/rarebooks/5921.html": {
+      "title": "Mormonism Exposed pt 5, Constitution and the Territories (1884)",
+      "price": "$100",
+      "scout": "artifact",
+      "first_seen": "2026-11-15",
+      "last_price": "$100",
+      "verified": false
+    },
+    "https://www.abaa.org/book/868705697": {
+      "title": "Utah territorial laws, Salt Lake City 1852",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-15",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://www.schilbantiquarian.com/?p=954127": {
+      "title": "Belisle, The Prophets, or Mormonism Unveiled (1855)",
+      "price": "$499",
+      "scout": "artifact",
+      "first_seen": "2026-11-15",
+      "last_price": "$499",
+      "verified": false
+    },
+    "https://www.schilbantiquarian.com/?p=1030781": {
+      "title": "Schilb (possibly Lee Mormonism Unveiled 1877)",
+      "price": "$499",
+      "scout": "artifact",
+      "first_seen": "2026-11-15",
+      "last_price": "$499",
+      "verified": false
+    },
+    "https://antiques-atlas.com/antique/pewter_communion_flagon_a064/as1221a064": {
+      "title": "Pewter communion flagon, 19th c. (Brian Knapp)",
+      "price": "GBP275",
+      "scout": "artifact",
+      "first_seen": "2026-11-15",
+      "last_price": "GBP275",
+      "verified": true
+    },
+    "https://www.proantic.com/en/1746924-liturgical-chalice-in-silver-rome-18th-century.html": {
+      "title": "Silver chalice Rome 18th c. (Proantic)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-15",
+      "last_price": "?",
+      "verified": false,
+      "status": "gone"
+    },
+    "https://panoplybooks.com/mormonism-unveiled-by-john-d-lee-1891-1st-ed-illustrated": {
+      "title": "Lee Mormonism Unveiled 1891 (Panoply)",
+      "price": "$400",
+      "scout": "artifact",
+      "first_seen": "2026-11-15",
+      "last_price": "$400",
+      "verified": false,
+      "status": "gone"
+    },
+    "https://www.schilbantiquarian.com/product/1589-enormous-martin-luther-wittenberg-bible-german-biblia-exceedingly-rare/": {
+      "title": "1589 Luther Wittenberg German Bible (Schilb)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-16",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://napoleonexhibit.com/store/RAREST-ANCIENT-FIRST-EDITION-FIRST-PRINTING-MARTIN-LUTHER-1523-BIBLE-LEAF-PAGE_303258324511.html": {
+      "title": "Luther 1523 'first printing' Bible leaf (eBay mirror, doubtful)",
+      "price": "$7,500",
+      "scout": "artifact",
+      "first_seen": "2026-11-16",
+      "last_price": "$7,500",
+      "verified": false
+    },
+    "https://www.kensandersbooks.com/pages/books/62559/ebenezer-robinson-joseph-smith-don-carlos-smith-john-taylor/times-and-seasons": {
+      "title": "Times and Seasons full run 1839-46 (Ken Sanders)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-16",
+      "last_price": "?",
+      "verified": false,
+      "status": "gone"
+    },
+    "https://www.proantic.com/en/1717375-pewter-chalice-huy-hoei-belgium-18th-century.html": {
+      "title": "Pewter chalice, Huy (Belgium) 18th c. (Art Stannum, Proantic)",
+      "price": "EUR420",
+      "scout": "artifact",
+      "first_seen": "2026-11-17",
+      "last_price": "EUR420",
+      "verified": true
+    },
+    "https://www.abaa.org/book/1032784917": {
+      "title": "Orson Pratt, A Series of Pamphlets (Liverpool 1851, Kinderhook plate) (ABAA)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-17",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://www.schilbantiquarian.com/?p=992802": {
+      "title": "Works of Martin Luther 1557, first Wittenberg ed. (Schilb)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-17",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://schilbantiquarian.com/?p=833651": {
+      "title": "1575 Luther Bible commentaries/sermons folio (Schilb)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-17",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://www.schilbantiquarian.com/product/postilla-habermann-1582/": {
+      "title": "Postilla, Habermann 1582 (Schilb)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-17",
+      "last_price": "?",
+      "verified": false
+    },
+    "https://rockwellantiquesdallas.com/de-conjugio-episcoporum-et-diaconorum-by-bugenhagen-1525": {
+      "title": "Bugenhagen De Conjugio Episcoporum 1525 (Rockwell Antiques)",
+      "price": "$1,600",
+      "scout": "artifact",
+      "first_seen": "2026-11-17",
+      "last_price": "$1,600",
+      "verified": false,
+      "status": "over_budget"
+    },
+    "https://www.ebay.com/itm/255823682764": {
+      "title": "Cased daguerreotype said to be Joseph & Emma Smith (eBay)",
+      "price": "$135,000 or BO",
+      "scout": "artifact",
+      "first_seen": "2026-11-17",
+      "last_price": "$135,000 or BO",
+      "verified": false
+    },
+    "https://www.proantic.com/en/1780671-pewter-chalice-north-picardy-second-half-of-the-18th-century.html": {
+      "title": "Pewter chalice N. Picardy 18th c. (Proantic)",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-17",
+      "last_price": "?",
+      "verified": false,
+      "status": "gone"
+    }
+  }
+}

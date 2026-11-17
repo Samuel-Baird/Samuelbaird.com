@@ -1,0 +1,171 @@
+# Scout search list. One search per line. Edited from samuelbaird.com/scout (or by hand).
+# Lines starting with # are headings/comments and are ignored. Delete a line to stop searching it; add a line to start.
+# The runbook rules (budget, reject/avoid, report format) still live in scouts/*.md.
+
+# Wants
+Happy Songs to Sing (1952 LDS children's song book)
+
+# Deseret Alphabet
+Deseret Alphabet
+Deseret alphabet primer
+Deseret First Book
+Deseret Second Book
+Book of Mormon Deseret Alphabet 1869
+Book of Nephi Deseret Alphabet 1869
+Mormon alphabet 1868 reader
+Russell Bros 1868 Deseret University
+
+# Deseret Alphabet: broadsides, newspapers, coin (1854-1875)
+Deseret Alphabet broadside
+Deseret Alphabet card 1859
+Key to Deseret Alphabet
+Deseret News 1859 Deseret Alphabet
+People's Ticket 1875 Salt Lake election
+Annual Report Territorial Superintendent Common Schools 1868
+New Mormon Alphabet 1857 newspaper
+1860 Mormon $5 lion Deseret alphabet
+Deseret Alphabet manuscript letter
+
+# Deseret Alphabet: period books with the alphabet plate (peripheral)
+Burton City of the Saints 1861
+Remy Journey to Great Salt Lake City 1861
+Voyage au pays des Mormons Remy 1860
+Alphabet des Mormons gravure
+Beadle Life in Utah 1870
+Faulmann Das Buch der Schrift 1878
+
+# Deseret Alphabet: later collectibles (modern, not alerts)
+Improvement Era July 1967
+Plan 10 From Outer Space Deseret font
+La piedra ente la neve Lainez
+
+# Martin Luther and Reformation
+Martin Luther leaf
+Luther Bible leaf
+Luther catechism
+Hauspostille
+Postilla
+Martin Luther Works
+Reformation pamphlet
+16th century Lutheran
+
+# Early LDS
+Journal of Discourses
+Millennial Star
+Times and Seasons
+Improvement Era
+Mormon pamphlet
+Utah Territory
+Brigham Young sermon
+Parley P Pratt
+Orson Pratt
+Joseph Smith pamphlet
+Book of Mormon 1800s
+
+# Early anti-Mormon
+Mormonism Unvailed
+Mormonism Unveiled
+Mormonism Exposed
+Anti Mormon pamphlet
+Joseph Smith critique
+Nauvoo Expositor
+Mormon controversy
+Mormon question
+Mormon tract
+
+# Portuguese-language LDS
+Livro de Mórmon antigo
+Santos dos Últimos Dias Brasil
+missão brasileira mórmon
+A Liahona português
+Igreja SUD publicação antiga
+mórmon panfleto português
+missão sul-americana mórmon
+Santos dos Últimos Dias Portugal
+Livro de Mórmon 1939
+panfleto missionário mórmon
+
+# LDS sacrament ware and relics
+LDS sacrament common cup
+Mormon sacrament common cup
+Mormon sacrament chalice
+LDS sacrament goblet
+pioneer sacrament vessel
+Utah pioneer communion cup
+Mormon ward sacrament cup
+LDS pewter sacrament cup
+Mormon tin sacrament cup
+Mormon sacrament cup pottery
+ward sacrament set antique
+Latter-day Saint communion cup antique
+LDS sacrament cup metal
+Mormon individual sacrament cup metal
+aluminum sacrament cup tray LDS
+LDS sacrament bread tray antique
+pioneer Mormon relic
+Brigham Young personal
+Joseph Smith relic
+LDS pioneer artifact
+Mormon folk art
+early Mormon photograph
+daguerreotype Mormon
+
+# Communion vessels (pre-1900)
+antique communion cup 1800s
+19th century communion chalice
+Victorian communion cup
+Georgian communion chalice
+pewter communion flagon antique
+pewter chalice 18th century
+coin silver communion cup
+Sheffield plate communion cup
+antique church chalice silver
+early American communion cup
+Methodist communion cup antique
+Presbyterian communion cup 1800s
+Anglican communion chalice antique
+Orthodox chalice antique
+
+# LDS military chaplains (seeded from "Out of Obscurity and Into the Light", BYU RSC 2019)
+B. H. Roberts chaplain 145th Field Artillery
+145th Field Artillery Regiment World War I Utah
+History of the 145th Field Artillery Regiment 1968 Crocker
+Mormon chaplain World War I
+Latter-day Saint chaplain World War II
+Mormon chaplain Korean War
+Elias S. Kimball chaplain 2nd Volunteer Engineers 1898
+Utah Volunteer Engineers Spanish-American War Mormon
+Calvin S. Smith chaplain 362nd Infantry 91st Division
+Ninety-First: The First at Camp Lewis 1918
+Herbert B. Maw chaplain 89th Division Adventures with Life
+Warrum Utah in the World War 1924
+Pertinent Facts on Utah's Loyalty and War Record 1918
+Mormon Battalion chaplain
+Eldin Ricks chaplain Book of Mormon
+Theodore E. Curtis chaplain 40th Infantry Division
+Rueben E. Curtis chaplain 7th Infantry Division
+For God and Country Memorable Stories Mormon Chaplains Maher
+It Took Heroes chaplain Newby Vietnam
+Claude Newby chaplain 1st Cavalry Vietnam
+Nineteenth-Century Saints at War Freeman
+LDS Servicemen's Committee chaplain 1940s
+General Latter-day Saint Servicemen's Committee
+Church servicemen group leader booklet
+LDS servicemen Book of Mormon World War II pocket
+Mormon servicemen WWII Church News
+Mormon chaplain photograph uniform
+Mormon chaplain letter World War
+Mormon chaplain Bible WWI
+army chaplain WWI field communion set
+B. H. Roberts memorabilia signed
+Brigham H. Roberts Mormon apostle autograph letter
+B. H. Roberts personal effects
+Herbert B. Maw governor Utah memorabilia
+Herbert Maw World War I uniform chaplain
+Calvin S. Smith son of Joseph F. Smith World War I
+Elias S. Kimball Southern States Mission memorabilia
+Kimball chaplain Spanish-American War uniform Utah engineers
+Spanish-American War Utah volunteer engineers uniform medal
+WWI army chaplain uniform tunic Utah 145th Field Artillery
+WWI chaplain Sam Browne belt cross insignia Mormon
+Mormon chaplain personal Bible World War I
