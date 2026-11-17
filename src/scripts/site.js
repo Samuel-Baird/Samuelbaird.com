@@ -1,4 +1,4 @@
-// Site behaviour: Latin/Deseret toggle, Deseret title reveal, search, contents menu.
+// Site behaviour: Latin/Deseret toggle, Deseret title reveal, search.
 const root = document.documentElement;
 const store = {
   get: (k) => { try { return localStorage.getItem(k); } catch { return null; } },
@@ -182,13 +182,6 @@ if (q) {
   });
   document.addEventListener('click', (e) => { if (!e.target.closest('.search')) box.hidden = true; });
 }
-
-/* ---------- contents (mobile) ---------- */
-const contents = document.querySelector('.contents');
-contents?.querySelector('.contents-toggle')?.addEventListener('click', (e) => {
-  const open = contents.classList.toggle('open');
-  e.currentTarget.setAttribute('aria-expanded', String(open));
-});
 
 /* ---------- start ---------- */
 const h1 = document.querySelector('h1[data-dsrt]');

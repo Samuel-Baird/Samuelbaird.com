@@ -5,6 +5,7 @@ import Seal from '../components/Seal.astro';
 import Mountains from '../components/Mountains.astro';
 import DeseretMap from '../components/DeseretMap.astro';
 import Ornament from '../components/Ornament.astro';
+import Sidebar from '../components/Sidebar.astro';
 import { roman, MONTHS } from '../lib/roman.js';
 import { toDeseret, revealParts } from '../lib/dsrt.js';
 
@@ -59,10 +60,13 @@ const mastTitle = 'The Deseret Wiki';
 
   <header class="site-head">
     <div class="topbar wrap">
+      <div class="topbar-left">
+      <Sidebar path={path} />
       <a class="brand" href="/" aria-label="Deseret Wiki, home">
         <Seal size="2.5rem" ring={false} />
         <span class="brand-name">Deseret Wiki</span>
       </a>
+      </div>
       <div class="tools">
         <div class="search" role="search">
           <label class="visually-hidden" for="q">Search the wiki</label>
@@ -104,21 +108,6 @@ const mastTitle = 'The Deseret Wiki';
       {masthead && <div class="rule-double"></div>}
     </div>
 
-    <nav class="contents wrap" aria-label="Contents">
-      <button class="contents-toggle smallcaps" type="button" aria-expanded="false" aria-controls="contents-list">Contents</button>
-      <ol id="contents-list">
-        {nav.map((n, i) => (
-          <li>
-            <a href={n.href} aria-current={path.startsWith(n.href) ? 'page' : undefined}>
-              <span class="num">{roman(i + 1)}.</span>
-              <span class="label">{n.label}</span>
-              <span class="leader" aria-hidden="true"></span>
-              <span class="dsrt-label dsrt" aria-hidden="true" data-no-dsrt>{toDeseret(n.label)}</span>
-            </a>
-          </li>
-        ))}
-      </ol>
-    </nav>
   </header>
 
   <main id="main">
@@ -169,6 +158,9 @@ const mastTitle = 'The Deseret Wiki';
 <style>
   /* top bar */
   .topbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 1rem; padding-bottom: .9rem; }
+  .topbar-left { display: flex; align-items: center; gap: .6rem; }
+  /* leave room for the fixed menu button when the margin is narrow */
+  @media (max-width: 1240px) { .topbar-left { padding-left: 2.9rem; } }
   .brand { display: inline-flex; align-items: center; gap: .7rem; color: var(--heading); text-decoration: none; }
   .brand-name { font: 600 .78rem/1 var(--f-formal); letter-spacing: .2em; text-transform: uppercase; }
   .tools { display: flex; align-items: center; gap: .35rem; }
@@ -225,29 +217,6 @@ const mastTitle = 'The Deseret Wiki';
   .motto { font: italic 400 clamp(1rem, 2vw, 1.2rem)/1.4 var(--f-display); color: var(--ink-soft); margin: 0 0 1rem; }
   .dateline { display: flex; justify-content: space-between; gap: 1rem; padding: .45rem 0; font-size: .62rem; color: var(--ink-soft); }
   @media (max-width: 640px) { .ears-mid, .dateline-motto { display: none; } }
-
-  /* contents: a printed table of contents */
-  .contents { position: relative; }
-  .contents ol { list-style: none; margin: 0; padding: .55rem 0; display: flex; flex-wrap: wrap; justify-content: center; gap: .2rem 1.6rem; border-bottom: 1px solid var(--rule); }
-  .contents a { display: flex; align-items: baseline; gap: .4rem; padding: .3rem 0; text-decoration: none; color: var(--heading); font: 400 1.02rem/1.2 var(--f-display); }
-  .contents .num { font: 600 .66rem/1 var(--f-formal); letter-spacing: .08em; color: var(--accent); }
-  .contents a:hover .label, .contents a[aria-current='page'] .label { text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: .25em; text-decoration-thickness: 1px; }
-  .contents .leader, .contents .dsrt-label { display: none; }
-  .contents-toggle { display: none; }
-  @media (max-width: 720px) {
-    .contents-toggle {
-      display: flex; width: 100%; justify-content: space-between; align-items: center;
-      background: none; border: 0; border-bottom: 1px solid var(--rule); padding: .8rem 0; color: var(--heading); cursor: pointer; font-size: .7rem;
-    }
-    .contents-toggle::after { content: '＋'; font-size: .9rem; color: var(--accent); }
-    .contents-toggle[aria-expanded='true']::after { content: '－'; }
-    .contents ol { display: none; flex-direction: column; gap: 0; padding: .3rem 0 .8rem; }
-    .contents.open ol { display: flex; }
-    .contents a { padding: .55rem 0; }
-    .contents .num { width: 2.4rem; }
-    .contents .leader { display: block; flex: 1; border-bottom: 1px dotted var(--rule); transform: translateY(-.25em); }
-    .contents .dsrt-label { display: inline; font-size: .8rem; color: var(--ink-soft); }
-  }
 
   /* footer */
   .site-foot { position: relative; margin-top: 6rem; padding: 1rem 0 4rem; overflow: hidden; }
