@@ -2,14 +2,14 @@
 import Base from '../layouts/Base.astro';
 import Title from '../components/Title.astro';
 
-// Downloadable PDFs (hosted in /public/library). Source: Gospel Scholar Archive (GSA).
+// Downloadable PDFs (hosted in /public/library).
 const pdfs = [
-  { title: 'Journal of Discourses, vol. 12 (1867–68): Brigham Young and George A. Smith on the Deseret Alphabet', note: 'Excerpt, pp. 139–141 (G. A. Smith, Oct. 1867, "the system of phonetics, or the Deseret alphabet") and pp. 297–301 (Young, Oct. 1868, "Southern Missions—Deseret Alphabet—Relief Societies—Home Manufactures"). Public domain.', file: 'JoD-12_Young-and-G-A-Smith_Deseret-Alphabet_1867-1868.pdf', cite: 'https://corpus.restorationcommons.org/b/volume-12-c20e/297' },
-  { title: 'Ronald G. Watt, "Sailing the Old Ship Zion: The Life of George D. Watt," BYU Studies 18:1 (1977)', note: 'Excerpt (the article only). Watt, the Pitman shorthand reporter, was a developer of the alphabet.', file: 'BYU-Studies-18-1_Watt_Sailing-the-Old-Ship-Zion_1977.pdf', cite: 'https://corpus.restorationcommons.org/b/18-1-82cb/50' },
-  { title: 'Interpreter 15 (2015): the Deseret Alphabet and the Book of Mormon pronunciation guide', note: 'Full issue. A brief history of the alphabet and the 1868 Deseret News pronunciation guide, pp. 49–65.', file: 'Interpreter-15_Deseret-Alphabet-Pronunciation-Guide_2015.pdf', cite: 'https://corpus.restorationcommons.org/b/15-interpreter-pdf-3a6b/49' },
-  { title: 'Wilcox, Brown et al., "Comparing Phonemic Patterns in Book of Mormon Personal Names," Interpreter 33 (2019)', note: 'Excerpt. Uses Deseret Alphabet spellings of the 1869 Book of Mormon as one of its pronunciation sources.', file: 'Interpreter-33_Wilcox-et-al_Phonemic-Patterns_2019.pdf', cite: 'https://corpus.restorationcommons.org/b/33-interpreter-pdf-1cb3/128' },
-  { title: 'Brian D. Stubbs, review of Beesley & Elzinga, An 1860 English-Hopi Vocabulary Written in the Deseret Alphabet, BYU Studies 55:4 (2016)', note: 'Excerpt, pp. 189–192.', file: 'BYU-Studies-55-4_Stubbs-review-English-Hopi-Vocabulary_2016.pdf', cite: 'https://corpus.restorationcommons.org/b/55-4-0db3/190' },
-  { title: 'Ricks, Hoskisson, Smith & Gee, Dictionary of Proper Names & Foreign Words in the Book of Mormon (Interpreter Foundation, 2022)', note: 'Full volume. About 290 entries give a Deseret Alphabet spelling with IPA.', file: 'Ricks-Hoskisson-Smith-Gee_Dictionary-of-Proper-Names_2022.pdf', cite: 'https://corpus.restorationcommons.org/b/dictionary-of-proper-names-and-foreign-words-in-1efa/16' },
+  { title: 'Journal of Discourses, vol. 12 (1867–68): Brigham Young and George A. Smith on the Deseret Alphabet', note: 'Excerpt, pp. 139–141 (G. A. Smith, Oct. 1867, "the system of phonetics, or the Deseret alphabet") and pp. 297–301 (Young, Oct. 1868, "Southern Missions—Deseret Alphabet—Relief Societies—Home Manufactures"). Public domain.', file: 'JoD-12_Young-and-G-A-Smith_Deseret-Alphabet_1867-1868.pdf' },
+  { title: 'Ronald G. Watt, "Sailing the Old Ship Zion: The Life of George D. Watt," BYU Studies 18:1 (1977)', note: 'Excerpt (the article only). Watt, the Pitman shorthand reporter, was a developer of the alphabet.', file: 'BYU-Studies-18-1_Watt_Sailing-the-Old-Ship-Zion_1977.pdf' },
+  { title: 'Interpreter 15 (2015): the Deseret Alphabet and the Book of Mormon pronunciation guide', note: 'Full issue. A brief history of the alphabet and the 1868 Deseret News pronunciation guide, pp. 49–65.', file: 'Interpreter-15_Deseret-Alphabet-Pronunciation-Guide_2015.pdf' },
+  { title: 'Wilcox, Brown et al., "Comparing Phonemic Patterns in Book of Mormon Personal Names," Interpreter 33 (2019)', note: 'Excerpt. Uses Deseret Alphabet spellings of the 1869 Book of Mormon as one of its pronunciation sources.', file: 'Interpreter-33_Wilcox-et-al_Phonemic-Patterns_2019.pdf' },
+  { title: 'Brian D. Stubbs, review of Beesley & Elzinga, An 1860 English-Hopi Vocabulary Written in the Deseret Alphabet, BYU Studies 55:4 (2016)', note: 'Excerpt, pp. 189–192.', file: 'BYU-Studies-55-4_Stubbs-review-English-Hopi-Vocabulary_2016.pdf' },
+  { title: 'Ricks, Hoskisson, Smith & Gee, Dictionary of Proper Names & Foreign Words in the Book of Mormon (Interpreter Foundation, 2022)', note: 'Full volume. About 290 entries give a Deseret Alphabet spelling with IPA.', file: 'Ricks-Hoskisson-Smith-Gee_Dictionary-of-Proper-Names_2022.pdf' },
 ];
 
 // Opens a hosted PDF in the reader (public/pdfjs + public/web/reader, from gsa-dash)
@@ -30,15 +30,15 @@ const talks = [
   { who: 'George Albert Smith', date: 'Apr 1936', title: 'Membership in Christ’s Church a Privilege', note: 'Lists the Book of Mormon translations, including one "in the Deseret alphabet."', url: 'https://pulpit.restorationcommons.org/talks/1936-04-george-albert-smith-obedience-to-the-teachings-of-jesus/#p11' },
 ];
 
-// In copyright: not hosted. Linked to Amazon (ISBN pages); see the archive page for the exact citation.
+// In copyright: not hosted. Linked to Amazon (ISBN pages).
 const books = [
-  { title: "The Complete Discourses of Brigham Young, vols. 2–5 (Van Wagoner, ed.)", note: "Regents, spelling reform and the alphabet in school and Church; see vol. 4 pp. 430–434, 467, 580–581.", url: "https://www.amazon.com/Complete-Discourses-Brigham-Young-Book/dp/B07LC27ZXS", cite: "https://corpus.restorationcommons.org/b/4-1862-1867-b34e/430" },
-  { title: "Allen & Leonard, The Story of the Latter-day Saints (2nd ed., 1992)", note: "Pp. 282, 365.", url: "https://www.amazon.com/dp/087579565X", cite: "https://corpus.restorationcommons.org/b/allen-and-leonard-the-story-of-the-latter-day-2585/365" },
-  { title: "Arrington, Brigham Young: American Moses", note: "P. 336.", url: "https://www.amazon.com/dp/0345803213", cite: "https://corpus.restorationcommons.org/b/arrington-brigham-young-american-moses-669e/336" },
-  { title: "Givens & Grow, Parley P. Pratt: The Apostle Paul of Mormonism", note: "Pp. 410–411, on Pratt and the Deseret News editorial on the alphabet.", url: "https://www.amazon.com/dp/0195375734", cite: "https://corpus.restorationcommons.org/b/givens-and-grow-parley-p-pratt-the-apostle-paul-ab99/411" },
-  { title: "Griffiths & Woodger, 50 Relics of the Restoration", note: "Pp. 79, 92–94: the Deseret Alphabet reader.", url: "https://www.amazon.com/dp/1462138160", cite: "https://corpus.restorationcommons.org/b/griffiths-and-woodger-50-relics-of-the-02cb/92" },
-  { title: "Reeve & Parshall, Mormonism: A Historical Encyclopedia", note: "P. 324.", url: "https://www.amazon.com/dp/1598841076", cite: "https://corpus.restorationcommons.org/b/reeve-and-parshall-mormonism-a-historical-39f3/324" },
-  { title: "Kimball, Heber C. Kimball: Mormon Patriarch and Pioneer", note: "Pp. 245–247, on the purpose of the alphabet.", url: "https://www.amazon.com/dp/0252012992", cite: "https://corpus.restorationcommons.org/b/kimball-heber-c-kimball-mormon-patriarch-and-3810/247" },
+  { title: "The Complete Discourses of Brigham Young, vols. 2–5 (Van Wagoner, ed.)", note: "Regents, spelling reform and the alphabet in school and Church; see vol. 4 pp. 430–434, 467, 580–581.", url: "https://www.amazon.com/Complete-Discourses-Brigham-Young-Book/dp/B07LC27ZXS" },
+  { title: "Allen & Leonard, The Story of the Latter-day Saints (2nd ed., 1992)", note: "Pp. 282, 365.", url: "https://www.amazon.com/dp/087579565X" },
+  { title: "Arrington, Brigham Young: American Moses", note: "P. 336.", url: "https://www.amazon.com/dp/0345803213" },
+  { title: "Givens & Grow, Parley P. Pratt: The Apostle Paul of Mormonism", note: "Pp. 410–411, on Pratt and the Deseret News editorial on the alphabet.", url: "https://www.amazon.com/dp/0195375734" },
+  { title: "Griffiths & Woodger, 50 Relics of the Restoration", note: "Pp. 79, 92–94: the Deseret Alphabet reader.", url: "https://www.amazon.com/dp/1462138160" },
+  { title: "Reeve & Parshall, Mormonism: A Historical Encyclopedia", note: "P. 324.", url: "https://www.amazon.com/dp/1598841076" },
+  { title: "Kimball, Heber C. Kimball: Mormon Patriarch and Pioneer", note: "Pp. 245–247, on the purpose of the alphabet.", url: "https://www.amazon.com/dp/0252012992" },
 ];
 
 // Free to read from the publisher or institution (BYU, Maxwell Institute, Dialogue). Linked, not copied.
@@ -54,7 +54,7 @@ const freeBooks = [
     <header class="page-head">
       <p class="kicker">The Archive</p>
       <Title text="Library" />
-      <p class="lede-text">Primary sources and scholarship on the Deseret Alphabet, gathered from the Gospel Scholar Archive and the General Conference / Journal of Discourses corpus.</p>
+      <p class="lede-text">Primary sources and scholarship on the Deseret Alphabet, with the sermons where Church leaders spoke of it.</p>
     </header>
 
     <h2>Downloadable PDFs</h2>
@@ -62,7 +62,7 @@ const freeBooks = [
       {pdfs.map((p) => (
         <li>
           <a href={read(p)}><span class="reg-title">{p.title}</span></a>
-          <span class="reg-note">{p.note} <a href={read(p)}>Read</a> · <a href={`/library/${p.file}`} download>Download PDF</a> · <a href={p.cite} rel="noopener">View in archive</a></span>
+          <span class="reg-note">{p.note} <a href={read(p)}>Read</a> · <a href={`/library/${p.file}`} download>Download PDF</a></span>
         </li>
       ))}
     </ol>
@@ -95,7 +95,7 @@ const freeBooks = [
       {books.map((b) => (
         <li>
           <a href={b.url} rel="noopener"><span class="reg-title">{b.title}</span></a>
-          <span class="reg-note">{b.note} <a href={b.cite} rel="noopener">View in archive</a></span>
+          <span class="reg-note">{b.note}</span>
         </li>
       ))}
     </ol>
