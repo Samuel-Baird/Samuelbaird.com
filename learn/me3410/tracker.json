@@ -414,7 +414,7 @@
    "plan": "2026-11-24",
    "hrs": 4,
    "kind": "Axisymmetric vs 3D + 3D bracket",
-   "status": "todo",
+   "status": "pdf_ready",
    "pdf": "HW9_3D_Modeling.docx",
    "deliver": [
     "Q1 rotating part at 100 rpm: axisymmetric model",
@@ -424,6 +424,7 @@
     "Q2 full model",
     "Q2 for both: FEM with BCs, total deformation, Y deformation, equivalent stress, shear stress"
    ],
+   "note": "Word file ready. Q1 at 100 rpm: axisymmetric and 3D wedge agree to 0.18% (max deformation 2.02e-7 mm, bore von Mises 2.0 kPa); corner peaks are singular. Q2: half model (symmetry, 10 kN) matches the full model (deformation 0.0130 mm, von Mises 79 MPa at the eye hole, max tau-xy 36 MPa, n = 3.2).",
    "priority": 13,
    "due_local": "Wed Dec 2, 11:59 PM MT",
    "due_iso": "2026-12-02T23:59:59-07:00",
