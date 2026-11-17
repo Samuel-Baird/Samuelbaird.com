@@ -11,6 +11,7 @@ const LAT = 40.76 * D, LON = -111.89; // Great Salt Lake City
 const VIEW_AZ = 95 * D, VIEW_ALT = 36 * D; // looking east, toward the Wasatch
 import { sunPhase, moonPhase, moonLit } from './clock.js';
 import { onSmoothScroll, smoothY } from './smooth.js';
+import { pointer, active, speed } from './pointer.js';
 const rand = (a, b) => a + Math.random() * (b - a);
 
 /* ---------- light (the clock itself is in clock.js, shared with the land) ---------- */
@@ -181,25 +182,50 @@ const BEE = `<svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true">
 <ellipse cx="11.5" cy="19.5" rx="8" ry="5.4" stroke-width="1.1"/><circle cx="21.6" cy="18.4" r="3.6" fill="url(#hatch)" stroke-width="1"/><circle cx="26.6" cy="17.2" r="2.6" stroke-width="1"/>
 <path d="M27.8 14.9c.8-2.1 2-3.1 3.4-3.3M26.4 14.8c.3-2.3 1.1-3.5 2.3-4.1" stroke-width=".7"/></g></svg>`;
 
-function flyBee() {
-  if (document.hidden || !sunPhase().up) return;
+// Each bee holds a course across the screen, wandering about it. Bump one with the pointer and it
+// veers off on a new course, away from the bump and along the way the pointer was moving.
+const bees = [];
+function flyBee(force = false) {
+  if (!force && (document.hidden || !sunPhase().up)) return;
   const el = document.createElement('div');
   el.className = 'sky-bee';
   el.innerHTML = BEE;
   layer.append(el);
   const ltr = Math.random() < 0.6;
-  const y0 = innerHeight * rand(0.1, 0.4), amp = rand(18, 50), waves = rand(2.5, 5);
-  const dist = innerWidth + 120, dur = rand(8000, 13000);
-  const frames = [];
-  for (let i = 0; i <= 40; i++) {
-    const t = i / 40;
-    const x = ltr ? -60 + dist * t : innerWidth + 60 - dist * t;
-    const y = y0 + Math.sin(t * Math.PI * 2 * waves) * amp + Math.sin(t * 37) * 4; // wander, with a little jitter
-    const tilt = Math.cos(t * Math.PI * 2 * waves) * 14;
-    frames.push({ transform: `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px) scaleX(${ltr ? 1 : -1}) rotate(${tilt.toFixed(1)}deg)`, offset: t });
-  }
-  el.animate(frames, { duration: dur, easing: 'linear' }).finished.then(() => el.remove());
+  const course = (ltr ? 0 : Math.PI) + rand(-0.25, 0.25);
+  bees.push({ el, x: ltr ? -40 : innerWidth + 40, y: innerHeight * rand(0.1, 0.45), course, th: course, v: rand(80, 120), cruise: 0, ph: rand(0, 6), t: 0, bumped: -1e4 });
+  if (bees.length === 1) requestAnimationFrame(stepBees);
 }
+const wrapA = (a) => Math.atan2(Math.sin(a), Math.cos(a));
+let beeLast = 0;
+function stepBees(now) {
+  const dt = Math.min(0.06, (now - (beeLast || now)) / 1000); beeLast = now;
+  for (const b of bees) {
+    b.t += dt;
+    const cx = b.x + 13, cy = b.y + 13;
+    if (active() && now - b.bumped > 450 && Math.hypot(pointer.x - cx, pointer.y - cy) < 34) {
+      b.bumped = now;
+      let ax = cx - pointer.x, ay = cy - pointer.y; const al = Math.hypot(ax, ay) || 1; ax /= al; ay /= al;
+      const sp = speed();
+      if (sp > 40) { ax += (pointer.vx / sp) * 0.9; ay += (pointer.vy / sp) * 0.9; }
+      b.course = Math.atan2(ay, ax);
+      b.cruise = 1; // startled: faster, and turning hard
+    }
+    b.cruise = Math.max(0, b.cruise - dt * 0.7);
+    const want = b.course + Math.sin(b.t * 2.1 + b.ph) * 0.55 + Math.sin(b.t * 7.3) * 0.12; // wander about the course
+    b.th += wrapA(want - b.th) * Math.min(1, dt * (2.2 + 9 * b.cruise));
+    const v = b.v * (1 + 1.4 * b.cruise);
+    b.x += Math.cos(b.th) * v * dt; b.y += Math.sin(b.th) * v * dt;
+    const face = Math.cos(b.th) >= 0 ? 1 : -1;
+    const tilt = Math.max(-40, Math.min(40, (wrapA(face === 1 ? b.th : Math.PI - b.th) * 180) / Math.PI));
+    b.el.style.transform = `translate(${b.x.toFixed(1)}px, ${b.y.toFixed(1)}px) scaleX(${face}) rotate(${tilt.toFixed(1)}deg)`;
+    if (b.x < -80 || b.x > innerWidth + 80 || b.y < -80 || b.y > innerHeight + 80) { b.el.remove(); b.gone = true; }
+  }
+  for (let i = bees.length - 1; i >= 0; i--) if (bees[i].gone) bees.splice(i, 1);
+  if (bees.length) requestAnimationFrame(stepBees); else beeLast = 0;
+}
+
+window.deseretSky = { bee: () => flyBee(true) }; // for the console
 
 function every(fn, first, min, max) {
   setTimeout(function tick() { fn(); setTimeout(tick, rand(min, max)); }, first);
@@ -214,7 +240,7 @@ const margins = document.getElementById('margins');
 const SQ = '0 0 64 64';
 const EMBLEMS = [
   ['i-wagon', '0 0 100 64'], ['i-primer', '0 0 64 48'], ['i-skep', SQ],
-  ...['daystar', 'hexagram', 'octagram', 'sun', 'moon', 'squaredcircle', 'rainbow', 'squarecompass', 'wheat', 'cup', 'grapes',
+  ...['daystar', 'hexagram', 'octagram', 'sun', 'moon', 'squaredcircle', 'squarecompass', 'wheat', 'cup', 'grapes',
     'olive', 'waters', 'flame', 'horn', 'crown', 'serpent', 'dove', 'ox', 'tree', 'keystone', 'keyring', 'handclasp'].map((n) => [`e-${n}`, SQ]),
 ];
 function shuffled(a) { a = [...a]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
@@ -238,7 +264,8 @@ function layoutMargins() {
     const el = document.createElement('div');
     el.className = 'emblem';
     el.style.cssText = `width:${size}px;${side ? 'right' : 'left'}:${x.toFixed(0)}px;opacity:${rand(0.08, 0.14).toFixed(2)}`;
-    el.innerHTML = `<svg viewBox="${vb}" style="transform:rotate(${rand(-9, 9).toFixed(1)}deg)"><use href="#${id}"/></svg>`;
+    // two slow motions on their own clocks: a rise and fall, and a sway back and forth
+    el.innerHTML = `<div class="bob" style="animation-duration:${rand(9, 15).toFixed(1)}s;animation-delay:-${rand(0, 15).toFixed(1)}s"><div class="sway" style="animation-duration:${rand(11, 19).toFixed(1)}s;animation-delay:-${rand(0, 19).toFixed(1)}s"><svg viewBox="${vb}" style="transform:rotate(${rand(-9, 9).toFixed(1)}deg)"><use href="#${id}"/></svg></div></div>`;
     margins.append(el);
     items.push({ el, y, speed });
     side ^= 1;

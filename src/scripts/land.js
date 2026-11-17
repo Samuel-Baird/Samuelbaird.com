@@ -8,6 +8,7 @@
 // creek, drinks, and brings up the hard parts as a pellet, then goes back for more.
 import { sunPhase, dayIndex, swarmDay, swarmAt } from './clock.js';
 import { onSmoothScroll, smoothY } from './smooth.js';
+import { pointer, active, speed } from './pointer.js';
 
 const land = document.getElementById('land');
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -138,11 +139,27 @@ function lake(x0, x1, y0, out) {
 /* ---------- sprites ---------- */
 const CRICKET = `<g class="ck"><path d="M-6 -3.2c2-2.6 8-2.8 10.5-.6c-2 2-8.6 2.4-10.5.6z" fill="#7C6D44" stroke="#C9B57A" stroke-width=".6"/><circle cx="5.4" cy="-3.6" r="1.7" fill="#7C6D44" stroke="#C9B57A" stroke-width=".5"/>
   <path d="M-1.5 -3.4L-5.5 -8.6L-8.6 -.2M1.6 -2.4l1.6 2.4M-.4 -2.4l-1.2 2.4M6.6 -4.8q4 -4.6 8.2 -3.4" fill="none" stroke="#C9B57A" stroke-width=".7" stroke-linecap="round"/></g>`;
-const GULL = `<g class="g-fly"><path class="g-wing" d="M-17 -1Q-10 -10 -1 -.5Q8 -10 17 -1.5" fill="none" stroke="#EEE8DA" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M-15.5 -2.6l-1.8 1.4M15.6 -3.2l1.8 1.4" stroke="#3B3A3A" stroke-width="1.3" stroke-linecap="round"/>
-  <ellipse cx="0" cy="0" rx="7.5" ry="2.7" fill="#EEE8DA"/><circle cx="7.4" cy="-1.2" r="2.3" fill="#EEE8DA"/><path d="M9.4 -1.4l3.4.7-3.4.8z" fill="#D9B46A"/><path d="M-6.5 -.6l-4.4-1.6v3.4z" fill="#EEE8DA"/></g>
+// A gull seen from the side: the far wing behind the body, the near wing in front, each bending at
+// the elbow (wingShape, redrawn every frame as the bird flaps or glides).
+const GULL = `<g class="g-fly"><g transform="translate(1.6 -.6) scale(.82)"><path class="g-wing-far" fill="#A9A397" stroke="#8E887C" stroke-width=".4" stroke-linejoin="round"/><path class="g-tip-far" fill="#2E2D2C"/></g>
+  <path d="M-6.6 -.4l-5 -1.8 .4 3.6z" fill="#E4DDCC"/><ellipse cx="0" cy="0" rx="7.6" ry="2.8" fill="#EEE8DA"/><path d="M-6 1.4q6 2 12 -.4" fill="none" stroke="#C9C2B0" stroke-width=".5"/>
+  <circle cx="7.3" cy="-1.3" r="2.4" fill="#EEE8DA"/><circle cx="8" cy="-1.9" r=".45" fill="#2E2D2C"/><path d="M9.5 -1.5l3.6.6-3.6 1z" fill="#D9B46A"/><path d="M12 -.95l-1.2 .9" stroke="#B5523F" stroke-width=".5"/>
+  <path class="g-wing" fill="#F2EDE1" stroke="#BDB6A4" stroke-width=".45" stroke-linejoin="round"/><path class="g-tip" fill="#2E2D2C"/></g>
   <g class="g-stand" style="display:none"><g class="g-head"><circle cx="6.6" cy="-12" r="2.7" fill="#EEE8DA"/><path d="M9 -12.2l3.6.8-3.6.9z" fill="#D9B46A"/></g>
   <path d="M-9 -7.6Q-2 -12.4 6 -10.2L5 -5Q-3 -2.6 -9 -7.6z" fill="#EEE8DA"/><path d="M-8.6 -7.4Q-1 -10.4 4.4 -8.4" fill="none" stroke="#8E8A82" stroke-width="1.2"/><path d="M-1 -4.6v4.6M2 -4.8v4.8" stroke="#D9B46A" stroke-width=".8"/></g>`;
+// a: where the wing is in its stroke (1 up, -1 down); b: the hand, lagging a little behind the arm
+function wingShape(a, b) {
+  const E = [-3 + Math.abs(a) * 1.2, -2 - 8.5 * a];
+  const T = [-9.5 + Math.abs(b) * 2.2, -2.6 - 15.5 * b];
+  const E2 = [E[0] - 4.2, E[1] + 1.4 + Math.abs(a) * 0.4];
+  const lerp = (p, q, k) => [p[0] + (q[0] - p[0]) * k, p[1] + (q[1] - p[1]) * k];
+  const t1 = lerp(T, E, 0.32), t2 = lerp(T, E2, 0.38);
+  const pt = (p) => `${n1(p[0])} ${n1(p[1])}`;
+  return {
+    wing: `M3 -1.4Q${pt(lerp([3, -1.4], E, 0.5).map((v, i) => v + (i ? -1.2 * Math.sign(a || 1) : 0)))} ${pt(E)}L${pt(T)}L${pt(E2)}Q${pt(lerp(E2, [-4.6, -.2], 0.5))} -4.6 -.2Z`,
+    tip: `M${pt(T)}L${pt(t1)}L${pt(t2)}Z`,
+  };
+}
 const svgEl = (tag, attrs = {}) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); return e; };
 
 /* ---------- the bands ---------- */
@@ -253,6 +270,7 @@ function layout() {
   clearLife();
   for (const d of land.querySelectorAll('.depth')) d.replaceChildren();
   W = document.documentElement.clientWidth; H = innerHeight;
+  if (W < 50 || H < 50) return; // not laid out yet (a hidden frame, a resize in progress): try again on resize
   BH = Math.round(Math.max(200, Math.min(300, H * 0.32)));
   GY = Math.round(BH * 0.7);
   const maxScroll = Math.max(0, document.documentElement.scrollHeight - H);
@@ -282,7 +300,8 @@ const onScreen = (b) => b.y + GY > 30 && b.y + GY < H - 10;
 let crickets = [], gulls = [], pellets = [], swarm = null, night = false;
 
 function clearLife() {
-  crickets = []; gulls = []; pellets = []; swarm = null;
+  for (const w of weeds) w.el.remove();
+  crickets = []; gulls = []; pellets = []; weeds = []; swarm = null;
 }
 
 function addCricket(band, x, y, opts = {}) {
@@ -340,7 +359,7 @@ function addGull(band, x, y, opts = {}) {
   g.innerHTML = GULL;
   band.life.append(g);
   const gull = { band, g, x, y, vx: rand(-40, 40), vy: 90, face: 1, state: 'hunt', eaten: 0, cap: 2 + (Math.random() < 0.5 ? 1 : 0), t: 0, prey: null, flap: rand(0, 6), ...opts };
-  gull.fly = g.querySelector('.g-fly'); gull.stand = g.querySelector('.g-stand'); gull.wing = g.querySelector('.g-wing'); gull.head = g.querySelector('.g-head');
+  gull.fly = g.querySelector('.g-fly'); gull.stand = g.querySelector('.g-stand'); gull.wing = g.querySelector('.g-wing'); gull.tip = g.querySelector('.g-tip'); gull.wingFar = g.querySelector('.g-wing-far'); gull.tipFar = g.querySelector('.g-tip-far'); gull.head = g.querySelector('.g-head');
   gulls.push(gull);
   return gull;
 }
@@ -421,9 +440,12 @@ function stepGull(gull, dt) {
   }
   if (gull.state !== 'drink') {
     if (Math.abs(gull.vx) > 8) gull.face = gull.vx > 0 ? 1 : -1;
-    gull.flap += dt * (gull.state === 'dive' ? 6 : 13);
-    const f = gull.state === 'dive' ? 0.75 : Math.sin(gull.flap);
-    gull.wing.setAttribute('transform', `scale(1 ${n1(f)})`);
+    const glide = gull.state === 'dive' || (gull.state === 'leave' && gull.vy < 0 && Math.sin(gull.t * 0.9) > 0.4);
+    gull.flap += dt * (glide ? 0 : 11);
+    const a = glide ? 0.28 : Math.sin(gull.flap), b = glide ? 0.2 : Math.sin(gull.flap - 0.55);
+    const near = wingShape(a, b), far = wingShape(glide ? 0.34 : Math.sin(gull.flap - 0.15), glide ? 0.26 : Math.sin(gull.flap - 0.7));
+    gull.wing.setAttribute('d', near.wing); gull.tip.setAttribute('d', near.tip);
+    gull.wingFar.setAttribute('d', far.wing); gull.tipFar.setAttribute('d', far.tip);
   }
   const tilt = gull.state === 'drink' ? 0 : Math.max(-25, Math.min(25, gull.vy * 0.08)) * gull.face;
   gull.g.setAttribute('transform', `translate(${n1(gull.x)} ${n1(gull.y)}) scale(${gull.face} 1) rotate(${n1(tilt * gull.face)})`);
@@ -523,6 +545,10 @@ function tumbleweedSvg(size) {
   svg.append(svgEl('path', { d, fill: 'none', stroke: 'currentColor', 'stroke-width': '1.4', 'stroke-linecap': 'round' }));
   return svg;
 }
+// The west wind always blows toward the east (left to right) and the weeds roll with it. Bump one
+// with the pointer and it goes the way it was knocked, hopping, until the wind brings it round again.
+const WIND = 130, GRAV = 620;
+let weeds = [];
 function rollTumbleweed() {
   if (document.hidden || night) return;
   const vis = bands.filter(onScreen);
@@ -530,15 +556,33 @@ function rollTumbleweed() {
   const el = document.createElement('div');
   el.className = 'tumbleweed';
   el.append(tumbleweedSvg(size));
-  if (vis.length) { const b = pick(vis); el.style.cssText = `top:${(GY + rand(4, 26) - size * 0.85).toFixed(0)}px;bottom:auto`; b.layers.near.append(el); }
+  const band = vis.length ? pick(vis) : null;
+  const top = band ? GY + rand(4, 26) - size * 0.85 : 0;
+  if (band) { el.style.cssText = `top:${top.toFixed(0)}px;bottom:auto`; band.layers.near.append(el); }
   else document.getElementById('critters')?.append(el);
-  const dist = W + size * 2 + 80, dur = (dist / rand(110, 170)) * 1000, turns = (dist / (Math.PI * size)) * 360;
-  const frames = [], hops = Math.max(2, Math.round(dist / rand(160, 260)));
-  for (let i = 0; i <= hops * 4; i++) {
-    const t = i / (hops * 4), q = (i % 4) / 4, hop = Math.sin(Math.PI * q) * size * rand(0.35, 0.8) * (1 - t * 0.4);
-    frames.push({ transform: `translate(${(-size - 40 + dist * t).toFixed(1)}px, ${(-hop).toFixed(1)}px) rotate(${(turns * t).toFixed(0)}deg)`, offset: t });
+  weeds.push({ el, band, top, size, x: -size - 40, vx: WIND * rand(0.8, 1.2), h: 0, vh: 0, rot: 0, bumped: -1e4 });
+  if (!looping) { looping = true; requestAnimationFrame(frame); }
+}
+function stepWeed(w, dt, now) {
+  const r = w.size / 2;
+  // where it is on screen, for bumping
+  const cx = w.x + r, cy = (w.band ? w.band.y + w.top : innerHeight - 14 - w.size) + r - w.h;
+  if (active() && now - w.bumped > 300 && Math.hypot(pointer.x - cx, pointer.y - cy) < r + 10) {
+    w.bumped = now;
+    const sp = speed();
+    if (sp > 40) { w.vx = Math.max(-700, Math.min(700, w.vx * 0.3 + pointer.vx * 0.9)); w.vh = Math.max(120, Math.min(420, 140 - pointer.vy * 0.4)); }
+    else { w.vx += Math.sign(cx - pointer.x || 1) * 220; w.vh = 160; }
   }
-  el.animate(frames, { duration: dur, easing: 'linear' }).finished.then(() => el.remove());
+  w.vx += (WIND - w.vx) * Math.min(1, dt * 0.45); // the wind takes it back
+  w.vh -= GRAV * dt; w.h += w.vh * dt;
+  if (w.h <= 0) { // the ground: bounce a little, and the rolling makes its own small hops
+    w.h = 0;
+    w.vh = Math.abs(w.vh) > 60 ? -w.vh * 0.42 : Math.random() < dt * 1.6 ? rand(90, 190) * Math.min(1.4, Math.abs(w.vx) / WIND) : 0;
+  }
+  w.x += w.vx * dt;
+  w.rot += (w.vx * dt) / r;
+  w.el.style.transform = `translate(${w.x.toFixed(1)}px, ${(-w.h).toFixed(1)}px) rotate(${w.rot.toFixed(3)}rad)`;
+  if (w.x > W + w.size + 40 || w.x < -1600) { w.el.remove(); w.gone = true; }
 }
 
 /* ---------- the clock and the loop ---------- */
@@ -556,6 +600,7 @@ function frame(now) {
   if (crickets.length) { for (const c of crickets) if (c.alive) stepCricket(c, dt); crickets = crickets.filter((c) => c.alive); }
   if (gulls.length) { for (const g of gulls) if (!g.gone) stepGull(g, dt); gulls = gulls.filter((g) => !g.gone); }
   if (pellets.length) { for (const p of pellets) stepPellet(p, dt); pellets = pellets.filter((p) => !p.dead); }
+  if (weeds.length) { for (const w of weeds) stepWeed(w, dt, now); weeds = weeds.filter((w) => !w.gone); }
   // crops: eaten down in the swarm, growing back by night
   for (const b of bands) for (const cr of b.crops) {
     if (night && cr.h < 1) cr.h = Math.min(1, cr.h + dt * 0.03);

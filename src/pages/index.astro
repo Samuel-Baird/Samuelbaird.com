@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Ornament from '../components/Ornament.astro';
+import Q from '../data/social-quote.json';
 import WaxSeal from '../components/WaxSeal.astro';
 import { roman } from '../lib/roman.js';
 
@@ -82,6 +83,19 @@ const CATEGORIES = [
 
   <div class="wrap"><Ornament bee={false} /></div>
 
+  <!-- the social card; it follows the Latin / Deseret toggle -->
+  <figure class="wrap quote-card">
+    <a class="qc-img" href={Q.url} aria-label={`${Q.by} in General Conference, October 1867: read the discourse`}>
+      <img class="qc-latn" src="/social/deseret-alphabet-quote.png" srcset="/social/deseret-alphabet-quote.png 1x, /social/deseret-alphabet-quote@2x.png 2x" width="1200" height="630" loading="lazy" alt={`“${Q.text}” — ${Q.by}, General Conference, October 1867.`} />
+      <img class="qc-dsrt" src="/social/deseret-alphabet-quote-dsrt.png" srcset="/social/deseret-alphabet-quote-dsrt.png 1x, /social/deseret-alphabet-quote-dsrt@2x.png 2x" width="1200" height="630" loading="lazy" alt={`The same words in the Deseret Alphabet: “${Q.text}” — ${Q.by}, General Conference, October 1867.`} />
+    </a>
+    <figcaption class="small">
+      <a href={Q.url}>{Q.note}</a>
+      <span class="qc-share" data-no-dsrt>Share it: <a href="/social/deseret-alphabet-quote@2x.png" download>Latin</a> · <a href="/social/deseret-alphabet-quote-dsrt@2x.png" download>Deseret</a></span>
+    </figcaption>
+  </figure>
+
+
   <section class="wrap" aria-labelledby="subjects">
     <p class="kicker" id="subjects">Browse by Subject</p>
     <ul class="cards">
@@ -100,6 +114,15 @@ const CATEGORIES = [
 </Base>
 
 <style>
+  .quote-card { margin: 0 auto 2.5rem; }
+  .qc-img { display: block; border-radius: 8px; overflow: hidden; box-shadow: 0 0 0 1px rgb(201 164 92 / .35), 0 14px 40px rgb(0 0 0 / .35); }
+  .qc-img img { display: block; width: 100%; height: auto; }
+  .qc-dsrt { display: none !important; }
+  :global(html[data-script='dsrt']) .qc-dsrt { display: block !important; }
+  :global(html[data-script='dsrt']) .qc-latn { display: none !important; }
+  .quote-card figcaption { margin-top: .8rem; color: var(--ink-soft); line-height: 1.5; text-align: center; }
+  .quote-card figcaption > a { color: inherit; text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent); }
+  .qc-share { display: block; margin-top: .35rem; font-family: var(--f-formal); font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; }
   .intro { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: start; padding-top: clamp(2.5rem, 6vw, 4.5rem); }
   .intro-lede { font-size: 1.2rem; line-height: 1.7; }
   .intro-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.8rem; }

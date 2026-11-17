@@ -1,0 +1,103 @@
+---
+// The social card: Brigham Young on teaching the Deseret Alphabet (General Conference, 7 October 1867),
+// set like the home page. Rendered to /social/*.png by scripts/social-image.py, once in the Latin
+// alphabet and once in the Deseret (?script=dsrt). Not linked from the site.
+import '../../styles/global.css';
+import Sprite from '../../components/Sprite.astro';
+import Emblems from '../../components/Emblems.astro';
+import Mountains from '../../components/Mountains.astro';
+import Seal from '../../components/Seal.astro';
+import { toDeseret } from '../../lib/dsrt.js';
+
+import Q from '../../data/social-quote.json';
+const QUOTE = Q.text;
+const WHO = Q.by;
+const WHERE = 'General Conference · October 1867';
+
+// a seeded scatter, so the card comes out the same every time
+let seed = 1867;
+const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+const stars = Array.from({ length: 150 }, () => ({ x: rnd() * 1200, y: rnd() * 520, r: 0.4 + rnd() * rnd() * 1.6, a: 0.25 + rnd() * 0.65 }));
+const LETTERS = [...'𐐀𐐁𐐂𐐃𐐄𐐅𐐆𐐇𐐈𐐉𐐊𐐋𐐌𐐍𐐎𐐏𐐐𐐑𐐒𐐓𐐔𐐕𐐖𐐗𐐘𐐙𐐚𐐛𐐜𐐝𐐞𐐟𐐠𐐡𐐢𐐣𐐤𐐥'];
+const glyphs = Array.from({ length: 70 }, () => ({ ch: LETTERS[Math.floor(rnd() * LETTERS.length)], x: rnd() * 1200, y: rnd() * 560, s: 14 + rnd() * 30, r: (rnd() - 0.5) * 40, a: 0.05 + rnd() * 0.07 }));
+const emblems = [
+  { id: 'e-daystar', x: 1110, y: 120, s: 74, r: 8 }, { id: 'e-tree', x: 365, y: 455, s: 70, r: -6 }, { id: 'i-skep', x: 24, y: 20, s: 58, r: -8 },
+  { id: 'e-dove', x: 1040, y: 360, s: 66, r: 6 }, { id: 'e-wheat', x: 22, y: 470, s: 60, r: 5 }, { id: 'e-handclasp', x: 680, y: 18, s: 50, r: -4 },
+];
+---
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex" />
+  <title>Social card — Deseret Wiki</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=IM+Fell+English:ital@0;1&family=Grenze+Gotisch:wght@500&family=Noto+Sans+Deseret&display=swap" />
+  <script is:inline>if (/script=dsrt/.test(location.search)) document.documentElement.dataset.v = 'dsrt';</script>
+</head>
+<body>
+  <Sprite /><Emblems />
+  <div class="card" id="card">
+    <svg class="sky" viewBox="0 0 1200 630" aria-hidden="true">
+      {stars.map((s) => <circle cx={s.x.toFixed(1)} cy={s.y.toFixed(1)} r={s.r.toFixed(2)} fill="#F3E9D2" opacity={s.a.toFixed(2)} />)}
+    </svg>
+    <div class="glyphs" aria-hidden="true">
+      {glyphs.map((g) => <span style={`left:${g.x.toFixed(0)}px;top:${g.y.toFixed(0)}px;font-size:${g.s.toFixed(0)}px;transform:rotate(${g.r.toFixed(0)}deg);opacity:${g.a.toFixed(2)}`}>{g.ch}</span>)}
+    </div>
+    {emblems.map((e) => <svg class="emblem" viewBox="0 0 64 64" style={`left:${e.x}px;top:${e.y}px;width:${e.s}px;transform:rotate(${e.r}deg)`} aria-hidden="true"><use href={`#${e.id}`} /></svg>)}
+    <div class="land"><Mountains /></div>
+
+    <figure class="portrait">
+      <img src="/social/brigham-young.webp" alt="Brigham Young, photographed about 1870" />
+    </figure>
+
+    <div class="words">
+      <span class="mark" aria-hidden="true">“</span>
+      <blockquote class="latn"><p>{QUOTE}</p></blockquote>
+      <blockquote class="dsrt-q" lang="en-Dsrt"><p>{toDeseret(QUOTE)}</p></blockquote>
+      <p class="cite latn">— {WHO} <span>· {WHERE}</span></p>
+      <p class="cite dsrt-q" lang="en-Dsrt">— {toDeseret(WHO)} <span>· {toDeseret('General Conference')} · {toDeseret('October')} 1867</span></p>
+    </div>
+
+    <div class="brand"><Seal size="34px" /><span class="latn">Deseret Wiki</span><span class="dsrt-q" lang="en-Dsrt">{toDeseret('Deseret Wiki')}</span></div>
+  </div>
+</body>
+</html>
+
+<style is:global>
+  html, body { margin: 0; background: #0B0E13; }
+  body::before { display: none; }
+  .card { position: relative; width: 1200px; height: 630px; overflow: hidden; color: #EDE3CB;
+    background: radial-gradient(ellipse 80% 70% at 70% 30%, #182031 0%, #10141C 55%, #0C0E12 100%); }
+  .card .sky { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .card .glyphs span { position: absolute; font-family: 'Noto Sans Deseret', sans-serif; color: #C9A45C; line-height: 1; }
+  .card .emblem { position: absolute; color: #C9A45C; opacity: .16; }
+  .card .land { position: absolute; left: 0; right: 0; bottom: 0; }
+  .card .land .mountains { height: 128px; opacity: .9; }
+  .card .land .mtn-paper { fill: #121318; }
+
+  .portrait { position: absolute; left: 66px; top: 76px; width: 268px; height: 360px; margin: 0; border-radius: 50%;
+    padding: 7px; background: #0E1016; box-shadow: 0 0 0 1.5px #C9A45C, 0 0 0 6px #0E1016, 0 0 0 7px rgb(201 164 92 / .55), 0 18px 50px rgb(0 0 0 / .55); }
+  .portrait img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; border-radius: 50%;
+    filter: grayscale(1) sepia(.5) contrast(1.08) brightness(.92);
+    -webkit-mask-image: radial-gradient(ellipse 72% 70% at 50% 46%, #000 62%, transparent 100%); mask-image: radial-gradient(ellipse 72% 70% at 50% 46%, #000 62%, transparent 100%); }
+
+  .words { position: absolute; left: 398px; right: 64px; top: 34px; bottom: 132px; display: flex; flex-direction: column; justify-content: center; }
+  .words .mark { position: relative; height: 0; margin-left: -14px; top: -62px; font: 400 150px/1 'IM Fell English', serif; color: #C9A45C; opacity: .55; }
+  .words blockquote { margin: 0; padding: 0; border: 0; font-size: inherit; }
+  .words blockquote::before, .words blockquote::after { content: none; }
+  .words blockquote p { margin: 0; font: italic 400 36.5px/1.3 'IM Fell English', Georgia, serif; color: #F1E6CB; text-wrap: pretty; }
+  .words .dsrt-q p { font: 400 29px/1.48 'Noto Sans Deseret', sans-serif; font-style: normal; letter-spacing: .01em; }
+  .words .cite { margin: 26px 0 0; font: 600 16px/1.4 'Cinzel', serif; letter-spacing: .18em; text-transform: uppercase; color: #D2AE62; }
+  .words .cite span { color: #B9AE96; font-weight: 400; }
+  .words .cite.dsrt-q { font: 400 17px/1.4 'Noto Sans Deseret', sans-serif; text-transform: none; letter-spacing: .06em; }
+  .dsrt-q { display: none; }
+  html[data-v='dsrt'] .dsrt-q { display: block; }
+  .brand .dsrt-q { font: 400 16px/1 'Noto Sans Deseret', sans-serif; letter-spacing: .08em; text-transform: none; }
+  html[data-v='dsrt'] .brand .dsrt-q { display: inline; }
+  html[data-v='dsrt'] .latn { display: none; }
+
+  .brand { position: absolute; right: 30px; bottom: 24px; display: flex; align-items: center; gap: 10px; z-index: 2;
+    font: 600 14px/1 'Cinzel', serif; letter-spacing: .24em; text-transform: uppercase; color: #E8DCC0; }
+</style>
