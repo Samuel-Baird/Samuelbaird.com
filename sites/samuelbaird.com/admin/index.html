@@ -13,30 +13,253 @@
 <link rel="stylesheet" href="/tokens.css">
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:var(--background);color:var(--foreground);font:16px/1.6 var(--font-sans)}
-a{color:inherit;text-decoration:none}
-.rail{max-width:56rem;margin:0 auto;padding:32px 16px 64px}
-h1{font:600 clamp(1.8rem,5vw,2.4rem)/1.15 var(--font-serif);margin:0 0 6px}
-.sub{color:var(--muted);margin:0 0 24px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.card{display:block;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px}
+body{margin:0;background:var(--background);color:var(--foreground);font:15px/1.55 var(--font-sans)}
+a{color:var(--accent);text-underline-offset:3px;overflow-wrap:anywhere}
+.rail{max-width:76rem;margin:0 auto;padding:28px 16px 64px}
+h1{font:600 clamp(1.8rem,5vw,2.4rem)/1.15 var(--font-serif);margin:0 0 4px}
+h2{font:600 1.2rem var(--font-serif);margin:28px 0 10px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+h2 small{font:400 .82rem var(--font-sans);color:var(--muted)}
+.sub{color:var(--muted);margin:0 0 18px}
+#msg{margin:0 0 16px;padding:12px 14px;border:1px solid var(--border);border-left:3px solid var(--honey);border-radius:var(--radius);background:var(--surface)}
+#msg[hidden]{display:none}
+.note{color:var(--muted);font-size:.88rem;margin:0 0 10px}
+.note code,#msg code{font-size:.85em}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.kpi{border:1px solid var(--border);border-radius:var(--radius);padding:10px 14px;background:var(--surface);min-width:0}
+.kpi b{display:block;font:600 1.5rem/1.2 var(--font-serif);font-variant-numeric:tabular-nums}
+.kpi span{font-size:.8rem;color:var(--muted)}
+.kpi em{display:block;font-style:normal;font-size:.78rem;color:var(--muted);margin-top:2px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:0 28px}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse}
+th{font:600 .72rem var(--font-sans);text-transform:uppercase;letter-spacing:.04em;color:var(--muted);text-align:left;padding:6px 8px;border-bottom:1px solid var(--border);white-space:nowrap}
+td{padding:8px;border-bottom:1px solid var(--border);vertical-align:top}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.muted{color:var(--muted)}
+.small{font-size:.82rem}
+.st{display:inline-block;font-size:.74rem;border:1px solid var(--border);border-radius:var(--radius);padding:0 6px;white-space:nowrap}
+.st.ok{color:#9cc79a;border-color:#35503a}
+.st.bad{color:#e59a9a;border-color:#5a3434}
+.st.wait{color:var(--honey);border-color:#5a4a26}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+.chip{font-size:.8rem;border:1px solid var(--border);border-radius:var(--radius);padding:2px 9px;color:var(--muted)}
+.chip b{color:var(--foreground);font-variant-numeric:tabular-nums}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.card{display:block;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px;color:inherit;text-decoration:none}
 .card:hover,.card:focus-visible{border-color:var(--accent)}
-.card b{display:block;font:600 1.15rem var(--font-serif);margin:0 0 4px}
-.card span{color:var(--muted);font-size:.9rem}
-.soon{opacity:.55}
+.card b{display:block;font:600 1.05rem var(--font-serif);margin:0 0 2px}
+.card span{color:var(--muted);font-size:.86rem}
+.btn{font:inherit;color:var(--foreground);background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:6px 12px;min-height:36px;cursor:pointer}
+.btn:hover{border-color:var(--muted)}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
 </style>
 </head>
 <body>
 <main class="rail">
-  <h1>Admin</h1>
-  <p class="sub">Private tools. One sign-in (Google, via Latter-day Stats) covers every samuelbaird.com app.</p>
-  <div class="cards">
-    <a class="card" href="/admin/tickets"><b>Tickets</b><span>Every project, ranked by priority, impact, traffic, revenue and ease.</span></a>
-    <a class="card" href="/latter-day-stats/admin"><b>Latter-day Stats admin</b><span>Channels, studies, graphics, messages, analytics.</span></a>
-    <a class="card" href="/scout"><b>Scout</b><span>Collector-item leads.</span></a>
-    <a class="card" href="/learn"><b>Learn</b><span>Course notes.</span></a>
-    <div class="card soon"><b>Dashboard</b><span>Traffic, revenue and deploys across sites (ticket 0.4).</span></div>
+  <div class="top">
+    <div>
+      <h1>Admin</h1>
+      <p class="sub">Money, people, deploys and to-dos across every site. Private: only the site owner's account can load the numbers.</p>
+    </div>
+    <button class="btn" id="reload" type="button">Refresh</button>
   </div>
+  <div id="msg" role="status" hidden></div>
+
+  <section aria-labelledby="h-money">
+    <h2 id="h-money">Revenue and people <small id="asof"></small></h2>
+    <p class="note" id="money-note" hidden></p>
+    <div class="kpis" id="kpis"></div>
+  </section>
+
+  <div class="cols">
+    <section aria-labelledby="h-months">
+      <h2 id="h-months">Donations by month <small>last 12 months, refunds excluded</small></h2>
+      <div class="scroll"><table><thead><tr><th>Month</th><th class="num">Gifts</th><th class="num">Amount</th></tr></thead><tbody id="months"><tr><td colspan="3" class="muted">Loading…</td></tr></tbody></table></div>
+    </section>
+    <section aria-labelledby="h-tickets">
+      <h2 id="h-tickets">Tickets <small><a href="/admin/tickets">open the tracker</a></small></h2>
+      <div class="chips" id="tchips"></div>
+      <div class="scroll"><table><thead><tr><th>#</th><th>Up next</th><th>Status</th><th class="num">Score</th></tr></thead><tbody id="tnext"><tr><td colspan="4" class="muted">Loading…</td></tr></tbody></table></div>
+    </section>
+  </div>
+
+  <section aria-labelledby="h-deploys">
+    <h2 id="h-deploys">Deploys <small>latest Vercel deployment per project</small></h2>
+    <p class="note" id="deploy-note" hidden></p>
+    <div class="scroll"><table><thead><tr><th>Site</th><th>Production</th><th>Latest</th><th>Commit</th></tr></thead><tbody id="deploys"><tr><td colspan="4" class="muted">Loading…</td></tr></tbody></table></div>
+  </section>
+
+  <div class="cols">
+    <section aria-labelledby="h-up">
+      <h2 id="h-up">Up right now <small>checked from the server on each load</small></h2>
+      <div class="scroll"><table><thead><tr><th>Site</th><th>Status</th><th class="num">Time</th></tr></thead><tbody id="uptime"><tr><td colspan="3" class="muted">Loading…</td></tr></tbody></table></div>
+    </section>
+    <section aria-labelledby="h-traffic">
+      <h2 id="h-traffic">Traffic</h2>
+      <p class="note">Vercel Web Analytics has no public API, so traffic opens in Vercel, one project at a time.</p>
+      <ul id="traffic" class="small"></ul>
+    </section>
+  </div>
+
+  <section aria-labelledby="h-tools">
+    <h2 id="h-tools">Tools</h2>
+    <div class="cards">
+      <a class="card" href="/admin/tickets"><b>Tickets</b><span>Every project, ranked by priority, impact, traffic, revenue and ease.</span></a>
+      <a class="card" href="/latter-day-stats/admin"><b>Latter-day Stats admin</b><span>Channels, studies, graphics, messages, access.</span></a>
+      <a class="card" href="/latter-day-stats/admin/analytics"><b>Latter-day Stats analytics</b><span>Bookmarks, upvotes, study progress, signups.</span></a>
+      <a class="card" href="/scout"><b>Scout</b><span>Collector-item leads.</span></a>
+      <a class="card" href="/learn"><b>Learn</b><span>Course notes.</span></a>
+      <a class="card" href="https://dashboard.stripe.com/" rel="noopener"><b>Stripe</b><span>Payments, payouts, subscriptions.</span></a>
+      <a class="card" href="https://supabase.com/dashboard/projects" rel="noopener"><b>Supabase</b><span>Database, auth, logs.</span></a>
+      <a class="card" href="https://search.google.com/search-console" rel="noopener"><b>Search Console</b><span>Search clicks and indexing.</span></a>
+    </div>
+  </section>
 </main>
+<script>
+(() => {
+  const $ = (s) => document.querySelector(s);
+  const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const money = (c) => '$' + (c / 100).toLocaleString('en-US', { minimumFractionDigits: c % 100 ? 2 : 0, maximumFractionDigits: 2 });
+  const num = (n) => Number(n || 0).toLocaleString('en-US');
+  const PROJECTS = ['samuelbaird-com', 'latter-day-stats', 'urim', 'peepstone', 'omni', 'deseret-wiki', 'deseret-mcp'];
+  function ago(t) {
+    if (!t) return '';
+    const s = (Date.now() - new Date(t).getTime()) / 1000;
+    if (s < 90) return 'just now';
+    if (s < 5400) return Math.round(s / 60) + ' min ago';
+    if (s < 129600) return Math.round(s / 3600) + ' h ago';
+    return Math.round(s / 86400) + ' d ago';
+  }
+  function say(html) { const m = $('#msg'); m.innerHTML = html || ''; m.hidden = !html; }
+
+  async function get(url) {
+    const opt = { credentials: 'same-origin', cache: 'no-store' };
+    let r = await fetch(url, opt);
+    if (r.status === 401) {
+      // Refresh the shared session through any Latter-day Stats request, then try once more.
+      await fetch('/latter-day-stats/robots.txt', opt).catch(() => {});
+      r = await fetch(url, opt);
+    }
+    const json = await r.json().catch(() => ({}));
+    if (!r.ok) throw Object.assign(new Error(json.error || r.statusText), { status: r.status });
+    return json;
+  }
+  function explain(err) {
+    const login = '/latter-day-stats/login?return_to=' + encodeURIComponent(location.pathname);
+    switch (err.message) {
+      case 'signed_out': case 'expired': return `Sign in to see the dashboard. <a href="${login}">Sign in with Google</a>`;
+      case 'not_owner': return 'This page is only for the site owner.';
+      case 'not_configured': return 'Not set up yet: add <code>SUPABASE_URL</code> and <code>SUPABASE_ANON_KEY</code> to the samuelbaird-com Vercel project.';
+      case 'migration_missing': return 'Not set up yet: apply migration <code>0061_admin_tickets.sql</code> in latter-day-stats.';
+      default: return 'Could not load the dashboard: ' + esc(err.message);
+    }
+  }
+
+  function state(s) {
+    if (!s) return '<span class="muted">none</span>';
+    const cls = s === 'READY' ? 'ok' : s === 'ERROR' ? 'bad' : 'wait';
+    const label = { READY: 'ready', ERROR: 'failed', BUILDING: 'building', QUEUED: 'queued', INITIALIZING: 'starting', CANCELED: 'canceled' }[s] || s.toLowerCase();
+    return `<span class="st ${cls}">${esc(label)}</span>`;
+  }
+
+  function renderSummary(s, err) {
+    const note = $('#money-note');
+    if (!s) {
+      note.hidden = false;
+      note.innerHTML = err === 'migration_missing'
+        ? 'Apply migration <code>0062_admin_dashboard.sql</code> in latter-day-stats to see revenue and people.'
+        : 'Revenue and people could not load: ' + esc(err);
+      $('#kpis').innerHTML = ''; $('#months').innerHTML = '<tr><td colspan="3" class="muted">No data.</td></tr>';
+      return;
+    }
+    note.hidden = true;
+    const d = s.donations || {}, p = s.premium || {}, a = s.accounts || {};
+    $('#asof').textContent = 'as of ' + new Date(s.generated_at).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+    const k = [
+      [money(d.cents_30d || 0), 'donated, last 30 days', `${num(d.count_30d)} gift${d.count_30d === 1 ? '' : 's'}`],
+      [money(d.cents_365d || 0), 'donated, last 12 months', `${money(d.cents_all || 0)} all time`],
+      [num(d.recurring_donors), 'monthly donors', d.last_at ? 'last gift ' + ago(d.last_at) : 'no gifts yet'],
+      [num(p.count), 'premium members', `+${num(p.added_30d)} in 30 days`],
+      [num(a.count), 'accounts', `+${num(a.added_7d)} this week, +${num(a.added_30d)} in 30 days`],
+    ];
+    if (s.refunds) k.push([num(s.refunds), 'refunded donations', 'excluded above']);
+    $('#kpis').innerHTML = k.map(([b, l, e]) => `<div class="kpi"><b>${b}</b><span>${l}</span><em>${e}</em></div>`).join('');
+    const months = (d.by_month || []).slice().reverse();
+    $('#months').innerHTML = months.length
+      ? months.map((m) => `<tr><td>${new Date(m.month + '-01T12:00:00').toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</td><td class="num">${num(m.count)}</td><td class="num">${money(m.cents)}</td></tr>`).join('')
+      : '<tr><td colspan="3" class="muted">No donations in the last 12 months.</td></tr>';
+  }
+
+  function renderDeploys(list, err, team) {
+    const note = $('#deploy-note');
+    if (!list) {
+      note.hidden = false;
+      note.innerHTML = err === 'no_vercel_token'
+        ? 'Add a <code>VERCEL_TOKEN</code> (create one at <a href="https://vercel.com/account/tokens" rel="noopener">vercel.com/account/tokens</a>) to the samuelbaird-com project to see deploys here.'
+        : 'Deploys could not load: ' + esc(err) + '.';
+      $('#deploys').innerHTML = PROJECTS.map((p) => `<tr><td><a href="https://vercel.com/${esc(team)}/${p}" rel="noopener">${p}</a></td><td colspan="3" class="muted">—</td></tr>`).join('');
+      return;
+    }
+    note.hidden = true;
+    $('#deploys').innerHTML = list.map((d) => {
+      const prod = d.production, last = d.latest;
+      const link = `https://vercel.com/${esc(team)}/${esc(d.project)}`;
+      const cell = (x) => x ? `${state(x.state)} <span class="muted small">${ago(x.created)}</span>` : '<span class="muted">none</span>';
+      const latestCell = last && prod && last.created === prod.created ? '<span class="muted small">same</span>'
+        : last ? `${cell(last)}${last.branch ? `<div class="muted small">${esc(last.branch)}</div>` : ''}` : '<span class="muted">none</span>';
+      const commit = (last || prod)?.message;
+      return `<tr><td><a href="${link}" rel="noopener">${esc(d.name)}</a>${d.failing ? ` <span class="st bad">${d.failing} failed recently</span>` : ''}</td>
+        <td>${prod && prod.inspector ? `<a href="${esc(prod.inspector)}" rel="noopener">${cell(prod)}</a>` : cell(prod)}</td>
+        <td>${latestCell}</td><td class="small">${esc(commit || '')}</td></tr>`;
+    }).join('');
+  }
+
+  function renderUptime(list) {
+    $('#uptime').innerHTML = (list || []).map((u) => `<tr><td><a href="${esc(u.url)}" rel="noopener">${esc(u.name)}</a></td>
+      <td>${u.ok ? '<span class="st ok">up</span>' : `<span class="st bad">${u.status ? 'HTTP ' + u.status : esc(u.error || 'down')}</span>`}</td>
+      <td class="num">${u.ms} ms</td></tr>`).join('') || '<tr><td colspan="3" class="muted">No data.</td></tr>';
+  }
+
+  function renderTraffic(team) {
+    $('#traffic').innerHTML = PROJECTS.map((p) => `<li><a href="https://vercel.com/${esc(team)}/${p}/analytics" rel="noopener">${p}</a></li>`).join('')
+      + '<li><a href="https://search.google.com/search-console" rel="noopener">Google Search Console</a></li>';
+  }
+
+  async function tickets() {
+    try {
+      const { tickets: all } = await get('/api/admin/tickets');
+      const order = ['doing', 'next', 'review', 'blocked', 'backlog', 'idea', 'done', 'dropped'];
+      const by = {}; for (const t of all) by[t.status] = (by[t.status] || 0) + 1;
+      $('#tchips').innerHTML = order.filter((s) => by[s]).map((s) => `<span class="chip">${s} <b>${by[s]}</b></span>`).join('');
+      const score = (t) => t.priority + t.impact + t.traffic + t.revenue + t.ease;
+      const live = all.filter((t) => ['doing', 'next', 'review', 'blocked'].includes(t.status))
+        .sort((a, b) => order.indexOf(a.status) - order.indexOf(b.status) || score(b) - score(a)).slice(0, 8);
+      $('#tnext').innerHTML = live.length
+        ? live.map((t) => `<tr><td class="muted">${esc(t.ref)}</td><td>${esc(t.title)}</td><td><span class="st ${t.status === 'blocked' ? 'bad' : t.status === 'doing' ? 'ok' : 'wait'}">${t.status}</span></td><td class="num">${score(t)}</td></tr>`).join('')
+        : '<tr><td colspan="4" class="muted">Nothing in progress or up next.</td></tr>';
+    } catch (e) {
+      $('#tnext').innerHTML = `<tr><td colspan="4" class="muted">${explain(e)}</td></tr>`;
+    }
+  }
+
+  async function load() {
+    say('');
+    renderTraffic('samuel-bairds-projects');
+    try {
+      const data = await get('/api/admin/dashboard');
+      renderTraffic(data.vercelTeam);
+      renderSummary(data.summary, data.errors.summary);
+      renderDeploys(data.deploys, data.errors.deploys, data.vercelTeam);
+      renderUptime(data.uptime);
+      tickets();
+    } catch (e) {
+      say(explain(e));
+      for (const id of ['#months', '#tnext', '#deploys', '#uptime']) $(id).innerHTML = '<tr><td colspan="4" class="muted">—</td></tr>';
+    }
+  }
+  $('#reload').addEventListener('click', load);
+  load();
+})();
+</script>
 </body>
 </html>
