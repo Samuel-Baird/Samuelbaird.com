@@ -8,17 +8,15 @@
     { id: 'desalph', name: 'desalph', file: 'fonts/desalph.otf', license: 'OFL 1.1', style: 'Sans serif' },
     { id: 'nomada', name: 'IDC Nomada', file: 'fonts/nomada.otf', license: 'OFL 1.1', style: 'Sans serif' },
     { id: 'system', name: 'Your computer’s font', file: null, license: '', style: 'Whatever your system uses' },
-    { id: 'custom', name: 'Your own font (upload in Options)', file: null, license: '', style: '' },
   ];
 
   const DEFAULTS = {
-    spelling: 'modern',     // modern | historical (1868-69 printing conventions)
     strict: false,          // true: words the dictionary lacks stay Latin even if they can be built from parts
     font: 'noto',
     size: 110,              // percent, applied to Deseret letters only (CSS size-adjust)
     everywhere: false,      // convert every page automatically
     sites: {},              // hostname -> true (always convert) | false (never)
-    captions: 'off',        // YouTube captions: off (as published) | dsrt (Deseret only) | both (stacked)
+    captions: 'off',        // YouTube captions: off (as published) | dsrt (Deseret)
   };
 
   async function getSettings() {
@@ -32,12 +30,7 @@
   async function registerFont(family, settings) {
     const pick = FONTS.find((f) => f.id === settings.font) || FONTS[0];
     let src;
-    if (pick.id === 'custom') {
-      const { customFont } = await chrome.storage.local.get('customFont');
-      if (customFont?.data) src = Uint8Array.from(atob(customFont.data), (c) => c.charCodeAt(0)).buffer;
-    } else if (pick.file) {
-      src = await (await fetch(chrome.runtime.getURL(pick.file))).arrayBuffer();
-    }
+    if (pick.file) src = await (await fetch(chrome.runtime.getURL(pick.file))).arrayBuffer();
     if (!src) src = 'local("Segoe UI Historic"), local("Noto Sans Deseret"), local("Apple Symbols")';
     const face = new FontFace(family, src, { unicodeRange: 'U+10400-1044F', sizeAdjust: `${settings.size || 100}%` });
     document.fonts.add(face);

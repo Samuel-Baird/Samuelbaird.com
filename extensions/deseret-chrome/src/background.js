@@ -2,7 +2,7 @@
 // Wiki: CMU Pronouncing Dictionary + hand overrides), so each tab doesn't load a 3.6 MB dictionary.
 // Chrome stops idle workers; the engine reloads in ~100 ms on the next request.
 import './shared.js';
-import { createEngine, parseDict, historical1868 } from './engine/dsrt.mjs';
+import { createEngine, parseDict } from './engine/dsrt.mjs';
 
 let enginePromise;
 function engine() {
@@ -18,9 +18,9 @@ function engine() {
 }
 
 // texts: string[] -> string[] in the same order. direction: 'dsrt' (Latin -> Deseret) | 'latin'.
-async function convert({ texts, direction, spelling, strict }) {
+async function convert({ texts, direction, strict }) {
   const e = await engine();
-  const opts = { strict: !!strict, ...(spelling === 'historical' ? historical1868 : {}) };
+  const opts = { strict: !!strict };
   let words = 0, unknown = 0;
   const out = texts.map((t) => {
     if (direction === 'latin') return e.fromDeseret(t).latin;

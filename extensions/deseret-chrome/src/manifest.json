@@ -3,7 +3,7 @@
   "name": "Deseret Alphabet: Read Any Page",
   "short_name": "Deseret",
   "version": "0.2.0",
-  "description": "Read any web page or YouTube captions in the Deseret Alphabet, or turn Deseret back into Latin. Modern or 1868 spellings.",
+  "description": "Read any web page or YouTube captions in the Deseret Alphabet, or turn Deseret back into Latin letters.",
   "homepage_url": "https://deseret.wiki/",
   "icons": { "16": "icons/16.png", "32": "icons/32.png", "48": "icons/48.png", "128": "icons/128.png" },
   "action": {
@@ -13,7 +13,7 @@
   },
   "options_page": "options.html",
   "background": { "service_worker": "background.js", "type": "module" },
-  "permissions": ["storage", "unlimitedStorage", "contextMenus"],
+  "permissions": ["storage", "contextMenus"],
   "host_permissions": ["<all_urls>"],
   "content_scripts": [
     {
@@ -39,7 +39,7 @@
     },
     "cycle-captions": {
       "suggested_key": { "default": "Alt+Shift+C" },
-      "description": "YouTube captions: English, Deseret, or both"
+      "description": "YouTube captions: switch between English and Deseret"
     }
   }
 }

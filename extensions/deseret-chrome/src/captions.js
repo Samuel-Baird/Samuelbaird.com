@@ -2,7 +2,6 @@
 // Modes (setting `captions`, shared with the popup and the in-player button):
 //   off  - captions exactly as YouTube shows them
 //   dsrt - each caption line in Deseret
-//   both - a Deseret line above each original line
 // YouTube rebuilds caption lines constantly (word by word for auto captions), so this watches the
 // caption container and re-renders; conversions are cached per line. A line whose words are mostly not
 // English (e.g. a Spanish track) is left as is rather than mangled.
@@ -12,8 +11,8 @@
   const { getSettings, setSettings, registerFont } = self.DSRT_SHARED;
 
   const FAMILY = 'DeseretCaptions';
-  const MODES = ['off', 'dsrt', 'both'];
-  const LABEL = { off: 'English captions', dsrt: 'Deseret captions', both: 'Deseret + English captions' };
+  const MODES = ['off', 'dsrt'];
+  const LABEL = { off: 'English captions', dsrt: 'Deseret captions' };
   const WORDS = /\p{Script=Latin}+(?:['’]\p{Script=Latin}+)*/gu;
   let settings = null;
   let mode = 'off';
@@ -26,7 +25,7 @@
   async function ensure(texts) {
     const missing = [...new Set(texts)].filter((t) => !cache.has(t));
     if (!missing.length) return;
-    const res = await chrome.runtime.sendMessage({ type: 'convert', texts: missing, direction: 'dsrt', spelling: settings.spelling, strict: settings.strict });
+    const res = await chrome.runtime.sendMessage({ type: 'convert', texts: missing, direction: 'dsrt', strict: settings.strict });
     if (!res || res.error) return;
     missing.forEach((t, i) => {
       const out = res.out[i];
@@ -38,7 +37,7 @@
   }
 
   // ---------- rendering ----------
-  const segments = () => (container ? [...container.querySelectorAll('.ytp-caption-segment:not(.dsrt-seg)')] : []);
+  const segments = () => (container ? [...container.querySelectorAll('.ytp-caption-segment')] : []);
   // A segment's English text: what YouTube last wrote (if it changed it) or what we saved before replacing.
   function original(seg) {
     if (seg.dataset.dsrtShown !== undefined && seg.textContent === seg.dataset.dsrtShown) return seg.dataset.dsrtOrig;
@@ -64,7 +63,6 @@
       const texts = segs.map(original);
       if (mode !== 'off') await ensure(texts.filter((t) => /\p{Script=Latin}/u.test(t)));
       pause();
-      container?.querySelectorAll('.dsrt-cap').forEach((n) => n.remove());
       segs.forEach((seg, i) => {
         const orig = texts[i];
         const conv = cache.get(orig);
@@ -80,24 +78,6 @@
           plainFont(seg);
         }
       });
-      if (mode === 'both') {
-        // One Deseret line above each visual line, built from clones so it keeps YouTube's styling.
-        for (const line of container.querySelectorAll('.caption-visual-line:not(.dsrt-cap)')) {
-          const segsInLine = [...line.querySelectorAll('.ytp-caption-segment')];
-          const parts = segsInLine.map((s) => cache.get(s.textContent)).filter((c, i) => c && c !== segsInLine[i].textContent);
-          if (!parts.length) continue;
-          const copy = line.cloneNode(false);
-          copy.classList.add('dsrt-cap');
-          copy.style.display = 'block';
-          const seg = segsInLine[0].cloneNode(false);
-          seg.classList.add('dsrt-seg');
-          seg.textContent = segsInLine.map((s) => cache.get(s.textContent) || s.textContent).join('');
-          delete seg.dataset.dsrtFont;
-          copy.appendChild(seg);
-          line.parentNode.insertBefore(copy, line);
-          seg.style.fontFamily = `"${FAMILY}", ${getComputedStyle(segsInLine[0]).fontFamily}`;
-        }
-      }
       resume();
     } finally {
       busy = false;
@@ -138,7 +118,7 @@
       controls.insertBefore(btn, cc ? cc.nextSibling : controls.firstChild);
     }
     btn.dataset.mode = mode;
-    btn.title = `${LABEL[mode]} (click to change, Alt+Shift+C)`;
+    btn.title = `${LABEL[mode]} (click to switch, Alt+Shift+C)`;
     btn.setAttribute('aria-label', LABEL[mode]);
     btn.setAttribute('aria-pressed', String(mode !== 'off'));
   }
@@ -149,8 +129,7 @@
     st.textContent = `.${BTN_CLASS}{position:relative;display:inline-flex!important;align-items:center;justify-content:center;vertical-align:top}
 .${BTN_CLASS} .dsrt-cc-glyph{font:500 22px/1 "${FAMILY}","Segoe UI Historic","Noto Sans Deseret",sans-serif;color:#fff;opacity:.9}
 .${BTN_CLASS} .dsrt-cc-dot{position:absolute;left:28%;right:28%;bottom:22%;height:3px;border-radius:2px;background:transparent}
-.${BTN_CLASS}[data-mode="dsrt"] .dsrt-cc-dot{background:#D9B46A}
-.${BTN_CLASS}[data-mode="both"] .dsrt-cc-dot{background:linear-gradient(90deg,#D9B46A 50%,#fff 50%)}`;
+.${BTN_CLASS}[data-mode="dsrt"] .dsrt-cc-dot{background:#D9B46A}`;
     document.documentElement.appendChild(st);
   }
 
@@ -166,9 +145,9 @@
   }
   async function apply(newSettings) {
     const fontChanged = !settings || ['font', 'size'].some((k) => settings[k] !== newSettings[k]);
-    const spellChanged = settings && ['spelling', 'strict'].some((k) => settings[k] !== newSettings[k]);
+    const spellChanged = settings && settings.strict !== newSettings.strict;
     settings = newSettings;
-    mode = MODES.includes(settings.captions) ? settings.captions : 'off';
+    mode = settings.captions === 'off' || !settings.captions ? 'off' : 'dsrt'; // older 'both' setting -> Deseret
     if (spellChanged) cache.clear();
     if (mode !== 'off' && (fontChanged || !face)) {
       if (face) document.fonts.delete(face);
@@ -179,8 +158,7 @@
   }
 
   chrome.storage.onChanged.addListener(async (changes, area) => {
-    if ((area === 'sync' && Object.keys(changes).some((k) => ['captions', 'spelling', 'strict', 'font', 'size'].includes(k)))
-      || (area === 'local' && changes.customFont)) apply(await getSettings());
+    if (area === 'sync' && Object.keys(changes).some((k) => ['captions', 'strict', 'font', 'size'].includes(k))) apply(await getSettings());
   });
   chrome.runtime.onMessage.addListener((msg, _s, reply) => {
     if (msg.type === 'captions-cycle') { cycle(); reply({ ok: true }); }

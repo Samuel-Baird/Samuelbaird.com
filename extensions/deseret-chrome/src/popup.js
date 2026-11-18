@@ -10,13 +10,9 @@
     const pick = FONTS.find((f) => f.id === settings.font) || FONTS[0];
     let fam = 'system-ui';
     try {
-      if (pick.file || pick.id === 'custom') {
+      if (pick.file) {
         if (!fontFaces.has(pick.id)) {
-          let src;
-          if (pick.id === 'custom') {
-            const { customFont } = await chrome.storage.local.get('customFont');
-            if (customFont?.data) src = Uint8Array.from(atob(customFont.data), (c) => c.charCodeAt(0)).buffer;
-          } else src = `url(${pick.file})`;
+          const src = `url(${pick.file})`;
           if (src) { const f = new FontFace(`p-${pick.id}`, src); document.fonts.add(f); await f.load(); fontFaces.set(pick.id, f); }
         }
         if (fontFaces.has(pick.id)) fam = `"p-${pick.id}"`;
@@ -32,14 +28,10 @@
   $('font').value = settings.font;
   $('size').value = settings.size;
   $('size-out').textContent = `${settings.size}%`;
-  for (const r of document.querySelectorAll('input[name=spelling]')) r.checked = r.value === settings.spelling;
 
   $('font').addEventListener('change', async () => { settings.font = $('font').value; await setSettings({ font: settings.font }); previewFont(); });
   $('size').addEventListener('input', () => { $('size-out').textContent = `${$('size').value}%`; settings.size = +$('size').value; previewFont(); });
   $('size').addEventListener('change', () => setSettings({ size: +$('size').value }));
-  for (const r of document.querySelectorAll('input[name=spelling]')) {
-    r.addEventListener('change', async () => { settings.spelling = r.value; await setSettings({ spelling: r.value }); convertBox(); });
-  }
   previewFont();
 
   // ---------- this page ----------
@@ -79,7 +71,7 @@
   // ---------- YouTube captions ----------
   const capBtns = [...document.querySelectorAll('[data-cap]')];
   const showCap = (m) => capBtns.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.cap === m)));
-  showCap(settings.captions);
+  showCap(settings.captions === 'off' ? 'off' : 'dsrt');
   capBtns.forEach((b) => b.addEventListener('click', async () => {
     showCap(b.dataset.cap);
     await setSettings({ captions: b.dataset.cap });
@@ -92,7 +84,7 @@
     const text = $('input').value;
     if (!text.trim()) { $('output').textContent = ''; $('copy').disabled = true; $('conv-note').textContent = ''; return; }
     const direction = /[\u{10400}-\u{1044F}]/u.test(text) && !/\p{Script=Latin}/u.test(text) ? 'latin' : 'dsrt';
-    const res = await chrome.runtime.sendMessage({ type: 'convert', texts: [text], direction, spelling: settings.spelling, strict: settings.strict });
+    const res = await chrome.runtime.sendMessage({ type: 'convert', texts: [text], direction, strict: settings.strict });
     if (res?.error) { $('conv-note').textContent = res.error; return; }
     $('output').textContent = res.out[0];
     $('copy').disabled = false;

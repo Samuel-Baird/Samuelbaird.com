@@ -14,7 +14,7 @@
   const DSRT = /[\u{10400}-\u{1044F}]/u;
   const SKIP = 'script,style,noscript,textarea,input,select,option,code,pre,kbd,samp,var,svg,math,template,iframe,'
     + '[contenteditable=""],[contenteditable="true"],[translate="no"],.notranslate,[data-no-dsrt],'
-    + '.ytp-caption-window-container,.dsrt-cap'; // YouTube captions belong to captions.js
+    + '.ytp-caption-window-container'; // YouTube captions belong to captions.js
   const ICON_FONT = /icon|material|awesome|symbol|glyph|fontello|dashicons/i;
   const FAMILY = 'DeseretReader';
   const CHUNK = 300;
@@ -60,7 +60,7 @@
 
   // ---------- convert and apply ----------
   async function request(list) {
-    const res = await chrome.runtime.sendMessage({ type: 'convert', texts: list, direction, spelling: settings.spelling, strict: settings.strict });
+    const res = await chrome.runtime.sendMessage({ type: 'convert', texts: list, direction, strict: settings.strict });
     if (!res || res.error) throw new Error(res?.error || 'no reply from background');
     stats.words += res.stats.words;
     stats.unknown += res.stats.unknown;
@@ -181,12 +181,11 @@
   });
   const status = () => ({ active, direction, stats, host: location.hostname, suggested: guessDirection() });
 
-  // Re-apply when the spelling, font or size changes while the page is converted.
+  // Re-apply when the font, size or dictionary-only setting changes while the page is converted.
   chrome.storage.onChanged.addListener((changes, area) => {
     if (!active) return;
     const keys = Object.keys(changes);
-    if (area === 'sync' && keys.some((k) => ['spelling', 'strict', 'font', 'size'].includes(k))) activate(direction, { save: false });
-    if (area === 'local' && keys.includes('customFont') && settings?.font === 'custom') activate(direction, { save: false });
+    if (area === 'sync' && keys.some((k) => ['strict', 'font', 'size'].includes(k))) activate(direction, { save: false });
   });
 
   // On load: sites marked "always" (or every site when "everywhere" is on), else whatever this tab was

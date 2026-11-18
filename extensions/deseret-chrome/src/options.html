@@ -21,8 +21,7 @@
 
   <section>
     <h2>Spelling</h2>
-    <label class="check"><input type="radio" name="spelling" value="modern"> <span>Modern dictionary (CMU Pronouncing Dictionary, as on the Deseret Wiki)</span></label>
-    <label class="check"><input type="radio" name="spelling" value="historical"> <span>1868 printing conventions: <span class="dsrt">𐑄</span> &ldquo;the&rdquo;, <span class="dsrt">𐐱𐑂</span> &ldquo;of&rdquo;, <span class="dsrt">𐐸𐐶</span> for &ldquo;wh&rdquo;, <span class="dsrt">-𐑌𐐮𐑅</span> for &ldquo;-ness&rdquo;</span></label>
+    <p class="muted small">Spellings follow the CMU Pronouncing Dictionary, as on the Deseret Wiki.</p>
     <label class="check"><input type="checkbox" id="strict"> <span>Dictionary words only: leave words in Latin when they aren&rsquo;t in the dictionary, even if they can be built from parts (faith&nbsp;+&nbsp;-ful&nbsp;+&nbsp;-ness)</span></label>
   </section>
 
@@ -30,12 +29,7 @@
     <h2>Font</h2>
     <label class="field">Font <select id="font"></select></label>
     <label class="field">Size <input type="range" id="size" min="80" max="160" step="5"> <output id="size-out"></output></label>
-    <p class="preview dsrt" id="preview">𐐐𐐬𐑊𐐨𐑌𐐮𐑅 𐐻𐐭 𐑄 𐐢𐐫𐑉𐐼. 𐐜 𐐔𐐯𐑅𐐨𐑉𐐯𐐻 𐐊𐑊𐑁𐐲𐐺𐐯𐐻.</p>
-    <h3>Your own font</h3>
-    <p class="muted small">Any font with Deseret letters (Unicode U+10400&ndash;1044F): TTF, OTF, WOFF or WOFF2, up to 8&nbsp;MB. The <a href="https://deseret.wiki/fonts/" target="_blank" rel="noopener">Deseret Wiki font list</a> has dozens. Stored only in this browser.</p>
-    <input type="file" id="font-file" accept=".ttf,.otf,.woff,.woff2,font/*">
-    <p id="custom-status" class="muted small"></p>
-    <button type="button" id="font-remove" class="small-btn" hidden>Remove my font</button>
+    <p class="preview dsrt" id="preview">𐐐𐐬𐑊𐐨𐑌𐐲𐑅 𐐻𐐭 𐑄𐐲 𐐢𐐫𐑉𐐼. 𐐜𐐲 𐐔𐐯𐑅𐐨𐑉𐐯𐐻 𐐈𐑊𐑁𐐲𐐺𐐯𐐻.</p>
   </section>
 
   <section>

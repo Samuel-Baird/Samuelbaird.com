@@ -4,16 +4,16 @@ Switches any web page, and YouTube captions, between the Latin and Deseret alpha
 
 - **Whole pages**: toolbar button, <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd>, or right-click > "Switch page between Latin and Deseret". Pages written in Deseret switch to Latin.
 - **Stays on as you browse**: once a tab is in Deseret, later pages on the same site load in Deseret until you switch back or leave the site. "Always show this site in Deseret" makes it permanent; Options can turn on every site.
-- **YouTube captions** (youtube.com and embedded players): English, Deseret, or both (Deseret above English). Use the 𐐔 button in the player controls, <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>, or the popup. Choosing Deseret turns YouTube's captions on. Auto-generated captions convert as each word appears; lines that are mostly not English (another language's track) are left alone.
-- **Spelling**: modern dictionary spelling, or the **1868 printing** conventions of the Deseret Readers and the 1869 Book of Mormon (only patterns with printed examples: 𐑄 "the", 𐐱𐑂 "of", 𐐸𐐶 "wh", -𐑌𐐮𐑅 "-ness"). "Dictionary words only" leaves built-from-parts words in Latin.
-- **Fonts**: five bundled (Noto Sans Deseret, Analecta, Mellifera, desalph, IDC Nomada), the system font, or upload your own. A size slider scales only the Deseret letters.
+- **YouTube captions** (youtube.com and embedded players): switch between English and Deseret with the 𐐔 button in the player controls, <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>, or the popup. Choosing Deseret turns YouTube's captions on. Auto-generated captions convert as each word appears; lines that are mostly not English (another language's track) are left alone.
+- **Spelling**: the CMU Pronouncing Dictionary, as on the Deseret Wiki. "Dictionary words only" (Options) leaves built-from-parts words in Latin.
+- **Fonts**: five bundled (Noto Sans Deseret, Analecta, Mellifera, desalph, IDC Nomada) or the system font. A size slider scales only the Deseret letters.
 - **Converter box** in the popup: type English or Deseret, copy the result.
 - New content (infinite scroll, single-page apps, live captions) converts as it appears. Code, inputs, editors and icon fonts are left alone. Words the dictionary can't spell stay in Latin rather than being guessed.
 
 ## How it works
 
 - `background.js` loads the transliteration engine from Deseret MCP (`sites/deseret-mcp/src/dsrt.mjs`: CMU Pronouncing Dictionary, 126k words, plus the Latter-day Saint name overrides). It is the same engine and data as Deseret MCP and the Deseret Wiki, so spellings match everywhere.
-- `captions.js` (YouTube only) watches the caption container, converts each line through the same worker (cached), and in "both" mode inserts a cloned Deseret line above each line so it keeps YouTube's caption styling. The page converter skips captions so the two never fight.
+- `captions.js` (YouTube only) watches the caption container, converts each line through the same worker (cached) and swaps the text in place, keeping YouTube's caption styling. The page converter skips captions so the two never fight.
 - `content.js` only rewrites text node values (never the DOM structure) and remembers the originals, so switching back is exact and frameworks keep working. The font is registered from bytes through the FontFace API with `unicode-range: U+10400-1044F`, so page CSPs can't block it and Latin text keeps its own font.
 - Everything runs locally. No page text leaves the browser and nothing is collected.
 
@@ -36,4 +36,4 @@ This writes `dist/` (gitignored) and `dist.zip`. Then open `chrome://extensions`
 
 ## Licenses
 
-Dictionary: CMU Pronouncing Dictionary (BSD-2-Clause, `engine/CMUDICT-LICENSE`). Fonts: see `fonts/README.txt` (SIL OFL 1.1 or public domain; license texts included). Only fonts that allow redistribution are bundled; users can add any other font themselves.
+Dictionary: CMU Pronouncing Dictionary (BSD-2-Clause, `engine/CMUDICT-LICENSE`). Fonts: see `fonts/README.txt` (SIL OFL 1.1 or public domain; license texts included). Only fonts that allow redistribution are bundled.
