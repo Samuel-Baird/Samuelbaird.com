@@ -1,0 +1,8023 @@
+{
+ "details": {
+  "laie-hawaii-temple": {
+   "address": "55-600 Naniloa Loop\nLaie HI 96762-2202\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1915-10-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1916-02-08"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1919-11-27"
+    },
+    {
+     "event": "Rededicated",
+     "date": "1978-06-13"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2010-11-21"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "johannesburg-south-africa-temple": {
+   "address": "7 Jubilee Rd\nPARKTOWN\nJohannesburg\n2193\nSOUTH AFRICA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1981-04-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1982-11-27"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1985-08-24"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "logan-utah-temple": {
+   "address": "175 N 300 E\nLogan UT 84321-4720\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1876-10-06"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1877-05-18"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1884-05-17"
+    },
+    {
+     "event": "Rededicated",
+     "date": "1979-03-13"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "las-vegas-nevada-temple": {
+   "address": "827 Temple View Dr\nLas Vegas NV 89110-2920\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1984-04-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1985-11-30"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1989-12-16"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "mexico-city-mexico-temple": {
+   "address": "Avenida 510 N°90\nCol. San Juan de Aragon\n07950 México\nMEXICO",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1976-04-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1979-11-25"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1983-12-02"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2008-11-16"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2015-09-13"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "ogden-utah-temple": {
+   "address": "350 22nd St\nOgden UT 84401-1487\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1967-08-24"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1969-09-08"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1972-01-18"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2014-09-21"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "orlando-florida-temple": {
+   "address": "9000 Windy Ridge Rd\nWindermere FL 34786-8347\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1991-04-06"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1992-06-20"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1994-10-09"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "RENOVATION"
+  },
+  "provo-utah-rock-canyon-temple": {
+   "address": "2200 Temple Hill Dr\nProvo UT 84604-1775\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1967-08-14"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1969-09-15"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1972-02-09"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "RENOVATION"
+  },
+  "sydney-australia-temple": {
+   "address": "756 Pennant Hills Road\nCorner Pennant Hills Rd & Moseley St.\nCARLINGFORD NSW 2118\nAUSTRALIA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1980-04-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1982-08-13"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1984-09-20"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "st.-george-utah-temple": {
+   "address": "250 E 400 S\nSt George UT 84770-3699\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1871-11-09"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1871-11-09"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1877-04-06"
+    },
+    {
+     "event": "Rededicated",
+     "date": "1975-11-11"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2023-12-10"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "sao-paulo-brazil-temple": {
+   "address": "Av. Prof. Francisco Morato, 2390\nCaxingui\n05512-300 São Paulo - SP\nBRAZIL",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1975-03-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1976-03-20"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1978-10-30"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2004-02-22"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "nuku'alofa-tonga-temple": {
+   "address": "Halaloto Road - Liahona\nTONGATAPU\nTONGA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1980-04-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1981-02-18"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1983-08-09"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2007-11-04"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "nashville-tennessee-temple": {
+   "address": "344 Ernest Rice Ln\nFranklin TN 37069\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1994-11-09"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-03-13"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-05-21"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "papeete-tahiti-temple": {
+   "address": "Temple S.D.J. (Mormon)\nRoute de la Fautaua-Titioro\nCommune de Papeete Tahiti 98713\nFRENCH POLYNESIA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1980-04-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1981-02-13"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1983-10-27"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2006-11-12"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "tokyo-japan-temple": {
+   "address": "5-8-10 Minami Azabu\nMinato-ku, TOKYO\n106-0047\nJAPAN",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1975-08-09"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1978-04-10"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1980-10-27"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2022-07-03"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "vernal-utah-temple": {
+   "address": "420 W 200 S\nVernal UT 84078-2536\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1994-02-13"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1995-05-13"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1997-11-02"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "boston-massachusetts-temple": {
+   "address": "100 Hinckley Wy\nBelmont MA 02478-2135\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1995-09-30"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1997-06-13"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-10-01"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "antofagasta-chile-temple": {
+   "address": "Las Palmeras 44\nANTOFAGASTA\nCHILE",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2019-04-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2020-11-27"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2025-06-15"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "mount-timpanogos-utah-temple": {
+   "address": "742 N 900 E\nAmerican Fork UT 84003-9124\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1992-10-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1993-10-09"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1996-10-13"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "budapest-hungary-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2019-04-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2025-06-21"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "preston-england-temple": {
+   "address": "Temple Way\nHartwood Green\nCHORLEY\nLancashire\nEngland PR6 7EQ\nUnited Kingdom",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1992-10-19"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1994-06-12"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1998-06-07"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "moses-lake-washington-temple": {
+   "address": "401 Yonezawa Blvd\nMoses Lake WA 98837\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2019-04-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2020-10-10"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2023-09-17"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "st.-louis-missouri-temple": {
+   "address": "12555 N Outer Forty Dr\nSt. Louis MO 63141-8620\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1990-12-29"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1993-10-30"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1997-06-01"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "cardston-alberta-temple": {
+   "address": "348 3rd St W\nCARDSTON AB T0K 0K0\nCANADA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1913-06-27"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1913-07-27"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1923-08-26"
+    },
+    {
+     "event": "Rededicated",
+     "date": "1962-07-02"
+    },
+    {
+     "event": "Rededicated",
+     "date": "1991-06-22"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "san-pedro-sula-honduras-temple": {
+   "address": "Blvd. Jose Antonio Peraza\nFrente a Academia Americana al lado\nde Torre Banco del País Rumbo al\nHospital Catarino Rivas\n21102 SAN PEDRO SULA, CORTES\nHONDURAS",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2019-04-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2020-09-05"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2024-10-13"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "mesa-arizona-temple": {
+   "address": "101 S LeSueur\nMesa AZ 85204-1031\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1919-10-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1922-04-25"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1927-10-23"
+    },
+    {
+     "event": "Rededicated",
+     "date": "1975-04-15"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2021-12-12"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "neiafu-tonga-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2019-04-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2021-09-11"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "boise-idaho-temple": {
+   "address": "1211 S Cole Rd\nBoise ID 83709-1871\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1982-03-31"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1982-12-18"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1984-05-25"
+    },
+    {
+     "event": "Rededicated",
+     "date": "1987-02-14"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2012-11-18"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "deseret-peak-utah-temple": {
+   "address": "2401 N 400 W\nTooele UT 84074\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2019-04-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2021-05-15"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2024-11-10"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "chicago-illinois-temple": {
+   "address": "4151 W Lake Ave\nGlenview IL 60025-1240\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1981-04-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1983-08-13"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1985-08-09"
+    },
+    {
+     "event": "Rededicated",
+     "date": "1989-10-08"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "pago-pago-american-samoa-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2019-04-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2021-10-30"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2026-12-13"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPENING SOON"
+  },
+  "denver-colorado-temple": {
+   "address": "2001 E Phillips Cir\nCentennial CO 80122-3264\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1982-03-31"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1984-05-19"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1986-10-24"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "okinawa-japan-temple": {
+   "address": "7-11-32 Matsumoto\nOkinawa-shi, Okinawa-ken, OKINAWA\n904-2151\nJAPAN",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2019-04-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2020-12-05"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2023-11-12"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "frankfurt-germany-temple": {
+   "address": "Talstrasse 10\n61381 Friedrichsdorf/TS\nGERMANY",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1981-04-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1985-07-01"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1987-08-28"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2019-10-20"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "madrid-spain-temple": {
+   "address": "Calle del Templo N°2\nMADRID\n28030 MADRID\nSPAIN",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1993-04-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1996-06-11"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1999-03-19"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "apia-samoa-temple": {
+   "address": "Vaitele Street\nPesega\nApia\nSAMOA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1977-10-15"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1981-02-19"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1983-08-05"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2005-09-04"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "tuxtla-gutierrez-mexico-temple": {
+   "address": "Blvd. Laguitos # 5288\nEsquina Paseo de la Roseta\nFraccionamiento San José Chapultepec\n29020 Tuxtla Gutiérrez\nMEXICO",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1999-02-25"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-03-20"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-03-12"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "atlanta-georgia-temple": {
+   "address": "6450 Barfield Rd NE\nSandy Springs GA 30328-4283\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1980-04-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1981-03-07"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1983-06-01"
+    },
+    {
+     "event": "Rededicated",
+     "date": "1997-11-14"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2011-05-01"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "buenos-aires-argentina-temple": {
+   "address": "Aut. Tte. Gral. Riccheri N° 4955\nB1778DUA Ciudad Evita\nBuenos Aires\nARGENTINA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1980-04-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1983-04-20"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1986-01-17"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2012-09-09"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "bogota-colombia-temple": {
+   "address": "Carrera 46 N°127-45\nBogotá DISTRITO CAPITAL\nCOLOMBIA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1984-04-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1993-06-26"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1999-04-24"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "bountiful-utah-temple": {
+   "address": "640 S Bountiful Blvd\nBountiful UT 84010-1394\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1990-02-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1992-05-02"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1995-01-08"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "dallas-texas-temple": {
+   "address": "6363 Willow Ln\nDallas TX 75230-2227\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1981-04-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1983-01-22"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1984-10-19"
+    },
+    {
+     "event": "Rededicated",
+     "date": "1989-03-05"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "freiberg-germany-temple": {
+   "address": "Hainichener Strasse 64\n09599 Freiberg\nGERMANY",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1982-10-09"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1983-04-23"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1985-06-29"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2002-09-07"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2016-09-04"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "guatemala-city-guatemala-temple": {
+   "address": "24 Avenida 2-20, Zona 15\nVista Hermosa 1\nGuatemala City\nGUATEMALA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1981-04-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1982-09-12"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1984-12-14"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "guayaquil-ecuador-temple": {
+   "address": "Calle Rosendo Maridueña 8845\nUrdesa Norte\n090510 — Guayaquil\nECUADOR",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1982-03-31"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1996-08-10"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1999-08-01"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "idaho-falls-idaho-temple": {
+   "address": "1000 Memorial Dr\nIdaho Falls ID 83402-3410\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1937-03-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1939-12-19"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1945-09-23"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2017-06-04"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "jordan-river-utah-temple": {
+   "address": "10200 S Temple Drive\nSouth Jordan UT 84095-8814\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1978-02-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1979-06-09"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1981-11-16"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2018-05-20"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "los-angeles-california-temple": {
+   "address": "10777 Santa Monica Blvd\nLos Angeles CA 90025-4718\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1937-03-06"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1951-09-22"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1956-03-11"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "london-england-temple": {
+   "address": "West Park Road\nNewchapel\nSURREY\nEngland RH7 6HW\nUnited Kingdom",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1953-08-10"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1955-08-27"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1958-09-07"
+    },
+    {
+     "event": "Rededicated",
+     "date": "1992-10-18"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "lima-peru-temple": {
+   "address": "Av. Javier Prado Este 6420\nUrb. Santa Patricia\nLa Molina\nLIMA 12\nPERU",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1981-04-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1982-09-11"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1986-01-10"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "manti-utah-temple": {
+   "address": "200 E 510 N\nManti UT 84642-1701\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1875-06-25"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1877-04-25"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1888-05-21"
+    },
+    {
+     "event": "Rededicated",
+     "date": "1985-06-14"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2024-04-21"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "nauvoo-illinois-temple": {
+   "address": "50 N Wells St\nNauvoo IL 62354\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1999-04-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-10-24"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2002-06-27"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "hamilton-new-zealand-temple": {
+   "address": "509 Tuhikaramea Rd\nTemple View\nHAMILTON 3218\nNEW ZEALAND",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1955-02-17"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1955-12-21"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1958-04-20"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2022-10-16"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "oakland-california-temple": {
+   "address": "4770 Lincoln Ave\nOakland CA 94602-2535\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1961-01-23"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1962-05-26"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1964-11-17"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2019-06-16"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "seattle-washington-temple": {
+   "address": "2808 148th Ave SE\nBellevue WA 98007-6453\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1975-11-15"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1978-05-27"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1980-11-17"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "salt-lake-temple": {
+   "address": "50 W North Temple St\nSalt Lake City UT 84150-9709\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1847-07-28"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1853-02-14"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1893-04-06"
+    },
+    {
+     "event": "Rededicated",
+     "date": "1963-05-21"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "RENOVATION"
+  },
+  "santiago-chile-temple": {
+   "address": "Pocuro #1940 Providencia\n6641404 Santiago\nREGION METROPOLITANA\nCHILE",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1980-04-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1981-05-30"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1983-09-15"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2006-03-12"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "seoul-korea-temple": {
+   "address": "Sinchon-ro 7 GIL 21\nSeodaemun-gu, Seoul\nSEOUL-TEUKBYEOLSI 03783\nSOUTH KOREA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1981-04-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1983-05-09"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1985-12-14"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "bern-switzerland-temple": {
+   "address": "Tempelstrasse 2\nCH-3052 Zollikofen\nSWITZERLAND",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1952-07-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1953-08-05"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1955-09-11"
+    },
+    {
+     "event": "Rededicated",
+     "date": "1992-10-23"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "merida-mexico-temple": {
+   "address": "Calle 70 #527, Esq 65 y 67\nColonia Centro\n97000 Mérida\nMEXICO",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1998-09-25"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-01-16"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-07-08"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "taipei-taiwan-temple": {
+   "address": "256 Ai Kuo East Road\nTAIPEI 10642\nTAIWAN",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1982-03-31"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1982-08-27"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1984-11-17"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "washington-d.c.-temple": {
+   "address": "9900 Stoneybrook Dr\nKensington MD 20895-3199\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1968-11-15"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1968-12-07"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1974-11-19"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2022-08-14"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "hong-kong-china-temple": {
+   "address": "2 Cornwall St\nKowloon Tong\nKOWLOON CITY\nHONG KONG",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1992-10-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1994-01-22"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1996-05-26"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2022-06-19"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "cochabamba-bolivia-temple": {
+   "address": "Av. Melchor Urquidi 1500\nALTO QUERU QUERU, Cochabamba\nBOLIVIA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1995-01-13"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1996-11-10"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-04-30"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "recife-brazil-temple": {
+   "address": "Rua Dr. José de Góes, 280\nParnamirim\n52060-380 Recife - PE\nBRAZIL",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1995-01-13"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1996-11-15"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-12-15"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "billings-montana-temple": {
+   "address": "3100 Rim Point Dr\nBillings MT 59106-1386\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1996-08-30"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1998-03-28"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1999-11-20"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "manila-philippines-temple": {
+   "address": "13 Temple Dr\nGreenmeadows Subdivision, Ugong Norte\nQuezon City\n1110 METRO MANILA\nPHILIPPINES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1981-04-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1982-08-25"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1984-09-25"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "monterrey-mexico-temple": {
+   "address": "Carretera Nacional #7860\nEsq. Privada Valle de la Estanzuela\nColonia Valle Alto\n64989 Monterrey\nMEXICO",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1995-12-21"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2000-11-04"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2002-04-28"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "portland-oregon-temple": {
+   "address": "13600 Kruse Oaks Blvd\nLake Oswego OR 97035-8602\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1984-04-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1986-09-20"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1989-08-19"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "san-diego-california-temple": {
+   "address": "7474 Charmant Dr\nSan Diego CA 92122-5000\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1984-04-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1988-02-27"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1993-04-25"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2026-08-23"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "santo-domingo-dominican-republic-temple": {
+   "address": "Avenida Bolivar N° 825\nLos Robles, SANTO DOMINGO\n10106 Distrito Nacional\nDOMINICAN REPUBLIC",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1993-11-16"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1996-08-18"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-09-17"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "coban-guatemala-temple": {
+   "address": "4ª. Avenida 4-48 Zona 8\nBarrio Bella Vista\nCobán\nGUATEMALA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2019-10-05"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2020-11-14"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2024-06-09"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "stockholm-sweden-temple": {
+   "address": "Tempelvägen 5\nSE-13742 VÄSTERHANINGE\nSWEDEN",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1981-04-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1984-03-17"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1985-07-02"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "RENOVATION"
+  },
+  "taylorsville-utah-temple": {
+   "address": "2603 W 4700 S\nTaylorsville UT 84129\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2019-10-05"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2020-10-31"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2024-06-02"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "toronto-ontario-temple": {
+   "address": "10060 Bramalea Rd\nBRAMPTON ON L6R 1A1\nCANADA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1984-04-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1987-10-10"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1990-08-25"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2025-03-23"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "bacolod-philippines-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2019-10-05"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2021-12-11"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2026-05-31"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "caracas-venezuela-temple": {
+   "address": "Urb Caurimare\nAvenida. C con Calle C-1\nCARACAS 1062-A, DEPENDENCIAS FEDERALES\nVENEZUELA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1995-09-30"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-01-10"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-08-20"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "mcallen-texas-temple": {
+   "address": "300 W Trenton Road\nMcAllen TX 78504\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2019-10-05"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2020-11-21"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2023-10-08"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "port-moresby-papua-new-guinea-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2019-10-05"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2023-04-22"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "bentonville-arkansas-temple": {
+   "address": "1105 McCollum Dr\nBentonville AR 72712\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2019-10-05"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2020-11-07"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2023-09-17"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "freetown-sierra-leone-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2019-10-05"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2022-03-19"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "orem-utah-temple": {
+   "address": "1451 S 1100 W\nOrem UT 84058\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2019-10-05"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2020-09-05"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2024-01-21"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "san-antonio-texas-temple": {
+   "address": "20080 Stone Oak Pkwy\nSan Antonio TX 78258-6920\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2001-06-24"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2003-03-29"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2005-05-22"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "baton-rouge-louisiana-temple": {
+   "address": "10339 Highland Rd\nBaton Rouge LA 70810\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1998-10-14"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-05-08"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-07-16"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2019-11-17"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "birmingham-alabama-temple": {
+   "address": "1927 Mount Olive Blvd\nGardendale AL 35071\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1998-09-11"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-10-09"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-09-03"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "melbourne-australia-temple": {
+   "address": "REAR 76 Cathies Ln\nWANTIRNA SOUTH VIC 3152\nAUSTRALIA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1998-10-30"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-03-20"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-06-16"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "columbia-south-carolina-temple": {
+   "address": "2905 Trotter Rd\nHopkins SC 29061-9573\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1998-09-11"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1998-12-05"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1999-10-16"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "memphis-tennessee-temple": {
+   "address": "4199 Kirby Whitten Pkwy\nBartlett TN 38135-9245\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1998-09-17"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-01-16"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-04-23"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2019-05-05"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "montevideo-uruguay-temple": {
+   "address": "Bolonia 1722\nCarrasco\n11500 Montevideo\nURUGUAY",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1998-11-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-04-27"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2001-03-18"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "villahermosa-mexico-temple": {
+   "address": "Avenida 27 de Febrero #1717\nColonia Atasta de Serra\n86100 Villahermosa\nMEXICO",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1998-10-30"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-01-09"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-05-21"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "iquitos-peru-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-04-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2026-10-10"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "retalhuleu-guatemala-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-04-02"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "vancouver-british-columbia-temple": {
+   "address": "20370 82nd Ave\nLANGLEY BC V2Y 2A9\nCANADA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2006-05-25"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2007-08-04"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2010-05-02"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "cedar-city-utah-temple": {
+   "address": "280 South Cove Dr\nCedar City UT 84720\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2013-04-06"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2015-08-08"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2017-12-10"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "aba-nigeria-temple": {
+   "address": "72-80 Okpu-Umuobo Rd\nABA\nABIA State\nNIGERIA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2000-04-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2002-02-23"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2005-08-07"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "helsinki-finland-temple": {
+   "address": "Leppäsillantie 3\nFI-02620 ESPOO\nFINLAND",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2000-04-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2003-03-29"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2006-10-22"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "asuncion-paraguay-temple": {
+   "address": "Avda Brasilia Esquina Avda España\nASUNCIÓN\nPARAGUAY",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2000-04-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2001-02-03"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2002-05-19"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2019-11-03"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "lubbock-texas-temple": {
+   "address": "7016 Frankford Ave\nLubbock TX 79424\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2000-04-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2000-11-04"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2002-04-21"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "snowflake-arizona-temple": {
+   "address": "1875 W Canyon Dr\nSnowflake AZ 85937-6014\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2000-04-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2000-09-23"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2002-03-03"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "columbia-river-washington-temple": {
+   "address": "969 Gage Blvd\nRichland WA 99352-7777\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2000-04-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2000-10-28"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2001-11-18"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "harrisburg-pennsylvania-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-04-02"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "charlotte-north-carolina-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-04-02"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "winchester-virginia-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-04-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2025-08-09"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "springfield-missouri-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-04-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2026-06-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "bakersfield-california-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-04-02"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "sunnyvale-california-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-04-02"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "lethbridge-alberta-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-04-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2025-04-26"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "hamburg-germany-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-04-02"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "jakarta-indonesia-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-04-02"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "iloilo-philippines-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-04-02"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "tuguegarao-city-philippines-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-04-02"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "natal-brazil-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-04-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2025-05-17"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "rio-de-janeiro-brazil-temple": {
+   "address": "Avenida Das Américas, Nº 9005\nCEP 22793-083 Barra Da Tijuca - Rio De Janeiro - RJ\nBRAZIL",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2013-04-06"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2017-03-04"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2022-05-08"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "teresina-brazil-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-04-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2026-04-18"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "winter-quarters-nebraska-temple": {
+   "address": "8283 N 34th St\nOmaha NE 68112\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1999-06-14"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-11-28"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2001-04-22"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "perth-australia-temple": {
+   "address": "163-173 Wordsworth Avenue\nYOKINE WA 6060\nAUSTRALIA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1999-06-11"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-11-20"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2001-05-20"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "portland-maine-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2025-12-14"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "lima-peru-los-olivos-temple": {
+   "address": "Av. Eloy Espinoza 680\nUrb. Palao - San Martin De Porres\nLIMA 15\nPERU",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2016-04-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2019-06-08"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2024-01-14"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "west-jordan-utah-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-04-07"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "lehi-utah-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-04-07"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "cincinnati-ohio-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-04-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2026-11-07"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "quito-ecuador-temple": {
+   "address": "Ruta Viva y Escalón Lumbisí, Esq.\n170157 — Cumbayá, Quito\nECUADOR",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2016-04-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2019-05-11"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2022-11-20"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "belem-brazil-temple": {
+   "address": "Av. Centenário da Assembleia de Deus, 2200\nParque Verde\n66635-894 Belém - PA\nBRAZIL",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2016-04-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2019-08-17"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2022-11-20"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "des-moines-iowa-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-04-07"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "fort-bend-texas-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-04-07"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "harare-zimbabwe-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2016-04-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2020-12-12"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2026-03-01"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "yuma-arizona-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-04-07"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "victoria-british-columbia-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-04-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2026-08-22"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "honolulu-hawaii-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-04-07"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "brisbane-australia-south-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-04-07"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "edinburgh-scotland-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-04-07"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "rosario-argentina-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-04-07"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "florianopolis-brazil-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-04-07"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "maracaibo-venezuela-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-04-07"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "uturoa-french-polynesia-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-04-07"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "chihuahua-mexico-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-04-07"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "elko-nevada-temple": {
+   "address": "2102 Ruby Vista Dr\nElko NV 89801\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-04-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2022-05-07"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2025-10-12"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "salta-argentina-temple": {
+   "address": "Av. Ingeniero Mario Saul Banchik\nN° 6050 (ex RN 51 km 4)\nSalta\nARGENTINA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2018-04-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2020-11-04"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2024-06-16"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "bengaluru-india-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2018-04-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2020-12-02"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "willamette-valley-oregon-temple": {
+   "address": "300 International Way\nSpringfield OR 97477\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-04-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2022-10-29"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2026-06-07"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "burley-idaho-temple": {
+   "address": "40 South 150 East\nBurley ID 83318\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-04-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2022-06-04"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2026-01-11"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "farmington-new-mexico-temple": {
+   "address": "4400 College Boulevard\nFarmington NM 87402\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-04-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2022-04-30"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2025-08-17"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "grand-junction-colorado-temple": {
+   "address": "678 Horizon Dr\nGrand Junction CO 81506\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-04-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2022-04-16"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2025-10-19"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "casper-wyoming-temple": {
+   "address": "3011 Independence Court\nCasper WY 82604\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-04-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2021-10-09"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2024-11-24"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "helena-montana-temple": {
+   "address": "1260 Otter Road\nHelena MT 59602\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-04-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2021-06-26"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2023-06-18"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "torreon-mexico-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-04-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2022-12-10"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2026-11-22"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPENING SOON"
+  },
+  "queretaro-mexico-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-04-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2023-01-07"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "cali-colombia-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-04-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2025-03-01"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "belo-horizonte-brazil-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-04-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2023-06-17"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2026-08-16"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "singapore-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-04-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2025-06-28"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "cape-town-south-africa-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-04-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2025-10-25"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "beira-mozambique-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-04-04"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "kumasi-ghana-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-04-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2025-10-18"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "vienna-austria-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-04-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2026-10-17"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "brussels-belgium-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-04-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2025-11-22"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "oslo-norway-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-04-04"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "price-utah-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-10-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "summit-new-jersey-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-10-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "milwaukee-wisconsin-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-10-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "huntsville-alabama-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-10-06"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2026-08-15"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "el-paso-texas-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-10-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "coeur-d'alene-idaho-temple-": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-10-06"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2026-08-29"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "maputo-mozambique-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-10-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "kampala-uganda-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-10-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "abuja-nigeria-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-10-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "milan-italy-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-10-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "puerto-montt-chile-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-10-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "santiago-dominican-republic-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-10-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "medellin-colombia-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-10-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "santa-ana-el-salvador-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-10-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "juchitan-de-zaragoza-mexico-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-10-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "dublin-ireland-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-10-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "queen-creek-arizona-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2024-10-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "bangkok-thailand-temple": {
+   "address": "1645/6 New Petchaburi Road\nMakkasan Ratchathewi\nKRUNG THEP 10400\nTHAILAND",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2015-04-05"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2019-01-26"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2023-10-22"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "abidjan-ivory-coast-temple": {
+   "address": "Lot 118 Riviera Attoban\nCocody\nABIDJAN\nCOTE D'IVOIRE",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2015-04-05"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2018-11-08"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2025-05-25"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "port-au-prince-haiti-temple": {
+   "address": "Route de Frères\nFrères 23\nImpasse Saint-Marc # 20 & 22\nHT PETION-VILLE\nHAITI",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2015-04-05"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2017-10-28"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2019-09-01"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "brigham-city-utah-temple": {
+   "address": "250 S Main St\nBrigham City UT 84302-2560\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2009-10-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2010-07-31"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2012-09-23"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "fort-lauderdale-florida-temple": {
+   "address": "3901 SW 154th Ave\nDavie FL 33331\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2009-10-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2011-06-18"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2014-05-04"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "fortaleza-brazil-temple": {
+   "address": "Avenida Santos Dumont 7771\nBairro de Lourdes\n60177-415 Fortaleza - CE\nBRAZIL",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2009-10-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2011-11-15"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2019-06-02"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "sapporo-japan-temple": {
+   "address": "1-6-1 Oyachi-Nishi\nAtsubetsu-ku Sapporo, HOKKAIDO\n004-0042\nJAPAN",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2009-10-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2011-10-22"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2016-08-21"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "cebu-city-philippines-temple": {
+   "address": "The Church of Jesus Christ\nof Latter-day Saints\nGorordo Avenue\nBarangay Lahug, Cebu City\n6000 CEBU\nPHILIPPINES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2006-04-18"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2007-11-14"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2010-06-13"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "concepcion-chile-temple": {
+   "address": "1525 Pedro de Valdivia\nConcepción\nBIO-BIO\nCHILE",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2009-10-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2015-10-17"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2018-10-28"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "oquirrh-mountain-utah-temple": {
+   "address": "11022 S 4000 W\nSouth Jordan UT 84009-5797\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2005-10-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2006-12-16"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2009-08-21"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "pocatello-idaho-temple": {
+   "address": "3100 Butte St\nPocatello ID 83201\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2017-04-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2019-03-16"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2021-11-07"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "saratoga-springs-utah-temple": {
+   "address": "987 South Ensign Drive\nSaratoga Springs UT 84045-3839\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2017-04-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2019-10-19"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2023-08-13"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "alabang-philippines-temple": {
+   "address": "#5 Filinvest Ave Corner Corporate Ave\nFilinvest Corporate City\nAlabang, Muntinlupa City 1781\nMETRO MANILA\nPHILIPPINES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2017-04-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2020-06-04"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2026-01-18"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "nairobi-kenya-temple": {
+   "address": "13646/4, Mountain View\nHinga Road, Off Waiya Way\nNairobi\nKenya",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2017-04-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2021-09-11"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2025-05-18"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "brasilia-brazil-temple": {
+   "address": "SGAN 612 - Módulo \"C\" - Asa Norte\nCEP.: 70.830-550 Brasilia - DF\nBRAZIL",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2017-04-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2020-09-26"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2023-09-17"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "adelaide-australia-temple": {
+   "address": "53-59 Lower Portrush Rd\nMARDEN SA 5070\nAUSTRALIA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1999-03-17"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-05-29"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-06-15"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "tucson-arizona-temple": {
+   "address": "7281 North Skyline Dr\nTucson AZ 85718\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2012-10-06"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2015-10-17"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2017-08-13"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "arequipa-peru-temple": {
+   "address": "Calle Cusco 380\nCarmen Alto Distrito De Cayma\nArequipa\nAREQUIPA\nPERU",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2012-10-06"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2017-03-04"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2019-12-15"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "marysville-washington-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2026-04-19"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "norfolk-virginia-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2025-04-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "greenville-south-carolina-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2025-04-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "rapid-city-south-dakota-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2025-04-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "liverpool-australia-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2025-04-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "noumea-new-caledonia-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2025-04-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "san-jose-del-monte-philippines-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2025-04-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "uyo-nigeria-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2025-04-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "porto-portugal-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2025-04-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "campo-grande-brazil-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2025-04-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "rivera-uruguay-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2025-04-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "chorrillos-peru-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2025-04-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "reynosa-mexico-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2025-04-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "spanish-fork-utah-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2025-04-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "flagstaff-arizona-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2025-04-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "caldwell-idaho-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2025-04-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "star-valley-wyoming-temple": {
+   "address": "885 S Washington St\nAfton WY 83110\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2011-10-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2015-04-25"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2016-10-30"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "barranquilla-colombia-temple": {
+   "address": "Carrera 46 via Al Mar PR 107\nSentido\nBarranquilla, Cartagena\nBarranquilla ATLANTICO\nCOLOMBIA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2011-10-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2016-02-20"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2018-12-09"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "russia-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2018-04-01"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "layton-utah-temple": {
+   "address": "1400 Oak Hills Dr\nLayton UT 84040\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2018-04-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2020-05-23"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2024-06-16"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "paris-france-temple": {
+   "address": "46 Boulevard Saint Antoine\n78150 LE CHESNAY\nFRANCE",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2011-10-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2012-08-24"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2017-05-21"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "provo-city-center-temple": {
+   "address": "50 South University Ave\nProvo UT 84601\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2011-10-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2012-05-12"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2016-03-20"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "richmond-virginia-temple": {
+   "address": "10915 Staples Mill Rd\nGlen Allen VA 23060\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2018-04-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2020-04-11"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2023-05-07"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "durban-south-africa-temple": {
+   "address": "2 Izinga Drive\nIzinga Ridge\nUmhlanga, KwaZulu-Natal\n4021\nSOUTH AFRICA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2011-10-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2016-04-09"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2020-02-16"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "managua-nicaragua-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2018-04-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2022-11-26"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2026-10-18"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "smithfield-utah-temple": {
+   "address": "755 West 100 North\nSmithfield UT 84335\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-04-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2022-06-18"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2027-04-18"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "cagayan-de-oro-philippines-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2018-04-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2024-08-31"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "kinshasa-democratic-republic-of-the-congo-temple": {
+   "address": "51 Avenue de L’OUA\nQuartier Basoko, GB\nCommune de Ngaliema\nKINSHASA\nDEMOCRATIC REPUBLIC OF THE CONGO",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2011-10-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2016-02-12"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2019-04-14"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "rexburg-idaho-temple": {
+   "address": "750 S 2nd E\nRexburg ID 83440-5404\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2003-12-12"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2005-07-30"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2008-02-10"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "yorba-linda-california-temple": {
+   "address": "17130 Bastanchury Rd\nYorba Linda CA 92886\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-04-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2022-06-18"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2026-06-07"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "louisville-kentucky-temple": {
+   "address": "7118 West Hwy 22\nCrestwood KY 40014\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1999-03-17"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-05-29"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-03-19"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "medford-oregon-temple": {
+   "address": "3900 Grant Rd\nCentral Point OR 97502-3911\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1999-03-15"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-05-20"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-04-16"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "fresno-california-temple": {
+   "address": "6290 N Valentine Ave\nFresno CA 93711\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1999-01-08"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-03-20"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-04-09"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "oklahoma-city-oklahoma-temple": {
+   "address": "12030 N Mustang Rd\nYukon OK 73099-9801\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1999-03-14"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-07-03"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-07-30"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2019-05-19"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "copenhagen-denmark-temple": {
+   "address": "Priorvej 12\n2000 Frederiksberg\nDENMARK",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1999-03-17"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-04-24"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2004-05-23"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "san-jose-costa-rica-temple": {
+   "address": "Del Hotel Marriott 1.2 km al Oeste\nHeredia, Belén, La Rivera\n40702\nCOSTA RICA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1999-03-17"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-04-24"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-06-04"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "kansas-city-missouri-temple": {
+   "address": "7001 Searcy Creek Pkwy\nKansas City MO 64119-5336\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2008-10-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2010-05-08"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2012-05-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "cordoba-argentina-temple": {
+   "address": "Avenida Pedro Laplace 5637\nCP5021\nCordoba\nARGENTINA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2008-10-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2010-10-30"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2015-05-17"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "rome-italy-temple": {
+   "address": "Via di Settebagni 376\nRome\nITALY",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2008-10-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2010-10-23"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2019-03-10"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "philadelphia-pennsylvania-temple": {
+   "address": "1739 Vine St\nPhiladelphia PA 19103\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2008-10-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2011-09-17"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2016-09-18"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "calgary-alberta-temple": {
+   "address": "9802 Rocky Ridge Rd NW\nCALGARY AB T3G 5J7\nCANADA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2008-10-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2010-05-15"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2012-10-28"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "panama-city-panama-temple": {
+   "address": "Calle Rufina Alfaro #3172\nHacia La Villa de Cardenas\nCOROZAL, ANCON\nProvincia de PANAMA\nPANAMA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2002-08-23"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2005-10-30"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2008-08-10"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "curitiba-brazil-temple": {
+   "address": "Rua Deputado Heitor Alencar Furtado, 3641\nMossunguê\n81200-110 Curitiba - PR\nBRAZIL",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2002-08-23"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2005-03-10"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2008-06-01"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "manhattan-new-york-temple": {
+   "address": "125 Columbus Ave, Fourth Floor\nNew York NY 10023-6514\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2002-08-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2002-09-23"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2004-06-13"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "RENOVATION"
+  },
+  "monticello-utah-temple": {
+   "address": "365 N 200 W\nMonticello UT 84535\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1997-10-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1997-11-17"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1998-07-26"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2002-11-17"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "otavalo-ecuador-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2026-05-14"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "santa-cruz-bolivia-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2020-10-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2024-06-08"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "sao-paulo-east-brazil-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2020-10-04"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "miraflores-guatemala-city-guatemala-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2020-10-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2022-12-03"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2026-10-11"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "lindon-utah-temple": {
+   "address": "850 East Center Street\nLindon UT 84042\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2020-10-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2022-04-23"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2026-05-03"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "port-vila-vanuatu-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2020-10-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2023-04-08"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "tarawa-kiribati-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2020-10-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2024-11-02"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "manaus-brazil-temple": {
+   "address": "Avenida Coronel Texeira #3162\nPonta Negra\n69037-000 Manaus - AM\nBRAZIL",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2007-05-23"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2008-06-20"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2012-06-10"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "accra-ghana-temple": {
+   "address": "Accra Ghana Temple Complex\n57 Independence Ave\nNorth Ridge\nP.M.B. CT 209, Cantonments\nACCRA\nGHANA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1998-02-16"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2001-11-16"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2004-01-11"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "albuquerque-new-mexico-temple": {
+   "address": "10301 San Francisco Rd NE\nAlbuquerque NM 87122-3437\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1997-04-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1998-06-20"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-03-05"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "anchorage-alaska-temple": {
+   "address": "13161 Brayton Dr\nAnchorage AK 99516\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1997-10-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1998-04-17"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1999-01-09"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2004-02-08"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2027-06-13"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "bismarck-north-dakota-temple": {
+   "address": "2930 Cody Dr\nBismarck ND 58503-0116\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1998-07-29"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1998-10-17"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1999-09-19"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "brisbane-australia-temple": {
+   "address": "200 River Terrace\nKANGAROO POINT QLD 4169\nAUSTRALIA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1998-07-20"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2001-05-26"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2003-06-15"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "campinas-brazil-temple": {
+   "address": "Rua James Esdras Faust 400\nNotre Dame\n13092-820 Campinas - SP\nBRAZIL",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1997-04-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1998-05-01"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2002-05-17"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "ciudad-juarez-mexico-temple": {
+   "address": "Calle Paraguay # 290\nEsq. José Borunda, Col. Partido Romero\n32177 Ciudad Juárez\nMEXICO",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1998-05-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-01-09"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-02-26"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "colonia-juarez-chihuahua-mexico-temple": {
+   "address": "Chihuahua y Diaz S/N\n31857 Colonia Juárez\nMEXICO",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1997-10-04"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1998-03-07"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1999-03-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "columbus-ohio-temple": {
+   "address": "3870 Gateway Blvd\nColumbus OH 43228-9747\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1998-04-25"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1998-09-12"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1999-09-04"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2023-06-04"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "edmonton-alberta-temple": {
+   "address": "14335 53rd Ave NW\nEDMONTON AB T6H 5G6\nCANADA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1998-08-11"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-02-27"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1999-12-11"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "fukuoka-japan-temple": {
+   "address": "9-15 Hirao Johsui Machi\nChuo-ku\nFukuoka-shi, FUKUOKA\n810-0029\nJAPAN",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1998-05-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-03-20"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-06-11"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "halifax-nova-scotia-temple": {
+   "address": "44 Cumberland Dr\nDARTMOUTH NS B2V 2C7\nCANADA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1998-05-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1998-10-12"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1999-11-14"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "hermosillo-sonora-mexico-temple": {
+   "address": "General Pedro Garcia Conde No 303\nEsquina Con Juan José Ríos\nColonia Pitic\n83150 Hermosillo\nMEXICO",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1998-07-20"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1998-12-05"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-02-27"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "houston-texas-temple": {
+   "address": "15725 Champion Forest Dr\nKlein TX 77379-7036\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1997-09-30"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1998-06-13"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-08-26"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2018-04-22"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "kyiv-ukraine-temple": {
+   "address": "1 Yabluneva Street\nv. Sofiivs’ka Borshchagivka\nKyevo-Sviatoshyns’ky Rayon, Kyivs’ka Oblast\n08131\nUKRAINE",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1998-07-20"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2007-06-23"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2010-08-29"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "kona-hawaii-temple": {
+   "address": "75-230 Kalani St\nKailua-Kona HI 96740-1833\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1998-05-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-03-13"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-01-23"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "RENOVATION"
+  },
+  "montreal-quebec-temple": {
+   "address": "1450 Blvd Marie-Victorin\nLONGUEUIL QC J4G 1A4\nCANADA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1998-08-06"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-04-09"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-06-04"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2015-11-22"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "porto-alegre-brazil-temple": {
+   "address": "Rua General Salvador Pinheiro, 50\nVila Jardim\n91320-240 Porto Alegre - RS\nBRAZIL",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1997-09-30"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1998-05-02"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-12-17"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "regina-saskatchewan-temple": {
+   "address": "111 Wascana Gate North\nREGINA SK S4V 2J6\nCANADA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1998-08-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1998-11-14"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1999-11-14"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "st.-paul-minnesota-temple": {
+   "address": "2150 Hadley Ave N\nOakdale MN 55128-4505\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1998-07-29"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1998-09-26"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-01-09"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "suva-fiji-temple": {
+   "address": "LOT 2-20 Lakeba St\nSAMABULA, SUVA\nFIJI",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1998-05-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-05-08"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-06-18"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2016-02-21"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "tampico-mexico-temple": {
+   "address": "Av. Ejercito Mexicano #74 Con 3A Av.\nColonia Loma del Gallo\n89480 Ciudad Madero\nMEXICO",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1998-07-08"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1998-11-28"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-05-20"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "tijuana-mexico-temple": {
+   "address": "Paseo Del Rio 6832\nEsquina Campestre Oriente\nCol 3 RA Etapa Rio Tijuana\n22226 Tijuana\nMEXICO",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2010-10-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2012-08-18"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2015-12-13"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "hartford-connecticut-temple": {
+   "address": "2 Central Wy\nFarmington CT 06032\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2010-10-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2013-08-17"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2016-11-20"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "lisbon-portugal-temple": {
+   "address": "Avenida Dom João II, Nº75\nParque Das Nações\n1990-364 LISBOA\nPORTUGAL",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2010-10-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2015-12-05"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2019-09-15"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "spokane-washington-temple": {
+   "address": "13710 E 40th Ave\nSpokane WA 99206\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1998-08-13"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1998-10-10"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1999-08-21"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "urdaneta-philippines-temple": {
+   "address": "MacArthur Highway, Barangay Nancayasan\nUrdaneta City\n2428 PANGASINAN\nPHILIPPINES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2010-10-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2019-01-16"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2024-04-28"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "detroit-michigan-temple": {
+   "address": "37425 Woodward Ave\nBloomfield Hills MI 48304\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1998-08-10"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1998-10-10"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1999-10-23"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "indianapolis-indiana-temple": {
+   "address": "11565 Temple Dr\nCarmel IN 46032-8859\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2010-10-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2012-09-29"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2015-08-23"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "tegucigalpa-honduras-temple": {
+   "address": "La Iglesia de Jesucristo S.U.D.\nTemplo de la Ciudad de Tegucigalpa\nResidencial Roble Oeste,\nBoulevard Roble Oeste, 3ra Calle Sur.\nCOMAYAGÜELA, M.D.C., FRANCISCO MORAZAN\nHONDURAS",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2006-06-09"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2009-09-12"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2013-03-17"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "raleigh-north-carolina-temple": {
+   "address": "574 Bryan Dr\nApex NC 27502-4127\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1998-09-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-02-06"
+    },
+    {
+     "event": "Dedicated",
+     "date": "1999-12-18"
+    },
+    {
+     "event": "Rededicated",
+     "date": "2019-10-13"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "san-salvador-el-salvador-temple": {
+   "address": "Avenida El Espino y Calle El Pedregal\nColonia San Benito\nCP ANTIGUO CUSCATLÁN\nEL SALVADOR",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2007-11-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2008-09-20"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2011-08-21"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "the-hague-netherlands-temple": {
+   "address": "Osylaan 2\n2722 CV Zoetermeer\nNETHERLANDS",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1999-08-16"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2000-08-26"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2002-09-08"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "gilbert-arizona-temple": {
+   "address": "3301 S Greenfield Rd\nGilbert AZ 85297\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2008-04-10"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2010-11-13"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2014-03-02"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "the-gila-valley-arizona-temple": {
+   "address": "5291 West Highway 70\nCentral AZ 85531\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2008-04-26"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2009-02-14"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2010-05-23"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "twin-falls-idaho-temple": {
+   "address": "1405 Eastland Dr N\nTwin Falls ID 83301\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2004-10-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2006-04-15"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2008-08-24"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "draper-utah-temple": {
+   "address": "14065 Canyon Vista Ln\nDraper UT 84020-5626\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2004-10-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2006-08-05"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2009-03-20"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "veracruz-mexico-temple": {
+   "address": "Ave. Ejercito Mexicano, Esq. Michoacan\nColonia Luis Echeverria\n94295 Boca del Rio\nMEXICO",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1999-04-14"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-05-29"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-07-09"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "reno-nevada-temple": {
+   "address": "2000 Beaumont Pkwy\nReno NV 89523\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1999-04-12"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-07-24"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-04-23"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "guadalajara-mexico-temple": {
+   "address": "Av. Patria #879\nFracc. Jardines Tepeyac\n45030 Zapopan\nMEXICO",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1999-04-14"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-06-12"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2001-04-29"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "trujillo-peru-temple": {
+   "address": "Av. Mansiche Km 3.5\nCarretera hacia Huanchaco\nHuanchaco, Trujillo\nLA LIBERTAD\nPERU",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2008-11-26"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2011-09-14"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2015-06-21"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "culiacan-mexico-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-10-03"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "antananarivo-madagascar-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-10-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2025-03-15"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "kananga-democratic-republic-of-the-congo-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-10-03"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "monrovia-liberia-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-10-03"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "tacloban-city-philippines-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-10-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2025-01-18"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "kaohsiung-taiwan-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-10-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2023-11-25"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "sacramento-california-temple": {
+   "address": "2110 California Cir\nRancho Cordova CA 95742-6415\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2001-04-21"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2004-08-22"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2006-09-03"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "redlands-california-temple": {
+   "address": "1761 Fifth Ave\nRedlands CA 92374-5503\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2001-04-21"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2001-12-01"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2003-09-14"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "newport-beach-california-temple": {
+   "address": "2300 Bonita Canyon Dr\nNewport Beach CA 92660-9118\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2001-04-21"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2003-08-15"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2005-08-28"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "quetzaltenango-guatemala-temple": {
+   "address": "9A Calle 4-03, Zona 9\nFrente a Residenciales Los Cerezos 1\n09001\nGUATEMALA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2006-12-16"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2009-03-14"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2011-12-11"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "phoenix-arizona-temple": {
+   "address": "5220 W Pinnacle Peak Rd\nPhoenix AZ 85310\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2008-05-09"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2011-06-04"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2014-11-16"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "winnipeg-manitoba-temple": {
+   "address": "15 Centre St\nWINNIPEG MB R3Y 2C3\nCANADA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2011-04-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2016-12-03"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2021-10-31"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "fort-collins-colorado-temple": {
+   "address": "2180 Majestic Dr\nFort Collins CO 80528\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2011-04-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2013-08-24"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2016-10-16"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "meridian-idaho-temple": {
+   "address": "7355 N Linder Rd\nMeridian ID 83646\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2011-04-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2014-08-23"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2017-11-19"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "palmyra-new-york-temple": {
+   "address": "2720 Temple Rd\nPalmyra NY 14522-9573\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1999-02-21"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-05-25"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-04-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "modesto-california-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-04-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2023-10-07"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2026-11-22"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPENING SOON"
+  },
+  "montpelier-idaho-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-04-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2023-06-17"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2026-10-18"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "missoula-montana-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-04-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2026-06-06"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "austin-texas-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-04-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2024-08-17"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "wichita-kansas-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-04-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2024-09-07"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2026-11-01"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "cleveland-ohio-temple": {
+   "address": "5997 Brecksville Rd\nIndependence OH 44131\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-04-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2024-06-01"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2026-08-16"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "knoxville-tennessee-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-04-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2024-01-27"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2027-03-07"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPENING SOON"
+  },
+  "tampa-florida-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-04-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2025-08-23"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "mexico-city-benemerito-mexico-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-04-03"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "san-luis-potosi-mexico-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-04-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2024-03-09"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2026-11-01"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "santos-brazil-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-04-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2026-08-01"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "maceio-brazil-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-04-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2026-10-10"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "cusco-peru-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-04-03"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "shanghai-people’s-republic-of-china-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2020-04-05"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "birmingham-england-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-04-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2025-03-22"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "dubai-united-arab-emirates-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2020-04-05"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "barcelona-spain-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-04-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2026-09-19"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "benin-city-nigeria-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2020-04-05"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2025-05-24"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "brazzaville-republic-of-the-congo-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-04-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2025-08-23"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "pittsburgh-pennsylvania-temple": {
+   "address": "2093 Powell Road\nCranberry Township PA 16066\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2020-04-05"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2021-08-21"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2024-09-15"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "lubumbashi-democratic-republic-of-the-congo-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2020-04-05"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2022-08-20"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "wellington-new-zealand-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-04-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2025-08-02"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "tallahassee-florida-temple": {
+   "address": "2440 Papillion Way\nTallahassee FL 32309\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2020-04-05"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2021-06-05"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2024-12-08"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "bahia-blanca-argentina-temple": {
+   "address": "3200 Avenida Alberto Pedro Cabrera\nAldea Romana\nBahia Blanca\nBuenos Aires\nARGENTINA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2020-04-05"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2022-04-09"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2025-11-23"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "ulaanbaatar-mongolia-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-10-01"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "vancouver-washington-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-10-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2025-08-23"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "fairbanks-alaska-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-10-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2025-09-27"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "kahului-hawaii-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-10-01"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "roanoke-virginia-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-10-01"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "tulsa-oklahoma-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-10-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2026-08-22"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "colorado-springs-colorado-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-10-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2026-09-12"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "osaka-japan-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-10-01"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "laoag-philippines-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-10-01"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "mbuji-mayi-democratic-republic-of-the-congo-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-10-01"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "luanda-angola-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-10-01"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "cape-coast-ghana-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-10-01"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "calabar-nigeria-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-10-01"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "joao-pessoa-brazil-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-10-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2026-01-24"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "goiania-brazil-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-10-01"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "heber-valley-utah-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-10-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2022-10-08"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "teton-river-idaho-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-10-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2024-06-01"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "vina-del-mar-chile-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-10-01"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "cody-wyoming-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-10-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2024-09-27"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2026-10-25"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "huancayo-peru-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-10-01"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "fort-worth-texas-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-10-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2023-10-28"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2027-01-10"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPENING SOON"
+  },
+  "piura-peru-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-10-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2026-11-14"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "cancun-mexico-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-10-01"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "santiago-west-chile-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-10-03"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2024-08-17"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "syracuse-utah-temple": {
+   "address": "1098 South 2500 West\nSyracuse UT 84075\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2020-04-05"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2021-06-12"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2025-06-08"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "la-paz-bolivia-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-10-03"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "payson-utah-temple": {
+   "address": "1494 S 930 W\nPayson UT 84651\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2010-01-25"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2011-10-08"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2015-06-07"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "savai'i-samoa-temple-": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2023-10-01"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "vitoria-brazil-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-10-03"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "san-juan-puerto-rico-temple": {
+   "address": "Calle Ronda #123 (Urb. Villa Andalucia)\nSan Juan PR  00926\nPUERTO RICO",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2018-10-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2019-05-04"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2023-01-15"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "oaxaca-mexico-temple": {
+   "address": "Avenida Universidad #139\nFracc. Real de Candiani\n68130 Oaxaca\nMEXICO",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "1999-02-23"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "1999-03-13"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2000-03-11"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "red-cliffs-utah-temple": {
+   "address": "1555 S Red Cliffs Temple Ln\nSt. George UT 84790\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2018-10-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2020-11-07"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2024-03-24"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "lagos-nigeria-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2018-10-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2025-05-10"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "davao-philippines-temple": {
+   "address": "MA-A ROAD AND ANAHAW RD\nBARANGAY MA-A\n8000 DAVAO CITY\nDAVAO DEL SUR\nPHILIPPINES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2018-10-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2020-11-14"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2026-05-03"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "puebla-mexico-temple": {
+   "address": "Av. 15 de Mayo # 719\nCol. Los Cipreses\nC.P. 72114 Puebla\nMEXICO",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2018-10-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2019-11-30"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2024-05-19"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "auckland-new-zealand-temple": {
+   "address": "19 Redoubt Road\nGOODWOOD HEIGHTS 2105\nNEW ZEALAND",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2018-10-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2020-06-13"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2025-04-13"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "praia-cape-verde-temple": {
+   "address": "Templo da Igreja de Jesus Cristo\nDos Santos Dos Últimos Dias\nAvenida Cidade de Lisboa\nBairro Taiti\n7600 PRAIA\nSANTIAGO",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2018-10-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2019-05-04"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2022-06-19"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "ephraim-utah-temple": {
+   "address": "200 N 400 E\nEphraim UT 84627-2760\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2021-05-01"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2022-08-27"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2026-10-11"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "yigo-guam-temple": {
+   "address": "321 Chalan Pale Ramon Lagu, Rte 1\nYigo 96929\nGUAM",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2018-10-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2019-05-04"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2022-05-22"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "feather-river-california-temple": {
+   "address": "1470 Butte House Road\nYuba City CA 95993\nUNITED STATES",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2018-10-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2020-07-18"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2023-10-08"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "phnom-penh-cambodia-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2018-10-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2021-09-18"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2026-08-30"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "mendoza-argentina-temple": {
+   "address": "Dr. E. Coni 2201\nCP 5539\nCiudad de Mendoza\nMendoza\nARGENTINA",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2018-10-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2020-12-17"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2024-09-22"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "salvador-brazil-temple": {
+   "address": "Avenida Luis Viana Filho, 9636\n41650-500 Piata, Salvador - BA\nBRAZIL",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2018-10-07"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2021-08-07"
+    },
+    {
+     "event": "Dedicated",
+     "date": "2024-10-20"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "OPERATING"
+  },
+  "tula-mexico-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-10-02"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "toluca-mexico-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-10-02"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "pachuca-mexico-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-10-02"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "cuernavaca-mexico-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-10-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2026-11-14"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "tacoma-washington-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-10-02"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "lone-mountain-nevada-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-10-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2025-09-25"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "fairview-texas-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-10-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2026-02-21"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "grand-rapids-michigan-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-10-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2024-12-07"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "jacksonville-florida-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-10-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2026-01-24"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "huehuetenango-guatemala-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-10-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2026-03-14"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "ribeirao-preto-brazil-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-10-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2024-06-22"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "londrina-brazil-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-10-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2024-08-17"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "buenos-aires-city-center-argentina-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-10-02"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "chiclayo-peru-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-10-02"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "eket-nigeria-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-10-02"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "santiago-philippines-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-10-02"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  },
+  "naga-philippines-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-10-02"
+    },
+    {
+     "event": "Groundbreaking",
+     "date": "2026-08-08"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "CONSTRUCTION"
+  },
+  "busan-korea-temple": {
+   "address": "",
+   "milestones": [
+    {
+     "event": "Announced",
+     "date": "2022-10-02"
+    }
+   ],
+   "fetched": "2026-11-18",
+   "status": "ANNOUNCED"
+  }
+ },
+ "geocode": {
+  "2200 Temple Hill Dr, Provo UT 84604, United States": {
+   "lat": 40.26365,
+   "lng": -111.63977
+  },
+  "Las Palmeras 44, ANTOFAGASTA, Chile": {
+   "lat": -23.57157,
+   "lng": -70.39625
+  },
+  "Hungary": {
+   "lat": 47.18176,
+   "lng": 19.50609
+  },
+  "Neiafu Vava’u, Tonga": null,
+  "Tonga": {
+   "lat": -19.91608,
+   "lng": -175.20264
+  },
+  "Tafuna, Western District, American Samoa": {
+   "lat": -14.32783,
+   "lng": -170.72554
+  },
+  "Lanao Del Norte, Philippines": {
+   "lat": 7.95797,
+   "lng": 123.90211
+  },
+  "Papua New Guinea": {
+   "lat": -5.68161,
+   "lng": 144.24891
+  },
+  "Sierra Leone": {
+   "lat": 8.64003,
+   "lng": -11.84003
+  },
+  "Bolonia 1722, Carrasco, 11500 Montevideo, Uruguay": {
+   "lat": -34.8808,
+   "lng": -56.07842
+  },
+  "Peru": {
+   "lat": -6.86997,
+   "lng": -75.04585
+  },
+  "Guatemala": {
+   "lat": 15.58555,
+   "lng": -90.34576
+  },
+  "Pennsylvania, United States": {
+   "lat": 40.96999,
+   "lng": -77.72788
+  },
+  "North Carolina, United States": {
+   "lat": 35.67296,
+   "lng": -79.03929
+  },
+  "Virginia, United States": {
+   "lat": 37.12322,
+   "lng": -78.49277
+  },
+  "Missouri, United States": {
+   "lat": 38.76048,
+   "lng": -92.56179
+  },
+  "California, United States": {
+   "lat": 36.70146,
+   "lng": -118.756
+  },
+  "Alberta, Canada": {
+   "lat": 55.00125,
+   "lng": -115.00214
+  },
+  "Germany": {
+   "lat": 51.16382,
+   "lng": 10.44783
+  },
+  "Indonesia": {
+   "lat": -2.48338,
+   "lng": 117.89029
+  },
+  "Philippines": {
+   "lat": 12.75035,
+   "lng": 122.73121
+  },
+  "Brazil": {
+   "lat": -10.33333,
+   "lng": -53.2
+  },
+  "Portland, Maine, United States": {
+   "lat": 43.65736,
+   "lng": -70.25866
+  },
+  "Utah, United States": {
+   "lat": 39.42252,
+   "lng": -111.71436
+  },
+  "Ohio, United States": {
+   "lat": 40.22536,
+   "lng": -82.68814
+  },
+  "Iowa, United States": {
+   "lat": 41.92167,
+   "lng": -93.31227
+  },
+  "Texas, United States": {
+   "lat": 31.26389,
+   "lng": -98.54561
+  },
+  "Arizona, United States": {
+   "lat": 34.39534,
+   "lng": -111.76327
+  },
+  "Canada": {
+   "lat": 61.06669,
+   "lng": -107.99171
+  },
+  "Hawaii, United States": {
+   "lat": 19.5938,
+   "lng": -155.42837
+  },
+  "Australia": {
+   "lat": -24.77611,
+   "lng": 134.755
+  },
+  "United Kingdom": {
+   "lat": 54.70235,
+   "lng": -3.27658
+  },
+  "Argentina": {
+   "lat": -34.9965,
+   "lng": -64.96728
+  },
+  "Venezuela": {
+   "lat": 8.00187,
+   "lng": -66.11093
+  },
+  "French Polynesia": {
+   "lat": -17.02437,
+   "lng": -144.64349
+  },
+  "Mexico": {
+   "lat": 23.65851,
+   "lng": -102.00771
+  },
+  "2102 Ruby Vista Dr, Elko NV 89801, United States": {
+   "lat": 40.85245,
+   "lng": -115.75
+  },
+  "4400 College Boulevard, Farmington NM 87402, United States": {
+   "lat": 36.76902,
+   "lng": -108.16556
+  },
+  "678 Horizon Dr, Grand Junction CO 81506, United States": {
+   "lat": 39.10129,
+   "lng": -108.55127
+  },
+  "Colombia": {
+   "lat": 4.09992,
+   "lng": -72.90881
+  },
+  "Singapore": {
+   "lat": 1.35711,
+   "lng": 103.8195
+  },
+  "South Africa": {
+   "lat": -28.81662,
+   "lng": 24.99164
+  },
+  "Mozambique": {
+   "lat": -19.30223,
+   "lng": 34.9145
+  },
+  "Ghana": {
+   "lat": 8.03003,
+   "lng": -1.08003
+  },
+  "Austria": {
+   "lat": 47.59397,
+   "lng": 14.12456
+  },
+  "Norway": {
+   "lat": 61.15294,
+   "lng": 8.78767
+  },
+  "New Jersey, United States": {
+   "lat": 40.07574,
+   "lng": -74.40416
+  },
+  "Wisconsin, United States": {
+   "lat": 44.4309,
+   "lng": -89.68846
+  },
+  "Alabama, United States": {
+   "lat": 33.25888,
+   "lng": -86.82953
+  },
+  "Idaho, United States": {
+   "lat": 43.64476,
+   "lng": -114.01541
+  },
+  "Uganda": {
+   "lat": 1.53336,
+   "lng": 32.21666
+  },
+  "Nigeria": {
+   "lat": 9.60004,
+   "lng": 7.99997
+  },
+  "Italy": {
+   "lat": 42.63843,
+   "lng": 12.6743
+  },
+  "Chile": {
+   "lat": -31.76134,
+   "lng": -71.31877
+  },
+  "Dominican Republic": {
+   "lat": 19.0974,
+   "lng": -70.3028
+  },
+  "El Salvador": {
+   "lat": 13.80004,
+   "lng": -88.91407
+  },
+  "Ireland": {
+   "lat": 52.8652,
+   "lng": -7.97946
+  },
+  "Lot 118 Riviera Attoban, Cocody, ABIDJAN, Côte d'Ivoire": null,
+  "Abidjan, Côte d'Ivoire": {
+   "lat": 5.32036,
+   "lng": -4.01611
+  },
+  "#5 Filinvest Ave Corner Corporate Ave, Filinvest Corporate City, Alabang, Muntinlupa City 1781, METRO MANILA, Filippyne": null,
+  "Manila, Filippyne": {
+   "lat": 14.59045,
+   "lng": 120.98036
+  },
+  "Marysville, Washington, United States": {
+   "lat": 48.05174,
+   "lng": -122.17682
+  },
+  "South Carolina, United States": {
+   "lat": 33.68744,
+   "lng": -80.43637
+  },
+  "South Dakota, United States": {
+   "lat": 44.64718,
+   "lng": -100.34876
+  },
+  "New Caledonia": {
+   "lat": -20.63784,
+   "lng": 161.21176
+  },
+  "Portugal": {
+   "lat": 39.66216,
+   "lng": -8.13535
+  },
+  "Uruguay": {
+   "lat": -32.87555,
+   "lng": -56.02015
+  },
+  "Russia": {
+   "lat": 64.68631,
+   "lng": 97.74531
+  },
+  "Nicaragua": {
+   "lat": 12.35064,
+   "lng": -85.7841
+  },
+  "755 West 100 North, Smithfield UT 84335, United States": {
+   "lat": 41.83875,
+   "lng": -111.85264
+  },
+  "17130 Bastanchury Rd, Yorba Linda CA 92886, United States": {
+   "lat": 33.89875,
+   "lng": -117.83475
+  },
+  "Otavalo, Imbabura, Ecuador": {
+   "lat": 0.22276,
+   "lng": -78.24543
+  },
+  "Bolivia": {
+   "lat": -17.05687,
+   "lng": -64.99123
+  },
+  "850 East Center Street, Lindon UT 84042, United States": {
+   "lat": 40.33779,
+   "lng": -111.69576
+  },
+  "Vanuatu": {
+   "lat": -16.52551,
+   "lng": 168.10692
+  },
+  "Kiribati": {
+   "lat": 0.34486,
+   "lng": 173.66418
+  },
+  "Rua General Salvador Pinheiro, 50, Vila Jardim, 91320-240 Porto Alegre - RS, Brazil": {
+   "lat": -30.03406,
+   "lng": -51.15762
+  },
+  "5291 West Highway 70, Central AZ 85531, United States": null,
+  "Central, Arizona, United States": {
+   "lat": 32.86757,
+   "lng": -109.79286
+  },
+  "Madagascar": {
+   "lat": -18.92496,
+   "lng": 46.44164
+  },
+  "Democratic Republic of the Congo": {
+   "lat": -2.98143,
+   "lng": 23.82226
+  },
+  "Liberia": {
+   "lat": 5.74997,
+   "lng": -9.36585
+  },
+  "Taiwan": {
+   "lat": 23.97394,
+   "lng": 120.98202
+  },
+  "Montana, United States": {
+   "lat": 47.37527,
+   "lng": -109.63876
+  },
+  "Kansas, United States": {
+   "lat": 38.27312,
+   "lng": -98.58219
+  },
+  "5997 Brecksville Rd, Independence OH 44131, United States": {
+   "lat": 41.39905,
+   "lng": -81.63863
+  },
+  "Tennessee, United States": {
+   "lat": 35.77301,
+   "lng": -86.28201
+  },
+  "Florida, United States": {
+   "lat": 27.75677,
+   "lng": -81.46398
+  },
+  "China": {
+   "lat": 34.54123,
+   "lng": 108.92371
+  },
+  "United Arab Emirates": {
+   "lat": 24.00025,
+   "lng": 53.99948
+  },
+  "Spain": {
+   "lat": 39.32607,
+   "lng": -4.83798
+  },
+  "Republic of the Congo": {
+   "lat": -0.72643,
+   "lng": 15.64192
+  },
+  "New Zealand": {
+   "lat": -41.50008,
+   "lng": 172.83441
+  },
+  "2440 Papillion Way, Tallahassee FL 32309, United States": {
+   "lat": 30.51914,
+   "lng": -84.23747
+  },
+  "3200 Avenida Alberto Pedro Cabrera, Aldea Romana, Bahia Blanca, Buenos Aires": {
+   "lat": -38.69126,
+   "lng": -62.23602
+  },
+  "Mongolia": {
+   "lat": 46.82504,
+   "lng": 103.84997
+  },
+  "Washington, United States": {
+   "lat": 38.8951,
+   "lng": -77.03638
+  },
+  "Alaska, United States": {
+   "lat": 64.44596,
+   "lng": -149.68091
+  },
+  "Oklahoma, United States": {
+   "lat": 34.95508,
+   "lng": -97.26841
+  },
+  "Colorado, United States": {
+   "lat": 38.72518,
+   "lng": -105.60772
+  },
+  "Japan": {
+   "lat": 36.57484,
+   "lng": 139.23942
+  },
+  "Angola": {
+   "lat": -11.87758,
+   "lng": 17.56912
+  },
+  "Wyoming, United States": {
+   "lat": 43.17003,
+   "lng": -107.56853
+  },
+  "1098 South 2500 West, Syracuse UT 84075, United States": {
+   "lat": 41.09758,
+   "lng": -112.0743
+  },
+  "Samoa": {
+   "lat": -13.76939,
+   "lng": -172.12005
+  },
+  "MA-A ROAD AND ANAHAW RD, BARANGAY MA-A, 8000 DAVAO CITY, DAVAO DEL SUR, Philippines": null,
+  "Davao, Philippines": {
+   "lat": 7.06483,
+   "lng": 125.60806
+  },
+  "Templo da Igreja de Jesus Cristo, Dos Santos Dos Últimos Dias, Avenida Cidade de Lisboa, Bairro Taiti, 7600 PRAIA, Cape Verde": null,
+  "Praia, Cape Verde": {
+   "lat": 14.91628,
+   "lng": -23.50951
+  },
+  "200 N 400 E, Ephraim UT 84627, United States": {
+   "lat": 39.3631,
+   "lng": -111.57598
+  },
+  "Phnom Penh, Cambodia": {
+   "lat": 11.57304,
+   "lng": 104.85781
+  },
+  "Dr. E. Coni 2201, CP 5539, Ciudad de Mendoza, Mendoza, Argentina": null,
+  "Mendoza, Argentina": {
+   "lat": -34.59703,
+   "lng": -68.73048
+  },
+  "Avenida Luis Viana Filho, 9636, 41650-500 Piata, Salvador - BA, Brazil": {
+   "lat": -12.93467,
+   "lng": -38.39374
+  },
+  "Nevada, United States": {
+   "lat": 39.51588,
+   "lng": -116.85372
+  },
+  "Michigan, United States": {
+   "lat": 43.6212,
+   "lng": -84.68243
+  },
+  "South Korea": {
+   "lat": 36.63839,
+   "lng": 127.69612
+  },
+  "Provo Utah Rock Canyon Temple": {
+   "lat": 40.26365,
+   "lng": -111.63977,
+   "kind": "amenity/place_of_worship",
+   "label": "Provo Utah Rock Canyon Temple"
+  },
+  "Antofagasta Chile Temple": null,
+  "Budapest Hungary Temple": null,
+  "Neiafu Tonga Temple": null,
+  "Pago Pago American Samoa Temple": null,
+  "Bacolod Philippines Temple": null,
+  "Port Moresby Papua New Guinea Temple": null,
+  "Freetown Sierra Leone Temple": {
+   "lat": 8.47784,
+   "lng": -13.2727,
+   "kind": "amenity/place_of_worship",
+   "label": "Indian Temple"
+  },
+  "Montevideo Uruguay Temple": null,
+  "Winchester Virginia Temple": {
+   "lat": 39.18502,
+   "lng": -78.16518,
+   "kind": "office/ngo",
+   "label": "Winchester Masonic Temple"
+  },
+  "Springfield Missouri Temple": {
+   "lat": 37.19803,
+   "lng": -93.28159,
+   "kind": "building/university",
+   "label": "Temple Hall"
+  },
+  "Lethbridge Alberta Temple": {
+   "lat": 49.67041,
+   "lng": -112.91091,
+   "kind": "amenity/place_of_worship",
+   "label": "Lethbridge Alberta Temple"
+  },
+  "Natal Brazil Temple": null,
+  "Teresina Brazil Temple": null,
+  "Cincinnati Ohio Temple": {
+   "lat": 39.1037,
+   "lng": -84.51826,
+   "kind": "amenity/place_of_worship",
+   "label": "Isaac M. Wise Temple"
+  },
+  "Victoria British Columbia Temple": {
+   "lat": 48.42977,
+   "lng": -123.36686,
+   "kind": "amenity/place_of_worship",
+   "label": "Tam Kung Temple"
+  },
+  "Elko Nevada Temple": {
+   "lat": 40.85245,
+   "lng": -115.75,
+   "kind": "building/temple",
+   "label": "Elko Nevada Temple"
+  },
+  "Farmington New Mexico Temple": {
+   "lat": 36.76902,
+   "lng": -108.16556,
+   "kind": "amenity/place_of_worship",
+   "label": "Farmington Temple of the Church of Jesus Christ of Latter-Day Saints"
+  },
+  "Grand Junction Colorado Temple": {
+   "lat": 39.10144,
+   "lng": -108.55114,
+   "kind": "landuse/religious",
+   "label": "Grand Junction Colorado Temple"
+  },
+  "Torreón Mexico Temple": null,
+  "Querétaro Mexico Temple": null,
+  "Cali Colombia Temple": null,
+  "Belo Horizonte Brazil Temple": null,
+  "Singapore Temple": {
+   "lat": 1.36187,
+   "lng": 103.83823,
+   "kind": "amenity/place_of_worship",
+   "label": "Temple"
+  },
+  "Cape Town South Africa Temple": null,
+  "Kumasi Ghana Temple": {
+   "lat": 6.70785,
+   "lng": -1.61993,
+   "kind": "amenity/place_of_worship",
+   "label": "The Apostolic Church Ghana - Apostle Peter Atta Antwi Memorial Temple"
+  },
+  "Vienna Austria Temple": null,
+  "Huntsville Alabama Temple": {
+   "lat": 34.73274,
+   "lng": -86.58309,
+   "kind": "amenity/place_of_worship",
+   "label": "Temple B'nai Sholom"
+  },
+  "Coeur d'Alene Idaho Temple": {
+   "lat": 47.67315,
+   "lng": -116.77853,
+   "kind": "building/temple",
+   "label": "Masonic Temple"
+  },
+  "Abidjan Ivory Coast Temple": null,
+  "Alabang Philippines Temple": {
+   "lat": 14.41287,
+   "lng": 121.03842,
+   "kind": "amenity/place_of_worship",
+   "label": "Alabang Philippines Temple"
+  },
+  "Managua Nicaragua Temple": null,
+  "Smithfield Utah Temple": {
+   "lat": 41.83973,
+   "lng": -111.85266,
+   "kind": "amenity/place_of_worship",
+   "label": "Smithfield Utah Temple"
+  },
+  "Cagayan de Oro Philippines Temple": null,
+  "Yorba Linda California Temple": {
+   "lat": 33.89977,
+   "lng": -117.81818,
+   "kind": "amenity/place_of_worship",
+   "label": "Shinnyoen Buddhist Temple"
+  },
+  "Santa Cruz Bolivia Temple": {
+   "lat": -17.73866,
+   "lng": -63.17467,
+   "kind": "amenity/place_of_worship",
+   "label": "Santa Cruz Bolivia Temple"
+  },
+  "Miraflores Guatemala City Guatemala Temple": null,
+  "Lindon Utah Temple": {
+   "lat": 40.33683,
+   "lng": -111.69549,
+   "kind": "amenity/place_of_worship",
+   "label": "Lindon Utah Temple"
+  },
+  "Port Vila Vanuatu Temple": null,
+  "Tarawa Kiribati Temple": null,
+  "Porto Alegre Brazil Temple": {
+   "lat": -30.03406,
+   "lng": -51.15762,
+   "kind": "amenity/place_of_worship",
+   "label": "Porto Alegre Brazil Temple"
+  },
+  "Antananarivo Madagascar Temple": null,
+  "Tacloban City Philippines Temple": null,
+  "Kaohsiung Taiwan Temple": null,
+  "Modesto California Temple": {
+   "lat": 37.66826,
+   "lng": -120.97854,
+   "kind": "amenity/school",
+   "label": "Calvary Temple Christian School"
+  },
+  "Montpelier Idaho Temple": {
+   "lat": 42.31816,
+   "lng": -111.30169,
+   "kind": "landuse/construction",
+   "label": "Montpelier"
+  },
+  "Missoula Montana Temple": null,
+  "Austin Texas Temple": {
+   "lat": 31.07816,
+   "lng": -97.40078,
+   "kind": "highway/residential",
+   "label": "Austin Circle"
+  },
+  "Wichita Kansas Temple": {
+   "lat": 37.68077,
+   "lng": -97.36232,
+   "kind": "amenity/place_of_worship",
+   "label": "Temple Baptist Church"
+  },
+  "Cleveland Ohio Temple": {
+   "lat": 41.46715,
+   "lng": -81.6406,
+   "kind": "highway/residential",
+   "label": "Temple Avenue"
+  },
+  "Knoxville Tennessee Temple": {
+   "lat": 35.95182,
+   "lng": -83.95391,
+   "kind": "landuse/religious",
+   "label": "Temple Beth El"
+  },
+  "Tampa Florida Temple": {
+   "lat": 28.02368,
+   "lng": -82.41882,
+   "kind": "leisure/park",
+   "label": "Temple Crest Park"
+  },
+  "San Luis Potosí Mexico Temple": null,
+  "Santos Brazil Temple": {
+   "lat": -3.74778,
+   "lng": -38.46106,
+   "kind": "building/temple",
+   "label": "Fortaleza Brazil Temple"
+  },
+  "Birmingham England Temple": {
+   "lat": 52.48092,
+   "lng": -1.8978,
+   "kind": "highway/living_street",
+   "label": "Temple Row"
+  },
+  "Barcelona Spain Temple": null,
+  "Benin City Nigeria Temple": null,
+  "Brazzaville Republic of the Congo Temple": null,
+  "Lubumbashi Democratic Republic of the Congo Temple": null,
+  "Wellington New Zealand Temple": null,
+  "Tallahassee Florida Temple": {
+   "lat": 30.52013,
+   "lng": -84.23814,
+   "kind": "building/temple",
+   "label": "Tallahassee Florida Temple"
+  },
+  "Bahía Blanca Argentina Temple": {
+   "lat": -38.69126,
+   "lng": -62.23602,
+   "kind": "amenity/place_of_worship",
+   "label": "Bahía Blanca Argentina Temple"
+  },
+  "Vancouver Washington Temple": {
+   "lat": 45.60807,
+   "lng": -122.46877,
+   "kind": "landuse/construction",
+   "label": "Vancouver Washington Temple"
+  },
+  "Fairbanks Alaska Temple": {
+   "lat": 64.89903,
+   "lng": -147.7364,
+   "kind": "amenity/place_of_worship",
+   "label": "St. James Temple A.M.E. Zion Church"
+  },
+  "Tulsa Oklahoma Temple": {
+   "lat": 36.13649,
+   "lng": -95.78781,
+   "kind": "landuse/religious",
+   "label": "The Hindu Temple of Greater Tulsa"
+  },
+  "Colorado Springs Colorado Temple": null,
+  "João Pessoa Brazil Temple": null,
+  "Heber Valley Utah Temple": null,
+  "Teton River Idaho Temple": {
+   "lat": 43.86091,
+   "lng": -111.78042,
+   "kind": "building/construction",
+   "label": "Teton River Idaho Temple"
+  },
+  "Cody Wyoming Temple": {
+   "lat": 44.51122,
+   "lng": -109.08075,
+   "kind": "amenity/place_of_worship",
+   "label": "Cody Wyoming Temple"
+  },
+  "Fort Worth Texas Temple": {
+   "lat": 32.51708,
+   "lng": -97.35706,
+   "kind": "amenity/place_of_worship",
+   "label": "Fort Worth Texas Temple"
+  },
+  "Piura Peru Temple": null,
+  "Santiago West Chile Temple": null,
+  "Syracuse Utah Temple": {
+   "lat": 41.09913,
+   "lng": -112.07583,
+   "kind": "building/temple",
+   "label": "Syracuse Utah LDS Temple"
+  },
+  "Lagos Nigeria Temple": null,
+  "Davao Philippines Temple": null,
+  "Praia Cape Verde Temple": {
+   "lat": 14.91854,
+   "lng": -23.51119,
+   "kind": "building/temple",
+   "label": "Praia Cape Verde Temple"
+  },
+  "Ephraim Utah Temple": {
+   "lat": 39.3631,
+   "lng": -111.57598,
+   "kind": "amenity/place_of_worship",
+   "label": "Ephraim Utah Temple"
+  },
+  "Phnom Penh Cambodia Temple": null,
+  "Mendoza Argentina Temple": null,
+  "Salvador Brazil Temple": {
+   "lat": -12.92908,
+   "lng": -38.38628,
+   "kind": "building/temple",
+   "label": "Salvador Brazil Temple"
+  },
+  "Cuernavaca Mexico Temple": null,
+  "Lone Mountain Nevada Temple": null,
+  "Fairview Texas Temple": {
+   "lat": 31.14349,
+   "lng": -97.41856,
+   "kind": "highway/residential",
+   "label": "Fairview Drive"
+  },
+  "Grand Rapids Michigan Temple": {
+   "lat": 42.93912,
+   "lng": -85.64569,
+   "kind": "highway/residential",
+   "label": "Temple Street Southeast"
+  },
+  "Jacksonville Florida Temple": {
+   "lat": 30.36542,
+   "lng": -81.64485,
+   "kind": "place/locality",
+   "label": "Temple Cemetery"
+  },
+  "Huehuetenango Guatemala Temple": null,
+  "Ribeirão Preto Brazil Temple": null,
+  "Londrina Brazil Temple": null,
+  "Naga Philippines Temple": null,
+  "Budapest Hungary": {
+   "lat": 47.48185,
+   "lng": 19.14491,
+   "kind": "boundary/administrative",
+   "label": "Budapest",
+   "where": "Budapest, Hungary"
+  },
+  "Port Moresby Papua New Guinea": {
+   "lat": -9.47433,
+   "lng": 147.15995,
+   "kind": "place/city",
+   "label": "Port Moresby",
+   "where": "Port Moresby, National Capital District, Southern Region, 111, Papua New Guinea"
+  },
+  "Freetown Sierra Leone": {
+   "lat": 8.479,
+   "lng": -13.26795,
+   "kind": "place/city",
+   "label": "Freetown",
+   "where": "Freetown, Western Area Urban, Western Area, Sierra Leone"
+  },
+  "Iquitos Peru": {
+   "lat": -3.74937,
+   "lng": -73.24441,
+   "kind": "place/city",
+   "label": "Iquitos",
+   "where": "Iquitos, Province of Maynas, Loreto, 16002, Peru"
+  },
+  "Retalhuleu Guatemala": {
+   "lat": 14.42014,
+   "lng": -91.8297,
+   "kind": "boundary/administrative",
+   "label": "Retalhuleu",
+   "where": "Retalhuleu, Guatemala"
+  },
+  "Hamburg Germany": {
+   "lat": 53.55017,
+   "lng": 10.00132,
+   "kind": "boundary/administrative",
+   "label": "Hamburg",
+   "where": "Hamburg, Germany"
+  },
+  "Jakarta Indonesia": {
+   "lat": -6.1754,
+   "lng": 106.82717,
+   "kind": "boundary/administrative",
+   "label": "Special Capital Region of Jakarta",
+   "where": "Special Capital Region of Jakarta, Indonesia"
+  },
+  "Iloilo Philippines": {
+   "lat": 10.95222,
+   "lng": 122.57995,
+   "kind": "boundary/administrative",
+   "label": "Iloilo",
+   "where": "Iloilo, Western Visayas, Philippines"
+  },
+  "Tuguegarao City Philippines": {
+   "lat": 17.61189,
+   "lng": 121.73004,
+   "kind": "boundary/administrative",
+   "label": "Tuguegarao",
+   "where": "Tuguegarao, Cagayan, Cagayan Valley, 3500, Philippines"
+  },
+  "Natal Brazil": {
+   "lat": -5.8054,
+   "lng": -35.20809,
+   "kind": "boundary/administrative",
+   "label": "Natal",
+   "where": "Natal, Rio Grande do Norte, Northeast Region, Brazil"
+  },
+  "Teresina Brazil": {
+   "lat": -5.08746,
+   "lng": -42.80496,
+   "kind": "boundary/administrative",
+   "label": "Teresina",
+   "where": "Teresina, Piauí, Northeast Region, Brazil"
+  },
+  "Victoria British Columbia": {
+   "lat": 48.42832,
+   "lng": -123.36495,
+   "kind": "boundary/administrative",
+   "label": "Victoria",
+   "where": "Victoria, Capital Regional District, British Columbia, Canada"
+  },
+  "Brisbane Australia South": {
+   "lat": -34.75784,
+   "lng": 138.68047,
+   "kind": "highway/residential",
+   "label": "Brisbane Drive",
+   "where": "Brisbane Drive, Salisbury Heights, Adelaide, South Australia, 5109, Australia"
+  },
+  "Edinburgh Scotland": {
+   "lat": 55.95335,
+   "lng": -3.18837,
+   "kind": "boundary/administrative",
+   "label": "City of Edinburgh",
+   "where": "City of Edinburgh, Scotland, United Kingdom"
+  },
+  "Rosario Argentina": {
+   "lat": -32.95936,
+   "lng": -60.6617,
+   "kind": "boundary/administrative",
+   "label": "Rosario",
+   "where": "Rosario, Municipio de Rosario, Gran Rosario, Departamento Rosario, Santa Fe, S2000, Argentina"
+  },
+  "Florianopolis Brazil": {
+   "lat": -27.5973,
+   "lng": -48.54961,
+   "kind": "boundary/administrative",
+   "label": "Florianópolis",
+   "where": "Florianópolis, Santa Catarina, South Region, Brazil"
+  },
+  "Maracaibo Venezuela": {
+   "lat": 10.64981,
+   "lng": -71.64436,
+   "kind": "place/city",
+   "label": "Maracaibo",
+   "where": "Maracaibo, Parroquia Cacique Mara, Municipio Maracaibo, Zulia State, 4012, Venezuela"
+  },
+  "Uturoa French Polynesia": {
+   "lat": -16.72983,
+   "lng": -151.44403,
+   "kind": "boundary/administrative",
+   "label": "Uturoa",
+   "where": "Uturoa, Leeward Islands, French Polynesia, 98735, France"
+  },
+  "Chihuahua Mexico": {
+   "lat": 28.5,
+   "lng": -106,
+   "kind": "boundary/administrative",
+   "label": "Chihuahua",
+   "where": "Chihuahua, Mexico"
+  },
+  "Torreón Mexico": {
+   "lat": 25.5427,
+   "lng": -103.41051,
+   "kind": "place/city",
+   "label": "Torreón",
+   "where": "Torreón, Coahuila, 27289, Mexico"
+  },
+  "Querétaro Mexico": {
+   "lat": 20.80522,
+   "lng": -99.88374,
+   "kind": "boundary/administrative",
+   "label": "Querétaro",
+   "where": "Querétaro, Mexico"
+  },
+  "Cali Colombia": {
+   "lat": 3.41084,
+   "lng": -76.58121,
+   "kind": "boundary/administrative",
+   "label": "Cali",
+   "where": "Cali, Sur, Valle del Cauca, RAP Pacífico, Colombia"
+  },
+  "Belo Horizonte Brazil": {
+   "lat": -19.92273,
+   "lng": -43.94509,
+   "kind": "boundary/administrative",
+   "label": "Belo Horizonte",
+   "where": "Belo Horizonte, Minas Gerais, Southeast Region, Brazil"
+  },
+  "Cape Town South Africa": {
+   "lat": -33.92883,
+   "lng": 18.41722,
+   "kind": "place/city",
+   "label": "Cape Town",
+   "where": "Cape Town, City of Cape Town, Western Cape, 8001, South Africa"
+  },
+  "Beira Mozambique": {
+   "lat": -19.83407,
+   "lng": 34.83581,
+   "kind": "place/city",
+   "label": "Beira",
+   "where": "Beira, Cidade da Beira, Sofala Province, Zona Centro, 2100, Mozambique"
+  },
+  "Kumasi Ghana": {
+   "lat": 6.69856,
+   "lng": -1.62331,
+   "kind": "place/city",
+   "label": "Kumasi",
+   "where": "Kumasi, Kumasi Metropolitan District, Ashanti Region, AK-010-1295, Ghana"
+  },
+  "Vienna Austria": {
+   "lat": 48.20835,
+   "lng": 16.3725,
+   "kind": "boundary/administrative",
+   "label": "Vienna",
+   "where": "Vienna, Austria"
+  },
+  "Oslo Norway": {
+   "lat": 59.91333,
+   "lng": 10.73897,
+   "kind": "boundary/administrative",
+   "label": "Oslo",
+   "where": "Oslo, Norway"
+  },
+  "Maputo Mozambique": {
+   "lat": -25.96621,
+   "lng": 32.56745,
+   "kind": "boundary/administrative",
+   "label": "Maputo",
+   "where": "Maputo, Zona Sul, Mozambique"
+  },
+  "Kampala Uganda": {
+   "lat": 0.31771,
+   "lng": 32.58135,
+   "kind": "boundary/administrative",
+   "label": "Kampala",
+   "where": "Kampala, Central Region, Uganda"
+  },
+  "Abuja Nigeria": {
+   "lat": 9.06433,
+   "lng": 7.4893,
+   "kind": "place/city",
+   "label": "Abuja",
+   "where": "Abuja, Municipal Area Council, Federal Capital Territory, 223140, Nigeria"
+  },
+  "Milan Italy": {
+   "lat": 45.46419,
+   "lng": 9.18963,
+   "kind": "place/city",
+   "label": "Milan",
+   "where": "Milan, Rodano, Milan, Lombardy, 20121, Italy"
+  },
+  "Puerto Montt Chile": {
+   "lat": -41.4718,
+   "lng": -72.93959,
+   "kind": "boundary/administrative",
+   "label": "Puerto Montt",
+   "where": "Puerto Montt, Provincia de Llanquihue, Los Lagos Region, Chile"
+  },
+  "Santiago Dominican Republic": {
+   "lat": 19.45085,
+   "lng": -70.69474,
+   "kind": "boundary/administrative",
+   "label": "Santiago de los Caballeros",
+   "where": "Santiago de los Caballeros, Santiago, Dominican Republic"
+  },
+  "Medellín Colombia": {
+   "lat": 6.26973,
+   "lng": -75.60256,
+   "kind": "boundary/administrative",
+   "label": "Medellín",
+   "where": "Medellín, Valle de Aburrá, Antioquia, RAP del Agua y la Montaña, 0500, Colombia"
+  },
+  "Santa Ana El Salvador": {
+   "lat": 13.99478,
+   "lng": -89.55661,
+   "kind": "boundary/administrative",
+   "label": "Santa Ana",
+   "where": "Santa Ana, Santa Ana Centro, Santa Ana, El Salvador"
+  },
+  "Juchitán de Zaragoza Mexico": {
+   "lat": 16.41333,
+   "lng": -94.91188,
+   "kind": "boundary/administrative",
+   "label": "Juchitán de Zaragoza",
+   "where": "Juchitán de Zaragoza, Oaxaca, Mexico"
+  },
+  "Dublin Ireland": {
+   "lat": 53.34938,
+   "lng": -6.26056,
+   "kind": "boundary/administrative",
+   "label": "Dublin",
+   "where": "Dublin, County Dublin, Leinster, Ireland"
+  },
+  "Liverpool Australia": {
+   "lat": -33.95259,
+   "lng": 150.89884,
+   "kind": "boundary/administrative",
+   "label": "Liverpool City Council",
+   "where": "Liverpool City Council, Liverpool, New South Wales, Australia"
+  },
+  "Nouméa New Caledonia": {
+   "lat": -22.27453,
+   "lng": 166.44242,
+   "kind": "boundary/administrative",
+   "label": "Noumea",
+   "where": "Noumea, South Province, New Caledonia, 98800, France"
+  },
+  "San Jose del Monte Philippines": {
+   "lat": 14.8102,
+   "lng": 121.04741,
+   "kind": "boundary/administrative",
+   "label": "San Jose del Monte",
+   "where": "San Jose del Monte, Bulacan, Central Luzon, Philippines"
+  },
+  "Uyo Nigeria": {
+   "lat": 4.99024,
+   "lng": 7.99744,
+   "kind": "boundary/administrative",
+   "label": "Uyo",
+   "where": "Uyo, Akwa Ibom State, Nigeria"
+  },
+  "Porto Portugal": {
+   "lat": 41.15022,
+   "lng": -8.61035,
+   "kind": "boundary/administrative",
+   "label": "Porto",
+   "where": "Porto, Portugal"
+  },
+  "Campo Grande Brazil": {
+   "lat": -20.46402,
+   "lng": -54.61629,
+   "kind": "boundary/administrative",
+   "label": "Campo Grande",
+   "where": "Campo Grande, Mato Grosso do Sul, Central-West Region, Brazil"
+  },
+  "Rivera Uruguay": {
+   "lat": -30.90006,
+   "lng": -55.54082,
+   "kind": "boundary/administrative",
+   "label": "Rivera",
+   "where": "Rivera, 40000, Uruguay"
+  },
+  "Chorrillos Peru": {
+   "lat": -12.19235,
+   "lng": -77.00896,
+   "kind": "boundary/administrative",
+   "label": "Chorrillos",
+   "where": "Chorrillos, Province of Lima, Lima Metropolitan Area, Lima, Peru"
+  },
+  "Reynosa Mexico": {
+   "lat": 26.09284,
+   "lng": -98.27795,
+   "kind": "place/city",
+   "label": "Reynosa",
+   "where": "Reynosa, Tamaulipas, 88500, Mexico"
+  },
+  "Managua Nicaragua": {
+   "lat": 12.11,
+   "lng": -86.25,
+   "kind": "boundary/administrative",
+   "label": "Managua",
+   "where": "Managua, 10000 (código maestro), Nicaragua"
+  },
+  "Cagayan de Oro Philippines": {
+   "lat": 8.47564,
+   "lng": 124.64215,
+   "kind": "boundary/administrative",
+   "label": "Cagayan de Oro",
+   "where": "Cagayan de Oro, Northern Mindanao, 9000, Philippines"
+  },
+  "São Paulo East Brazil": null,
+  "Miraflores Guatemala City Guatemala": {
+   "lat": 14.62141,
+   "lng": -90.55366,
+   "kind": "leisure/park",
+   "label": "Miraflores",
+   "where": "Miraflores, Zone 11, El Rodeo, Guatemala City, Zona 4, Guatemala Department, 01011, Guatemala"
+  },
+  "Port Vila Vanuatu": {
+   "lat": -17.7415,
+   "lng": 168.31502,
+   "kind": "place/city",
+   "label": "Port Vila",
+   "where": "Port Vila, Shefa Province, Vanuatu"
+  },
+  "Tarawa Kiribati": {
+   "lat": 1.48455,
+   "lng": 172.96896,
+   "kind": "natural/atoll",
+   "label": "Tarawa",
+   "where": "Tarawa, Gilbert Islands, Kiribati"
+  },
+  "Culiacán Mexico": {
+   "lat": 24.7979,
+   "lng": -107.39339,
+   "kind": "place/city",
+   "label": "Culiacán",
+   "where": "Culiacán, Culiacán Rosales, Culiacán, Sinaloa, 80220, Mexico"
+  },
+  "Antananarivo Madagascar": {
+   "lat": -18.91001,
+   "lng": 47.52558,
+   "kind": "place/city",
+   "label": "Antananarivo",
+   "where": "Antananarivo, Analamanga, Province d’Antananarivo, 101, Madagascar"
+  },
+  "Kananga Democratic Republic of the Congo": {
+   "lat": -5.89517,
+   "lng": 22.40859,
+   "kind": "place/city",
+   "label": "Kananga",
+   "where": "Kananga, Lulua, Central Kasai, Democratic Republic of the Congo"
+  },
+  "Monrovia Liberia": {
+   "lat": 6.32036,
+   "lng": -10.80605,
+   "kind": "place/city",
+   "label": "Monrovia",
+   "where": "Monrovia, Greater Monrovia, Montserrado County, Liberia"
+  },
+  "Tacloban City Philippines": {
+   "lat": 11.24316,
+   "lng": 125.00829,
+   "kind": "boundary/administrative",
+   "label": "Tacloban",
+   "where": "Tacloban, Eastern Visayas, 6500, Philippines"
+  },
+  "Kaohsiung Taiwan": {
+   "lat": 22.62033,
+   "lng": 120.31204,
+   "kind": "boundary/administrative",
+   "label": "Kaohsiung",
+   "where": "Kaohsiung, Taiwan"
+  },
+  "Mexico City Benemérito Mexico": null,
+  "San Luis Potosí Mexico": {
+   "lat": 22.5,
+   "lng": -100.49491,
+   "kind": "boundary/administrative",
+   "label": "San Luis Potosí",
+   "where": "San Luis Potosí, Mexico"
+  },
+  "Santos Brazil": {
+   "lat": -23.96094,
+   "lng": -46.31663,
+   "kind": "boundary/administrative",
+   "label": "Santos",
+   "where": "Santos, São Paulo, Southeast Region, Brazil"
+  },
+  "Maceió Brazil": {
+   "lat": -9.64768,
+   "lng": -35.73393,
+   "kind": "boundary/administrative",
+   "label": "Maceió",
+   "where": "Maceió, Alagoas, Northeast Region, Brazil"
+  },
+  "Cusco Peru": {
+   "lat": -13.51709,
+   "lng": -71.97854,
+   "kind": "place/city",
+   "label": "Cuzco",
+   "where": "Cuzco, Distrito de Cusco, Province of Cusco, Cusco, 08001, Peru"
+  },
+  "Shanghai People’s Republic of China": {
+   "lat": 31.23127,
+   "lng": 121.47002,
+   "kind": "boundary/administrative",
+   "label": "Shanghai",
+   "where": "Shanghai, China"
+  },
+  "Birmingham England": {
+   "lat": 52.4949,
+   "lng": -1.85184,
+   "kind": "boundary/administrative",
+   "label": "Birmingham",
+   "where": "Birmingham, West Midlands, England, United Kingdom"
+  },
+  "Dubai United Arab Emirates": {
+   "lat": 25.07428,
+   "lng": 55.18856,
+   "kind": "boundary/administrative",
+   "label": "Dubai",
+   "where": "Dubai, Dubai Emirate, United Arab Emirates"
+  },
+  "Barcelona Spain": {
+   "lat": 41.38258,
+   "lng": 2.17707,
+   "kind": "boundary/administrative",
+   "label": "Barcelona",
+   "where": "Barcelona, Barcelonès, Barcelona, Catalonia, Spain"
+  },
+  "Benin City Nigeria": {
+   "lat": 6.33306,
+   "lng": 5.62211,
+   "kind": "place/city",
+   "label": "Benin City",
+   "where": "Benin City, Oredo, Edo State, 300241, Nigeria"
+  },
+  "Brazzaville Republic of the Congo": {
+   "lat": -4.26944,
+   "lng": 15.27123,
+   "kind": "boundary/administrative",
+   "label": "Brazzaville (municipality)",
+   "where": "Brazzaville (municipality), Brazzaville (department), Congo-Brazzaville"
+  },
+  "Lubumbashi Democratic Republic of the Congo": {
+   "lat": -11.66423,
+   "lng": 27.48263,
+   "kind": "boundary/administrative",
+   "label": "Lubumbashi",
+   "where": "Lubumbashi, Ville de Lubumbashi, Haut-Katanga, Democratic Republic of the Congo"
+  },
+  "Wellington New Zealand": {
+   "lat": -41.2888,
+   "lng": 174.77721,
+   "kind": "place/city",
+   "label": "Wellington",
+   "where": "Wellington, Wellington City, Wellington, 6011, New Zealand"
+  },
+  "Ulaanbaatar Mongolia": {
+   "lat": 47.91847,
+   "lng": 106.9177,
+   "kind": "boundary/administrative",
+   "label": "Ulaanbaatar",
+   "where": "Ulaanbaatar, Mongolia"
+  },
+  "Osaka Japan": {
+   "lat": 40.76873,
+   "lng": -111.88895,
+   "kind": "amenity/fast_food",
+   "label": "Osaka Japan",
+   "where": "Osaka Japan, Regent Court, Crossroads Mall / ZCMI Center;Crossroads Mall / ZCMI Center, Downtown, Salt Lake City, Salt Lake County, Utah, 84133, United States"
+  },
+  "Laoag Philippines": {
+   "lat": 18.19545,
+   "lng": 120.59268,
+   "kind": "place/city",
+   "label": "Laoag",
+   "where": "Laoag, Brgy. 13, Ilocos Norte, Ilocos Region, 2900, Philippines"
+  },
+  "Mbuji-Mayi Democratic Republic of the Congo": {
+   "lat": -6.12589,
+   "lng": 23.59981,
+   "kind": "place/city",
+   "label": "Mbuji-Mayi",
+   "where": "Mbuji-Mayi, Dibindi, Ville de Mbujimayi, Kasaï-Oriental, Democratic Republic of the Congo"
+  },
+  "Luanda Angola": {
+   "lat": -8.82727,
+   "lng": 13.24395,
+   "kind": "place/city",
+   "label": "Luanda",
+   "where": "Luanda, Luanda Province, Angola"
+  },
+  "Cape Coast Ghana": {
+   "lat": 5.10809,
+   "lng": -1.24171,
+   "kind": "place/city",
+   "label": "Cape Coast",
+   "where": "Cape Coast, Cape Coast Metropolitan District, Central Region, Ghana"
+  },
+  "Calabar Nigeria": {
+   "lat": 4.9796,
+   "lng": 8.33736,
+   "kind": "place/city",
+   "label": "Calabar",
+   "where": "Calabar, Calabar Municipal, Cross River State, 540222, Nigeria"
+  },
+  "João Pessoa Brazil": {
+   "lat": -7.1216,
+   "lng": -34.88203,
+   "kind": "boundary/administrative",
+   "label": "João Pessoa",
+   "where": "João Pessoa, Paraíba, Northeast Region, Brazil"
+  },
+  "Goiânia Brazil": {
+   "lat": -16.68088,
+   "lng": -49.25327,
+   "kind": "boundary/administrative",
+   "label": "Goiânia",
+   "where": "Goiânia, Goiás, Central-West Region, Brazil"
+  },
+  "Viña del Mar Chile": {
+   "lat": -33.02445,
+   "lng": -71.55176,
+   "kind": "boundary/administrative",
+   "label": "Viña del Mar",
+   "where": "Viña del Mar, Provincia de Valparaíso, Valparaiso Region, Chile"
+  },
+  "Huancayo Peru": {
+   "lat": -12.0681,
+   "lng": -75.2101,
+   "kind": "place/city",
+   "label": "Huancayo",
+   "where": "Huancayo, Province of Huancayo, Junín, 12001, Peru"
+  },
+  "Piura Peru": {
+   "lat": -5,
+   "lng": -80.33333,
+   "kind": "boundary/administrative",
+   "label": "Piura",
+   "where": "Piura, Peru"
+  },
+  "Cancún Mexico": {
+   "lat": 21.15275,
+   "lng": -86.84258,
+   "kind": "boundary/administrative",
+   "label": "Cancún",
+   "where": "Cancún, Benito Juárez, Distrito 5, Quintana Roo, Mexico"
+  },
+  "Santiago West Chile": null,
+  "La Paz Bolivia": {
+   "lat": -16.49555,
+   "lng": -68.13362,
+   "kind": "boundary/administrative",
+   "label": "La Paz",
+   "where": "La Paz, Provincia Pedro Domingo Murillo, La Paz, Bolivia"
+  },
+  "Savai'i Samoa": {
+   "lat": -13.62127,
+   "lng": -172.43945,
+   "kind": "place/island",
+   "label": "Savāiʻi",
+   "where": "Savāiʻi, Palauli, Samoa"
+  },
+  "Vitória Brazil": {
+   "lat": -20.32009,
+   "lng": -40.33767,
+   "kind": "boundary/administrative",
+   "label": "Vitória",
+   "where": "Vitória, Espírito Santo, Southeast Region, Brazil"
+  },
+  "Lagos Nigeria": {
+   "lat": 6.45506,
+   "lng": 3.39418,
+   "kind": "place/city",
+   "label": "Lagos",
+   "where": "Lagos, Lagos Island, Lagos State, 100242, Nigeria"
+  },
+  "Tula Mexico": {
+   "lat": 22.94788,
+   "lng": -99.80559,
+   "kind": "boundary/administrative",
+   "label": "Tula",
+   "where": "Tula, Tamaulipas, 87900, Mexico"
+  },
+  "Toluca Mexico": {
+   "lat": 19.29255,
+   "lng": -99.6569,
+   "kind": "place/city",
+   "label": "Toluca",
+   "where": "Toluca, State of Mexico, 50000, Mexico"
+  },
+  "Pachuca Mexico": {
+   "lat": 20.11654,
+   "lng": -98.74135,
+   "kind": "place/city",
+   "label": "Pachuca",
+   "where": "Pachuca, Pachuca de Soto, Hidalgo, 42060, Mexico"
+  },
+  "Cuernavaca Mexico": {
+   "lat": 18.93313,
+   "lng": -99.25996,
+   "kind": "boundary/administrative",
+   "label": "Cuernavaca",
+   "where": "Cuernavaca, Morelos, Mexico"
+  },
+  "Huehuetenango Guatemala": {
+   "lat": 15.60642,
+   "lng": -91.64422,
+   "kind": "boundary/administrative",
+   "label": "Huehuetenango",
+   "where": "Huehuetenango, Guatemala"
+  },
+  "Ribeirão Preto Brazil": {
+   "lat": -21.17763,
+   "lng": -47.8101,
+   "kind": "boundary/administrative",
+   "label": "Ribeirão Preto",
+   "where": "Ribeirão Preto, São Paulo, Southeast Region, Brazil"
+  },
+  "Londrina Brazil": {
+   "lat": -23.31129,
+   "lng": -51.1595,
+   "kind": "boundary/administrative",
+   "label": "Londrina",
+   "where": "Londrina, Paraná, South Region, Brazil"
+  },
+  "Buenos Aires City Center Argentina": null,
+  "Chiclayo Peru": {
+   "lat": -6.77161,
+   "lng": -79.83872,
+   "kind": "place/city",
+   "label": "Chiclayo",
+   "where": "Chiclayo, Province of Chiclayo, Lambayeque, 14001, Peru"
+  },
+  "Eket Nigeria": {
+   "lat": 4.63601,
+   "lng": 7.95754,
+   "kind": "boundary/administrative",
+   "label": "Eket",
+   "where": "Eket, Akwa Ibom State, Nigeria"
+  },
+  "Santiago Philippines": {
+   "lat": 16.69169,
+   "lng": 121.54808,
+   "kind": "place/city",
+   "label": "Santiago",
+   "where": "Santiago, Isabela, Cagayan Valley, 3311, Philippines"
+  },
+  "Naga Philippines": {
+   "lat": 13.62401,
+   "lng": 123.18503,
+   "kind": "boundary/administrative",
+   "label": "Naga",
+   "where": "Naga, Bicol Region, 4400, Philippines"
+  },
+  "Busan Korea": {
+   "lat": 35.17995,
+   "lng": 129.07524,
+   "kind": "boundary/administrative",
+   "label": "Busan",
+   "where": "Busan, South Korea"
+  }
+ }
+}

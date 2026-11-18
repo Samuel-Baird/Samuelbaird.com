@@ -18,6 +18,7 @@ export const SITES = {
       { href: '/', label: 'Home', icon: 'i-skep', exact: true },
       { href: '/projects', label: 'Projects', icon: 'i-comb' },
       { href: '/sacred-sites', label: 'Sacred Sites', icon: 'i-wagon' },
+      { href: '/temples', label: 'Temples', icon: 'i-sunmoon' },
       { href: '/books', label: 'Reading', icon: 'i-books' },
       { href: '/collection', label: 'Collection', icon: 'i-sego' },
     ],

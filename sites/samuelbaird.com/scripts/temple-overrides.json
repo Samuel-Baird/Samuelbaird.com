@@ -1,0 +1,10 @@
+{
+  "_help": "Hand corrections applied after all automatic sources. Key by temple id (templeNameId). Set lat/lng with coordPrecision (site | address | city | country). Keep a note saying where the value came from.",
+  "neiafu-tonga-temple": { "lat": -18.6496, "lng": -173.9833, "coordPrecision": "city", "note": "Neiafu, Vava'u (city centre)" },
+  "sao-paulo-east-brazil-temple": { "lat": -23.5505, "lng": -46.6333, "coordPrecision": "city", "note": "Sao Paulo (city centre); exact site in the east zone not yet published" },
+  "singapore-temple": { "lat": 1.2903, "lng": 103.8519, "coordPrecision": "city", "note": "Singapore is a city-state (city centre)" },
+  "santiago-west-chile-temple": { "lat": -33.4489, "lng": -70.6693, "coordPrecision": "city", "note": "Santiago (city centre); exact western site not yet published" },
+  "brazzaville-republic-of-the-congo-temple": { "lat": -4.2634, "lng": 15.2429, "coordPrecision": "city", "note": "Brazzaville (city centre)" },
+  "mexico-city-benemerito-mexico-temple": { "lat": 19.4326, "lng": -99.1332, "coordPrecision": "city", "note": "Mexico City (city centre); temple to be built on the former Benemerito de las Americas school site" },
+  "buenos-aires-city-center-argentina-temple": { "lat": -34.6037, "lng": -58.3816, "coordPrecision": "city", "note": "Buenos Aires city centre" }
+}
