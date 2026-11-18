@@ -152,6 +152,29 @@ function templeDecades() {
     + `<div class="t-dec-x" aria-hidden="true">${decades.map((d) => `<span>${d.slice(2)}s</span>`).join('')}</div>`;
 }
 
+// Church history sites (data/lds-historic-sites.json, built by scripts/fetch-historic-sites.mjs from the Church's pages + OSM).
+const HIST_DATA = JSON.parse(read('data/lds-historic-sites.json'));
+const HIST = HIST_DATA.sites;
+// Keep in step with historic-sites/app.js.
+const HIST_CAT = { 'Historic site': '#D9B46A', "Visitors' center": '#7E9BBB', Monument: '#8DA27A', Museum: '#C98A5A' };
+const H = {
+  all: HIST.length,
+  historic: HIST.filter((x) => x.category === 'Historic site').length,
+  centers: HIST.filter((x) => x.category === "Visitors' center" || x.category === 'Museum').length,
+  monuments: HIST.filter((x) => x.category === 'Monument').length,
+  states: new Set(HIST.filter((x) => x.country === 'United States').map((x) => x.region).filter(Boolean)).size,
+  countries: new Set(HIST.map((x) => x.country).filter(Boolean)).size,
+};
+FACT.historicSites = H.all;
+const histPlace = (x) => [x.city, x.region, x.country === 'United States' ? '' : x.country].filter(Boolean).join(', ');
+const histCat = (c) => `<span class="t-st"><i style="background:${HIST_CAT[c] || '#B9AE96'}"></i>${esc(c)}</span>`;
+const histRow = (x) => `<tr data-id="${esc(x.id)}"><td>${esc(x.name)}</td><td>${esc(histPlace(x))}</td><td>${histCat(x.category)}</td><td class="hide-sm">${esc(x.area || '')}</td>`
+  + `<td class="t-links"><a href="${esc(x.officialUrl)}" rel="noopener">Official</a>${x.wikipedia ? `<a href="${esc(x.wikipedia)}" rel="noopener">Wikipedia</a>` : ''}</td></tr>`;
+const histStats = () => [
+  [H.all, 'sites'], [H.historic, 'historic sites'], [H.centers, 'visitors&rsquo; centers &amp; museums'], [H.monuments, 'monuments'],
+  [H.states, 'U.S. states'], [H.countries, H.countries === 1 ? 'country' : 'countries'],
+].map(([n, l]) => `<li><b>${n}</b><span>${l}</span></li>`).join('');
+
 // Sites grouped by tradition (listed communities first, in the order they are defined).
 const byTradition = [];
 for (const c of COMMUNITIES) {
@@ -300,6 +323,18 @@ const DATASETS = {
       { '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: BASE + '/data/lds-temples.json' },
     ],
   },
+  historic: {
+    '@type': 'Dataset', '@id': BASE + '/data#lds-historic-sites', name: HIST_DATA.name,
+    description: `The ${H.all} Church history sites, visitors' centers, monuments and museums operated by The Church of Jesus Christ of Latter-day Saints, with category, address and coordinates. Compiled from the Church's official historic sites pages and OpenStreetMap.`,
+    url: BASE + '/historic-sites', isAccessibleForFree: true, creator: { '@type': 'Person', name: NAME, url: BASE + '/' }, inLanguage: 'en', dateModified: NOW, includedInDataCatalog: CATALOG,
+    keywords: ['Church history sites', 'LDS historic sites', 'Latter-day Saint historic sites', 'Nauvoo', 'Kirtland', 'Palmyra', 'Mormon Trail', 'open data'],
+    spatialCoverage: [...new Set(HIST.map((x) => x.country).filter(Boolean))].map((c) => ({ '@type': 'Place', name: c })),
+    variableMeasured: ['name', 'category', 'operator', 'area', 'street', 'city', 'region', 'country', 'latitude', 'longitude', 'coordPrecision'],
+    distribution: [
+      { '@type': 'DataDownload', encodingFormat: 'text/csv', contentUrl: BASE + '/data/lds-historic-sites.csv' },
+      { '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: BASE + '/data/lds-historic-sites.json' },
+    ],
+  },
   reading: {
     '@type': 'Dataset', '@id': BASE + '/data#reading-list', name: 'Reading log: books and articles with date finished',
     description: `${F.books} books and ${F.articles} articles read by Samuel Baird, with the date each was finished and a link to the source.`,
@@ -395,7 +430,7 @@ const PAGES = {
   '/faq': { title: `FAQ: ${NAME}, Latter-day Stats, Pulpit and Sacred Sites`, desc: 'Direct answers: how many LDS YouTube channels are tracked, what Pulpit is, which sacred sites and temples Samuel Baird has visited, what he reads, and how to cite or reuse the data.',
     ld: (p) => [webPage(p, 'FAQPage', { mainEntity: FAQ.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: stripTags(a) } })) }), crumbs([['Home', '/'], ['FAQ', '/faq']])] },
   '/data': { title: 'Open Data: Sacred Sites and Reading Log (CSV, JSON) · Samuel Baird', desc: `Download original datasets under ${LICENSE_NAME}: ${F.sites} sacred sites with coordinates and visit dates, and a ${F.read}-item reading log. CSV and JSON, with field descriptions and a citation.`,
-    ld: (p) => [webPage(p, 'CollectionPage', { about: [{ '@id': DATASETS.sites['@id'] }, { '@id': DATASETS.reading['@id'] }, { '@id': DATASETS.temples['@id'] }], hasPart: [{ '@id': DATASETS.sites['@id'] }, { '@id': DATASETS.reading['@id'] }, { '@id': DATASETS.temples['@id'] }] }), DATASETS.sites, DATASETS.reading, DATASETS.temples, crumbs([['Home', '/'], ['Open data', '/data']])] },
+    ld: (p) => [webPage(p, 'CollectionPage', { about: [{ '@id': DATASETS.sites['@id'] }, { '@id': DATASETS.reading['@id'] }, { '@id': DATASETS.temples['@id'] }, { '@id': DATASETS.historic['@id'] }], hasPart: [{ '@id': DATASETS.sites['@id'] }, { '@id': DATASETS.reading['@id'] }, { '@id': DATASETS.temples['@id'] }, { '@id': DATASETS.historic['@id'] }] }), DATASETS.sites, DATASETS.reading, DATASETS.temples, DATASETS.historic, crumbs([['Home', '/'], ['Open data', '/data']])] },
   '/sacred-sites': { file: 'sacred-sites/index.html', title: `Sacred Sites Visited: Interactive Map of ${F.sites} Churches and Temples · ${NAME}`, desc: `An interactive map of the ${F.sites} churches, temples and houses of worship ${NAME} has visited since January 2025, filterable by tradition, place and year.`, image: '/img/sacred-sites-map.webp', imageAlt: 'Map of sacred sites visited, mostly in Utah',
     ld: (p) => [webPage(p, 'CollectionPage', { about: { '@id': DATASETS.sites['@id'] }, mainEntity: { '@id': BASE + '/sacred-sites/sites#list' } }), DATASETS.sites, sitesList(), ...SITES.map(placeNode), crumbs([['Home', '/'], ['Sacred Sites', '/sacred-sites']])] },
   '/sacred-sites/photos': { file: 'sacred-sites/photos/index.html', title: `Sacred Sites Photos: ${F.photos} Photos of Churches and Temples · ${NAME}`, desc: `${F.photos} photographs from the churches, temples and houses of worship ${NAME} has visited, filterable by tradition, newest first. Free to reuse under ${LICENSE_NAME}.`, image: '/img/sacred-sites-photos.webp', imageAlt: 'Photo gallery of Greek Orthodox church interiors',
@@ -410,6 +445,8 @@ const PAGES = {
       crumbs([['Home', '/'], ['My Reading', '/books']])] },
   '/temples': { file: 'temples/index.html', title: `Every Latter-day Saint Temple: Map, Status and Dedication Dates (${T.all}) · ${NAME}`, desc: `Map and open dataset of all ${T.all} temples of The Church of Jesus Christ of Latter-day Saints in ${T.countries} countries and territories: ${T.operating} operating, ${T.building} under construction and ${T.announced} announced, with announcement, groundbreaking and dedication dates. CSV and JSON.`,
     ld: (p) => [webPage(p, 'CollectionPage', { about: { '@id': DATASETS.temples['@id'] } }), DATASETS.temples, crumbs([['Home', '/'], ['Temples', '/temples']])] },
+  '/historic-sites': { file: 'historic-sites/index.html', title: `Church History Sites: Map of ${H.all} Latter-day Saint Historic Sites · ${NAME}`, desc: `Map and open dataset of the ${H.all} Church history sites, visitors' centers, monuments and museums operated by The Church of Jesus Christ of Latter-day Saints, from Palmyra and Kirtland to Nauvoo, Missouri and the Mormon Trail, with addresses and coordinates. CSV and JSON.`,
+    ld: (p) => [webPage(p, 'CollectionPage', { about: { '@id': DATASETS.historic['@id'] } }), DATASETS.historic, crumbs([['Home', '/'], ['Historic sites', '/historic-sites']])] },
   '/collection': { file: 'collection/index.html', title: `Collection: Historic Latter-day Saint Books, Periodicals and Artifacts · ${NAME}`, desc: `Historical Latter-day Saint items owned by ${NAME}, including a first edition of the Deseret First Book (1868), an 1864 Millennial Star and a 1908 Northern States Mission Book of Mormon.`,
     ld: (p) => [webPage(p, 'CollectionPage', { mainEntity: { '@id': BASE + '/collection#items' } }), collectionList(), crumbs([['Home', '/'], ['Collection', '/collection']])] },
   '/wishlist': { title: `Wishlist: Books and Equipment for the Channel · ${NAME}`, desc: `${WISHLIST.length ? plural(WISHLIST.length, 'book and piece of equipment', 'books and pieces of equipment') : 'Books and equipment'} ${NAME} would like for his YouTube channel, most wanted first. Bought through Amazon, shipped directly to him.`,
@@ -542,7 +579,7 @@ ${FAQ.map(([q, a]) => `<section class="qa" id="${slug(q)}"><h2>${esc(q)}</h2><p>
 function dataPage() {
   const fields = (rows) => `<dl class="fields">${rows.map(([k, v]) => `<dt><code>${k}</code></dt><dd>${v}</dd>`).join('')}</dl>`;
   const preview = SITE_ROWS.slice(0, 6);
-  return shell('/data', `${pagehead([['Home', '/'], ['Open data', '/data']], 'Open data', 'Original datasets you can download', `Free datasets to download: two first-hand ones under ${LICENSE_NAME}, and a compiled list of every Latter-day Saint temple. Updated ${longDate(TODAY)}.`)}
+  return shell('/data', `${pagehead([['Home', '/'], ['Open data', '/data']], 'Open data', 'Original datasets you can download', `Free datasets to download: two first-hand ones under ${LICENSE_NAME}, and compiled lists of every Latter-day Saint temple and Church history site. Updated ${longDate(TODAY)}.`)}
 <div class="prose wide">
   <section class="dataset" id="sacred-sites">
     <h2>Sacred sites visited</h2>
@@ -559,6 +596,12 @@ function dataPage() {
     <p>All ${T.all} temples of The Church of Jesus Christ of Latter-day Saints in ${T.countries} countries and territories (${T.operating} operating, ${T.building} under construction, ${T.announced} announced), with coordinates and milestone dates. Facts compiled from the Church&rsquo;s official temple pages; coordinates from Wikidata (CC0) and OpenStreetMap (&copy; OpenStreetMap contributors, ODbL). <code>coordPrecision</code> says whether a location is the temple itself, its address, or only its city or country.</p>
     <div class="btns"><a class="primary" href="/data/lds-temples.csv" download>Download CSV</a><a class="secondary" href="/data/lds-temples.json" download>Download JSON</a><a class="secondary" href="/temples">Map and list</a></div>
     ${fields([['name, status', 'Official temple name; operating, opening-soon, under-construction, under-renovation or announced'], ['city, region, country, address', 'Location as published by the Church'], ['lat, lng, coordPrecision', 'Decimal degrees; precision is site, address, city or country'], ['announced, groundbreaking, dedicated', 'ISO dates (YYYY-MM-DD), blank if not reached'], ['rededicated', 'Semicolon-separated ISO dates'], ['officialUrl, wikidata, wikipedia', 'Links to the official page, Wikidata item and English Wikipedia article']])}
+  </section>
+  <section class="dataset" id="lds-historic-sites">
+    <h2>Church history sites</h2>
+    <p>The ${H.all} historic sites, visitors&rsquo; centers, monuments and museums operated by The Church of Jesus Christ of Latter-day Saints (${H.historic} historic sites, ${H.centers} visitors&rsquo; centers and museums, ${H.monuments} monuments), with addresses and coordinates. The list, names, categories and addresses come from the Church&rsquo;s official <a href="https://www.churchofjesuschrist.org/learn/history/sites?lang=eng" rel="noopener">Historic Sites and Museums</a> pages. Coordinates use the Church&rsquo;s published map pins where available, with OpenStreetMap as the fallback (&copy; OpenStreetMap contributors, ODbL). Every record links to its official source.</p>
+    <div class="btns"><a class="primary" href="/data/lds-historic-sites.csv" download>Download CSV</a><a class="secondary" href="/data/lds-historic-sites.json" download>Download JSON</a><a class="secondary" href="/historic-sites">Map and list</a></div>
+    ${fields([['name, category', 'Official name; Historic site, Visitors&rsquo; center, Monument or Museum (the Church&rsquo;s own label where it gives one)'], ['operator', 'Who runs the site today'], ['area', 'Group of sites on the Church pages (Ohio, Missouri, Illinois&hellip;), blank for stand-alone sites'], ['street, city, region, postalCode, country', 'Physical address as published by the Church'], ['lat, lng, coordPrecision', 'Decimal degrees; precision is site, address, street or city'], ['coordSource', 'church for published map pins, openstreetmap for geocoded locations, or manual for a documented override'], ['officialUrl, source', 'The site&rsquo;s official page, and the official list it appears on'], ['wikidata, wikipedia', 'From the matched OpenStreetMap feature, when it has them']])}
   </section>
   <section class="dataset" id="reading-list">
     <h2>Reading log</h2>
@@ -672,6 +715,7 @@ patch('index.html', '/', { covers: coverWall, 'collection-items': collectionChip
 patch('books/index.html', '/books', { books: BOOKS.map(bookLi).join('\n') });
 patch('collection/index.html', '/collection');
 patch('temples/index.html', '/temples', { 'temple-stats': templeStats(), 'temple-decades': templeDecades(), 'temple-rows': TEMPLES.map(templeRow).join('\n') });
+patch('historic-sites/index.html', '/historic-sites', { 'hist-stats': histStats(), 'hist-rows': HIST.map(histRow).join('\n') });
 patch('donate/index.html', '/donate');
 patch('sacred-sites/index.html', '/sacred-sites');
 patch('sacred-sites/photos/index.html', '/sacred-sites/photos');
@@ -690,7 +734,7 @@ Sitemap: ${BASE}/sitemap.xml
 ${FAMILY.filter((x) => x.basePath && x.sitemap).map((x) => `Sitemap: ${x.url}${x.sitemap}\n`).join('')}`);
 
 // sitemap.xml
-const urls = [['/', 1.0, 'weekly'], ['/projects', 0.9, 'weekly'], ...FAMILY.filter((x) => x.kind !== 'page').map((x) => ['/projects/' + x.id, 0.8, 'monthly']), ['/about', 0.8, 'monthly'], ['/faq', 0.9, 'weekly'], ['/data', 0.9, 'weekly'], ['/sacred-sites', 0.8, 'weekly'], ['/sacred-sites/sites', 0.8, 'weekly'], ['/sacred-sites/photos', 0.6, 'weekly'], ['/sacred-sites/traditions', 0.6, 'weekly'], ['/books', 0.7, 'weekly'], ['/collection', 0.6, 'monthly'], ['/temples', 0.9, 'weekly'], ['/data/lds-temples.csv', 0.4, 'weekly'], ['/data/lds-temples.json', 0.4, 'weekly'], ['/donate', 0.3, 'yearly'], ['/wishlist', 0.3, 'weekly'], ['/data/sacred-sites.csv', 0.4, 'weekly'], ['/data/sacred-sites.json', 0.4, 'weekly'], ['/data/reading-list.csv', 0.4, 'weekly'], ['/data/reading-list.json', 0.4, 'weekly'], ['/llms.txt', 0.3, 'monthly']];
+const urls = [['/', 1.0, 'weekly'], ['/projects', 0.9, 'weekly'], ...FAMILY.filter((x) => x.kind !== 'page').map((x) => ['/projects/' + x.id, 0.8, 'monthly']), ['/about', 0.8, 'monthly'], ['/faq', 0.9, 'weekly'], ['/data', 0.9, 'weekly'], ['/sacred-sites', 0.8, 'weekly'], ['/sacred-sites/sites', 0.8, 'weekly'], ['/sacred-sites/photos', 0.6, 'weekly'], ['/sacred-sites/traditions', 0.6, 'weekly'], ['/books', 0.7, 'weekly'], ['/collection', 0.6, 'monthly'], ['/temples', 0.9, 'weekly'], ['/data/lds-temples.csv', 0.4, 'weekly'], ['/data/lds-temples.json', 0.4, 'weekly'], ['/historic-sites', 0.8, 'monthly'], ['/data/lds-historic-sites.csv', 0.4, 'monthly'], ['/data/lds-historic-sites.json', 0.4, 'monthly'], ['/donate', 0.3, 'yearly'], ['/wishlist', 0.3, 'weekly'], ['/data/sacred-sites.csv', 0.4, 'weekly'], ['/data/sacred-sites.json', 0.4, 'weekly'], ['/data/reading-list.csv', 0.4, 'weekly'], ['/data/reading-list.json', 0.4, 'weekly'], ['/llms.txt', 0.3, 'monthly']];
 write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map(([u, pr, cf]) => `  <url><loc>${BASE}${u === '/' ? '/' : u}</loc><lastmod>${TODAY}</lastmod><changefreq>${cf}</changefreq><priority>${pr.toFixed(1)}</priority></url>`).join('\n')}
