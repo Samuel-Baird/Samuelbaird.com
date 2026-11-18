@@ -175,6 +175,38 @@ const histStats = () => [
   [H.states, 'U.S. states'], [H.countries, H.countries === 1 ? 'country' : 'countries'],
 ].map(([n, l]) => `<li><b>${n}</b><span>${l}</span></li>`).join('');
 
+// Hymnbooks (data/lds-hymns.json, built by scripts/fetch-hymns.mjs from the Joseph Smith Papers + the Church's Gospel Library).
+const HYMN_DATA = JSON.parse(read('data/lds-hymns.json'));
+const HYMNS = HYMN_DATA.hymns;
+const HYMN_ED = Object.fromEntries(HYMN_DATA.editions.map((e) => [e.id, e]));
+// Newest edition first. Keep CHANGE in step with hymns/app.js.
+const HYMN_ORDER = HYMN_DATA.editions.map((e) => e.id).reverse();
+const HYMN_CHANGE = { added: ['Added', '#8DA27A'], kept: ['Kept', '#7E9BBB'], removed: ['Removed', '#C98A5A'] };
+const hymnIn = (ed) => HYMNS.filter((h) => h.edition === ed && h.change !== 'removed');
+const keysIn = (ed) => new Set(hymnIn(ed).map((h) => h.hymnKey));
+const HY = {
+  editions: HYMN_DATA.editions.length,
+  records: HYMNS.length,
+  texts: new Set(HYMNS.map((h) => h.hymnKey)).size,
+  first: HYMN_DATA.editions[0],
+  y1835in1985: [...keysIn('1835')].filter((k) => keysIn('1985').has(k)).length,
+  y1835: hymnIn('1835').length,
+  newHfhc: hymnIn('hfhc').filter((h) => h.change === 'added').length,
+};
+FACT.hymns = HY.records;
+const hymnCount = (ed) => HYMN_ED[ed].hymns;
+const hymnChange = (c) => c ? `<span class="t-st"><i style="background:${HYMN_CHANGE[c][1]}"></i>${HYMN_CHANGE[c][0]}</span>` : '';
+const hymnRow = (h) => `<tr data-id="${esc(h.id)}"><td class="h-no">${h.number ?? (h.previousNumber != null ? `<s title="Number in the previous edition">${h.previousNumber}</s>` : '')}</td>`
+  + `<td><b>${esc(h.title || h.firstLine)}</b>${h.title && h.firstLine ? `<span class="h-fl">${esc(h.firstLine)}</span>` : ''}</td>`
+  + `<td>${esc(HYMN_ED[h.edition].short)}</td><td class="hide-sm">${esc(h.text || '')}</td><td>${hymnChange(h.change)}</td>`
+  + `<td class="t-links"><a href="${esc(h.source)}" rel="noopener">Source</a></td></tr>`;
+const hymnRows = () => HYMN_ORDER.flatMap((ed) => HYMNS.filter((h) => h.edition === ed)
+  .sort((a, b) => (a.number ?? 1e6) - (b.number ?? 1e6) || (a.previousNumber ?? 0) - (b.previousNumber ?? 0))).map(hymnRow).join('\n');
+const hymnStats = () => [
+  ...HYMN_DATA.editions.map((e) => [e.hymns, `${esc(e.short)}${e.partial ? ' (so far)' : ''}`]),
+  [HY.texts, 'distinct texts'], [`${HY.y1835in1985}/${HY.y1835}`, '1835 hymns still in 1985'],
+].map(([n, l]) => `<li><b>${n}</b><span>${l}</span></li>`).join('');
+
 // Sites grouped by tradition (listed communities first, in the order they are defined).
 const byTradition = [];
 for (const c of COMMUNITIES) {
@@ -335,6 +367,18 @@ const DATASETS = {
       { '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: BASE + '/data/lds-historic-sites.json' },
     ],
   },
+  hymns: {
+    '@type': 'Dataset', '@id': BASE + '/data#lds-hymns', name: HYMN_DATA.name,
+    description: `Every hymn in ${HY.editions} Latter-day Saint hymnbooks (${HYMN_DATA.editions.map((e) => `${e.short}: ${e.hymns}`).join('; ')}), one record per hymn per edition, with number, title, first line, text and music credits as printed, and whether each hymn was added, kept or removed from the edition before. Facts only, no lyrics. Compiled from the Joseph Smith Papers transcriptions and the Church's Gospel Library, with authors' religion from Wikidata.`,
+    url: BASE + '/hymns', isAccessibleForFree: true, creator: { '@type': 'Person', name: NAME, url: BASE + '/' }, inLanguage: 'en', dateModified: NOW, includedInDataCatalog: CATALOG,
+    keywords: ['LDS hymns', 'Latter-day Saint hymnbook', 'Hymns for Home and Church', '1985 hymnbook', 'Emma Smith hymnal', 'hymnody', 'open data'],
+    temporalCoverage: `${HY.first.year}/..`,
+    variableMeasured: ['edition', 'number', 'title', 'firstLine', 'text', 'music', 'tune', 'yearWritten', 'authorDenomination', 'change', 'previousNumber'],
+    distribution: [
+      { '@type': 'DataDownload', encodingFormat: 'text/csv', contentUrl: BASE + '/data/lds-hymns.csv' },
+      { '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: BASE + '/data/lds-hymns.json' },
+    ],
+  },
   reading: {
     '@type': 'Dataset', '@id': BASE + '/data#reading-list', name: 'Reading log: books and articles with date finished',
     description: `${F.books} books and ${F.articles} articles read by Samuel Baird, with the date each was finished and a link to the source.`,
@@ -430,7 +474,7 @@ const PAGES = {
   '/faq': { title: `FAQ: ${NAME}, Latter-day Stats, Pulpit and Sacred Sites`, desc: 'Direct answers: how many LDS YouTube channels are tracked, what Pulpit is, which sacred sites and temples Samuel Baird has visited, what he reads, and how to cite or reuse the data.',
     ld: (p) => [webPage(p, 'FAQPage', { mainEntity: FAQ.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: stripTags(a) } })) }), crumbs([['Home', '/'], ['FAQ', '/faq']])] },
   '/data': { title: 'Open Data: Sacred Sites and Reading Log (CSV, JSON) · Samuel Baird', desc: `Download original datasets under ${LICENSE_NAME}: ${F.sites} sacred sites with coordinates and visit dates, and a ${F.read}-item reading log. CSV and JSON, with field descriptions and a citation.`,
-    ld: (p) => [webPage(p, 'CollectionPage', { about: [{ '@id': DATASETS.sites['@id'] }, { '@id': DATASETS.reading['@id'] }, { '@id': DATASETS.temples['@id'] }, { '@id': DATASETS.historic['@id'] }], hasPart: [{ '@id': DATASETS.sites['@id'] }, { '@id': DATASETS.reading['@id'] }, { '@id': DATASETS.temples['@id'] }, { '@id': DATASETS.historic['@id'] }] }), DATASETS.sites, DATASETS.reading, DATASETS.temples, DATASETS.historic, crumbs([['Home', '/'], ['Open data', '/data']])] },
+    ld: (p) => [webPage(p, 'CollectionPage', { about: [{ '@id': DATASETS.sites['@id'] }, { '@id': DATASETS.reading['@id'] }, { '@id': DATASETS.temples['@id'] }, { '@id': DATASETS.historic['@id'] }, { '@id': DATASETS.hymns['@id'] }], hasPart: [{ '@id': DATASETS.sites['@id'] }, { '@id': DATASETS.reading['@id'] }, { '@id': DATASETS.temples['@id'] }, { '@id': DATASETS.historic['@id'] }, { '@id': DATASETS.hymns['@id'] }] }), DATASETS.sites, DATASETS.reading, DATASETS.temples, DATASETS.historic, DATASETS.hymns, crumbs([['Home', '/'], ['Open data', '/data']])] },
   '/sacred-sites': { file: 'sacred-sites/index.html', title: `Sacred Sites Visited: Interactive Map of ${F.sites} Churches and Temples · ${NAME}`, desc: `An interactive map of the ${F.sites} churches, temples and houses of worship ${NAME} has visited since January 2025, filterable by tradition, place and year.`, image: '/img/sacred-sites-map.webp', imageAlt: 'Map of sacred sites visited, mostly in Utah',
     ld: (p) => [webPage(p, 'CollectionPage', { about: { '@id': DATASETS.sites['@id'] }, mainEntity: { '@id': BASE + '/sacred-sites/sites#list' } }), DATASETS.sites, sitesList(), ...SITES.map(placeNode), crumbs([['Home', '/'], ['Sacred Sites', '/sacred-sites']])] },
   '/sacred-sites/photos': { file: 'sacred-sites/photos/index.html', title: `Sacred Sites Photos: ${F.photos} Photos of Churches and Temples · ${NAME}`, desc: `${F.photos} photographs from the churches, temples and houses of worship ${NAME} has visited, filterable by tradition, newest first. Free to reuse under ${LICENSE_NAME}.`, image: '/img/sacred-sites-photos.webp', imageAlt: 'Photo gallery of Greek Orthodox church interiors',
@@ -447,6 +491,8 @@ const PAGES = {
     ld: (p) => [webPage(p, 'CollectionPage', { about: { '@id': DATASETS.temples['@id'] } }), DATASETS.temples, crumbs([['Home', '/'], ['Temples', '/temples']])] },
   '/historic-sites': { file: 'historic-sites/index.html', title: `Church History Sites: Map of ${H.all} Latter-day Saint Historic Sites · ${NAME}`, desc: `Map and open dataset of the ${H.all} Church history sites, visitors' centers, monuments and museums operated by The Church of Jesus Christ of Latter-day Saints, from Palmyra and Kirtland to Nauvoo, Missouri and the Mormon Trail, with addresses and coordinates. CSV and JSON.`,
     ld: (p) => [webPage(p, 'CollectionPage', { about: { '@id': DATASETS.historic['@id'] } }), DATASETS.historic, crumbs([['Home', '/'], ['Historic sites', '/historic-sites']])] },
+  '/hymns': { file: 'hymns/index.html', title: `Latter-day Saint Hymnbooks: Every Hymn in Every Edition, 1835 to Today · ${NAME}`, desc: `Search ${HY.records} records of every hymn in ${HY.editions} Latter-day Saint hymnbooks, from Emma Smith's 1835 collection to Hymns (1985) and Hymns—For Home and Church: numbers, first lines, authors and composers, and which hymns were added or dropped. CSV and JSON.`,
+    ld: (p) => [webPage(p, 'CollectionPage', { about: { '@id': DATASETS.hymns['@id'] } }), DATASETS.hymns, crumbs([['Home', '/'], ['Hymns', '/hymns']])] },
   '/collection': { file: 'collection/index.html', title: `Collection: Historic Latter-day Saint Books, Periodicals and Artifacts · ${NAME}`, desc: `Historical Latter-day Saint items owned by ${NAME}, including a first edition of the Deseret First Book (1868), an 1864 Millennial Star and a 1908 Northern States Mission Book of Mormon.`,
     ld: (p) => [webPage(p, 'CollectionPage', { mainEntity: { '@id': BASE + '/collection#items' } }), collectionList(), crumbs([['Home', '/'], ['Collection', '/collection']])] },
   '/wishlist': { title: `Wishlist: Books and Equipment for the Channel · ${NAME}`, desc: `${WISHLIST.length ? plural(WISHLIST.length, 'book and piece of equipment', 'books and pieces of equipment') : 'Books and equipment'} ${NAME} would like for his YouTube channel, most wanted first. Bought through Amazon, shipped directly to him.`,
@@ -579,7 +625,7 @@ ${FAQ.map(([q, a]) => `<section class="qa" id="${slug(q)}"><h2>${esc(q)}</h2><p>
 function dataPage() {
   const fields = (rows) => `<dl class="fields">${rows.map(([k, v]) => `<dt><code>${k}</code></dt><dd>${v}</dd>`).join('')}</dl>`;
   const preview = SITE_ROWS.slice(0, 6);
-  return shell('/data', `${pagehead([['Home', '/'], ['Open data', '/data']], 'Open data', 'Original datasets you can download', `Free datasets to download: two first-hand ones under ${LICENSE_NAME}, and compiled lists of every Latter-day Saint temple and Church history site. Updated ${longDate(TODAY)}.`)}
+  return shell('/data', `${pagehead([['Home', '/'], ['Open data', '/data']], 'Open data', 'Original datasets you can download', `Free datasets to download: two first-hand ones under ${LICENSE_NAME}, and compiled lists of every Latter-day Saint temple, Church history site and hymnbook hymn. Updated ${longDate(TODAY)}.`)}
 <div class="prose wide">
   <section class="dataset" id="sacred-sites">
     <h2>Sacred sites visited</h2>
@@ -602,6 +648,12 @@ function dataPage() {
     <p>The ${H.all} historic sites, visitors&rsquo; centers, monuments and museums operated by The Church of Jesus Christ of Latter-day Saints (${H.historic} historic sites, ${H.centers} visitors&rsquo; centers and museums, ${H.monuments} monuments), with addresses and coordinates. The list, names, categories and addresses come from the Church&rsquo;s official <a href="https://www.churchofjesuschrist.org/learn/history/sites?lang=eng" rel="noopener">Historic Sites and Museums</a> pages. Coordinates use the Church&rsquo;s published map pins where available, with OpenStreetMap as the fallback (&copy; OpenStreetMap contributors, ODbL). Every record links to its official source.</p>
     <div class="btns"><a class="primary" href="/data/lds-historic-sites.csv" download>Download CSV</a><a class="secondary" href="/data/lds-historic-sites.json" download>Download JSON</a><a class="secondary" href="/historic-sites">Map and list</a></div>
     ${fields([['name, category', 'Official name; Historic site, Visitors&rsquo; center, Monument or Museum (the Church&rsquo;s own label where it gives one)'], ['operator', 'Who runs the site today'], ['area', 'Group of sites on the Church pages (Ohio, Missouri, Illinois&hellip;), blank for stand-alone sites'], ['street, city, region, postalCode, country', 'Physical address as published by the Church'], ['lat, lng, coordPrecision', 'Decimal degrees; precision is site, address, street or city'], ['coordSource', 'church for published map pins, openstreetmap for geocoded locations, or manual for a documented override'], ['officialUrl, source', 'The site&rsquo;s official page, and the official list it appears on'], ['wikidata, wikipedia', 'From the matched OpenStreetMap feature, when it has them']])}
+  </section>
+  <section class="dataset" id="lds-hymns">
+    <h2>Latter-day Saint hymnbooks</h2>
+    <p>Every hymn in ${HY.editions} hymnbooks, one record per hymn per edition: ${HYMN_DATA.editions.map((e) => `${esc(e.short)} (${e.hymns}${e.partial ? ' so far' : ''})`).join(', ')}. Numbers, titles, first lines and the text and music credits as printed, with whether each hymn was added, kept or removed from the edition before. The 1835 and 1841 lists come from the <a href="https://www.josephsmithpapers.org/paper-summary/collection-of-sacred-hymns-1835/1" rel="noopener">Joseph Smith Papers</a> transcriptions; Hymns (1985) and Hymns&mdash;For Home and Church from the Church&rsquo;s <a href="https://www.churchofjesuschrist.org/study/manual/hymns?lang=eng" rel="noopener">Gospel Library</a>; authors&rsquo; religion from Wikidata (CC0), only where name and life dates match. Facts only: no lyrics.</p>
+    <div class="btns"><a class="primary" href="/data/lds-hymns.csv" download>Download CSV</a><a class="secondary" href="/data/lds-hymns.json" download>Download JSON</a><a class="secondary" href="/hymns">Search the hymns</a></div>
+    ${fields([['edition, editionYear, number, section', 'Which book, and the hymn&rsquo;s number and section in it'], ['title, firstLine', 'As printed (1835 and 1841 have no titles)'], ['text, music, tune', 'Credits as printed, without copyright notices'], ['authors, composers', 'Names parsed from the credits (translators and arrangers left out)'], ['yearWritten', 'Year in the text credit, where the book gives one'], ['authorDenomination', 'Authors&rsquo; religion from Wikidata, blank when unknown'], ['hymnKey', 'Links the same text across editions'], ['change, previousNumber', 'added, kept or removed against the previous edition in the dataset, and its number there'], ['source', 'Page the record comes from']])}
   </section>
   <section class="dataset" id="reading-list">
     <h2>Reading log</h2>
@@ -716,6 +768,7 @@ patch('books/index.html', '/books', { books: BOOKS.map(bookLi).join('\n') });
 patch('collection/index.html', '/collection');
 patch('temples/index.html', '/temples', { 'temple-stats': templeStats(), 'temple-decades': templeDecades(), 'temple-rows': TEMPLES.map(templeRow).join('\n') });
 patch('historic-sites/index.html', '/historic-sites', { 'hist-stats': histStats(), 'hist-rows': HIST.map(histRow).join('\n') });
+patch('hymns/index.html', '/hymns', { 'hymn-stats': hymnStats(), 'hymn-rows': hymnRows() });
 patch('donate/index.html', '/donate');
 patch('sacred-sites/index.html', '/sacred-sites');
 patch('sacred-sites/photos/index.html', '/sacred-sites/photos');
@@ -734,7 +787,7 @@ Sitemap: ${BASE}/sitemap.xml
 ${FAMILY.filter((x) => x.basePath && x.sitemap).map((x) => `Sitemap: ${x.url}${x.sitemap}\n`).join('')}`);
 
 // sitemap.xml
-const urls = [['/', 1.0, 'weekly'], ['/projects', 0.9, 'weekly'], ...FAMILY.filter((x) => x.kind !== 'page').map((x) => ['/projects/' + x.id, 0.8, 'monthly']), ['/about', 0.8, 'monthly'], ['/faq', 0.9, 'weekly'], ['/data', 0.9, 'weekly'], ['/sacred-sites', 0.8, 'weekly'], ['/sacred-sites/sites', 0.8, 'weekly'], ['/sacred-sites/photos', 0.6, 'weekly'], ['/sacred-sites/traditions', 0.6, 'weekly'], ['/books', 0.7, 'weekly'], ['/collection', 0.6, 'monthly'], ['/temples', 0.9, 'weekly'], ['/data/lds-temples.csv', 0.4, 'weekly'], ['/data/lds-temples.json', 0.4, 'weekly'], ['/historic-sites', 0.8, 'monthly'], ['/data/lds-historic-sites.csv', 0.4, 'monthly'], ['/data/lds-historic-sites.json', 0.4, 'monthly'], ['/donate', 0.3, 'yearly'], ['/wishlist', 0.3, 'weekly'], ['/data/sacred-sites.csv', 0.4, 'weekly'], ['/data/sacred-sites.json', 0.4, 'weekly'], ['/data/reading-list.csv', 0.4, 'weekly'], ['/data/reading-list.json', 0.4, 'weekly'], ['/llms.txt', 0.3, 'monthly']];
+const urls = [['/', 1.0, 'weekly'], ['/projects', 0.9, 'weekly'], ...FAMILY.filter((x) => x.kind !== 'page').map((x) => ['/projects/' + x.id, 0.8, 'monthly']), ['/about', 0.8, 'monthly'], ['/faq', 0.9, 'weekly'], ['/data', 0.9, 'weekly'], ['/sacred-sites', 0.8, 'weekly'], ['/sacred-sites/sites', 0.8, 'weekly'], ['/sacred-sites/photos', 0.6, 'weekly'], ['/sacred-sites/traditions', 0.6, 'weekly'], ['/books', 0.7, 'weekly'], ['/collection', 0.6, 'monthly'], ['/temples', 0.9, 'weekly'], ['/data/lds-temples.csv', 0.4, 'weekly'], ['/data/lds-temples.json', 0.4, 'weekly'], ['/historic-sites', 0.8, 'monthly'], ['/data/lds-historic-sites.csv', 0.4, 'monthly'], ['/data/lds-historic-sites.json', 0.4, 'monthly'], ['/hymns', 0.8, 'monthly'], ['/data/lds-hymns.csv', 0.4, 'monthly'], ['/data/lds-hymns.json', 0.4, 'monthly'], ['/donate', 0.3, 'yearly'], ['/wishlist', 0.3, 'weekly'], ['/data/sacred-sites.csv', 0.4, 'weekly'], ['/data/sacred-sites.json', 0.4, 'weekly'], ['/data/reading-list.csv', 0.4, 'weekly'], ['/data/reading-list.json', 0.4, 'weekly'], ['/llms.txt', 0.3, 'monthly']];
 write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map(([u, pr, cf]) => `  <url><loc>${BASE}${u === '/' ? '/' : u}</loc><lastmod>${TODAY}</lastmod><changefreq>${cf}</changefreq><priority>${pr.toFixed(1)}</priority></url>`).join('\n')}
