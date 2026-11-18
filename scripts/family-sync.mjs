@@ -15,7 +15,7 @@ import { SITES, renderHead, renderTop, renderFoot, renderAll, familyData, siteBa
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PKG = path.join(ROOT, 'packages/family/assets');
 const CHECK = process.argv.includes('--check');
-const ASSETS = ['family.css', 'family.js', 'NotoSansDeseret.ttf'];
+const ASSETS = ['family.css', 'family.js', 'stars.json', 'NotoSansDeseret.ttf'];
 const stale = [];
 
 function put(file, data) {

@@ -139,9 +139,16 @@ body::before {
 .fam-pano { width: 100%; overflow-x: clip; position: relative; z-index: 1; margin-top: -1rem; pointer-events: none; }
 .fam-pano .mountains { display: block; overflow: visible; width: 100%; height: clamp(70px, 9vw, 120px); color: var(--heading); }
 .fam-pano .mtn-paper { fill: #16171A; }
-.fam-pano .sun { color: #D9B46A; transform: translate(905px, 74px) scale(.42); }
+.fam-pano .sun { color: #D9B46A; }
 .fam-pano .sun-disc { fill: rgb(217 180 106 / .14); }
-.fam-pano .moon { display: none; }
+.fam-pano .moon { color: #E8DFC6; }
+.fam-pano .moon-dark { fill: #1A1B20; stroke: rgb(232 223 198 / .35); }
+.fam-pano .moon-lit { fill: #E6DDC4; }
+.fam-pano .moon-marks { fill: rgb(26 27 32 / .16); }
+/* the night sky (family.js): behind everything, so pages and their own backgrounds sit over it */
+#fam-sky { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: -3; display: block; pointer-events: none; }
+html.fam-sky-on { background-color: #0A0F16; }
+html.fam-sky-on body { background: transparent !important; }
 @media (max-width: 640px) { .fam-brand-name { font-size: .7rem; } .fam-family { display: none; } }
 
 /* ---------- the sidebar (after a design by Noah Airmet, as on deseret.wiki) ---------- */
@@ -209,4 +216,4 @@ body::before {
 @media (max-width: 520px) { .fam-colophon { flex-direction: column; align-items: flex-start; } }
 
 @media (prefers-reduced-motion: reduce) { .fam-sidebar, .fam-scrim { transition: none; } }
-@media print { .fam-toggle, .fam-sidebar, .fam-scrim, .fam-pano { display: none !important; } }
+@media print { #fam-sky, .fam-toggle, .fam-sidebar, .fam-scrim, .fam-pano { display: none !important; } }
