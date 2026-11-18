@@ -36,7 +36,7 @@ All sites share the Deseret Wiki's look and one sidebar: see `packages/family/ST
 All nine old repos (deseret-mcp, omni, Peepstone, urim, deseret, collector-items, school, content_creation, latter-day-stats) are archived on GitHub. Nothing was lost:
 
 - `archive/<repo>/<branch>`: every branch that was not merged into its old main, exactly as it was.
-- `port/<repo>/<branch>`: those branches merged onto the monorepo layout (paths moved under the project's folder), ready to review and merge. `port/school/local-wip` and `port/deseret/local-buy-json` hold uncommitted work found in the old local folders.
+- `port/<repo>/<branch>`: those branches moved onto the monorepo layout. Triaged 2026-11-18: every school and content_creation port is merged into main except `port/content_creation/claude/vibrant-maxwell-w5mqsw` (superseded by `review/new-five-triage`). `port/deseret/local-buy-json` was dropped: a stale 40-item buy.json without the `kind` field that would have emptied the Buy page.
 - Latter-day Stats branches without a port were already in main (squash-merged) or superseded; `archive/latter-day-stats/*` keeps them.
-- `archive/content_creation/review/ig-dd4ahhgy8zj` and `archive/content_creation/saint-capybara-visual-overhaul` conflict with later tooling changes and were not ported.
+- `archive/content_creation/saint-capybara-visual-overhaul`: its review scripts and `docs/saint-capybara/common-issues` + `exemplars` are merged; its tooling (Chatterbox TTS, capy_build/qc/resolve_build, tone check, description generator), voices, agents and process docs are not, because they replace the locked Kokoro voice. `archive/content_creation/review/ig-dd4ahhgy8zj` is a subset of it plus a BITE review that `bite-model-football-script` supersedes.
 - The old local folders (`AI projects/<repo>`) can no longer push. Work in this repo instead.
