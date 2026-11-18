@@ -1,0 +1,125 @@
+version: 1
+slug: pioneer-day-genocide-claim
+title: "Did Brigham Young sign an extermination order, and was 90% of Utah's Native population destroyed?"
+caption: "A Pioneer Day reel says Brigham Young signed an extermination order and 90% of Utah's Native people were destroyed. What do the 1850 orders, the historians and the population numbers actually say?"
+hook: "The orders that matter in Utah were issued in 1850, and the 90% figure spans fifty years, not a couple of decades."
+summary: "A Pioneer Day reel says Brigham Young signed an extermination order, that settlers committed genocide, and that 90% of the Indigenous population was destroyed mostly by starvation, massacres, violence, relocation and disease. We look at the 1850 Fort Utah orders, how Young's own biographer describes his role, where the 90% figure is and is not sourced, and what the sources say about causes of death. The reel's lines about Lamanites and the label cult are not addressed."
+format: { width: 1080, height: 1920, fps: 30, min_seconds: 60, max_seconds: 180 }
+voice: { name: am_michael, speed: 1.5 }
+sensitive: true
+music: null
+tags: [ldshistory]
+exemplars: [peterson-breaking-the-rules, mcclellan-delivery]
+
+beats:
+  # Claims 3 and 4: genocide, extermination order, 90%.
+  - id: c01
+    kind: clip
+    start: 22.4
+    end: 38.6
+    speed: 1.0
+    speaker: "Source video"
+    pose: concerned
+
+  - id: n01
+    kind: narration
+    text: "Brigham Young directed the 1850 campaign against the Timpanogos Utes at Fort Utah, and the orders issued under him said to exterminate, if necessary, those who would not make peace. No order signed by Young himself has turned up. The orders that did exist are enough to answer on their own."
+    function: serious
+    pose: solemn
+    sources: [coates-1978-indian-policies]
+    opinion: false
+
+  - id: q01
+    kind: card
+    text: "This is historian Lawrence Coates on the 1850 orders."
+    pose: reading
+    card: { quote: "legion leaders were ordered to stop the depredations and if necessary to exterminate those who do not separate themselves from their hostile clans and sue for peace", attribution: "Lawrence G. Coates, BYU Studies, 1978", source: coates-1978-indian-policies }
+    sources: [coates-1978-indian-policies]
+
+  - id: n02
+    kind: narration
+    text: "Young's own biographer writes that he was not an exterminator. The same biographer writes that Young presided over the conquest and diminution of Utah's Indians. Both sentences are in the record, but neither indicate he was setting out to commit genocide."
+    function: explain
+    pose: concerned
+    sources: [turner-2012-young-pioneer-prophet, turner-2012-pioneer-prophet]
+    opinion: false
+
+  - id: q02
+    kind: card
+    text: "This is Young's biographer, John Turner."
+    pose: quote
+    card: { quote: "Young presided over the military and demographic conquest and diminution of Utah's Indians.", attribution: "John G. Turner, Brigham Young: Pioneer Prophet, 2012", source: turner-2012-pioneer-prophet }
+    sources: [turner-2012-pioneer-prophet]
+
+  # The 90% claim is in c01; answer it before the causes clip.
+  - id: n04
+    kind: narration
+    text: "The ninety percent figure has a basis, but not the timeline. A Utah Indian curriculum guide estimates twenty thousand Native people in Utah in eighteen forty-seven and about two thousand by nineteen hundred. That is fifty years, not a couple of decades. Historian Ronald Walker notes estimates of the starting population run from twelve thousand to thirty-five thousand."
+    function: uncertainty
+    pose: thoughtful
+    sources: [utah-indian-curriculum-hsus, walker-1989-byustudies]
+    opinion: false
+
+  - id: n07
+    kind: narration
+    text: "A narrower figure is also sourced. The Park Service reports that the Southern Paiute lost about ninety percent in under twenty-five years, citing Tom and Holt."
+    function: explain
+    pose: concerned
+    sources: [nps-survival-southern-paiute, tom-holt-paiute-ch4]
+    opinion: false
+
+  - id: c02
+    kind: clip
+    start: 39.1
+    end: 46.4
+    speed: 1.0
+    speaker: "Source video"
+    pose: concerned
+
+  # Disease is last in the reel's list; the user's question was what share it makes up.
+  - id: n05
+    kind: narration
+    text: "Disease comes last in that list, and the sources I opened put it near the front. Historian Ronald Walker writes that measles, smallpox and syphilis wreaked terrible havoc. Thomas Alexander says many Native people had already died, principally from disease, before the pioneers arrived in eighteen forty-seven. Todd Compton documents epidemics among the Paiutes."
+    function: explain
+    pose: teaching
+    sources: [walker-1989-byustudies, alexander-utah-right-place, compton-hamblin-paiute-epidemics]
+    opinion: false
+
+  - id: n06
+    kind: narration
+    text: "The violence I could document in Utah runs in the hundreds."
+    function: uncertainty
+    pose: thoughtful
+    sources: [reeve-2015-different-color, reeve-parshall-2010-encyclopedia]
+    opinion: false
+
+  - id: n08
+    kind: narration
+    text: "Elsewhere, epidemics alone caused collapses: the Park Service says an eighteen thirty-seven smallpox epidemic reduced the Mandan to as few as one hundred twenty-five people. So it is not unreasonable to conclude Utah looked like other regions, with disease as the driving factor. That is an inference, and it is not a percentage."
+    function: explain
+    pose: teaching
+    sources: [nps-mandan-smallpox-1837]
+    opinion: false
+
+  - id: n03
+    kind: narration
+    text: "The causes he lists are all documented. Settlement took Native food, water and land. However, no source I found gives a percentage by cause. Disease and starvation caused by settlement cannot be separated from violence."
+    function: explain
+    pose: teaching
+    sources: [turner-2012-pioneer-prophet, reeve-parshall-2010-encyclopedia, compton-2013-hamblin]
+    opinion: false
+
+  - id: q03
+    kind: card
+    text: "This is historian Todd Compton on the Santa Clara Paiutes."
+    pose: reading
+    card: { quote: "decrease in the Paiute quality of life, including intense hunger and near starvation, would have made the Indians increasingly susceptible to disease.", attribution: "Todd M. Compton, A Frontier Life: Jacob Hamblin, 2013", source: compton-2013-hamblin }
+    sources: [compton-2013-hamblin]
+
+  - id: n99
+    kind: narration
+    text: "The record is serious enough that it needs no number it cannot source. God bless."
+    function: closing
+    pose: prayerful
+    sources: [walker-1989-byustudies]
+    opinion: true
