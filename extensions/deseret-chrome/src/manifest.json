@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Deseret Alphabet: Read Any Page",
+  "short_name": "Deseret",
+  "version": "0.1.0",
+  "description": "Read any web page in the Deseret Alphabet, or turn Deseret back into Latin letters. Dictionary-based, with modern or 1868 spellings.",
+  "homepage_url": "https://deseret.wiki/",
+  "icons": { "16": "icons/16.png", "32": "icons/32.png", "48": "icons/48.png", "128": "icons/128.png" },
+  "action": {
+    "default_title": "Deseret Alphabet",
+    "default_popup": "popup.html",
+    "default_icon": { "16": "icons/16.png", "32": "icons/32.png" }
+  },
+  "options_page": "options.html",
+  "background": { "service_worker": "background.js", "type": "module" },
+  "permissions": ["storage", "unlimitedStorage", "contextMenus"],
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["shared.js", "content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "web_accessible_resources": [
+    { "resources": ["fonts/*"], "matches": ["<all_urls>"] }
+  ],
+  "commands": {
+    "toggle-page": {
+      "suggested_key": { "default": "Alt+Shift+D" },
+      "description": "Switch this page between Latin and Deseret"
+    }
+  }
+}

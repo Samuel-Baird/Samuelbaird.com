@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Deseret Alphabet</title>
+<link rel="stylesheet" href="ui.css">
+</head>
+<body class="popup">
+<header>
+  <h1><span class="dsrt" lang="en-Dsrt">𐐔𐐯𐑅𐐨𐑉𐐯𐐻</span> Deseret Alphabet</h1>
+</header>
+
+<section aria-labelledby="page-h">
+  <h2 id="page-h">This page</h2>
+  <div class="seg" role="group" aria-label="Show this page in">
+    <button type="button" id="to-latin" aria-pressed="true">Latin</button>
+    <button type="button" id="to-dsrt" aria-pressed="false"><span class="dsrt">𐐔𐐯𐑅𐐨𐑉𐐯𐐻</span></button>
+  </div>
+  <p id="page-status" class="muted" role="status"></p>
+  <label class="check"><input type="checkbox" id="always"> <span>Always show <b id="host">this site</b> in Deseret</span></label>
+</section>
+
+<section aria-labelledby="look-h">
+  <h2 id="look-h">Spelling and font</h2>
+  <div class="row">
+    <label class="check"><input type="radio" name="spelling" value="modern"> <span>Modern dictionary</span></label>
+    <label class="check"><input type="radio" name="spelling" value="historical"> <span>1868 printing</span></label>
+  </div>
+  <p class="muted small">1868 printing follows the Deseret Readers and Book of Mormon: <span class="dsrt">𐑄</span> for &ldquo;the&rdquo;, <span class="dsrt">𐐱𐑂</span> for &ldquo;of&rdquo;, <span class="dsrt">𐐸𐐶</span> for &ldquo;wh&rdquo;.</p>
+  <label class="field">Font <select id="font"></select></label>
+  <label class="field">Size <input type="range" id="size" min="80" max="160" step="5"> <output id="size-out"></output></label>
+  <p class="preview dsrt" id="preview" aria-label="Font preview">𐐐𐐬𐑊𐐨𐑌𐐮𐑅 𐐻𐐭 𐑄 𐐢𐐫𐑉𐐼</p>
+</section>
+
+<section aria-labelledby="conv-h">
+  <h2 id="conv-h">Convert text</h2>
+  <textarea id="input" rows="3" placeholder="Type or paste English or Deseret"></textarea>
+  <div class="out-row">
+    <p id="output" class="output" aria-live="polite"></p>
+    <button type="button" id="copy" class="small-btn" disabled>Copy</button>
+  </div>
+  <p id="conv-note" class="muted small"></p>
+</section>
+
+<footer>
+  <a href="options.html" target="_blank">Options</a>
+  <a href="https://deseret.wiki/wiki/deseret-alphabet/" target="_blank" rel="noopener">Learn the alphabet</a>
+</footer>
+<script src="shared.js"></script>
+<script src="popup.js"></script>
+</body>
+</html>
