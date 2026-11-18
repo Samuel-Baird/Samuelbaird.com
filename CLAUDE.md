@@ -34,7 +34,7 @@ All sites share the Deseret Wiki's look and one sidebar: see `packages/family/ST
 
 ## Admin, tickets and single sign-on
 
-- `samuelbaird.com/admin` (private, noindex, unlinked) is the owner's dashboard. `/admin/tickets` is the project tracker: rows in `public.admin_tickets` (Latter-day Stats Supabase, migration `0061_admin_tickets.sql`), read and written by `sites/samuelbaird.com/api/admin/tickets.js`. RLS allows only `is_admin` profiles (`public.is_site_owner()`).
+- `samuelbaird.com/admin` (private, noindex, unlinked) is the owner's dashboard. `/admin/tickets` is the project tracker: rows in `public.admin_tickets` (Latter-day Stats Supabase, migration `0061_admin_tickets.sql`), read and written by `sites/samuelbaird.com/api/admin/tickets.js`. RLS allows only the owner account (`public.is_site_owner()`, hardcoded like migration 0003), not every Latter-day Stats admin.
 - One login for the whole domain: the Latter-day Stats Google login sets the Supabase session cookie on samuelbaird.com, so every app under `samuelbaird.com/*` can read it (`sites/samuelbaird.com/api/_lib/session.js`). Send people to `/latter-day-stats/login?return_to=/any/path` to come back anywhere on the domain. deseret.wiki is another domain and is not covered yet (ticket 0.1).
 - New to-dos go in the ticket tracker, not in markdown files. Seed or bulk changes: a new numbered migration in latter-day-stats.
 

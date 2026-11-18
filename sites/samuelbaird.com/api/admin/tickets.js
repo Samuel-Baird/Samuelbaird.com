@@ -1,5 +1,5 @@
 // Owner-only API behind /admin/tickets. Data: public.admin_tickets in the
-// Latter-day Stats Supabase project (migration 0061); RLS allows is_admin only.
+// Latter-day Stats Supabase project (migration 0061); RLS allows the owner account only.
 //   GET    /api/admin/tickets            -> { tickets: [...] }
 //   POST   /api/admin/tickets            -> body: ticket fields, creates one
 //   PATCH  /api/admin/tickets?ref=5.2    -> body: fields to change

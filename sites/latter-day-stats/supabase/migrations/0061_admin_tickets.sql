@@ -4,7 +4,9 @@
 -- hub site, but the data lives here because this project already holds the
 -- family's one login (Supabase Google auth, session cookie on samuelbaird.com).
 -- The API forwards the signed-in user's own JWT, so these RLS policies are the
--- only gate: nobody but an is_admin profile can read or write a row.
+-- only gate: only the site owner's account can read or write a row. This is
+-- deliberately NOT "any is_admin profile": Latter-day Stats admin can be granted
+-- to other people from /admin/access, the tracker cannot.
 --
 -- Scores are 1-5 and higher is always better, so they can be summed:
 --   priority  how much Samuel wants it now
@@ -44,16 +46,20 @@ create trigger admin_tickets_set_updated_at
   before update on public.admin_tickets
   for each row execute function public.set_updated_at();
 
--- Security definer so the check can read profiles without recursing through
--- profiles' own RLS (see 0021).
+-- The owner is the same hardcoded account 0003/0040 always make admin.
+-- Security definer so it can read auth.users; Google sign-in emails are verified.
 create or replace function public.is_site_owner()
 returns boolean
 language sql
 stable
 security definer
-set search_path = public
+set search_path = public, auth
 as $$
-  select coalesce((select is_admin from public.profiles where id = auth.uid()), false);
+  select coalesce(
+    (select lower(u.email) = 'b13llama@gmail.com'
+       from auth.users u
+      where u.id = auth.uid()),
+    false);
 $$;
 
 revoke all on function public.is_site_owner() from public;
