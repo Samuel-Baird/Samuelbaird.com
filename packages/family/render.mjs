@@ -9,7 +9,11 @@ import { SITES } from './sites.mjs';
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, '../..');
 export const DATA = JSON.parse(fs.readFileSync(path.join(HERE, 'projects.json'), 'utf8'));
-export const PROJECTS = DATA.projects;
+// Everything with "hidden": true (Omni: it proxies the private Gospel Scholar Archive) stays
+// off every public list: sidebars, footers, /projects, llms.txt, sitemap. ALL_PROJECTS still
+// has it so a hidden app can render its own chrome.
+export const ALL_PROJECTS = DATA.projects;
+export const PROJECTS = DATA.projects.filter((p) => !p.hidden);
 export const OWNER = DATA.owner;
 const asset = (f) => fs.readFileSync(path.join(HERE, 'assets', f), 'utf8');
 
@@ -55,7 +59,7 @@ const link = (item, pagePath, inner) => `<a class="side-link" href="${esc(item.h
 /** Where a site lives: its base path on samuelbaird.com ('' for the hub and for other domains). */
 export function siteBase(siteId) {
   const s = SITES[siteId];
-  const p = PROJECTS.find((x) => x.id === s.project);
+  const p = ALL_PROJECTS.find((x) => x.id === s.project);
   return { bp: p?.basePath || '', onHub: siteId === 'samuelbaird.com' || !!p?.basePath, project: p };
 }
 // Internal hrefs get the site's base path; samuelbaird.com URLs become root-relative on sites served there.

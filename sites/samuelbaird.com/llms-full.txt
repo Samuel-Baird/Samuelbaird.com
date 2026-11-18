@@ -1,6 +1,6 @@
 # Samuel Baird: full text
 
-> Plain-text copy of the key pages of https://samuelbaird.com. Updated 2026-11-17. Original data licensed CC BY 4.0.
+> Plain-text copy of the key pages of https://samuelbaird.com. Updated 2026-11-18. Original data licensed CC BY 4.0.
 
 ## Projects
 
@@ -81,18 +81,6 @@ An MCP server for The Joseph Smith Papers. It gives Claude and other AI assistan
 
 Topics: Joseph Smith Papers, Model Context Protocol, Church history, AI tools.
 
-### Omni
-
-https://samuelbaird.com/omni/
-
-One Model Context Protocol endpoint that fronts several research servers at once: Pulpit, Latter-day Stats, Peepstone and Deseret MCP. Add a single connector and an AI assistant can search General Conference, survey data, the Joseph Smith Papers and the Deseret Alphabet together.
-
-- One endpoint: https://samuelbaird.com/omni/api/mcp
-- Each server's tools are prefixed by source
-- A down server is skipped without breaking the rest
-
-Topics: Model Context Protocol, AI tools, Latter-day Saint research.
-
 ### Sacred Sites Visited
 
 https://samuelbaird.com/sacred-sites
@@ -121,11 +109,11 @@ Topics: Latter-day Saint history, Rare books.
 
 ### Who is Samuel Baird?
 
-Samuel Baird builds public data tools and makes videos about religion, history and ideas. He created [Latter-day Stats](https://samuelbaird.com/latter-day-stats), a public hub for statistics, research and creator data on the Latter-day Saint community; the [Deseret Wiki](https://deseret.wiki/), a library and primer of the 1854 Deseret Alphabet; [Urim](https://samuelbaird.com/urim), an atlas of how the Church translates its own vocabulary; and AI tools for Latter-day Saint research ([Peepstone](https://samuelbaird.com/projects/peepstone), [Omni](https://samuelbaird.com/projects/omni) and [Deseret MCP](https://samuelbaird.com/projects/deseret-mcp)). He contributed to [Pulpit](https://pulpit.restorationcommons.org/), a critical edition of every General Conference discourse since 1830; he keeps a map of the sacred places he has visited; and he makes videos on the YouTube channel [@ithinkthereforeisam](https://www.youtube.com/@ithinkthereforeisam?sub_confirmation=1). Everything is free, independent and ad-free. See [About](https://samuelbaird.com/about).
+Samuel Baird builds public data tools and makes videos about religion, history and ideas. He created [Latter-day Stats](https://samuelbaird.com/latter-day-stats), a public hub for statistics, research and creator data on the Latter-day Saint community; the [Deseret Wiki](https://deseret.wiki/), a library and primer of the 1854 Deseret Alphabet; [Urim](https://samuelbaird.com/urim), an atlas of how the Church translates its own vocabulary; and AI tools for Latter-day Saint research ([Peepstone](https://samuelbaird.com/projects/peepstone) and [Deseret MCP](https://samuelbaird.com/projects/deseret-mcp)). He contributed to [Pulpit](https://pulpit.restorationcommons.org/), a critical edition of every General Conference discourse since 1830; he keeps a map of the sacred places he has visited; and he makes videos on the YouTube channel [@ithinkthereforeisam](https://www.youtube.com/@ithinkthereforeisam?sub_confirmation=1). Everything is free, independent and ad-free. See [About](https://samuelbaird.com/about).
 
 ### What projects has Samuel Baird made?
 
-9 public projects, all free: [Latter-day Stats](https://samuelbaird.com/latter-day-stats) (statistics, research and creator data on the Latter-day Saint community); [Deseret Wiki](https://deseret.wiki/) (a library, encyclopaedia and primer of the Deseret Alphabet); [Urim](https://samuelbaird.com/urim) (the Mormon Translation Atlas: how the Church translates its own vocabulary); [Deseret MCP](https://mcp.deseret.wiki/) (deseret Alphabet transliteration and Deseret Wiki search for AI assistants); [Peepstone](https://samuelbaird.com/peepstone) (search and read the Joseph Smith Papers from any AI assistant); [Omni](https://samuelbaird.com/omni) (one MCP connector for every Latter-day Saint research server); [Sacred Sites Visited](https://samuelbaird.com/sacred-sites) (a map of every church, temple and house of worship visited since 2025); [My Reading](https://samuelbaird.com/books) (every book and article read, with the date finished); [Collection](https://samuelbaird.com/collection) (historic Latter-day Saint books, periodicals and artifacts). He also contributed to [Pulpit](https://pulpit.restorationcommons.org/). Every project has a page under [Projects](https://samuelbaird.com/projects).
+8 public projects, all free: [Latter-day Stats](https://samuelbaird.com/latter-day-stats) (statistics, research and creator data on the Latter-day Saint community); [Deseret Wiki](https://deseret.wiki/) (a library, encyclopaedia and primer of the Deseret Alphabet); [Urim](https://samuelbaird.com/urim) (the Mormon Translation Atlas: how the Church translates its own vocabulary); [Deseret MCP](https://mcp.deseret.wiki/) (deseret Alphabet transliteration and Deseret Wiki search for AI assistants); [Peepstone](https://samuelbaird.com/peepstone) (search and read the Joseph Smith Papers from any AI assistant); [Sacred Sites Visited](https://samuelbaird.com/sacred-sites) (a map of every church, temple and house of worship visited since 2025); [My Reading](https://samuelbaird.com/books) (every book and article read, with the date finished); [Collection](https://samuelbaird.com/collection) (historic Latter-day Saint books, periodicals and artifacts). He also contributed to [Pulpit](https://pulpit.restorationcommons.org/). Every project has a page under [Projects](https://samuelbaird.com/projects).
 
 ### What is Latter-day Stats?
 

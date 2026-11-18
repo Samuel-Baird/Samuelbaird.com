@@ -8,7 +8,6 @@ Disallow: /latter-day-stats/login
 Disallow: /latter-day-stats/auth
 Disallow: /urim/api
 Disallow: /peepstone/mcp
-Disallow: /omni/api
 
 User-agent: Bingbot
 Allow: /
@@ -19,7 +18,6 @@ Disallow: /latter-day-stats/login
 Disallow: /latter-day-stats/auth
 Disallow: /urim/api
 Disallow: /peepstone/mcp
-Disallow: /omni/api
 
 User-agent: GPTBot
 Allow: /
@@ -30,7 +28,6 @@ Disallow: /latter-day-stats/login
 Disallow: /latter-day-stats/auth
 Disallow: /urim/api
 Disallow: /peepstone/mcp
-Disallow: /omni/api
 
 User-agent: OAI-SearchBot
 Allow: /
@@ -41,7 +38,6 @@ Disallow: /latter-day-stats/login
 Disallow: /latter-day-stats/auth
 Disallow: /urim/api
 Disallow: /peepstone/mcp
-Disallow: /omni/api
 
 User-agent: ChatGPT-User
 Allow: /
@@ -52,7 +48,6 @@ Disallow: /latter-day-stats/login
 Disallow: /latter-day-stats/auth
 Disallow: /urim/api
 Disallow: /peepstone/mcp
-Disallow: /omni/api
 
 User-agent: ClaudeBot
 Allow: /
@@ -63,7 +58,6 @@ Disallow: /latter-day-stats/login
 Disallow: /latter-day-stats/auth
 Disallow: /urim/api
 Disallow: /peepstone/mcp
-Disallow: /omni/api
 
 User-agent: Claude-User
 Allow: /
@@ -74,7 +68,6 @@ Disallow: /latter-day-stats/login
 Disallow: /latter-day-stats/auth
 Disallow: /urim/api
 Disallow: /peepstone/mcp
-Disallow: /omni/api
 
 User-agent: Claude-SearchBot
 Allow: /
@@ -85,7 +78,6 @@ Disallow: /latter-day-stats/login
 Disallow: /latter-day-stats/auth
 Disallow: /urim/api
 Disallow: /peepstone/mcp
-Disallow: /omni/api
 
 User-agent: anthropic-ai
 Allow: /
@@ -96,7 +88,6 @@ Disallow: /latter-day-stats/login
 Disallow: /latter-day-stats/auth
 Disallow: /urim/api
 Disallow: /peepstone/mcp
-Disallow: /omni/api
 
 User-agent: PerplexityBot
 Allow: /
@@ -107,7 +98,6 @@ Disallow: /latter-day-stats/login
 Disallow: /latter-day-stats/auth
 Disallow: /urim/api
 Disallow: /peepstone/mcp
-Disallow: /omni/api
 
 User-agent: Perplexity-User
 Allow: /
@@ -118,7 +108,6 @@ Disallow: /latter-day-stats/login
 Disallow: /latter-day-stats/auth
 Disallow: /urim/api
 Disallow: /peepstone/mcp
-Disallow: /omni/api
 
 User-agent: Google-Extended
 Allow: /
@@ -129,7 +118,6 @@ Disallow: /latter-day-stats/login
 Disallow: /latter-day-stats/auth
 Disallow: /urim/api
 Disallow: /peepstone/mcp
-Disallow: /omni/api
 
 User-agent: Applebot
 Allow: /
@@ -140,7 +128,6 @@ Disallow: /latter-day-stats/login
 Disallow: /latter-day-stats/auth
 Disallow: /urim/api
 Disallow: /peepstone/mcp
-Disallow: /omni/api
 
 User-agent: Applebot-Extended
 Allow: /
@@ -151,7 +138,6 @@ Disallow: /latter-day-stats/login
 Disallow: /latter-day-stats/auth
 Disallow: /urim/api
 Disallow: /peepstone/mcp
-Disallow: /omni/api
 
 User-agent: DuckAssistBot
 Allow: /
@@ -162,7 +148,6 @@ Disallow: /latter-day-stats/login
 Disallow: /latter-day-stats/auth
 Disallow: /urim/api
 Disallow: /peepstone/mcp
-Disallow: /omni/api
 
 User-agent: Amazonbot
 Allow: /
@@ -173,7 +158,6 @@ Disallow: /latter-day-stats/login
 Disallow: /latter-day-stats/auth
 Disallow: /urim/api
 Disallow: /peepstone/mcp
-Disallow: /omni/api
 
 User-agent: MistralAI-User
 Allow: /
@@ -184,7 +168,6 @@ Disallow: /latter-day-stats/login
 Disallow: /latter-day-stats/auth
 Disallow: /urim/api
 Disallow: /peepstone/mcp
-Disallow: /omni/api
 
 User-agent: cohere-ai
 Allow: /
@@ -195,7 +178,6 @@ Disallow: /latter-day-stats/login
 Disallow: /latter-day-stats/auth
 Disallow: /urim/api
 Disallow: /peepstone/mcp
-Disallow: /omni/api
 
 User-agent: Meta-ExternalAgent
 Allow: /
@@ -206,7 +188,6 @@ Disallow: /latter-day-stats/login
 Disallow: /latter-day-stats/auth
 Disallow: /urim/api
 Disallow: /peepstone/mcp
-Disallow: /omni/api
 
 User-agent: CCBot
 Allow: /
@@ -217,7 +198,6 @@ Disallow: /latter-day-stats/login
 Disallow: /latter-day-stats/auth
 Disallow: /urim/api
 Disallow: /peepstone/mcp
-Disallow: /omni/api
 
 User-agent: YouBot
 Allow: /
@@ -228,7 +208,6 @@ Disallow: /latter-day-stats/login
 Disallow: /latter-day-stats/auth
 Disallow: /urim/api
 Disallow: /peepstone/mcp
-Disallow: /omni/api
 
 User-agent: *
 Allow: /
@@ -239,7 +218,6 @@ Disallow: /latter-day-stats/login
 Disallow: /latter-day-stats/auth
 Disallow: /urim/api
 Disallow: /peepstone/mcp
-Disallow: /omni/api
 
 Sitemap: https://samuelbaird.com/sitemap.xml
 Sitemap: https://samuelbaird.com/latter-day-stats/sitemap.xml

@@ -7,6 +7,11 @@ export async function GET(request: NextRequest) {
   const nextParam = request.nextUrl.searchParams.get("next") || "/";
   const next =
     nextParam.startsWith("/") && !nextParam.startsWith("//") ? nextParam : "/";
+  // Family SSO: an origin-relative path anywhere on samuelbaird.com, outside
+  // this app's base path. Same-origin only: no scheme, no "//", no backslashes.
+  const returnParam = request.nextUrl.searchParams.get("return_to");
+  const returnTo =
+    returnParam && /^\/(?![/\\])[^\s\\]*$/.test(returnParam) ? returnParam : null;
 
   if (!code) {
     return NextResponse.redirect(new URL(`${BASE_PATH}/login?error=oauth`, request.nextUrl.origin));
@@ -42,8 +47,11 @@ export async function GET(request: NextRequest) {
   }
 
   // `next` is an app path from usePathname(), without the base path.
-  const redirectUrl = new URL(BASE_PATH + (next === "/" ? "" : next), request.nextUrl.origin);
-  if (needsAgeGate) {
+  const redirectUrl = new URL(
+    returnTo ?? BASE_PATH + (next === "/" ? "" : next),
+    request.nextUrl.origin,
+  );
+  if (needsAgeGate && !returnTo) {
     redirectUrl.searchParams.set("age_gate", "1");
   }
 
