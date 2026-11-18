@@ -1,0 +1,2694 @@
+{
+ "pages": {
+  "alvin-smith-gravesite": {
+   "name": "Alvin Smith Gravesite",
+   "street": "127 Church St",
+   "city": "Palmyra",
+   "region": "New York",
+   "postalCode": "14522",
+   "country": "USA",
+   "pin": [
+    43.06495,
+    -77.23355
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/alvin-smith-gravesite?lang=eng"
+  },
+  "distribution-services-and-gift-shop": {
+   "name": "Distribution Services and Gift Shop",
+   "street": "221 East Main Street",
+   "city": "Palmyra",
+   "region": "New York",
+   "postalCode": "14522",
+   "country": "USA",
+   "pin": [
+    43.0638417,
+    -77.230814
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/distribution-services-and-gift-shop?lang=eng"
+  },
+  "erie-canal": {
+   "name": "Erie Canal",
+   "street": "",
+   "city": "Palmyra",
+   "region": "New York",
+   "postalCode": "",
+   "country": "USA",
+   "pin": [
+    43.120237,
+    -76.2577168
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/erie-canal?lang=eng"
+  },
+  "grandin-printshop": {
+   "name": "Grandin Printshop: Book of Mormon Publication Site",
+   "street": "217 East Main Street",
+   "city": "Palmyra",
+   "region": "New York",
+   "postalCode": "14522",
+   "country": "USA",
+   "pin": [
+    43.0638417,
+    -77.230814
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/grandin-printshop?lang=eng"
+  },
+  "hill-cumorah": {
+   "name": "Hill Cumorah",
+   "street": "603 State Route 21",
+   "city": "Palmyra",
+   "region": "New York",
+   "postalCode": "14522",
+   "country": "USA",
+   "pin": [
+    42.9945075,
+    -77.2202583
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/hill-cumorah?lang=eng"
+  },
+  "joseph-knight-home": {
+   "name": "Joseph Knight Home",
+   "street": "1963 E Windsor Rd",
+   "city": "Nineveh",
+   "region": "New York",
+   "postalCode": "13813",
+   "country": "USA",
+   "pin": [
+    42.1871549,
+    -75.6055506
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/joseph-knight-home?lang=eng"
+  },
+  "josiah-stowell-home": {
+   "name": "Josiah Stowell Home",
+   "street": "323 NY-7",
+   "city": "Afton",
+   "region": "New York",
+   "postalCode": "13730",
+   "country": "USA",
+   "pin": [
+    42.2103501,
+    -75.5852989
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/josiah-stowell-home?lang=eng"
+  },
+  "martin-harris-farm": {
+   "name": "Martin and Lucy Harris Farm",
+   "street": "2095 Maple Ave",
+   "city": "Palmyra",
+   "region": "New York",
+   "postalCode": "14522",
+   "country": "USA",
+   "pin": [
+    43.0836837,
+    -77.2397329
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/martin-harris-farm?lang=eng"
+  },
+  "palmyra-new-york-stake-center-pavilion": {
+   "name": "Palmyra New York Stake Center Pavilion",
+   "street": "2801 Temple Road",
+   "city": "Palmyra",
+   "region": "New York",
+   "postalCode": "14522",
+   "country": "USA",
+   "pin": [
+    43.0424295,
+    -77.2355758
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/palmyra-new-york-stake-center-pavilion?lang=eng"
+  },
+  "priesthood-restoration-site": {
+   "name": "Priesthood Restoration Site",
+   "street": "27832 State Route 171",
+   "city": "Oakland Township (Susquehanna)",
+   "region": "Pennsylvania",
+   "postalCode": "18847",
+   "country": "USA",
+   "pin": [
+    41.952149,
+    -75.6375807
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/priesthood-restoration-site?lang=eng"
+  },
+  "sacred-grove-historic-site": {
+   "name": "Sacred Grove Historic Site",
+   "street": "863 Stafford Rd",
+   "city": "Palmyra",
+   "region": "New York",
+   "postalCode": "14522",
+   "country": "USA",
+   "pin": [
+    43.0402588,
+    -77.2412776
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/sacred-grove-historic-site?lang=eng"
+  },
+  "whitmer-farm-church-organization-site": {
+   "name": "Whitmer Farm: Church Organization Site",
+   "street": "1451 Aunkst Road",
+   "city": "Waterloo",
+   "region": "New York",
+   "postalCode": "13165",
+   "country": "USA",
+   "pin": [
+    42.866088,
+    -76.868881
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/whitmer-farm-church-organization-site?lang=eng"
+  },
+  "fairport-harbor": {
+   "name": "Fairport Harbor",
+   "street": "129 2nd St",
+   "city": "Fairport Harbor",
+   "region": "Ohio",
+   "postalCode": "44077",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/fairport-harbor?lang=eng"
+  },
+  "historic-kirtland": {
+   "name": "Historic Kirtland",
+   "street": "7800 Kirtland Chardon Road",
+   "city": "Kirtland",
+   "region": "Ohio",
+   "postalCode": "44094",
+   "country": "USA",
+   "pin": [
+    41.6287087,
+    -81.3603474
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/historic-kirtland?lang=eng"
+  },
+  "morley-farm": {
+   "name": "Isaac and Lucy Morley Farm",
+   "street": "8605 Chillicothe Rd",
+   "city": "Kirtland",
+   "region": "Ohio",
+   "postalCode": "44094",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/morley-farm?lang=eng"
+  },
+  "johnson-home": {
+   "name": "John and Elsa Johnson Home",
+   "street": "6203 Pioneer Trail",
+   "city": "Hiram",
+   "region": "Ohio",
+   "postalCode": "44234",
+   "country": "USA",
+   "pin": [
+    41.296093,
+    -81.167821
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/johnson-home?lang=eng"
+  },
+  "kirtland-north-cemetery": {
+   "name": "Kirtland North Cemetery",
+   "street": "9016 Chillicothe Rd",
+   "city": "Kirtland",
+   "region": "Ohio",
+   "postalCode": "44094",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/kirtland-north-cemetery?lang=eng"
+  },
+  "kirtland-ohio-stake-center-pavilion": {
+   "name": "Kirtland Ohio Stake Center Pavilion",
+   "street": "8775 Kirtland Rd",
+   "city": "Willoughby",
+   "region": "Ohio",
+   "postalCode": "44094",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/kirtland-ohio-stake-center-pavilion?lang=eng"
+  },
+  "stannard-quarry": {
+   "name": "Stannard Quarry",
+   "street": "9938 Chillicothe Rd.",
+   "city": "Kirtland",
+   "region": "Ohio",
+   "postalCode": "44094",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/stannard-quarry?lang=eng"
+  },
+  "kirtland-temple": {
+   "name": "Kirtland Temple",
+   "street": "9020 Chillicothe Rd",
+   "city": "Kirtland",
+   "region": "Ohio",
+   "postalCode": "44094",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/kirtland-temple?lang=eng"
+  },
+  "adam-ondi-ahman": {
+   "name": "Adam-ondi-Ahman",
+   "street": "Lilac Avenue",
+   "city": "Jameson",
+   "region": "Missouri",
+   "postalCode": "64647",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/adam-ondi-ahman?lang=eng"
+  },
+  "david-whitmer-gravesite": {
+   "name": "David Whitmer Gravesite",
+   "street": "Richmond Cemetery",
+   "city": "Richmond",
+   "region": "Missouri",
+   "postalCode": "64085",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/david-whitmer-gravesite?lang=eng"
+  },
+  "david-whitmer-homesite": {
+   "name": "David Whitmer Homesite",
+   "street": "114 E Main St",
+   "city": "Richmond",
+   "region": "Missouri",
+   "postalCode": "64085",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/david-whitmer-homesite?lang=eng"
+  },
+  "far-west": {
+   "name": "Far West",
+   "street": "NW State Highway D",
+   "city": "Kingston",
+   "region": "Missouri",
+   "postalCode": "64650",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/far-west?lang=eng"
+  },
+  "flournoy-house": {
+   "name": "Flournoy House",
+   "street": "W Lexington Ave",
+   "city": "Independence",
+   "region": "Missouri",
+   "postalCode": "64050",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/flournoy-house?lang=eng"
+  },
+  "gilbert-and-whitney-store": {
+   "name": "Gilbert Whitney & Co. Store",
+   "street": "104 N Liberty St",
+   "city": "Independence",
+   "region": "Missouri",
+   "postalCode": "64050",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/gilbert-and-whitney-store?lang=eng"
+  },
+  "hawns-mill": {
+   "name": "Hawn’s Mill",
+   "street": "NE Hauns Mill Dr",
+   "city": "Braymer",
+   "region": "Missouri",
+   "postalCode": "64625",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/hawns-mill?lang=eng"
+  },
+  "hawns-mill-millstone-monument": {
+   "name": "Hawn’s Mill Millstone Monument",
+   "street": "500-598 W Broadway St",
+   "city": "Breckenridge",
+   "region": "Missouri",
+   "postalCode": "64625",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/hawns-mill-millstone-monument?lang=eng"
+  },
+  "hiram-page-gravesite": {
+   "name": "Hiram Page Gravesite",
+   "street": "32001-32091 W 146th St",
+   "city": "Crystal Lakes",
+   "region": "Missouri",
+   "postalCode": "64024",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/hiram-page-gravesite?lang=eng"
+  },
+  "independence-missouri-stake-center-pavilion": {
+   "name": "Independence Missouri Stake Center Pavilion",
+   "street": "937 W Walnut St",
+   "city": "Independence",
+   "region": "Missouri",
+   "postalCode": "64050",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/independence-missouri-stake-center-pavilion?lang=eng"
+  },
+  "independence-visitors-center": {
+   "name": "Independence Visitors’ Center",
+   "street": "937 W Walnut St",
+   "city": "Independence",
+   "region": "Missouri",
+   "postalCode": "64050",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/independence-visitors-center?lang=eng"
+  },
+  "independence-temple-lot": {
+   "name": "Independence Temple Lot",
+   "street": "200 S River Blvd",
+   "city": "Independence",
+   "region": "Missouri",
+   "postalCode": "64050",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/independence-temple-lot?lang=eng"
+  },
+  "john-whitmer-gravesite": {
+   "name": "John Whitmer Gravesite",
+   "street": "Douglas St",
+   "city": "Kingston",
+   "region": "Missouri",
+   "postalCode": "64650",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/john-whitmer-gravesite?lang=eng"
+  },
+  "liberty-jail": {
+   "name": "Liberty Jail",
+   "street": "216 North Main",
+   "city": "Liberty",
+   "region": "Missouri",
+   "postalCode": "64068",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/liberty-jail?lang=eng"
+  },
+  "monument-to-the-eight-witnesses": {
+   "name": "Monument to the Eight Witnesses",
+   "street": "2260 Campbell Dr",
+   "city": "Liberty",
+   "region": "Missouri",
+   "postalCode": "64068",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/monument-to-the-eight-witnesses?lang=eng"
+  },
+  "printing-office-missouri": {
+   "name": "Independence Printing Office Site",
+   "street": "204 W Kansas Ave",
+   "city": "Independence",
+   "region": "Missouri",
+   "postalCode": "64050",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/printing-office-missouri?lang=eng"
+  },
+  "richmond-jail-site": {
+   "name": "Richmond Jail Site",
+   "street": "155 W Buchanan St",
+   "city": "Richmond",
+   "region": "Missouri",
+   "postalCode": "64085",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/richmond-jail-site?lang=eng"
+  },
+  "richmond-pioneer-cemetery": {
+   "name": "Richmond Pioneer Cemetery",
+   "street": "103 Crispin St",
+   "city": "Richmond",
+   "region": "Missouri",
+   "postalCode": "64085",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/richmond-pioneer-cemetery?lang=eng"
+  },
+  "statue-of-alexander-doniphan": {
+   "name": "Statue of Alexander Doniphan",
+   "street": "100 W Main St",
+   "city": "Richmond",
+   "region": "Missouri",
+   "postalCode": "64085",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/statue-of-alexander-doniphan?lang=eng"
+  },
+  "young-home": {
+   "name": "Brigham and Mary Ann Young Home",
+   "street": "610 Kimball St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5443467,
+    -91.3929243
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/young-home?lang=eng"
+  },
+  "browning-gun-shop": {
+   "name": "Browning Gun Shop",
+   "street": "550 Main St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5450257,
+    -91.3913748
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/browning-gun-shop?lang=eng"
+  },
+  "pendleton-home-and-schoolhouse": {
+   "name": "Calvin and Sally Pendleton Home and School",
+   "street": "745 Kimball St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5444587,
+    -91.3907419
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/pendleton-home-and-schoolhouse?lang=eng"
+  },
+  "carriage-depot": {
+   "name": "Carriage Depot",
+   "street": "290 Main St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.553452,
+    -91.3897665
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/carriage-depot?lang=eng"
+  },
+  "carthage-jail": {
+   "name": "Carthage Jail",
+   "street": "310 Buchanan St",
+   "city": "Carthage",
+   "region": "Illinois",
+   "postalCode": "62321",
+   "country": "USA",
+   "pin": [
+    40.4152109,
+    -91.1393322
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/carthage-jail?lang=eng"
+  },
+  "carthage-jail-visitors-center": {
+   "name": "Carthage Jail Visitors’ Center",
+   "street": "310 Buchanan St",
+   "city": "Carthage",
+   "region": "Illinois",
+   "postalCode": "62321",
+   "country": "USA",
+   "pin": [
+    40.4157586,
+    -91.1388601
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/carthage-jail-visitors-center?lang=eng"
+  },
+  "cultural-hall": {
+   "name": "Cultural Hall",
+   "street": "350 Main St.",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5473917,
+    -91.3917442
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/cultural-hall?lang=eng"
+  },
+  "sessions-home": {
+   "name": "David and Patty Sessions Home",
+   "street": "790 Hotchkiss St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.546387,
+    -91.3900843
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/sessions-home?lang=eng"
+  },
+  "hunter-home": {
+   "name": "Edward and Ann Hunter Home",
+   "street": "985 Knight St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5514035,
+    -91.3874575
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/hunter-home?lang=eng"
+  },
+  "family-living-center": {
+   "name": "Family Living Center",
+   "street": "455 Main St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5473027,
+    -91.3926526
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/family-living-center?lang=eng"
+  },
+  "heber-kimball-home": {
+   "name": "Heber and Vilate Kimball Home",
+   "street": "995 Munson St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/heber-kimball-home?lang=eng"
+  },
+  "sarah-kimball-home": {
+   "name": "Hiram and Sarah Granger Kimball Home",
+   "street": "Commerce Street",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5531065,
+    -91.397221
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/sarah-kimball-home?lang=eng"
+  },
+  "historic-nauvoo-visitors-center": {
+   "name": "Historic Nauvoo North Visitors’ Center",
+   "street": "290 Main St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.553452,
+    -91.3897665
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/historic-nauvoo-visitors-center?lang=eng"
+  },
+  "historic-nauvoo-south-visitors-center": {
+   "name": "Historic Nauvoo South Visitors’ Center",
+   "street": "865 Water St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/historic-nauvoo-south-visitors-center?lang=eng"
+  },
+  "kimball-barn": {
+   "name": "Kimball Barn",
+   "street": "Commerce St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5534138,
+    -91.3979922
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/kimball-barn?lang=eng"
+  },
+  "lucy-mack-smith-home": {
+   "name": "Lucy Mack Smith Home",
+   "street": "620 S Hyde St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/lucy-mack-smith-home?lang=eng"
+  },
+  "lyon-drug-store": {
+   "name": "Lyon Drug Store",
+   "street": "750 Hotchkiss St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5463732,
+    -91.3906064
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/lyon-drug-store?lang=eng"
+  },
+  "mansion-house": {
+   "name": "Mansion House",
+   "street": "890 Main St.",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.540996,
+    -91.391387
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/mansion-house?lang=eng"
+  },
+  "monument-to-women": {
+   "name": "Monument to Women",
+   "street": "290 Main St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5527958,
+    -91.3897933
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/monument-to-women?lang=eng"
+  },
+  "nauvoo-house": {
+   "name": "Nauvoo House",
+   "street": "950 Main St.",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5401029,
+    -91.3913765
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/nauvoo-house?lang=eng"
+  },
+  "nauvoo-temple-visitors-center": {
+   "name": "Nauvoo Temple Visitors’ Center",
+   "street": "155 N Wells St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/nauvoo-temple-visitors-center?lang=eng"
+  },
+  "hyde-home": {
+   "name": "Orson and Marinda Hyde Home",
+   "street": "690 S Hyde St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5469218,
+    -91.3899972
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/hyde-home?lang=eng"
+  },
+  "outdoor-stage": {
+   "name": "Outdoor Stage",
+   "street": "Partridge St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5540772,
+    -91.3882115
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/outdoor-stage?lang=eng"
+  },
+  "oxen-experience": {
+   "name": "Oxen Experience",
+   "street": "Broadway Street",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.55533,
+    -91.3917872
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/oxen-experience?lang=eng"
+  },
+  "pageant-stage-area": {
+   "name": "Pageant Stage Area",
+   "street": "260 Partridge St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/pageant-stage-area?lang=eng"
+  },
+  "parley-fire-pit": {
+   "name": "Parley Fire Pit",
+   "street": "Parley St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5429501,
+    -91.3809426
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/parley-fire-pit?lang=eng"
+  },
+  "partridge-street-wood": {
+   "name": "Partridge Street Wood",
+   "street": "Partridge St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.548725,
+    -91.388248
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/partridge-street-wood?lang=eng"
+  },
+  "partridge-street-wood-picnic-area": {
+   "name": "Partridge Street Wood Picnic Area",
+   "street": "Nauvoo Groves",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5489846,
+    -91.3887956
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/partridge-street-wood-picnic-area?lang=eng"
+  },
+  "pastimes-pavilion": {
+   "name": "Pastimes Pavilion",
+   "street": "455 Main St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5457969,
+    -91.3920189
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/pastimes-pavilion?lang=eng"
+  },
+  "pioneer-memorial-nauvoo": {
+   "name": "Pioneer Memorial and Exodus to Greatness",
+   "street": "455 Main St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5429248,
+    -91.4002175
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/pioneer-memorial-nauvoo?lang=eng"
+  },
+  "pioneer-memorial-picnic-area": {
+   "name": "Pioneer Memorial Picnic Area",
+   "street": "175 Water St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5424328,
+    -91.3995631
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/pioneer-memorial-picnic-area?lang=eng"
+  },
+  "pioneer-pastimes-picnic-area": {
+   "name": "Pioneer Pastimes Picnic Area",
+   "street": "Main St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5499307,
+    -91.3915108
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/pioneer-pastimes-picnic-area?lang=eng"
+  },
+  "pioneer-saints-cemetery": {
+   "name": "Pioneer Saints Cemetery",
+   "street": "E Co Rd 2300",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5373819,
+    -91.3495336
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/pioneer-saints-cemetery?lang=eng"
+  },
+  "red-brick-store": {
+   "name": "Red Brick Store",
+   "street": "865 Water St.",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/red-brick-store?lang=eng"
+  },
+  "riser-boot-and-shoe-shop": {
+   "name": "Riser Boot and Shoe Shop",
+   "street": "685 Main St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5434092,
+    -91.3918249
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/riser-boot-and-shoe-shop?lang=eng"
+  },
+  "scovil-bakery": {
+   "name": "Scovil Bakery",
+   "street": "325 Main St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5471262,
+    -91.3917604
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/scovil-bakery?lang=eng"
+  },
+  "seventies-hall": {
+   "name": "Seventies Hall",
+   "street": "505 Parley St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5433225,
+    -91.3947248
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/seventies-hall?lang=eng"
+  },
+  "smith-family-cemetery": {
+   "name": "Smith Family Cemetery",
+   "street": "610 Water St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5403719,
+    -91.3922244
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/smith-family-cemetery?lang=eng"
+  },
+  "smith-family-homestead": {
+   "name": "Smith Family Homestead",
+   "street": "890 Main St.",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5404241,
+    -91.3920073
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/smith-family-homestead?lang=eng"
+  },
+  "stoddard-tin-shop": {
+   "name": "Stoddard Tin Shop",
+   "street": "535 Main St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5450211,
+    -91.3918104
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/stoddard-tin-shop?lang=eng"
+  },
+  "taylor-home-print-shop-and-post-office": {
+   "name": "Taylor Home, Print Shop, and Post Office",
+   "street": "350 Main St",
+   "city": "Nauvoo",
+   "region": "Iillinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5443483,
+    -91.3917822
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/taylor-home-print-shop-and-post-office?lang=eng"
+  },
+  "temple-arrival-center": {
+   "name": "Temple Arrival Center",
+   "street": "1165 Knight St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5511419,
+    -91.384069
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/temple-arrival-center?lang=eng"
+  },
+  "temple-stones-pavilion": {
+   "name": "Temple Stones Pavilion",
+   "street": "965 Young St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5518763,
+    -91.3873466
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/temple-stones-pavilion?lang=eng"
+  },
+  "trail-of-hope": {
+   "name": "Trail of Hope",
+   "street": "505 Parley St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5432415,
+    -91.3949718
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/trail-of-hope?lang=eng"
+  },
+  "historic-nauvoo-visitors-center-picnic-area": {
+   "name": "Visitors’ Center Picnic Area",
+   "street": "290 Main St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5535707,
+    -91.3898145
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/historic-nauvoo-visitors-center-picnic-area?lang=eng"
+  },
+  "wagon-depot": {
+   "name": "Wagon Depot",
+   "street": "Hotchkiss Street",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5467332,
+    -91.3923945
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/wagon-depot?lang=eng"
+  },
+  "webb-blacksmith-shop": {
+   "name": "Webb Blacksmith Shop",
+   "street": "585 Parley St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.543213,
+    -91.393504
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/webb-blacksmith-shop?lang=eng"
+  },
+  "west-grove": {
+   "name": "West Grove",
+   "street": "985 Knight St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "",
+   "pin": [
+    40.5508902,
+    -91.3870347
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/west-grove?lang=eng"
+  },
+  "woodruff-home": {
+   "name": "Wilford and Phebe Woodruff Home",
+   "street": "2983 N Durphy St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.5462002,
+    -91.3868117
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/woodruff-home?lang=eng"
+  },
+  "weeks-home": {
+   "name": "William and Caroline Weeks Home",
+   "street": "965 Young St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.553452,
+    -91.389766
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/weeks-home?lang=eng"
+  },
+  "gheen-home": {
+   "name": "William and Esther Gheen Home",
+   "street": "965 Young St",
+   "city": "Nauvoo",
+   "region": "Illinois",
+   "postalCode": "62354",
+   "country": "USA",
+   "pin": [
+    40.550503,
+    -91.388346
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/gheen-home?lang=eng"
+  },
+  "mormon-trail-center-at-winter-quarters": {
+   "name": "Mormon Trail Center at Winter Quarters",
+   "street": "3215 State Street",
+   "city": "Omaha",
+   "region": "Nebraska",
+   "postalCode": "68112",
+   "country": "USA",
+   "pin": [
+    41.3350103,
+    -95.9650014
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/mormon-trail-center-at-winter-quarters?lang=eng"
+  },
+  "kanesville-memorial": {
+   "name": "Kanesville Memorial",
+   "street": "222 East Broadway",
+   "city": "Council Bluffs",
+   "region": "Iowa",
+   "postalCode": "51503",
+   "country": "USA",
+   "pin": [
+    41.264834,
+    -95.842104
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/kanesville-memorial?lang=eng"
+  },
+  "mount-pisgah-monument": {
+   "name": "Mount Pisgah Monument",
+   "street": "Mt. Pisgah Rd.",
+   "city": "Thayer",
+   "region": "Iowa",
+   "postalCode": "50254",
+   "country": "USA",
+   "pin": [
+    41.051103,
+    -94.101062
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/mount-pisgah-monument?lang=eng"
+  },
+  "martins-cove-mormon-trail-site": {
+   "name": "Martin’s Cove: Mormon Trail Site",
+   "street": "47600 West Hwy 220",
+   "city": "Alcova",
+   "region": "Wyoming",
+   "postalCode": "82620",
+   "country": "USA",
+   "pin": [
+    42.4418716,
+    -107.2194671
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/martins-cove-mormon-trail-site?lang=eng"
+  },
+  "sixth-crossing-mormon-trail-site": {
+   "name": "Sixth Crossing: Mormon Trail Site",
+   "street": "4181 Highway 789",
+   "city": "Lander",
+   "region": "Wyoming",
+   "postalCode": "82520",
+   "country": "USA",
+   "pin": [
+    42.539421,
+    -108.178437
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/sixth-crossing-mormon-trail-site?lang=eng"
+  },
+  "rock-creek-hollow-mormon-trail-site": {
+   "name": "Rock Creek Hollow: Mormon Trail Site",
+   "street": "Lewiston Rd",
+   "city": "Lander",
+   "region": "Wyoming",
+   "postalCode": "82520",
+   "country": "USA",
+   "pin": [
+    42.440278,
+    -108.623846
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/rock-creek-hollow-mormon-trail-site?lang=eng"
+  },
+  "brigham-young-winter-home-and-office": {
+   "name": "Brigham Young Winter Home and Office",
+   "street": "67 West 200",
+   "city": "North St. George",
+   "region": "Utah",
+   "postalCode": "84770",
+   "country": "USA",
+   "pin": [
+    37.11135,
+    -113.5849
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/brigham-young-winter-home-and-office?lang=eng"
+  },
+  "st-george-tabernacle": {
+   "name": "St. George Tabernacle",
+   "street": "18 S. Main Street",
+   "city": "St. George",
+   "region": "Utah",
+   "postalCode": "84770",
+   "country": "USA",
+   "pin": [
+    37.107831,
+    -113.58383
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/st-george-tabernacle?lang=eng"
+  },
+  "hamblin-home": {
+   "name": "Hamblin Home",
+   "street": "3325 Hamblin Dr.",
+   "city": "Santa Clara",
+   "region": "Utah",
+   "postalCode": "84765",
+   "country": "USA",
+   "pin": [
+    37.13371,
+    -113.661359
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/hamblin-home?lang=eng"
+  },
+  "joseph-smith-birthplace": {
+   "name": "Joseph Smith Birthplace",
+   "street": "357 LDS Lane",
+   "city": "South Royalton",
+   "region": "Vermont",
+   "postalCode": "05068",
+   "country": "United States",
+   "pin": [
+    43.823473,
+    -72.47308
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/joseph-smith-birthplace?lang=eng"
+  },
+  "mormon-battalion-historic-site-at-san-diego": {
+   "name": "Mormon Battalion Historic Site at San Diego",
+   "street": "2510 Juan St.",
+   "city": "San Diego",
+   "region": "California",
+   "postalCode": "92110",
+   "country": "USA",
+   "pin": [
+    32.754266,
+    -117.194069
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/mormon-battalion-historic-site-at-san-diego?lang=eng"
+  },
+  "cove-fort": {
+   "name": "Cove Fort",
+   "street": "HC-74 Box 6500",
+   "city": "Beaver",
+   "region": "Utah",
+   "postalCode": "84713",
+   "country": "USA",
+   "pin": [
+    38.60061,
+    -112.581841
+   ],
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/cove-fort?lang=eng"
+  },
+  "matthew-cowley-pacific-church-history-centre": {
+   "name": "Matthew Cowley Pacific Church History Centre",
+   "street": "465 Tuhikaramea Road, Temple View",
+   "city": "Hamilton",
+   "region": "",
+   "postalCode": "3218",
+   "country": "New Zealand",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/matthew-cowley-pacific-church-history-centre?lang=eng"
+  },
+  "church-history-museum": {
+   "name": "Church History Museum",
+   "street": "75 N West Temple St",
+   "city": "Salt Lake City",
+   "region": "Utah",
+   "postalCode": "84150",
+   "country": "USA",
+   "pin": null,
+   "fetched": "2026-11-18",
+   "url": "https://www.churchofjesuschrist.org/learn/locations/church-history-museum?lang=eng"
+  }
+ },
+ "geocode": {
+  "127 Church St, Palmyra, New York 14522, United States": [
+   {
+    "lat": 43.06457,
+    "lng": -77.23366,
+    "kind": "building/yes",
+    "label": "127",
+    "where": "127, Church Street, Village of Palmyra, Town of Palmyra, Wayne County, New York, 14522, United States",
+    "wikidata": null,
+    "wikipedia": null
+   },
+   {
+    "lat": 43.06436,
+    "lng": -77.23378,
+    "kind": "tourism/attraction",
+    "label": "Site of Presbyterian Church",
+    "where": "Site of Presbyterian Church, 127, Church Street, Village of Palmyra, Town of Palmyra, Wayne County, New York, 14522, United States",
+    "wikidata": null,
+    "wikipedia": null
+   },
+   {
+    "lat": 43.06457,
+    "lng": -77.23362,
+    "kind": "place/house",
+    "label": "127",
+    "where": "127, Church Street, Village of Palmyra, Town of Palmyra, Wayne County, New York, 14522, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Erie Canal, Palmyra, New York, United States": [
+   {
+    "lat": 43.06598,
+    "lng": -77.23397,
+    "kind": "tourism/attraction",
+    "label": "Erie Canal",
+    "where": "Erie Canal, Erie Canalway Trail, Village of Palmyra, Town of Palmyra, Wayne County, New York, 14522, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Palmyra, New York, United States": [
+   {
+    "lat": 43.06365,
+    "lng": -77.23226,
+    "kind": "boundary/administrative",
+    "label": "Village of Palmyra",
+    "where": "Village of Palmyra, Town of Palmyra, Wayne County, New York, 14522, United States",
+    "wikidata": "Q2270605",
+    "wikipedia": "en:Palmyra (village), New York"
+   },
+   {
+    "lat": 43.06365,
+    "lng": -77.23226,
+    "kind": "boundary/administrative",
+    "label": "Town of Palmyra",
+    "where": "Town of Palmyra, Wayne County, New York, 14522, United States",
+    "wikidata": "Q2270548",
+    "wikipedia": "en:Palmyra, New York"
+   }
+  ],
+  "217 East Main Street, Palmyra, New York 14522, United States": [
+   {
+    "lat": 43.06386,
+    "lng": -77.23056,
+    "kind": "building/commercial",
+    "label": "217",
+    "where": "217, East Main Street, Village of Palmyra, Town of Palmyra, Wayne County, New York, 14522, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Hill Cumorah, Palmyra, New York, United States": [
+   {
+    "lat": 43.00698,
+    "lng": -77.22578,
+    "kind": "building/church",
+    "label": "Hill Cumorah Visitors Center",
+    "where": "Hill Cumorah Visitors Center, 659, State Route 21, Town of Palmyra, Ontario County, New York, 14522, United States",
+    "wikidata": null,
+    "wikipedia": null
+   },
+   {
+    "lat": 42.96989,
+    "lng": -77.13962,
+    "kind": "building/yes",
+    "label": "Hill Cumorah Visitors Center",
+    "where": "Hill Cumorah Visitors Center, 659, State Route 96, Town of Palmyra, Ontario County, New York, 14522, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "1963 E Windsor Rd, Nineveh, New York 13813, United States": [
+   {
+    "lat": 42.18724,
+    "lng": -75.6055,
+    "kind": "place/house",
+    "label": "1963",
+    "where": "1963, East Windsor Road, Nineveh, Harpursville, Town of Colesville, Broome County, New York, 13813, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "323 NY-7, Afton, New York 13730, United States": [
+   {
+    "lat": 42.2104,
+    "lng": -75.58531,
+    "kind": "place/house",
+    "label": "323",
+    "where": "323, State Route 7, Village of Afton, Town of Afton, Chenango County, New York, 13730, United States",
+    "wikidata": null,
+    "wikipedia": null
+   },
+   {
+    "lat": 42.21104,
+    "lng": -75.5839,
+    "kind": "tourism/attraction",
+    "label": "Joshia Stowell Home & Farm",
+    "where": "Joshia Stowell Home & Farm, 323, State Route 7, Village of Afton, Town of Afton, Chenango County, New York, 13730, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "2095 Maple Ave, Palmyra, New York 14522, United States": [
+   {
+    "lat": 43.08354,
+    "lng": -77.23972,
+    "kind": "building/yes",
+    "label": "2095",
+    "where": "2095, Maple Avenue, Cooney Crossing, Town of Palmyra, Wayne County, New York, 14522, United States",
+    "wikidata": null,
+    "wikipedia": null
+   },
+   {
+    "lat": 43.08351,
+    "lng": -77.23967,
+    "kind": "place/house",
+    "label": "2095",
+    "where": "2095, Maple Avenue, Cooney Crossing, Town of Palmyra, Wayne County, New York, 14522, United States",
+    "wikidata": null,
+    "wikipedia": null
+   },
+   {
+    "lat": 43.08473,
+    "lng": -77.23962,
+    "kind": "tourism/attraction",
+    "label": "Martin Harris Farm",
+    "where": "Martin Harris Farm, 2095, Maple Avenue, Cooney Crossing, Town of Palmyra, Wayne County, New York, 14522, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Priesthood Restoration Site, Oakland Township (Susquehanna), Pennsylvania, United States": [
+   {
+    "lat": 41.95223,
+    "lng": -75.63737,
+    "kind": "tourism/attraction",
+    "label": "Priesthood Restoration Site",
+    "where": "Priesthood Restoration Site, 27832, State Route 171, Oakland Township, Susquehanna County, Pennsylvania, 18847, United States",
+    "wikidata": "Q4662621",
+    "wikipedia": null
+   },
+   {
+    "lat": 41.95213,
+    "lng": -75.63735,
+    "kind": "amenity/school",
+    "label": "Priesthood Restoration Site",
+    "where": "Priesthood Restoration Site, State Route 171, Oakland Township, Susquehanna County, Pennsylvania, 18847, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Sacred Grove, Palmyra, New York, United States": [
+   {
+    "lat": 43.0399,
+    "lng": -77.24278,
+    "kind": "place/locality",
+    "label": "The Sacred Grove",
+    "where": "The Sacred Grove, Town of Palmyra, Wayne County, New York, 14522, United States",
+    "wikidata": null,
+    "wikipedia": null
+   },
+   {
+    "lat": 43.03971,
+    "lng": -77.24625,
+    "kind": "natural/wood",
+    "label": "The Sacred Grove",
+    "where": "The Sacred Grove, Town of Farmington, Town of Manchester, Ontario County, New York, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Whitmer Farm, Waterloo, New York, United States": [
+   {
+    "lat": 42.86639,
+    "lng": -76.86898,
+    "kind": "amenity/place_of_worship",
+    "label": "Peter Whitmer Farm Visitors Center and Fayette Chapel",
+    "where": "Peter Whitmer Farm Visitors Center and Fayette Chapel, 1451, Aunkst Road, Town of Waterloo, Seneca County, New York, 13165, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "1451 Aunkst Road, Waterloo, New York 13165, United States": [
+   {
+    "lat": 42.86639,
+    "lng": -76.86898,
+    "kind": "amenity/place_of_worship",
+    "label": "Peter Whitmer Farm Visitors Center and Fayette Chapel",
+    "where": "Peter Whitmer Farm Visitors Center and Fayette Chapel, 1451, Aunkst Road, Town of Waterloo, Seneca County, New York, 13165, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Fairport Harbor, Fairport Harbor, Ohio, United States": [
+   {
+    "lat": 41.75696,
+    "lng": -81.27751,
+    "kind": "man_made/lighthouse",
+    "label": "Fairport Harbor Marine Museum and Lighthouse",
+    "where": "Fairport Harbor Marine Museum and Lighthouse, 129, 2nd Street, Fairport Harbor, Lake County, Ohio, 44077, United States",
+    "wikidata": "Q5595034",
+    "wikipedia": "en:Grand River (Fairport Harbor) Light"
+   },
+   {
+    "lat": 41.75881,
+    "lng": -81.27608,
+    "kind": "natural/beach",
+    "label": "Fairport Harbor Lakefront Park",
+    "where": "Fairport Harbor Lakefront Park, Fairport Harbor, Lake County, Ohio, United States",
+    "wikidata": null,
+    "wikipedia": null
+   },
+   {
+    "lat": 41.74305,
+    "lng": -81.26594,
+    "kind": "landuse/landfill",
+    "label": "Fairport Harbor Village Landfill",
+    "where": "Fairport Harbor Village Landfill, Fairport Harbor, Lake County, Ohio, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "129 2nd St, Fairport Harbor, Ohio 44077, United States": [
+   {
+    "lat": 41.75696,
+    "lng": -81.27751,
+    "kind": "man_made/lighthouse",
+    "label": "Fairport Harbor Marine Museum and Lighthouse",
+    "where": "Fairport Harbor Marine Museum and Lighthouse, 129, 2nd Street, Fairport Harbor, Lake County, Ohio, 44077, United States",
+    "wikidata": "Q5595034",
+    "wikipedia": "en:Grand River (Fairport Harbor) Light"
+   }
+  ],
+  "Historic Kirtland, Kirtland, Ohio, United States": [
+   {
+    "lat": 41.62903,
+    "lng": -81.36102,
+    "kind": "tourism/museum",
+    "label": "Historic Kirtland",
+    "where": "Historic Kirtland, Smith Street, Kirtland, Lake County, Ohio, 44094, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "8605 Chillicothe Rd, Kirtland, Ohio 44094, United States": [
+   {
+    "lat": 41.63649,
+    "lng": -81.34413,
+    "kind": "place/house",
+    "label": "8605",
+    "where": "8605, Chillicothe Road, Kirtland Hills, Lake County, Ohio, 44060, United States",
+    "wikidata": null,
+    "wikipedia": null
+   },
+   {
+    "lat": 41.61995,
+    "lng": -81.3586,
+    "kind": "highway/primary",
+    "label": "Chillicothe Road",
+    "where": "Chillicothe Road, Kirtland, Lake County, Ohio, 44094, United States",
+    "wikidata": null,
+    "wikipedia": null
+   },
+   {
+    "lat": 41.57655,
+    "lng": -81.3491,
+    "kind": "highway/primary",
+    "label": "Chillicothe Road",
+    "where": "Chillicothe Road, Pecks Corners, Kirtland, Lake County, Ohio, 44094, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "6203 Pioneer Trail, Hiram, Ohio 44234, United States": [
+   {
+    "lat": 41.29561,
+    "lng": -81.16514,
+    "kind": "place/house",
+    "label": "6203",
+    "where": "6203, Pioneer Trail, Hiram Township, Portage County, Ohio, 44234, United States",
+    "wikidata": null,
+    "wikipedia": null
+   },
+   {
+    "lat": 41.29579,
+    "lng": -81.16625,
+    "kind": "place/house",
+    "label": "6203",
+    "where": "6203, Pioneer Trail, Hiram Township, Portage County, Ohio, 44234, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "9016 Chillicothe Rd, Kirtland, Ohio 44094, United States": [
+   {
+    "lat": 41.62523,
+    "lng": -81.36181,
+    "kind": "place/house",
+    "label": "9016",
+    "where": "9016, Chillicothe Road, Kirtland, Lake County, Ohio, 44094, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "9938 Chillicothe Rd., Kirtland, Ohio 44094, United States": [
+   {
+    "lat": 41.5992,
+    "lng": -81.3481,
+    "kind": "place/house",
+    "label": "9938",
+    "where": "9938, Chillicothe Road, Kirtland, Lake County, Ohio, 44094, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Kirtland Temple, Kirtland, Ohio, United States": [
+   {
+    "lat": 41.62529,
+    "lng": -81.36215,
+    "kind": "historic/building",
+    "label": "Kirtland Temple",
+    "where": "Kirtland Temple, 9020, Chillicothe Road, Kirtland, Lake County, Ohio, 44094, United States",
+    "wikidata": "Q788604",
+    "wikipedia": null
+   }
+  ],
+  "Jameson, Missouri, United States": [
+   {
+    "lat": 40.00568,
+    "lng": -93.98706,
+    "kind": "boundary/administrative",
+    "label": "Jameson",
+    "where": "Jameson, Daviess County, Missouri, United States",
+    "wikidata": "Q966094",
+    "wikipedia": "en:Jameson, Missouri"
+   }
+  ],
+  "Richmond, Missouri, United States": [
+   {
+    "lat": 39.27862,
+    "lng": -93.97689,
+    "kind": "boundary/administrative",
+    "label": "Richmond",
+    "where": "Richmond, Ray County, Missouri, 64085, United States",
+    "wikidata": "Q955399",
+    "wikipedia": "en:Richmond, Missouri"
+   }
+  ],
+  "114 E Main St, Richmond, Missouri 64085, United States": [
+   {
+    "lat": 39.27852,
+    "lng": -93.97624,
+    "kind": "place/house",
+    "label": "114",
+    "where": "114, East Main Street, Richmond, Ray County, Missouri, 64085, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Kingston, Missouri, United States": [
+   {
+    "lat": 39.64285,
+    "lng": -94.03908,
+    "kind": "boundary/administrative",
+    "label": "Kingston",
+    "where": "Kingston, Caldwell County, Missouri, United States",
+    "wikidata": "Q969092",
+    "wikipedia": "en:Kingston, Missouri"
+   }
+  ],
+  "Flournoy House, Independence, Missouri, United States": [
+   {
+    "lat": 39.09118,
+    "lng": -94.42903,
+    "kind": "historic/building",
+    "label": "Flournoy House",
+    "where": "Flournoy House, West Lexington Avenue, Independence, Jackson County, Missouri, 64050, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "104 N Liberty St, Independence, Missouri 64050, United States": [
+   {
+    "lat": 39.09246,
+    "lng": -94.41748,
+    "kind": "building/yes",
+    "label": "104-108",
+    "where": "104-108, North Liberty Street, Independence, Jackson County, Missouri, 64050, United States",
+    "wikidata": null,
+    "wikipedia": null
+   },
+   {
+    "lat": 39.11951,
+    "lng": -94.41631,
+    "kind": "highway/tertiary",
+    "label": "North Liberty Street",
+    "where": "North Liberty Street, Independence, Jackson County, Missouri, 64050, United States",
+    "wikidata": null,
+    "wikipedia": null
+   },
+   {
+    "lat": 39.09854,
+    "lng": -94.41682,
+    "kind": "highway/residential",
+    "label": "North Liberty Street",
+    "where": "North Liberty Street, Independence, Jackson County, Missouri, 64050, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Braymer, Missouri, United States": [
+   {
+    "lat": 39.58696,
+    "lng": -93.79605,
+    "kind": "boundary/administrative",
+    "label": "Braymer",
+    "where": "Braymer, Caldwell County, Missouri, 64624, United States",
+    "wikidata": "Q676468",
+    "wikipedia": "en:Braymer, Missouri"
+   }
+  ],
+  "Breckenridge, Missouri, United States": [
+   {
+    "lat": 39.76223,
+    "lng": -93.80438,
+    "kind": "boundary/administrative",
+    "label": "Breckenridge",
+    "where": "Breckenridge, Caldwell County, Missouri, United States",
+    "wikidata": "Q965626",
+    "wikipedia": "en:Breckenridge, Missouri"
+   },
+   {
+    "lat": 38.71978,
+    "lng": -90.36762,
+    "kind": "boundary/administrative",
+    "label": "Breckenridge Hills",
+    "where": "Breckenridge Hills, Saint Louis County, Missouri, United States",
+    "wikidata": "Q967580",
+    "wikipedia": "en:Breckenridge Hills, Missouri"
+   }
+  ],
+  "Crystal Lakes, Missouri, United States": [
+   {
+    "lat": 39.35945,
+    "lng": -94.18994,
+    "kind": "boundary/administrative",
+    "label": "Crystal Lakes",
+    "where": "Crystal Lakes, Ray County, Missouri, United States",
+    "wikidata": "Q650320",
+    "wikipedia": "en:Crystal Lakes, Missouri"
+   }
+  ],
+  "Independence Visitors’ Center, Independence, Missouri, United States": [
+   {
+    "lat": 39.0898,
+    "lng": -94.42678,
+    "kind": "information/visitor_centre",
+    "label": "LDS Independence Visitors' Center",
+    "where": "LDS Independence Visitors' Center, West Walnut Street, Independence, Jackson County, Missouri, 64050, United States",
+    "wikidata": "Q3850082",
+    "wikipedia": null
+   }
+  ],
+  "937 W Walnut St, Independence, Missouri 64050, United States": [
+   {
+    "lat": 39.09017,
+    "lng": -94.42652,
+    "kind": "place/house",
+    "label": "937",
+    "where": "937, West Walnut Street, Independence, Jackson County, Missouri, 64050, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "200 S River Blvd, Independence, Missouri 64050, United States": [
+   {
+    "lat": 39.09111,
+    "lng": -94.42779,
+    "kind": "amenity/place_of_worship",
+    "label": "Church of Christ (Temple Lot)",
+    "where": "Church of Christ (Temple Lot), 200, South River Boulevard, Independence, Jackson County, Missouri, 64050, United States",
+    "wikidata": "Q1742521",
+    "wikipedia": null
+   }
+  ],
+  "Douglas St, Kingston, Missouri 64650, United States": [
+   {
+    "lat": 39.63971,
+    "lng": -94.03661,
+    "kind": "highway/residential",
+    "label": "Douglas Street",
+    "where": "Douglas Street, Kingston, Caldwell County, Missouri, 64650, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Liberty Jail, Liberty, Missouri, United States": [
+   {
+    "lat": 39.24852,
+    "lng": -94.42062,
+    "kind": "tourism/museum",
+    "label": "Historic Liberty Jail",
+    "where": "Historic Liberty Jail, 216, North Main Street, Liberty, Clay County, Missouri, 64068, United States",
+    "wikidata": null,
+    "wikipedia": "en:Liberty Jail"
+   }
+  ],
+  "2260 Campbell Dr, Liberty, Missouri 64068, United States": [
+   {
+    "lat": 39.20969,
+    "lng": -94.4493,
+    "kind": "place/house",
+    "label": "2260",
+    "where": "2260, Campbell Drive, Liberty, Clay County, Missouri, 64068, United States",
+    "wikidata": null,
+    "wikipedia": null
+   },
+   {
+    "lat": 39.21122,
+    "lng": -94.44943,
+    "kind": "place/house",
+    "label": "2260",
+    "where": "2260, Campbell Drive, Liberty, Clay County, Missouri, 64068, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "204 W Kansas Ave, Independence, Missouri 64050, United States": [
+   {
+    "lat": 39.09124,
+    "lng": -94.41765,
+    "kind": "building/yes",
+    "label": "204",
+    "where": "204, West Kansas Avenue, Independence, Jackson County, Missouri, 64050, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "155 W Buchanan St, Richmond, Missouri 64085, United States": [
+   {
+    "lat": 39.27999,
+    "lng": -93.97727,
+    "kind": "place/house",
+    "label": "155",
+    "where": "155, West Buchanan Street, Richmond, Ray County, Missouri, 64085, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "103 Crispin St, Richmond, Missouri 64085, United States": [
+   {
+    "lat": 39.28534,
+    "lng": -93.9764,
+    "kind": "place/house",
+    "label": "103",
+    "where": "103, Crispin Street, Richmond, Ray County, Missouri, 64085, United States",
+    "wikidata": null,
+    "wikipedia": null
+   },
+   {
+    "lat": 39.2852,
+    "lng": -93.97553,
+    "kind": "place/house",
+    "label": "103",
+    "where": "103, Crispin Street, Richmond, Ray County, Missouri, 64085, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "100 W Main St, Richmond, Missouri 64085, United States": [
+   {
+    "lat": 39.27873,
+    "lng": -93.97721,
+    "kind": "amenity/courthouse",
+    "label": "Ray County Courthouse",
+    "where": "Ray County Courthouse, 100, West Main Street, Richmond, Ray County, Missouri, 64085, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "610 Kimball St, Nauvoo, Illinois 62354, United States": [
+   {
+    "lat": 40.54412,
+    "lng": -91.38328,
+    "kind": "highway/residential",
+    "label": "Kimball Street",
+    "where": "Kimball Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Browning Gun Shop, Nauvoo, Illinois, United States": [
+   {
+    "lat": 40.54495,
+    "lng": -91.39138,
+    "kind": "shop/yes",
+    "label": "Jonathan Browning Nauvoo Home and Gun Shop",
+    "where": "Jonathan Browning Nauvoo Home and Gun Shop, Main Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": "en:Jonathan Browning"
+   }
+  ],
+  "550 Main St, Nauvoo, Illinois 62354, United States": [
+   {
+    "lat": 40.54483,
+    "lng": -91.39171,
+    "kind": "place/house",
+    "label": "550",
+    "where": "550, Main Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "745 Kimball St, Nauvoo, Illinois 62354, United States": [
+   {
+    "lat": 40.54433,
+    "lng": -91.39082,
+    "kind": "place/house",
+    "label": "745",
+    "where": "745, Kimball Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Carthage Jail, Carthage, Illinois, United States": [
+   {
+    "lat": 40.41564,
+    "lng": -91.13885,
+    "kind": "historic/building",
+    "label": "Historic Carthage Jail",
+    "where": "Historic Carthage Jail, Walnut Street, Carthage, Hancock County, Illinois, 62321, United States",
+    "wikidata": null,
+    "wikipedia": null
+   },
+   {
+    "lat": 40.41521,
+    "lng": -91.13931,
+    "kind": "tourism/museum",
+    "label": "Historic Carthage Jail",
+    "where": "Historic Carthage Jail, Walnut Street, Carthage, Hancock County, Illinois, 62321, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "310 Buchanan St, Carthage, Illinois 62321, United States": [
+   {
+    "lat": 40.41616,
+    "lng": -91.12853,
+    "kind": "highway/primary",
+    "label": "Buchanan Street",
+    "where": "Buchanan Street, Carthage, Hancock County, Illinois, 62321, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Cultural Hall, Nauvoo, Illinois, United States": [
+   {
+    "lat": 40.54741,
+    "lng": -91.39179,
+    "kind": "historic/building",
+    "label": "Cultural Hall",
+    "where": "Cultural Hall, Main Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "790 Hotchkiss St, Nauvoo, Illinois 62354, United States": [
+   {
+    "lat": 40.54644,
+    "lng": -91.39017,
+    "kind": "place/house",
+    "label": "790",
+    "where": "790, Hotchkiss Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "985 Knight St, Nauvoo, Illinois 62354, United States": [
+   {
+    "lat": 40.55082,
+    "lng": -91.37614,
+    "kind": "highway/residential",
+    "label": "Knight Street",
+    "where": "Knight Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "995 Munson St, Nauvoo, Illinois 62354": [
+   {
+    "lat": 40.54539,
+    "lng": -91.38686,
+    "kind": "place/house",
+    "label": "995",
+    "where": "995, Munson Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Commerce Street, Nauvoo, Illinois 62354, United States": [
+   {
+    "lat": 40.5536,
+    "lng": -91.39806,
+    "kind": "highway/residential",
+    "label": "Commerce Street",
+    "where": "Commerce Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "290 Main St, Nauvoo, Illinois 62354, United States": [
+   {
+    "lat": 40.55012,
+    "lng": -91.39161,
+    "kind": "place/house",
+    "label": "290",
+    "where": "290, Main Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "865 Water St, Nauvoo, Illinois 62354, United States": [
+   {
+    "lat": 40.54131,
+    "lng": -91.38937,
+    "kind": "building/yes",
+    "label": "Joseph Smith Historic Site Visitor Center",
+    "where": "Joseph Smith Historic Site Visitor Center, 865, Water Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "620 S Hyde St, Nauvoo, Illinois 62354, United States": [
+   {
+    "lat": 40.54393,
+    "lng": -91.38981,
+    "kind": "place/house",
+    "label": "620",
+    "where": "620, South Hyde Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "750 Hotchkiss St, Nauvoo, Illinois 62354, United States": [
+   {
+    "lat": 40.54645,
+    "lng": -91.39072,
+    "kind": "place/house",
+    "label": "750",
+    "where": "750, Hotchkiss Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Mansion House, Nauvoo, Illinois, United States": [
+   {
+    "lat": 40.54098,
+    "lng": -91.39137,
+    "kind": "building/yes",
+    "label": "Joseph Smith Mansion House",
+    "where": "Joseph Smith Mansion House, Main Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": "en:Joseph Smith Mansion House"
+   }
+  ],
+  "890 Main St., Nauvoo, Illinois 62354, United States": [
+   {
+    "lat": 40.54104,
+    "lng": -91.39153,
+    "kind": "place/house",
+    "label": "890",
+    "where": "890, Main Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Nauvoo House, Nauvoo, Illinois, United States": [
+   {
+    "lat": 40.54012,
+    "lng": -91.39141,
+    "kind": "building/yes",
+    "label": "Nauvoo House",
+    "where": "Nauvoo House, 860, Main Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "155 N Wells St, Nauvoo, Illinois 62354, United States": [
+   {
+    "lat": 40.55205,
+    "lng": -91.38498,
+    "kind": "highway/residential",
+    "label": "North Wells Street",
+    "where": "North Wells Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   },
+   {
+    "lat": 40.54928,
+    "lng": -91.38504,
+    "kind": "highway/residential",
+    "label": "South Wells Street",
+    "where": "South Wells Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "690 S Hyde St, Nauvoo, Illinois 62354, United States": [
+   {
+    "lat": 40.5433,
+    "lng": -91.38982,
+    "kind": "place/house",
+    "label": "690",
+    "where": "690, South Hyde Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "455 Main St, Nauvoo, Illinois 62354, United States": [
+   {
+    "lat": 40.54947,
+    "lng": -91.39151,
+    "kind": "highway/residential",
+    "label": "Main Street",
+    "where": "Main Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Nauvoo, Illinois, United States": [
+   {
+    "lat": 40.54976,
+    "lng": -91.38232,
+    "kind": "boundary/administrative",
+    "label": "Nauvoo",
+    "where": "Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": "Q576110",
+    "wikipedia": "en:Nauvoo, Illinois"
+   }
+  ],
+  "Red Brick Store, Nauvoo, Illinois, United States": [
+   {
+    "lat": 40.5407,
+    "lng": -91.39318,
+    "kind": "shop/gift",
+    "label": "Red Brick Store",
+    "where": "Red Brick Store, 610, Water Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "685 Main St, Nauvoo, Illinois 62354, United States": [
+   {
+    "lat": 40.54338,
+    "lng": -91.39171,
+    "kind": "place/house",
+    "label": "685",
+    "where": "685, Main Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Scovil Bakery, Nauvoo, Illinois, United States": [
+   {
+    "lat": 40.54714,
+    "lng": -91.39178,
+    "kind": "shop/bakery",
+    "label": "Scovil Bakery",
+    "where": "Scovil Bakery, Main Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Seventies Hall, Nauvoo, Illinois, United States": [
+   {
+    "lat": 40.54331,
+    "lng": -91.39472,
+    "kind": "building/historic",
+    "label": "Seventies Hall",
+    "where": "Seventies Hall, Parley Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Smith Family Cemetery, Nauvoo, Illinois, United States": [
+   {
+    "lat": 40.54059,
+    "lng": -91.39238,
+    "kind": "amenity/grave_yard",
+    "label": "Smith Family Cemetery",
+    "where": "Smith Family Cemetery, Water Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "535 Main St, Nauvoo, Illinois 62354, United States": [
+   {
+    "lat": 40.54497,
+    "lng": -91.39171,
+    "kind": "place/house",
+    "label": "535",
+    "where": "535, Main Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "965 Young St, Nauvoo, Illinois 62354, United States": [
+   {
+    "lat": 40.55222,
+    "lng": -91.38722,
+    "kind": "place/house",
+    "label": "965",
+    "where": "965, Young Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Trail of Hope, Nauvoo, Illinois, United States": [
+   {
+    "lat": 40.54329,
+    "lng": -91.39719,
+    "kind": "highway/footway",
+    "label": "Trail of Hope",
+    "where": "Trail of Hope, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "505 Parley St, Nauvoo, Illinois 62354, United States": [
+   {
+    "lat": 40.54295,
+    "lng": -91.38106,
+    "kind": "highway/residential",
+    "label": "Parley Street",
+    "where": "Parley Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Webb Blacksmith Shop, Nauvoo, Illinois, United States": [
+   {
+    "lat": 40.54325,
+    "lng": -91.39362,
+    "kind": "building/historic",
+    "label": "Webb Brothers' Blacksmith Shop",
+    "where": "Webb Brothers' Blacksmith Shop, Parley Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "585 Parley St, Nauvoo, Illinois 62354, United States": [
+   {
+    "lat": 40.54295,
+    "lng": -91.38106,
+    "kind": "highway/residential",
+    "label": "Parley Street",
+    "where": "Parley Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "985 Knight St, Nauvoo, Illinois 62354": [
+   {
+    "lat": 40.55082,
+    "lng": -91.37614,
+    "kind": "highway/residential",
+    "label": "Knight Street",
+    "where": "Knight Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "2983 N Durphy St, Nauvoo, Illinois 62354, United States": [
+   {
+    "lat": 40.5462,
+    "lng": -91.38652,
+    "kind": "place/house",
+    "label": "2983",
+    "where": "2983, North Durphy Street, Nauvoo, Hancock County, Illinois, 62358, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Mormon Trail Center at Winter Quarters": [
+   {
+    "lat": 41.33504,
+    "lng": -95.96501,
+    "kind": "tourism/museum",
+    "label": "Mormon Trail Center at Winter Quarters",
+    "where": "Mormon Trail Center at Winter Quarters, State Street, Florence, Omaha, Douglas County, Nebraska, 68112, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "222 East Broadway, Council Bluffs, Iowa 51503, United States": [
+   {
+    "lat": 41.26491,
+    "lng": -95.84192,
+    "kind": "amenity/place_of_worship",
+    "label": "Kanesville Tabernacle",
+    "where": "Kanesville Tabernacle, 222, East Broadway, Council Bluffs, Kane Township, Pottawattamie County, Iowa, 51503, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Mount Pisgah Monument": [
+   {
+    "lat": 32.93892,
+    "lng": -96.80327,
+    "kind": "historic/memorial",
+    "label": "Mount Pisgah Missionary Baptist Church",
+    "where": "Mount Pisgah Missionary Baptist Church, Spring Valley Road, Dallas, Dallas County, Texas, 75240, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Martin’s Cove:": [
+   {
+    "lat": 44.32504,
+    "lng": -123.41482,
+    "kind": "tourism/camp_pitch",
+    "label": "Martin's Cove",
+    "where": "Martin's Cove, Alma Way, Benton County, Oregon, United States",
+    "wikidata": null,
+    "wikipedia": null
+   },
+   {
+    "lat": 42.45204,
+    "lng": -107.23993,
+    "kind": "natural/rock",
+    "label": "Martin's Cove",
+    "where": "Martin's Cove, Oregon Trail, Natrona County, Wyoming, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Sixth Crossing:": [
+   {
+    "lat": -18.17592,
+    "lng": 125.56545,
+    "kind": "highway/residential",
+    "label": "Sixth Street",
+    "where": "Sixth Street, Junjuwa, Fitzroy Crossing, Western Australia, 6765, Australia",
+    "wikidata": null,
+    "wikipedia": null
+   },
+   {
+    "lat": 39.95305,
+    "lng": -105.17289,
+    "kind": "highway/residential",
+    "label": "Sixth Avenue",
+    "where": "Sixth Avenue, Coal Creek Crossing, Superior, Boulder County, Colorado, 80027, United States",
+    "wikidata": null,
+    "wikipedia": null
+   },
+   {
+    "lat": -18.17582,
+    "lng": 125.56623,
+    "kind": "highway/footway",
+    "label": "Sixth Street",
+    "where": "Sixth Street, Junjuwa, Fitzroy Crossing, Western Australia, 6765, Australia",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Rock Creek Hollow:": [
+   {
+    "lat": 42.44039,
+    "lng": -108.62393,
+    "kind": "tourism/camp_site",
+    "label": "Rock Creek Hollow",
+    "where": "Rock Creek Hollow, Lewiston Road, Fremont County, Wyoming, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "St. George Tabernacle": [
+   {
+    "lat": 37.10783,
+    "lng": -113.58378,
+    "kind": "amenity/place_of_worship",
+    "label": "St. George Tabernacle",
+    "where": "St. George Tabernacle, 18, Main Street, St. George, Washington County, Utah, 84770, United States",
+    "wikidata": "Q7588227",
+    "wikipedia": "en:St. George Tabernacle"
+   }
+  ],
+  "Hamblin Home": [
+   {
+    "lat": 39.93497,
+    "lng": -86.12589,
+    "kind": "highway/residential",
+    "label": "Hamblin Court",
+    "where": "Hamblin Court, Orchard Park, Home Place, Carmel, Hamilton County, Indiana, 46280, United States",
+    "wikidata": null,
+    "wikipedia": null
+   },
+   {
+    "lat": 54.3953,
+    "lng": -126.66204,
+    "kind": "building/commercial",
+    "label": "Bulkley Valley Home Centre",
+    "where": "Bulkley Valley Home Centre, 2920, Hamblin Frontage Road Highway 16, Houston, Regional District of Bulkley-Nechako, British Columbia, V0J 1Z0, Canada",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "357 LDS Lane, South Royalton, Vermont 05068, United States": [
+   {
+    "lat": 43.8235,
+    "lng": -72.47303,
+    "kind": "building/church",
+    "label": "357",
+    "where": "357, LDS Lane, Royalton, Windsor County, Vermont, 05068, United States",
+    "wikidata": null,
+    "wikipedia": null
+   },
+   {
+    "lat": 43.8244,
+    "lng": -72.47506,
+    "kind": "place/house",
+    "label": "357",
+    "where": "357, LDS Lane, Royalton, Windsor County, Vermont, 05068, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Cove Fort": [
+   {
+    "lat": 38.60063,
+    "lng": -112.58215,
+    "kind": "historic/citywalls",
+    "label": "Cove Fort",
+    "where": "Cove Fort, SR 161, Cove Fort, Millard County, Utah, United States",
+    "wikidata": "Q5178923",
+    "wikipedia": "en:Cove Fort"
+   },
+   {
+    "lat": 38.60161,
+    "lng": -112.58175,
+    "kind": "place/hamlet",
+    "label": "Cove Fort",
+    "where": "Cove Fort, Millard County, Utah, United States",
+    "wikidata": "Q5178923",
+    "wikipedia": "en:Cove Fort"
+   },
+   {
+    "lat": 51.85176,
+    "lng": -8.27735,
+    "kind": "historic/castle",
+    "label": "Cove Fort",
+    "where": "Cove Fort, The Mall, Cobh Urban ED, Municipal District of Cobh, County Cork, Munster, Ireland",
+    "wikidata": "Q20089971",
+    "wikipedia": "en:Cove Fort, County Cork"
+   }
+  ],
+  "465 Tuhikaramea Road, Temple View, Hamilton, 3218, New Zealand": [
+   {
+    "lat": -37.82126,
+    "lng": 175.22704,
+    "kind": "place/house",
+    "label": "465",
+    "where": "465, Tuhikaramea Road, Temple View, Hamilton City, Waikato, 3218, New Zealand",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Church History Museum, Salt Lake City, Utah, United States": [
+   {
+    "lat": 40.77107,
+    "lng": -111.89435,
+    "kind": "tourism/museum",
+    "label": "Church History Museum",
+    "where": "Church History Museum, 45, West Temple, Salt Lake City, Salt Lake County, Utah, 84150, United States",
+    "wikidata": "Q3329669",
+    "wikipedia": null
+   }
+  ],
+  "Beehive House, Salt Lake City, Utah, United States": [
+   {
+    "lat": 40.76975,
+    "lng": -111.88858,
+    "kind": "historic/home",
+    "label": "Beehive House",
+    "where": "Beehive House, 67, South Temple, Salt Lake City, Salt Lake County, Utah, 84150, United States",
+    "wikidata": "Q2363403",
+    "wikipedia": null
+   }
+  ],
+  "Alvin Smith Gravesite, Palmyra, New York, United States": [],
+  "Grandin Printshop, Palmyra, New York, United States": [],
+  "Grandin Printshop: Book of Mormon Publication Site, Palmyra, New York, United States": [],
+  "Joseph Knight Home, Nineveh, New York, United States": [],
+  "Josiah Stowell Home, Afton, New York, United States": [],
+  "Martin and Lucy Harris Farm, Palmyra, New York, United States": [],
+  "Sacred Grove Historic Site, Palmyra, New York, United States": [],
+  "Whitmer Farm: Church Organization Site, Waterloo, New York, United States": [],
+  "Isaac and Lucy Morley Farm, Kirtland, Ohio, United States": [],
+  "John and Elsa Johnson Home, Hiram, Ohio, United States": [],
+  "Kirtland North Cemetery, Kirtland, Ohio, United States": [],
+  "Stannard Quarry, Kirtland, Ohio, United States": [],
+  "Adam-ondi-Ahman, Jameson, Missouri, United States": [],
+  "Lilac Avenue, Jameson, Missouri 64647, United States": [],
+  "David Whitmer Gravesite, Richmond, Missouri, United States": [],
+  "Richmond Cemetery, Richmond, Missouri 64085, United States": [],
+  "David Whitmer Homesite, Richmond, Missouri, United States": [],
+  "Far West, Kingston, Missouri, United States": [],
+  "NW State Highway D, Kingston, Missouri 64650, United States": [],
+  "Gilbert Whitney & Co. Store, Independence, Missouri, United States": [],
+  "Hawn’s Mill, Braymer, Missouri, United States": [],
+  "NE Hauns Mill Dr, Braymer, Missouri 64625, United States": [],
+  "Hawn’s Mill Millstone Monument, Breckenridge, Missouri, United States": [],
+  "500-598 W Broadway St, Breckenridge, Missouri 64625, United States": [],
+  "Hiram Page Gravesite, Crystal Lakes, Missouri, United States": [],
+  "32001-32091 W 146th St, Crystal Lakes, Missouri 64024, United States": [],
+  "Independence Temple Lot, Independence, Missouri, United States": [],
+  "John Whitmer Gravesite, Kingston, Missouri, United States": [],
+  "Monument to the Eight Witnesses, Liberty, Missouri, United States": [],
+  "Printing Office, Independence, Missouri, United States": [],
+  "Independence Printing Office Site, Independence, Missouri, United States": [],
+  "Richmond Jail Site, Richmond, Missouri, United States": [],
+  "Richmond Pioneer Cemetery, Richmond, Missouri, United States": [],
+  "Statue of Alexander Donaphin, Richmond, Missouri, United States": [],
+  "Statue of Alexander Doniphan, Richmond, Missouri, United States": [],
+  "Brigham and Mary Ann Young Home, Nauvoo, Illinois, United States": [],
+  "Calvin and Sally Pendleton Home and Schoolhouse, Nauvoo, Illinois, United States": [],
+  "Calvin and Sally Pendleton Home and School, Nauvoo, Illinois, United States": [],
+  "Carthage Jail Visitors’ Center, Carthage, Illinois, United States": [],
+  "David and Patty Sessions Home, Nauvoo, Illinois, United States": [],
+  "Edward and Ann Hunter Home, Nauvoo, Illinois, United States": [],
+  "Heber and Vilate Kimball Home, Nauvoo, Illinois": [],
+  "Hiram and Sarah Granger Kimball Home, Nauvoo, Illinois, United States": [],
+  "Historic Nauvoo North Visitors’ Center, Nauvoo, Illinois, United States": [],
+  "Historic Nauvoo South Visitors’ Center, Nauvoo, Illinois, United States": [],
+  "Lucy Mack Smith Home, Nauvoo, Illinois, United States": [],
+  "Lyon Drug Store, Nauvoo, Illinois, United States": [],
+  "Monument to Women, Nauvoo, Illinois, United States": [],
+  "The Nauvoo House, Nauvoo, Illinois, United States": [],
+  "Nauvoo Temple Visitors’ Center, Nauvoo, Illinois, United States": [],
+  "Orson and Marinda Hyde Home, Nauvoo, Illinois, United States": [],
+  "Pioneer Memorial and Exodus to Greatness, Nauvoo, Illinois, United States": [],
+  "Pioneer Saints Cemetery, Nauvoo, Illinois, United States": [],
+  "George and Christiana Riser Home and Boot Shop, Nauvoo, Illinois, United States": [],
+  "Riser Boot and Shoe Shop, Nauvoo, Illinois, United States": [],
+  "Smith Family Homestead, Nauvoo, Illinois, United States": [],
+  "Stoddard Tin Shop, Nauvoo, Illinois, United States": [],
+  "Taylor Home, Print Shop, and Post Office, Nauvoo, Illinois, United States": [],
+  "Temple Stones Pavilion, Nauvoo, Illinois, United States": [],
+  "West Grove, Nauvoo, Illinois": [],
+  "Wilford and Phebe Woodruff Home, Nauvoo, Illinois, United States": [],
+  "William and Caroline Weeks Home, Nauvoo, Illinois, United States": [],
+  "William and Esther Gheen Home, Nauvoo, Illinois, United States": [],
+  "Mormon Trail Center at Winter Quarters, Omaha, Nebraska, United States": [
+   {
+    "lat": 41.33504,
+    "lng": -95.96501,
+    "kind": "tourism/museum",
+    "label": "Mormon Trail Center at Winter Quarters",
+    "where": "Mormon Trail Center at Winter Quarters, State Street, Florence, Omaha, Douglas County, Nebraska, 68112, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Kanesville Memorial, Council Bluffs, Iowa, United States": [],
+  "Mount Pisgah Monument, Thayer, Iowa, United States": [],
+  "Martin’s Cove: Mormon Trail Site, Alcova, Wyoming, United States": [],
+  "Martin’s Cove:, Alcova, Wyoming, United States": [],
+  "Sixth Crossing: Mormon Trail Site, Lander, Wyoming, United States": [],
+  "Sixth Crossing:, Lander, Wyoming, United States": [],
+  "Rock Creek Hollow: Mormon Trail Site, Lander, Wyoming, United States": [],
+  "Rock Creek Hollow:, Lander, Wyoming, United States": [],
+  "Brigham Young Winter Home and Office, North St. George, Utah, United States": [],
+  "St. George Tabernacle, St. George, Utah, United States": [
+   {
+    "lat": 37.10783,
+    "lng": -113.58378,
+    "kind": "amenity/place_of_worship",
+    "label": "St. George Tabernacle",
+    "where": "St. George Tabernacle, 18, Main Street, St. George, Washington County, Utah, 84770, United States",
+    "wikidata": "Q7588227",
+    "wikipedia": "en:St. George Tabernacle"
+   }
+  ],
+  "Hamblin Home, Santa Clara, Utah, United States": [
+   {
+    "lat": 37.13498,
+    "lng": -113.67024,
+    "kind": "leisure/park",
+    "label": "Jacob Hamblin Home Historical Site",
+    "where": "Jacob Hamblin Home Historical Site, Santa Clara, Washington County, Utah, 84765, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "Joseph Smith Birthplace, South Royalton, Vermont, United States": [],
+  "Mormon Battalion Historic Site at San Diego, San Diego, California, United States": [],
+  "Cove Fort, Beaver, Utah, United States": [],
+  "Matthew Cowley Pacific Church History Centre, Hamilton, New Zealand": [],
+  "Heber and Vilate Kimball Home, Nauvoo, Illinois, United States": [],
+  "995 Munson St, Nauvoo, Illinois 62354, United States": [
+   {
+    "lat": 40.54539,
+    "lng": -91.38686,
+    "kind": "place/house",
+    "label": "995",
+    "where": "995, Munson Street, Nauvoo, Hancock County, Illinois, 62354, United States",
+    "wikidata": null,
+    "wikipedia": null
+   }
+  ],
+  "West Grove, Nauvoo, Illinois, United States": []
+ }
+}

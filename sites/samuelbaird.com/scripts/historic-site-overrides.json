@@ -1,0 +1,24 @@
+{
+  "_help": "Hand corrections and additions, applied after the automatic sources. Key by site id (the slug in /learn/locations/<slug>). Any field overrides the scraped one; lat/lng need coordPrecision (site | address | street | city). \"add\": true adds a Church-operated site that has no /learn/locations page. Every entry needs a note and an official source URL.",
+  "beehive-house": {
+    "add": true,
+    "name": "Beehive House",
+    "category": "Historic site",
+    "street": "67 East South Temple",
+    "city": "Salt Lake City",
+    "region": "Utah",
+    "postalCode": "84150",
+    "country": "United States",
+    "officialUrl": "https://www.churchofjesuschrist.org/learn/beehive-house-temple-square",
+    "source": "https://www.churchofjesuschrist.org/learn/history/sites?lang=eng",
+    "note": "Listed on the Historic Sites and Museums page as \"Beehive and Lion House\"; its link opens the Temple Square page, which gives the address. No /learn/locations page."
+  },
+  "taylor-home-print-shop-and-post-office": {
+    "region": "Illinois",
+    "note": "The official page spells the state \"Iillinois\"."
+  },
+  "statue-of-alexander-doniphan": {
+    "name": "Statue of Alexander Doniphan",
+    "note": "The Missouri \"All Locations\" list spells it \"Donaphin\"; the site's own official page titles it \"Statue of Alexander Doniphan\"."
+  }
+}
