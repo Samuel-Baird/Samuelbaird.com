@@ -197,7 +197,4 @@ values
   ('UCta9ZWDY95GMnMFZdqkfq1w', 'UCta9ZWDY95GMnMFZdqkfq1w', 'Religious', true),
   ('UChjEQUh6qC7-AlH4Zh_MwFA', 'UChjEQUh6qC7-AlH4Zh_MwFA', 'Religious', true),
   ('UCH7kWc1oAyb60zH-iEEWAxw', 'UCH7kWc1oAyb60zH-iEEWAxw', 'Religious', true)
-on conflict (youtube_channel_id) do update set
-  channel_type = excluded.channel_type,
-  is_active    = excluded.is_active,
-  updated_at   = now();
+on conflict (youtube_channel_id) do nothing;
