@@ -1,0 +1,57 @@
+{
+ "_about": "Troubleshooting notes for gaps that scripts/fetch-hymns.mjs finds (missing numbers, first lines or credits). Key: record id (edition-number) or edition:from-to for a range. 'tried' is what was checked and came up empty; 'leads' is where to look next. Never fill a fact from memory: when you find one, add it to hymn-additions.json with its source.",
+ "1841-75": {
+  "tried": [
+   "Joseph Smith Papers table of contents (skips 75: 74 is p. 83, 76 is p. 87)",
+   "Joseph Smith Papers transcription pages 83-86 (the page text loads from an internal API that is not reachable)"
+  ],
+  "leads": [
+   "Found in the archive.org scan (collectionofsacr01smit, printed p. 83): now in hymn-additions.json. Check the first line against the page image, then set verify to false.",
+   "Ask the Joseph Smith Papers to add Hymn 75 to the table of contents for collection-of-sacred-hymns-1841."
+  ]
+ },
+ "1985-86": {
+  "tried": [
+   "Gospel Library page /manual/hymns/how-great-thou-art: 'Due to licensing limitations, the Church cannot publish this music in this format.' No words.",
+   "Sacred Music page /media/music/songs/how-great-thou-art: verses list is empty",
+   "Official sheet-music PDF: the same licensing notice, no words",
+   "Wikidata (P1922 first line): no first line on any How Great Thou Art item",
+   "hymnary.org: blocks scripts (bot challenge)"
+  ],
+  "leads": [
+   "A printed copy of Hymns (1985), p. 86, or its Index of First Lines and Titles",
+   "hymnary.org in a browser: the hymnal 'Hymns of the Church of Jesus Christ of Latter-day Saints' (1985), no. 86",
+   "Hope Publishing (US print rights holder) for Stuart K. Hine's text as printed"
+  ]
+ },
+ "1985-219": {
+  "tried": [
+   "Gospel Library page /manual/hymns/because-i-have-been-given-much: licensing notice, no words",
+   "Sacred Music page and official sheet-music PDF: licensing notice, no words",
+   "hymnary.org: blocks scripts"
+  ],
+  "leads": [
+   "Wikidata Q128275145 'Because I Have Been Given Much' gives first line 'Because I have been given much' (P1922). The 1985 credit says the text is altered ('alt.'), so check it against a printed 1985 hymnbook before using it.",
+   "A printed copy of Hymns (1985), p. 219, or its Index of First Lines and Titles"
+  ]
+ },
+ "1985-299": {
+  "tried": [
+   "Gospel Library page /manual/hymns/children-of-our-heavenly-father: licensing notice, no words",
+   "Sacred Music page and official sheet-music PDF: licensing notice, no words",
+   "hymnary.org: blocks scripts"
+  ],
+  "leads": [
+   "Wikidata Q127422001 'Children of the Heavenly Father' gives first line 'Children of the heavenly Father' (Olson's translation as Lutherans sing it). The 1985 title is 'Children of Our Heavenly Father', so the 1985 first line probably differs: check a printed copy.",
+   "A printed copy of Hymns (1985), p. 299, or its Index of First Lines and Titles"
+  ]
+ },
+ "hfhc:1079-1200": {
+  "tried": [
+   "Gospel Library table of contents for Hymns—For Home and Church (90 hymns: 1001-1078 and 1201-1212)"
+  ],
+  "leads": [
+   "Not missing yet: these numbers have not been published. Rerun node scripts/fetch-hymns.mjs after each new release batch."
+  ]
+ }
+}

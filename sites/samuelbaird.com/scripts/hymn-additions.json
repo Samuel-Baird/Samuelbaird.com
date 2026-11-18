@@ -1,0 +1,9 @@
+{
+ "_about": "Hymns the main sources skip, entered by hand from a primary source. Key: edition:number. Each needs firstLine, source and how. Set verify: true until someone has checked the page image; the record and the missing list both carry the flag.",
+ "1841:75": {
+  "firstLine": "O thou in whose presence",
+  "source": "https://archive.org/details/collectionofsacr01smit/page/83/mode/1up",
+  "how": "The Joseph Smith Papers table of contents skips hymn 75 (it goes from 74 on p. 83 to 76 on p. 87). Taken from the archive.org scan of the same 1841 Nauvoo printing (Church History Library copy), printed page 83, leaf 87. OCR reads 'HYMN 75. P. M. / 1 O thou in whose presence / My soul takes delight.' The first printed line is the short line 'O thou in whose presence'.",
+  "verify": true
+ }
+}

@@ -1,0 +1,4201 @@
+{
+ "pages": {
+  "/manual/hymns/the-morning-breaks": {
+   "number": "1",
+   "title": "The Morning Breaks",
+   "firstLine": "The morning breaks, the shadows flee",
+   "credits": "<p><em>Text:</em> Parley P. Pratt, 1807–1857</p>\n<p><em>Music:</em> George Careless, 1839–1932</p>"
+  },
+  "/manual/hymns/the-spirit-of-god": {
+   "number": "2",
+   "title": "The Spirit of God",
+   "firstLine": "The Spirit of God like a fire is burning!",
+   "credits": "<p><em>Text:</em> William W. Phelps, 1792–1872. Sung at the Kirtland Temple dedication in 1836.</p>\n<p><em>Music:</em> Anon., ca. 1844</p>"
+  },
+  "/manual/hymns/now-let-us-rejoice": {
+   "number": "3",
+   "title": "Now Let Us Rejoice",
+   "firstLine": "Now let us rejoice in the day of salvation.",
+   "credits": "<p><em>Text:</em> William W. Phelps, 1792–1872</p>\n<p><em>Music:</em> Henry Tucker, 1826–1882</p>"
+  },
+  "/manual/hymns/truth-eternal": {
+   "number": "4",
+   "title": "Truth Eternal",
+   "firstLine": "Truth eternal, truth divine",
+   "credits": "<p><em>Text:</em> Parley P. Pratt, 1807–1857</p>\n<p><em>Music:</em> Alexander Schreiner, 1901–1987</p>"
+  },
+  "/manual/hymns/high-on-the-mountain-top": {
+   "number": "5",
+   "title": "High on the Mountain Top",
+   "firstLine": "High on the mountain top",
+   "credits": "<p><em>Text:</em> Joel H. Johnson, 1802–1882</p>\n<p><em>Music:</em> Ebenezer Beesley, 1840–1906</p>"
+  },
+  "/manual/hymns/redeemer-of-israel": {
+   "number": "6",
+   "title": "Redeemer of Israel",
+   "firstLine": "Redeemer of Israel",
+   "credits": "<p><em>Text:</em> William W. Phelps, 1792–1872; adapted from Joseph Swain, 1761–1796</p>\n<p><em>Music:</em> Freeman Lewis, 1780–1859</p>"
+  },
+  "/manual/hymns/israel-israel-god-is-calling": {
+   "number": "7",
+   "title": "Israel, Israel, God Is Calling",
+   "firstLine": "Israel, Israel, God is calling",
+   "credits": "<p><em>Text:</em> Richard Smyth, 1838–1914</p>\n<p><em>Music:</em> Charles C. Converse, 1832–1918</p>"
+  },
+  "/manual/hymns/awake-and-arise": {
+   "number": "8",
+   "title": "Awake and Arise",
+   "firstLine": "Awake and arise, O ye slumbering nations!",
+   "credits": "<p><em>Text:</em> Theodore E. Curtis, 1872–1957. © 1984 IRI</p>\n<p><em>Music:</em> Carolee Curtis Green, b. 1940. © 1984 IRI</p>"
+  },
+  "/manual/hymns/come-rejoice": {
+   "number": "9",
+   "title": "Come, Rejoice",
+   "firstLine": "Come, rejoice, the King of glory",
+   "credits": "<p><em>Text and music:</em> Tracy Y. Cannon, 1879–1961, adapted. © 1948 IRI</p>"
+  },
+  "/manual/hymns/come-sing-to-the-lord": {
+   "number": "10",
+   "title": "Come, Sing to the Lord",
+   "firstLine": "Come, sing to the Lord, his name to praise.",
+   "credits": "<p><em>Text and music:</em> Gerrit de Jong Jr., 1892–1978</p>"
+  },
+  "/manual/hymns/what-was-witnessed-in-the-heavens": {
+   "number": "11",
+   "title": "What Was Witnessed in the Heavens?",
+   "firstLine": "What was witnessed in the heavens?",
+   "credits": "<p><em>Text:</em> John S. Davis, 1813–1882</p>\n<p><em>Music:</em> Evan Stephens, 1854–1930</p>"
+  },
+  "/manual/hymns/twas-witnessed-in-the-morning-sky": {
+   "number": "12",
+   "title": "’Twas Witnessed in the Morning Sky",
+   "firstLine": "’Twas witnessed in the morning sky",
+   "credits": "<p><em>Text:</em> Adapted by G. William Richards, 1918–2005. © 1985 IRI</p>\n<p><em>Music:</em> H. Walford Davies, 1869–1941, alt. Based on the tune <small>SOLEMN MELODY</small>.</p>\n<p>Reproduced by permission of Novello and Company Limited, Making copies without written permission of the copyright owner is prohibited.</p>"
+  },
+  "/manual/hymns/an-angel-from-on-high": {
+   "number": "13",
+   "title": "An Angel from on High",
+   "firstLine": "An angel from on high",
+   "credits": "<p><em>Text:</em> Parley P. Pratt, 1807–1857</p>\n<p><em>Music:</em> John E. Tullidge, 1806–1873</p>"
+  },
+  "/manual/hymns/sweet-is-the-peace-the-gospel-brings": {
+   "number": "14",
+   "title": "Sweet Is the Peace the Gospel Brings",
+   "firstLine": "Sweet is the peace the gospel brings",
+   "credits": "<p><em>Text:</em> Mary Ann Morton, 1826–1897</p>\n<p><em>Music:</em> Alfred M. Durham, 1872–1957. © 1948 IRI</p>"
+  },
+  "/manual/hymns/i-saw-a-mighty-angel-fly": {
+   "number": "15",
+   "title": "I Saw a Mighty Angel Fly",
+   "firstLine": "I saw a mighty angel fly",
+   "credits": "<p><em>Text:</em> Anon., ca. 1840</p>\n<p><em>Music:</em> <small>FOREST GREEN</small>, collected, adapted, and arranged by Ralph Vaughan Williams, 1872–1958. From the <cite>English Hymnal.</cite> Reproduced by permission of CopyCat Music Licensing, LLC, on behalf of Oxford University Press. All rights reserved.</p>"
+  },
+  "/manual/hymns/what-glorious-scenes-mine-eyes-behold": {
+   "number": "16",
+   "title": "What Glorious Scenes Mine Eyes Behold",
+   "firstLine": "What glorious scenes mine eyes behold!",
+   "credits": "<p><em>Text:</em> Anon., ca. 1840</p>\n<p><em>Music:</em> Ebenezer Beesley, 1840–1906</p>"
+  },
+  "/manual/hymns/awake-ye-saints-of-god-awake": {
+   "number": "17",
+   "title": "Awake, Ye Saints of God, Awake!",
+   "firstLine": "Awake, ye Saints of God, awake!",
+   "credits": "<p><em>Text:</em> Eliza R. Snow, 1804–1887</p>\n<p><em>Music:</em> Evan Stephens, 1854–1930</p>"
+  },
+  "/manual/hymns/the-voice-of-god-again-is-heard": {
+   "number": "18",
+   "title": "The Voice of God Again Is Heard",
+   "firstLine": "The voice of God again is heard.",
+   "credits": "<p><em>Text and music:</em> Evan Stephens, 1854–1930</p>"
+  },
+  "/manual/hymns/we-thank-thee-o-god-for-a-prophet": {
+   "number": "19",
+   "title": "We Thank Thee, O God, for a Prophet",
+   "firstLine": "We thank thee, O God, for a prophet",
+   "credits": "<p><em>Text:</em> William Fowler, 1830–1865</p>\n<p><em>Music:</em> Caroline Sheridan Norton, 1808–ca. 1877</p>"
+  },
+  "/manual/hymns/god-of-power-god-of-right": {
+   "number": "20",
+   "title": "God of Power, God of Right",
+   "firstLine": "God of power, God of right",
+   "credits": "<p><em>Text:</em> Wallace F. Bennett, 1898–1993. © 1948 IRI</p>\n<p><em>Music:</em> Tracy Y. Cannon, 1879–1961. © 1948 IRI</p>"
+  },
+  "/manual/hymns/come-listen-to-a-prophets-voice": {
+   "number": "21",
+   "title": "Come, Listen to a Prophet’s Voice",
+   "firstLine": "Come, listen to a prophet’s voice",
+   "credits": "<p><em>Text:</em> Joseph S. Murdock, 1822–1899. Verse four, Bruce R. McConkie, 1915–1985. © 1985 IRI</p>\n<p><em>Music:</em> Joseph J. Daynes, 1851–1920</p>"
+  },
+  "/manual/hymns/we-listen-to-a-prophets-voice": {
+   "number": "22",
+   "title": "We Listen to a Prophet’s Voice",
+   "firstLine": "We listen to a prophet’s voice and hear the Savior too.",
+   "credits": "<p><em>Text:</em> Marylou Cunningham Leavitt, b. 1928.</p>\n<p><em>Music:</em> Darwin K. Wolford, b. 1936.</p>\n<p>© 1979 Sonos Music Resources. Used by permission. This hymn may be copied for incidental, noncommercial church or home use.</p>"
+  },
+  "/manual/hymns/we-ever-pray-for-thee": {
+   "number": "23",
+   "title": "We Ever Pray for Thee",
+   "firstLine": "We ever pray for thee, our prophet dear",
+   "credits": "<p><em>Text:</em> Evan Stephens, 1854–1930</p>\n<p><em>Music:</em> H. A. Tuckett, 1852–1918, adapted by Evan Stephens, 1854–1930</p>"
+  },
+  "/manual/hymns/god-bless-our-prophet-dear": {
+   "number": "24",
+   "title": "God Bless Our Prophet Dear",
+   "firstLine": "God bless our prophet dear",
+   "credits": "<p><em>Text:</em> Bernard Snow, 1822–1894, alt.</p>\n<p><em>Music:</em> Harry A. Dean, 1892–1987. © 1985 IRI</p>"
+  },
+  "/manual/hymns/now-well-sing-with-one-accord": {
+   "number": "25",
+   "title": "Now We’ll Sing with One Accord",
+   "firstLine": "Now we’ll sing with one accord",
+   "credits": "<p><em>Text:</em> William W. Phelps, 1792–1872</p>\n<p><em>Music:</em> Joseph J. Daynes, 1851–1920</p>"
+  },
+  "/manual/hymns/joseph-smiths-first-prayer": {
+   "number": "26",
+   "title": "Joseph Smith’s First Prayer",
+   "firstLine": "Oh, how lovely was the morning!",
+   "credits": "<p><em>Text:</em> George Manwaring, 1854–1889</p>\n<p><em>Music:</em> Sylvanus Billings Pond, 1792–1871; adapted by A. C. Smyth, 1840–1909</p>"
+  },
+  "/manual/hymns/praise-to-the-man": {
+   "number": "27",
+   "title": "Praise to the Man",
+   "firstLine": "Praise to the man who communed with Jehovah!",
+   "credits": "<p><em>Text:</em> William W. Phelps, 1792–1872</p>\n<p><em>Music:</em> Scottish folk song</p>"
+  },
+  "/manual/hymns/saints-behold-how-great-jehovah": {
+   "number": "28",
+   "title": "Saints, Behold How Great Jehovah",
+   "firstLine": "Saints, behold how great Jehovah",
+   "credits": "<p><em>Text:</em> Douglas W. Stott, b. 1925. © 1985 IRI</p>\n<p><em>Music:</em> A. Laurence Lyon, 1934–2006. © 1985 IRI</p>"
+  },
+  "/manual/hymns/a-poor-wayfaring-man-of-grief": {
+   "number": "29",
+   "title": "A Poor Wayfaring Man of Grief",
+   "firstLine": "A poor wayfaring Man of grief",
+   "credits": "<p><em>Text:</em> James Montgomery, 1771–1854</p>\n<p><em>Music:</em> George Coles, 1792–1858, alt.</p>\n<p>Hymn sung prior to the martyrdom of the Prophet Joseph Smith. See <cite>History of the Church,</cite> 6:614–15.</p>"
+  },
+  "/manual/hymns/come-come-ye-saints": {
+   "number": "30",
+   "title": "Come, Come, Ye Saints",
+   "firstLine": "Come, come, ye Saints, no toil nor labor fear",
+   "credits": "<p><em>Text:</em> William Clayton, 1814–1879</p>\n<p><em>Music:</em> English folk song</p>"
+  },
+  "/manual/hymns/o-god-our-help-in-ages-past": {
+   "number": "31",
+   "title": "O God, Our Help in Ages Past",
+   "firstLine": "O God, our help in ages past",
+   "credits": "<p><em>Text:</em> Isaac Watts, 1674–1748</p>\n<p><em>Music:</em> William Croft, 1677–1727</p>"
+  },
+  "/manual/hymns/the-happy-day-at-last-has-come": {
+   "number": "32",
+   "title": "The Happy Day at Last Has Come",
+   "firstLine": "The happy day at last has come.",
+   "credits": "<p><em>Text:</em> Philo Dibble, 1806–1895</p>\n<p><em>Music:</em> Ebenezer Beesley, 1840–1906</p>"
+  },
+  "/manual/hymns/our-mountain-home-so-dear": {
+   "number": "33",
+   "title": "Our Mountain Home So Dear",
+   "firstLine": "Our mountain home so dear",
+   "credits": "<p><em>Text:</em> Emmeline B. Wells, 1828–1921</p>\n<p><em>Music:</em> Evan Stephens, 1854–1930</p>"
+  },
+  "/manual/hymns/o-ye-mountains-high": {
+   "number": "34",
+   "title": "O Ye Mountains High",
+   "firstLine": "O ye mountains high, where the clear blue sky",
+   "credits": "<p><em>Text:</em> Charles W. Penrose, 1832–1925</p>\n<p><em>Music:</em> H. S. Thompson, ca. 1852</p>"
+  },
+  "/manual/hymns/for-the-strength-of-the-hills": {
+   "number": "35",
+   "title": "For the Strength of the Hills",
+   "firstLine": "For the strength of the hills we bless thee",
+   "credits": "<p><em>Text:</em> Felicia D. Hemans, 1793–1835; adapted by Edward L. Sloan, 1830–1874</p>\n<p><em>Music:</em> Evan Stephens, 1854–1930</p>"
+  },
+  "/manual/hymns/they-the-builders-of-the-nation": {
+   "number": "36",
+   "title": "They, the Builders of the Nation",
+   "firstLine": "They, the builders of the nation",
+   "credits": "<p><em>Text:</em> Ida R. Alldredge, 1892–1943. © 1948 IRI</p>\n<p><em>Music:</em> Alfred M. Durham, 1872–1957. © 1948 IRI</p>"
+  },
+  "/manual/hymns/the-wintry-day-descending-to-its-close": {
+   "number": "37",
+   "title": "The Wintry Day, Descending to Its Close",
+   "firstLine": "The wintry day, descending to its close",
+   "credits": "<p><em>Text:</em> Orson F. Whitney, 1855–1931</p>\n<p><em>Music:</em> Edward P. Kimball, 1882–1937</p>"
+  },
+  "/manual/hymns/come-all-ye-saints-of-zion": {
+   "number": "38",
+   "title": "Come, All Ye Saints of Zion",
+   "firstLine": "Come, all ye Saints of Zion",
+   "credits": "<p><em>Text:</em> William W. Phelps, 1792–1872</p>\n<p><em>Music:</em> John E. Tullidge, 1806–1873</p>"
+  },
+  "/manual/hymns/o-saints-of-zion": {
+   "number": "39",
+   "title": "O Saints of Zion",
+   "firstLine": "O Saints of Zion, hear the voice",
+   "credits": "<p><em>Text:</em> Ed M. Rowe, 1878–1951. © 1948 IRI</p>\n<p><em>Music:</em> Robert P. Manookin, 1918–1997. © 1948 IRI</p>"
+  },
+  "/manual/hymns/arise-o-glorious-zion": {
+   "number": "40",
+   "title": "Arise, O Glorious Zion",
+   "firstLine": "Arise, O glorious Zion",
+   "credits": "<p><em>Text:</em> William G. Mills, 1822–1895</p>\n<p><em>Music:</em> George Careless, 1839–1932</p>"
+  },
+  "/manual/hymns/let-zion-in-her-beauty-rise": {
+   "number": "41",
+   "title": "Let Zion in Her Beauty Rise",
+   "firstLine": "Let Zion in her beauty rise",
+   "credits": "<p><em>Text:</em> Edward Partridge, 1793–1840</p>\n<p><em>Music:</em> Anon., Württemberg, Germany, ca. 1784</p>"
+  },
+  "/manual/hymns/hail-to-the-brightness-of-zions-glad-morning": {
+   "number": "42",
+   "title": "Hail to the Brightness of Zion’s Glad Morning!",
+   "firstLine": "Hail to the brightness of Zion’s glad morning!",
+   "credits": "<p><em>Text:</em> Thomas Hastings, 1784–1872</p>\n<p><em>Music:</em> Edwin F. Parry, 1850–1935</p>"
+  },
+  "/manual/hymns/zion-stands-with-hills-surrounded": {
+   "number": "43",
+   "title": "Zion Stands with Hills Surrounded",
+   "firstLine": "Zion stands with hill surrounded",
+   "credits": "<p><em>Text:</em> Thomas Kelly, 1769–1854</p>\n<p><em>Music:</em> A. C. Smyth, 1840–1909</p>"
+  },
+  "/manual/hymns/beautiful-zion-built-above": {
+   "number": "44",
+   "title": "Beautiful Zion, Built Above",
+   "firstLine": "Beautiful Zion, built above",
+   "credits": "<p><em>Text:</em> George Gill, 1820–1880</p>\n<p><em>Music:</em> Joseph G. Fones, 1828–1906</p>"
+  },
+  "/manual/hymns/lead-me-into-life-eternal": {
+   "number": "45",
+   "title": "Lead Me into Life Eternal",
+   "firstLine": "Lead me into life eternal",
+   "credits": "<p><em>Text:</em> John A. Widtsoe, 1872–1952. © 1948 IRI</p>\n<p><em>Music:</em> Alexander Schreiner, 1901–1987. © 1948 IRI</p>"
+  },
+  "/manual/hymns/glorious-things-of-thee-are-spoken": {
+   "number": "46",
+   "title": "Glorious Things of Thee Are Spoken",
+   "firstLine": "Glorious things of thee are spoken",
+   "credits": "<p><em>Text:</em> John Newton, 1725–1807</p>\n<p><em>Music:</em> Franz Joseph Haydn, 1732–1809</p>"
+  },
+  "/manual/hymns/we-will-sing-of-zion": {
+   "number": "47",
+   "title": "We Will Sing of Zion",
+   "firstLine": "We will sing of Zion",
+   "credits": "<p><em>Text and music:</em> Merrill Bradshaw, 1929–2000 © 1980 IRI</p>"
+  },
+  "/manual/hymns/glorious-things-are-sung-of-zion": {
+   "number": "48",
+   "title": "Glorious Things Are Sung of Zion",
+   "firstLine": "Glorious things are sung of Zion",
+   "credits": "<p><em>Text:</em> William W. Phelps, 1792–1872</p>\n<p><em>Music:</em> Dutch melody, ca. 1710</p>"
+  },
+  "/manual/hymns/adam-ondi-ahman": {
+   "number": "49",
+   "title": "Adam-ondi-Ahman",
+   "firstLine": "This earth was once a garden place",
+   "credits": "<p><em>Text:</em> William W. Phelps, 1792–1872</p>\n<p><em>Music:</em> Anon., <cite>Southern Harmony,</cite> 1835</p>"
+  },
+  "/manual/hymns/come-thou-glorious-day-of-promise": {
+   "number": "50",
+   "title": "Come, Thou Glorious Day of Promise",
+   "firstLine": "Come, thou glorious day of promise",
+   "credits": "<p><em>Text:</em> From <cite>Pratt’s Collection,</cite> ca. 1830, alt.</p>\n<p><em>Music:</em> A. C. Smyth, 1840–1909</p>"
+  },
+  "/manual/hymns/sons-of-michael-he-approaches": {
+   "number": "51",
+   "title": "Sons of Michael, He Approaches",
+   "firstLine": "Sons of Michael, he approaches!",
+   "credits": "<p><em>Text:</em> Elias L. T. Harrison, 1830–1900, alt.</p>\n<p><em>Music:</em> Darwin K. Wolford, b. 1936. © 1985 IRI</p>"
+  },
+  "/manual/hymns/the-day-dawn-is-breaking": {
+   "number": "52",
+   "title": "The Day Dawn Is Breaking",
+   "firstLine": "The day dawn is breaking, the world is awaking",
+   "credits": "<p><em>Text:</em> Joseph L. Townsend, 1849–1942</p>\n<p><em>Music:</em> William Clayson, 1840–1887</p>"
+  },
+  "/manual/hymns/let-earths-inhabitants-rejoice": {
+   "number": "53",
+   "title": "Let Earth’s Inhabitants Rejoice",
+   "firstLine": "Let earth’s inhabitants rejoice",
+   "credits": "<p><em>Text:</em> William Clegg, 1823–1903</p>\n<p><em>Music:</em> Leroy J. Robertson, 1896–1971. © 1948 IRI</p>"
+  },
+  "/manual/hymns/behold-the-mountain-of-the-lord": {
+   "number": "54",
+   "title": "Behold, the Mountain of the Lord",
+   "firstLine": "Behold, the mountain of the Lord",
+   "credits": "<p><em>Text:</em> Michael Bruce, 1746–1767, adapted</p>\n<p><em>Music:</em> Leland B. Sateren, 1913–2007. Tune and setting copyright Augsburg Publishing House. Used by permission. Making copies without written permission of the copyright owner is prohibited.</p>"
+  },
+  "/manual/hymns/lo-the-mighty-god-appearing": {
+   "number": "55",
+   "title": "Lo, the Mighty God Appearing!",
+   "firstLine": "Lo, the mighty God appearing!",
+   "credits": "<p><em>Text:</em> William Goode, 1762–1816</p>\n<p><em>Music:</em> Evan Stephens, 1854–1930</p>"
+  },
+  "/manual/hymns/softly-beams-the-sacred-dawning": {
+   "number": "56",
+   "title": "Softly Beams the Sacred Dawning",
+   "firstLine": "Softly beams the sacred dawning",
+   "credits": "<p><em>Text:</em> John Jaques, 1827–1900</p>\n<p><em>Music:</em> J. Spencer Cornwall, 1888–1983. © J. Spencer Cornwall, 1983. This hymn may be copied for incidental, noncommercial church or home use.</p>"
+  },
+  "/manual/hymns/were-not-ashamed-to-own-our-lord": {
+   "number": "57",
+   "title": "We’re Not Ashamed to Own Our Lord",
+   "firstLine": "We’re not ashamed to own our Lord",
+   "credits": "<p><em>Text:</em> William W. Phelps, 1792–1872, alt</p>\n<p><em>Music:</em> John Longhurst, b. 1940. © 1985 IRI</p>"
+  },
+  "/manual/hymns/come-ye-children-of-the-lord": {
+   "number": "58",
+   "title": "Come, Ye Children of the Lord",
+   "firstLine": "Come, ye children of the Lord",
+   "credits": "<p><em>Text:</em> James H. Wallis, 1861–1940</p>\n<p><em>Music:</em> Spanish melody; arr. by Benjamin Carr, 1768–1831</p>"
+  },
+  "/manual/hymns/come-o-thou-king-of-kings": {
+   "number": "59",
+   "title": "Come, O Thou King of Kings",
+   "firstLine": "Come, O thou King of Kings!",
+   "credits": "<p><em>Text:</em> Parley P. Pratt, 1807–1857</p>\n<p><em>Music:</em> Anon., ca. 1889</p>"
+  },
+  "/manual/hymns/battle-hymn-of-the-republic": {
+   "number": "60",
+   "title": "Battle Hymn of the Republic",
+   "firstLine": "Mine eyes have seen the glory of the coming of the Lord",
+   "credits": "<p><em>Text:</em> Julia Ward Howe, 1819–1910</p>\n<p><em>Music:</em> Anon., ca. 1861</p>"
+  },
+  "/manual/hymns/raise-your-voices-to-the-lord": {
+   "number": "61",
+   "title": "Raise Your Voices to the Lord",
+   "firstLine": "Raise your voices to the Lord",
+   "credits": "<p><em>Text and music:</em> Evan Stephens, 1854–1930</p>"
+  },
+  "/manual/hymns/all-creatures-of-our-god-and-king": {
+   "number": "62",
+   "title": "All Creatures of Our God and King",
+   "firstLine": "All creatures of our God and King",
+   "credits": "<p><em>Text:</em> St. Francis of Assisi, 1182–1226; trans. by William H. Draper, 1855–1933. English translation © G. Schirmer, Inc.</p>\n<p><em>Music:</em> <small>LASST UNS ERFREUEN</small>, arr. by Ralph Vaughan Williams, 1872–1958. From the <cite>English Hymnal.</cite> Reproduced by permission of CopyCat Music Licensing, LLC, on behalf of Oxford University Press. All rights reserved.</p>"
+  },
+  "/manual/hymns/great-king-of-heaven": {
+   "number": "63",
+   "title": "Great King of Heaven",
+   "firstLine": "Great King of heav’n, our hearts we raise",
+   "credits": "<p><em>Text:</em> Carrie Stockdale Thomas, 1848–1931. © 1948 IRI</p>\n<p><em>Music:</em> Leroy J. Robertson, 1896–1971. © 1948 IRI</p>"
+  },
+  "/manual/hymns/on-this-day-of-joy-and-gladness": {
+   "number": "64",
+   "title": "On This Day of Joy and Gladness",
+   "firstLine": "On this day of joy and gladness",
+   "credits": "<p><em>Text and music:</em> Leroy J. Robertson, 1896–1971. © 1980 IRI</p>"
+  },
+  "/manual/hymns/come-all-ye-saints-who-dwell-on-earth": {
+   "number": "65",
+   "title": "Come, All Ye Saints Who Dwell on Earth",
+   "firstLine": "Come, all ye Saints who dwell on earth",
+   "credits": "<p><em>Text:</em> William W. Phelps, 1792–1872</p>\n<p><em>Music:</em> William B. Bradbury, 1816–1868</p>"
+  },
+  "/manual/hymns/rejoice-the-lord-is-king": {
+   "number": "66",
+   "title": "Rejoice, the Lord Is King!",
+   "firstLine": "Rejoice, the Lord is King!",
+   "credits": "<p><em>Text:</em> Charles Wesley, 1707–1788</p>\n<p><em>Music:</em> Horatio Parker, 1863–1919</p>"
+  },
+  "/manual/hymns/glory-to-god-on-high": {
+   "number": "67",
+   "title": "Glory to God on High",
+   "firstLine": "Glory to God on high!",
+   "credits": "<p><em>Text:</em> James Allen, 1734–1804, alt.</p>\n<p><em>Music:</em> Felice de Giardini, 1716–1796</p>"
+  },
+  "/manual/hymns/a-mighty-fortress-is-our-god": {
+   "number": "68",
+   "title": "A Mighty Fortress Is Our God",
+   "firstLine": "A mighty fortress is our God",
+   "credits": "<p><em>Text:</em> Martin Luther, 1483–1546, adapted</p>\n<p><em>Music:</em> Attr. to Martin Luther</p>"
+  },
+  "/manual/hymns/all-glory-laud-and-honor": {
+   "number": "69",
+   "title": "All Glory, Laud, and Honor",
+   "firstLine": "All glory, laud, and honor",
+   "credits": "<p><em>Text:</em> Theodulph of Orleans, ca. 760–821</p>\n<p><em>Music:</em> Melchior Teschner, 1584–1635</p>"
+  },
+  "/manual/hymns/sing-praise-to-him": {
+   "number": "70",
+   "title": "Sing Praise to Him",
+   "firstLine": "Sing praise to him who reigns above",
+   "credits": "<p><em>Text:</em> Johann J. Schütz, 1640–1690; trans. by Frances Elizabeth Cox, 1812–1897</p>\n<p>Music: From <cite>Bohemian Brethren’s Songbook,</cite> 1566, alt.</p>"
+  },
+  "/manual/hymns/with-songs-of-praise": {
+   "number": "71",
+   "title": "With Songs of Praise",
+   "firstLine": "With songs of praise and gratitude",
+   "credits": "<p><em>Text:</em> Penelope Moody Allen, b. 1939. © 1985 IRI</p>\n<p><em>Music:</em> Newel Kay Brown, b. 1932. © 1985 IRI</p>"
+  },
+  "/manual/hymns/praise-to-the-lord-the-almighty": {
+   "number": "72",
+   "title": "Praise to the Lord, the Almighty",
+   "firstLine": "Praise to the Lord, the Almighty, the King of creation!",
+   "credits": "<p><em>Text:</em> Joachim Neander, 1650–1680; trans. by Catherine Winkworth, 1829–1878</p>\n<p><em>Music:</em> From <cite>Stralsund Gesangbuch,</cite> 1665; arr. by William S. Bennett, 1816–1875, and Otto Goldschmidt, 1829–1907</p>"
+  },
+  "/manual/hymns/praise-the-lord-with-heart-and-voice": {
+   "number": "73",
+   "title": "Praise the Lord with Heart and Voice",
+   "firstLine": "Praise the Lord with heart and voice.",
+   "credits": "<p><em>Text and music:</em> Tracy Y. Cannon, 1879–1961. © 1948 IRI</p>"
+  },
+  "/manual/hymns/praise-ye-the-lord": {
+   "number": "74",
+   "title": "Praise Ye the Lord",
+   "firstLine": "Praise ye the Lord! My heart shall join",
+   "credits": "<p><em>Text:</em> Isaac Watts, 1674–1748; based on <a href=\"/study/scriptures/ot/ps/146\">Psalm 146</a></p>\n<p><em>Music:</em> Evan Stephens, 1854–1930</p>"
+  },
+  "/manual/hymns/in-hymns-of-praise": {
+   "number": "75",
+   "title": "In Hymns of Praise",
+   "firstLine": "In hymns of praise your voices raise",
+   "credits": "<p><em>Text:</em> Ada Blenkhorn</p>\n<p><em>Music:</em> Alfred Beirly</p>"
+  },
+  "/manual/hymns/god-of-our-fathers-we-come-unto-thee": {
+   "number": "76",
+   "title": "God of Our Fathers, We Come unto Thee",
+   "firstLine": "God of our fathers, we come unto thee",
+   "credits": "<p><em>Text:</em> Charles W. Penrose, 1832–1925</p>\n<p><em>Music:</em> Ebenezer Beesley, 1840–1906</p>"
+  },
+  "/manual/hymns/great-is-the-lord": {
+   "number": "77",
+   "title": "Great Is the Lord",
+   "firstLine": "Great is the Lord;’tis good to praise",
+   "credits": "<p><em>Text:</em> Eliza R. Snow, 1804–1887</p>\n<p><em>Music:</em> Ebenezer Beesley, 1840–1906</p>"
+  },
+  "/manual/hymns/god-of-our-fathers-whose-almighty-hand": {
+   "number": "78",
+   "title": "God of Our Fathers, Whose Almighty Hand",
+   "firstLine": "God of our fathers, whose almighty hand",
+   "credits": "<p><em>Text:</em> Daniel C. Roberts, 1841–1907</p>\n<p><em>Music:</em> George W. Warren, 1828–1902</p>"
+  },
+  "/manual/hymns/with-all-the-power-of-heart-and-tongue": {
+   "number": "79",
+   "title": "With All the Power of Heart and Tongue",
+   "firstLine": "With all the pow’r of heart and tongue",
+   "credits": "<p><em>Text:</em> Isaac Watts, 1674–1748</p>\n<p><em>Music:</em> Lowell M. Durham, 1917–1992. © 1948 IRI</p>"
+  },
+  "/manual/hymns/god-of-our-fathers-known-of-old": {
+   "number": "80",
+   "title": "God of Our Fathers, Known of Old",
+   "firstLine": "God of our fathers, known of old",
+   "credits": "<p><em>Text:</em> Rudyard Kipling, 1865–1936.</p>\n<p><em>Music:</em> Leroy J. Robertson, 1896–1971. © 1948 IRI</p>"
+  },
+  "/manual/hymns/press-forward-saints": {
+   "number": "81",
+   "title": "Press Forward, Saints",
+   "firstLine": "Press forward, Saints, with steadfast faith in Christ",
+   "credits": "<p><em>Text:</em> Marvin K. Gardner, b. 1952; based on <a href=\"/study/scriptures/bofm/2-ne/31.20\">2 Nephi 31:20</a>. © 1985 IRI</p>\n<p><em>Music:</em> Vanja Y. Watkins, b. 1938. © 1985 IRI</p>"
+  },
+  "/manual/hymns/for-all-the-saints": {
+   "number": "82",
+   "title": "For All the Saints",
+   "firstLine": "For all the Saints who from their labors rest",
+   "credits": "<p><em>Text:</em> William Walsham How, 1823–1897, alt.</p>\n<p><em>Music:</em> <small>SINE NOMINE</small>, by Ralph Vaughan Williams, 1872–1958. From the <cite>English Hymnal.</cite> Reproduced by permission of CopyCat Music Licensing, LLC, on behalf of Oxford University Press. All rights reserved.</p>"
+  },
+  "/manual/hymns/guide-us-o-thou-great-jehovah": {
+   "number": "83",
+   "title": "Guide Us, O Thou Great Jehovah",
+   "firstLine": "Guide us, O thou great Jehovah",
+   "credits": "<p><em>Text:</em> William Williams, 1717–1791. First verse trans. by Peter Williams, 1722–1796</p>\n<p><em>Music:</em> John Hughes, 1873–1932</p>"
+  },
+  "/manual/hymns/faith-of-our-fathers": {
+   "number": "84",
+   "title": "Faith of Our Fathers",
+   "firstLine": "Faith of our fathers, living still",
+   "credits": "<p><em>Text:</em> Frederick W. Faber, 1814–1863</p>\n<p><em>Music:</em> Henri F. Hemy, 1818–1888; refrain, James G. Walton, 1821–1905</p>"
+  },
+  "/manual/hymns/how-firm-a-foundation": {
+   "number": "85",
+   "title": "How Firm a Foundation",
+   "firstLine": "How firm a foundation, ye Saints of the Lord",
+   "credits": "<p><em>Text:</em> Attr. to Robert Keen, ca. 1787</p>\n<p><em>Music:</em> Attr. to J. Ellis, ca. 1889</p>"
+  },
+  "/manual/hymns/how-great-thou-art": {
+   "number": "86",
+   "title": "How Great Thou Art",
+   "firstLine": "",
+   "credits": "<p><em>Text:</em> Stuart K. Hine, 1899–1989. *Author’s original words are <em>works</em> and <em>mighty.</em></p>\n<p><em>Music:</em> Tradititonal Swedish folk tune; adapted by Stuart K. Hine</p>\n<p>Words and music © 1949 and 1953 by the Stuart Hine Trust. All rights in the USA except print rights administered by EMI CMG. USA print rights administered by Hope Publishing Company, Carol Stream, IL 60188. All rights reserved. Used by permission.</p>"
+  },
+  "/manual/hymns/god-is-love": {
+   "number": "87",
+   "title": "God Is Love",
+   "firstLine": "Earth, with her ten thousand flow’rs",
+   "credits": "<p><em>Text:</em> Thomas R. Taylor, 1807–1835, alt</p>\n<p><em>Music:</em> Thomas C. Griggs, 1845–1903</p>"
+  },
+  "/manual/hymns/great-god-attend-while-zion-sings": {
+   "number": "88",
+   "title": "Great God, Attend While Zion Sings",
+   "firstLine": "Great God, attend while Zion sings",
+   "credits": "<p><em>Text:</em> Isaac Watts, 1674–1748</p>\n<p><em>Music:</em> Joseph J. Daynes, 1851–1920</p>"
+  },
+  "/manual/hymns/the-lord-is-my-light": {
+   "number": "89",
+   "title": "The Lord Is My Light",
+   "firstLine": "The Lord is my light; then why should I fear?",
+   "credits": "<p><em>Text:</em> James Nicholson, 1828–1876</p>\n<p><em>Music:</em> John R. Sweney, 1837–1899</p>"
+  },
+  "/manual/hymns/from-all-that-dwell-below-the-skies": {
+   "number": "90",
+   "title": "From All That Dwell below the Skies",
+   "firstLine": "From all that dwell below the skies",
+   "credits": "<p><em>Text:</em> Isaac Watts, 1674–1748</p>\n<p><em>Music:</em> John Hatton, d. 1793</p>"
+  },
+  "/manual/hymns/father-thy-children-to-thee-now-raise": {
+   "number": "91",
+   "title": "Father, Thy Children to Thee Now Raise",
+   "firstLine": "Father, thy children to thee now raise",
+   "credits": "<p><em>Text and music:</em> Evan Stephens, 1854–1930</p>"
+  },
+  "/manual/hymns/for-the-beauty-of-the-earth": {
+   "number": "92",
+   "title": "For the Beauty of the Earth",
+   "firstLine": "For the beauty of the earth",
+   "credits": "<p><em>Text:</em> Folliott S. Pierpoint, 1835–1917</p>\n<p><em>Music:</em> Conrad Kocher, 1786–1872</p>"
+  },
+  "/manual/hymns/prayer-of-thanksgiving": {
+   "number": "93",
+   "title": "Prayer of Thanksgiving",
+   "firstLine": "We gather together to ask the Lord’s blessing",
+   "credits": "<p><em>Text:</em> Anon., The Netherlands, ca. 1626; trans. by Theodore Baker, 1851–1934</p>\n<p><em>Music:</em> Anon., The Netherlands, ca. 1625; arr. by Edward Kremser, 1838–1914</p>"
+  },
+  "/manual/hymns/come-ye-thankful-people": {
+   "number": "94",
+   "title": "Come, Ye Thankful People",
+   "firstLine": "Come, ye thankful people, come",
+   "credits": "<p><em>Text:</em> Henry Alford, 1810–1871</p>\n<p><em>Music:</em> George J. Elvey, 1816–1893</p>"
+  },
+  "/manual/hymns/now-thank-we-all-our-god": {
+   "number": "95",
+   "title": "Now Thank We All Our God",
+   "firstLine": "Now thank we all our God",
+   "credits": "<p><em>Text:</em> Martin Rinkhart, 1586–1649; trans. by Catherine Winkworth, 1829–1878</p>\n<p><em>Music:</em> Johann Crüger, 1598–1662</p>"
+  },
+  "/manual/hymns/dearest-children-god-is-near-you": {
+   "number": "96",
+   "title": "Dearest Children, God Is Near You",
+   "firstLine": "Dearest children, God is near you",
+   "credits": "<p><em>Text:</em> Charles L. Walker, 1832–1904</p>\n<p><em>Music:</em> John Menzies Macfarlane, 1833–1892</p>"
+  },
+  "/manual/hymns/lead-kindly-light": {
+   "number": "97",
+   "title": "Lead, Kindly Light",
+   "firstLine": "Lead, kindly Light, amid th’encircling gloom",
+   "credits": "<p><em>Text:</em> John Henry Newman, 1801–1890</p>\n<p><em>Music:</em> John B. Dykes, 1823–1876</p>"
+  },
+  "/manual/hymns/i-need-thee-every-hour": {
+   "number": "98",
+   "title": "I Need Thee Every Hour",
+   "firstLine": "I need thee ev’ry hour",
+   "credits": "<p><em>Text:</em> Annie S. Hawks, 1835–1918</p>\n<p><em>Music:</em> Robert Lowry, 1826–1899</p>"
+  },
+  "/manual/hymns/nearer-dear-savior-to-thee": {
+   "number": "99",
+   "title": "Nearer, Dear Savior, to Thee",
+   "firstLine": "Nearer, dear Savior, to thee",
+   "credits": "<p><em>Text:</em> Joseph L. Townsend, 1849–1942</p>\n<p><em>Music:</em> William Clayson, 1840–1887</p>"
+  },
+  "/manual/hymns/nearer-my-god-to-thee": {
+   "number": "100",
+   "title": "Nearer, My God, to Thee",
+   "firstLine": "Nearer, my God, to thee",
+   "credits": "<p><em>Text:</em> Sarah F. Adams, 1805–1848</p>\n<p><em>Music:</em> Lowell Mason, 1792–1872</p>"
+  },
+  "/manual/hymns/guide-me-to-thee": {
+   "number": "101",
+   "title": "Guide Me to Thee",
+   "firstLine": "Jesus, my Savior true",
+   "credits": "<p><em>Text and music:</em> Orson Pratt Huish, 1851–1932</p>"
+  },
+  "/manual/hymns/jesus-lover-of-my-soul": {
+   "number": "102",
+   "title": "Jesus, Lover of My Soul",
+   "firstLine": "Jesus, lover of my soul",
+   "credits": "<p><em>Text:</em> Charles Wesley, 1707–1788</p>\n<p><em>Music:</em> Joseph P. Holbrook, 1822–1888</p>"
+  },
+  "/manual/hymns/precious-savior-dear-redeemer": {
+   "number": "103",
+   "title": "Precious Savior, Dear Redeemer",
+   "firstLine": "Precious Savior, dear Redeemer",
+   "credits": "<p><em>Text and music:</em> H. R. Palmer, 1834–1907</p>"
+  },
+  "/manual/hymns/jesus-savior-pilot-me": {
+   "number": "104",
+   "title": "Jesus, Savior, Pilot Me",
+   "firstLine": "Jesus, Savior, pilot me",
+   "credits": "<p><em>Text:</em> Edward Hopper, 1818–1888</p>\n<p><em>Music:</em> John Edgar Gould, 1822–1875</p>"
+  },
+  "/manual/hymns/master-the-tempest-is-raging": {
+   "number": "105",
+   "title": "Master, the Tempest Is Raging",
+   "firstLine": "Master, the tempest is raging!",
+   "credits": "<p><em>Text:</em> Mary Ann Baker, 1831–1921</p>\n<p><em>Music:</em> H. R. Palmer, 1834–1907</p>"
+  },
+  "/manual/hymns/god-speed-the-right": {
+   "number": "106",
+   "title": "God Speed the Right",
+   "firstLine": "Now to heav’n our prayer ascending",
+   "credits": "<p><em>Text:</em> Wiliam E. Hickson, 1803–1870</p>\n<p><em>Music:</em> Ernst Moritz Arndt, 1796–1860</p>"
+  },
+  "/manual/hymns/lord-accept-our-true-devotion": {
+   "number": "107",
+   "title": "Lord, Accept Our True Devotion",
+   "firstLine": "Lord, accept our true devotion.",
+   "credits": "<p><em>Text:</em> Richard Alldridge, 1815–1896</p>\n<p><em>Music:</em> Joseph J. Daynes, 1851–1920</p>"
+  },
+  "/manual/hymns/the-lord-is-my-shepherd": {
+   "number": "108",
+   "title": "The Lord Is My Shepherd",
+   "firstLine": "The Lord is my Shepherd; no want shall I know.",
+   "credits": "<p><em>Text:</em> James Montgomery, 1771–1854; based on <a href=\"/study/scriptures/ot/ps/23\">Psalm 23</a></p>\n<p><em>Music:</em> Thomas Koschat, 1845–1914</p>"
+  },
+  "/manual/hymns/the-lord-my-pasture-will-prepare": {
+   "number": "109",
+   "title": "The Lord My Pasture Will Prepare",
+   "firstLine": "The Lord my pasture will prepare",
+   "credits": "<p><em>Text:</em> Joseph Addison, 1672–1719</p>\n<p><em>Music:</em> Dmitri Bortniansky, 1751–1825</p>"
+  },
+  "/manual/hymns/cast-thy-burden-upon-the-lord": {
+   "number": "110",
+   "title": "Cast Thy Burden upon the Lord",
+   "firstLine": "Cast thy burden upon the Lord",
+   "credits": "<p><em>Text:</em> Julius Schubring, 1806–1889; adapted from the Psalms</p>\n<p><em>Music:</em> Felix Mendelssohn, 1809–1847</p>"
+  },
+  "/manual/hymns/rock-of-ages": {
+   "number": "111",
+   "title": "Rock of Ages",
+   "firstLine": "Rock of Ages, cleft for me",
+   "credits": "<p><em>Text:</em> Augustus M. Toplady, 1740–1778</p>\n<p><em>Music:</em> Thomas Hastings, 1784–1872</p>"
+  },
+  "/manual/hymns/savior-redeemer-of-my-soul": {
+   "number": "112",
+   "title": "Savior, Redeemer of My Soul",
+   "firstLine": "Savior, Redeemer of my soul",
+   "credits": "<p><em>Text:</em> Orson F. Whitney, 1855–1931</p>\n<p><em>Music:</em> Harry A. Dean, 1892–1987. © 1948 IRI</p>"
+  },
+  "/manual/hymns/our-saviors-love": {
+   "number": "113",
+   "title": "Our Savior’s Love",
+   "firstLine": "Our Savior’s love",
+   "credits": "<p><em>Text:</em> Edward L. Hart, 1916–2008. © 1977 IRI</p>\n<p><em>Music:</em> Crawford Gates, 1921–2018. © 1977 IRI</p>"
+  },
+  "/manual/hymns/come-unto-him": {
+   "number": "114",
+   "title": "Come unto Him",
+   "firstLine": "I wander through the still of night",
+   "credits": "<p><em>Text:</em> Theodore E. Curtis, 1872–1957</p>\n<p><em>Music:</em> Hugh W. Dougall, 1872–1963</p>"
+  },
+  "/manual/hymns/come-ye-disconsolate": {
+   "number": "115",
+   "title": "Come, Ye Disconsolate",
+   "firstLine": "Come, ye disconsolate, where’er ye languish",
+   "credits": "<p><em>Text:</em> Thomas Moore, 1779–1852. Verse three, Thomas Hastings, 1784–1872</p>\n<p><em>Music:</em> Samuel Webbe, 1740–1816</p>"
+  },
+  "/manual/hymns/come-follow-me": {
+   "number": "116",
+   "title": "Come, Follow Me",
+   "firstLine": "“Come, follow me,” the Savior said.",
+   "credits": "<p><em>Text:</em> John Nicholson, 1839–1909</p>\n<p><em>Music:</em> Samuel McBurney, 1847-1909</p>"
+  },
+  "/manual/hymns/come-unto-jesus": {
+   "number": "117",
+   "title": "Come unto Jesus",
+   "firstLine": "Come unto Jesus, ye heavy laden",
+   "credits": "<p><em>Text and music:</em> Orson Pratt Huish, 1851–1932</p>"
+  },
+  "/manual/hymns/ye-simple-souls-who-stray": {
+   "number": "118",
+   "title": "Ye Simple Souls Who Stray",
+   "firstLine": "Ye simple souls who stray",
+   "credits": "<p><em>Text:</em> Charles Wesley, 1707–1788, adapted</p>\n<p><em>Music:</em> Evan Stephens, 1854–1930</p>"
+  },
+  "/manual/hymns/come-we-that-love-the-lord": {
+   "number": "119",
+   "title": "Come, We That Love the Lord",
+   "firstLine": "Come, we that love the Lord",
+   "credits": "<p><em>Text:</em> Isaac Watts, 1674–1748</p>\n<p><em>Music:</em> Aaron Williams, 1731–1776</p>"
+  },
+  "/manual/hymns/lean-on-my-ample-arm": {
+   "number": "120",
+   "title": "Lean on My Ample Arm",
+   "firstLine": "Lean on my ample arm",
+   "credits": "<p><em>Text:</em> Theodore E. Curtis, 1872–1957</p>\n<p><em>Music:</em> Evan Stephens, 1854–1930</p>"
+  },
+  "/manual/hymns/im-a-pilgrim-im-a-stranger": {
+   "number": "121",
+   "title": "I’m a Pilgrim, I’m a Stranger",
+   "firstLine": "I’m a pilgrim, I’m a stranger",
+   "credits": "<p><em>Text:</em> Hans Henry Petersen, 1835–1909</p>\n<p><em>Music:</em> Leroy J. Robertson, 1896–1971</p>"
+  },
+  "/manual/hymns/though-deepening-trials": {
+   "number": "122",
+   "title": "Though Deepening Trials",
+   "firstLine": "Though deep’ning trials throng your way",
+   "credits": "<p><em>Text:</em> Eliza R. Snow, 1804–1887</p>\n<p><em>Music:</em> George Careless, 1839–1932</p>"
+  },
+  "/manual/hymns/oh-may-my-soul-commune-with-thee": {
+   "number": "123",
+   "title": "Oh, May My Soul Commune with Thee",
+   "firstLine": "Oh, may my soul commune with thee",
+   "credits": "<p><em>Text and music:</em> Lorin F. Wheelwright, 1909–1987</p>\n<p>© 1958, 1985 Lorin F. Wheelwright. This hymn may be copied for incidental, noncommercial church or home use.</p>"
+  },
+  "/manual/hymns/be-still-my-soul": {
+   "number": "124",
+   "title": "Be Still, My Soul",
+   "firstLine": "Be still, my soul: The Lord is on thy side",
+   "credits": "<p><em>Text:</em> Katharina von Schlegel, b. 1697; trans. by Jane Borthwick, 1813–1897.</p>\n<p><em>Music:</em> Jean Sibelius, 1865–1957. © 1900 by Breitkopf and Härtel. Arr. © 1933, ren. 1961 Presbyterian Board of Christian Education (admin. Westminster John Knox Press). All rights reserved.</p>"
+  },
+  "/manual/hymns/how-gentle-gods-commands": {
+   "number": "125",
+   "title": "How Gentle God’s Commands",
+   "firstLine": "How gentle God’s commands!",
+   "credits": "<p><em>Text:</em> Philip Doddridge, 1702–1751</p>\n<p><em>Music:</em> Hans Georg Nägeli, 1773–1836; arr. by Lowell Mason, 1792–1872</p>"
+  },
+  "/manual/hymns/how-long-o-lord-most-holy-and-true": {
+   "number": "126",
+   "title": "How Long, O Lord Most Holy and True",
+   "firstLine": "How long, O Lord most holy and true",
+   "credits": "<p><em>Text:</em> John A. Widtsoe, 1872–1952</p>\n<p><em>Music:</em> B. Cecil Gates, 1887–1941</p>"
+  },
+  "/manual/hymns/does-the-journey-seem-long": {
+   "number": "127",
+   "title": "Does the Journey Seem Long?",
+   "firstLine": "Does the journey seem long",
+   "credits": "<p><em>Text:</em> Joseph Fielding Smith, 1876–1972</p>\n<p><em>Music:</em> George D. Pyper, 1860–1943</p>"
+  },
+  "/manual/hymns/when-faith-endures": {
+   "number": "128",
+   "title": "When Faith Endures",
+   "firstLine": "I will not doubt, I will not fear",
+   "credits": "<p><em>Text:</em> Naomi W. Randall, 1908–2001. © 1985 IRI</p>\n<p><em>Music:</em> Stephen M. Jones, b. 1960. © 1985 IRI</p>"
+  },
+  "/manual/hymns/where-can-i-turn-for-peace": {
+   "number": "129",
+   "title": "Where Can I Turn for Peace?",
+   "firstLine": "Where can I turn for peace?",
+   "credits": "<p><em>Text:</em> Emma Lou Thayne, 1924–2014. © 1973 IRI</p>\n<p><em>Music:</em> Joleen G. Meredith, b. 1935. © 1973 IRI</p>"
+  },
+  "/manual/hymns/be-thou-humble": {
+   "number": "130",
+   "title": "Be Thou Humble",
+   "firstLine": "Be thou humble in thy weakness, and the Lord thy God shall lead thee",
+   "credits": "<p><em>Text and music:</em> Grietje Terburg Rowley, 1927–2015. © 1985 IRI</p>"
+  },
+  "/manual/hymns/more-holiness-give-me": {
+   "number": "131",
+   "title": "More Holiness Give Me",
+   "firstLine": "More holiness give me",
+   "credits": "<p><em>Text and music:</em> Philip Paul Bliss, 1838–1876</p>"
+  },
+  "/manual/hymns/god-is-in-his-holy-temple": {
+   "number": "132",
+   "title": "God Is in His Holy Temple",
+   "firstLine": "God is in his holy temple.",
+   "credits": "<p><em>Text:</em> Anon., <cite>Hymns of the Spirit,</cite> 1864</p>\n<p><em>Music:</em> Frank W. Asper, 1892–1973</p>"
+  },
+  "/manual/hymns/father-in-heaven": {
+   "number": "133",
+   "title": "Father in Heaven",
+   "firstLine": "Father in Heaven, in thy love abounding",
+   "credits": "<p><em>Text:</em> Angus S. Hibbard</p>\n<p><em>Music:</em> Friedrich F. Flemming, 1778–1813; arr. by Edwin P. Parker, 1836–1925</p>"
+  },
+  "/manual/hymns/i-believe-in-christ": {
+   "number": "134",
+   "title": "I Believe in Christ",
+   "firstLine": "I believe in Christ; he is my King!",
+   "credits": "<p><em>Text:</em> Bruce R. McConkie, 1915–1985. © 1972 IRI</p>\n<p><em>Music:</em> John Longhurst, b. 1940. © 1985 IRI</p>"
+  },
+  "/manual/hymns/my-redeemer-lives": {
+   "number": "135",
+   "title": "My Redeemer Lives",
+   "firstLine": "I know that my Redeemer lives",
+   "credits": "<p><em>Text:</em> Gordon B. Hinckley, 1910–2008. © 1985 IRI</p>\n<p><em>Music:</em> G. Homer Durham, 1911–1985. © 1985 IRI</p>"
+  },
+  "/manual/hymns/i-know-that-my-redeemer-lives": {
+   "number": "136",
+   "title": "I Know That My Redeemer Lives",
+   "firstLine": "I know that my Redeemer lives.",
+   "credits": "<p><em>Text:</em> Samuel Medley, 1738–1799</p>\n<p><em>Music:</em> Lewis D. Edwards, 1858–1921</p>"
+  },
+  "/manual/hymns/testimony": {
+   "number": "137",
+   "title": "Testimony",
+   "firstLine": "The witness of the Holy Ghost",
+   "credits": "<p><em>Text:</em> Loren C. Dunn, b. 1930-2001. © 1985 IRI</p>\n<p><em>Music:</em> Michael Finlinson Moody, b. 1941. © 1985 IRI</p>"
+  },
+  "/manual/hymns/bless-our-fast-we-pray": {
+   "number": "138",
+   "title": "Bless Our Fast, We Pray",
+   "firstLine": "On bended knees, with broken hearts",
+   "credits": "<p><em>Text:</em> John Sears Tanner, b. 1950. © 1985 IRI</p>\n<p><em>Music:</em> James B. Welch, b. 1950. © 1985 IRI</p>"
+  },
+  "/manual/hymns/in-fasting-we-approach-thee": {
+   "number": "139",
+   "title": "In Fasting We Approach Thee",
+   "firstLine": "In fasting we approach thee here",
+   "credits": "<p><em>Text:</em> Paul L. Anderson, b. 1946. © 1981 Paul L. Anderson and Lynn R. Carson. This hymn may be copied for incidental, noncommercial church or home use.</p>\n<p><em>Music:</em> Clay Christiansen, b. 1949. © 1985 IRI</p>"
+  },
+  "/manual/hymns/did-you-think-to-pray": {
+   "number": "140",
+   "title": "Did You Think to Pray?",
+   "firstLine": "Ere you left your room this morning",
+   "credits": "<p><em>Text:</em> Mary A. Pepper Kidder, 1820–1905</p>\n<p><em>Music:</em> William O. Perkins, 1831–1902</p>"
+  },
+  "/manual/hymns/jesus-the-very-thought-of-thee": {
+   "number": "141",
+   "title": "Jesus, the Very Thought of Thee",
+   "firstLine": "Jesus, the very thought of thee",
+   "credits": "<p><em>Text:</em> Attr. to Bernard of Clairvaux, ca. 1091–1153; trans. by Edward Caswall, 1814–1878</p>\n<p><em>Music:</em> John B. Dykes, 1823–1876</p>"
+  },
+  "/manual/hymns/sweet-hour-of-prayer": {
+   "number": "142",
+   "title": "Sweet Hour of Prayer",
+   "firstLine": "Sweet hour of prayer! Sweet hour of prayer!",
+   "credits": "<p><em>Text:</em> Attr. to William W. Walford, 1772–1850, alt.</p>\n<p><em>Music:</em> William B. Bradbury, 1816–1868, alt.</p>"
+  },
+  "/manual/hymns/let-the-holy-spirit-guide": {
+   "number": "143",
+   "title": "Let the Holy Spirit Guide",
+   "firstLine": "Let the Holy Spirit guide",
+   "credits": "<p><em>Text:</em> Penelope Moody Allen, b. 1939. © 1985 IRI</p>\n<p><em>Music:</em> Martin Shaw, 1875–1958. © 1915 by J. Curwen &amp; Sons, Ltd.</p>"
+  },
+  "/manual/hymns/secret-prayer": {
+   "number": "144",
+   "title": "Secret Prayer",
+   "firstLine": "There is an hour of peace and rest",
+   "credits": "<p><em>Text and music:</em> Hans Henry Petersen, 1835–1909</p>"
+  },
+  "/manual/hymns/prayer-is-the-souls-sincere-desire": {
+   "number": "145",
+   "title": "Prayer Is the Soul’s Sincere Desire",
+   "firstLine": "Prayer is the soul’s sincere desire",
+   "credits": "<p><em>Text:</em> James Montgomery, 1771–1854</p>\n<p><em>Music:</em> George Careless, 1839–1932</p>"
+  },
+  "/manual/hymns/gently-raise-the-sacred-strain": {
+   "number": "146",
+   "title": "Gently Raise the Sacred Strain",
+   "firstLine": "Gently raise the sacred strain",
+   "credits": "<p><em>Text:</em> William W. Phelps, 1792–1872</p>\n<p><em>Music:</em> Thomas C. Griggs, 1845–1903</p>"
+  },
+  "/manual/hymns/sweet-is-the-work": {
+   "number": "147",
+   "title": "Sweet Is the Work",
+   "firstLine": "Sweet is the work, my God, my King",
+   "credits": "<p><em>Text:</em> Isaac Watts, 1674–1748</p>\n<p><em>Music:</em> John J. McClellan, 1874–1925</p>"
+  },
+  "/manual/hymns/sabbath-day": {
+   "number": "148",
+   "title": "Sabbath Day",
+   "firstLine": "In sweet remembrance of thy Son",
+   "credits": "<p><em>Text:</em> Paul L. Anderson, b. 1946</p>\n<p><em>Music:</em> Lynn R. Carson, b. 1942 © 1983 by Lynn R. Carson and Paul L. Anderson. This hymn may be copied for incidental, noncommercial church or home use.</p>"
+  },
+  "/manual/hymns/as-the-dew-from-heaven-distilling": {
+   "number": "149",
+   "title": "As the Dew from Heaven Distilling",
+   "firstLine": "As the dew from heav’n distilling",
+   "credits": "<p><em>Text:</em> Thomas Kelly, 1769–1854</p>\n<p><em>Music:</em> Joseph J. Daynes, 1851–1920</p>"
+  },
+  "/manual/hymns/o-thou-kind-and-gracious-father": {
+   "number": "150",
+   "title": "O Thou Kind and Gracious Father",
+   "firstLine": "O thou kind and gracious Father",
+   "credits": "<p><em>Text:</em> Charles Denney Jr., 1849–1937</p>\n<p><em>Music:</em> George Careless, 1839–1932</p>"
+  },
+  "/manual/hymns/we-meet-dear-lord": {
+   "number": "151",
+   "title": "We Meet, Dear Lord",
+   "firstLine": "We meet, dear Lord, in meekness all",
+   "credits": "<p><em>Text:</em> Vernald W. Johns, 1902–1999. © 1985 IRI</p>\n<p><em>Music:</em> Laurence M. Yorgason, b. 1937. © 1985 IRI</p>"
+  },
+  "/manual/hymns/god-be-with-you-till-we-meet-again": {
+   "number": "152",
+   "title": "God Be with You Till We Meet Again",
+   "firstLine": "God be with you till we meet again",
+   "credits": "<p><em>Text:</em> Jeremiah E. Rankin, 1828–1904</p>\n<p><em>Music:</em> William G. Tomer, 1833–1896</p>"
+  },
+  "/manual/hymns/lord-we-ask-thee-ere-we-part": {
+   "number": "153",
+   "title": "Lord, We Ask Thee Ere We Part",
+   "firstLine": "Lord, we ask thee ere we part",
+   "credits": "<p><em>Text:</em> George Manwaring, 1854–1889</p>\n<p><em>Music:</em> Benjamin Milgrove, 1731–1810; arr. by Ebenezer Beesley, 1840–1906</p>"
+  },
+  "/manual/hymns/father-this-hour-has-been-one-of-joy": {
+   "number": "154",
+   "title": "Father, This Hour Has Been One of Joy",
+   "firstLine": "Father, this hour has been one of joy",
+   "credits": "<p><em>Text:</em> Nan Greene Hunter, b. 1938. © 1985 IRI</p>\n<p><em>Music:</em> Lynn R. Shurtleff, b. 1939. © 1985 IRI</p>"
+  },
+  "/manual/hymns/we-have-partaken-of-thy-love": {
+   "number": "155",
+   "title": "We Have Partaken of Thy Love",
+   "firstLine": "We have partaken of thy love",
+   "credits": "<p><em>Text:</em> Mabel Jones Gabbott, 1910–2004. © 1985 IRI</p>\n<p><em>Music:</em> Robert P. Manookin, 1918–1997. © 1985 IRI</p>"
+  },
+  "/manual/hymns/sing-we-now-at-parting": {
+   "number": "156",
+   "title": "Sing We Now at Parting",
+   "firstLine": "Sing we now at parting",
+   "credits": "<p><em>Text:</em> George Manwaring, 1854–1889</p>\n<p><em>Music:</em> Ebenezer Beesley, 1840–1906</p>"
+  },
+  "/manual/hymns/thy-spirit-lord-has-stirred-our-souls": {
+   "number": "157",
+   "title": "Thy Spirit, Lord, Has Stirred Our Souls",
+   "firstLine": "Thy Spirit, Lord, has stirred our souls",
+   "credits": "<p><em>Text:</em> Frank I. Kooyman, 1880–1963. © 1948 IRI</p>\n<p><em>Music:</em> Alexander Schreiner, 1901–1987. © 1948 IRI</p>"
+  },
+  "/manual/hymns/before-thee-lord-i-bow-my-head": {
+   "number": "158",
+   "title": "Before Thee, Lord, I Bow My Head",
+   "firstLine": "Before thee, Lord, I bow my head",
+   "credits": "<p><em>Text and music:</em> Joseph H. Dean, 1855–1947</p>"
+  },
+  "/manual/hymns/now-the-day-is-over": {
+   "number": "159",
+   "title": "Now the Day Is Over",
+   "firstLine": "Now the day is over",
+   "credits": "<p><em>Text:</em> Sabine Baring-Gould, 1834–1924</p>\n<p><em>Music:</em> Joseph Barnby, 1838–1896</p>"
+  },
+  "/manual/hymns/softly-now-the-light-of-day": {
+   "number": "160",
+   "title": "Softly Now the Light of Day",
+   "firstLine": "Softly now the light of day",
+   "credits": "<p><em>Text:</em> George W. Doane, 1799–1859</p>\n<p><em>Music:</em> Carl Maria von Weber, 1786–1826; arr. by Henry Greatorix, 1813–1858</p>"
+  },
+  "/manual/hymns/the-lord-be-with-us": {
+   "number": "161",
+   "title": "The Lord Be with Us",
+   "firstLine": "The Lord be with us as we walk",
+   "credits": "<p><em>Text:</em> John Ellerton, 1826–1893</p>\n<p><em>Music:</em> Tracy Y. Cannon, 1879–1961. © 1948 IRI</p>"
+  },
+  "/manual/hymns/lord-we-come-before-thee-now": {
+   "number": "162",
+   "title": "Lord, We Come before Thee Now",
+   "firstLine": "Lord, we come before thee now",
+   "credits": "<p><em>Text:</em> William Hammond, 1719–1783</p>\n<p><em>Music:</em> Harry A. Dean, 1892–1987. © 1948 IRI</p>"
+  },
+  "/manual/hymns/lord-dismiss-us-with-thy-blessing": {
+   "number": "163",
+   "title": "Lord, Dismiss Us with Thy Blessing",
+   "firstLine": "Lord, dismiss us with thy blessing",
+   "credits": "<p><em>Text:</em> John Fawcett, 1740–1817</p>\n<p><em>Music:</em> Jean-Jacques Rousseau, 1712–1778</p>"
+  },
+  "/manual/hymns/great-god-to-thee-my-evening-song": {
+   "number": "164",
+   "title": "Great God, to Thee My Evening Song",
+   "firstLine": "Great God, to thee my evening song",
+   "credits": "<p><em>Text:</em> Anne Steele, 1716–1778</p>\n<p><em>Music:</em> Edward P. Kimball, 1882–1937</p>"
+  },
+  "/manual/hymns/abide-with-me-tis-eventide": {
+   "number": "165",
+   "title": "Abide with Me;’Tis Eventide",
+   "firstLine": "Abide with me;’tis eventide.",
+   "credits": "<p><em>Text:</em> M. Lowrie Hofford</p>\n<p><em>Music:</em> Harrison Millard, 1830–1895</p>"
+  },
+  "/manual/hymns/abide-with-me": {
+   "number": "166",
+   "title": "Abide with Me!",
+   "firstLine": "Abide with me! fast falls the eventide",
+   "credits": "<p><em>Text:</em> Henry F. Lyte, 1793–1847</p>\n<p><em>Music:</em> William H. Monk, 1823–1889</p>"
+  },
+  "/manual/hymns/come-let-us-sing-an-evening-hymn": {
+   "number": "167",
+   "title": "Come, Let Us Sing an Evening Hymn",
+   "firstLine": "Come, let us sing an evening hymn",
+   "credits": "<p><em>Text:</em> William W. Phelps, 1792–1872</p>\n<p><em>Music:</em> Tracy Y. Cannon, 1879–1961</p>"
+  },
+  "/manual/hymns/as-the-shadows-fall": {
+   "number": "168",
+   "title": "As the Shadows Fall",
+   "firstLine": "As the shadows fall, O Savior",
+   "credits": "<p><em>Text:</em> Lowell M. Durham Jr., 1943–1997. © 1977 IRI</p>\n<p><em>Music:</em> Lowell M. Durham, 1917–1992. © 1977 IRI</p>"
+  },
+  "/manual/hymns/as-now-we-take-the-sacrament": {
+   "number": "169",
+   "title": "As Now We Take the Sacrament",
+   "firstLine": "As now we take the sacrament",
+   "credits": "<p><em>Text:</em> Lee Tom Perry, b. 1951. © 1985 IRI</p>\n<p><em>Music:</em> Daniel Lyman Carter, b. 1955. © 1985 IRI</p>"
+  },
+  "/manual/hymns/god-our-father-hear-us-pray": {
+   "number": "170",
+   "title": "God, Our Father, Hear Us Pray",
+   "firstLine": "God, our Father, hear us pray",
+   "credits": "<p><em>Text:</em> Annie Pinnock Malin, 1863–1935</p>\n<p><em>Music:</em> Louis M. Gottschalk, 1829–1869; adapted by Edwin P. Parker, 1836–1925</p>"
+  },
+  "/manual/hymns/with-humble-heart": {
+   "number": "171",
+   "title": "With Humble Heart",
+   "firstLine": "With humble heart, I bow my head",
+   "credits": "<p><em>Text:</em> Zara Sabin, 1892–1980. © 1985 IRI</p>\n<p><em>Music:</em> Thomas L. Durham, b. 1950. © 1985 IRI</p>"
+  },
+  "/manual/hymns/in-humility-our-savior": {
+   "number": "172",
+   "title": "In Humility, Our Savior",
+   "firstLine": "In humility, our Savior",
+   "credits": "<p><em>Text:</em> Mabel Jones Gabbott, b. 1910–2004 © 1948 IRI</p>\n<p><em>Music:</em> Rowland H. Prichard, 1811–1887</p>"
+  },
+  "/manual/hymns/while-of-these-emblems-we-partake-saul": {
+   "number": "173",
+   "title": "While of These Emblems We Partake",
+   "firstLine": "While of these emblems we partake",
+   "credits": "<p><em>Text:</em> John Nicholson, 1839–1909</p>\n<p><em>Music:</em> Samuel McBurney, 1847–1909</p>\n<p><em>Tune name:</em> <small>SAUL</small></p>"
+  },
+  "/manual/hymns/while-of-these-emblems-we-partake-aeolian": {
+   "number": "174",
+   "title": "While of These Emblems We Partake",
+   "firstLine": "While of these emblems we partake",
+   "credits": "<p><em>Text:</em> John Nicholson, 1839–1909</p>\n<p><em>Music:</em> Alexander Schreiner, 1901–1987. © 1948 IRI</p>\n<p><em>Tune name:</em> <small>AEOLIAN</small></p>"
+  },
+  "/manual/hymns/o-god-the-eternal-father": {
+   "number": "175",
+   "title": "O God, the Eternal Father",
+   "firstLine": "O God, th’Eternal Father",
+   "credits": "<p><em>Text:</em> William W. Phelps, 1792–1872</p>\n<p><em>Music:</em> Felix Mendelssohn, 1809–1847</p>"
+  },
+  "/manual/hymns/tis-sweet-to-sing-the-matchless-love-meredith": {
+   "number": "176",
+   "title": "’Tis Sweet to Sing the Matchless Love",
+   "firstLine": "’Tis sweet to sing the matchless love",
+   "credits": "<p><em>Text:</em> George Manwaring, 1854–1889</p>\n<p><em>Music:</em> Frank W. Asper, 1892–1973. © 1948 IRI</p>\n<p><em>Tune name:</em> <small>MEREDITH</small></p>"
+  },
+  "/manual/hymns/tis-sweet-to-sing-the-matchless-love-hancock": {
+   "number": "177",
+   "title": "’Tis Sweet to Sing the Matchless Love",
+   "firstLine": "’Tis sweet to sing the matchless love",
+   "credits": "<p><em>Text:</em> George Manwaring, 1854–1889</p>\n<p><em>Music:</em> Ebenezer Beesley, 1840–1906</p>\n<p><em>Tune name:</em> <small>HANCOCK</small></p>"
+  },
+  "/manual/hymns/o-lord-of-hosts": {
+   "number": "178",
+   "title": "O Lord of Hosts",
+   "firstLine": "O Lord of Hosts, we now invoke",
+   "credits": "<p><em>Text:</em> Andrew Dalrymple, b. 1817</p>\n<p><em>Music:</em> George Careless, 1839–1932</p>"
+  },
+  "/manual/hymns/again-our-dear-redeeming-lord": {
+   "number": "179",
+   "title": "Again, Our Dear Redeeming Lord",
+   "firstLine": "Again, our dear redeeming Lord",
+   "credits": "<p><em>Text:</em> Theodore E. Curtis, 1872–1957</p>\n<p><em>Music:</em> Alfred M. Durham, 1872–1957</p>"
+  },
+  "/manual/hymns/father-in-heaven-we-do-believe": {
+   "number": "180",
+   "title": "Father in Heaven, We Do Believe",
+   "firstLine": "Father in Heav’n, we do believe",
+   "credits": "<p><em>Text:</em> Parley P. Pratt, 1807–1857, alt.</p>\n<p><em>Music:</em> Jane Romney Crawford, 1883–1956</p>"
+  },
+  "/manual/hymns/jesus-of-nazareth-savior-and-king": {
+   "number": "181",
+   "title": "Jesus of Nazareth, Savior and King",
+   "firstLine": "Jesus of Nazareth",
+   "credits": "<p><em>Text and music:</em> Hugh W. Dougall, 1872–1963</p>"
+  },
+  "/manual/hymns/well-sing-all-hail-to-jesus-name": {
+   "number": "182",
+   "title": "We’ll Sing All Hail to Jesus’ Name",
+   "firstLine": "We’ll sing all hail to Jesus’ name",
+   "credits": "<p><em>Text:</em> Richard Alldridge, 1815–1896</p>\n<p><em>Music:</em> Joseph Coslett, 1850–1910</p>"
+  },
+  "/manual/hymns/in-remembrance-of-thy-suffering": {
+   "number": "183",
+   "title": "In Remembrance of Thy Suffering",
+   "firstLine": "In remembrance of thy suff’ring",
+   "credits": "<p><em>Text and music:</em> Evan Stephens, 1854–1930</p>"
+  },
+  "/manual/hymns/upon-the-cross-of-calvary": {
+   "number": "184",
+   "title": "Upon the Cross of Calvary",
+   "firstLine": "Upon the cross of Calvary",
+   "credits": "<p><em>Text:</em> Vilate Raile, 1890–1954. © 1948 IRI</p>\n<p><em>Music:</em> Leroy J. Robertson, 1896–1971. © 1948 IRI</p>"
+  },
+  "/manual/hymns/reverently-and-meekly-now": {
+   "number": "185",
+   "title": "Reverently and Meekly Now",
+   "firstLine": "Rev’rently and meekly now",
+   "credits": "<p><em>Text:</em> Joseph L. Townsend, 1849–1942</p>\n<p><em>Music:</em> Ebenezer Beesley, 1840–1906</p>"
+  },
+  "/manual/hymns/again-we-meet-around-the-board": {
+   "number": "186",
+   "title": "Again We Meet around the Board",
+   "firstLine": "Again we meet around the board",
+   "credits": "<p><em>Text:</em> Eliza R. Snow, 1804–1887</p>\n<p><em>Music:</em> George Careless, 1839–1932</p>"
+  },
+  "/manual/hymns/god-loved-us-so-he-sent-his-son": {
+   "number": "187",
+   "title": "God Loved Us, So He Sent His Son",
+   "firstLine": "God loved us, so he sent his Son",
+   "credits": "<p><em>Text:</em> Edward P. Kimball, 1882–1937</p>\n<p><em>Music:</em> Alexander Schreiner, 1901–1987. © 1948 IRI</p>"
+  },
+  "/manual/hymns/thy-will-o-lord-be-done": {
+   "number": "188",
+   "title": "Thy Will, O Lord, Be Done",
+   "firstLine": "When in the wondrous realms above",
+   "credits": "<p><em>Text:</em> Frank I. Kooyman, 1880–1963. © 1948 IRI</p>\n<p><em>Music:</em> Robert P. Manookin, 1918–1997. © 1985 IRI</p>"
+  },
+  "/manual/hymns/o-thou-before-the-world-began": {
+   "number": "189",
+   "title": "O Thou, Before the World Began",
+   "firstLine": "O thou, before the world began",
+   "credits": "<p><em>Text:</em> William H. Turton, 1856–1938</p>\n<p><em>Music:</em> Frank W. Asper, 1892–1973</p>"
+  },
+  "/manual/hymns/in-memory-of-the-crucified": {
+   "number": "190",
+   "title": "In Memory of the Crucified",
+   "firstLine": "In mem’ry of the Crucified",
+   "credits": "<p><em>Text:</em> Frank I. Kooyman, 1880–1963. © 1948 IRI</p>\n<p><em>Music:</em> Alexander Schreiner, 1901–1987. © 1948 IRI</p>"
+  },
+  "/manual/hymns/behold-the-great-redeemer-die": {
+   "number": "191",
+   "title": "Behold the Great Redeemer Die",
+   "firstLine": "Behold the great Redeemer die",
+   "credits": "<p><em>Text:</em> Eliza R. Snow, 1804–1887</p>\n<p><em>Music:</em> George Careless, 1839–1932</p>"
+  },
+  "/manual/hymns/he-died-the-great-redeemer-died": {
+   "number": "192",
+   "title": "He Died! The Great Redeemer Died",
+   "firstLine": "He died! The great Redeemer died",
+   "credits": "<p><em>Text:</em> Isaac Watts, 1674–1748, alt</p>\n<p><em>Music:</em> George Careless, 1839–1932</p>"
+  },
+  "/manual/hymns/i-stand-all-amazed": {
+   "number": "193",
+   "title": "I Stand All Amazed",
+   "firstLine": "I stand all amazed at the love Jesus offers me",
+   "credits": "<p><em>Text and music:</em> Charles H. Gabriel, 1856–1932</p>"
+  },
+  "/manual/hymns/there-is-a-green-hill-far-away": {
+   "number": "194",
+   "title": "There Is a Green Hill Far Away",
+   "firstLine": "There is a green hill far away",
+   "credits": "<p><em>Text:</em> Cecil Frances Alexander, 1818–1895</p>\n<p><em>Music:</em> John H. Gower, 1855–1922</p>"
+  },
+  "/manual/hymns/how-great-the-wisdom-and-the-love": {
+   "number": "195",
+   "title": "How Great the Wisdom and the Love",
+   "firstLine": "How great the wisdom and the love",
+   "credits": "<p><em>Text:</em> Eliza R. Snow, 1804–1887</p>\n<p><em>Music:</em> Thomas McIntyre, 1833–1914</p>"
+  },
+  "/manual/hymns/jesus-once-of-humble-birth": {
+   "number": "196",
+   "title": "Jesus, Once of Humble Birth",
+   "firstLine": "Jesus, once of humble birth",
+   "credits": "<p><em>Text:</em> Parley P. Pratt, 1807–1857</p>\n<p><em>Music:</em> Giacomo Meyerbeer, 1791–1864, adapted</p>"
+  },
+  "/manual/hymns/o-savior-thou-who-wearest-a-crown": {
+   "number": "197",
+   "title": "O Savior, Thou Who Wearest a Crown",
+   "firstLine": "O Savior, thou who wearest",
+   "credits": "<p><em>Text:</em> Karen Lynn Davidson, 1943–2019. © 1985 IRI</p>\n<p><em>Music:</em> Hans Leo Hassler, 1564–1612; adapted by J. S. Bach, 1685–1750</p>"
+  },
+  "/manual/hymns/that-easter-morn": {
+   "number": "198",
+   "title": "That Easter Morn",
+   "firstLine": "That Easter morn, a grave that burst",
+   "credits": "<p><em>Text:</em> Marion D. Hanks, b. 1921. © 1975 IRI</p>\n<p><em>Music:</em> Robert Cundick, b. 1926. © 1975 IRI</p>"
+  },
+  "/manual/hymns/he-is-risen": {
+   "number": "199",
+   "title": "He Is Risen!",
+   "firstLine": "He is risen! He is risen!",
+   "credits": "<p><em>Text:</em> Cecil Frances Alexander, 1818–1895</p>\n<p><em>Music:</em> Joachim Neander, 1650–1680</p>"
+  },
+  "/manual/hymns/christ-the-lord-is-risen-today": {
+   "number": "200",
+   "title": "Christ the Lord Is Risen Today",
+   "firstLine": "Christ the Lord is ris’n today, Alleluia!",
+   "credits": "<p><em>Text:</em> Charles Wesley, 1707–1788</p>\n<p><em>Music:</em> Anon., <cite>Lyra Davidica,</cite> 1708</p>"
+  },
+  "/manual/hymns/joy-to-the-world": {
+   "number": "201",
+   "title": "Joy to the World",
+   "firstLine": "Joy to the world, the Lord is come",
+   "credits": "<p><em>Text:</em> Isaac Watts, 1674–1748; alt. by William W. Phelps, 1792–1872</p>\n<p><em>Music:</em> George F. Handel, 1685–1759; arr. by Lowell Mason, 1792–1872</p>"
+  },
+  "/manual/hymns/oh-come-all-ye-faithful": {
+   "number": "202",
+   "title": "Oh, Come, All Ye Faithful",
+   "firstLine": "Oh, come, all ye faithful",
+   "credits": "<p><em>Text:</em> Attr. to John F. Wade, ca. 1711–1786; trans. by Frederick Oakeley, 1802–1880</p>\n<p><em>Music:</em> Attr. to John F. Wade</p>"
+  },
+  "/manual/hymns/angels-we-have-heard-on-high": {
+   "number": "203",
+   "title": "Angels We Have Heard on High",
+   "firstLine": "Angels we have heard on high",
+   "credits": "<p><em>Text:</em> French carol, ca. 1862</p>\n<p><em>Music:</em> French carol</p>"
+  },
+  "/manual/hymns/silent-night": {
+   "number": "204",
+   "title": "Silent Night",
+   "firstLine": "Silent night! Holy night!",
+   "credits": "<p><em>Text:</em> Joseph Mohr, 1792–1848; trans. by John F. Young, 1820–1885</p>\n<p><em>Music:</em> Franz Gruber, 1787–1863</p>"
+  },
+  "/manual/hymns/once-in-royal-davids-city": {
+   "number": "205",
+   "title": "Once in Royal David’s City",
+   "firstLine": "Once in royal David’s city",
+   "credits": "<p><em>Text:</em> Cecil Frances Alexander, 1818–1895</p>\n<p><em>Music:</em> Henry J. Gauntlett, 1805–1876</p>"
+  },
+  "/manual/hymns/away-in-a-manger": {
+   "number": "206",
+   "title": "Away in a Manger",
+   "firstLine": "Away in a manger, no crib for his bed",
+   "credits": "<p><em>Text:</em> Anon., ca. 1883, Philadelphia</p>\n<p><em>Music:</em> William J. Kirkpatrick, 1838–1921; harmonized by Rosalee Elser, b. 1925. © 1980 Rosalee Elser. Used by permission. Making copies for one-time noncommercial church or home use is permitted.</p>"
+  },
+  "/manual/hymns/it-came-upon-the-midnight-clear": {
+   "number": "207",
+   "title": "It Came upon the Midnight Clear",
+   "firstLine": "It came upon the midnight clear",
+   "credits": "<p><em>Text:</em> Edmund H. Sears, 1810–1876</p>\n<p><em>Music:</em> Richard S. Willis, 1819–1900</p>"
+  },
+  "/manual/hymns/o-little-town-of-bethlehem": {
+   "number": "208",
+   "title": "O Little Town of Bethlehem",
+   "firstLine": "O little town of Bethlehem",
+   "credits": "<p><em>Text:</em> Phillips Brooks, 1835–1893</p>\n<p><em>Music:</em> Lewis H. Redner, 1831–1908</p>"
+  },
+  "/manual/hymns/hark-the-herald-angels-sing": {
+   "number": "209",
+   "title": "Hark! The Herald Angels Sing",
+   "firstLine": "Hark! the herald angels sing",
+   "credits": "<p><em>Text:</em> Charles Wesley, 1707–1788</p>\n<p><em>Music:</em> Felix Mendelssohn, 1809–1847</p>"
+  },
+  "/manual/hymns/with-wondering-awe": {
+   "number": "210",
+   "title": "With Wondering Awe",
+   "firstLine": "With wond’ring awe the wisemen saw",
+   "credits": "<p><em>Text and music:</em> Anon., <cite>Laudis Corona,</cite> Boston, 1885</p>"
+  },
+  "/manual/hymns/while-shepherds-watched-their-flocks": {
+   "number": "211",
+   "title": "While Shepherds Watched Their Flocks",
+   "firstLine": "While shepherds watch’d their flocks by night",
+   "credits": "<p><em>Text:</em> Nahum Tate, 1652–1715; based on <a href=\"/study/scriptures/nt/luke/2.8-14\">Luke 2:8–14</a></p>\n<p><em>Music:</em> Yorkshire carol, ca. 1800</p>"
+  },
+  "/manual/hymns/far-far-away-on-judeas-plains": {
+   "number": "212",
+   "title": "Far, Far Away on Judea’s Plains",
+   "firstLine": "Far, far away on Judea’s plains",
+   "credits": "<p><em>Text and music:</em> John Menzies Macfarlane, 1833–1892</p>"
+  },
+  "/manual/hymns/the-first-noel": {
+   "number": "213",
+   "title": "The First Noel",
+   "firstLine": "The first Noel the angel did say",
+   "credits": "<p><em>Text and music:</em> Traditional English carol, ca. 17th century</p>"
+  },
+  "/manual/hymns/i-heard-the-bells-on-christmas-day": {
+   "number": "214",
+   "title": "I Heard the Bells on Christmas Day",
+   "firstLine": "I heard the bells on Christmas day",
+   "credits": "<p><em>Text:</em> Henry Wadsworth Longfellow, 1807–1882</p>\n<p><em>Music:</em> John Baptiste Calkin, 1827–1905</p>"
+  },
+  "/manual/hymns/ring-out-wild-bells": {
+   "number": "215",
+   "title": "Ring Out, Wild Bells",
+   "firstLine": "Ring out, wild bells, to the wild sky",
+   "credits": "<p><em>Text:</em> Alfred Tennyson, 1809–1892</p>\n<p><em>Music:</em> Crawford Gates, 1921–2018. © 1948 IRI</p>"
+  },
+  "/manual/hymns/we-are-sowing": {
+   "number": "216",
+   "title": "We Are Sowing",
+   "firstLine": "We are sowing, daily sowing",
+   "credits": "<p><em>Text:</em> Anon., <cite>Pure Diamonds,</cite> Cleveland, 1872</p>\n<p><em>Music:</em> Henry A. Tuckett, 1852–1918</p>"
+  },
+  "/manual/hymns/come-let-us-anew": {
+   "number": "217",
+   "title": "Come, Let Us Anew",
+   "firstLine": "Come, let us anew our journey pursue",
+   "credits": "<p><em>Text:</em> Charles Wesley, 1707–1788</p>\n<p><em>Music:</em> Attr. to James Lucas, b. 1726</p>"
+  },
+  "/manual/hymns/we-give-thee-but-thine-own": {
+   "number": "218",
+   "title": "We Give Thee But Thine Own",
+   "firstLine": "We give thee but thine own",
+   "credits": "<p><em>Text:</em> William Walsham How, 1823–1897</p>\n<p><em>Music:</em> Anon., arr. by Lowell Mason, 1792–1872, and George J. Webb, 1803–1887</p>"
+  },
+  "/manual/hymns/because-i-have-been-given-much": {
+   "number": "219",
+   "title": "Because I Have Been Given Much",
+   "firstLine": "",
+   "credits": "<p><em>Text:</em> Grace Noll Crowell, 1877–1969, alt. From <cite>Light of the Years,</cite> © 1936, 1964 Harper San Francisco.</p>\n<p><em>Music:</em> Phillip Landgrave, b. 1935. © 1975 Broadman Press. All rights reserved.</p>\n<p>International copyright secured. Used by permission. Making copies without written permission of the copyright owner is prohibited.</p>"
+  },
+  "/manual/hymns/lord-i-would-follow-thee": {
+   "number": "220",
+   "title": "Lord, I Would Follow Thee",
+   "firstLine": "Savior, may I learn to love thee",
+   "credits": "<p><em>Text:</em> Susan Evans McCloud, b. 1945. © 1985 IRI</p>\n<p><em>Music:</em> K. Newell Dayley, b. 1939. © 1985 IRI</p>"
+  },
+  "/manual/hymns/dear-to-the-heart-of-the-shepherd": {
+   "number": "221",
+   "title": "Dear to the Heart of the Shepherd",
+   "firstLine": "Dear to the heart of the Shepherd",
+   "credits": "<p><em>Text:</em> Mary B. Wingate, b. 1899</p>\n<p><em>Music:</em> William J. Kirkpatrick, 1838–1921</p>"
+  },
+  "/manual/hymns/hear-thou-our-hymn-o-lord": {
+   "number": "222",
+   "title": "Hear Thou Our Hymn, O Lord",
+   "firstLine": "Hear thou our hymn, O Lord",
+   "credits": "<p><em>Text and music:</em> Frank W. Asper, 1892–1973. © 1948 IRI</p>"
+  },
+  "/manual/hymns/have-i-done-any-good": {
+   "number": "223",
+   "title": "Have I Done Any Good?",
+   "firstLine": "Have I done any good in the world today?",
+   "credits": "<p><em>Text and music:</em> Will L. Thompson, 1847–1909, alt.</p>"
+  },
+  "/manual/hymns/i-have-work-enough-to-do": {
+   "number": "224",
+   "title": "I Have Work Enough to Do",
+   "firstLine": "I have work enough to do",
+   "credits": "<p><em>Text:</em> Josephine Pollard, 1834–1892</p>\n<p><em>Music:</em> William J. Kirkpatrick, 1838–1921</p>"
+  },
+  "/manual/hymns/we-are-marching-on-to-glory": {
+   "number": "225",
+   "title": "We Are Marching On to Glory",
+   "firstLine": "We are marching on to glory",
+   "credits": "<p><em>Text and music:</em> John M. Chamberlain, 1844–1930</p>"
+  },
+  "/manual/hymns/improve-the-shining-moments": {
+   "number": "226",
+   "title": "Improve the Shining Moments",
+   "firstLine": "Improve the shining moments",
+   "credits": "<p><em>Text and music:</em> Robert B. Baird, 1855–1916</p>"
+  },
+  "/manual/hymns/there-is-sunshine-in-my-soul-today": {
+   "number": "227",
+   "title": "There Is Sunshine in My Soul Today",
+   "firstLine": "There is sunshine in my soul today",
+   "credits": "<p><em>Text:</em> Eliza E. Hewitt, 1851–1920</p>\n<p><em>Music:</em> John R. Sweney, 1837–1899</p>"
+  },
+  "/manual/hymns/you-can-make-the-pathway-bright": {
+   "number": "228",
+   "title": "You Can Make the Pathway Bright",
+   "firstLine": "You can make the pathway bright",
+   "credits": "<p><em>Text:</em> Helen Silcott Dungan, ca. 1899</p>\n<p><em>Music:</em> James M. Dungan, 1851–1925</p>"
+  },
+  "/manual/hymns/today-while-the-sun-shines": {
+   "number": "229",
+   "title": "Today, While the Sun Shines",
+   "firstLine": "Today, while the sun shines, work with a will",
+   "credits": "<p><em>Text:</em> L. Clark, ca. 1880, alt.</p>\n<p><em>Music:</em> Evan Stephens, 1854–1930</p>"
+  },
+  "/manual/hymns/scatter-sunshine": {
+   "number": "230",
+   "title": "Scatter Sunshine",
+   "firstLine": "In a world where sorrow",
+   "credits": "<p><em>Text:</em> Lanta Wilson Smith</p>\n<p><em>Music:</em> Edwin O. Excell, 1851–1921</p>"
+  },
+  "/manual/hymns/father-cheer-our-souls-tonight": {
+   "number": "231",
+   "title": "Father, Cheer Our Souls Tonight",
+   "firstLine": "Father, cheer our souls tonight",
+   "credits": "<p><em>Text:</em> Ellis Reynolds Shipp, 1847–1939</p>\n<p><em>Music:</em> Orlando Gibbons, 1583–1625, alt.</p>"
+  },
+  "/manual/hymns/let-us-oft-speak-kind-words": {
+   "number": "232",
+   "title": "Let Us Oft Speak Kind Words",
+   "firstLine": "Let us oft speak kind words to each other",
+   "credits": "<p><em>Text:</em> Joseph L. Townsend, 1849–1942</p>\n<p><em>Music:</em> Ebenezer Beesley, 1840–1906</p>"
+  },
+  "/manual/hymns/nay-speak-no-ill": {
+   "number": "233",
+   "title": "Nay, Speak No Ill",
+   "firstLine": "Nay, speak no ill; a kindly word",
+   "credits": "<p><em>Text and music:</em> Anon., ca. 1853</p>"
+  },
+  "/manual/hymns/jesus-mighty-king-in-zion": {
+   "number": "234",
+   "title": "Jesus, Mighty King in Zion",
+   "firstLine": "Jesus, mighty King in Zion",
+   "credits": "<p><em>Text:</em> John Fellows, d. 1783</p>\n<p><em>Music:</em> Tracy Y. Cannon, 1879–1961. © 1948 IRI</p>"
+  },
+  "/manual/hymns/should-you-feel-inclined-to-censure": {
+   "number": "235",
+   "title": "Should You Feel Inclined to Censure",
+   "firstLine": "Should you feel inclined to censure",
+   "credits": "<p><em>Text:</em> Anon., ca. 1863</p>\n<p><em>Music:</em> Philip Paul Bliss, 1838–1876</p>"
+  },
+  "/manual/hymns/lord-accept-into-thy-kingdom": {
+   "number": "236",
+   "title": "Lord, Accept into Thy Kingdom",
+   "firstLine": "Lord, accept into thy kingdom",
+   "credits": "<p><em>Text:</em> Mabel Jones Gabbott, b. 1910. © 1948 IRI</p>\n<p><em>Music:</em> Alexander Schreiner, 1901–1987. © 1948 IRI</p>"
+  },
+  "/manual/hymns/do-what-is-right": {
+   "number": "237",
+   "title": "Do What Is Right",
+   "firstLine": "Do what is right; the day-dawn is breaking",
+   "credits": "<p><em>Text:</em> Anon., <cite>The Psalms of Life,</cite> Boston, 1857</p>\n<p><em>Music:</em> George Kiallmark, 1781–1835</p>"
+  },
+  "/manual/hymns/behold-thy-sons-and-daughters-lord": {
+   "number": "238",
+   "title": "Behold Thy Sons and Daughters, Lord",
+   "firstLine": "Behold thy sons and daughters, Lord",
+   "credits": "<p><em>Text:</em> Parley P. Pratt, 1807–1857</p>\n<p><em>Music:</em> Alexander Schreiner, 1901–1987. © 1948 IRI</p>"
+  },
+  "/manual/hymns/choose-the-right": {
+   "number": "239",
+   "title": "Choose the Right",
+   "firstLine": "Choose the right when a choice is placed before you.",
+   "credits": "<p><em>Text:</em> Joseph L. Townsend, 1849–1942</p>\n<p><em>Music:</em> Henry A. Tuckett, 1852–1918</p>"
+  },
+  "/manual/hymns/know-this-that-every-soul-is-free": {
+   "number": "240",
+   "title": "Know This, That Every Soul Is Free",
+   "firstLine": "Know this, that ev’ry soul is free",
+   "credits": "<p><em>Text:</em> Anon., ca. 1805, Boston</p>\n<p><em>Music:</em> Roger L. Miller, b. 1937. © 1985 IRI</p>"
+  },
+  "/manual/hymns/count-your-blessings": {
+   "number": "241",
+   "title": "Count Your Blessings",
+   "firstLine": "When upon life’s billows you are tempest-tossed",
+   "credits": "<p><em>Text:</em> Johnson Oatman Jr., 1856–1922</p>\n<p><em>Music:</em> Edwin O. Excell, 1851–1921</p>"
+  },
+  "/manual/hymns/praise-god-from-whom-all-blessings-flow": {
+   "number": "242",
+   "title": "Praise God, from Whom All Blessings Flow",
+   "firstLine": "Praise God, from whom all blessings flow",
+   "credits": "<p><em>Text:</em> Thomas Ken, 1637–1711</p>\n<p><em>Music:</em> Louis Bourgeois, ca. 1510–1561. From <cite>Genfer Psalter,</cite> 16th century.</p>"
+  },
+  "/manual/hymns/let-us-all-press-on": {
+   "number": "243",
+   "title": "Let Us All Press On",
+   "firstLine": "Let us all press on in the work of the Lord",
+   "credits": "<p><em>Text and music:</em> Evan Stephens, 1854–1930</p>"
+  },
+  "/manual/hymns/come-along-come-along": {
+   "number": "244",
+   "title": "Come Along, Come Along",
+   "firstLine": "“Come along, come along” is the call that will win",
+   "credits": "<p><em>Text:</em> William Willes, 1814–1890</p>\n<p><em>Music:</em> A. C. Smyth, 1840–1909</p>"
+  },
+  "/manual/hymns/this-house-we-dedicate-to-thee": {
+   "number": "245",
+   "title": "This House We Dedicate to Thee",
+   "firstLine": "This house we dedicate to thee",
+   "credits": "<p><em>Text:</em> Henry W. Naisbitt, 1826–1908</p>\n<p><em>Music:</em> Frank W. Asper, 1892–1973. © 1948 IRI</p>"
+  },
+  "/manual/hymns/onward-christian-soldiers": {
+   "number": "246",
+   "title": "Onward, Christian Soldiers",
+   "firstLine": "Onward, Christian soldiers!",
+   "credits": "<p><em>Text:</em> Sabine Baring-Gould, 1834–1924</p>\n<p><em>Music:</em> Arthur S. Sullivan, 1842–1900</p>"
+  },
+  "/manual/hymns/we-love-thy-house-o-god": {
+   "number": "247",
+   "title": "We Love Thy House, O God",
+   "firstLine": "We love thy house, O God",
+   "credits": "<p><em>Text:</em> William Bullock, 1797–1874</p>\n<p><em>Music:</em> Leroy J. Robertson, 1896–1971. © 1948 IRI</p>"
+  },
+  "/manual/hymns/up-awake-ye-defenders-of-zion": {
+   "number": "248",
+   "title": "Up, Awake, Ye Defenders of Zion",
+   "firstLine": "Up, awake, ye defenders of Zion!",
+   "credits": "<p><em>Text:</em> Charles W. Penrose, 1832–1925, alt.</p>\n<p><em>Music:</em> Attr. to Thomas E. Williams, d. 1854</p>"
+  },
+  "/manual/hymns/called-to-serve": {
+   "number": "249",
+   "title": "Called to Serve",
+   "firstLine": "Called to serve Him, heav’nly King of glory",
+   "credits": "<p><em>Text:</em> Grace Gordon, alt.</p>\n<p><em>Music:</em> Adam Geibel, 1855–1933</p>"
+  },
+  "/manual/hymns/we-are-all-enlisted": {
+   "number": "250",
+   "title": "We Are All Enlisted",
+   "firstLine": "We are all enlisted till the conflict is o’er",
+   "credits": "<p><em>Text:</em> Anon., <cite>The New Golden Chain,</cite> New York, 1866</p>\n<p><em>Music:</em> William B. Bradbury, 1816–1868</p>"
+  },
+  "/manual/hymns/behold-a-royal-army": {
+   "number": "251",
+   "title": "Behold! A Royal Army",
+   "firstLine": "Behold! A royal army",
+   "credits": "<p><em>Text:</em> Fanny J. Crosby, 1820–1915</p>\n<p><em>Music:</em> Adam Geibel, 1855–1933</p>"
+  },
+  "/manual/hymns/put-your-shoulder-to-the-wheel": {
+   "number": "252",
+   "title": "Put Your Shoulder to the Wheel",
+   "firstLine": "The world has need of willing men",
+   "credits": "<p><em>Text and music:</em> Will L. Thompson, 1847–1909</p>"
+  },
+  "/manual/hymns/like-ten-thousand-legions-marching": {
+   "number": "253",
+   "title": "Like Ten Thousand Legions Marching",
+   "firstLine": "Like ten thousand legions marching",
+   "credits": "<p><em>Text:</em> Jean L. Kaberry, 1918–1997. © 1985 IRI</p>\n<p><em>Music:</em> Robert P. Manookin, 1918–1997. © 1985 IRI</p>"
+  },
+  "/manual/hymns/true-to-the-faith": {
+   "number": "254",
+   "title": "True to the Faith",
+   "firstLine": "Shall the youth of Zion falter",
+   "credits": "<p><em>Text and music:</em> Evan Stephens, 1854–1930</p>"
+  },
+  "/manual/hymns/carry-on": {
+   "number": "255",
+   "title": "Carry On",
+   "firstLine": "Firm as the mountains around us",
+   "credits": "<p><em>Text:</em> Ruth May Fox, 1853–1958. © 1948 IRI</p>\n<p><em>Music:</em> Alfred M. Durham, 1872–1957. © 1948 IRI</p>"
+  },
+  "/manual/hymns/as-zions-youth-in-latter-days": {
+   "number": "256",
+   "title": "As Zion’s Youth in Latter Days",
+   "firstLine": "As Zion’s youth in latter days",
+   "credits": "<p><em>Text:</em> Susan Evans McCloud, b. 1945. © 1985 IRI</p>\n<p><em>Music:</em> Irish melody, arr. © 1985 IRI</p>"
+  },
+  "/manual/hymns/rejoice-a-glorious-sound-is-heard": {
+   "number": "257",
+   "title": "Rejoice! A Glorious Sound Is Heard",
+   "firstLine": "Rejoice! A glorious sound is heard",
+   "credits": "<p><em>Text:</em> W. O. Robinson, 1876–1979. © 1948 IRI</p>\n<p><em>Music:</em> Frank W. Asper, 1892–1973. © 1948 IRI</p>"
+  },
+  "/manual/hymns/o-thou-rock-of-our-salvation": {
+   "number": "258",
+   "title": "O Thou Rock of Our Salvation",
+   "firstLine": "O thou Rock of our salvation",
+   "credits": "<p><em>Text:</em> Joseph L. Townsend, 1849–1942</p>\n<p><em>Music:</em> William Clayson, 1840–1887</p>"
+  },
+  "/manual/hymns/hope-of-israel": {
+   "number": "259",
+   "title": "Hope of Israel",
+   "firstLine": "Hope of Israel, Zion’s army",
+   "credits": "<p><em>Text:</em> Joseph L. Townsend, 1849–1942</p>\n<p><em>Music:</em> William Clayson, 1840–1887</p>"
+  },
+  "/manual/hymns/whos-on-the-lords-side": {
+   "number": "260",
+   "title": "Who’s on the Lord’s Side?",
+   "firstLine": "Who’s on the Lord’s side? Who?",
+   "credits": "<p><em>Text:</em> Hannah Last Cornaby, 1822–1905</p>\n<p><em>Music:</em> Henry H. Russell, 1818–1900, alt.</p>"
+  },
+  "/manual/hymns/thy-servants-are-prepared": {
+   "number": "261",
+   "title": "Thy Servants Are Prepared",
+   "firstLine": "Thy servants are prepared",
+   "credits": "<p><em>Text:</em> Marilyn McMeen Brown, b. 1938. © 1985 IRI</p>\n<p><em>Music:</em> Willy Reske, 1897–1991. © 1985 IRI</p>"
+  },
+  "/manual/hymns/go-ye-messengers-of-glory": {
+   "number": "262",
+   "title": "Go, Ye Messengers of Glory",
+   "firstLine": "Go, ye messengers of glory",
+   "credits": "<p><em>Text:</em> John Taylor, 1808–1887</p>\n<p><em>Music:</em> Leroy J. Robertson, 1896–1971. © 1948 IRI</p>"
+  },
+  "/manual/hymns/go-forth-with-faith": {
+   "number": "263",
+   "title": "Go Forth with Faith",
+   "firstLine": "Go forth with faith to tell the world",
+   "credits": "<p><em>Text:</em> Ruth M. Gardner, 1927–1999. © 1985 IRI</p>\n<p><em>Music:</em> Lyall J. Gardner, b. 1926. © 1985 IRI</p>"
+  },
+  "/manual/hymns/hark-all-ye-nations": {
+   "number": "264",
+   "title": "Hark, All Ye Nations!",
+   "firstLine": "Hark, all ye nations! Hear heaven’s voice",
+   "credits": "<p><em>Text:</em> Based on German text by Louis F. Mönch, 1847–1916. © 1985 IRI</p>\n<p><em>Music:</em> George F. Root, 1820–1895</p>"
+  },
+  "/manual/hymns/arise-o-god-and-shine": {
+   "number": "265",
+   "title": "Arise, O God, and Shine",
+   "firstLine": "Arise, O God, and shine",
+   "credits": "<p><em>Text:</em> William Hurn, 1754–1829</p>\n<p><em>Music:</em> John Darwall, 1731–1789</p>"
+  },
+  "/manual/hymns/the-time-is-far-spent": {
+   "number": "266",
+   "title": "The Time Is Far Spent",
+   "firstLine": "The time is far spent; there is little remaining",
+   "credits": "<p><em>Text:</em> Eliza R. Snow, 1804–1887</p>\n<p><em>Music:</em> German folk song, 18th century</p>"
+  },
+  "/manual/hymns/how-wondrous-and-great": {
+   "number": "267",
+   "title": "How Wondrous and Great",
+   "firstLine": "How wondrous and great",
+   "credits": "<p><em>Text:</em> Henry U. Onderdonk, 1789–1858; based on <a href=\"/study/scriptures/nt/rev/15.3-4\">Revelation 15:3–4</a></p>\n<p><em>Music:</em> Joseph Martin Kraus, 1756–1792</p>"
+  },
+  "/manual/hymns/come-all-whose-souls-are-lighted": {
+   "number": "268",
+   "title": "Come, All Whose Souls Are Lighted",
+   "firstLine": "Come, all whose souls are lighted",
+   "credits": "<p><em>Text:</em> Reginald Heber, 1783–1826</p>\n<p><em>Music:</em> Lowell Mason, 1792–1872</p>"
+  },
+  "/manual/hymns/jehovah-lord-of-heaven-and-earth": {
+   "number": "269",
+   "title": "Jehovah, Lord of Heaven and Earth",
+   "firstLine": "Jehovah, Lord of heav’n and earth",
+   "credits": "<p><em>Text:</em> Anon.</p>\n<p><em>Music:</em> Oliver Holden, 1765–1844</p>"
+  },
+  "/manual/hymns/ill-go-where-you-want-me-to-go": {
+   "number": "270",
+   "title": "I’ll Go Where You Want Me to Go",
+   "firstLine": "It may not be on the mountain height",
+   "credits": "<p><em>Text:</em> Mary Brown, 1856–1918</p>\n<p><em>Music:</em> Carrie E. Rounsefell, 1861–1930</p>"
+  },
+  "/manual/hymns/oh-holy-words-of-truth-and-love": {
+   "number": "271",
+   "title": "Oh, Holy Words of Truth and Love",
+   "firstLine": "Oh, holy words of truth and love",
+   "credits": "<p><em>Text:</em> Joseph L. Townsend, 1849–1942</p>\n<p><em>Music:</em> Edwin F. Parry, 1850–1935</p>"
+  },
+  "/manual/hymns/oh-say-what-is-truth": {
+   "number": "272",
+   "title": "Oh Say, What Is Truth?",
+   "firstLine": "Oh say, what is truth?’Tis the fairest gem",
+   "credits": "<p><em>Text:</em> John Jaques, 1827–1900</p>\n<p><em>Music:</em> Ellen Knowles Melling, 1820–1905</p>"
+  },
+  "/manual/hymns/truth-reflects-upon-our-senses": {
+   "number": "273",
+   "title": "Truth Reflects upon Our Senses",
+   "firstLine": "Truth reflects upon our senses",
+   "credits": "<p><em>Text:</em> Eliza R. Snow, 1807–1887; chorus by M. E. Abbey</p>\n<p><em>Music:</em> Charles Davis Tillman, 1861–1943</p>"
+  },
+  "/manual/hymns/the-iron-rod": {
+   "number": "274",
+   "title": "The Iron Rod",
+   "firstLine": "To Nephi, seer of olden time",
+   "credits": "<p><em>Text:</em> Joseph L. Townsend, 1849–1942</p>\n<p><em>Music:</em> William Clayson, 1840–1887</p>"
+  },
+  "/manual/hymns/men-are-that-they-might-have-joy": {
+   "number": "275",
+   "title": "Men Are That They Might Have Joy",
+   "firstLine": "A voice hath spoken from the dust",
+   "credits": "<p><em>Text:</em> J. Marinus Jensen, 1868–1945. © 1948 IRI</p>\n<p><em>Music:</em> J. J. Keeler, 1913–1996. © 1948 IRI</p>"
+  },
+  "/manual/hymns/come-away-to-the-sunday-school": {
+   "number": "276",
+   "title": "Come Away to the Sunday School",
+   "firstLine": "When the rosy light of morning",
+   "credits": "<p><em>Text and music:</em> Robert B. Baird, 1855–1916</p>"
+  },
+  "/manual/hymns/as-i-search-the-holy-scriptures": {
+   "number": "277",
+   "title": "As I Search the Holy Scriptures",
+   "firstLine": "As I search the holy scriptures",
+   "credits": "<p><em>Text and music:</em> C. Marianne Johnson Fisher, 1932–2018 © 1985 IRI</p>"
+  },
+  "/manual/hymns/thanks-for-the-sabbath-school": {
+   "number": "278",
+   "title": "Thanks for the Sabbath School",
+   "firstLine": "Thanks for the Sabbath School. Hail to the day",
+   "credits": "<p><em>Text:</em> William Willes, 1814–1890</p>\n<p><em>Music:</em> James R. Murray, 1841–1905</p>"
+  },
+  "/manual/hymns/thy-holy-word": {
+   "number": "279",
+   "title": "Thy Holy Word",
+   "firstLine": "We love to hear thy holy word",
+   "credits": "<p><em>Text:</em> Marvin K. Gardner, b. 1952. © 1985 IRI</p>\n<p><em>Music:</em> Robert Cundick, b. 1926. © 1985 IRI</p>"
+  },
+  "/manual/hymns/welcome-welcome-sabbath-morning": {
+   "number": "280",
+   "title": "Welcome, Welcome, Sabbath Morning",
+   "firstLine": "Welcome, welcome, Sabbath morning",
+   "credits": "<p><em>Text:</em> Robert B. Baird, 1855–1916</p>\n<p><em>Music:</em> Ebenezer Beesley, 1840–1906</p>"
+  },
+  "/manual/hymns/help-me-teach-with-inspiration": {
+   "number": "281",
+   "title": "Help Me Teach with Inspiration",
+   "firstLine": "Help me teach with inspiration",
+   "credits": "<p><em>Text and music:</em> Lorin F. Wheelwright, 1909–1987. © 1958, 1985 Lorin F. Wheelwright. This hymn may be copied for incidental, noncommercial church or home use.</p>"
+  },
+  "/manual/hymns/we-meet-again-in-sabbath-school": {
+   "number": "282",
+   "title": "We Meet Again in Sabbath School",
+   "firstLine": "We meet again in Sabbath School",
+   "credits": "<p><em>Text:</em> George Manwaring, 1854–1889</p>\n<p><em>Music:</em> Ebenezer Beesley, 1840–1906</p>"
+  },
+  "/manual/hymns/the-glorious-gospel-light-has-shone": {
+   "number": "283",
+   "title": "The Glorious Gospel Light Has Shone",
+   "firstLine": "The glorious gospel light has shone",
+   "credits": "<p><em>Text:</em> Joel H. Johnson, 1802–1882</p>\n<p><em>Music:</em> Gottfried W. Fink, 1783–1846</p>"
+  },
+  "/manual/hymns/if-you-could-hie-to-kolob": {
+   "number": "284",
+   "title": "If You Could Hie to Kolob",
+   "firstLine": "If you could hie to Kolob",
+   "credits": "<p><em>Text:</em> William W. Phelps, 1792–1872</p>\n<p><em>Music:</em> <small>KINGSFOLD</small>, collected by Lucy Broadwood, adapted and arranged by Ralph Vaughan Williams, 1872–1958. From the <cite>English Hymnal.</cite> Reproduced by permission of CopyCat Music Licensing, LLC, on behalf of Oxford University Press. All rights reserved.</p>"
+  },
+  "/manual/hymns/god-moves-in-a-mysterious-way": {
+   "number": "285",
+   "title": "God Moves in a Mysterious Way",
+   "firstLine": "God moves in a mysterious way",
+   "credits": "<p><em>Text:</em> William Cowper, 1731–1800</p>\n<p><em>Music:</em> William B. Bradbury, 1816–1868</p>"
+  },
+  "/manual/hymns/oh-what-songs-of-the-heart": {
+   "number": "286",
+   "title": "Oh, What Songs of the Heart",
+   "firstLine": "Oh, what songs of the heart",
+   "credits": "<p><em>Text:</em> Joseph L. Townsend, 1849–1942</p>\n<p><em>Music:</em> William Clayson, 1840–1887</p>"
+  },
+  "/manual/hymns/rise-ye-saints-and-temples-enter": {
+   "number": "287",
+   "title": "Rise, Ye Saints, and Temples Enter",
+   "firstLine": "Rise, ye Saints, and temples enter",
+   "credits": "<p><em>Text:</em> Jean L. Kaberry, 1918–1997. © 1985 IRI</p>\n<p><em>Music:</em> Robert P. Manookin, 1918–1997. © 1985 IRI</p>"
+  },
+  "/manual/hymns/how-beautiful-thy-temples-lord": {
+   "number": "288",
+   "title": "How Beautiful Thy Temples, Lord",
+   "firstLine": "How beautiful thy temples, Lord!",
+   "credits": "<p><em>Text:</em> Frank I. Kooyman, 1880–1963. © 1948 IRI</p>\n<p><em>Music:</em> Tracy Y. Cannon, 1879–1961. © 1948 IRI</p>"
+  },
+  "/manual/hymns/holy-temples-on-mount-zion": {
+   "number": "289",
+   "title": "Holy Temples on Mount Zion",
+   "firstLine": "Holy temples on Mount Zion",
+   "credits": "<p><em>Text:</em> Archibald F. Bennett, 1896–1965. © 1948 IRI</p>\n<p><em>Music:</em> Alexander Schreiner, 1901–1987. © 1948 IRI</p>"
+  },
+  "/manual/hymns/rejoice-ye-saints-of-latter-days": {
+   "number": "290",
+   "title": "Rejoice, Ye Saints of Latter Days",
+   "firstLine": "Rejoice, ye Saints of latter days",
+   "credits": "<p><em>Text:</em> Mabel Jones Gabbott, b. 1910. © 1985 IRI</p>\n<p><em>Music:</em> R. Paul Thompson, b. 1926. © 1985 IRI</p>"
+  },
+  "/manual/hymns/turn-your-hearts": {
+   "number": "291",
+   "title": "Turn Your Hearts",
+   "firstLine": "Turn your hearts; the Lord is coming",
+   "credits": "<p><em>Text:</em> Paul L. Anderson, b. 1946. © 1983 Paul L. Anderson and Lynn R. Carson</p>\n<p><em>Music:</em> Gaylen Hatton, b. 1928. © 1985 IRI This hymn may be copied for incidental, noncommercial church or home use.</p>"
+  },
+  "/manual/hymns/o-my-father": {
+   "number": "292",
+   "title": "O My Father",
+   "firstLine": "O my Father, thou that dwellest",
+   "credits": "<p><em>Text:</em> Eliza R. Snow, 1804–1887</p>\n<p><em>Music:</em> James McGranahan, 1840–1907</p>"
+  },
+  "/manual/hymns/each-life-that-touches-ours-for-good": {
+   "number": "293",
+   "title": "Each Life That Touches Ours for Good",
+   "firstLine": "Each life that touches ours for good",
+   "credits": "<p><em>Text:</em> Karen Lynn Davidson, 1943–2019. © 1985 IRI</p>\n<p><em>Music:</em> A. Laurence Lyon, 1934–2006. © 1985 IRI</p>"
+  },
+  "/manual/hymns/love-at-home": {
+   "number": "294",
+   "title": "Love at Home",
+   "firstLine": "There is beauty all around",
+   "credits": "<p><em>Text and music:</em> John Hugh McNaughton, 1829–1891</p>"
+  },
+  "/manual/hymns/o-love-that-glorifies-the-son": {
+   "number": "295",
+   "title": "O Love That Glorifies the Son",
+   "firstLine": "O love that glorifies the Son",
+   "credits": "<p><em>Text and music:</em> Lorin F. Wheelwright, 1909–1987. © 1969, 1985 Lorin F. Wheelwright. This hymn may be copied for incidental, noncommercial church or home use.</p>"
+  },
+  "/manual/hymns/our-father-by-whose-name": {
+   "number": "296",
+   "title": "Our Father, by Whose Name",
+   "firstLine": "Our Father, by whose name all fatherhood is known",
+   "credits": "<p><em>Text:</em> F. Bland Tucker, 1895–1984, alt.</p>\n<p><em>Music:</em> John David Edwards, 1806–1885 From <cite>The Hymnal</cite> 1982. Text © The Church Pension Fund. Used by permission. Making copies without written permission of the copyright owner is prohibited.</p>"
+  },
+  "/manual/hymns/from-homes-of-saints-glad-songs-arise": {
+   "number": "297",
+   "title": "From Homes of Saints Glad Songs Arise",
+   "firstLine": "From homes of Saints glad songs arise",
+   "credits": "<p><em>Text:</em> Vernald W. Johns, 1902–1999. © 1985 IRI</p>\n<p><em>Music:</em> G. William Richards, b. 1918. © 1985 IRI</p>"
+  },
+  "/manual/hymns/home-can-be-a-heaven-on-earth": {
+   "number": "298",
+   "title": "Home Can Be a Heaven on Earth",
+   "firstLine": "Home can be a heav’n on earth",
+   "credits": "<p><em>Text:</em> Carolyn Hamilton Klopfer, b. 1936. © 1985 IRI</p>\n<p><em>Music:</em> W. Herbert Klopfer, b. 1936. © 1985 IRI</p>"
+  },
+  "/manual/hymns/children-of-our-heavenly-father": {
+   "number": "299",
+   "title": "Children of Our Heavenly Father",
+   "firstLine": "",
+   "credits": "<p><em>Text:</em> Caroline V. Sandell-Berg, 1832–1903; trans. by Ernst W. Olson, 1870–1958. English translation © Board of Publication, Lutheran Church in America. Used by permission.</p>\n<p><em>Music:</em> Traditional Swedish melody</p>"
+  },
+  "/manual/hymns/families-can-be-together-forever": {
+   "number": "300",
+   "title": "Families Can Be Together Forever",
+   "firstLine": "I have a fam’ly here on earth.",
+   "credits": "<p><em>Text:</em> Ruth M. Gardner, 1927–1999. © 1980 IRI</p>\n<p><em>Music:</em> Vanja Y. Watkins, b. 1938. © 1980 IRI</p>"
+  },
+  "/manual/hymns/i-am-a-child-of-god": {
+   "number": "301",
+   "title": "I Am a Child of God",
+   "firstLine": "I am a child of God",
+   "credits": "<p><em>Text:</em> Naomi W. Randall, 1908–2001. © 1957 IRI</p>\n<p><em>Music:</em> Mildred T. Pettit, 1895–1977. © 1957 IRI</p>"
+  },
+  "/manual/hymns/i-know-my-father-lives": {
+   "number": "302",
+   "title": "I Know My Father Lives",
+   "firstLine": "I know my Father lives and loves me too.",
+   "credits": "<p><em>Text and music:</em> Reid N. Nibley, b. 1923. © 1969 IRI</p>"
+  },
+  "/manual/hymns/keep-the-commandments": {
+   "number": "303",
+   "title": "Keep the Commandments",
+   "firstLine": "Keep the commandments; keep the commandments!",
+   "credits": "<p><em>Text and music:</em> Barbara A. McConochie, b. 1940 © 1975 IRI</p>"
+  },
+  "/manual/hymns/teach-me-to-walk-in-the-light": {
+   "number": "304",
+   "title": "Teach Me to Walk in the Light",
+   "firstLine": "Teach me to walk in the light of his love",
+   "credits": "<p><em>Text and music:</em> Clara W. McMaster, 1904–1997. © 1958 IRI</p>"
+  },
+  "/manual/hymns/the-light-divine": {
+   "number": "305",
+   "title": "The Light Divine",
+   "firstLine": "The light of God rests on the face",
+   "credits": "<p><em>Text:</em> Matilda Watts Cahoon, 1881–1973</p>\n<p><em>Music:</em> Mildred T. Pettit, 1895–1977, arr.</p>"
+  },
+  "/manual/hymns/gods-daily-care": {
+   "number": "306",
+   "title": "God’s Daily Care",
+   "firstLine": "As I watch the rising sun",
+   "credits": "<p><em>Text:</em> Marie C. Turk. © 1951 IRI</p>\n<p><em>Music:</em> Willy Reske, 1897–1991. © 1951 IRI</p>"
+  },
+  "/manual/hymns/in-our-lovely-deseret": {
+   "number": "307",
+   "title": "In Our Lovely Deseret",
+   "firstLine": "In our lovely Deseret",
+   "credits": "<p><em>Text:</em> Eliza R. Snow, 1804–1887</p>\n<p><em>Music:</em> George F. Root, 1820–1895</p>"
+  },
+  "/manual/hymns/love-one-another": {
+   "number": "308",
+   "title": "Love One Another",
+   "firstLine": "As I have loved you",
+   "credits": "<p><em>Text and music:</em> Luacine Clark Fox, 1914–2002. © 1961, 1989 IRI</p>"
+  },
+  "/manual/hymns/as-sisters-in-zion-women": {
+   "number": "309",
+   "title": "As Sisters in Zion",
+   "firstLine": "As sisters in Zion, we’ll all work together",
+   "credits": "<p><em>Text:</em> Emily H. Woodmansee, 1836–1906</p>\n<p><em>Music:</em> Janice Kapp Perry, b. 1938. © 1985 IRI</p>"
+  },
+  "/manual/hymns/a-key-was-turned-in-latter-days-women": {
+   "number": "310",
+   "title": "A Key Was Turned in Latter Days",
+   "firstLine": "A key was turned in latter days",
+   "credits": "<p><em>Text:</em> Jan Underwood Pinborough, b. 1954; based on <cite>History of the Church,</cite> 4:607. © 1985 IRI</p>\n<p><em>Music:</em> Charlene A. Newell, b. 1938. © 1985 IRI</p>"
+  },
+  "/manual/hymns/we-meet-again-as-sisters-women": {
+   "number": "311",
+   "title": "We Meet Again as Sisters",
+   "firstLine": "We meet again as sisters",
+   "credits": "<p><em>Text:</em> Paul L. Anderson, b. 1946. © 1985 IRI</p>\n<p><em>Music:</em> Bonnie Lauper Goodliffe, b. 1943. © 1985 IRI</p>"
+  },
+  "/manual/hymns/we-ever-pray-for-thee-women": {
+   "number": "312",
+   "title": "We Ever Pray for Thee",
+   "firstLine": "We ever pray for thee, our prophet dear",
+   "credits": "<p><em>Text:</em> Evan Stephens, 1854–1930</p>\n<p><em>Music:</em> H. A. Tuckett, 1852–1918; adapted by Evan Stephens, 1854–1930</p>"
+  },
+  "/manual/hymns/god-is-love-women": {
+   "number": "313",
+   "title": "God Is Love",
+   "firstLine": "Earth, with her ten thousand flow’rs",
+   "credits": "<p><em>Text:</em> Thomas R. Taylor, 1807–1835, alt</p>\n<p><em>Music:</em> Thomas C. Griggs, 1845–1903</p>"
+  },
+  "/manual/hymns/how-gentle-gods-commands-women": {
+   "number": "314",
+   "title": "How Gentle God’s Commands",
+   "firstLine": "How gentle God’s commands!",
+   "credits": "<p><em>Text:</em> Philip Doddridge, 1702–1751</p>\n<p><em>Music:</em> Hans Georg Nägeli, 1773–1836</p>"
+  },
+  "/manual/hymns/jesus-the-very-thought-of-thee-women": {
+   "number": "315",
+   "title": "Jesus, the Very Thought of Thee",
+   "firstLine": "Jesus, the very thought of thee",
+   "credits": "<p><em>Text:</em> Attr. to Bernard of Clairvaux, ca. 1091–1153; trans. by Edward Caswall, 1814–1878</p>\n<p>Music: John B. Dykes, 1823–1876</p>"
+  },
+  "/manual/hymns/the-lord-is-my-shepherd-women": {
+   "number": "316",
+   "title": "The Lord Is My Shepherd",
+   "firstLine": "The Lord is my Shepherd; no want shall I know.",
+   "credits": "<p><em>Text:</em> James Montgomery, 1771–1854; based on <a href=\"/study/scriptures/ot/ps/23\">Psalm 23</a></p>\n<p><em>Music:</em> Thomas Koschat, 1845–1914</p>"
+  },
+  "/manual/hymns/sweet-is-the-work-women": {
+   "number": "317",
+   "title": "Sweet Is the Work",
+   "firstLine": "Sweet is the work, my God, my King",
+   "credits": "<p><em>Text:</em> Isaac Watts, 1674–1748</p>\n<p><em>Music:</em> John J. McClellan, 1874–1925</p>"
+  },
+  "/manual/hymns/love-at-home-women": {
+   "number": "318",
+   "title": "Love at Home",
+   "firstLine": "There is beauty all around",
+   "credits": "<p><em>Text and music:</em> John Hugh McNaughton, 1829–1891</p>"
+  },
+  "/manual/hymns/ye-elders-of-israel-men": {
+   "number": "319",
+   "title": "Ye Elders of Israel",
+   "firstLine": "Ye elders of Israel, come join now with me",
+   "credits": "<p><em>Text:</em> Cyrus H. Wheelock, 1813–1894</p>\n<p><em>Music:</em> Thomas H. Bayly, 1797–1839, adapted</p>"
+  },
+  "/manual/hymns/the-priesthood-of-our-lord-men": {
+   "number": "320",
+   "title": "The Priesthood of Our Lord",
+   "firstLine": "Brethren, pow’r by earthly standards",
+   "credits": "<p><em>Text and music:</em> John Craven, b. 1929. © 1985 IRI</p>"
+  },
+  "/manual/hymns/ye-who-are-called-to-labor-men": {
+   "number": "321",
+   "title": "Ye Who Are Called to Labor",
+   "firstLine": "Ye who are called to labor and minister for God",
+   "credits": "<p><em>Text:</em> Mary Judd Page, 1818–1907</p>\n<p><em>Music:</em> Daniel B. Towner, 1850–1919</p>"
+  },
+  "/manual/hymns/come-all-ye-sons-of-god-men": {
+   "number": "322",
+   "title": "Come, All Ye Sons of God",
+   "firstLine": "Come, all ye sons of God who have received the priesthood",
+   "credits": "<p><em>Text:</em> Thomas Davenport, 1815–1888</p>\n<p><em>Music:</em> Orson Pratt Huish, 1851–1932</p>"
+  },
+  "/manual/hymns/rise-up-o-men-of-god-mens-choir": {
+   "number": "323",
+   "title": "Rise Up, O Men of God",
+   "firstLine": "Rise up, O men of God!",
+   "credits": "<p><em>Text:</em> William Pierson Merrill, 1867–1954. Used by permission of the <cite>Presbyterian Outlook,</cite> Richmond, Virginia, USA. Making copies without written permission of the copyright owner is prohibited.</p>\n<p><em>Music:</em> Frank W. Asper, 1892–1973. © 1948 IRI Arr. by Robert P. Manookin, 1918–1997. © 1985 IRI</p>\n<p><em>Tune name:</em> <small>KENILWORTH</small></p>"
+  },
+  "/manual/hymns/rise-up-o-men-of-god-men": {
+   "number": "324",
+   "title": "Rise Up, O Men of God",
+   "firstLine": "Rise up, O men of God!",
+   "credits": "<p><em>Text:</em> William Pierson Merrill, 1867–1954. Used by permission of the <cite>Presbyterian Outlook,</cite> Richmond, Virginia, USA. Making copies without written permission of the copyright owner is prohibited.</p>\n<p><em>Music:</em> William H. Walter, 1825–1893</p>\n<p><em>Tune name:</em> <small>FESTAL SONG</small></p>"
+  },
+  "/manual/hymns/see-the-mighty-priesthood-gathered-mens-choir": {
+   "number": "325",
+   "title": "See the Mighty Priesthood Gathered",
+   "firstLine": "See the mighty priesthood gathered",
+   "credits": "<p><em>Text:</em> Jean L. Kaberry, b. 1918. © 1985 IRI</p>\n<p><em>Music:</em> Robert P. Manookin, 1918–1997. © 1985 IRI</p>"
+  },
+  "/manual/hymns/come-come-ye-saints-mens-choir": {
+   "number": "326",
+   "title": "Come, Come, Ye Saints",
+   "firstLine": "Come, come, ye Saints, no toil nor labor fear",
+   "credits": "<p><em>Text:</em> William Clayton, 1814–1879</p>\n<p><em>Music:</em> English folk song</p>"
+  },
+  "/manual/hymns/go-ye-messengers-of-heaven-mens-choir": {
+   "number": "327",
+   "title": "Go, Ye Messengers of Heaven",
+   "firstLine": "Go, ye messengers of heaven",
+   "credits": "<p><em>Text:</em> John Taylor, 1808–1887</p>\n<p><em>Music:</em> F. Christensen; arr. © 1985 IRI</p>"
+  },
+  "/manual/hymns/an-angel-from-on-high-mens-choir": {
+   "number": "328",
+   "title": "An Angel from on High",
+   "firstLine": "An angel from on high",
+   "credits": "<p><em>Text:</em> Parley P. Pratt, 1807–1857</p>\n<p><em>Music:</em> John E. Tullidge, 1806–1873</p>"
+  },
+  "/manual/hymns/thy-servants-are-prepared-mens-choir": {
+   "number": "329",
+   "title": "Thy Servants Are Prepared",
+   "firstLine": "Thy servants are prepared",
+   "credits": "<p><em>Text:</em> Marilyn McMeen Brown, b. 1938. © 1985 IRI</p>\n<p><em>Music:</em> Willy Reske, 1897–1991. © 1985 IRI</p>"
+  },
+  "/manual/hymns/see-the-mighty-angel-flying-mens-choir": {
+   "number": "330",
+   "title": "See, the Mighty Angel Flying",
+   "firstLine": "See, the mighty angel flying",
+   "credits": "<p><em>Text:</em> Robert B. Thompson, 1811–1841</p>\n<p><em>Music:</em> Evan Stephens, 1854–1930</p>"
+  },
+  "/manual/hymns/oh-say-what-is-truth-mens-choir": {
+   "number": "331",
+   "title": "Oh Say, What Is Truth?",
+   "firstLine": "Oh say, what is truth?’Tis the fairest gem",
+   "credits": "<p><em>Text:</em> John Jaques, 1827–1900</p>\n<p><em>Music:</em> Ellen Knowles Melling, 1820–1905</p>"
+  },
+  "/manual/hymns/come-o-thou-king-of-kings-mens-choir": {
+   "number": "332",
+   "title": "Come, O Thou King of Kings",
+   "firstLine": "Come, O thou King of Kings!",
+   "credits": "<p><em>Text:</em> Parley P. Pratt, 1807–1857</p>\n<p><em>Music:</em> Anon., ca. 1889</p>"
+  },
+  "/manual/hymns/high-on-the-mountain-top-mens-choir": {
+   "number": "333",
+   "title": "High on the Mountain Top",
+   "firstLine": "High on the mountain top",
+   "credits": "<p><em>Text:</em> Joel H. Johnson, 1802–1882</p>\n<p><em>Music:</em> Ebenezer Beesley, 1840–1906</p>"
+  },
+  "/manual/hymns/i-need-thee-every-hour-mens-choir": {
+   "number": "334",
+   "title": "I Need Thee Every Hour",
+   "firstLine": "I need thee every hour",
+   "credits": "<p><em>Text:</em> Annie S. Hawks, 1835–1918</p>\n<p><em>Music:</em> Robert Lowry, 1826–1899</p>"
+  },
+  "/manual/hymns/brightly-beams-our-fathers-mercy-mens-choir": {
+   "number": "335",
+   "title": "Brightly Beams Our Father’s Mercy",
+   "firstLine": "Brightly beams our Father’s mercy",
+   "credits": "<p><em>Text and music:</em> Philip Paul Bliss, 1838–1876</p>"
+  },
+  "/manual/hymns/school-thy-feelings-mens-choir": {
+   "number": "336",
+   "title": "School Thy Feelings",
+   "firstLine": "School thy feelings, O my brother",
+   "credits": "<p><em>Text:</em> Charles W. Penrose, 1832–1925. © 1948 IRI</p>\n<p><em>Music:</em> George F. Root, 1820–1895</p>"
+  },
+  "/manual/hymns/o-home-beloved-mens-choir": {
+   "number": "337",
+   "title": "O Home Beloved",
+   "firstLine": "O home belov’d, where’er I wander",
+   "credits": "<p><em>Text:</em> Evan Stephens, 1854–1930. © 1948 IRI</p>\n<p><em>Music:</em> Joseph Parry, 1841–1903</p>"
+  },
+  "/manual/hymns/america-the-beautiful": {
+   "number": "338",
+   "title": "America the Beautiful",
+   "firstLine": "Oh, beautiful for spacious skies",
+   "credits": "<p><em>Text:</em> Katherine Lee Bates, 1859–1929</p>\n<p><em>Music:</em> Samuel A. Ward, 1848–1903</p>"
+  },
+  "/manual/hymns/my-country-tis-of-thee": {
+   "number": "339",
+   "title": "My Country,’Tis of Thee",
+   "firstLine": "My country,’tis of thee",
+   "credits": "<p><em>Text:</em> Samuel F. Smith, 1808–1895</p>\n<p><em>Music:</em> From <cite>Thesaurus Musicus,</cite> London, 1744</p>"
+  },
+  "/manual/hymns/the-star-spangled-banner": {
+   "number": "340",
+   "title": "The Star-Spangled Banner",
+   "firstLine": "Oh say, can you see, by the dawn’s early light",
+   "credits": "<p><em>Text:</em> Francis Scott Key, 1779–1843</p>\n<p><em>Music:</em> John Stafford Smith, 1750–1836</p>"
+  },
+  "/manual/hymns/god-save-the-king": {
+   "number": "341",
+   "title": "God Save the King",
+   "firstLine": "God save our gracious king!",
+   "credits": "<p><em>Text:</em> Anon., 18th century</p>\n<p><em>Music:</em> From <cite>Thesaurus Musicus,</cite> London, 1744</p>"
+  },
+  "/music/hymns-for-home-and-church/come-thou-fount-of-every-blessing": {
+   "number": "1001",
+   "title": "Come, Thou Fount of Every Blessing",
+   "firstLine": "Come, Thou Fount of ev’ry blessing",
+   "credits": "<p><em>Text:</em> Robert Robinson, 1758; alt.</p>\n<p><em>Music:</em> American folk tune; <cite>Wyeth’s Repository of Sacred Music, Part Second</cite>, 1813; alt.; arr. 2024 | <small>NETTLETON</small></p>\n<p>Music arr. © 2024 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/when-the-savior-comes-again": {
+   "number": "1002",
+   "title": "When the Savior Comes Again",
+   "firstLine": "When the Savior comes again, He will cleanse the earth, and then",
+   "credits": "<p><em>Text and music:</em> Lane Johnson, 2019</p>\n<p>© 2019 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/42/6e/426e89f8f90411ee99bfeeeeac1e0e0ea1e86d56/when_the_savior_comes_again.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/it-is-well-with-my-soul": {
+   "number": "1003",
+   "title": "It Is Well with My Soul",
+   "firstLine": "When peace, like a river, attendeth my way",
+   "credits": "<p><em>Text:</em> Horatio G. Spafford, 1876</p>\n<p><em>Music:</em> Philip P. Bliss, 1876; arr. 2024 | <small>VILLE DU HAVRE</small></p>\n<p>Music arr. © 2024 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/i-will-walk-with-jesus": {
+   "number": "1004",
+   "title": "I Will Walk with Jesus",
+   "firstLine": "Jesus walked in wisdom. Jesus grew in truth",
+   "credits": "<p><em>Text and music:</em> Stephen P. Schank, 2019</p>\n<p>© 2019 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/3f/b0/3fb0063bf90411eeabceeeeeac1e922c03868922/i_will_walk_with_jesus.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/his-eye-is-on-the-sparrow": {
+   "number": "1005",
+   "title": "His Eye Is on the Sparrow",
+   "firstLine": "Why should I feel discouraged?",
+   "credits": "<p><em>Text: </em>Civilla D. Martin, 1905</p>\n<p><em>Music: </em>Charles H. Gabriel, 1905; arr. 2024 | <small>SPARROW</small></p>\n<p>Music arr. © 2024 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/3d/62/3d62e1ebf90411eeae6feeeeac1edda175aefbc7/his_eye_is_on_the_sparrow.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/think-a-sacred-song": {
+   "number": "1006",
+   "title": "Think a Sacred Song",
+   "firstLine": "Think a sacred song; the words will give you pow’r.",
+   "credits": "<p><em>Text and music:</em> Marlene Summers Merkling, 2013</p>\n<p>© 2014 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/40/ae/40aeffa6f90411eeb7caeeeeac1e863d4e80d7f7/think_a_sacred_song.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/as-bread-is-broken": {
+   "number": "1007",
+   "title": "As Bread Is Broken",
+   "firstLine": "As bread is broken, we think of Thee",
+   "credits": "<p><em>Text and music:</em> Stephen A. Reynolds, 2018 |<small> WHEELER PARK</small></p>\n<p>© 2024 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/bread-of-life-living-water": {
+   "number": "1008",
+   "title": "Bread of Life, Living Water",
+   "firstLine": "In the Garden, Jesus suffered",
+   "credits": "<p><em>Text and music:</em> Annette W. Dickman, 2011 | <small>HEALING GRACE</small></p>\n<p>© 2024 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/24/95/2495652cf90411ee877aeeeeac1e746251c46913/bread_of_life_living_water.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/gethsemane": {
+   "number": "1009",
+   "title": "Gethsemane",
+   "firstLine": "Jesus climbed the hill to the Garden still; His steps were heavy and slow.",
+   "credits": "<p><em>Text:</em> Melanie M. Hoffman, 2007</p>\n<p><em>Music:</em> Melanie M. Hoffman, 2007; arr. Roger C. Hoffman, 2023</p>\n<p>© 2007, 2023 Peace Mountain Music (ASCAP). This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/f1/7f/f17fc4c1127911ef81efeeeeac1e2125a3b2e583/gethsemane.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/amazing-grace": {
+   "number": "1010",
+   "title": "Amazing Grace",
+   "firstLine": "Amazing grace—how sweet the sound",
+   "credits": "<p><em>Text:</em> John Newton, 1779</p>\n<p><em>Music:</em> American folk tune, 19th century; arr. 2024 | <small>NEW BRITAIN</small></p>\n<p>Music arr. © 2024 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/ok/j5/okj5lryj56cafb3xhhsyjnpcr7ylxnai4iwrdbqm/amazing_grace.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/holding-hands-around-the-world": {
+   "number": "1011",
+   "title": "Holding Hands Around the World",
+   "firstLine": "We are children singing all around the world",
+   "credits": "<p><em>Text and music:</em> Janice Kapp Perry, 2001</p>\n<p>© 2001 Janice Kapp Perry. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/anytime-anywhere": {
+   "number": "1012",
+   "title": "Anytime, Anywhere",
+   "firstLine": "I can pray to my Heav’nly Father",
+   "credits": "<p><em>Text and music:</em> Angie Killian, 2019</p>\n<p>© 2019 Angie Killian. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/qj/kg/qjkgxrf9pswkwc729sl61oxpbaooa0snu33zg4cd/anytime_anywhere.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/gods-gracious-love": {
+   "number": "1013",
+   "title": "God’s Gracious Love",
+   "firstLine": "Day by day, God’s gracious love surrounds me",
+   "credits": "<p><em>Text:</em> Lina Sandell-Berg, 1865; English transl. Andrew L. Skoog, 1921; alt.</p>\n<p><em>Music:</em> Oscar Ahnfelt, 1872; harm. Albert Lindström, 1885; alt. | <small>BLOTT EN DAG</small></p>\n<p>Text alt. © 2024 and music alt. © 1993 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/my-shepherd-will-supply-my-need": {
+   "number": "1014",
+   "title": "My Shepherd Will Supply My Need",
+   "firstLine": "My Shepherd will supply my need",
+   "credits": "<p><em>Text: </em>Isaac Watts, 1719; based on <a class=\"cross-ref\" href=\"/study/scriptures/ot/ps/23?lang=eng\">Psalm 23</a></p>\n<p><em>Music: </em>American folk tune; <cite>The Beauties of Harmony</cite>, 1828; arr. 2024 | <small>RESIGNATION</small></p>\n<p>Music arr. © 2024 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/oh-the-deep-deep-love-of-jesus": {
+   "number": "1015",
+   "title": "Oh, the Deep, Deep Love of Jesus",
+   "firstLine": "Oh, the deep, deep love of Jesus",
+   "credits": "<p><em>Text:</em> Samuel Trevor Francis, 1898; alt.</p>\n<p><em>Music:</em> Stephen M. Jones, 2023 | <small>DEEP LOVE</small></p>\n<p>Text alt. and music © 2024 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/behold-the-wounds-in-jesus-hands": {
+   "number": "1016",
+   "title": "Behold the Wounds in Jesus’ Hands",
+   "firstLine": "Behold the wounds in Jesus’ hands",
+   "credits": "<p><em>Text:</em> John V. Pearson, 1997; alt.</p>\n<p><em>Music:</em> David R. Naylor, 1998 | <small>BEHOLD THE WOUNDS</small></p>\n<p>Text © 1998 John V. Pearson; music © 1998, 2014 by Jackman Music. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/this-is-the-christ": {
+   "number": "1017",
+   "title": "This Is the Christ",
+   "firstLine": "They heard a voice, a voice so mild.",
+   "credits": "<p><em>Text:</em> James E. Faust and Jan Underwood Pinborough, 1995</p>\n<p><em>Music:</em> Michael Finlinson Moody, 1995; alt. | <small>THIS IS THE CHRIST</small></p>\n<p>© 1995 James E. Faust, Jan Underwood Pinborough, and Michael Finlinson Moody. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/7k/sz/7kszkskdggspw1gbtr49sbxfu2gf917jv2s8kzz3/this_is_the_christ.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/come-lord-jesus": {
+   "number": "1018",
+   "title": "Come, Lord Jesus",
+   "firstLine": "Come, Lord Jesus, to the manger.",
+   "credits": "<p><em>Text: </em>From the Church production <cite>Savior of the World: His Birth and Resurrection</cite>, 2000; alt.</p>\n<p><em>Music: </em>David A. Zabriskie, 2000 | <small>COME, LORD JESUS</small></p>\n<p>© 2000, 2024 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/to-love-like-thee": {
+   "number": "1019",
+   "title": "To Love like Thee",
+   "firstLine": "Father, I pray that I might be",
+   "credits": "<p><em>Text and music:</em> Heather D. Zurcher, 2018 | <small>TO LOVE LIKE THEE </small></p>\n<p>© 2018, 2025 Heather D. Zurcher. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/lx/ts/lxts9yxdu7tcwp61mpvqgte4octqb43rzaomauy4/to_love_like_thee.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/softly-and-tenderly-jesus-is-calling": {
+   "number": "1020",
+   "title": "Softly and Tenderly Jesus Is Calling",
+   "firstLine": "Softly and tenderly Jesus is calling",
+   "credits": "<p><em>Text:</em> Will L. Thompson, 1880</p>\n<p><em>Music:</em> Will L. Thompson, 1880; arr. 2025 | <small>THOMPSON</small></p>\n<p>Music arr. © 2025 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/i-know-that-my-savior-loves-me": {
+   "number": "1021",
+   "title": "I Know That My Savior Loves Me",
+   "firstLine": "A long time ago in a beautiful place",
+   "credits": "<p><em>Text:</em> Tami J. Creamer and Derena A. Bell, 2000</p>\n<p><em>Music:</em> Tami J. Creamer, 2000; alt.</p>\n<p>© 2000, 2025 Tami J. Creamer and Derena A. Bell. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/5u/aa/5uaaxqbwxs6ghr7t6m1fvd9mnf56fic0kwy939uu/i_know_that_my_savior_loves_me.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/faith-in-every-footstep": {
+   "number": "1022",
+   "title": "Faith in Every Footstep",
+   "firstLine": "A marvelous work has begun to come forth",
+   "credits": "<p><em>Text:</em> K. Newell Dayley, 1996</p>\n<p><em>Music:</em> K. Newell Dayley, 1996; alt. | <small>FAITH IN EVERY FOOTSTEP</small></p>\n<p>Text © 1996 by Intellectual Reserve, Inc.; music © 1996, 2025 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/standing-on-the-promises": {
+   "number": "1023",
+   "title": "Standing on the Promises",
+   "firstLine": "Standing on the promises of Christ, my King",
+   "credits": "<p><em>Text:</em> R. Kelso Carter, 1886</p>\n<p><em>Music:</em> R. Kelso Carter, 1886; arr. 2025 | <small>PROMISES</small></p>\n<p>Music arr. © 2025 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/b6/fm/b6fmukalhhn0plpr1qxn79f29ewxr676xtt5f5x6/standing_on_the_promises.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/i-have-faith-in-the-lord-jesus-christ": {
+   "number": "1024",
+   "title": "I Have Faith in the Lord Jesus Christ",
+   "firstLine": "I have faith in the Lord, Jesus Christ.",
+   "credits": "<p><em>Text and music:</em> Janice Kapp Perry, 2007</p>\n<p>© 2007, 2025 Janice Kapp Perry. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/ol/ya/olya47kkvl1qq6gka9b4tac1i3s7rh4e48gmksxc/i_have_faith_in_the_lord_jesus_christ.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/take-my-heart-and-let-it-be-consecrated": {
+   "number": "1025",
+   "title": "Take My Heart and Let It Be Consecrated",
+   "firstLine": "Take my heart, and let it be",
+   "credits": "<p><em>Text:</em> Frances Ridley Havergal, 1874; alt.</p>\n<p><em>Music:</em> César Malan, 1837; harm. Lowell Mason, 1841 | <small>HENDON</small></p>\n<p><a href=\"https://assets.churchofjesuschrist.org/z2/x9/z2x9ceqft1g9skv122d51h0vpd09hmmnwovimgry/take_my_heart_and_let_it_be_consecrated.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/holy-places": {
+   "number": "1026",
+   "title": "Holy Places",
+   "firstLine": "The temple is a holy place",
+   "credits": "<p><em>Text and music:</em> Sherrie Manwill Boren, 2019 | <small>MANWILL</small></p>\n<p>© 2019 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/welcome-home": {
+   "number": "1027",
+   "title": "Welcome Home",
+   "firstLine": "An open door, a warm embrace",
+   "credits": "<p><em>Text and music:</em> Andrea Christensen Brett, 2017 | <small>DEMETRIUS WADE </small></p>\n<p>© 2017 Andrea Christensen Brett. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/this-little-light-of-mine": {
+   "number": "1028",
+   "title": "This Little Light of Mine",
+   "firstLine": "This little light of mine, I’m gonna let it shine.",
+   "credits": "<p><em>Text:</em> African American spiritual, 19th century</p>\n<p><em>Music:</em> African American spiritual, 19th century; arr. 2025 | <small>LIGHT OF MINE</small></p>\n<p>Music arr. © 2025 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/i-cant-count-them-all": {
+   "number": "1029",
+   "title": "I Can’t Count Them All",
+   "firstLine": "The Lord’s loving mercies surround me",
+   "credits": "<p><em>Text:</em> Lina Sandell-Berg, 1880; English transl. 2025</p>\n<p><em>Music:</em> Albert Lindström, 1889 | <small>JAG KAN ICKE RÄKNA DEM ALLA</small></p>\n<p>English transl. © 2025 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/9n/vr/9nvr8c0ar1ynvqyp517vhj1tztel3k0cat9zuv6t/i_cant_count_them_all.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/close-as-a-quiet-prayer": {
+   "number": "1030",
+   "title": "Close as a Quiet Prayer",
+   "firstLine": "Moment by moment, by night or by day",
+   "credits": "<p><em>Text:</em> Sally DeFord, 2017</p>\n<p><em>Music:</em> Sally DeFord, 2017; alt.</p>\n<p>© 2017, 2025 Sally DeFord. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/come-hear-the-word-the-lord-has-spoken": {
+   "number": "1031",
+   "title": "Come, Hear the Word the Lord Has Spoken",
+   "firstLine": "Come, hear the word the Lord has spoken",
+   "credits": "<p><em>Text:</em> Frans Heijdemann, 1992; English transl. 2025</p>\n<p><em>Music:</em> Frans Heijdemann, 1992; alt. | <small>LUISTER NAAR HET WOORD DES HEREN</small></p>\n<p>© 1992, 2025 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/look-unto-christ": {
+   "number": "1032",
+   "title": "Look unto Christ",
+   "firstLine": "When shadows veil your wond’ring mind",
+   "credits": "<p><em>Text and music:</em> Sherrie Manwill Boren, 2019 | <small>MOUNT MAHOGANY</small></p>\n<p>© 2025 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/oh-how-great-is-our-joy": {
+   "number": "1033",
+   "title": "Oh, How Great Is Our Joy",
+   "firstLine": "Oh, how great is our joy ev’ry day",
+   "credits": "<p><em>Text:</em> Andrés C. González, 1912; English transl. 2025</p>\n<p><em>Music:</em> Joseph P. Webster, 1868; alt. | <small>SWEET BY AND BY</small></p>\n<p>English transl. © 2025 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/im-a-pioneer-too": {
+   "number": "1034",
+   "title": "I’m a Pioneer Too",
+   "firstLine": "Some pioneers pulled handcarts",
+   "credits": "<p><em>Text:</em> Jan Underwood Pinborough, 2020, and alt.</p>\n<p><em>Music:</em> Michael Finlinson Moody, 2020</p>\n<p>© 2020, 2025 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/y1/i5/y1i55zfy6vsz4342asqxzfyyvurdw9lrclf8hcbe/im_a_pioneer_too.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/as-i-keep-the-sabbath-day": {
+   "number": "1035",
+   "title": "As I Keep the Sabbath Day",
+   "firstLine": "Gentle peace warms my soul",
+   "credits": "<p><em>Text:</em> Nathan P. Howe, 2015; alt.</p>\n<p><em>Music:</em> Nathan P. Howe, 2015 | <small>BALSAM</small></p>\n<p>© 2016 Nathan P. Howe. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/read-the-book-of-mormon-and-pray": {
+   "number": "1036",
+   "title": "Read the Book of Mormon and Pray",
+   "firstLine": "I want to learn to choose the right",
+   "credits": "<p><em>Text:</em> Teresa Toone Barlow, 2017; alt. </p>\n<p><em>Music:</em> Teresa Toone Barlow, 2017</p>\n<p>© 2018, 2025 Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/im-gonna-live-so-god-can-use-me": {
+   "number": "1037",
+   "title": "I’m Gonna Live So God Can Use Me",
+   "firstLine": "I’m gonna live so God can use me",
+   "credits": "<p><em>Text:</em> African American spiritual, 20th century</p>\n<p><em>Music:</em> African American spiritual, 20th century; arr. 2025 | <small>I’M GONNA LIVE</small></p>\n<p>Music arr. © 2025 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/ma/m4/mam4iztx5xjmgm6jvnk31v39j7bpalk73rlu47mv/im_gonna_live_so_god_can_use_me.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/the-lords-my-shepherd": {
+   "number": "1038",
+   "title": "The Lord’s My Shepherd",
+   "firstLine": "The Lord’s my shepherd; I’ll not want.",
+   "credits": "<p><em>Text:</em> <cite>Scottish Psalter</cite>, 1650; based on <a class=\"cross-ref\" href=\"/study/scriptures/ot/ps/23?lang=eng\">Psalm 23</a></p>\n<p><em>Music:</em> James Leith Macbeth Bain, 1915; arr. 2025 | <small>BROTHER JAMES’S AIR</small></p>\n<p>Music arr. © 2025 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/because": {
+   "number": "1039",
+   "title": "Because",
+   "firstLine": "Because He walked the path, I know the way.",
+   "credits": "<p><em>Text:</em> Shawna B. Edwards, 2006; alt.</p>\n<p><em>Music:</em> Shawna B. Edwards, 2006; arr. 2025</p>\n<p>© 2006, 2025 Shawna B. Edwards</p>"
+  },
+  "/music/hymns-for-home-and-church/his-voice-as-the-sound": {
+   "number": "1040",
+   "title": "His Voice as the Sound",
+   "firstLine": "His voice as the sound of the dulcimer sweet",
+   "credits": "<p><em>Text:</em> Joseph Swain, 1790; alt.</p>\n<p><em>Music:</em> American folk tune; <cite>A Supplement to the Kentucky Harmony</cite>, 1820; arr. 2025 | <small>SAMANTHRA</small></p>\n<p>Music arr. © 2025 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/o-lord-who-gave-thy-life-for-me": {
+   "number": "1041",
+   "title": "O Lord, Who Gave Thy Life for Me",
+   "firstLine": "O Lord, who gave Thy life for me",
+   "credits": "<p><em>Text and music:</em> Alice Warner Johnson, 2000 | <small>MIRA</small></p>\n<p>© 2000 Alice Warner Johnson. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/thou-gracious-god-whose-mercy-lends": {
+   "number": "1042",
+   "title": "Thou Gracious God, Whose Mercy Lends",
+   "firstLine": "Thou gracious God, whose mercy lends",
+   "credits": "<p><em>Text:</em> Oliver Wendell Holmes Sr., 1869; alt.</p>\n<p><em>Music:</em> English folk tune; <cite>Folk Songs from Somerset,</cite> 1906; harm. 2025 | <small>O WALY WALY</small></p>\n<p>Music harm. © 2025 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/8f/dq/8fdqiavsyngdm3aggxz8yzuwiuh1odib0eegkwon/8fdqiavsyngdm3aggxz8yzuwiuh1odib0eegkwon.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/help-us-remember": {
+   "number": "1043",
+   "title": "Help Us Remember",
+   "firstLine": "Help us renew, remember, and repent",
+   "credits": "<p><em>Text:</em> Wendy Lynn Platt, 1997</p>\n<p><em>Music:</em> John G. Riley, 1997 | <small>RILEY</small></p>\n<p>© 2025 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/how-did-the-savior-minister": {
+   "number": "1044",
+   "title": "How Did the Savior Minister?",
+   "firstLine": "How did the Savior minister?",
+   "credits": "<p><em>Text:</em> Merrijane Rice, 2019</p>\n<p><em>Music:</em> Jennette Jay Booth, 2019</p>\n<p>© 2019, 2025 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/jesus-is-the-way": {
+   "number": "1045",
+   "title": "Jesus Is the Way",
+   "firstLine": "Our Savior, Jesus Christ, has said",
+   "credits": "<p><em>Text:</em> Tēvita Tuliakiono, 1920; English transl. 2025</p>\n<p><em>Music:</em> Tēvita Tuliakiono, 1920 | <small>FOLOFOLA MAI ‘A SĪSŪ</small></p>\n<p>English transl. © 2025 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/xn/4n/xn4notvzidd0z11fnca15vyk09tuhojrsljstlr1/jesus_is_the_way.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/can-you-count-the-stars-in-heaven": {
+   "number": "1046",
+   "title": "Can You Count the Stars in Heaven?",
+   "firstLine": "Can you count the stars in heaven",
+   "credits": "<p><em>Text:</em> Wilhelm Hey, 1837; English transl. E. L. Jorgenson, 1921; alt.</p>\n<p><em>Music:</em> German folk tune; <cite>Deutsche Lieder für Jung und Alt,</cite> 1818; arr. 2025</p>\n<p>Text alt. and music arr. © 2025 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/he-cares-for-me": {
+   "number": "1047",
+   "title": "He Cares for Me",
+   "firstLine": "He knows the stars that shine at night.",
+   "credits": "<p><em>Text and music:</em> Kenneth S. Schank, 2019</p>\n<p>© 2025 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/py/92/py92ow6p6a4n19wfjomfp4t1jd5br60pp60eih7q/he_cares_for_me.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/our-prayer-to-thee": {
+   "number": "1048",
+   "title": "Our Prayer to Thee",
+   "firstLine": "We pray to Thee, our Heav’nly Father",
+   "credits": "<p><em>Text: </em>Russell M. Nelson, 2003; alt.</p>\n<p><em>Music:</em> Joseph Parry, 1875; arr. Mack J. Wilberg, 2003 |<small> MYFANWY</small></p>\n<p>Text and music arr. © 2003, 2025 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/7r/fa/7rfax5phz5jv916zaq9o2xwbljc3ynxfkokzpy1c/our_prayer_to_thee.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/joseph-prayed-in-faith": {
+   "number": "1049",
+   "title": "Joseph Prayed in Faith",
+   "firstLine": "Joseph had a question, so he read God’s word.",
+   "credits": "<p><em>Text and music:</em> Rebecca H. Martin, 2005</p>\n<p>© 2006, 2025 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/stand-by-me": {
+   "number": "1050",
+   "title": "Stand by Me",
+   "firstLine": "When the storms of life are raging, stand by me",
+   "credits": "<p><em>Text: </em>Charles A. Tindley, 1905</p>\n<p><em>Music:</em> Charles A. Tindley, 1905; arr. Francis A. Clark, 1905; alt. | <small>STAND BY ME</small></p>\n<p><a href=\"https://assets.churchofjesuschrist.org/hc/sx/hcsxjfyzt80ril7vo651hpo41ug1pcm461hwwyto/stand_by_me.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/this-day-is-a-good-day-lord": {
+   "number": "1051",
+   "title": "This Day Is a Good Day, Lord",
+   "firstLine": "This day is a good day, Lord",
+   "credits": "<p><em>Text and music:</em> J. Frederic Voros Jr., 2009 | <small>THIS DAY</small></p>\n<p>© 2009, 2025 J. Frederic Voros Jr.</p>"
+  },
+  "/music/hymns-for-home-and-church/joyfully-bound": {
+   "number": "1052",
+   "title": "Joyfully Bound",
+   "firstLine": "Come humbly to the waters",
+   "credits": "<p><em>Text:</em> Anna M. Molgard, 2021; alt.</p>\n<p><em>Music:</em> Anna M. Molgard and Rachel Pettit Mohlman, 2021; alt. | <small>GREENBLUFF</small></p>\n<p>© 2022, 2026 Faithsong Publications, LLC</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/0m/u5/0mu5sao4ai3c8cpq41tvy1ni3pw6x1susc0ksgcr/joyfully_bound.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/my-covenants": {
+   "number": "1053",
+   "title": "My Covenants",
+   "firstLine": "I will walk the path Jesus has prepared",
+   "credits": "<p><em>Text:</em> Hanna Josephine Saffer, 2019; English transl. 2026</p>\n<p><em>Music:</em> Hanna Josephine Saffer, 2019; arr. 2026</p>\n<p>© 2026 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/when-i-am-baptized": {
+   "number": "1054",
+   "title": "When I Am Baptized",
+   "firstLine": "I like to look for rainbows whenever there is rain",
+   "credits": "<p><em>Text:</em> Nita Dale Milner, 1987; alt.</p>\n<p><em>Music:</em> Nita Dale Milner, 1987</p>\n<p>Text © 1989, 2025 by Intellectual Reserve, Inc. All rights reserved. Music © 1989 by Intellectual Reserve, Inc. All rights reserved.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/o0/yk/o0yku3u06y1nex5tvl6zj2gdghrsclimp836078b/when_i_am_baptized.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/the-power-of-the-holy-ghost": {
+   "number": "1055",
+   "title": "The Power of the Holy Ghost",
+   "firstLine": "The Holy Ghost bears witness of Christ",
+   "credits": "<p><em>Text and music:</em> Delys Waite Snyder, 2009; alt. | <small>COTSWOLDS</small></p>\n<p>© 2010, 2026 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/xj/jl/xjjlhxfjxd98sx6t349xwegtlkt0g4b4892awjn9/the_power_of_the_holy_ghost.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/elijah-and-the-still-small-voice": {
+   "number": "1056",
+   "title": "Elijah and the Still, Small Voice",
+   "firstLine": "Long ago on a mountain peak",
+   "credits": "<p><em>Text and music:</em> Alan L. Patterson, 2019</p>\n<p>© 2026 Alan L. Patterson</p>"
+  },
+  "/music/hymns-for-home-and-church/jesus-is-my-shepherd": {
+   "number": "1057",
+   "title": "Jesus Is My Shepherd",
+   "firstLine": "Jesus is my Shepherd. I’m His precious lamb.",
+   "credits": "<p><em>Text:</em> Tammy Simister Robinson, 2001; inspired by <a class=\"cross-ref\" href=\"/study/scriptures/ot/ps/23?lang=eng\">Psalm 23</a></p>\n<p><em>Music:</em> Tammy Simister Robinson, 2001; alt.</p>\n<p>© 2001 Tammy Simister Robinson</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/b6/od/b6odwcxqmz6y7u2kh2qxyi765ldeezq2a8z9p0p5/jesus_is_my_shepherd.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/my-song-in-the-night": {
+   "number": "1058",
+   "title": "My Song in the Night",
+   "firstLine": "O Jesus, my Savior, my song in the night",
+   "credits": "<p><em>Text:</em> Anon.; inspired by a text by Joseph Swain, 1790; v. 3, Frederick A. Graves, 1894; alt.</p>\n<p><em>Music:</em> American folk tune; <cite>The Sacred Harp</cite>, 1844; arr. 2026 | <small>EXPRESSION</small></p>\n<p>Music arr. © 2026 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/e3/fh/e3fha17ezev4h5pr9g1qmt8oswiylpxrd7c6fs09/my_song_in_the_night.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/this-is-my-fathers-world": {
+   "number": "1059",
+   "title": "This Is My Father’s World",
+   "firstLine": "This is my Father’s world",
+   "credits": "<p><em>Text:</em> Maltbie D. Babcock, 1896; alt.</p>\n<p><em>Music:</em> English folk tune, 19th century; adapt. Franklin L. Sheppard, 1915; arr. Edward Shippen Barnes, 1926; alt. | <small>TERRA BEATA</small></p>\n<p>Music alt. © 2026 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/build-an-ark": {
+   "number": "1060",
+   "title": "Build an Ark",
+   "firstLine": "Noah was a prophet, a man who did not fear.",
+   "credits": "<p><em>Text and music:</em> Marianne Porter, 2003; alt.</p>\n<p>© 2003, 2026 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/l4/jb/l4jblfl38uf7kgle524ej0fc2abg5p3ahewnte1a/build_an_ark.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/love-will-bless-our-home": {
+   "number": "1061",
+   "title": "Love Will Bless Our Home",
+   "firstLine": "When we speak a gentle word",
+   "credits": "<p><em>Text:</em> Marvin K. Gardner, 2021</p>\n<p><em>Music:</em> Ryan Murphy, 2024 | <small>LIEFDE</small></p>\n<p>© 2026 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/lord-accept-our-humble-fast": {
+   "number": "1062",
+   "title": "Lord, Accept Our Humble Fast",
+   "firstLine": "Lord, accept our humble fast.",
+   "credits": "<p><em>Text and music:</em> Nathan P. Howe, 2008; alt. | <small>UNION COLONY</small></p>\n<p>© 2008, 2026 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/peace-peace-be-still": {
+   "number": "1063",
+   "title": "Peace, Peace, Be Still",
+   "firstLine": "When upon the rising seas the angry billows roll",
+   "credits": "<p><em>Text:</em> Sally DeFord, 2019 </p>\n<p><em>Music:</em> Katherine Wright, 2019 | <small>RISING STORM</small></p>\n<p>Text © 2019 Sally DeFord; music © 2019 Katherine Wright</p>"
+  },
+  "/music/hymns-for-home-and-church/great-is-thy-faithfulness": {
+   "number": "1064",
+   "title": "Great Is Thy Faithfulness",
+   "firstLine": "Great is Thy faithfulness, O God, my Father",
+   "credits": "<p><em>Text:</em> Thomas O. Chisholm, 1923</p>\n<p><em>Music:</em> William M. Runyan, 1923; alt. | <small>FAITHFULNESS</small></p>"
+  },
+  "/music/hymns-for-home-and-church/isaiah-said": {
+   "number": "1065",
+   "title": "Isaiah Said",
+   "firstLine": "Isaiah said our Savior",
+   "credits": "<p><em>Text:</em> Penelope Moody Allen, 1996; alt.</p>\n<p><em>Music:</em> Kenneth Jones, 1997; alt.</p>\n<p>© 1998, 2026 by Intellectual Reserve, Inc. All rights reserved.</p>"
+  },
+  "/music/hymns-for-home-and-church/fight-the-good-fight": {
+   "number": "1066",
+   "title": "Fight the Good Fight",
+   "firstLine": "Fight the good fight with all thy might",
+   "credits": "<p><em>Text:</em> John S. B. Monsell, 1860; alt. </p>\n<p><em>Music:</em> Stephen M. Jones, 2024 | <small>PATH AND PRIZE </small></p>\n<p>Music © 2026 by Intellectual Reserve, Inc. All rights reserved.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/5k/50/5k50h32k4k8xpsoex7x45ly4ftv22mjakszdruxl/fight_the_good_fight.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/its-joyful-to-live-the-gospel": {
+   "number": "1067",
+   "title": "It’s Joyful to Live the Gospel",
+   "firstLine": "It’s joyful to live the gospel",
+   "credits": "<p><em>Text and music:</em> Matthew J. Neeley, 2014; alt.</p>\n<p>© 2014, 2026 by Intellectual Reserve, Inc. All rights reserved.</p>"
+  },
+  "/music/hymns-for-home-and-church/to-god-be-the-glory": {
+   "number": "1068",
+   "title": "To God Be the Glory",
+   "firstLine": "To God be the glory; great things He has done!",
+   "credits": "<p><em>Text:</em> Fanny Crosby, 1875</p>\n<p><em>Music:</em> William H. Doane, 1875; alt. | <small>TO GOD BE THE GLORY</small></p>"
+  },
+  "/music/hymns-for-home-and-church/speak-to-us-lord": {
+   "number": "1069",
+   "title": "Speak to Us, Lord",
+   "firstLine": "Speak to us, Lord, in the calm of the morning",
+   "credits": "<p><em>Text:</em> Gertrude M. Watson, 1911; adapt. J. Scott Miller, 2019</p>\n<p><em>Music: </em>Lex de Azevedo, 2023 | <small>SPEAK TO US, LORD</small></p>\n<p>Text adapt. and music © 2026 by Intellectual Reserve, Inc. All rights reserved.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/le/tr/letr8pb07jxjuf153z3wnj0rlle6daww7dg4ub09/speak_to_us_lord.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/the-miracle": {
+   "number": "1070",
+   "title": "The Miracle",
+   "firstLine": "Jesus walked upon the water.",
+   "credits": "<p><em>Text:</em> Shawna B. Edwards, 2011; alt.</p>\n<p><em>Music:</em> Shawna B. Edwards, 2011; arr. 2026</p>\n<p>© 2011, 2026 Shawna B. Edwards</p>"
+  },
+  "/music/hymns-for-home-and-church/what-god-calls-us-to": {
+   "number": "1071",
+   "title": "What God Calls Us To",
+   "firstLine": "To see the world through others’ eyes",
+   "credits": "<p><em>Text:</em> J. Frederic Voros Jr., 2014 </p>\n<p><em>Music:</em> Catherine A. Tibbitts, 2014 | <small>SAN LUIS </small></p>\n<p>Text © 2014 J. Frederic Voros Jr.; music © 2014 by Intellectual Reserve, Inc. All rights reserved.</p>"
+  },
+  "/music/hymns-for-home-and-church/when-i-survey-the-wondrous-cross": {
+   "number": "1072",
+   "title": "When I Survey the Wondrous Cross",
+   "firstLine": "When I survey the wondrous cross",
+   "credits": "<p><em>Text:</em> Isaac Watts, 1707 </p>\n<p><em>Music:</em> Lowell Mason, 1824; inspired by a Gregorian chant; alt. | <small>HAMBURG</small></p>\n<p><a href=\"https://assets.churchofjesuschrist.org/ch/mb/chmb45blgo4kysip79r59z40vzjdkshgf2ur9oei/when_i_survey_the_wondrous_cross.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/be-thou-my-vision": {
+   "number": "1073",
+   "title": "Be Thou My Vision",
+   "firstLine": "Be Thou my vision, O Lord of my heart.",
+   "credits": "<p><em>Text:</em> Medieval Irish poem; English transl. Mary Elizabeth Byrne, 1905; adapt. Eleanor Hull, 1912; alt.</p>\n<p><em>Music:</em> Irish folk tune; <cite>Old Irish Folk Music and Songs</cite>, 1909; harm. Leopold L. Dix, 1919; alt. | <small>SLANE</small></p>\n<p><a href=\"https://assets.churchofjesuschrist.org/ej/4l/ej4lp07zlh2z9klm4u8afr1ejydplfn5yvw6ffg0/be_thou_my_vision.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/our-savior-brings-us-joy": {
+   "number": "1074",
+   "title": "Our Savior Brings Us Joy",
+   "firstLine": "Our Savior brings us joy and peace",
+   "credits": "<p><em>Text:</em> Nils Frykman, 1877; English transl. 2026</p>\n<p><em>Music:</em> <em>Melodier till Lofsånger och andeliga Visor i nådene</em>, 1874; arr. 2026 | <small>O SåLLHET STOR</small></p>\n<p>English transl. and music arr. © 2026 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/1m/zm/1mzmd1tubzekecbdrys7ii8pzmq1614xfkprivae/our_savior_brings_us_joy.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/jesus-is-the-strength-of-youth": {
+   "number": "1075",
+   "title": "Jesus Is the Strength of Youth",
+   "firstLine": "The Lord gives me power when I walk in His way.",
+   "credits": "<p><em>Text and music:</em> Kenneth S. Schank, 2025</p>\n<p>© 2026 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/how-i-love-the-house-of-god": {
+   "number": "1076",
+   "title": "How I Love the House of God",
+   "firstLine": "How I love the house of God",
+   "credits": "<p><em>Text:</em> David T. Warner, 2025</p>\n<p><em>Music:</em> Mack J. Wilberg, 2025 | <small>ORANGEVILLE</small></p>\n<p>© 2026 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/75/8c/758cvlv2fcuvvey6eao011rabbl3bet8n77lxpco/how_i_love_the_house_of_god.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/gods-armor": {
+   "number": "1077",
+   "title": "God’s Armor",
+   "firstLine": "I wear the armor of my God.",
+   "credits": "<p><em>Text and music: </em>Hanna Josephine Saffer, 2025</p>\n<p>© 2026 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/c8/qs/c8qswl2kphymzluvhbiqrpp6mchb7yjvs44tuu9b/gods_armor.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/seek-peace": {
+   "number": "1078",
+   "title": "Seek Peace",
+   "firstLine": "There is much that I can do as a child of God",
+   "credits": "<p><em>Text and music: </em>Tammy Simister Robinson, 2025</p>\n<p>© 2026 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/6o/yh/6oyh2tba93o3cfp8fdsqtp90oule9v9y69mhi6d3/seek_peace.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/hail-the-day-that-sees-him-rise": {
+   "number": "1201",
+   "title": "Hail the Day That Sees Him Rise",
+   "firstLine": "Hail the day that sees Him rise, Alleluia!",
+   "credits": "<p><em>Text:</em> Charles Wesley, 1739; alt.</p>\n<p><em>Music:</em> Robert Williams, 1817; harm. <cite>The English Hymnal</cite>, 1906; alt. | <small>LLANFAIR</small></p>\n<p>Music alt. © 2024 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/3a/84/3a845311f90411ee88beeeeeac1e8c5205b1ba76/hail_the_day_that_sees_him_rise.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/he-is-born-the-divine-christ-child": {
+   "number": "1202",
+   "title": "He Is Born, the Divine Christ Child",
+   "firstLine": "He is born, the divine Christ child",
+   "credits": "<p><em>Text:</em> <cite>Nouveaux Cantiques</cite>, 1812; English transl. 2024</p>\n<p><em>Music:</em> French carol; <cite>Airs notés du recueil de cantiques spirituels à l’usage des petits</cite>, 1824; arr. 2024 | <small>IL EST NÉ</small></p>\n<p>English transl. and music arr. © 2024 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/3b/26/3b261147f90411ee906eeeeeac1e7d451035e0bc/he_is_born_the_divine_christ_child.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/what-child-is-this": {
+   "number": "1203",
+   "title": "What Child Is This?",
+   "firstLine": "What Child is this, who, laid to rest",
+   "credits": "<p><em>Text:</em> William Chatterton Dix, 1867</p>\n<p><em>Music:</em> English melody, 16th century; harm. John Stainer, 1867; alt. | <small>GREENSLEEVES</small></p>"
+  },
+  "/music/hymns-for-home-and-church/star-bright": {
+   "number": "1204",
+   "title": "Star Bright",
+   "firstLine": "The heavens with light o’erflowing",
+   "credits": "<p><em>Text: </em>Lorin F. Wheelwright, 1959; alt.</p>\n<p><em>Music:</em> Lorin F. Wheelwright, 1959</p>\n<p>© 1959, 1999 by Pioneer Music Press, a division of Jackman Music. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/let-easter-anthems-ring": {
+   "number": "1205",
+   "title": "Let Easter Anthems Ring",
+   "firstLine": "Rise up, ye Saints, rejoice!",
+   "credits": "<p><em>Text:</em> Larry A. Hiller, 2024</p>\n<p><em>Music:</em> George J. Elvey, 1868 | <small>DIADEMATA </small></p>\n<p>Text © 2024 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/were-you-there": {
+   "number": "1206",
+   "title": "Were You There?",
+   "firstLine": "Were you there when they crucified my Lord?",
+   "credits": "<p><em>Text:</em> African American spiritual, 19th century</p>\n<p><em>Music: </em>African American spiritual, 19th century; harm. Frederick J. Work, 1902; arr. 2025 | <small>WERE YOU THERE </small></p>\n<p>Music arr. © 2025 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/26/gl/26glzch9os4sv48egvpgc4nbt2l4ek9neiakacqy/were_you_there.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/still-still-still": {
+   "number": "1207",
+   "title": "Still, Still, Still",
+   "firstLine": "Still, still, still",
+   "credits": "<p><em>Text:</em> Austrian carol; <cite>Salzburgische Volks-Lieder</cite>, 1865; English transl. 2025</p>\n<p><em>Music:</em> Austrian carol; <cite>Salzburgische Volks-Lieder</cite>, 1865; arr. 2025 | <small>STILL, STILL, STILL</small></p>\n<p>English transl. and music arr. © 2025 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>"
+  },
+  "/music/hymns-for-home-and-church/go-tell-it-on-the-mountain": {
+   "number": "1208",
+   "title": "Go Tell It on the Mountain",
+   "firstLine": "Go tell it on the mountain",
+   "credits": "<p><em>Text:</em> African American spiritual, 19th century; vv. 1–3, John W. Work II, 1940</p>\n<p><em>Music:</em> African American spiritual, 19th century; arr. 2025 | <small>GO TELL IT</small></p>\n<p>Music arr. © 2025 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/i9/h2/i9h2mr3gtawtmlmeqse56pln5ojb15i99fqq84mf/go_tell_it_on_the_mountain.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/little-baby-in-a-manger": {
+   "number": "1209",
+   "title": "Little Baby in a Manger",
+   "firstLine": "Little Baby in a manger",
+   "credits": "<p><em>Text:</em> Traci S. Law, 2007</p>\n<p><em>Music: </em>Traci S. Law, 2007; arr. 2025</p>\n<p>© 2007, 2025 Traci S. Law</p>"
+  },
+  "/music/hymns-for-home-and-church/long-ago-within-a-garden": {
+   "number": "1210",
+   "title": "Long Ago, Within a Garden",
+   "firstLine": "Long ago, within a garden",
+   "credits": "<p><em>Text:</em> R. Devan Jensen, 1999; alt.</p>\n<p><em>Music:</em> Daniel Lyman Carter, 1999; alt. | <small>EVERGREEN</small></p>\n<p>© 2004, 2026 R. Devan Jensen and Daniel Lyman Carter</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/cx/mc/cxmcxjm3tsuxx9xobzth6nhumpxrhkdwyzoarixa/long_ago_within_a_garden.pdf\">Guitar Capo Sheet Music</a></p>"
+  },
+  "/music/hymns-for-home-and-church/o-come-o-come-emmanuel": {
+   "number": "1211",
+   "title": "O Come, O Come, Emmanuel",
+   "firstLine": "O come, O come, Emmanuel",
+   "credits": "<p><em>Text: </em>Latin text, ca. 9th century; English transl. John Mason Neale, 1851, and others; alt.</p>\n<p><em>Music: </em>French plainchant, 15th century; harm. William H. Monk, 1861; alt. | <small>VENI EMMANUEL</small></p>"
+  },
+  "/music/hymns-for-home-and-church/a-quiet-night": {
+   "number": "1212",
+   "title": "A Quiet Night",
+   "firstLine": "A quiet night, a stable bare",
+   "credits": "<p><em>Text and music:</em> Ann Green Buys, 2019</p>\n<p>© 2026 by Intellectual Reserve, Inc. All rights reserved. This song may be copied for incidental, noncommercial Church or home use.</p>\n<p><a href=\"https://assets.churchofjesuschrist.org/tz/ea/tzeaozwr7dbjfnfed2b79kn6cx0140fc3j3q5key/a_quiet_night.pdf\">Guitar Capo Sheet Music</a></p>"
+  }
+ },
+ "wikidata": {
+  "Parley P. Pratt|1807|1857": {
+   "qid": "Q2465604",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints",
+    "Mormonism"
+   ]
+  },
+  "George Careless|1839|1932": {
+   "qid": "Q5537675",
+   "religion": []
+  },
+  "William W. Phelps|1792|1872": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Henry Tucker|1826|1882": {
+   "qid": "Q99214001",
+   "religion": []
+  },
+  "Alexander Schreiner|1901|1987": {
+   "qid": "Q2012405",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Joel H. Johnson|1802|1882": {
+   "qid": "Q14711622",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Ebenezer Beesley|1840|1906": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Freeman Lewis|1780|1859": {
+   "qid": "Q98412693",
+   "religion": []
+  },
+  "Richard Smyth|1838|1914": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Charles C. Converse|1832|1918": {
+   "qid": "Q323458",
+   "religion": []
+  },
+  "Theodore E. Curtis|1872|1957": {
+   "qid": "Q94283152",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Carolee Curtis Green|1940|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Tracy Y. Cannon|1879|1961": {
+   "qid": "Q7831880",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Gerrit de Jong Jr.|1892|1978": {
+   "qid": "Q5552607",
+   "religion": []
+  },
+  "John S. Davis|1813|1882": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Evan Stephens|1854|1930": {
+   "qid": "Q5415553",
+   "religion": []
+  },
+  "John E. Tullidge|1806|1873": {
+   "qid": "Q16065497",
+   "religion": []
+  },
+  "Mary Ann Morton|1826|1897": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Alfred M. Durham|1872|1957": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Eliza R. Snow|1804|1887": {
+   "qid": "Q3051180",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints",
+    "Mormonism"
+   ]
+  },
+  "William Fowler|1830|1865": {
+   "qid": "Q8009272",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Caroline Sheridan Norton|1808|1877": {
+   "qid": "Q850141",
+   "religion": []
+  },
+  "Wallace F. Bennett|1898|1993": {
+   "qid": "Q925211",
+   "religion": []
+  },
+  "Joseph S. Murdock|1915|1985": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Bruce R. McConkie|1915|1985": {
+   "qid": "Q4978170",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Joseph J. Daynes|1851|1920": {
+   "qid": "Q15443041",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Marylou Cunningham Leavitt|1928|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Darwin K. Wolford|1936|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "H. A. Tuckett|1852|1918": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Bernard Snow|1822|1894": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Harry A. Dean|1892|1987": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "George Manwaring|1854|1889": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Sylvanus Billings Pond|1792|1871": {
+   "qid": "Q64493181",
+   "religion": []
+  },
+  "Douglas W. Stott|1925|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "A. Laurence Lyon|1934|2006": {
+   "qid": "Q4648094",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "James Montgomery|1771|1854": {
+   "qid": "Q3269483",
+   "religion": []
+  },
+  "George Coles|1792|1858": {
+   "qid": "Q109856022",
+   "religion": []
+  },
+  "William Clayton|1814|1879": {
+   "qid": "Q767459",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Isaac Watts|1674|1748": {
+   "qid": "Q537034",
+   "religion": [
+    "Protestantism"
+   ]
+  },
+  "William Croft|1677|1727": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Philo Dibble|1806|1895": {
+   "qid": "Q94407150",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Emmeline B. Wells|1828|1921": {
+   "qid": "Q5373425",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Charles W. Penrose|1832|1925": {
+   "qid": "Q5083241",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Felicia D. Hemans|1793|1835": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Ida R. Alldredge|1892|1943": {
+   "qid": "Q13848101",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Orson F. Whitney|1855|1931": {
+   "qid": "Q7104160",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Edward P. Kimball|1882|1937": {
+   "qid": "Q5344727",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Ed M. Rowe|1878|1951": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Robert P. Manookin|1918|1997": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "William G. Mills|1822|1895": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Edward Partridge|1793|1840": {
+   "qid": "Q5344778",
+   "religion": []
+  },
+  "Thomas Hastings|1784|1872": {
+   "qid": "Q5793076",
+   "religion": []
+  },
+  "Edwin F. Parry|1850|1935": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Thomas Kelly|1769|1854": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "A. C. Smyth|1840|1909": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "George Gill|1820|1880": {
+   "qid": "Q74710178",
+   "religion": []
+  },
+  "Joseph G. Fones|1828|1906": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "John A. Widtsoe|1872|1952": {
+   "qid": "Q6217984",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "John Newton|1725|1807": {
+   "qid": "Q357301",
+   "religion": [
+    "Anglicanism"
+   ]
+  },
+  "Franz Joseph Haydn|1732|1809": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Merrill Bradshaw|1929|2000": {
+   "qid": "Q6820164",
+   "religion": []
+  },
+  "Elias L. T. Harrison|1830|1900": {
+   "qid": "Q5360536",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Joseph L. Townsend|1849|1942": {
+   "qid": "Q15996368",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "William Clayson|1840|1887": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "William Clegg|1823|1903": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Leroy J. Robertson|1896|1971": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "William Goode|1762|1816": {
+   "qid": "Q16857642",
+   "religion": [
+    "Anglicanism"
+   ]
+  },
+  "John Jaques|1827|1900": {
+   "qid": "Q6241650",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "J. Spencer Cornwall|1888|1983": {
+   "qid": "Q6107115",
+   "religion": []
+  },
+  "John Longhurst|1940|null": {
+   "qid": "Q16105404",
+   "religion": []
+  },
+  "James H. Wallis|1861|1940": {
+   "qid": "Q6135310",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Julia Ward Howe|1819|1910": {
+   "qid": "Q241299",
+   "religion": []
+  },
+  "St. Francis of Assisi|1182|1226": {
+   "qid": "Q676555",
+   "religion": [
+    "Catholicism"
+   ]
+  },
+  "Carrie Stockdale Thomas|1848|1931": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "William B. Bradbury|1816|1868": {
+   "qid": "Q322931",
+   "religion": []
+  },
+  "Charles Wesley|1707|1788": {
+   "qid": "Q349070",
+   "religion": [
+    "Anglicanism"
+   ]
+  },
+  "Horatio Parker|1863|1919": {
+   "qid": "Q957738",
+   "religion": []
+  },
+  "James Allen|1734|1804": {
+   "qid": "Q5546924",
+   "religion": [
+    "Anglicanism"
+   ]
+  },
+  "Felice de Giardini|1716|1796": {
+   "qid": "Q1171207",
+   "religion": []
+  },
+  "Melchior Teschner|1584|1635": {
+   "qid": "Q92388",
+   "religion": [
+    "Lutheranism"
+   ]
+  },
+  "Johann J. Schütz|1640|1690": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Penelope Moody Allen|1939|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Newel Kay Brown|1932|null": {
+   "qid": "Q94532459",
+   "religion": []
+  },
+  "Joachim Neander|1650|1680": {
+   "qid": "Q445967",
+   "religion": [
+    "Protestantism"
+   ]
+  },
+  "Daniel C. Roberts|1841|1907": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "George W. Warren|1828|1902": {
+   "qid": "Q20726537",
+   "religion": []
+  },
+  "Lowell M. Durham|1917|1992": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Rudyard Kipling|1865|1936": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Marvin K. Gardner|1952|null": {
+   "qid": "Q6778390",
+   "religion": []
+  },
+  "Vanja Y. Watkins|1938|null": {
+   "qid": "Q16983186",
+   "religion": []
+  },
+  "William Walsham How|1823|1897": {
+   "qid": "Q3426832",
+   "religion": [
+    "Anglicanism"
+   ]
+  },
+  "William Williams|1722|1796": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "John Hughes|1873|1932": {
+   "qid": "Q17309163",
+   "religion": [
+    "Baptists"
+   ]
+  },
+  "Frederick W. Faber|1814|1863": {
+   "qid": "Q1286149",
+   "religion": [
+    "Catholic Church",
+    "Anglicanism"
+   ]
+  },
+  "Henri F. Hemy|1818|1888": {
+   "qid": "Q19522542",
+   "religion": []
+  },
+  "James G. Walton|1821|1905": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Stuart K. Hine|1899|1989": {
+   "qid": "Q114446505",
+   "religion": [
+    "Plymouth Brethren"
+   ]
+  },
+  "Thomas R. Taylor|1807|1835": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Thomas C. Griggs|1845|1903": {
+   "qid": "Q7788139",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "James Nicholson|1828|1876": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "John R. Sweney|1837|1899": {
+   "qid": "Q6200030",
+   "religion": []
+  },
+  "Folliott S. Pierpoint|1835|1917": {
+   "qid": "Q5464672",
+   "religion": [
+    "Catholic Church"
+   ]
+  },
+  "Conrad Kocher|1786|1872": {
+   "qid": "Q1782165",
+   "religion": []
+  },
+  "Henry Alford|1810|1871": {
+   "qid": "Q2698623",
+   "religion": [
+    "Anglicanism"
+   ]
+  },
+  "George J. Elvey|1816|1893": {
+   "qid": "Q5541104",
+   "religion": []
+  },
+  "Martin Rinkhart|1586|1649": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Johann Crüger|1598|1662": {
+   "qid": "Q158097",
+   "religion": [
+    "Lutheranism"
+   ]
+  },
+  "Charles L. Walker|1832|1904": {
+   "qid": "Q5080005",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "John Menzies Macfarlane|1833|1892": {
+   "qid": "Q6248490",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "John Henry Newman|1801|1890": {
+   "qid": "Q44490",
+   "religion": [
+    "Catholic Church",
+    "Anglicanism"
+   ]
+  },
+  "John B. Dykes|1823|1876": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Annie S. Hawks|1835|1918": {
+   "qid": "Q4952981",
+   "religion": []
+  },
+  "Robert Lowry|1826|1899": {
+   "qid": "Q2158096",
+   "religion": [
+    "Baptists"
+   ]
+  },
+  "Sarah F. Adams|1805|1848": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Lowell Mason|1792|1872": {
+   "qid": "Q1349257",
+   "religion": []
+  },
+  "Orson Pratt Huish|1851|1932": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Joseph P. Holbrook|1822|1888": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "H. R. Palmer|1834|1907": {
+   "qid": "Q6033704",
+   "religion": []
+  },
+  "Edward Hopper|1818|1888": {
+   "qid": "Q5813461",
+   "religion": [
+    "Presbyterianism"
+   ]
+  },
+  "John Edgar Gould|1822|1875": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Mary Ann Baker|1831|1921": {
+   "qid": "Q20667137",
+   "religion": []
+  },
+  "Wiliam E. Hickson|1803|1870": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Ernst Moritz Arndt|1796|1860": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Richard Alldridge|1815|1896": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Thomas Koschat|1845|1914": {
+   "qid": "Q2425533",
+   "religion": []
+  },
+  "Joseph Addison|1672|1719": {
+   "qid": "Q206384",
+   "religion": [
+    "Anglicanism"
+   ]
+  },
+  "Dmitri Bortniansky|1751|1825": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Julius Schubring|1806|1889": {
+   "qid": "Q1577761",
+   "religion": []
+  },
+  "Felix Mendelssohn|1809|1847": {
+   "qid": "Q46096",
+   "religion": [
+    "Lutheranism",
+    "reformed"
+   ]
+  },
+  "Augustus M. Toplady|1740|1778": {
+   "qid": "Q712167",
+   "religion": [
+    "Wesleyan Methodist Church"
+   ]
+  },
+  "Edward L. Hart|1916|2008": {
+   "qid": "Q5344010",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Crawford Gates|1921|2018": {
+   "qid": "Q5182863",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Hugh W. Dougall|1872|1963": {
+   "qid": "Q5932964",
+   "religion": []
+  },
+  "Thomas Moore|1784|1872": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Samuel Webbe|1740|1816": {
+   "qid": "Q7412899",
+   "religion": []
+  },
+  "John Nicholson|1839|1909": {
+   "qid": "Q56544050",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Samuel McBurney|1847|1909": {
+   "qid": "Q21537766",
+   "religion": []
+  },
+  "Aaron Williams|1731|1776": {
+   "qid": "Q4662544",
+   "religion": []
+  },
+  "Hans Henry Petersen|1835|1909": {
+   "qid": "Q5650139",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Lorin F. Wheelwright|1909|1987": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Katharina von Schlegel|1697|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Jean Sibelius|1865|1957": {
+   "qid": "Q45682",
+   "religion": []
+  },
+  "Philip Doddridge|1702|1751": {
+   "qid": "Q2718478",
+   "religion": [
+    "Congregational churches"
+   ]
+  },
+  "Hans Georg Nägeli|1773|1836": {
+   "qid": "Q672548",
+   "religion": [
+    "reformed"
+   ]
+  },
+  "B. Cecil Gates|1887|1941": {
+   "qid": "Q4833944",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Joseph Fielding Smith|1876|1972": {
+   "qid": "Q1392595",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "George D. Pyper|1860|1943": {
+   "qid": "Q5538324",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Naomi W. Randall|1908|2001": {
+   "qid": "Q6964709",
+   "religion": []
+  },
+  "Stephen M. Jones|1960|null": {
+   "qid": "Q7609851",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Emma Lou Thayne|1924|2014": {
+   "qid": "Q5372891",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Joleen G. Meredith|1935|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Grietje Terburg Rowley|1927|2015": {
+   "qid": "Q23696501",
+   "religion": []
+  },
+  "Philip Paul Bliss|1838|1876": {
+   "qid": "Q898625",
+   "religion": [
+    "Baptists",
+    "Presbyterianism"
+   ]
+  },
+  "Frank W. Asper|1892|1973": {
+   "qid": "Q14711521",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Friedrich F. Flemming|1778|1813": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Gordon B. Hinckley|1910|2008": {
+   "qid": "Q553147",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "G. Homer Durham|1911|1985": {
+   "qid": "Q5512273",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Samuel Medley|1738|1799": {
+   "qid": "Q18065879",
+   "religion": []
+  },
+  "Lewis D. Edwards|1858|1921": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Loren C. Dunn|1930|2001": {
+   "qid": "Q6680353",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Michael Finlinson Moody|1941|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "John Sears Tanner|1950|null": {
+   "qid": "Q6256399",
+   "religion": []
+  },
+  "James B. Welch|1950|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Paul L. Anderson|1946|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Clay Christiansen|1949|null": {
+   "qid": "Q5129850",
+   "religion": []
+  },
+  "Mary A. Pepper Kidder|1820|1905": {
+   "qid": "Q104815312",
+   "religion": []
+  },
+  "William O. Perkins|1831|1902": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Bernard of Clairvaux|1091|1153": {
+   "qid": "Q188411",
+   "religion": [
+    "Catholic Church"
+   ]
+  },
+  "William W. Walford|1772|1850": {
+   "qid": "Q20680157",
+   "religion": []
+  },
+  "Martin Shaw|1875|1958": {
+   "qid": "Q1905056",
+   "religion": []
+  },
+  "John J. McClellan|1874|1925": {
+   "qid": "Q6241156",
+   "religion": []
+  },
+  "Lynn R. Carson|1942|null": {
+   "qid": "Q6709176",
+   "religion": []
+  },
+  "Charles Denney Jr.|1849|1937": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Vernald W. Johns|1902|1999": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Laurence M. Yorgason|1937|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Jeremiah E. Rankin|1828|1904": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "William G. Tomer|1833|1896": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Benjamin Milgrove|1731|1810": {
+   "qid": "Q113761186",
+   "religion": []
+  },
+  "Nan Greene Hunter|1938|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Lynn R. Shurtleff|1939|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Mabel Jones Gabbott|1910|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Frank I. Kooyman|1880|1963": {
+   "qid": "Q5487387",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Joseph H. Dean|1855|1947": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Sabine Baring-Gould|1834|1924": {
+   "qid": "Q1242472",
+   "religion": [
+    "Church of England",
+    "Anglicanism"
+   ]
+  },
+  "Joseph Barnby|1838|1896": {
+   "qid": "Q5566022",
+   "religion": []
+  },
+  "George W. Doane|1799|1859": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Carl Maria von Weber|1786|1826": {
+   "qid": "Q154812",
+   "religion": [
+    "Catholicism"
+   ]
+  },
+  "John Ellerton|1826|1893": {
+   "qid": "Q3433259",
+   "religion": []
+  },
+  "William Hammond|1719|1783": {
+   "qid": "Q8010789",
+   "religion": [
+    "Protestantism"
+   ]
+  },
+  "John Fawcett|1740|1817": {
+   "qid": "Q3364547",
+   "religion": [
+    "Baptists"
+   ]
+  },
+  "Jean-Jacques Rousseau|1712|1778": {
+   "qid": "Q6527",
+   "religion": [
+    "Catholicism",
+    "Protestantism"
+   ]
+  },
+  "Anne Steele|1716|1778": {
+   "qid": "Q15506168",
+   "religion": [
+    "Baptists"
+   ]
+  },
+  "Harrison Millard|1830|1895": {
+   "qid": "Q5665756",
+   "religion": []
+  },
+  "Henry F. Lyte|1793|1847": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "William H. Monk|1823|1889": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Lowell M. Durham Jr.|1943|1997": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Lee Tom Perry|1951|null": {
+   "qid": "Q6515303",
+   "religion": []
+  },
+  "Daniel Lyman Carter|1955|null": {
+   "qid": "Q5216768",
+   "religion": []
+  },
+  "Annie Pinnock Malin|1863|1935": {
+   "qid": "Q4769407",
+   "religion": []
+  },
+  "Louis M. Gottschalk|1829|1869": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Zara Sabin|1892|1980": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Thomas L. Durham|1950|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Rowland H. Prichard|1811|1887": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Andrew Dalrymple|1817|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Jane Romney Crawford|1883|1956": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Joseph Coslett|1850|1910": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Vilate Raile|1890|1954": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "William H. Turton|1856|1938": {
+   "qid": "Q21503839",
+   "religion": []
+  },
+  "Charles H. Gabriel|1856|1932": {
+   "qid": "Q5078567",
+   "religion": []
+  },
+  "Cecil Frances Alexander|1818|1895": {
+   "qid": "Q3364640",
+   "religion": [
+    "Anglicanism"
+   ]
+  },
+  "John H. Gower|1855|1922": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Thomas McIntyre|1833|1914": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Karen Lynn Davidson|1943|2019": {
+   "qid": "Q6369829",
+   "religion": []
+  },
+  "Hans Leo Hassler|1564|1612": {
+   "qid": "Q164882",
+   "religion": []
+  },
+  "Marion D. Hanks|1921|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Robert Cundick|1926|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "George F. Handel|1685|1759": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "John F. Wade|1711|1786": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Joseph Mohr|1792|1848": {
+   "qid": "Q698084",
+   "religion": [
+    "Catholic Church"
+   ]
+  },
+  "Franz Gruber|1787|1863": {
+   "qid": "Q513185",
+   "religion": []
+  },
+  "Henry J. Gauntlett|1805|1876": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "William J. Kirkpatrick|1838|1921": {
+   "qid": "Q3848833",
+   "religion": []
+  },
+  "Edmund H. Sears|1810|1876": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Richard S. Willis|1819|1900": {
+   "qid": "Q3431242",
+   "religion": []
+  },
+  "Phillips Brooks|1835|1893": {
+   "qid": "Q974734",
+   "religion": [
+    "Anglicanism"
+   ]
+  },
+  "Lewis H. Redner|1831|1908": {
+   "qid": "Q4392214",
+   "religion": []
+  },
+  "Nahum Tate|1652|1715": {
+   "qid": "Q956310",
+   "religion": []
+  },
+  "Henry Wadsworth Longfellow|1807|1882": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "John Baptiste Calkin|1827|1905": {
+   "qid": "Q1449465",
+   "religion": []
+  },
+  "Alfred Tennyson|1809|1892": {
+   "qid": "Q173869",
+   "religion": [
+    "Anglicanism"
+   ]
+  },
+  "Henry A. Tuckett|1852|1918": {
+   "qid": "Q5717037",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "James Lucas|1726|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Phillip Landgrave|1935|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Susan Evans McCloud|1945|null": {
+   "qid": "Q7647809",
+   "religion": []
+  },
+  "K. Newell Dayley|1939|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Mary B. Wingate|1899|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Will L. Thompson|1847|1909": {
+   "qid": "Q8002932",
+   "religion": []
+  },
+  "Josephine Pollard|1834|1892": {
+   "qid": "Q13563110",
+   "religion": []
+  },
+  "John M. Chamberlain|1844|1930": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Robert B. Baird|1855|1916": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Eliza E. Hewitt|1851|1920": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "James M. Dungan|1851|1925": {
+   "qid": "Q120432094",
+   "religion": []
+  },
+  "Edwin O. Excell|1851|1921": {
+   "qid": "Q5322075",
+   "religion": []
+  },
+  "Ellis Reynolds Shipp|1847|1939": {
+   "qid": "Q5365975",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Orlando Gibbons|1583|1625": {
+   "qid": "Q311913",
+   "religion": []
+  },
+  "George Kiallmark|1781|1835": {
+   "qid": "Q18671297",
+   "religion": []
+  },
+  "Roger L. Miller|1937|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Johnson Oatman Jr.|1856|1922": {
+   "qid": "Q6021677",
+   "religion": []
+  },
+  "Thomas Ken|1637|1711": {
+   "qid": "Q2361032",
+   "religion": [
+    "Anglicanism"
+   ]
+  },
+  "William Willes|1814|1890": {
+   "qid": "Q8020377",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Henry W. Naisbitt|1826|1908": {
+   "qid": "Q27902622",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Arthur S. Sullivan|1842|1900": {
+   "qid": "Q212692",
+   "religion": [
+    "Anglicanism"
+   ]
+  },
+  "William Bullock|1797|1874": {
+   "qid": "Q77140992",
+   "religion": []
+  },
+  "Adam Geibel|1855|1933": {
+   "qid": "Q20663595",
+   "religion": []
+  },
+  "Fanny J. Crosby|1820|1915": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Jean L. Kaberry|1918|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Ruth May Fox|1853|1958": {
+   "qid": "Q7383117",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "W. O. Robinson|1876|1979": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Hannah Last Cornaby|1822|1905": {
+   "qid": "Q120814990",
+   "religion": []
+  },
+  "Henry H. Russell|1818|1900": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Marilyn McMeen Brown|1938|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Willy Reske|1897|1991": {
+   "qid": "Q8022598",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "John Taylor|1808|1887": {
+   "qid": "Q540244",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints",
+    "Mormonism"
+   ]
+  },
+  "Ruth M. Gardner|1927|1999": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Lyall J. Gardner|1926|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "George F. Root|1820|1895": {
+   "qid": "Q614867",
+   "religion": []
+  },
+  "William Hurn|1754|1829": {
+   "qid": "Q92281548",
+   "religion": [
+    "Congregational churches"
+   ]
+  },
+  "John Darwall|1731|1789": {
+   "qid": "Q6228598",
+   "religion": [
+    "Anglicanism"
+   ]
+  },
+  "Henry U. Onderdonk|1789|1858": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Joseph Martin Kraus|1756|1792": {
+   "qid": "Q453272",
+   "religion": []
+  },
+  "Reginald Heber|1783|1826": {
+   "qid": "Q3271284",
+   "religion": [
+    "Anglicanism"
+   ]
+  },
+  "Oliver Holden|1765|1844": {
+   "qid": "Q7087602",
+   "religion": []
+  },
+  "Mary Brown|1856|1918": {
+   "qid": "Q19633605",
+   "religion": []
+  },
+  "Carrie E. Rounsefell|1861|1930": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Ellen Knowles Melling|1820|1905": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Charles Davis Tillman|1861|1943": {
+   "qid": "Q5076766",
+   "religion": []
+  },
+  "J. Marinus Jensen|1868|1945": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "J. J. Keeler|1913|1996": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "C. Marianne Johnson Fisher|1932|2018": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "James R. Murray|1841|1905": {
+   "qid": "Q5998000",
+   "religion": []
+  },
+  "Gottfried W. Fink|1783|1846": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "William Cowper|1731|1800": {
+   "qid": "Q315537",
+   "religion": [
+    "Anglicanism"
+   ]
+  },
+  "Archibald F. Bennett|1896|1965": {
+   "qid": "Q4786307",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "R. Paul Thompson|1926|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Gaylen Hatton|1928|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "James McGranahan|1840|1907": {
+   "qid": "Q5981828",
+   "religion": []
+  },
+  "John Hugh McNaughton|1829|1891": {
+   "qid": "Q105945891",
+   "religion": []
+  },
+  "F. Bland Tucker|1895|1984": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "G. William Richards|1918|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Carolyn Hamilton Klopfer|1936|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "W. Herbert Klopfer|1936|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Caroline V. Sandell-Berg|1832|1903": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Mildred T. Pettit|1895|1977": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Reid N. Nibley|1923|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Barbara A. McConochie|1940|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Clara W. McMaster|1904|1997": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Matilda Watts Cahoon|1881|1973": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Luacine Clark Fox|1914|2002": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Emily H. Woodmansee|1836|1906": {
+   "qid": "Q5372191",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Janice Kapp Perry|1938|null": {
+   "qid": "Q6154258",
+   "religion": [
+    "The Church of Jesus Christ of Latter-day Saints"
+   ]
+  },
+  "Jan Underwood Pinborough|1954|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Charlene A. Newell|1938|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Bonnie Lauper Goodliffe|1943|null": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Cyrus H. Wheelock|1813|1894": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "John Craven|1929|null": {
+   "qid": "Q6227530",
+   "religion": []
+  },
+  "Mary Judd Page|1818|1907": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Daniel B. Towner|1850|1919": {
+   "qid": "Q5216466",
+   "religion": []
+  },
+  "Thomas Davenport|1815|1888": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "William H. Walter|1825|1893": {
+   "qid": "Q20006762",
+   "religion": []
+  },
+  "Robert B. Thompson|1811|1841": {
+   "qid": "Q15455378",
+   "religion": []
+  },
+  "Joseph Parry|1841|1903": {
+   "qid": "Q3395608",
+   "religion": []
+  },
+  "Katherine Lee Bates|1859|1929": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Samuel A. Ward|1848|1903": {
+   "qid": "Q2450043",
+   "religion": []
+  },
+  "Samuel F. Smith|1808|1895": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "Francis Scott Key|1779|1843": {
+   "qid": "Q320633",
+   "religion": [
+    "Episcopal Church"
+   ]
+  },
+  "John Stafford Smith|1750|1836": {
+   "qid": "Q563098",
+   "religion": []
+  },
+  "Ralph Vaughan Williams|1872|1958": {
+   "qid": "Q207947",
+   "religion": []
+  },
+  "Leland B. Sateren|1913|2007": {
+   "qid": "Q106831558",
+   "religion": []
+  },
+  "Lucy Broadwood|1872|1958": {
+   "qid": null,
+   "religion": [],
+   "note": "not found"
+  },
+  "William Pierson Merrill|1867|1954": {
+   "qid": "Q15998546",
+   "religion": [
+    "Presbyterianism"
+   ]
+  },
+  "Grace Noll Crowell|1877|1969": {
+   "qid": "Q5591327",
+   "religion": []
+  }
+ }
+}
