@@ -32,17 +32,37 @@ async function convert({ texts, direction, spelling, strict }) {
   return { out, stats: { words, unknown } };
 }
 
-chrome.runtime.onMessage.addListener((msg, _sender, reply) => {
+// Per-tab memory: once you switch a tab to Deseret, later pages on the same site in that tab load in
+// Deseret too, until you switch it back or leave the site. Session storage survives worker restarts
+// and is cleared when the browser closes.
+const tabKey = (id) => `tab:${id}`;
+chrome.tabs.onRemoved.addListener((id) => chrome.storage.session.remove(tabKey(id)));
+
+chrome.runtime.onMessage.addListener((msg, sender, reply) => {
   if (msg?.type === 'convert') {
     convert(msg).then(reply, (err) => reply({ error: String(err?.message || err) }));
     return true; // async reply
+  }
+  const tabId = sender.tab?.id;
+  if (msg?.type === 'tab-get' && tabId != null) {
+    chrome.storage.session.get(tabKey(tabId)).then((r) => reply(r[tabKey(tabId)] || null));
+    return true;
+  }
+  if (msg?.type === 'tab-set' && tabId != null) {
+    const p = msg.active ? chrome.storage.session.set({ [tabKey(tabId)]: { host: msg.host, direction: msg.direction } }) : chrome.storage.session.remove(tabKey(tabId));
+    p.then(() => reply(true));
+    return true;
   }
   return false;
 });
 
 // Keyboard shortcut and context menu both just tell the tab's content script to toggle.
 const toggleTab = (tabId) => chrome.tabs.sendMessage(tabId, { type: 'toggle' }).catch(() => {});
-chrome.commands.onCommand.addListener((cmd, tab) => { if (cmd === 'toggle-page' && tab?.id) toggleTab(tab.id); });
+chrome.commands.onCommand.addListener((cmd, tab) => {
+  if (!tab?.id) return;
+  if (cmd === 'toggle-page') toggleTab(tab.id);
+  if (cmd === 'cycle-captions') chrome.tabs.sendMessage(tab.id, { type: 'captions-cycle' }).catch(() => {});
+});
 
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({ id: 'toggle-page', title: 'Switch page between Latin and Deseret', contexts: ['page', 'selection'] });

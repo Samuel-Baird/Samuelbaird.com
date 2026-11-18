@@ -8,12 +8,13 @@
 (() => {
   if (window.__dsrtLoaded) return;
   window.__dsrtLoaded = true;
-  const { FONTS, getSettings } = self.DSRT_SHARED;
+  const { getSettings, registerFont } = self.DSRT_SHARED;
 
   const LATIN = /\p{Script=Latin}/u;
   const DSRT = /[\u{10400}-\u{1044F}]/u;
   const SKIP = 'script,style,noscript,textarea,input,select,option,code,pre,kbd,samp,var,svg,math,template,iframe,'
-    + '[contenteditable=""],[contenteditable="true"],[translate="no"],.notranslate,[data-no-dsrt]';
+    + '[contenteditable=""],[contenteditable="true"],[translate="no"],.notranslate,[data-no-dsrt],'
+    + '.ytp-caption-window-container,.dsrt-cap'; // YouTube captions belong to captions.js
   const ICON_FONT = /icon|material|awesome|symbol|glyph|fontello|dashicons/i;
   const FAMILY = 'DeseretReader';
   const CHUNK = 300;
@@ -30,27 +31,9 @@
   const iconCache = new WeakMap();    // Element -> boolean
 
   // ---------- fonts ----------
-  const b64ToBuf = (b64) => Uint8Array.from(atob(b64), (c) => c.charCodeAt(0)).buffer;
   async function loadFont() {
     if (face) { document.fonts.delete(face); face = null; }
-    if (direction !== 'dsrt') return;
-    const desc = { unicodeRange: 'U+10400-1044F', sizeAdjust: `${settings.size || 100}%` };
-    let src;
-    const pick = FONTS.find((f) => f.id === settings.font) || FONTS[0];
-    try {
-      if (pick.id === 'custom') {
-        const { customFont } = await chrome.storage.local.get('customFont');
-        if (customFont?.data) src = b64ToBuf(customFont.data);
-      } else if (pick.file) {
-        src = await (await fetch(chrome.runtime.getURL(pick.file))).arrayBuffer();
-      }
-      if (!src) src = 'local("Segoe UI Historic"), local("Noto Sans Deseret"), local("Apple Symbols")';
-      face = new FontFace(FAMILY, src, desc);
-      document.fonts.add(face);
-      await face.load();
-    } catch (e) {
-      console.warn('[Deseret] font failed to load; using the system font', e);
-    }
+    if (direction === 'dsrt') face = await registerFont(FAMILY, settings);
   }
 
   // ---------- which text to touch ----------
@@ -143,12 +126,15 @@
   const resume = () => { if (active && observer) observer.observe(document.body, { childList: true, subtree: true, characterData: true }); };
 
   // ---------- on / off ----------
-  async function activate(dir) {
+  const remember = (on) => chrome.runtime.sendMessage({ type: 'tab-set', active: on, direction, host: location.hostname }).catch(() => {});
+
+  async function activate(dir, { save = true } = {}) {
     if (active) restore();
     settings = await getSettings();
     direction = dir || 'dsrt';
     active = true;
     stats = { words: 0, unknown: 0 };
+    if (save) remember(true);
     await loadFont();
     observer = new MutationObserver(onMutations);
     const nodes = [];
@@ -188,8 +174,8 @@
   }
 
   chrome.runtime.onMessage.addListener((msg, _s, reply) => {
-    if (msg.type === 'toggle') { active ? restore() : activate(guessDirection()); reply({ ok: true }); }
-    else if (msg.type === 'set') { (msg.direction ? activate(msg.direction) : Promise.resolve(restore())).then(() => reply(status())); return true; }
+    if (msg.type === 'toggle') { if (active) { restore(); remember(false); } else activate(guessDirection()); reply({ ok: true }); }
+    else if (msg.type === 'set') { (msg.direction ? activate(msg.direction) : Promise.resolve((restore(), remember(false)))).then(() => reply(status())); return true; }
     else if (msg.type === 'status') reply(status());
     return false;
   });
@@ -199,13 +185,17 @@
   chrome.storage.onChanged.addListener((changes, area) => {
     if (!active) return;
     const keys = Object.keys(changes);
-    if (area === 'sync' && keys.some((k) => ['spelling', 'strict', 'font', 'size'].includes(k))) activate(direction);
-    if (area === 'local' && keys.includes('customFont') && settings?.font === 'custom') activate(direction);
+    if (area === 'sync' && keys.some((k) => ['spelling', 'strict', 'font', 'size'].includes(k))) activate(direction, { save: false });
+    if (area === 'local' && keys.includes('customFont') && settings?.font === 'custom') activate(direction, { save: false });
   });
 
-  // Auto-convert sites marked "always", or every site when "everywhere" is on.
-  getSettings().then((s) => {
+  // On load: sites marked "always" (or every site when "everywhere" is on), else whatever this tab was
+  // showing on this site before (so moving between pages keeps Deseret on).
+  (async () => {
+    const s = await getSettings();
     const rule = s.sites[location.hostname];
-    if (rule === true || (s.everywhere && rule !== false)) activate('dsrt');
-  });
+    if (rule === true || (s.everywhere && rule !== false)) return activate('dsrt', { save: false });
+    const prev = await chrome.runtime.sendMessage({ type: 'tab-get' }).catch(() => null);
+    if (prev && prev.host === location.hostname) activate(prev.direction, { save: false });
+  })();
 })();

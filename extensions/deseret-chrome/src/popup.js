@@ -76,6 +76,16 @@
     $('page-status').textContent = 'Chrome doesn’t let extensions change this page (browser pages and the Web Store). Reload the tab if you just installed the extension.';
   }
 
+  // ---------- YouTube captions ----------
+  const capBtns = [...document.querySelectorAll('[data-cap]')];
+  const showCap = (m) => capBtns.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.cap === m)));
+  showCap(settings.captions);
+  capBtns.forEach((b) => b.addEventListener('click', async () => {
+    showCap(b.dataset.cap);
+    await setSettings({ captions: b.dataset.cap });
+    chrome.tabs.sendMessage(tab.id, { type: 'captions-set', mode: b.dataset.cap }).catch(() => {}); // turns YouTube's CC on
+  }));
+
   // ---------- converter box ----------
   let t;
   async function convertBox() {
