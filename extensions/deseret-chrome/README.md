@@ -27,6 +27,8 @@ This writes `dist/` (gitignored) and `dist.zip`. Then open `chrome://extensions`
 
 ## Publishing to the Chrome Web Store
 
+Store item ID `hekmmnnmeacmjpblgakcopaogikiljoe` (publisher "Samuel Baird", contact ithinksamofficial@gmail.com). 0.2.0 submitted for review 2026-11-17, set to publish automatically when approved; listing URL once live: https://chromewebstore.google.com/detail/hekmmnnmeacmjpblgakcopaogikiljoe. Updates: upload a new `dist.zip` under Package, then submit again.
+
 1. Bump `version` in `src/manifest.json` and rebuild.
 2. Upload `dist.zip` in the [Developer Dashboard](https://chrome.google.com/webstore/devconsole) (one-time $5 registration).
 3. Listing notes:
