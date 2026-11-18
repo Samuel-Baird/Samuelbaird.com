@@ -26,3 +26,7 @@ requests>=2.32.0
 # `winget install --id Gyan.FFmpeg -e` (full build: libass for burned captions).
 faster-whisper>=1.2.0
 numpy>=2.0
+
+# Saint Capybara reaction-queue batch downloader: tools/capy_fetch_queue.py
+# reads/writes need reaction.xlsx.
+openpyxl>=3.1
