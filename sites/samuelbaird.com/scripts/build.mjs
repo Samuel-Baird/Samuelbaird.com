@@ -11,6 +11,7 @@ import path from 'node:path';
 import vm from 'node:vm';
 import { fileURLToPath } from 'node:url';
 import { renderHead, renderTop, renderFoot, PROJECTS as FAMILY, ALL_PROJECTS } from '../../../packages/family/render.mjs';
+import { AMAZON_TAG } from '../../../packages/family/referrals.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const R = (...p) => path.join(ROOT, ...p);
@@ -60,7 +61,8 @@ const sites = vm.runInNewContext(
 const { SITES, WISH, COMMUNITIES, labelOf, isService, categoryLabel, mapsUrl, NO_MAPS, ALL_PHOTOS, photoUrl } = sites;
 
 /* ---------- wishlist: Amazon data + local priorities ---------- */
-const AFFILIATE_TAG = 'ithinkthereforeisam-20';
+// Referral tags live in one place for every site (packages/family/referrals.mjs).
+const AFFILIATE_TAG = AMAZON_TAG;
 const readJson = (f, fallback) => (fs.existsSync(R(f)) ? JSON.parse(read(f)) : fallback);
 const WL_DATA = readJson('wishlist/data.json', { items: [] });
 const WL_PRI = readJson('wishlist/priorities.json', { items: {} }).items || {};
