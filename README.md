@@ -7,7 +7,7 @@ Every website and project in one private repo. Each site deploys as its own Verc
 | `sites/samuelbaird.com` | https://samuelbaird.com | samuelbaird-com | static HTML, `scripts/build.mjs` |
 | `sites/latter-day-stats` | https://samuelbaird.com/latter-day-stats | latter-day-stats | Next.js (basePath), Supabase |
 | `sites/urim` | https://samuelbaird.com/urim | urim | static + Python pipeline |
-| `sites/omni` | https://samuelbaird.com/omni | omni | Next.js (basePath) |
+| `sites/omni` | https://samuelbaird.com/omni (hidden: unlisted, noindex) | omni | Next.js (basePath) |
 | `sites/peepstone` | https://samuelbaird.com/peepstone | peepstone | Next.js (basePath) |
 | `sites/deseret-wiki` | https://deseret.wiki | deseret-wiki | Astro |
 | `sites/deseret-mcp` | https://mcp.deseret.wiki | deseret-mcp | static + Node MCP |

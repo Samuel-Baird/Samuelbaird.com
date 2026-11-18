@@ -1,5 +1,5 @@
 {
-  "$comment": "Single source of truth for every public Samuel Baird project. Drives the shared sidebar on every site and the project pages, JSON-LD, sitemap and llms.txt on samuelbaird.com. Never add private work here (school, collector-items, content-creation) and never link the Gospel Scholar Archive. After editing, run: node scripts/family-sync.mjs URL rule: every project except the Deseret Wiki family (deseret.wiki, mcp.deseret.wiki) lives at https://samuelbaird.com/<id>, served by its own Vercel project through rewrites in sites/samuelbaird.com/vercel.json; formerUrl hosts 301 there.",
+  "$comment": "Single source of truth for every public Samuel Baird project. Drives the shared sidebar on every site and the project pages, JSON-LD, sitemap and llms.txt on samuelbaird.com. Never add private work here (school, collector-items, content-creation) and never link the Gospel Scholar Archive. The hidden flag (true) keeps a project off every public list (sidebar, /projects, llms.txt, sitemap) and disallows its whole base path in robots.txt; Omni is hidden because it proxies the private Gospel Scholar Archive. After editing, run: node scripts/family-sync.mjs URL rule: every project except the Deseret Wiki family (deseret.wiki, mcp.deseret.wiki) lives at https://samuelbaird.com/<id>, served by its own Vercel project through rewrites in sites/samuelbaird.com/vercel.json; formerUrl hosts 301 there.",
   "owner": {
     "name": "Samuel Baird",
     "url": "https://samuelbaird.com",
@@ -253,6 +253,7 @@
     },
     {
       "id": "omni",
+      "hidden": true,
       "name": "Omni",
       "url": "https://samuelbaird.com/omni",
       "role": "creator",

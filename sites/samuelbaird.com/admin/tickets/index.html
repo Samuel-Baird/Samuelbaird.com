@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0f1115">
+<title>Tickets · Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/tokens.css">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:var(--background);color:var(--foreground);font:15px/1.55 var(--font-sans)}
+a{color:var(--accent);text-underline-offset:3px;overflow-wrap:anywhere}
+.rail{max-width:76rem;margin:0 auto;padding:28px 16px 64px}
+.crumb{font-size:.85rem;color:var(--muted);margin:0 0 6px}
+.crumb a{color:var(--muted)}
+h1{font:600 clamp(1.7rem,4.5vw,2.3rem)/1.15 var(--font-serif);margin:0 0 4px}
+.sub{color:var(--muted);margin:0 0 18px}
+button,select,input,textarea{font:inherit;color:var(--foreground)}
+select,input,textarea{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:7px 9px;min-height:38px}
+textarea{width:100%;resize:vertical}
+input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.btn{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:7px 12px;min-height:38px;cursor:pointer}
+.btn:hover{border-color:var(--muted)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent);font-weight:600}
+.btn.danger{color:#e59a9a;border-color:#5a3434}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 10px}
+.bar .grow{flex:1 1 200px}
+.bar label{display:flex;gap:6px;align-items:center;font-size:.9rem;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+.chip{border:1px solid var(--border);background:transparent;border-radius:var(--radius);padding:3px 9px;font-size:.82rem;color:var(--muted);cursor:pointer}
+.chip[aria-pressed="true"]{color:var(--foreground);border-color:var(--accent);background:var(--accent-soft)}
+#msg{margin:0 0 14px;padding:12px 14px;border:1px solid var(--border);border-left:3px solid var(--honey);border-radius:var(--radius);background:var(--surface)}
+#msg[hidden]{display:none}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin:0 0 16px}
+.stat{border:1px solid var(--border);border-radius:var(--radius);padding:8px 12px;background:var(--surface)}
+.stat b{display:block;font:600 1.3rem/1.2 var(--font-serif)}
+.stat span{font-size:.8rem;color:var(--muted)}
+table{width:100%;border-collapse:collapse}
+th{font:600 .75rem var(--font-sans);text-transform:uppercase;letter-spacing:.04em;color:var(--muted);text-align:left;padding:6px 8px;border-bottom:1px solid var(--border);white-space:nowrap}
+th button{all:unset;cursor:pointer}
+th button[aria-sort]::after{content:" ▾"}
+td{padding:9px 8px;border-bottom:1px solid var(--border);vertical-align:top}
+tr.t{cursor:pointer}
+tr.t:hover td{background:var(--muted-soft)}
+tr.child td.title{padding-left:28px}
+tr.child td.title::before{content:"↳ ";color:var(--muted)}
+.ref{font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap}
+.title b{font-weight:600}
+.title p{margin:2px 0 0;color:var(--muted);font-size:.85rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tags{margin-top:4px;display:flex;flex-wrap:wrap;gap:4px}
+.tag{font-size:.72rem;border:1px solid var(--border);border-radius:var(--radius);padding:0 6px;color:var(--muted)}
+.tag.money{color:var(--honey);border-color:#5a4a26}
+.tag.hidden{color:#e59a9a;border-color:#5a3434}
+.st{font-size:.78rem;padding:2px 6px;min-height:0}
+.dots{display:inline-flex;gap:2px;vertical-align:middle}
+.dots i{width:7px;height:7px;border-radius:1px;background:var(--border)}
+.dots i.on{background:var(--accent)}
+td.sc{white-space:nowrap;text-align:center}
+.score{font:600 1rem var(--font-serif);font-variant-numeric:tabular-nums}
+.hide-sm{display:table-cell}
+@media (max-width:760px){.hide-sm{display:none}.title p{-webkit-line-clamp:3}}
+dialog{width:min(760px,calc(100vw - 32px));max-height:calc(100vh - 32px);background:var(--background);color:var(--foreground);border:1px solid var(--border);border-radius:var(--radius);padding:0}
+dialog::backdrop{background:rgba(0,0,0,.6)}
+dialog form{padding:18px 20px}
+dialog h2{font:600 1.3rem var(--font-serif);margin:0 0 12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.f{display:flex;flex-direction:column;gap:4px;font-size:.82rem;color:var(--muted);margin:0 0 10px}
+.f input,.f select,.f textarea{color:var(--foreground);font-size:.95rem}
+.help{font-size:.78rem;color:var(--muted);margin:-4px 0 10px}
+.actions{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap;margin-top:8px}
+.actions .left{margin-right:auto}
+.empty{color:var(--muted);padding:24px 8px;text-align:center}
+</style>
+</head>
+<body>
+<main class="rail">
+  <p class="crumb"><a href="/admin">Admin</a> / Tickets</p>
+  <h1>Tickets</h1>
+  <p class="sub">Every project in one list. Scores run 1&ndash;5, higher is better (ease 5 = quickest to ship).</p>
+
+  <div id="msg" role="status" hidden></div>
+
+  <div id="app" hidden>
+    <div class="stats" id="stats"></div>
+    <div class="bar">
+      <input class="grow" id="q" type="search" placeholder="Search title, notes, tags" aria-label="Search">
+      <label>Sort
+        <select id="sort">
+          <option value="score">Overall score</option>
+          <option value="quick">Quick wins (value × ease)</option>
+          <option value="fund">Funding potential</option>
+          <option value="priority">Priority</option>
+          <option value="impact">Impact</option>
+          <option value="traffic">Traffic</option>
+          <option value="revenue">Revenue</option>
+          <option value="ease">Ease</option>
+          <option value="updated">Recently updated</option>
+          <option value="ref">Number</option>
+        </select>
+      </label>
+      <label><input type="checkbox" id="tree" checked> Group subtasks</label>
+      <label><input type="checkbox" id="showDone"> Show done</label>
+      <button class="btn primary" id="new" type="button">New ticket</button>
+    </div>
+    <div class="chips" id="cats" aria-label="Filter by category"></div>
+    <div style="overflow-x:auto">
+      <table>
+        <thead><tr>
+          <th>#</th><th>Ticket</th><th>Status</th>
+          <th class="hide-sm" title="Priority">Pri</th><th class="hide-sm" title="Impact">Imp</th>
+          <th class="hide-sm" title="Traffic">Trf</th><th class="hide-sm" title="Revenue">Rev</th>
+          <th class="hide-sm" title="Ease">Ease</th><th title="Overall score out of 100">Score</th>
+        </tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </div>
+</main>
+
+<dialog id="dlg" aria-labelledby="dlgTitle">
+  <form id="form" method="dialog">
+    <h2 id="dlgTitle">Ticket</h2>
+    <div class="grid">
+      <label class="f">Number<input name="ref" required maxlength="20" placeholder="e.g. 5.3"></label>
+      <label class="f">Parent<select name="parent_ref"></select></label>
+      <label class="f">Status<select name="status"></select></label>
+      <label class="f">Visibility<select name="visibility">
+        <option value="public">public</option><option value="private">private</option><option value="hidden">hidden (never public: GSA rule)</option>
+      </select></label>
+    </div>
+    <label class="f">Title<input name="title" required maxlength="200"></label>
+    <label class="f">Summary<textarea name="summary" rows="2" maxlength="2000"></textarea></label>
+    <div class="grid">
+      <label class="f">Priority<select name="priority"></select></label>
+      <label class="f">Impact<select name="impact"></select></label>
+      <label class="f">Traffic<select name="traffic"></select></label>
+      <label class="f">Revenue<select name="revenue"></select></label>
+      <label class="f">Ease<select name="ease"></select></label>
+    </div>
+    <div class="grid">
+      <label class="f">Category<input name="category" list="catList" maxlength="40"></label>
+      <label class="f">Monetization<input name="monetization" placeholder="referral, paywall, print"></label>
+      <label class="f">Tags<input name="tags" placeholder="comma separated"></label>
+    </div>
+    <datalist id="catList"></datalist>
+    <label class="f">Notes<textarea name="notes" rows="7" maxlength="20000"></textarea></label>
+    <label class="f">Links<textarea name="links" rows="3" placeholder="One per line: Label | https://..."></textarea></label>
+    <p class="help">Monetization ideas: referral, paywall, premium, print, merch, sponsorship, donation. Sites stay ad-free.</p>
+    <div class="actions">
+      <button class="btn danger left" id="del" type="button">Delete</button>
+      <button class="btn" value="cancel" formnovalidate>Cancel</button>
+      <button class="btn primary" id="save" value="save">Save</button>
+    </div>
+  </form>
+</dialog>
+
+<script>
+(() => {
+  const API = '/api/admin/tickets';
+  const STATUS = ['idea','backlog','next','doing','review','blocked','done','dropped'];
+  const CLOSED = new Set(['done','dropped']);
+  const SCORES = ['priority','impact','traffic','revenue','ease'];
+  const $ = (s) => document.querySelector(s);
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const store = { get(k, d) { try { const v = localStorage.getItem('tickets.' + k); return v == null ? d : JSON.parse(v); } catch { return d; } },
+                  set(k, v) { try { localStorage.setItem('tickets.' + k, JSON.stringify(v)); } catch {} } };
+
+  let tickets = [];
+  let editing = null;
+  const activeCats = new Set(store.get('cats', []));
+
+  // Overall: priority counts most; everything weighted into 0-100.
+  const overall = (t) => Math.round((t.priority * 3 + t.impact * 2 + t.traffic * 2 + t.revenue * 2 + t.ease) / 50 * 100);
+  const SORTS = {
+    score: (t) => overall(t),
+    quick: (t) => (t.impact + t.traffic + t.revenue + t.priority) * t.ease,
+    fund: (t) => t.revenue * 2 + t.traffic + t.ease / 2,
+    priority: (t) => t.priority * 10 + overall(t) / 100,
+    impact: (t) => t.impact * 10 + overall(t) / 100,
+    traffic: (t) => t.traffic * 10 + overall(t) / 100,
+    revenue: (t) => t.revenue * 10 + overall(t) / 100,
+    ease: (t) => t.ease * 10 + overall(t) / 100,
+    updated: (t) => Date.parse(t.updated_at) || 0,
+  };
+  const refKey = (r) => String(r).split('.').map((p) => (/^\d+$/.test(p) ? p.padStart(4, '0') : p)).join('.');
+
+  function say(html) { const m = $('#msg'); m.innerHTML = html; m.hidden = !html; }
+
+  async function api(method, ref, body) {
+    const url = API + (ref ? '?ref=' + encodeURIComponent(ref) : '');
+    const opt = { method, credentials: 'same-origin', headers: {} };
+    if (body) { opt.headers['content-type'] = 'application/json'; opt.body = JSON.stringify(body); }
+    let r = await fetch(url, opt);
+    if (r.status === 401) {
+      // Access tokens last an hour. Any Latter-day Stats request refreshes the shared
+      // session cookie through its proxy; try once, then ask for a sign-in.
+      await fetch('/latter-day-stats/robots.txt', { credentials: 'same-origin', cache: 'no-store' }).catch(() => {});
+      r = await fetch(url, opt);
+    }
+    const json = await r.json().catch(() => ({}));
+    if (!r.ok) throw Object.assign(new Error(json.error || r.statusText), { status: r.status, json });
+    return json;
+  }
+
+  function explain(err) {
+    const login = '/latter-day-stats/login?return_to=' + encodeURIComponent(location.pathname);
+    switch (err.message) {
+      case 'signed_out': case 'expired': return `Sign in to see your tickets. <a href="${login}">Sign in with Google</a>`;
+      case 'not_owner': return 'This page is only for the site owner.';
+      case 'not_configured': return 'Not set up yet: add <code>SUPABASE_URL</code> and <code>SUPABASE_ANON_KEY</code> to the samuelbaird-com Vercel project.';
+      case 'migration_missing': return 'Not set up yet: apply migration <code>0061_admin_tickets.sql</code> in latter-day-stats (<code>npx tsx scripts/migrate.ts</code>).';
+      case 'ref_taken': return 'That number is already used by another ticket.';
+      default: return 'Something went wrong: ' + esc(err.message);
+    }
+  }
+
+  function dots(n) { let s = '<span class="dots" aria-label="' + n + ' of 5">'; for (let i = 1; i <= 5; i++) s += '<i class="' + (i <= n ? 'on' : '') + '"></i>'; return s + '</span>'; }
+
+  function visible() {
+    const q = $('#q').value.trim().toLowerCase();
+    const showDone = $('#showDone').checked;
+    return tickets.filter((t) => {
+      if (!showDone && CLOSED.has(t.status)) return false;
+      if (activeCats.size && !activeCats.has(t.category)) return false;
+      if (q) {
+        const hay = [t.ref, t.title, t.summary, t.notes, t.category, ...(t.tags || []), ...(t.monetization || [])].join(' ').toLowerCase();
+        if (!q.split(/\s+/).every((w) => hay.includes(w))) return false;
+      }
+      return true;
+    });
+  }
+
+  function ordered(list) {
+    const key = $('#sort').value;
+    const cmp = key === 'ref'
+      ? (a, b) => refKey(a.ref).localeCompare(refKey(b.ref))
+      : (a, b) => SORTS[key](b) - SORTS[key](a) || refKey(a.ref).localeCompare(refKey(b.ref));
+    if (!$('#tree').checked) return list.slice().sort(cmp).map((t) => [t, false]);
+    const ids = new Set(list.map((t) => t.ref));
+    const kids = {};
+    const roots = [];
+    for (const t of list) (t.parent_ref && ids.has(t.parent_ref) ? (kids[t.parent_ref] ||= []) : roots).push(t);
+    const out = [];
+    const walk = (t, depth) => { out.push([t, depth > 0]); (kids[t.ref] || []).sort(cmp).forEach((k) => walk(k, depth + 1)); };
+    roots.sort(cmp).forEach((t) => walk(t, 0));
+    return out;
+  }
+
+  function render() {
+    const open = tickets.filter((t) => !CLOSED.has(t.status));
+    const top = open.slice().sort((a, b) => overall(b) - overall(a))[0];
+    $('#stats').innerHTML = [
+      [open.length, 'open'],
+      [open.filter((t) => t.status === 'doing').length, 'in progress'],
+      [open.filter((t) => t.status === 'next').length, 'up next'],
+      [open.filter((t) => t.revenue >= 3 && t.traffic >= 4).length, 'funding picks'],
+      [top ? esc(top.ref) : '–', top ? 'top: ' + esc(top.title).slice(0, 40) : 'top'],
+    ].map(([b, s]) => `<div class="stat"><b>${b}</b><span>${s}</span></div>`).join('');
+
+    const cats = [...new Set(tickets.map((t) => t.category))].sort();
+    $('#cats').innerHTML = cats.map((c) => `<button type="button" class="chip" data-cat="${esc(c)}" aria-pressed="${activeCats.has(c)}">${esc(c)}</button>`).join('');
+    $('#catList').innerHTML = cats.map((c) => `<option value="${esc(c)}">`).join('');
+
+    const rows = ordered(visible());
+    $('#rows').innerHTML = rows.length ? rows.map(([t, child]) => `
+      <tr class="t${child ? ' child' : ''}" data-ref="${esc(t.ref)}">
+        <td class="ref">${esc(t.ref)}</td>
+        <td class="title"><b>${esc(t.title)}</b>${t.summary ? `<p>${esc(t.summary)}</p>` : ''}
+          <div class="tags">${t.visibility !== 'public' ? `<span class="tag${t.visibility === 'hidden' ? ' hidden' : ''}">${esc(t.visibility)}</span>` : ''}${(t.monetization || []).map((m) => `<span class="tag money">${esc(m)}</span>`).join('')}${(t.tags || []).slice(0, 4).map((g) => `<span class="tag">${esc(g)}</span>`).join('')}</div></td>
+        <td><select class="st" data-status aria-label="Status">${STATUS.map((s) => `<option${s === t.status ? ' selected' : ''}>${s}</option>`).join('')}</select></td>
+        ${SCORES.map((k) => `<td class="sc hide-sm">${dots(t[k])}</td>`).join('')}
+        <td class="sc"><span class="score">${overall(t)}</span></td>
+      </tr>`).join('') : '<tr><td colspan="9" class="empty">No tickets match.</td></tr>';
+  }
+
+  function fill(sel, values, cur) { sel.innerHTML = values.map(([v, l]) => `<option value="${esc(v)}"${String(v) === String(cur) ? ' selected' : ''}>${esc(l)}</option>`).join(''); }
+
+  function openEditor(t) {
+    editing = t || null;
+    const f = $('#form');
+    const d = t || { ref: '', parent_ref: null, status: 'backlog', visibility: 'public', title: '', summary: '', notes: '', category: 'site', priority: 3, impact: 3, traffic: 3, revenue: 1, ease: 3, monetization: [], tags: [], links: [] };
+    $('#dlgTitle').textContent = t ? 'Ticket ' + t.ref : 'New ticket';
+    f.ref.value = d.ref;
+    fill(f.parent_ref, [['', '(none)'], ...tickets.filter((x) => x.ref !== d.ref).sort((a, b) => refKey(a.ref).localeCompare(refKey(b.ref))).map((x) => [x.ref, x.ref + ' ' + x.title.slice(0, 50)])], d.parent_ref || '');
+    fill(f.status, STATUS.map((s) => [s, s]), d.status);
+    f.visibility.value = d.visibility;
+    for (const k of SCORES) fill(f[k], [5, 4, 3, 2, 1].map((n) => [n, n + (n === 5 ? ' (highest)' : n === 1 ? ' (lowest)' : '')]), d[k]);
+    for (const k of ['title', 'summary', 'notes', 'category']) f[k].value = d[k] || '';
+    f.monetization.value = (d.monetization || []).join(', ');
+    f.tags.value = (d.tags || []).join(', ');
+    f.links.value = (d.links || []).map((l) => (l.label && l.label !== l.url ? l.label + ' | ' : '') + l.url).join('\n');
+    $('#del').hidden = !t;
+    $('#dlg').showModal();
+  }
+
+  function formData() {
+    const f = $('#form');
+    const out = { ref: f.ref.value.trim(), parent_ref: f.parent_ref.value || null, status: f.status.value, visibility: f.visibility.value };
+    for (const k of ['title', 'summary', 'notes', 'category']) out[k] = f[k].value;
+    for (const k of SCORES) out[k] = Number(f[k].value);
+    out.monetization = f.monetization.value;
+    out.tags = f.tags.value;
+    out.links = f.links.value.split('\n').map((line) => line.trim()).filter(Boolean).map((line) => {
+      const i = line.lastIndexOf('|');
+      return i > 0 ? { label: line.slice(0, i).trim(), url: line.slice(i + 1).trim() } : { label: line, url: line };
+    });
+    return out;
+  }
+
+  function upsert(t, oldRef) {
+    tickets = tickets.filter((x) => x.ref !== (oldRef || t.ref));
+    tickets.push(t);
+    if (oldRef && oldRef !== t.ref) tickets.forEach((x) => { if (x.parent_ref === oldRef) x.parent_ref = t.ref; });
+  }
+
+  $('#form').addEventListener('submit', async (e) => {
+    if (e.submitter?.value !== 'save') return;
+    e.preventDefault();
+    const body = formData();
+    try {
+      const { ticket } = editing ? await api('PATCH', editing.ref, body) : await api('POST', null, body);
+      upsert(ticket, editing?.ref);
+      $('#dlg').close();
+      say('');
+      render();
+    } catch (err) { alert(explain(err).replace(/<[^>]+>/g, '')); }
+  });
+
+  $('#del').addEventListener('click', async () => {
+    if (!editing || !confirm(`Delete ticket ${editing.ref}? Subtasks keep their content but lose their parent.`)) return;
+    try {
+      await api('DELETE', editing.ref);
+      tickets = tickets.filter((x) => x.ref !== editing.ref).map((x) => (x.parent_ref === editing.ref ? { ...x, parent_ref: null } : x));
+      $('#dlg').close();
+      render();
+    } catch (err) { alert(explain(err).replace(/<[^>]+>/g, '')); }
+  });
+
+  $('#rows').addEventListener('change', async (e) => {
+    if (!e.target.matches('[data-status]')) return;
+    const ref = e.target.closest('tr').dataset.ref;
+    try { const { ticket } = await api('PATCH', ref, { status: e.target.value }); upsert(ticket); render(); }
+    catch (err) { say(explain(err)); }
+  });
+  $('#rows').addEventListener('click', (e) => {
+    if (e.target.closest('select')) return;
+    const tr = e.target.closest('tr.t');
+    if (tr) openEditor(tickets.find((t) => t.ref === tr.dataset.ref));
+  });
+  $('#cats').addEventListener('click', (e) => {
+    const c = e.target.closest('[data-cat]')?.dataset.cat;
+    if (!c) return;
+    activeCats.has(c) ? activeCats.delete(c) : activeCats.add(c);
+    store.set('cats', [...activeCats]);
+    render();
+  });
+  $('#new').addEventListener('click', () => openEditor(null));
+  for (const id of ['sort', 'tree', 'showDone']) {
+    const el = $('#' + id);
+    const saved = store.get(id, null);
+    if (saved != null) el.type === 'checkbox' ? (el.checked = saved) : (el.value = saved);
+    el.addEventListener('change', () => { store.set(id, el.type === 'checkbox' ? el.checked : el.value); render(); });
+  }
+  $('#q').addEventListener('input', render);
+
+  api('GET').then(({ tickets: list }) => {
+    tickets = list;
+    $('#app').hidden = false;
+    render();
+  }).catch((err) => say(explain(err)));
+})();
+</script>
+</body>
+</html>

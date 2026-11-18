@@ -17,13 +17,18 @@ export default function LoginPage() {
 function LoginContent() {
   const searchParams = useSearchParams();
   const nextParam = searchParams.get("next") ?? "/";
+  // Family SSO: another samuelbaird.com page (e.g. /admin/tickets) can send
+  // people here with ?return_to=/its/path; the session cookie is shared domain-wide.
+  const returnTo = searchParams.get("return_to");
   const error = searchParams.get("error");
   const [pending, setPending] = useState(false);
 
   async function continueWithGoogle() {
     setPending(true);
     const supabase = createSupabaseBrowserClient();
-    const redirectTo = `${window.location.origin}${BASE_PATH}/auth/callback?next=${encodeURIComponent(nextParam)}`;
+    const redirectTo = `${window.location.origin}${BASE_PATH}/auth/callback?next=${encodeURIComponent(nextParam)}${
+      returnTo ? `&return_to=${encodeURIComponent(returnTo)}` : ""
+    }`;
     const { error: oauthError } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: { redirectTo },

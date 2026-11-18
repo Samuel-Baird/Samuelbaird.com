@@ -7,7 +7,7 @@ Every website and project in one private repo. Each site deploys as its own Verc
 | `sites/samuelbaird.com` | https://samuelbaird.com | samuelbaird-com | static HTML, `scripts/build.mjs` |
 | `sites/latter-day-stats` | https://samuelbaird.com/latter-day-stats | latter-day-stats | Next.js (basePath), Supabase |
 | `sites/urim` | https://samuelbaird.com/urim | urim | static + Python pipeline |
-| `sites/omni` | https://samuelbaird.com/omni | omni | Next.js (basePath) |
+| `sites/omni` | https://samuelbaird.com/omni (hidden: unlisted, noindex) | omni | Next.js (basePath) |
 | `sites/peepstone` | https://samuelbaird.com/peepstone | peepstone | Next.js (basePath) |
 | `sites/deseret-wiki` | https://deseret.wiki | deseret-wiki | Astro |
 | `sites/deseret-mcp` | https://mcp.deseret.wiki | deseret-mcp | static + Node MCP |
@@ -27,9 +27,16 @@ All sites share the Deseret Wiki's look and one sidebar: see `packages/family/ST
 ## Rules
 
 - The repo is private. Never list or link private projects (school, collector-items, content-creation) on any site. content-creation holds a pseudonymous channel whose anonymity rules forbid any link to Samuel Baird's names.
-- Never link the Gospel Scholar Archive (corpus.restorationcommons.org or its MCP host) on a public page.
+- **The Gospel Scholar Archive (GSA) is never public-facing.** Never link, embed or name corpus.restorationcommons.org, its bookshelf, page images or MCP host on a public page, API response, sitemap or llms.txt. Sites and tools may *use* it server-side (search it, then cite the book by author/title/year/page and link a public copy or an Amazon referral), but nothing may point back to it.
+- Omni proxies GSA, so Omni stays hidden: `"hidden": true` in `projects.json` keeps it off every sidebar, footer, `/projects`, llms.txt and the sitemap, and robots.txt plus an `X-Robots-Tag` header keep `/omni` out of search. Its endpoint keeps working for the owner's connectors; don't publish its URL. Every other MCP (Peepstone, Deseret MCP, Latter-day Stats, Urim, Pulpit) may be public.
 - antimormonstories and neomormonism are separate and must never be mentioned here or share this branding.
 - Each site's own CLAUDE.md/README still applies inside its folder.
+
+## Admin, tickets and single sign-on
+
+- `samuelbaird.com/admin` (private, noindex, unlinked) is the owner's dashboard. `/admin/tickets` is the project tracker: rows in `public.admin_tickets` (Latter-day Stats Supabase, migration `0061_admin_tickets.sql`), read and written by `sites/samuelbaird.com/api/admin/tickets.js`. RLS allows only `is_admin` profiles (`public.is_site_owner()`).
+- One login for the whole domain: the Latter-day Stats Google login sets the Supabase session cookie on samuelbaird.com, so every app under `samuelbaird.com/*` can read it (`sites/samuelbaird.com/api/_lib/session.js`). Send people to `/latter-day-stats/login?return_to=/any/path` to come back anywhere on the domain. deseret.wiki is another domain and is not covered yet (ticket 0.1).
+- New to-dos go in the ticket tracker, not in markdown files. Seed or bulk changes: a new numbered migration in latter-day-stats.
 
 ## Retired repos
 

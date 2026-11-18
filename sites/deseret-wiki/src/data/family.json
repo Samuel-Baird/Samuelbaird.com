@@ -54,14 +54,6 @@
       "current": false
     },
     {
-      "id": "omni",
-      "name": "Omni",
-      "url": "https://samuelbaird.com/omni/",
-      "color": "#6F8F9A",
-      "role": "creator",
-      "current": false
-    },
-    {
       "id": "sacred-sites",
       "name": "Sacred Sites Visited",
       "url": "https://samuelbaird.com/sacred-sites",
