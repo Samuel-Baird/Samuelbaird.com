@@ -19,5 +19,11 @@
       "destination": "/latter-day-stats/auth/:path*"
     }
   ],
-  "ignoreCommand": "bash ../../scripts/vercel-ignore.sh"
+  "ignoreCommand": "bash ../../scripts/vercel-ignore.sh",
+  "git": {
+    "deploymentEnabled": {
+      "archive/**": false,
+      "port/**": false
+    }
+  }
 }

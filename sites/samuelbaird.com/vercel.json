@@ -139,5 +139,11 @@
       "source": "/omni/:path*",
       "destination": "https://omni.samuelbaird.com/omni/:path*"
     }
-  ]
+  ],
+  "git": {
+    "deploymentEnabled": {
+      "archive/**": false,
+      "port/**": false
+    }
+  }
 }
