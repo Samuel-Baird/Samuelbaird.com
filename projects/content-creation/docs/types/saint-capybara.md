@@ -90,8 +90,12 @@ a project owns it). Immediately after ingest:
    `research\claims.md`. Do this before starting real research on the
    project, not after — a script.md link pushed to GitHub under the old
    slug would break if renamed later.
-3. Update the row's `Video Generated` column (mark `x`) once a project
-   reaches Gate A or ships, same as before.
+3. Update the row's `script link` column with the GitHub branch URL as
+   soon as the script reaches Gate A (see step 10 below) — this is a
+   separate, earlier milestone from `Video Generated`. Don't wait for the
+   video to ship to record that the script exists.
+4. Update the row's `Video Generated` column (mark `x`) once a project
+   actually ships (a rendered, reviewed final video) — not at Gate A.
 
 Some queue rows are just a URL (no local file yet — ingest via
 `capy_ingest.py URL --project ...`, letting yt_dlp download it directly
@@ -238,7 +242,11 @@ slug substituted.
     user approves.** If they return edits (directly, or via `DROP`/`SPLIT`/
     `MOVE AFTER Bxx` directives on `script.md`), apply them to
     `beats.yaml`, re-lint, re-storyboard, re-run `/capy-critique`, and
-    send Gate A again.
+    send Gate A again. **If this project has a row in `need reaction.xlsx`
+    (source intake)**, update that row's `script link` column with the
+    GitHub branch URL right after pushing `script.md` — same step, don't
+    treat it as a follow-up. A re-sent Gate A after user edits doesn't need
+    a new link (the branch URL doesn't change), only the first send does.
 
 ## Build (post-approval — official pipeline, see `docs/saint-capybara/hybrid-resolve-pipeline.md`)
 
