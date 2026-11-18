@@ -46,6 +46,13 @@
   background-color: var(--surface);
 }
 
+/* Solid accent (brass) buttons are authored as text-white. On links the family
+   sheet's unlayered :where(a) colour beats that utility (gold on gold), and white
+   on brass is too faint anyway, so they take the dark paper colour as ink. */
+.bg-\[color\:var\(--accent\)\].text-white {
+  color: var(--background);
+}
+
 /* Soft accent backgrounds with opacity modifiers like bg-[color:var(--accent-soft)]/30
    already adapt because the var changes. Same for borders. */
 
