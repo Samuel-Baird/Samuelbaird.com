@@ -1,0 +1,50 @@
+WARNING - GRPC_dns:///127.0.0.1:10000_[60d6e8e4] -  mechanical - log_warning - 2026-11-17 13:59:00.661343 (Thread 0x00008194) [DESIGNSPACE, warning] ---------- : CWBStringTable::get_String: Cannot find Meshing Completed on... 1/1 Parts
+2026-11-17 13:59:01.573979 (Thread 0x00008ca0) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 13:59:01.575489 (Thread 0x00008ca0) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 13:59:01.638338 (Thread 0x00008ca0) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 13:59:01.639345 (Thread 0x00008ca0) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+
+WARNING - GRPC_dns:///127.0.0.1:10000_[60d6e8e4] -  mechanical - log_warning - 2026-11-17 13:59:34.943219 (Thread 0x00008ca0) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+
+WARNING - GRPC_dns:///127.0.0.1:10000_[60d6e8e4] -  mechanical - log_warning - 2026-11-17 13:59:38.093910 (Thread 0x00008ca0) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 13:59:38.951632 (Thread 0x0000b504) [DESIGNSPACE, warning] ---------- : CWBStringTable::get_String: Cannot find Meshing Completed on... 1/1 Parts
+2026-11-17 13:59:39.733028 (Thread 0x00008ca0) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 13:59:39.734032 (Thread 0x00008ca0) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 13:59:39.788585 (Thread 0x00008ca0) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 13:59:39.790592 (Thread 0x00008ca0) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+
+WARNING - GRPC_dns:///127.0.0.1:10000_[60d6e8e4] -  mechanical - log_warning - 2026-11-17 14:00:13.132807 (Thread 0x00008ca0) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+
+WARNING - GRPC_dns:///127.0.0.1:10000_[60d6e8e4] -  mechanical - log_warning - 2026-11-17 14:00:16.273418 (Thread 0x00008ca0) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:00:17.205903 (Thread 0x00005bd8) [DESIGNSPACE, warning] ---------- : CWBStringTable::get_String: Cannot find Meshing Completed on... 1/1 Parts
+2026-11-17 14:00:17.993987 (Thread 0x00008ca0) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:00:17.995990 (Thread 0x00008ca0) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:00:18.046221 (Thread 0x00008ca0) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:00:18.048425 (Thread 0x00008ca0) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+
+WARNING - GRPC_dns:///127.0.0.1:10000_[60d6e8e4] -  mechanical - log_warning - 2026-11-17 14:00:50.004980 (Thread 0x00008ca0) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+
+WARNING - GRPC_dns:///127.0.0.1:10000_[60d6e8e4] -  mechanical - log_warning - 2026-11-17 14:00:53.185762 (Thread 0x00008ca0) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+
+WARNING - GRPC_dns:///127.0.0.1:10000_[60d6e8e4] -  mechanical - log_warning - 2026-11-17 14:00:54.437559 (Thread 0x000054a8) [DESIGNSPACE, warning] ---------- : CWBStringTable::get_String: Cannot find Meshing Completed on... 1/1 Parts
+2026-11-17 14:00:55.166020 (Thread 0x00008ca0) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:00:55.168581 (Thread 0x00008ca0) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:00:55.237133 (Thread 0x00008ca0) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:00:55.238135 (Thread 0x00008ca0) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+
+WARNING - GRPC_dns:///127.0.0.1:10000_[60d6e8e4] -  mechanical - log_warning - 2026-11-17 14:01:27.338593 (Thread 0x00008ca0) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+
+WARNING - GRPC_dns:///127.0.0.1:10000_[60d6e8e4] -  mechanical - log_warning - 2026-11-17 14:01:30.554368 (Thread 0x00008ca0) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:01:32.301084 (Thread 0x000098dc) [DESIGNSPACE, warning] ---------- : CWBStringTable::get_String: Cannot find Meshing Completed on... 1/1 Parts
+
+WARNING - GRPC_dns:///127.0.0.1:10000_[60d6e8e4] -  mechanical - log_warning - 2026-11-17 14:01:33.090594 (Thread 0x00008ca0) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:01:33.092345 (Thread 0x00008ca0) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:01:33.156638 (Thread 0x00008ca0) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+2026-11-17 14:01:33.158245 (Thread 0x00008ca0) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+
+WARNING - GRPC_dns:///127.0.0.1:10000_[60d6e8e4] -  mechanical - log_warning - 2026-11-17 14:02:09.268064 (Thread 0x00008ca0) [POST.ReaderPluginMgr, error] --- : Request to instantiate unknown reader type
+
+MECHANICAL ERROR: System.ArgumentException: This property is read-only. | debug_error_string = "UNKNOWN:System.ArgumentException: This property is read-only. | >
+[phase 2] setup full: {'bottom': [85], 'bearing': [104]}
+[phase 3] full: {'tmax_max': 42.135792068191925, 'nodes': 41317, 'state': 'Solved', 'dy_max': 0.012965717352926731, 'max_loc': [-14.369842684732323, 84.3020484906664, 10.392076694673307], 'sxy_max': 36.209385553995766, 'eqv_max': 79.153945347968531, 'dy_min': -1.2122281077608932e-05, 'elements': 23802, 'sxy_min': -36.148222605387367, 'R': [4.0460791689948816e-06, -20003.460159455139, -8.3496450273001788e-06], 'size': 3.5, 'eqv_bearing_max': 79.153945347968531, 'td_max': 0.012992103514266721} problems []
+[phase 5] setup half: {'bottom': [59], 'sym': [63], 'bearing': [72]}

@@ -15,7 +15,7 @@ from pathlib import Path
 HERE = Path(__file__).parent
 MT = ZoneInfo("America/Denver")  # handles the Nov 1 switch from MDT to MST
 COURSE = "https://uvu.instructure.com/courses/641173"
-TODAY = datetime(2026, 11, 13, tzinfo=MT)
+TODAY = datetime(2026, 11, 14, tzinfo=MT)
 
 WEIGHTS = {"Attendance": 10, "Assignments": 25, "Exams": 40, "Term project": 25}
 
@@ -123,8 +123,17 @@ ITEMS = [
               "118.1 MPa (Kt 1.4 extrapolated; effective 1.35). Fatigue safety factors are below 1 at 10^6 cycles."),
     dict(id="ict-1028b", title="In-class tutorial 10-28 (problem 2, bonus)", cid=9361471, group="Assignments", pts=10,
          due="2026-10-30T05:59:59Z", plan="2026-11-16", hrs=1, kind="ANSYS 2D",
-         status="todo", pdf="InClass_10-28_P2.docx",
-         deliver=["Problem 2 from the 10-28 handout (bonus points)"]),
+         status="pdf_ready", pdf="InClass_10-28_P2.docx",
+         deliver=["Q2 of the Plane Strain-Stress Tutorial (V2): long pressurized concrete block with a Ø50 hole",
+                  "Plane strain, justified", "FE model, BCs and loads (fixed base, 50/25 MPa top, 10 MPa sides)",
+                  "Max von Mises and location; σx, σy, τxy; max vertical displacement",
+                  "Mesh convergence (8 meshes); fillet-radius study (R5-R40)",
+                  "Hand checks: statics, beam theory on the hole section, Kirsch hole stresses, column displacement",
+                  "Concrete failure check (Coulomb-Mohr, 3 / 40 MPa)"],
+         note="Word file ready. Problem source found on Canvas: Q2 of the Plane Strain-Stress Tutorial (V2). Reactions "
+              "match statics exactly. Peak von Mises 142 MPa on the R20 fillet; hole sides -129 MPa, crown +17 MPa "
+              "(Kirsch with the FE nominal stress within 2% at the sides). The block fails: the 50 MPa load alone "
+              "exceeds the 40 MPa crushing strength (Mohr-Coulomb minimum 0.17 at the hole crown)."),
     dict(id="ict-1104", title="In-class tutorial 11-4", cid=9365212, group="Assignments", pts=10,
          due="2026-11-06T06:59:59Z", plan="2026-11-17", hrs=1.5, kind="ANSYS + mesh refinement",
          status="blocked", pdf="InClass_11-04.docx",
@@ -142,17 +151,24 @@ ITEMS = [
               "the isometric sketch are stated in the document."),
     dict(id="hw8", title="HW 8: Pipe elbow thermal stress", cid=9163933, group="Assignments", pts=10,
          due="2026-11-21T06:59:59Z", plan="2026-11-19", hrs=3, kind="Steady thermal → static structural",
-         status="todo", pdf="HW8_Pipe_Elbow_Thermal.docx",
+         status="pdf_ready", pdf="HW8_Pipe_Elbow_Thermal.docx",
          deliver=["Elbow with a second flange at the free end (aluminium alloy)",
                   "Thermal: model with BCs (initial temp, temperature, convection)", "Temperature distribution", "Heat flux",
                   "Structural: both flange faces fixed, imported temperature", "Total deformation", "Equivalent stress",
-                  "Safety factor and fail / no-fail"]),
+                  "Safety factor and fail / no-fail"],
+         note="Word file ready. Elbow at 99.71-100 C, heat flow 50.95 W (hand 51.00 W). Fixed flanges push back with "
+              "15.3 kN and 1.44 kN·m (hand beam models 14.0-17.3 kN, moment within 1%); max deformation 0.453 mm. "
+              "Bend 109 MPa (n = 2.6); flange material at the bolted faces about 195-264 MPa (n = 1.06-1.30, hand "
+              "EαΔT/(1−ν) = 190 MPa); the 548 MPa peak is a singular fixed-face edge. Verdict: does not fail."),
     dict(id="hw9", title="HW 9: 3D modeling", cid=9163934, group="Assignments", pts=10,
          due="2026-12-03T06:59:59Z", plan="2026-11-24", hrs=4, kind="Axisymmetric vs 3D + 3D bracket",
-         status="todo", pdf="HW9_3D_Modeling.docx",
+         status="pdf_ready", pdf="HW9_3D_Modeling.docx",
          deliver=["Q1 rotating part at 100 rpm: axisymmetric model", "Q1 3D model", "Q1 compare total deformation and equivalent stress",
                   "Q2 lifting bracket: half model", "Q2 full model",
-                  "Q2 for both: FEM with BCs, total deformation, Y deformation, equivalent stress, shear stress"]),
+                  "Q2 for both: FEM with BCs, total deformation, Y deformation, equivalent stress, shear stress"],
+         note="Word file ready. Q1 at 100 rpm: axisymmetric and 3D wedge agree to 0.18% (max deformation 2.02e-7 mm, bore "
+              "von Mises 2.0 kPa); corner peaks are singular. Q2: half model (symmetry, 10 kN) matches the full model "
+              "(deformation 0.0130 mm, von Mises 79 MPa at the eye hole, max tau-xy 36 MPa, n = 3.2)."),
     dict(id="post", title="Post-term project assessment (individual)", cid=9351753, group="Assignments", pts=10,
          due="2026-12-05T06:59:59Z", plan="2026-12-03", hrs=2, kind="Statics / MoM / FEA questions",
          status="todo", pdf="Post_Term_Assessment_FormB.docx",
