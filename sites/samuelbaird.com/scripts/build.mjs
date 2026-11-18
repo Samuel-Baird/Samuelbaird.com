@@ -175,6 +175,51 @@ const histStats = () => [
   [H.states, 'U.S. states'], [H.countries, H.countries === 1 ? 'country' : 'countries'],
 ].map(([n, l]) => `<li><b>${n}</b><span>${l}</span></li>`).join('');
 
+// General Handbook change log (data/lds-handbook-changes.json, built by scripts/fetch-handbook-changes.mjs).
+const HB_DATA = JSON.parse(read('data/lds-handbook-changes.json'));
+const HB_CHANGES = HB_DATA.changes;
+// Keep in step with handbook-changes/app.js.
+const HB_KIND = {
+  revised: { label: 'Revised', color: '#D9B46A' },
+  new: { label: 'New', color: '#8DA27A' },
+  removed: { label: 'Removed', color: '#B8645A' },
+  renumbered: { label: 'Renumbered', color: '#7E9BBB' },
+};
+const HB = {
+  all: HB_CHANGES.length,
+  releases: HB_DATA.releases.length,
+  chapters: new Set(HB_CHANGES.map((x) => x.chapter).filter((c) => c !== null)).size,
+  revised: HB_DATA.byKind.revised || 0,
+  new: HB_DATA.byKind.new || 0,
+  removed: (HB_DATA.byKind.removed || 0) + (HB_DATA.byKind.renumbered || 0),
+};
+FACT.handbookChanges = HB.all;
+FACT.handbookReleases = HB.releases;
+const hbKind = (k) => {
+  const m = HB_KIND[k] || { label: k, color: '#B9AE96' };
+  return `<span class="t-st"><i style="background:${m.color}"></i>${esc(m.label)}</span>`;
+};
+const hbChap = (x) => (x.chapter === null ? 'Handbook-wide' : `${x.chapter} · ${x.chapterTitle}`);
+const hbRow = (x) => `<tr data-id="${esc(x.id)}"><td><time datetime="${esc(x.date)}">${esc(x.date)}</time></td><td class="hb-sec">${esc(x.section)}</td><td><span class="hb-title">${esc(x.title)}</span><span class="hb-desc">${esc(x.description)}</span></td><td class="hide-sm">${esc(hbChap(x))}</td><td>${hbKind(x.kind)}</td><td class="t-links"><a href="${esc(x.sectionUrl)}" rel="noopener">Section</a><a href="${esc(x.announcementUrl)}" rel="noopener">Release</a></td></tr>`;
+const hbStats = () => [
+  [HB.all, 'logged changes'],
+  [HB.releases, 'update releases'],
+  [HB.chapters, 'chapters touched'],
+  [HB.revised, 'revised', HB_KIND.revised.color],
+  [HB.new, 'new sections', HB_KIND.new.color],
+  [HB.removed, 'removed / renumbered', HB_KIND.removed.color],
+].map(([n, l, c]) => `<li><b>${n}</b><span>${c ? `<i style="background:${c}"></i>` : ''}${l}</span></li>`).join('');
+function hbReleases() {
+  const chron = [...HB_DATA.releases].sort((a, b) => a.date.localeCompare(b.date));
+  const max = Math.max(...chron.map((r) => r.count), 1);
+  const shortRel = (r) => {
+    const [m, y] = r.release.split(' ');
+    return `${m.slice(0, 3)} ’${y.slice(2)}`;
+  };
+  return `<div class="t-dec" role="img" aria-label="General Handbook changes per release: ${chron.map((r) => `${r.release} ${r.count}`).join(', ')}">${chron.map((r) => `<div data-rel="${esc(r.release)}" title="${esc(r.release)} (${r.date}): ${r.count} changes" style="height:${(r.count / max * 100).toFixed(1)}%"><span>${r.count}</span></div>`).join('')}</div>`
+    + `<div class="t-dec-x" aria-hidden="true">${chron.map((r) => `<span>${esc(shortRel(r))}</span>`).join('')}</div>`;
+}
+
 // Sites grouped by tradition (listed communities first, in the order they are defined).
 const byTradition = [];
 for (const c of COMMUNITIES) {
@@ -335,6 +380,18 @@ const DATASETS = {
       { '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: BASE + '/data/lds-historic-sites.json' },
     ],
   },
+  handbook: {
+    '@type': 'Dataset', '@id': BASE + '/data#lds-handbook-changes', name: HB_DATA.name,
+    description: `All ${HB.all} published section and chapter changes to the General Handbook of The Church of Jesus Christ of Latter-day Saints across ${HB.releases} update releases (${HB_DATA.firstDate} to ${HB_DATA.lastDate}), compiled from the Church's official Summary of Recent Updates and Newsroom announcements, with original one-line descriptions.`,
+    url: BASE + '/handbook-changes', license: LICENSE_URL, isAccessibleForFree: true, creator: { '@type': 'Person', name: NAME, url: BASE + '/' }, inLanguage: 'en', dateModified: NOW, includedInDataCatalog: CATALOG,
+    keywords: ['General Handbook', 'LDS General Handbook changes', 'Latter-day Saint handbook updates', 'Church handbook change log', 'open data'],
+    temporalCoverage: `${HB_DATA.firstDate}/${HB_DATA.lastDate}`,
+    variableMeasured: ['date', 'release', 'chapter', 'chapterTitle', 'section', 'title', 'kind', 'description', 'sectionUrl', 'announcementUrl', 'source'],
+    distribution: [
+      { '@type': 'DataDownload', encodingFormat: 'text/csv', contentUrl: BASE + '/data/lds-handbook-changes.csv' },
+      { '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: BASE + '/data/lds-handbook-changes.json' },
+    ],
+  },
   reading: {
     '@type': 'Dataset', '@id': BASE + '/data#reading-list', name: 'Reading log: books and articles with date finished',
     description: `${F.books} books and ${F.articles} articles read by Samuel Baird, with the date each was finished and a link to the source.`,
@@ -430,7 +487,7 @@ const PAGES = {
   '/faq': { title: `FAQ: ${NAME}, Latter-day Stats, Pulpit and Sacred Sites`, desc: 'Direct answers: how many LDS YouTube channels are tracked, what Pulpit is, which sacred sites and temples Samuel Baird has visited, what he reads, and how to cite or reuse the data.',
     ld: (p) => [webPage(p, 'FAQPage', { mainEntity: FAQ.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: stripTags(a) } })) }), crumbs([['Home', '/'], ['FAQ', '/faq']])] },
   '/data': { title: 'Open Data: Sacred Sites and Reading Log (CSV, JSON) · Samuel Baird', desc: `Download original datasets under ${LICENSE_NAME}: ${F.sites} sacred sites with coordinates and visit dates, and a ${F.read}-item reading log. CSV and JSON, with field descriptions and a citation.`,
-    ld: (p) => [webPage(p, 'CollectionPage', { about: [{ '@id': DATASETS.sites['@id'] }, { '@id': DATASETS.reading['@id'] }, { '@id': DATASETS.temples['@id'] }, { '@id': DATASETS.historic['@id'] }], hasPart: [{ '@id': DATASETS.sites['@id'] }, { '@id': DATASETS.reading['@id'] }, { '@id': DATASETS.temples['@id'] }, { '@id': DATASETS.historic['@id'] }] }), DATASETS.sites, DATASETS.reading, DATASETS.temples, DATASETS.historic, crumbs([['Home', '/'], ['Open data', '/data']])] },
+    ld: (p) => [webPage(p, 'CollectionPage', { about: [{ '@id': DATASETS.sites['@id'] }, { '@id': DATASETS.reading['@id'] }, { '@id': DATASETS.temples['@id'] }, { '@id': DATASETS.historic['@id'] }, { '@id': DATASETS.handbook['@id'] }], hasPart: [{ '@id': DATASETS.sites['@id'] }, { '@id': DATASETS.reading['@id'] }, { '@id': DATASETS.temples['@id'] }, { '@id': DATASETS.historic['@id'] }, { '@id': DATASETS.handbook['@id'] }] }), DATASETS.sites, DATASETS.reading, DATASETS.temples, DATASETS.historic, DATASETS.handbook, crumbs([['Home', '/'], ['Open data', '/data']])] },
   '/sacred-sites': { file: 'sacred-sites/index.html', title: `Sacred Sites Visited: Interactive Map of ${F.sites} Churches and Temples · ${NAME}`, desc: `An interactive map of the ${F.sites} churches, temples and houses of worship ${NAME} has visited since January 2025, filterable by tradition, place and year.`, image: '/img/sacred-sites-map.webp', imageAlt: 'Map of sacred sites visited, mostly in Utah',
     ld: (p) => [webPage(p, 'CollectionPage', { about: { '@id': DATASETS.sites['@id'] }, mainEntity: { '@id': BASE + '/sacred-sites/sites#list' } }), DATASETS.sites, sitesList(), ...SITES.map(placeNode), crumbs([['Home', '/'], ['Sacred Sites', '/sacred-sites']])] },
   '/sacred-sites/photos': { file: 'sacred-sites/photos/index.html', title: `Sacred Sites Photos: ${F.photos} Photos of Churches and Temples · ${NAME}`, desc: `${F.photos} photographs from the churches, temples and houses of worship ${NAME} has visited, filterable by tradition, newest first. Free to reuse under ${LICENSE_NAME}.`, image: '/img/sacred-sites-photos.webp', imageAlt: 'Photo gallery of Greek Orthodox church interiors',
@@ -447,6 +504,8 @@ const PAGES = {
     ld: (p) => [webPage(p, 'CollectionPage', { about: { '@id': DATASETS.temples['@id'] } }), DATASETS.temples, crumbs([['Home', '/'], ['Temples', '/temples']])] },
   '/historic-sites': { file: 'historic-sites/index.html', title: `Church History Sites: Map of ${H.all} Latter-day Saint Historic Sites · ${NAME}`, desc: `Map and open dataset of the ${H.all} Church history sites, visitors' centers, monuments and museums operated by The Church of Jesus Christ of Latter-day Saints, from Palmyra and Kirtland to Nauvoo, Missouri and the Mormon Trail, with addresses and coordinates. CSV and JSON.`,
     ld: (p) => [webPage(p, 'CollectionPage', { about: { '@id': DATASETS.historic['@id'] } }), DATASETS.historic, crumbs([['Home', '/'], ['Historic sites', '/historic-sites']])] },
+  '/handbook-changes': { file: 'handbook-changes/index.html', title: `General Handbook Change Log: ${HB.all} Updates Across ${HB.releases} Releases (2020–2026) · ${NAME}`, desc: `Complete change log and open dataset of ${HB.all} section and chapter updates to the General Handbook of The Church of Jesus Christ of Latter-day Saints across ${HB.releases} releases since February 2020, filterable by chapter, kind and release. CSV and JSON.`,
+    ld: (p) => [webPage(p, 'CollectionPage', { about: { '@id': DATASETS.handbook['@id'] } }), DATASETS.handbook, crumbs([['Home', '/'], ['General Handbook changes', '/handbook-changes']])] },
   '/collection': { file: 'collection/index.html', title: `Collection: Historic Latter-day Saint Books, Periodicals and Artifacts · ${NAME}`, desc: `Historical Latter-day Saint items owned by ${NAME}, including a first edition of the Deseret First Book (1868), an 1864 Millennial Star and a 1908 Northern States Mission Book of Mormon.`,
     ld: (p) => [webPage(p, 'CollectionPage', { mainEntity: { '@id': BASE + '/collection#items' } }), collectionList(), crumbs([['Home', '/'], ['Collection', '/collection']])] },
   '/wishlist': { title: `Wishlist: Books and Equipment for the Channel · ${NAME}`, desc: `${WISHLIST.length ? plural(WISHLIST.length, 'book and piece of equipment', 'books and pieces of equipment') : 'Books and equipment'} ${NAME} would like for his YouTube channel, most wanted first. Bought through Amazon, shipped directly to him.`,
@@ -579,7 +638,7 @@ ${FAQ.map(([q, a]) => `<section class="qa" id="${slug(q)}"><h2>${esc(q)}</h2><p>
 function dataPage() {
   const fields = (rows) => `<dl class="fields">${rows.map(([k, v]) => `<dt><code>${k}</code></dt><dd>${v}</dd>`).join('')}</dl>`;
   const preview = SITE_ROWS.slice(0, 6);
-  return shell('/data', `${pagehead([['Home', '/'], ['Open data', '/data']], 'Open data', 'Original datasets you can download', `Free datasets to download: two first-hand ones under ${LICENSE_NAME}, and compiled lists of every Latter-day Saint temple and Church history site. Updated ${longDate(TODAY)}.`)}
+  return shell('/data', `${pagehead([['Home', '/'], ['Open data', '/data']], 'Open data', 'Original datasets you can download', `Free datasets to download: two first-hand ones under ${LICENSE_NAME}, and compiled lists of every Latter-day Saint temple, Church history site and General Handbook update. Updated ${longDate(TODAY)}.`)}
 <div class="prose wide">
   <section class="dataset" id="sacred-sites">
     <h2>Sacred sites visited</h2>
@@ -602,6 +661,12 @@ function dataPage() {
     <p>The ${H.all} historic sites, visitors&rsquo; centers, monuments and museums operated by The Church of Jesus Christ of Latter-day Saints (${H.historic} historic sites, ${H.centers} visitors&rsquo; centers and museums, ${H.monuments} monuments), with addresses and coordinates. The list, names, categories and addresses come from the Church&rsquo;s official <a href="https://www.churchofjesuschrist.org/learn/history/sites?lang=eng" rel="noopener">Historic Sites and Museums</a> pages. Coordinates use the Church&rsquo;s published map pins where available, with OpenStreetMap as the fallback (&copy; OpenStreetMap contributors, ODbL). Every record links to its official source.</p>
     <div class="btns"><a class="primary" href="/data/lds-historic-sites.csv" download>Download CSV</a><a class="secondary" href="/data/lds-historic-sites.json" download>Download JSON</a><a class="secondary" href="/historic-sites">Map and list</a></div>
     ${fields([['name, category', 'Official name; Historic site, Visitors&rsquo; center, Monument or Museum (the Church&rsquo;s own label where it gives one)'], ['operator', 'Who runs the site today'], ['area', 'Group of sites on the Church pages (Ohio, Missouri, Illinois&hellip;), blank for stand-alone sites'], ['street, city, region, postalCode, country', 'Physical address as published by the Church'], ['lat, lng, coordPrecision', 'Decimal degrees; precision is site, address, street or city'], ['coordSource', 'church for published map pins, openstreetmap for geocoded locations, or manual for a documented override'], ['officialUrl, source', 'The site&rsquo;s official page, and the official list it appears on'], ['wikidata, wikipedia', 'From the matched OpenStreetMap feature, when it has them']])}
+  </section>
+  <section class="dataset" id="lds-handbook-changes">
+    <h2>General Handbook change log</h2>
+    <p>All ${HB.all} published section and chapter revisions to <i>General Handbook: Serving in The Church of Jesus Christ of Latter-day Saints</i> across ${HB.releases} update releases from February 2020 through October 2026 (${HB.revised} revised, ${HB.new} new, ${HB_DATA.byKind.removed} removed, ${HB_DATA.byKind.renumbered} renumbered). Compiled from the Church&rsquo;s official <a href="https://www.churchofjesuschrist.org/study/manual/general-handbook/summary-of-recent-updates?lang=eng" rel="noopener">Summary of Recent Updates</a> page (live and archived editions) and Church Newsroom release announcements, with original one-line descriptions.</p>
+    <div class="btns"><a class="primary" href="/data/lds-handbook-changes.csv" download>Download CSV</a><a class="secondary" href="/data/lds-handbook-changes.json" download>Download JSON</a><a class="secondary" href="/handbook-changes">Timeline and search</a></div>
+    ${fields([['date, release', 'ISO publication date (YYYY-MM-DD) and official release label (for example, October 2026)'], ['chapter, chapterTitle', 'Handbook chapter number (0&ndash;38, or blank for handbook-wide notes) and chapter title'], ['section, title', 'Section number (for example, 38.6.2.1, 24, or All) and section title'], ['kind', '<code>revised</code>, <code>new</code>, <code>removed</code> or <code>renumbered</code>'], ['description', 'Concise one-line summary of the change in original wording'], ['sectionUrl, announcementUrl, source', 'Official section link on churchofjesuschrist.org, Newsroom announcement link, and the exact source URL fetched']])}
   </section>
   <section class="dataset" id="reading-list">
     <h2>Reading log</h2>
@@ -716,6 +781,7 @@ patch('books/index.html', '/books', { books: BOOKS.map(bookLi).join('\n') });
 patch('collection/index.html', '/collection');
 patch('temples/index.html', '/temples', { 'temple-stats': templeStats(), 'temple-decades': templeDecades(), 'temple-rows': TEMPLES.map(templeRow).join('\n') });
 patch('historic-sites/index.html', '/historic-sites', { 'hist-stats': histStats(), 'hist-rows': HIST.map(histRow).join('\n') });
+patch('handbook-changes/index.html', '/handbook-changes', { 'hb-stats': hbStats(), 'hb-releases': hbReleases(), 'hb-rows': HB_CHANGES.map(hbRow).join('\n') });
 patch('donate/index.html', '/donate');
 patch('sacred-sites/index.html', '/sacred-sites');
 patch('sacred-sites/photos/index.html', '/sacred-sites/photos');
@@ -734,7 +800,7 @@ Sitemap: ${BASE}/sitemap.xml
 ${FAMILY.filter((x) => x.basePath && x.sitemap).map((x) => `Sitemap: ${x.url}${x.sitemap}\n`).join('')}`);
 
 // sitemap.xml
-const urls = [['/', 1.0, 'weekly'], ['/projects', 0.9, 'weekly'], ...FAMILY.filter((x) => x.kind !== 'page').map((x) => ['/projects/' + x.id, 0.8, 'monthly']), ['/about', 0.8, 'monthly'], ['/faq', 0.9, 'weekly'], ['/data', 0.9, 'weekly'], ['/sacred-sites', 0.8, 'weekly'], ['/sacred-sites/sites', 0.8, 'weekly'], ['/sacred-sites/photos', 0.6, 'weekly'], ['/sacred-sites/traditions', 0.6, 'weekly'], ['/books', 0.7, 'weekly'], ['/collection', 0.6, 'monthly'], ['/temples', 0.9, 'weekly'], ['/data/lds-temples.csv', 0.4, 'weekly'], ['/data/lds-temples.json', 0.4, 'weekly'], ['/historic-sites', 0.8, 'monthly'], ['/data/lds-historic-sites.csv', 0.4, 'monthly'], ['/data/lds-historic-sites.json', 0.4, 'monthly'], ['/donate', 0.3, 'yearly'], ['/wishlist', 0.3, 'weekly'], ['/data/sacred-sites.csv', 0.4, 'weekly'], ['/data/sacred-sites.json', 0.4, 'weekly'], ['/data/reading-list.csv', 0.4, 'weekly'], ['/data/reading-list.json', 0.4, 'weekly'], ['/llms.txt', 0.3, 'monthly']];
+const urls = [['/', 1.0, 'weekly'], ['/projects', 0.9, 'weekly'], ...FAMILY.filter((x) => x.kind !== 'page').map((x) => ['/projects/' + x.id, 0.8, 'monthly']), ['/about', 0.8, 'monthly'], ['/faq', 0.9, 'weekly'], ['/data', 0.9, 'weekly'], ['/sacred-sites', 0.8, 'weekly'], ['/sacred-sites/sites', 0.8, 'weekly'], ['/sacred-sites/photos', 0.6, 'weekly'], ['/sacred-sites/traditions', 0.6, 'weekly'], ['/books', 0.7, 'weekly'], ['/collection', 0.6, 'monthly'], ['/temples', 0.9, 'weekly'], ['/data/lds-temples.csv', 0.4, 'weekly'], ['/data/lds-temples.json', 0.4, 'weekly'], ['/historic-sites', 0.8, 'monthly'], ['/data/lds-historic-sites.csv', 0.4, 'monthly'], ['/data/lds-historic-sites.json', 0.4, 'monthly'], ['/handbook-changes', 0.8, 'monthly'], ['/data/lds-handbook-changes.csv', 0.4, 'monthly'], ['/data/lds-handbook-changes.json', 0.4, 'monthly'], ['/donate', 0.3, 'yearly'], ['/wishlist', 0.3, 'weekly'], ['/data/sacred-sites.csv', 0.4, 'weekly'], ['/data/sacred-sites.json', 0.4, 'weekly'], ['/data/reading-list.csv', 0.4, 'weekly'], ['/data/reading-list.json', 0.4, 'weekly'], ['/llms.txt', 0.3, 'monthly']];
 write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map(([u, pr, cf]) => `  <url><loc>${BASE}${u === '/' ? '/' : u}</loc><lastmod>${TODAY}</lastmod><changefreq>${cf}</changefreq><priority>${pr.toFixed(1)}</priority></url>`).join('\n')}

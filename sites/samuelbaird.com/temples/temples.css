@@ -46,4 +46,18 @@
 .t-st i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;vertical-align:0}
 #t-shown{font:400 .85rem var(--f-text);color:var(--ink-soft)}
 .t-about{margin-top:30px}
-@media (max-width:640px){.t-table .hide-sm{display:none}}
+.hb-sec{font-variant-numeric:tabular-nums;white-space:nowrap}
+.hb-title{display:block;color:var(--heading)}
+.hb-desc{display:block;color:var(--ink-soft);font-size:.86rem;margin-top:2px;min-width:180px}
+.t-dec div[data-rel]{cursor:pointer;transition:opacity .15s}
+.t-dec div[data-rel]:hover,.t-dec div[data-rel].is-active{background:var(--gold)}
+@media (max-width:640px){
+  .t-table .hide-sm{display:none}
+  .t-dec,.t-dec-x{grid-template-columns:repeat(auto-fit,minmax(16px,1fr));gap:2px}
+  .t-dec div span{font-size:.58rem}
+  .t-dec-x{font-size:.56rem}
+  .t-dec-x span{writing-mode:vertical-rl;transform:rotate(180deg);margin:0 auto;white-space:nowrap}
+  .t-table th,.t-table td{padding:7px 8px}
+  .t-table .t-links{white-space:normal}
+  .t-table .t-links a{display:block;margin-right:0}
+}
