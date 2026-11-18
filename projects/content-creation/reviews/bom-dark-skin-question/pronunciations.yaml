@@ -1,0 +1,171 @@
+entries:
+- word: Nauvoo
+  ipa: /nɔˈvu/
+  status: unverified
+- word: Nephi
+  ipa: /ˈniːfaɪ/
+  spoken: neefye
+  status: unverified
+- word: Moroni
+  ipa: /moʊˈroʊnaɪ/
+  respelling: mō-rōʹnī
+  spoken: moreohnigh
+  status: church-guide 2026-09-19
+  note: mo-ROH-nye (Church guide mō-rōʹnī; ī as in 'idle'). An earlier 'fix' to -nee
+    was a misreading and has been reverted. `spoken` feeds Chatterbox only.
+- word: Lehi
+  ipa: /ˈliːhaɪ/
+  status: unverified
+- word: Mosiah
+  ipa: /moʊˈzaɪə/
+  spoken: mozeyeyah
+  status: user-specified 2026-09-20 (mo-zeye-yah)
+- word: Zarahemla
+  ipa: /zɛərəˈhɛmlə/
+  spoken: zeruhhemluh
+  status: unverified
+- word: Cumorah
+  ipa: /kjuːˈmɔːrə/
+  spoken: kuhmohruh
+  status: unverified
+- word: Deseret
+  ipa: /ˌdɛzəˈrɛt/
+  spoken: dezuhret
+  status: unverified
+- word: Elohim
+  ipa: /ˌɛloʊˈhiːm/
+  status: unverified
+- word: theosis
+  ipa: /θiˈoʊsɪs/
+  status: unverified
+- word: Cowdery
+  ipa: /ˈkaʊdəri/
+  status: unverified
+- word: Nibley
+  ipa: /ˈnɪbli/
+  status: unverified
+- word: Hyrum
+  ipa: /ˈhaɪrəm/
+  status: unverified
+- word: Melchizedek
+  ipa: /mɛlˈkɪzədɛk/
+  spoken: melkizuhdik
+  status: unverified
+- word: Givens
+  ipa: /ˈɡɪvənz/
+  status: unverified
+- word: Rigdon
+  ipa: /ˈrɪɡdən/
+  status: unverified
+- word: Whitmer
+  ipa: /ˈwɪtmər/
+  status: unverified
+- word: Kimball
+  ipa: /ˈkɪmbəl/
+  status: unverified
+- word: Woodruff
+  ipa: /ˈwʊdrʌf/
+  status: unverified
+- word: endowment
+  ipa: /ɛnˈdaʊmənt/
+  status: unverified
+  note: not the financial sense -- LDS temple ordinance, common source of TTS misreading.
+- word: Gadianton
+  ipa: /ˌɡeɪdiˈæntən/
+  spoken: gadeeantuhn
+  status: unverified
+- word: Jaredite
+  ipa: /ˈdʒɛərədaɪt/
+  spoken: jeruhdyet
+  status: unverified
+- word: Abinadi
+  ipa: /əˈbɪnədaɪ/
+  spoken: uhbinuhdye
+  status: unverified
+- word: Mormon
+  ipa: /ˈmɔːrmən/
+  status: unverified
+- word: LDS
+  ipa: ok-as-is
+  status: unverified
+  note: spoken as three letters -- misaki generally handles this correctly without
+    an override; keep as documentation, don't force an IPA override unless a render
+    mispronounces it.
+- word: Smith
+  ipa: ok-as-is
+  status: unverified
+- word: Brigham
+  ipa: /ˈbrɪɡəm/
+  status: unverified
+- word: Kirtland
+  ipa: /ˈkɜːrtlənd/
+  status: unverified
+- word: polygamy
+  ipa: /pəˈlɪɡəmi/
+  status: unverified
+- word: tithing
+  ipa: /ˈtaɪðɪŋ/
+  status: unverified
+  note: common TTS trap -- rhymes with 'writhing,' not 'tithe-ing' with a hard TH.
+- word: Nauvoo Expositor
+  ipa: ok-as-is
+  status: unverified
+  note: '''Nauvoo'' entry above covers the risky word; ''Expositor'' reads fine unaided.'
+- word: Utah
+  ipa: /ˈjuːtɔː/
+  status: unverified
+- word: Zion
+  ipa: /ˈzaɪən/
+  status: unverified
+- word: stake
+  ipa: ok-as-is
+  status: unverified
+  note: LDS organizational unit, homograph with the wooden/gambling senses -- context
+    usually disambiguates for TTS; watch for mis-stress on first render.
+- word: bishopric
+  ipa: /ˈbɪʃəprɪk/
+  status: unverified
+- word: seer stone
+  ipa: ok-as-is
+  status: unverified
+- word: garments
+  ipa: ok-as-is
+  status: unverified
+  note: LDS temple garments -- plain English word, watch tone/emphasis rather than
+    pronunciation.
+- word: homoousios
+  ipa: /ˌhoʊmoʊˈuːsiɒs/
+  status: unverified
+  note: Nicene Greek term ("of the same substance"). Respelling ho-moh-OO-see-os,
+    given by the user 2026-09-19. Not a web-sourced or by-ear check yet.
+- word: Lamanites
+  ipa: /ˈleɪmənaɪts/
+  spoken: laymuhnytes
+  status: unverified
+  note: Verify in post-approval audio listen-through.
+- word: Jacob
+  ipa: ok-as-is
+  spoken: Jacob
+  status: ok-as-is
+  note: Verify in post-approval audio listen-through.
+- word: African
+  ipa: ok-as-is
+  spoken: African
+  status: ok-as-is
+  note: Verify in post-approval audio listen-through.
+- word: Black
+  ipa: ok-as-is
+  spoken: Black
+  status: ok-as-is
+  note: Verify in post-approval audio listen-through.
+- word: Book of Mormon
+  ipa: ok-as-is
+  spoken: Book of Mormon
+  status: ok-as-is
+  note: Verify in post-approval audio listen-through.
+expansion_rules:
+- pattern: D&C
+  expand_to: Doctrine and Covenants
+- note: Never read an initialism as individual letters unless that is genuinely how
+    it's said aloud; expand scripture-reference numbers into natural speech in the
+    narration text itself (see pronunciations.md).

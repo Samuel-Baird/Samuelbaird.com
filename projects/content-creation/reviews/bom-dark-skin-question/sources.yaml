@@ -1,0 +1,109 @@
+sources:
+- id: 2ne5-verified
+  type: scripture
+  title: 2 Nephi 5:1–24
+  author: null
+  date: null
+  locator: https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/5?lang=eng
+  url: https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/5?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: web__run open (direct page read, 2026-10-02)
+  quote: the Lord God did cause a skin of blackness to come upon them
+  verification:
+    tool: web__run open
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/5?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: Current canonical text; tier 1. Verses 1–14 identify the separation and the Lamanites; verses 20–24 retain curse, exclusion and intermarriage language. Identification of the referent is factual; distinguishing it from an African-origin account is a contextual inference, not a claimed exhaustive text search.
+  claims:
+  - 1
+  - 2
+- id: jacob3-verified
+  type: scripture
+  title: Jacob 3:3–9
+  author: null
+  date: null
+  locator: https://www.churchofjesuschrist.org/study/scriptures/bofm/jacob/3?lang=eng
+  url: https://www.churchofjesuschrist.org/study/scriptures/bofm/jacob/3?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: web__run open (direct page read, 2026-10-02)
+  quote: revile no more against them because of the darkness of their skins
+  verification:
+    tool: web__run open
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/bofm/jacob/3?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: Current canonical text; tier 1. Read verses 3–9; righteousness concerns fidelity and family conduct (5–7). Verse 8 retains whiteness imagery; this passage is not presented as resolving all racial-language objections.
+  claims:
+  - 1
+  - 2
+- id: 2ne26-verified
+  type: scripture
+  title: 2 Nephi 26:24–33
+  author: null
+  date: null
+  locator: https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/26?lang=eng
+  url: https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/26?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: web__run open (direct page read, 2026-10-02)
+  quote: all are alike unto God
+  verification:
+    tool: web__run open
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/26?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: Current canonical text; tier 1. Inclusive invitation in verses 24–33. Positive application against racial superiority is expressly the host interpretation, not an explanation of the restriction.
+  claims:
+  - 1
+  - 2
+- id: race-essay-verified
+  type: official
+  title: Race and the Priesthood
+  author: null
+  date: null
+  locator: https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/race-and-the-priesthood?lang=eng
+  url: https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/race-and-the-priesthood?lang=eng
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: web__run open (direct page read, 2026-10-02)
+  quote: Today, the Church disavows the theories advanced in the past that black skin is a sign of divine disfavor or curse
+  verification:
+    tool: web__run open
+    verdict: direct-read
+    link: https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/race-and-the-priesthood?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: Current official position; tier 2, accessed 2026-10-02. Page edition heading is 2016; no first-publication-date claim in the script. Read historical restriction, Cain theory, premortal theory, 1978 change, and concluding disavowal. Establishes the institution acknowledges past explanations, without claiming every leader agreed or explaining why the restriction began.
+  claims:
+  - 1
+  - 2
+- id: source-question
+  type: critic
+  title: Video by lexx_andersen
+  author: Lex Andersen
+  date: '2026-09-08'
+  locator: https://www.instagram.com/reel/DdB2gPlzmO6/
+  accessed: '2026-10-02'
+  inspected: true
+  inspected_via: exec_command Get-Content transcripts/source.json and source.txt
+  quote: null
+  verification: null
+  grade_supports: fact
+  used_on_screen: true
+  notes: Question-only clip; full 17.391995-second source is retained to avoid uncertain cut anchors. Existing Whisper words place question at 8.26–13.10; old claims anchor 11–17 is not assumed exact. No answer or explicit assertion is attributed to the speaker.
+  claims:
+  - 1
