@@ -1,0 +1,788 @@
+sources:
+- id: critic-video
+  type: critic
+  title: "Why I Think All Polygamy Is Sin (Even In The Old Testament)"
+  author: "GLM (YouTube channel; uploader field from yt-dlp metadata)"
+  date: "2026-10-15 (upload_date in source_info.json)"
+  locator: "https://www.youtube.com/watch?v=KZ3Kb6MdeN4 (local copy: source/source.mp4, 35:46)"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "Whisper small.en transcript (transcripts/source.json, word timestamps) read in full"
+  quote: null
+  verification: null
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: "Clips are the creator's own words. Source has no burned-in captions (source_has_captions: false). He quotes the ESV in his readings (e.g. 'into your arms'); this script quotes the NRSVue by default and says so where the wording differs. Whisper garbles 'levirate' as 'levered' and 'Oholah/Oholibah' as 'Ahola/Aholiba'."
+  claims: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+
+# ---------------------------------------------------------------- Scripture (NRSVue)
+- id: jacob-2-27-30
+  type: scripture
+  title: "Jacob 2:27 and 2:30 (Book of Mormon)"
+  author: null
+  date: null
+  locator: "https://www.churchofjesuschrist.org/study/scriptures/bofm/jacob/2"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of the Church's scripture site (verses 27 and 30 read as printed)"
+  quote: "For there shall not any man among you have save it be one wife; and concubines he shall have none; | For if I will, saith the Lord of Hosts, raise up seed unto me, I will command my people; otherwise they shall hearken unto these things."
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.churchofjesuschrist.org/study/scriptures/bofm/jacob/2"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: "Official text. Verses 28-29 (the context of David and Solomon being condemned) were not read in full for this script; the script does not characterize them."
+
+- id: ex-21-10
+  type: scripture
+  title: "Exodus 21:10 (NRSVue)"
+  author: null
+  date: null
+  locator: "https://www.biblegateway.com/passage/?search=Exodus%2021%3A10-11&version=NRSVUE"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of Bible Gateway (NRSVUE)"
+  quote: "If he takes another wife to himself, he shall not diminish the food, clothing, or marital rights of the first wife."
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.biblegateway.com/passage/?search=Exodus%2021%3A10-11&version=NRSVUE"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: "Context is a law on a man's duties to a woman acquired as a slave-wife (Exodus 21:7-11); Stephens ch.1 treats it as regulating a licit second marriage. The script cites the verse for what it says about marital rights owed to more than one wife, not for the wider Exodus 21 question."
+
+- id: deut-21-15
+  type: scripture
+  title: "Deuteronomy 21:15 (NRSVue)"
+  author: null
+  date: null
+  locator: "https://www.biblegateway.com/passage/?search=Deuteronomy%2021%3A15-17&version=NRSVUE"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of Bible Gateway (NRSVUE)"
+  quote: "If a man has two wives, one of them loved and the other disliked,"
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.biblegateway.com/passage/?search=Deuteronomy%2021%3A15-17&version=NRSVUE"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: ""
+
+- id: deut-17-17
+  type: scripture
+  title: "Deuteronomy 17:17 (NRSVue)"
+  author: null
+  date: null
+  locator: "https://www.biblegateway.com/passage/?search=Deuteronomy%2017%3A17&version=NRSVUE"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of Bible Gateway (NRSVUE)"
+  quote: "And he must not acquire many wives for himself or else his heart will turn away;"
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.biblegateway.com/passage/?search=Deuteronomy%2017%3A17&version=NRSVUE"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: "The verse limits the king's number of wives ('many'); Stephens p.20 argues it can only be read as a ban on excess."
+
+- id: lev-18-17-18
+  type: scripture
+  title: "Leviticus 18:17-18 (NRSVue)"
+  author: null
+  date: null
+  locator: "https://www.biblegateway.com/passage/?search=Leviticus%2018%3A17-18&version=NRSVUE"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of Bible Gateway (NRSVUE)"
+  quote: "You shall not uncover the nakedness of a woman and her daughter, | And you shall not take a woman as a rival to her sister, uncovering her nakedness while her sister is still alive."
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.biblegateway.com/passage/?search=Leviticus%2018%3A17-18&version=NRSVUE"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: "NRSVue footnotes: the Hebrew for 'take' can also be rendered 'marry'. This is the strongest text against the sister-pair sealings, and Stephens (p.58) reads 18:18 as the one restriction on plural marriage: wives who are not sisters."
+
+- id: song-6-8
+  type: scripture
+  title: "Song of Solomon 6:8-9 (NRSVue)"
+  author: null
+  date: null
+  locator: "https://www.biblegateway.com/passage/?search=Song%20of%20Solomon%206%3A8-9&version=NRSVUE"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of Bible Gateway (NRSVUE)"
+  quote: "There are sixty queens and eighty concubines and maidens without number. | My dove, my perfect one, is the only one,"
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.biblegateway.com/passage/?search=Song%20of%20Solomon%206%3A8-9&version=NRSVUE"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: "The rest of verse 9 was not quoted; the script does not cite beyond 'the only one'."
+
+- id: 2sam-12-8
+  type: scripture
+  title: "2 Samuel 12:7-8 (NRSVue)"
+  author: null
+  date: null
+  locator: "https://www.biblegateway.com/passage/?search=2%20Samuel%2012%3A7-8&version=NRSVUE"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of Bible Gateway (NRSVUE)"
+  quote: "I gave you your master's house and your master's wives into your bosom and gave you the house of Israel and of Judah, and if that had been too little, I would have added as much more."
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.biblegateway.com/passage/?search=2%20Samuel%2012%3A7-8&version=NRSVUE"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: "NRSVue 'into your bosom'; the creator's ESV reading is 'into your arms'. The Hebrew was not independently checked in this run; the script argues only from the NRSVue wording and that the sentence lists the wives among the gifts God says he gave. It does NOT claim David married Saul's wives (the text does not say so)."
+
+- id: gen-16-3
+  type: scripture
+  title: "Genesis 16:3 (NRSVue)"
+  author: null
+  date: null
+  locator: "https://www.biblegateway.com/passage/?search=Genesis%2016%3A1-4&version=NRSVUE"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of Bible Gateway (NRSVUE)"
+  quote: "Sarai, Abram's wife, took Hagar the Egyptian, her slave, and gave her to her husband Abram as a wife."
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.biblegateway.com/passage/?search=Genesis%2016%3A1-4&version=NRSVUE"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: "Genesis 16:9 (the angel sends Hagar back to Sarai) was not retrievable on the fetched page; the script relies on the creator's own statement of it. The script does not claim the text commands or approves the arrangement."
+
+- id: gen-17-20
+  type: scripture
+  title: "Genesis 17:20 (NRSVue)"
+  author: null
+  date: null
+  locator: "https://www.biblegateway.com/passage/?search=Genesis%2017%3A20&version=NRSVUE"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of Bible Gateway (NRSVUE)"
+  quote: "As for Ishmael, I have heard you; I will bless him and make him fruitful and exceedingly numerous; | he shall be the father of twelve princes, and I will make him a great nation."
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.biblegateway.com/passage/?search=Genesis%2017%3A20&version=NRSVUE"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: "God's promise to Ishmael, the son of the Hagar arrangement."
+
+- id: gen-12-13
+  type: scripture
+  title: "Genesis 12:11-13 (NRSVue)"
+  author: null
+  date: null
+  locator: "https://www.biblegateway.com/passage/?search=Genesis%2012%3A10-13&version=NRSVUE"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of Bible Gateway (NRSVUE)"
+  quote: "and when the Egyptians see you, they will say, 'This is his wife'; then they will kill me, but they will let you live. | Say you are my sister, so that it may go well with me because of you and that my life may be spared on your account."
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.biblegateway.com/passage/?search=Genesis%2012%3A10-13&version=NRSVUE"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: "Counter to 'none of the Old Testament examples ... lie about being married'. Note Genesis 20:12 says Sarah was in fact Abraham's half-sister; the concealment is of the marriage, which is the creator's own criterion. Scripture records it; the script does not say Scripture approves it."
+
+- id: gen-20-2-7
+  type: scripture
+  title: "Genesis 20:2, 20:7 and 20:12 (NRSVue)"
+  author: null
+  date: null
+  locator: "https://www.biblegateway.com/passage/?search=Genesis%2020%3A1-7&version=NRSVUE"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of Bible Gateway (NRSVUE)"
+  quote: "Abraham said of his wife Sarah, \"She is my sister.\" | Besides, she is indeed my sister, the daughter of my father but not the daughter of my mother, and she became my wife. | Now then, return the man's wife, for he is a prophet, and he will pray for you, and you shall live."
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.biblegateway.com/passage/?search=Genesis%2020%3A1-7&version=NRSVUE"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: ""
+
+- id: gen-26-7
+  type: scripture
+  title: "Genesis 26:7 (NRSVue)"
+  author: null
+  date: null
+  locator: "https://www.biblegateway.com/passage/?search=Genesis%2026%3A7&version=NRSVUE"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of Bible Gateway (NRSVUE)"
+  quote: "When the men of the place asked him about his wife, he said, \"She is my sister,\" for he was afraid to say \"my wife,\""
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.biblegateway.com/passage/?search=Genesis%2026%3A7&version=NRSVUE"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: "Isaac and Rebekah. Quoted in part; the verse continues."
+
+- id: gen-25-28
+  type: scripture
+  title: "Genesis 25:28 (NRSVue)"
+  author: null
+  date: null
+  locator: "https://www.biblegateway.com/passage/?search=Genesis%2025%3A28&version=NRSVUE"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of Bible Gateway (NRSVUE)"
+  quote: "Isaac loved Esau because he was fond of game, but Rebekah loved Jacob."
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.biblegateway.com/passage/?search=Genesis%2025%3A28&version=NRSVUE"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: "Isaac had one wife; the household's favoritism and the deception of Genesis 27 are a monogamous household with serious strife. Genesis 27 not separately read in this run; the script says only 'favoritism' and cites this verse."
+
+- id: matt-1-24-25
+  type: scripture
+  title: "Matthew 1:24-25 (NRSVue)"
+  author: null
+  date: null
+  locator: "https://www.biblegateway.com/passage/?search=Matthew%201%3A18-25&version=NRSVUE"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of Bible Gateway (NRSVUE)"
+  quote: "he took her as his wife but had no marital relations with her until she had given birth to a son"
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.biblegateway.com/passage/?search=Matthew%201%3A18-25&version=NRSVUE"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: "Spans the verse 24/25 boundary; the fetched text splits the sentence after 'wife' with no punctuation shown. Verse 25 continues 'and he named him Jesus'."
+
+- id: matt-19-9
+  type: scripture
+  title: "Matthew 19:9 (NRSVue)"
+  author: null
+  date: null
+  locator: "https://www.biblegateway.com/passage/?search=Matthew%2019%3A9&version=NRSVUE"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of Bible Gateway (NRSVUE)"
+  quote: "And I say to you, whoever divorces his wife, except for sexual immorality, and marries another commits adultery,"
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.biblegateway.com/passage/?search=Matthew%2019%3A9&version=NRSVUE"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: "The verse is about the man who divorces and remarries. Verse 8 (hardness of heart, about divorce) was not retrievable on the fetched page; the script cites it only through the creator's own quotation of it."
+
+- id: 1tim-3-2-6
+  type: scripture
+  title: "1 Timothy 3:2 and 3:6 (NRSVue)"
+  author: null
+  date: null
+  locator: "https://www.biblegateway.com/passage/?search=1%20Timothy%203%3A1-7&version=NRSVUE"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of Bible Gateway (NRSVUE)"
+  quote: "Now a bishop must be above reproach, married only once, temperate, self-controlled, respectable, hospitable, an apt teacher, | He must not be a recent convert, or he may be puffed up with conceit and fall into the condemnation of the devil."
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.biblegateway.com/passage/?search=1%20Timothy%203%3A1-7&version=NRSVUE"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: "NRSVue renders the phrase 'married only once'; the creator reads the ESV 'husband of one wife'."
+
+- id: ruth-4-6
+  type: scripture
+  title: "Ruth 4:3-6 (NRSVue)"
+  author: null
+  date: null
+  locator: "https://www.biblegateway.com/passage/?search=Ruth%204%3A1-6&version=NRSVUE"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of Bible Gateway (NRSVUE)"
+  quote: "At this, the next-of-kin said, \"I cannot redeem it for myself without damaging my own inheritance."
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.biblegateway.com/passage/?search=Ruth%204%3A1-6&version=NRSVUE"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: "The next-of-kin is a kinsman of Elimelech (4:3), not a brother of Mahlon, Ruth's late husband; the scene is about land redemption and Ruth, and is not a straightforward Deuteronomy 25 brother-in-law case. Boaz's statement in 4:5 ties acquiring Ruth to 'maintain the dead man's name on his inheritance'."
+
+- id: acts-10-13-15
+  type: scripture
+  title: "Acts 10:13-15 (NRSVue)"
+  author: null
+  date: null
+  locator: "https://www.biblegateway.com/passage/?search=Acts%2010%3A9-16&version=NRSVUE"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of Bible Gateway (NRSVUE)"
+  quote: "Get up, Peter; kill and eat. | What God has made clean, you must not call profane."
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.biblegateway.com/passage/?search=Acts%2010%3A9-16&version=NRSVUE"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: "Used for the principle that revelation to an apostle revised a Mosaic rule (Leviticus 11 dietary law). The script labels that rule ceremonial and says the creator will distinguish it from sexual law. It does not claim Acts 10 authorizes plural marriage."
+
+- id: ezek-23-4
+  type: scripture
+  title: "Ezekiel 23:2-4 (NRSVue)"
+  author: null
+  date: null
+  locator: "https://www.biblegateway.com/passage/?search=Ezekiel%2023%3A1-4&version=NRSVUE"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of Bible Gateway (NRSVUE)"
+  quote: "Oholah was the name of the older and Oholibah the name of her sister. They became mine, and they bore sons and daughters."
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.biblegateway.com/passage/?search=Ezekiel%2023%3A1-4&version=NRSVUE"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: "Whisper spells the names 'Ahola/Aholiba'; NRSVue spells Oholah/Oholibah."
+
+- id: 1cor-6-16
+  type: scripture
+  title: "1 Corinthians 6:16 (NRSVue)"
+  author: null
+  date: null
+  locator: "https://www.biblegateway.com/passage/?search=1%20Corinthians%206%3A16&version=NRSVUE"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of Bible Gateway (NRSVUE)"
+  quote: "Do you not know that whoever is united to a prostitute becomes one body with her? | For it is said, \"The two shall be one flesh.\""
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.biblegateway.com/passage/?search=1%20Corinthians%206%3A16&version=NRSVUE"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: "Used only to show 'the two shall be one flesh' is applied by Paul to what a union is, not as a count of unions a man may have. This is an inference from usage, labelled as such."
+
+# ---------------------------------------------------------------- Scholarly
+- id: towner-1tim-3-2
+  type: scholarly
+  title: "The Letters to Timothy and Titus (NICNT), commentary on 1 Timothy 3:2"
+  author: "Philip H. Towner (author per the user-supplied source list and the self-citation 'Towner, Goal' in fn. 35; the title-page scan was not retrieved)"
+  date: "2006"
+  locator: "GSA Read/Bible/Commentaries/New International Commentary on the New Testament (NICNT, 21 vols)/1-2 Timothy, Titus.pdf, PDF p. 302 (book p. 250), with fn. 42 spilling to p. 303"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "GSA read_pages (pp. 301-304) and get_page_image of p. 302 (saved images/towner-nicnt-1tim3-p302.jpg)"
+  quote: "Various considerations make these specific interpretations less than likely | monogamy was the generally accepted norm in Greco-Roman and Jewish culture by this time"
+  verification: {tool: "GSA read_pages + get_page_image", verdict: page-read, link: "https://corpus.restorationcommons.org/b/1-2-timothy-titus-516f/302"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: "Towner lists the options for 'husband of one wife' (exclude polygamists; exclude unmarried men; prohibit remarriage after death or divorce) and finds these specific readings 'less than likely', settling on fidelity in a monogamous marriage as the broader point. Fn. 42 says polygamy was practised in some Jewish circles (CD 4:20-5:6; Josephus, Antiquities 17.14) but that monogamy was the generally accepted norm and a prohibition would have been unnecessary, and that a polygamy reading would force a polyandry reading of 5:9. Towner is not LDS and holds that monogamy is meant; he does not say polygamy was approved."
+
+- id: towner-titus-1-6
+  type: scholarly
+  title: "The Letters to Timothy and Titus (NICNT), commentary on Titus 1:6"
+  author: "Philip H. Towner"
+  date: "2006"
+  locator: "GSA Read/Bible/Commentaries/New International Commentary on the New Testament (NICNT, 21 vols)/1-2 Timothy, Titus.pdf, PDF p. 734 (same text at p. 701 of the 20-vol copy)"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "GSA read_pages (20-vol copy p. 701) and search_concordance hit on p. 734 of the 21-vol copy"
+  quote: "describes fidelity within marriage and does not specifically delve into matters of polygamy or remarriage"
+  verification: {tool: "GSA read_pages + search_concordance", verdict: page-read, link: "https://corpus.restorationcommons.org/b/1-2-timothy-titus-516f/734"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: ""
+
+- id: knight-pastoral-epistles
+  type: scholarly
+  title: "The Pastoral Epistles (NIGTC), commentary on 1 Timothy 3:2"
+  author: "George W. Knight III"
+  date: "1992"
+  locator: "GSA Read/Bible/Commentaries/New International Greek Testament Commentary (NIGTC, 15 vols)/1-2 Timothy, Titus.pdf, PDF pp. 195-197 (book pp. 157-159)"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "GSA read_pages (pp. 195-197) and get_page_image of p. 196 (saved images/knight-nigtc-1tim3-p196.jpg)"
+  quote: "Two considerations make it doubtful that polygamy is exclusively in view | polygamy, which existed among Jews of the NT age"
+  verification: {tool: "GSA read_pages + get_page_image", verdict: page-read, link: "https://corpus.restorationcommons.org/b/1-2-timothy-titus-219d/196"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: "Knight DOES say polygamy 'is certainly ruled out by the sense of the phrase', then argues the phrase is about marital and sexual fidelity more broadly (comparing 5:9 and the Ten Commandments' adultery prohibition). Scholars therefore split: Knight includes polygamy among what is excluded, Towner thinks the specific polygamy reading is less than likely. Publication year of the NIGTC volume not confirmed from the scan (1992 is from memory; leave off screen)."
+
+- id: stephens-intro
+  type: scholarly
+  title: "Polygamy in the Law of Moses (Rowman & Littlefield), Introduction"
+  author: "Ryan Stephens"
+  date: "2024"
+  locator: "GSA Read/Bible/Old Testament/Stephens, Polygamy in the Law of Moses.pdf, PDF pp. 16-23 (book pp. xv-xxii)"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "GSA read_pages (pp. 16-24) and get_page_image of p. 19 (saved images/stephens-p19-scholarship.jpg)"
+  quote: "While clearly the law tolerates bigamy | I will show that this passage can only be interpreted as taking excessive wives and thus a prohibition of polygamy is not in view."
+  verification: {tool: "GSA read_pages + get_page_image", verdict: page-read, link: "https://corpus.restorationcommons.org/b/stephens-polygamy-in-the-law-of-moses-5c64/20"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: "The first quote is Gordon Wenham's, as quoted by Stephens p. 17 (Wenham: the law 'tolerates bigamy' but 'does not recommend it'), i.e. an evangelical defender of the creation ideal who still describes the law as tolerating it. The second is Stephens on Deuteronomy 17:17 (p. 20). Stephens' thesis (stated pp. 16-21, concluded p. 107 per the JETS review): the Mosaic Law treated polygamy as a licit, regulated practice. He deliberately excludes the New Testament and Genesis 2:24 and says (n.16) the New Testament moves away from polygamy. He lists Du Preez, Davidson, Hugenberger, Copan, Kaiser as the evangelical scholars arguing the law prohibits polygamy (p. 18-19); the creator's levirate argument is theirs."
+
+- id: stephens-levirate
+  type: scholarly
+  title: "Polygamy in the Law of Moses, ch. 3, Deuteronomy 25:5-10 (levirate marriage)"
+  author: "Ryan Stephens"
+  date: "2024"
+  locator: "GSA Read/Bible/Old Testament/Stephens, Polygamy in the Law of Moses.pdf, PDF pp. 99-104 (book pp. 74-79)"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "GSA read_pages (pp. 99-106) and get_page_image of pp. 103-104 (saved images/stephens-p103-levirate-westbrook.jpg, images/stephens-p104-levirate-conclusion.jpg)"
+  quote: "there is no reason to restrict the law of levirate marriage to an unmarried brother | Yet, this interpretation of the phrase is asserted without any supporting evidence. | concedes that levirate marriage \"is the single exception.\""
+  verification: {tool: "GSA read_pages + get_page_image", verdict: page-read, link: "https://corpus.restorationcommons.org/b/stephens-polygamy-in-the-law-of-moses-5c64/104"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: "Stephens evaluates the exact 'unmarried brother only' argument (from Du Preez, Davidson, Hugenberger) and, on the phrase 'when brothers dwell together', finds it refers to brothers on undivided family land (Daube, Westbrook; McConville, Nelson). The Kaiser line is Stephens' report that Walter Kaiser, who argues polygamy was never 'God's order of things', concedes levirate marriage 'is the single exception'. The book does not discuss Ruth 4 (searched). Hugenberger's use of the Targum of Ruth 4:6 ('I cannot marry her, because I am already married') is answered on p. 104."
+
+- id: stephens-lev-18-18
+  type: scholarly
+  title: "Polygamy in the Law of Moses, ch. 2, Leviticus 18"
+  author: "Ryan Stephens"
+  date: "2024"
+  locator: "GSA Read/Bible/Old Testament/Stephens, Polygamy in the Law of Moses.pdf, PDF p. 58"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "GSA read_pages (pp. 58-60)"
+  quote: "Leviticus 18:18 appears to offer implicit support for the idea that polygamy was permitted, albeit, so long as the wives are not sisters."
+  verification: {tool: "GSA read_pages", verdict: page-read, link: "https://corpus.restorationcommons.org/b/stephens-polygamy-in-the-law-of-moses-5c64/58"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: "Stephens reads Leviticus 18:18 as the one limit on a polygamy the Law otherwise permits: not sisters. This helps the creator on the sister-pair sealings; the script says so."
+
+- id: jets-noonan-review
+  type: scholarly
+  title: "Review of Ryan Stephens, Polygamy in the Law of Moses, Journal of the Evangelical Theological Society 68.3 (book reviews, pp. 565-567)"
+  author: "Benjamin J. Noonan (Columbia Biblical Seminary), reviewer"
+  date: "2025"
+  locator: "https://etsjets.org/wp-content/uploads/JETS_68.3_557_book_reviews.pdf, pp. 565-567"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "PDF downloaded by WebFetch and text-extracted locally; page 566 rendered with PyMuPDF (saved images/jets-68-3-p566-noonan-review.png)"
+  quote: "Stephens's exegesis of relevant passages from the Mosaic Law is comprehensive and persuasive. | Stephens is much less successful in arguing that the Hebrew Bible's narratives never present polygamy as contrary to God's design. | How does this position qualitatively differ from those who explain polygamy as a cultural concession?"
+  verification: {tool: "WebFetch (PDF) + local text extraction + page render", verdict: page-read, link: "https://etsjets.org/wp-content/uploads/JETS_68.3_557_book_reviews.pdf"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: "Review also says Stephens PhD was completed under Paul Wegner at Gateway Seminary, that Stephens concludes polygamy was 'not commanded and not encouraged, but sometimes necessary in a fallen world' and that the New Covenant community is 'expected to move away from it' (p. 107), and that his appendix defines adultery as sex with another person's spouse. The reviewer disagrees with Stephens on narrative ethics and on whether strife is incidental to polygamy. The script reports both halves."
+
+- id: waltke-genesis
+  type: scholarly
+  title: "Genesis: A Commentary, literary analysis of Genesis 2:4-4:26"
+  author: "Bruce K. Waltke"
+  date: "2001"
+  locator: "GSA Read/Bible/Commentaries/Misc/Standalone/Waltke, Genesis: A Commentary.pdf, PDF p. 82"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "GSA read_pages (pp. 81-83)"
+  quote: "debase God's ideal for marriage by polygamy"
+  verification: {tool: "GSA read_pages", verdict: page-read, link: "https://corpus.restorationcommons.org/b/waltke-genesis-a-commentary-4166/82"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: "Waltke reads Cain's line, including Lamech, as escalating sin that 'debase[s] God's ideal for marriage by polygamy'. This SUPPORTS the creator's literary reading of Genesis 4; the script says so and does not cite Waltke against him. Publication year (2001) from memory, not on screen."
+
+- id: hales-jmh-2024
+  type: scholarly
+  title: "Joseph Smith's 'Polyandry': Expanding the Narrative, Journal of Mormon History 50, no. 1 (2024): 105-ff."
+  author: "Brian C. Hales"
+  date: "2024"
+  locator: "GSA Read/LDS History/Polygamy/Hales Response to Compton Polyandry.pdf, PDF pp. 1-12 (journal pp. 105-116)"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "GSA read_pages (pp. 1-4, 11-12) and get_page_image of p. 1 (saved images/hales-jmh-50-1-p105-fourteen.jpg)"
+  quote: "None of these marriages is more controversial than the fourteen joining him to legally married women. | the exact type of matrimonial relationship that resulted remains hotly debated. | So, within a biblical context, simultaneous husbands is adultery"
+  verification: {tool: "GSA read_pages + get_page_image", verdict: page-read, link: "https://corpus.restorationcommons.org/b/hales-response-to-compton-polyandry-c6c8/1"}
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: "Peer-reviewed journal article by a faithful LDS historian. Frames the question: simultaneous husbands (with sexuality) vs a new form of sealing creating consecutive husbands (one on earth, one after death). Names scholars affirming simultaneous husbands: Fawn Brodie, Lawrence Foster, Todd Compton, Dan Vogel, George D. Smith, D. Michael Quinn (p. 2). Names the Gospel Topics essay and Hales, Grow, Nash as reading consecutive marriages. Hales himself says that if the husbands were simultaneous Paul (Romans 7:3) calls it adultery (p. 3). Also records problematic data: an undated later superscript 'time and eternity' in Patty Sessions's 1860 diary, and a late, secondhand account for Ruth Vose Sayers (pp. 114-115). GRADE: disputed. Do not state the eternity-only reading as established on screen."
+
+- id: hales-vol2-partridge
+  type: scholarly
+  title: "Joseph Smith's Polygamy: History and Theology, vol. 2 (Greg Kofford Books, 2013), 'Emma Accepts Plural Marriage' (Emily Partridge's accounts)"
+  author: "Brian C. Hales"
+  date: "2013"
+  locator: "GSA Read/LDS History/Polygamy/Joseph Smith's Polygamy - Brian Hales/2 - History.pdf, PDF pp. 31-33"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "GSA read_pages (pp. 31-33) and get_page_image of p. 32 (saved images/hales-vol2-p32-emily-partridge.jpg)"
+  quote: "to save family trouble Brother Joseph thought it best to have another ceremony performed. Accordingly on the 11th of May, 1843, we were sealed to Joseph Smith a second time, in Emma's presence, she giving her free and full consent thereto."
+  verification: {tool: "GSA read_pages + get_page_image", verdict: page-read, link: "https://corpus.restorationcommons.org/b/2-history-c025/32"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: "Emily Dow Partridge's recollection (one of four accounts, as printed by Hales): married 4 March 1843 by Heber C. Kimball; 'This was done without the knowledge of Emma Smith'; two months later Emma consented and chose Eliza and Emily; ceremony 'done over again' in her presence 11 May 1843; 'neither of us knew about the other at the time, everything was so secret'; Sarah and Maria Lawrence 'lived in the house as his wifes'. One of Emily's accounts names James Adams as sealer, which Hales notes is problematic (Adams arrived 21 May). Hales p. 31: 'Multiple sources confirm that in May of 1843, Emma personally participated in Joseph's marriages to four plural brides, Eliza and Emily Partridge and Sarah and Maria Lawrence, all with her explicit approval.' Jane Manning James's reminiscence (p. 32) describes four women as 'Brother Joseph's four wives'."
+
+- id: hales-vol1-reluctance
+  type: scholarly
+  title: "Joseph Smith's Polygamy, vol. 1, ch. 9 'Eternal Plural Sealings Begin' (accounts of Joseph's reluctance)"
+  author: "Brian C. Hales"
+  date: "2013"
+  locator: "GSA Read/LDS History/Polygamy/Joseph Smith's Polygamy - Brian Hales/1 - History.pdf, PDF p. 138 (and fn. 72 on p. 71)"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "GSA read_pages (p. 71) and get_page_image of p. 138 (saved images/hales-vol1-p138-reluctance.jpg)"
+  quote: "Lorenzo Snow recalled that the Prophet \"hesitated and deferred from time to time\""
+  verification: {tool: "GSA search_concordance + get_page_image", verdict: page-read, link: "https://corpus.restorationcommons.org/b/1-history-86d4/138"}
+  grade_supports: inference
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: "p. 138 also prints: Benjamin F. Johnson (Joseph 'put it off' and 'waited untill an Angel with a drawn Sword Stood before him'); Eliza R. Snow ('afraid to promulgate it'); Helen Mar Kimball ('Joseph put off the dreaded day as long as he dared'); Lucy Walker ('had his doubts about it for he debated it in his own mind'); Mary Elizabeth Rollins Lightner (the angel came three times between 1834 and 1842). p. 71 fn. 72: Hales's article on the accounts, plus 'I have found a twenty-second account' (Lorenzo Snow's Record Book). Almost all are retrospective, decades after the events: they are evidence of what close associates said Joseph felt, NOT evidence an angel appeared. Same chapter also documents sexual relations in some marriages."
+
+- id: perego-bys-58-4
+  type: scholarly
+  title: "Using Science to Answer Questions from Latter-day Saint History: The Case of Josephine Lyon's Paternity, BYU Studies Quarterly 58, no. 4 (2019): 143-150"
+  author: "Ugo A. Perego"
+  date: "2019"
+  locator: "GSA Read/Articles/BYU Studies/58-4.pdf, PDF pp. 143-150"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "GSA read_pages (pp. 143-145, 149-150)"
+  quote: "it appears that Josephine did not share a biological tie with the founder of The Church of Jesus Christ of Latter-day Saints | Neither is the type of sealing—whether for eternity only or for time and eternity—currently verified."
+  verification: {tool: "GSA read_pages", verdict: page-read, link: "https://corpus.restorationcommons.org/b/58-4-bd4c/150"}
+  grade_supports: inference
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: "Perego (PhD genetics; former Sorenson Molecular Genealogy Foundation scientist) reports autosomal DNA from descendants: the data are 'consistent and offer the strongest evidence to date' that Joseph did not father Josephine Lyon, though it is not a true paternity test. He adds that the timing and type of Sylvia Sessions's sealing is uncertain. It does NOT show whether Joseph and Sylvia had sexual relations; Hales's site says the issue 'is not settled and probably never will be'."
+
+# ---------------------------------------------------------------- Official / primary
+- id: gospel-topics-pm
+  type: official
+  title: "Plural Marriage in Kirtland and Nauvoo (Gospel Topics Essay, 2014)"
+  author: "The Church of Jesus Christ of Latter-day Saints"
+  date: "2014"
+  locator: "https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/plural-marriage-in-kirtland-and-nauvoo"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of the essay (read via the tool's summary of its text; wording of the quoted fragments below should be spot-checked against the page)"
+  quote: "Careful estimates put the number between 30 and 40. | an excruciating ordeal | several months before her 15th birthday | for eternity alone | the Lord's standing law of marriage | asked to keep their actions confidential"
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/plural-marriage-in-kirtland-and-nauvoo"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: "Official statement, current (doctrine tier 2: official statement). Per the fetch: 30-40 women; 12-14 sealings to already-married women (several said 'for eternity alone', others left no records); Emma 'approved of four of Joseph's Nauvoo plural marriages at least for a time', calls it 'an excruciating ordeal' for her and says she vacillated; Helen Mar Kimball sealed 'several months before her 15th birthday', marriage at that age legal then but 'inappropriate by today's standards', she described it as 'for eternity alone'; the angel with a drawn sword (three appearances); monogamy 'the Lord's standing law of marriage'. Fragment wording came through a summarizing fetch tool; spot-check before shipping, and none of these fragments is used as an on-screen card."
+
+- id: jsp-1844-05-26
+  type: primary
+  title: "Discourse, 26 May 1844, as reported by Thomas Bullock (draft by Leo Hawkins) (Joseph Smith Papers)"
+  author: "Joseph Smith, reported by Leo Hawkins from Thomas Bullock's notes"
+  date: "1844-05-26"
+  locator: "https://www.josephsmithpapers.org/paper-summary/discourse-26-may-1844/15"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of the Joseph Smith Papers page (the sentence begins on the preceding page; the page notes Hawkins's draft was likely based on Bullock's notes, which are not extant, and was reviewed by Bullock and Grimshaw)"
+  quote: "seven wives, when I can only find one"
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.josephsmithpapers.org/paper-summary/discourse-26-may-1844/15"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: "The JSP transcription shows a scribal insertion ('have<ing>'). This is a clerk's report of a sermon, not stenography; the script says 'as the clerks recorded it'. The preceding context (the 'accusations' reviewed in the sermon, per the page: Alexander Sympson, William Law, Joseph H. Jackson) was not tied to the seven-wives line on the fetched pages."
+
+- id: jsp-1835-statement
+  type: primary
+  title: "Statement on Marriage, circa August 1835 (Joseph Smith Papers, historical introduction)"
+  author: "Joseph Smith Papers editors"
+  date: "1835-08"
+  locator: "https://www.josephsmithpapers.org/paper-summary/appendix-3-statement-on-marriage-circa-august-1835/2"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of the Joseph Smith Papers page (read via the tool's summary of the introduction; wording of the two fragments below should be spot-checked)"
+  quote: "The authorship of the statement is unclear, but it has generally been attributed to Oliver Cowdery. | JS was absent when the statement was read to and approved by the congregation in August 1835."
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.josephsmithpapers.org/paper-summary/appendix-3-statement-on-marriage-circa-august-1835/2"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: "Per the fetch, William W. Phelps and Cowdery presented the statement; Phelps may have helped draft it. The pasted research also said Brigham Young later claimed Joseph objected to the statement; that was NOT verified in this run and is not used."
+
+# ---------------------------------------------------------------- Apologetic leads (traced upstream; not cited on screen)
+- id: hales-site-sealings
+  type: apologetic-lead
+  title: "Sealings to Legally Married Women (josephsmithspolygamy.org)"
+  author: "Laura and Brian Hales site (page unsigned)"
+  date: null
+  locator: "https://josephsmithspolygamy.org/common-questions/sexual-polyandry/"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of the page"
+  quote: null
+  verification: null
+  grade_supports: disputed
+  traced_to: hales-jmh-2024
+  used_on_screen: false
+  counter: false
+  notes: "Lead only. States 'fourteen women with legal spouses' and 'no unambiguous evidence indicating that Joseph ever treated these women as wives or sexual partners', and the site itself notes its conclusions rely on the absence of evidence and are written from a defense-oriented perspective. The upstream, citable version of the fourteen-women list and the debate is Hales's JMH article (hales-jmh-2024)."
+
+- id: hales-site-emma
+  type: apologetic-lead
+  title: "Emma Smith's Path Through Polygamy (josephsmithspolygamy.org)"
+  author: "Laura and Brian Hales site (page unsigned)"
+  date: null
+  locator: "https://josephsmithspolygamy.org/common-questions/emma-smith-plural-marriage/"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of the page"
+  quote: null
+  verification: null
+  grade_supports: fact
+  traced_to: hales-vol2-partridge
+  used_on_screen: false
+  counter: false
+  notes: "Lead only. It did not mention a repeated September 1843 Partridge ceremony (the pasted research did); the verified record is Emily Partridge's 11 May 1843 second ceremony in Emma's presence, per Hales vol. 2 p. 32. Do not repeat the September claim."
+
+# ---------------------------------------------------------------- Scripture added after the first pass
+- id: gen-4-19-24
+  type: scripture
+  title: "Genesis 4:19 and 4:23-24 (NRSVue)"
+  author: null
+  date: null
+  locator: "https://www.biblegateway.com/passage/?search=Genesis%204%3A19-24&version=NRSVUE"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of Bible Gateway (NRSVUE)"
+  quote: "Lamech took two wives; the name of the one was Adah, and the name of the other Zillah. | I have killed a man for wounding me, a young man for striking me."
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.biblegateway.com/passage/?search=Genesis%204%3A19-24&version=NRSVUE"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: "The text reports the marriages (4:19) and Lamech's boast of violence (4:23-24) without an explicit judgment on either; the negative picture comes from the narrative context (Waltke)."
+
+- id: gen-7-7
+  type: scripture
+  title: "Genesis 7:7 (NRSVue)"
+  author: null
+  date: null
+  locator: "https://www.biblegateway.com/passage/?search=Genesis%207%3A7&version=NRSVUE"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of Bible Gateway (NRSVUE)"
+  quote: "And Noah with his sons and his wife and his sons' wives went into the ark to escape the waters of the flood."
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.biblegateway.com/passage/?search=Genesis%207%3A7&version=NRSVUE"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: "Describes who boarded. Says nothing about why they were chosen."
+
+- id: 2sam-12-9
+  type: scripture
+  title: "2 Samuel 12:9 (NRSVue)"
+  author: null
+  date: null
+  locator: "https://www.biblegateway.com/passage/?search=2%20Samuel%2012%3A9&version=NRSVUE"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of Bible Gateway (NRSVUE)"
+  quote: "You have struck down Uriah the Hittite with the sword and have taken his wife to be your wife"
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.biblegateway.com/passage/?search=2%20Samuel%2012%3A9&version=NRSVUE"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: "Nathan's charge names the killing of Uriah and the taking of his wife; it does not name David's existing wives."
+
+- id: eph-5-31-32
+  type: scripture
+  title: "Ephesians 5:31-32 (NRSVue)"
+  author: null
+  date: null
+  locator: "https://www.biblegateway.com/passage/?search=Ephesians%205%3A31-32&version=NRSVUE"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of Bible Gateway (NRSVUE)"
+  quote: "This is a great mystery, but I am speaking about Christ and the church."
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.biblegateway.com/passage/?search=Ephesians%205%3A31-32&version=NRSVUE"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: "Paul applies Genesis 2:24 to Christ and the church; the rest of Ephesians 5:22-33 was not re-read in this run beyond the creator's own quotation. The script says only that the passage does not discuss plural marriage as a legal question."
+
+- id: 1sam-16-2
+  type: scripture
+  title: "1 Samuel 16:2 (NRSVue)"
+  author: null
+  date: null
+  locator: "https://www.biblegateway.com/passage/?search=1%20Samuel%2016%3A1-5&version=NRSVUE"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of Bible Gateway (NRSVUE)"
+  quote: "And the Lord said, 'Take a heifer with you and say, \"I have come to sacrifice to the Lord.\"'"
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.biblegateway.com/passage/?search=1%20Samuel%2016%3A1-5&version=NRSVUE"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: "Samuel's objection precedes it: 'If Saul hears of it, he will kill me.' A command from God to give a true but incomplete reason for a journey; used only to show Scripture does not state an absolute 'never conceal under threat' rule. Not a defense of the 1844 statement."
+
+- id: ex-1-19-20
+  type: scripture
+  title: "Exodus 1:19-20 (NRSVue)"
+  author: null
+  date: null
+  locator: "https://www.biblegateway.com/passage/?search=Exodus%201%3A15-21&version=NRSVUE"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of Bible Gateway (NRSVUE)"
+  quote: "So God dealt well with the midwives, and the people multiplied and became very strong."
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.biblegateway.com/passage/?search=Exodus%201%3A15-21&version=NRSVUE"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: "The midwives give Pharaoh an explanation (19) and 'God dealt well with' them (20). Whether the explanation was a lie is debated; the script says they 'misled' Pharaoh only in the sense that the text's own narrative has them withhold the real reason."
+
+- id: mal-2-15
+  type: scripture
+  title: "Malachi 2:15 (NRSVue)"
+  author: null
+  date: null
+  locator: "https://www.biblegateway.com/passage/?search=Malachi%202%3A14-16&version=NRSVUE"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "WebFetch of Bible Gateway (NRSVUE), including the verse's translation footnotes"
+  quote: "Did God not make them one, flesh with spirit in it? And what does the one desire? Godly offspring."
+  verification: {tool: "WebFetch", verdict: direct-read, link: "https://www.biblegateway.com/passage/?search=Malachi%202%3A14-16&version=NRSVUE"}
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: "NRSVue footnotes on v. 15: 'Heb he' (where the text says 'God') and that the meaning of the Hebrew is uncertain (attached to the last sentence). The creator reads the ESV 'Did he not make them one, with a portion of the Spirit in their union?'."
+
+- id: hales-vol2-appendix-e
+  type: scholarly
+  title: "Joseph Smith's Polygamy, vol. 2, Appendix E 'Sexuality in Joseph Smith's Plural Marriages' (and the Sylvia Sessions entry)"
+  author: "Brian C. Hales"
+  date: "2013"
+  locator: "GSA Read/LDS History/Polygamy/Joseph Smith's Polygamy - Brian Hales/2 - History.pdf, PDF pp. 208 and 211 (appendix pp. 208-212+)"
+  accessed: "2026-10-15"
+  inspected: true
+  inspected_via: "GSA read_pages (pp. 205-208, 211)"
+  quote: "convincing evidence is lacking regarding sexual relations between Joseph Smith and three subgroups of plural wives: (1) the two fourteen-year-olds, (2) non-wives—women to whom he was not married, and (3) all polyandrous wives who were experiencing conjugality with their legal husbands. | Sylvia Sessions Lyon is one of two (of the twelve) wives who was legally married at the time of her conjugal relations with Joseph Smith."
+  verification: {tool: "GSA read_pages", verdict: page-read, link: "https://corpus.restorationcommons.org/b/2-history-c025/208"}
+  grade_supports: disputed
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: "Appendix E (2013): 'Evidence supports probable sexual relations with twelve of Joseph Smith's plural wives', listing Fanny Alger, Louisa Beaman, Emily Dow Partridge, Eliza Maria Partridge, Almera Woodard Johnson, Lucy Walker, Sylvia Sessions, Maria Lawrence, Sarah Lawrence, Malissa Lott, Olive Frost, Mary Heron. By elimination, the two of the twelve who were legally married (Hales's fourteen-woman list) are Sylvia Sessions and Mary Heron (an inference; p. 211 says only that Sylvia is 'one of two'). Hales's Sylvia entry relies on her daughter Josephine's 1915 affidavit; that basis was later undercut by Perego's DNA study (see perego-bys-58-4). Temple Lot (1892) depositions are quoted in this appendix (e.g. Joseph B. Noble on Louisa Beaman; Malissa Lott's testimony). This is a 2013 book; Hales's later view (his website and JMH 2024) treats the sealings to women living with their husbands as eternity-only. Patty Sessions's diary says 'for Eternity' (see hales-jmh-2024 for the undated 'time and eternity' superscript)."
