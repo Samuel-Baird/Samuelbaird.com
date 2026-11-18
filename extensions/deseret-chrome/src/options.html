@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deseret Alphabet: Options</title>
+<link rel="stylesheet" href="ui.css">
+</head>
+<body class="options">
+<main>
+  <h1><span class="dsrt" lang="en-Dsrt">𐐔𐐯𐑅𐐨𐑉𐐯𐐻</span> Deseret Alphabet: Options</h1>
+
+  <section>
+    <h2>When to convert</h2>
+    <label class="check"><input type="checkbox" id="everywhere"> <span>Show every site in Deseret automatically</span></label>
+    <p class="muted small">Otherwise pages switch only when you click the toolbar button, press <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd>, or mark a site &ldquo;always&rdquo; in the popup.</p>
+    <h3>Sites</h3>
+    <ul id="sites" class="sites"></ul>
+    <p class="muted small" id="no-sites">No site rules yet.</p>
+  </section>
+
+  <section>
+    <h2>Spelling</h2>
+    <p class="muted small">Spellings follow the CMU Pronouncing Dictionary, as on the Deseret Wiki.</p>
+    <label class="check"><input type="checkbox" id="strict"> <span>Dictionary words only: leave words in Latin when they aren&rsquo;t in the dictionary, even if they can be built from parts (faith&nbsp;+&nbsp;-ful&nbsp;+&nbsp;-ness)</span></label>
+  </section>
+
+  <section>
+    <h2>Font</h2>
+    <label class="field">Font <select id="font"></select></label>
+    <label class="field">Size <input type="range" id="size" min="80" max="160" step="5"> <output id="size-out"></output></label>
+    <p class="preview dsrt" id="preview">𐐐𐐬𐑊𐐨𐑌𐐲𐑅 𐐻𐐭 𐑄𐐲 𐐢𐐫𐑉𐐼. 𐐜𐐲 𐐔𐐯𐑅𐐨𐑉𐐯𐐻 𐐈𐑊𐑁𐐲𐐺𐐯𐐻.</p>
+  </section>
+
+  <section>
+    <h2>About</h2>
+    <p class="small">Spellings come from the CMU Pronouncing Dictionary (126,000 words) with hand corrections for Latter-day Saint names, the same method as the <a href="https://deseret.wiki/" target="_blank" rel="noopener">Deseret Wiki</a>. Words it can&rsquo;t spell stay in Latin rather than being guessed. Everything runs in your browser; no page text is sent anywhere.</p>
+    <p class="small">Bundled fonts: <span id="font-credits"></span>. License texts are in the extension&rsquo;s <code>fonts/</code> folder.</p>
+  </section>
+</main>
+<script src="shared.js"></script>
+<script src="options.js"></script>
+</body>
+</html>

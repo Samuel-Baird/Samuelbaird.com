@@ -11,6 +11,7 @@ Every website and project in one private repo. Each site deploys as its own Verc
 | `sites/peepstone` | https://samuelbaird.com/peepstone | peepstone | Next.js (basePath) |
 | `sites/deseret-wiki` | https://deseret.wiki | deseret-wiki | Astro |
 | `sites/deseret-mcp` | https://mcp.deseret.wiki | deseret-mcp | static + Node MCP |
+| `extensions/deseret-chrome` | Chrome Web Store (not yet published) | — | MV3 extension; `node extensions/deseret-chrome/build.mjs` copies the Deseret MCP engine in |
 | `projects/school`, `projects/collector-items`, `projects/content-creation` | private, not deployed | — | — |
 
 ## URLs

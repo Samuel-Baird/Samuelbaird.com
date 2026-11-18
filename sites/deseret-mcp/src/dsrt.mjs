@@ -301,8 +301,9 @@ export function createEngine({ dict, overrides = {}, freq = new Map() }) {
   /**
    * Transliterate text. format: plain | markdown | html. strict: leave derived spellings in Latin.
    * spellings: per-call word -> ARPAbet or Deseret.
+   * respell: optional (latinWord, deseret) => deseret, applied to every spelled word (see historical1868).
    */
-  function text(input, { format = 'plain', strict = false, spellings } = {}) {
+  function text(input, { format = 'plain', strict = false, spellings, respell } = {}) {
     let extra = null;
     if (spellings && Object.keys(spellings).length) {
       extra = {};
@@ -345,7 +346,7 @@ export function createEngine({ dict, overrides = {}, freq = new Map() }) {
         stats.derived++;
         if (!derived.has(k)) derived.set(k, { word: k, deseret: lowerDsrt(r.deseret), from: r.how });
       } else stats.from_dictionary++;
-      return r.deseret;
+      return respell ? respell(w, r.deseret) || r.deseret : r.deseret;
     });
 
     let out = '';
@@ -381,7 +382,11 @@ export function createEngine({ dict, overrides = {}, freq = new Map() }) {
       if (!/^[a-z]+(?:'[a-z]+)?$/.test(w)) continue;
       prons.forEach((p, i) => { try { add(phonesToDeseret(p), w, i === 0 ? 1 : 2); } catch { /* skip */ } });
     }
-    const score = (e) => [e.rank === 2 ? 1 : 0, -(freq.get(e.w) || 0), e.w.includes("'") ? 1 : 0, e.w.length, e.w];
+    // 1868 printing forms (see historical1868), so period Deseret text reads back too.
+    add('𐑄', 'the', 1);
+    add('𐐱𐑂', 'of', 1);
+    // Hand corrections (rank 0) beat dictionary entries; then first pronunciations, frequency, length.
+    const score = (e) => [e.rank === 0 ? 0 : 1, e.rank === 2 ? 1 : 0, -(freq.get(e.w) || 0), e.w.includes("'") ? 1 : 0, e.w.length, e.w];
     const cmp = (a, b) => { const x = score(a), y = score(b); for (let i = 0; i < x.length; i++) if (x[i] !== y[i]) return x[i] < y[i] ? -1 : 1; return 0; };
     for (const list of reverse.values()) list.sort(cmp);
     return reverse;
@@ -403,7 +408,10 @@ export function createEngine({ dict, overrides = {}, freq = new Map() }) {
     const latin = input.replace(DSRT_RE, (d) => {
       stats.words++;
       const key = lowerDsrt(d).replace(/’/g, "'");
-      const hits = idx.get(key);
+      // 1868 forms the dictionary spells differently: 𐐸𐐶 for "wh", -𐐮𐑅 for -ness/-less.
+      const hits = idx.get(key)
+        || (key.startsWith('𐐸𐐶') && idx.get(key.slice(2))) // drop 𐐸 (one letter = two UTF-16 units)
+        || (key.endsWith('𐐮𐑅') && (idx.get(key.slice(0, -4) + '𐐲𐑅') || idx.get(key.slice(0, -4) + '𐐯𐑅')));
       if (hits) {
         stats.matched++;
         if (hits.length > 1) {
@@ -422,3 +430,21 @@ export function createEngine({ dict, overrides = {}, freq = new Map() }) {
 
   return { word, explain, text, fromDeseret, size: dict.size };
 }
+
+// 1868-69 printing conventions (Orson Pratt's transcriptions: the Deseret First and Second Books and the
+// 1869 Book of Mormon), limited to patterns the Deseret Wiki documents with printed examples:
+//   "the" is the single letter 𐑄 ("𐐸𐐬𐑊𐐨𐑌𐐮𐑅 𐐻𐐭 𐑄 𐐢𐐫𐑉𐐼", 1860 coin; "𐑅𐐲𐑉𐑂 𐑄 𐐢𐐫𐑉𐐼", Second Book hymn)
+//   "of" is 𐐱𐑂 (title page of the First and Second Books, "𐐱𐑂 𐑄 𐐔𐐇𐐝𐐀𐐡𐐇𐐓 ...")
+//   "wh" keeps its h: 𐐸𐐶 ("𐐸𐐶𐐴𐑊" while, "𐐸𐐶𐐩𐑉𐑁𐐬𐑉" wherefore; no wine-whine merger)
+//   -ness/-less end in 𐐮𐑅 ("𐐸𐐬𐑊𐐨𐑌𐐮𐑅" Holiness)
+// Use as engine.text(s, historical1868). Everything else follows the modern dictionary spelling.
+export const historical1868 = {
+  spellings: { the: '𐑄', of: '𐐱𐑂' },
+  respell(latin, dsrt) {
+    const k = keyOf(latin);
+    let out = dsrt;
+    if (k.startsWith('wh') && /^[𐐶𐐎]/u.test(out)) out = (/^𐐎/u.test(out) ? '𐐐𐐶' : '𐐸𐐶') + Array.from(out).slice(1).join('');
+    if (/(ness|less)$/.test(k)) out = out.replace(/[𐐲𐐯]𐑅$/u, '𐐮𐑅').replace(/[𐐊𐐇]𐐝$/u, '𐐆𐐝');
+    return out;
+  },
+};

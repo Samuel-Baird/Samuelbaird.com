@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { load } from '../src/load.mjs';
-import { phonesToDeseret, applyCase, PHONE, LETTERS } from '../src/dsrt.mjs';
+import { phonesToDeseret, applyCase, PHONE, LETTERS, historical1868 } from '../src/dsrt.mjs';
 
 const { engine } = load();
 
@@ -133,4 +133,21 @@ test('round trip of ordinary prose', () => {
   const src = 'The Regents of the University approved a new alphabet for the territory';
   const back = engine.fromDeseret(engine.text(src).deseret).latin;
   assert.equal(back, src);
+});
+
+test('historical1868 matches the printed examples the wiki cites', () => {
+  const h = (s) => engine.text(s, historical1868).deseret;
+  assert.equal(h('Holiness to the Lord'), '𐐐𐐬𐑊𐐨𐑌𐐮𐑅 𐐻𐐭 𐑄 𐐢𐐫𐑉𐐼');
+  assert.equal(h('while'), '𐐸𐐶𐐴𐑊');
+  assert.equal(h('While'), '𐐐𐐶𐐴𐑊');
+  assert.equal(h('of the'), '𐐱𐑂 𐑄');
+  assert.equal(h('who'), engine.text('who').deseret, 'wh- words that start with an h sound are left alone');
+  assert.equal(h('Holiness to the Lord').length < engine.text('Holiness to the Lord').deseret.length, true);
+  assert.equal(engine.text('the').deseret, '𐑄𐐲', 'modern spelling is unchanged without the option');
+});
+
+test('1868 forms and hand corrections read back to Latin', () => {
+  assert.equal(engine.fromDeseret('𐐐𐐬𐑊𐐨𐑌𐐮𐑅 𐐻𐐭 𐑄 𐐢𐐫𐑉𐐼').latin, 'Holiness to the Lord');
+  assert.equal(engine.fromDeseret('𐐸𐐶𐐴𐑊 𐐱𐑂').latin, 'while of');
+  assert.equal(engine.fromDeseret(engine.text('Mormon').deseret).latin, 'Mormon');
 });
