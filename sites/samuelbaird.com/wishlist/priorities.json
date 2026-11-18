@@ -7,5 +7,87 @@
     "hide: true keeps an item off the page without removing it from Amazon.",
     "Example: \"0195375734\": { \"priority\": \"highest\", \"rank\": 1, \"note\": \"For the Paul video\" }"
   ],
-  "items": {}
+  "items": {
+    "1500883549": {
+      "priority": "low"
+    },
+    "1507628234": {
+      "priority": "low"
+    },
+    "1581342292": {
+      "priority": "low"
+    },
+    "1589586549": {
+      "priority": "low"
+    },
+    "1589586859": {
+      "priority": "low"
+    },
+    "1683571800": {
+      "priority": "low"
+    },
+    "1733472770": {
+      "priority": "low"
+    },
+    "1944394761": {
+      "priority": "low"
+    },
+    "B0GDQRNTF3": {
+      "priority": "highest",
+      "rank": 1
+    },
+    "B0H1H2K9H6": {
+      "priority": "medium",
+      "rank": 2
+    },
+    "B0CG19QXWD": {
+      "priority": "medium",
+      "rank": 1
+    },
+    "0802802656": {
+      "priority": "low"
+    },
+    "B0FSKT2TL1": {
+      "priority": "medium",
+      "rank": 3
+    },
+    "B0FPLFQM22": {
+      "priority": "low",
+      "rank": 99
+    },
+    "B0DMNJ1LN7": {
+      "priority": "highest",
+      "rank": 2
+    },
+    "0268008906": {
+      "priority": "low"
+    },
+    "160907338X": {
+      "priority": "low"
+    },
+    "153268861X": {
+      "priority": "low"
+    },
+    "0830851879": {
+      "priority": "low"
+    },
+    "0190844434": {
+      "priority": "low"
+    },
+    "0393292495": {
+      "priority": "low"
+    },
+    "0190276126": {
+      "priority": "low"
+    },
+    "0199978468": {
+      "priority": "low"
+    },
+    "0802847390": {
+      "priority": "low"
+    },
+    "0870610694": {
+      "priority": "low"
+    }
+  }
 }
