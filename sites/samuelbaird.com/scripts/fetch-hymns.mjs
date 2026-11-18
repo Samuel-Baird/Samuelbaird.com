@@ -19,6 +19,11 @@
 // Hymns are linked across editions by their normalized first line (hymnKey); see KEY_OVERRIDES for the
 // hand links, each with its reason.
 //
+// Gaps: every run lists what is missing (a number with no hymn, a hymn with no first line or credit, a hand
+// entry still to verify) in the JSON's `missing` list and data/lds-hymns-missing.csv. Hand entries for hymns a
+// source skips go in scripts/hymn-additions.json (with their own source); what was tried and where to look next
+// goes in scripts/hymn-missing.json.
+//
 // Pages are cached in scripts/cache/hymns.json (facts only) so reruns only fetch what is new;
 // --refresh refetches every page. Polite: one request at a time, ~0.3 s apart. No dependencies.
 import fs from 'node:fs';
@@ -28,6 +33,7 @@ import { fileURLToPath } from 'node:url';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const OUT_JSON = path.join(ROOT, 'data', 'lds-hymns.json');
 const OUT_CSV = path.join(ROOT, 'data', 'lds-hymns.csv');
+const OUT_MISSING = path.join(ROOT, 'data', 'lds-hymns-missing.csv');
 const CACHE = path.join(ROOT, 'scripts', 'cache', 'hymns.json');
 const REFRESH = process.argv.includes('--refresh');
 const CHURCH = 'https://www.churchofjesuschrist.org';
@@ -46,6 +52,8 @@ const EDITIONS = [
 // Hand links between editions where the first lines differ, each with its reason.
 // Key: `${edition}:${number}` -> the hymnKey of the same text in another edition.
 const KEY_OVERRIDES = JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts', 'hymn-overrides.json'), 'utf8'));
+const ADDITIONS = JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts', 'hymn-additions.json'), 'utf8'));
+const MISSING_NOTES = JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts', 'hymn-missing.json'), 'utf8'));
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const cache = fs.existsSync(CACHE) ? JSON.parse(fs.readFileSync(CACHE, 'utf8')) : { pages: {}, wikidata: {} };
@@ -130,12 +138,16 @@ function parseStudyHymn(body) {
 function credits(ci) {
   const out = { text: [], music: [], tune: [] };
   for (const p of String(ci || '').matchAll(/<p[^>]*>([\s\S]*?)<\/p>/g)) {
-    const kind = (p[1].match(/^\s*<em>\s*(Text and music|Words and music|Text|Words|Music)\s*:?\s*<\/em>/i) || [])[1];
+    // The label is usually italic ("<em>Text:</em>"), but a few 1985 pages print it plain ("Music: From ...").
+    const LABEL = '(Text and music|Words and music|Text|Words|Music)';
+    const km = p[1].match(new RegExp(`^\\s*(?:<em>\\s*${LABEL}\\s*:?\\s*</em>|${LABEL}\\s*:)`, 'i'));
+    const kind = km && (km[1] || km[2]);
     if (!kind) continue; // copyright notices, notes and sheet-music links
     // Hymns—For Home and Church sets the tune name in small caps after a bar: "... | <small>NETTLETON</small>".
     for (const t of p[1].matchAll(/<small>([\s\S]*?)<\/small>/g)) out.tune.push(text(t[1]));
-    let val = text(p[1].replace(/^\s*<em>[^<]*<\/em>/, '').replace(/\s*\|?\s*<small>[\s\S]*?<\/small>/g, ''))
+    let val = text(p[1].slice(km[0].length).replace(/\s*\|?\s*<small>[\s\S]*?<\/small>/g, ''))
       .replace(/^[:,\s]+/, '')
+      .replace(/\.\s+From\s[^©]*(?=©)/, '') // "alt. From Light of the Years, © 1936": the source of a copyrighted text
       .replace(/\s*(?:\*|©).*$/, '')
       .replace(/\.\s+(?:From the English Hymnal|Tune and setting|Used by|Reproduced|Making copies|English translation|All rights)\b.*$/i, '')
       .replace(/[.\s|]+$/, '');
@@ -219,6 +231,15 @@ for (const ed of EDITIONS) {
   editions[ed.id] = ed.kind === 'jsp' ? await jspEdition(ed) : await studyEdition(ed);
   await sleep(300);
 }
+// Hand additions for hymns the main source skips (each with its own source). A main source wins once it has the hymn.
+for (const [ref, a] of Object.entries(ADDITIONS)) {
+  if (ref.startsWith('_')) continue;
+  const [e, n] = ref.split(':');
+  if (!editions[e]) { console.warn(`  addition ${ref}: no such edition`); continue; }
+  if (editions[e].some((r) => String(r.number) === n)) { console.warn(`  addition ${ref}: the source has it now; remove it from hymn-additions.json`); continue; }
+  editions[e].push({ number: +n, title: a.title || null, firstLine: a.firstLine, text: a.text || '', music: a.music || '', source: a.source, hand: a });
+  editions[e].sort((x, y) => +x.number - +y.number);
+}
 
 const allPeople = [];
 for (const ed of EDITIONS) for (const r of editions[ed.id]) allPeople.push(...people(r.text), ...people(r.music));
@@ -254,6 +275,7 @@ for (const ed of EDITIONS) {
       change: null,
       previousNumber: null,
       source: r.source,
+      handEntered: r.hand ? (r.hand.verify ? 'verify' : 'checked') : null,
     });
   }
 }
@@ -287,6 +309,34 @@ for (const [ref, o] of Object.entries(KEY_OVERRIDES)) {
   if (!records.some((r) => r.edition === e && String(r.number) === n)) console.warn(`  override ${ref}: no such hymn`);
 }
 
+// ---------- what is missing (rebuilt on every run; notes in scripts/hymn-missing.json) ----------
+const missing = [];
+const ranges = (nums) => nums.reduce((acc, x) => { const l = acc.at(-1); if (l && x === l[1] + 1) l[1] = x; else acc.push([x, x]); return acc; }, []);
+for (const ed of EDITIONS) {
+  const list = records.filter((r) => r.edition === ed.id && r.change !== 'removed');
+  const nums = list.map((r) => +r.number).filter(Number.isFinite).sort((a, b) => a - b);
+  const gaps = [];
+  for (let i = nums[0]; i <= nums.at(-1); i++) if (!nums.includes(i)) gaps.push(i);
+  for (const [a, b] of ranges(gaps)) {
+    // A book still being released has numbers it has not published yet; that is not a hymn gone missing.
+    if (ed.partial) missing.push({ id: `${ed.id}:${a}-${b}`, edition: ed.id, number: `${a}-${b}`, title: null, missing: 'unpublished', source: null });
+    else for (let i = a; i <= b; i++) missing.push({ id: `${ed.id}-${i}`, edition: ed.id, number: i, title: null, missing: 'hymn', source: null });
+  }
+  for (const r of list) {
+    if (!r.firstLine) missing.push({ id: r.id, edition: ed.id, number: r.number, title: r.title, missing: 'firstLine', source: r.source });
+    // Credits only exist in the books that print them.
+    if (ed.words === 'words and music') for (const f of ['text', 'music']) if (!r[f]) missing.push({ id: r.id, edition: ed.id, number: r.number, title: r.title, missing: f, source: r.source });
+    if (r.handEntered === 'verify') missing.push({ id: r.id, edition: ed.id, number: r.number, title: r.title || r.firstLine, missing: 'verify', source: r.source });
+  }
+}
+for (const m of missing) {
+  const n = MISSING_NOTES[m.id] || {};
+  m.tried = n.tried || [];
+  m.leads = n.leads || [];
+}
+for (const k of Object.keys(MISSING_NOTES)) if (!k.startsWith('_') && !missing.some((m) => m.id === k)) console.warn(`  hymn-missing.json: ${k} is no longer missing; remove its note`);
+for (const m of missing) if (!m.tried.length && m.missing !== 'unpublished') console.warn(`  missing ${m.id} (${m.missing}) has no notes in hymn-missing.json yet`);
+
 const count = (ed) => records.filter((r) => r.edition === ed && r.change !== 'removed').length;
 const out = {
   name: 'Latter-day Saint hymnbooks: every hymn in every edition',
@@ -298,6 +348,7 @@ const out = {
     { name: 'The Joseph Smith Papers: Collection of Sacred Hymns, 1835 and 1841 (transcriptions)', url: `${JSP}/paper-summary/collection-of-sacred-hymns-1835/1`, use: 'hymn numbers and first lines of the 1835 and 1841 collections' },
     { name: 'The Church of Jesus Christ of Latter-day Saints: Gospel Library hymn pages', url: `${CHURCH}/study/manual/hymns?lang=eng`, use: 'numbers, titles, first lines and text and music credits of Hymns (1985) and Hymns—For Home and Church' },
     { name: 'Wikidata', url: 'https://www.wikidata.org/', license: 'CC0 1.0', use: "authors' religion (P140), matched on name plus birth and death years" },
+    { name: 'Internet Archive scans (Church History Library copies)', url: 'https://archive.org/details/collectionofsacr01smit', use: 'hymns a transcription skips (scripts/hymn-additions.json), each with its page' },
   ],
   fields: {
     edition: EDITIONS.map((e) => `${e.id} (${e.short})`).join(' | '),
@@ -312,6 +363,8 @@ const out = {
     change: 'added | kept | removed, against the previous edition in this dataset; blank for 1985, whose predecessor is not in the dataset yet',
     previousNumber: 'Number in the previous edition (kept and removed records)',
     source: 'Page the record comes from',
+    handEntered: 'verify (entered by hand from a scan, not yet checked against the page image) | checked | blank (from the main source)',
+    missing: 'Gaps found on this run: missing = hymn | firstLine | text | music | verify | unpublished, with what was tried and where to look next (also data/lds-hymns-missing.csv)',
   },
   gaps: [
     'Editions between 1841 and 1985 (the Manchester/Liverpool Sacred Hymns and Spiritual Songs line, Latter-day Saint Hymns 1927, Hymns 1948 and 1950) are not in yet, so 1985 has no change status.',
@@ -319,6 +372,7 @@ const out = {
     'The 1835 and 1841 books print no author credits.',
     'Wording changes between editions are not tracked yet.',
   ],
+  missing,
   history,
   hymns: records,
 };
@@ -330,13 +384,16 @@ if (n('1835') < 85 || n('1841') < 290 || n('1985') < 330 || n('hfhc') < 50) {
 }
 fs.writeFileSync(OUT_JSON, JSON.stringify(out, null, 1) + '\n');
 
-const COLS = ['id', 'edition', 'editionYear', 'number', 'section', 'title', 'firstLine', 'text', 'music', 'tune', 'authors', 'composers', 'yearWritten', 'authorDenomination', 'hymnKey', 'change', 'previousNumber', 'source'];
+const COLS = ['id', 'edition', 'editionYear', 'number', 'section', 'title', 'firstLine', 'text', 'music', 'tune', 'authors', 'composers', 'yearWritten', 'authorDenomination', 'hymnKey', 'change', 'previousNumber', 'source', 'handEntered'];
 const cell = (v) => { const s = v == null ? '' : Array.isArray(v) ? v.join('; ') : String(v); return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
 fs.writeFileSync(OUT_CSV, [COLS.join(','), ...records.map((r) => COLS.map((c) => cell(r[c])).join(','))].join('\n') + '\n');
+const MCOLS = ['id', 'edition', 'number', 'title', 'missing', 'source', 'tried', 'leads'];
+fs.writeFileSync(OUT_MISSING, [MCOLS.join(','), ...missing.map((m) => MCOLS.map((c) => cell(m[c])).join(','))].join('\n') + '\n');
 
 console.log('wrote', path.relative(ROOT, OUT_JSON), records.length, out.editions.map((e) => `${e.id}=${e.hymns}`).join(' '));
 for (const ed of EDITIONS.filter((e) => e.previous)) {
   const t = records.filter((r) => r.edition === ed.id).reduce((c, r) => ((c[r.change] = (c[r.change] || 0) + 1), c), {});
   console.log(`  ${ed.id} vs ${ed.previous}:`, JSON.stringify(t));
 }
+console.log('  missing:', JSON.stringify(missing.reduce((c, m) => ((c[m.missing] = (c[m.missing] || 0) + 1), c), {})), 'see', path.relative(ROOT, OUT_MISSING));
 console.log('  with denomination:', records.filter((r) => r.authorDenomination).length, 'with year written:', records.filter((r) => r.yearWritten).length);

@@ -202,6 +202,8 @@ const hymnRow = (h) => `<tr data-id="${esc(h.id)}"><td class="h-no">${h.number ?
   + `<td class="t-links"><a href="${esc(h.source)}" rel="noopener">Source</a></td></tr>`;
 const hymnRows = () => HYMN_ORDER.flatMap((ed) => HYMNS.filter((h) => h.edition === ed)
   .sort((a, b) => (a.number ?? 1e6) - (b.number ?? 1e6) || (a.previousNumber ?? 0) - (b.previousNumber ?? 0))).map(hymnRow).join('\n');
+const HYMN_GAP = { hymn: 'not in the dataset', firstLine: 'no first line', text: 'no text credit', music: 'no music credit', verify: 'entered by hand from a scan; still to check against the page image', unpublished: 'numbers not published yet' };
+const hymnMissing = () => (HYMN_DATA.missing || []).map((m) => `<li><b>${esc(HYMN_ED[m.edition].short)} no. ${esc(m.number)}</b>${m.title ? ` (${esc(m.title)})` : ''}: ${HYMN_GAP[m.missing] || esc(m.missing)}${m.source ? `. <a href="${esc(m.source)}" rel="noopener">Source</a>` : ''}</li>`).join('\n') || '<li>None.</li>';
 const hymnStats = () => [
   ...HYMN_DATA.editions.map((e) => [e.hymns, `${esc(e.short)}${e.partial ? ' (so far)' : ''}`]),
   [HY.texts, 'distinct texts'], [`${HY.y1835in1985}/${HY.y1835}`, '1835 hymns still in 1985'],
@@ -652,7 +654,7 @@ function dataPage() {
   <section class="dataset" id="lds-hymns">
     <h2>Latter-day Saint hymnbooks</h2>
     <p>Every hymn in ${HY.editions} hymnbooks, one record per hymn per edition: ${HYMN_DATA.editions.map((e) => `${esc(e.short)} (${e.hymns}${e.partial ? ' so far' : ''})`).join(', ')}. Numbers, titles, first lines and the text and music credits as printed, with whether each hymn was added, kept or removed from the edition before. The 1835 and 1841 lists come from the <a href="https://www.josephsmithpapers.org/paper-summary/collection-of-sacred-hymns-1835/1" rel="noopener">Joseph Smith Papers</a> transcriptions; Hymns (1985) and Hymns&mdash;For Home and Church from the Church&rsquo;s <a href="https://www.churchofjesuschrist.org/study/manual/hymns?lang=eng" rel="noopener">Gospel Library</a>; authors&rsquo; religion from Wikidata (CC0), only where name and life dates match. Facts only: no lyrics.</p>
-    <div class="btns"><a class="primary" href="/data/lds-hymns.csv" download>Download CSV</a><a class="secondary" href="/data/lds-hymns.json" download>Download JSON</a><a class="secondary" href="/hymns">Search the hymns</a></div>
+    <div class="btns"><a class="primary" href="/data/lds-hymns.csv" download>Download CSV</a><a class="secondary" href="/data/lds-hymns.json" download>Download JSON</a><a class="secondary" href="/hymns">Search the hymns</a><a class="secondary" href="/data/lds-hymns-missing.csv" download>Known gaps (CSV)</a></div>
     ${fields([['edition, editionYear, number, section', 'Which book, and the hymn&rsquo;s number and section in it'], ['title, firstLine', 'As printed (1835 and 1841 have no titles)'], ['text, music, tune', 'Credits as printed, without copyright notices'], ['authors, composers', 'Names parsed from the credits (translators and arrangers left out)'], ['yearWritten', 'Year in the text credit, where the book gives one'], ['authorDenomination', 'Authors&rsquo; religion from Wikidata, blank when unknown'], ['hymnKey', 'Links the same text across editions'], ['change, previousNumber', 'added, kept or removed against the previous edition in the dataset, and its number there'], ['source', 'Page the record comes from']])}
   </section>
   <section class="dataset" id="reading-list">
@@ -768,7 +770,7 @@ patch('books/index.html', '/books', { books: BOOKS.map(bookLi).join('\n') });
 patch('collection/index.html', '/collection');
 patch('temples/index.html', '/temples', { 'temple-stats': templeStats(), 'temple-decades': templeDecades(), 'temple-rows': TEMPLES.map(templeRow).join('\n') });
 patch('historic-sites/index.html', '/historic-sites', { 'hist-stats': histStats(), 'hist-rows': HIST.map(histRow).join('\n') });
-patch('hymns/index.html', '/hymns', { 'hymn-stats': hymnStats(), 'hymn-rows': hymnRows() });
+patch('hymns/index.html', '/hymns', { 'hymn-stats': hymnStats(), 'hymn-rows': hymnRows(), 'hymn-missing': hymnMissing() });
 patch('donate/index.html', '/donate');
 patch('sacred-sites/index.html', '/sacred-sites');
 patch('sacred-sites/photos/index.html', '/sacred-sites/photos');

@@ -24,6 +24,8 @@
       ['Text', h.text], ['Music', h.music], ['Tune', h.tune], ['Written', h.yearWritten],
       ["Author's religion", h.authorDenomination && `${h.authorDenomination} <small>(Wikidata)</small>`],
       ['Section', h.section],
+      !h.firstLine && ['First line', 'Not in the source yet (see Known gaps below)'],
+      h.handEntered === 'verify' && ['Note', 'Entered by hand from a scan; still to check against the page image'],
       h.change === 'removed' && ['Removed', `Was no. ${h.previousNumber} in ${esc(ed[ed[h.edition].previous].short)}; not in ${esc(ed[h.edition].short)}`],
       h.change === 'kept' && ['Kept', `Was no. ${h.previousNumber} in ${esc(ed[ed[h.edition].previous].short)}`],
     ].filter((f) => f && f[1] != null && f[1] !== '');
