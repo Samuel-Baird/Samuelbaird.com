@@ -5,8 +5,8 @@ export type Upstream = { id: string; name: string; url: string; description: str
 const BASE: Upstream[] = [
   { id: "gsa", name: "Gospel Scholar Archives", url: "https://corpus.noahairmet.com/mcp", description: "Access to David's Gospel Scholar Archives" },
   { id: "pulpit", name: "Pulpit", url: "https://mcp.pulpit-archive.org/mcp", description: "General Conference 1830-present" },
-  { id: "ldstats", name: "Latter-day Stats", url: "https://latterdaystats.samuelbaird.com/api/mcp", description: "LDS-related YouTube channels and research studies" },
-  { id: "peepstone", name: "Peepstone", url: "https://peepstone.vercel.app/mcp", description: "All the Joseph Smith Papers" },
+  { id: "ldstats", name: "Latter-day Stats", url: "https://samuelbaird.com/latter-day-stats/api/mcp", description: "LDS-related YouTube channels and research studies" },
+  { id: "peepstone", name: "Peepstone", url: "https://samuelbaird.com/peepstone/mcp", description: "All the Joseph Smith Papers" },
   { id: "deseret", name: "Deseret MCP", url: "https://mcp.deseret.wiki/api/mcp", description: "Deseret Alphabet: English to Deseret and back, and every source on deseret.wiki" },
 ];
 
