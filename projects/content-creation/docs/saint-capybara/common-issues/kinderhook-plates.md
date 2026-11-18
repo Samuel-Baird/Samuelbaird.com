@@ -45,7 +45,12 @@ Give the most direct, currently-best-documented account:
   — a fair statement that the incident isn't fully resolved even by
   faithful historians.
 
-State plainly: this is one of the more genuinely difficult episodes for
-claims of consistent prophetic discernment, and the best current LDS
-response concedes real uncertainty about what happened rather than
-explaining it away completely.
+Lead with the evidence-based reading: the surviving record supports
+"Joseph evidently did not attempt" a revelatory translation, which
+removes the strongest form of the objection (a prophet formally
+translating a hoax under claimed revelation) and leaves the narrower
+question of what "translated a portion" meant. That narrower question
+remains genuinely unresolved even for faithful historians, and the beat
+should say so precisely rather than explaining it away completely, but
+the unresolved part is the meaning of one journal phrase, not whether
+Joseph claimed sustained prophetic authority over the plates.

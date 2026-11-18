@@ -40,14 +40,16 @@ better-documented and harder-to-wave-away textual objections:
   translation variants of Isaiah have ancient
   support" is the strongest counter-argument and should be led with, not
   buried).
-- Concede plainly where concession is warranted: some KJV-specific
-  wording (including italicized KJV translator insertions and at least
-  one 1769-edition-specific reading) does appear to have been carried
-  into the Book of Mormon text, which is difficult to explain under a
-  model where Joseph Smith is reading an independent ancient text letter
-  for letter, and easier to explain under a model where he had
+- Some KJV-specific wording (including italicized KJV translator
+  insertions and at least one 1769-edition-specific reading) does appear
+  to have been carried into the Book of Mormon text, and that is exactly
+  what Skousen's base-text model predicts: it is difficult to explain
+  under a model where Joseph Smith is reading an independent ancient
+  text letter for letter, and easy to explain under a model where he had
   significant latitude in rendering wording for passages already
-  familiar to him from the Bible.
+  familiar to him from the Bible. The critic's objection only works
+  against the letter-for-letter model, which is not the one the
+  scholarship defends.
 
 **Certainty level: fact** for the textual overlap itself; **disputed**
 for what it implies about the translation process. Keep those separate

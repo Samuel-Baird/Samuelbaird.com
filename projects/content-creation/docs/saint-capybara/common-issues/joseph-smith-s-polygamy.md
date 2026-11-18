@@ -9,6 +9,7 @@ state this without minimizing. Brian Hales's multi-volume *Joseph
 Smith's Polygamy* is the most exhaustive documentary treatment, from a
 faithful LDS historian who does not shy from the difficult specifics.
 Route detailed sub-questions to `teenage-plural-wives.md`,
+`plural-marriage-sexual-relations.md`,
 `secrecy-surrounding-plural-marriage.md`,
 `emma-smith-s-knowledge-of-plural-marriages.md`, and
 `public-denials-of-polygamy.md`.

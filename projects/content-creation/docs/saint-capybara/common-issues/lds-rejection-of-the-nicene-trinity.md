@@ -59,9 +59,10 @@ settled than later creedal boundaries suggest — it does not show "the
 early church believed exactly what Latter-day Saints believe." Don't
 overclaim that equivalence on screen (see playbook "Don't overclaim").
 
-**Concede the real Catholic strength:** Catholicism is right that
-Christianity isn't just private interpretation of a text — doctrine
-develops under real authority claims. The actual dispute is *whether Rome
+**Argue on the authority frame, not sola scriptura:** Catholicism's
+premise that Christianity isn't just private interpretation of a text,
+that doctrine develops under real authority claims, is a premise LDS
+theology shares, which moves the actual dispute to *whether Rome
 correctly continued apostolic authority*, not whether authority matters
 at all. That's a stronger frame for LDS apologetics than defending sola
 scriptura would be.

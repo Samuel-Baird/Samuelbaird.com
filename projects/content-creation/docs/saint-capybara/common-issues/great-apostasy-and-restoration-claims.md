@@ -45,8 +45,9 @@ The historically strongest critical version of this claim isn't
 theological, it's about specificity and falsifiability: "apostasy"
 functions as an unfalsifiable placeholder that can explain away any
 inconvenient early-Christian data (whatever doesn't match LDS doctrine
-gets attributed to apostasy). That's a fair methodological challenge —
-the honest response is to insist the Restoration case be argued from
+gets attributed to apostasy). That challenge only lands against an
+apostasy claim argued from silence, which is why the Restoration case is
+argued from
 *positive* historical evidence for what changed and when (see the
 patristic-development sourcing under `lds-rejection-of-the-nicene-trinity.md`
 and `rejection-of-apostolic-succession.md`), not from the mere logical

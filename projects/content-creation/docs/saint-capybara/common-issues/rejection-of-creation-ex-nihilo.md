@@ -46,9 +46,10 @@ non-LDS-sourced concession per the source-hierarchy rule.
 This topic rarely lands as a standalone objection for this audience — it
 mostly surfaces as one data point in a larger "LDS theology is just
 19th-century American folk metaphysics" argument. Treat it that way:
-concede that Joseph Smith's cosmology (eternal matter, organized rather
+the fact that Joseph Smith's cosmology (eternal matter, organized rather
 than created) fits recognizable currents in early 19th-century American
-religious thought, then make the separate point that fitting a historical
-milieu doesn't by itself make a claim false — every tradition's theology,
-including Nicene creatio ex nihilo, has an identifiable philosophical
-milieu (Middle Platonism/Aristotelian metaphysics) too.
+religious thought shows only that it has a milieu, which every
+tradition's theology has — Nicene creatio ex nihilo has its own
+identifiable philosophical milieu (Middle Platonism/Aristotelian
+metaphysics) — and fitting a historical milieu doesn't by itself make a
+claim false.

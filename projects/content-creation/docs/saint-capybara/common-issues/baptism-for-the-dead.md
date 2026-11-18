@@ -45,9 +45,10 @@ overclaiming Paul's approval.
 
 The practical/PR angle (celebrity/Holocaust-victim proxy baptisms
 controversy) is usually the live version of this objection for this
-audience, more than the theology. Address directly: the Church has
-apologized for and tightened restrictions around unauthorized submissions
-of Jewish Holocaust victims' names specifically, following real
-controversy and negotiated agreements with Jewish organizations in the
-1990s-2000s — concede that history plainly rather than only defending the
-doctrine in the abstract.
+audience, more than the theology. Address directly: the Church's apology
+for and tightened restrictions around unauthorized submissions of Jewish
+Holocaust victims' names specifically, following real controversy and
+negotiated agreements with Jewish organizations in the 1990s-2000s, is
+the offered-not-forced doctrine being enforced against its own members'
+overreach, so state that history in the same breath as the doctrine
+rather than defending the doctrine only in the abstract.

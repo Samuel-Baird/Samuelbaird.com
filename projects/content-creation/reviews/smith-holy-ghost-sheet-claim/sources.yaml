@@ -1,0 +1,376 @@
+sources:
+- id: critic-reel
+  type: critic
+  title: Video by joshandthegiant
+  author: Josh & The Giant
+  date: '2026-09-21'
+  locator: transcripts/source.json
+  accessed: '2026-09-21'
+  inspected: true
+  inspected_via: tools/transcribe.py (Whisper) + direct read of transcripts/source.txt
+  quote: null
+  verification: null
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: 'The source reel. The claim under response spans 0:09-0:21 of the transcript: no paper name, date, or author
+    is given on screen for the alleged 1800s newspaper story.'
+- id: articles-covenants-1831-painesville-confirmation
+  type: primary
+  title: Articles and Covenants, circa April 1830 [D&C 20], Painesville Telegraph version
+  author: Joseph Smith and Oliver Cowdery; Painesville Telegraph printing
+  date: '1831-04-19'
+  locator: https://www.josephsmithpapers.org/paper-summary/articles-and-covenants-circa-april-1830-dc-20/1
+  accessed: '2026-10-01'
+  inspected: true
+  inspected_via: 'WebFetch-equivalent: web.run open; actual tool is web.run, not WebFetch'
+  quote: null
+  verification:
+    tool: web.run open
+    verdict: paraphrase checked against document and source note
+    link: https://www.josephsmithpapers.org/paper-summary/articles-and-covenants-circa-april-1830-dc-20/1
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: Document circa April 1830, adopted June 9, 1830; inspected version printed April 19, 1831, p. [4]. Elders'
+    duties and members after baptism prescribe confirmation by laying on hands. JSP identifies the earliest extant
+    copies as 1831 and notes revisions. Supports prescription, not universal compliance.
+  found_by: capy-doctrine-scholar
+  claims:
+  - 1
+- id: dc20-confirmation-canonical-2026
+  type: scripture
+  title: Doctrine and Covenants 20:41–43
+  author: Doctrine and Covenants
+  date: 1830-04
+  locator: https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/20?id=p41&lang=eng
+  accessed: '2026-10-01'
+  inspected: true
+  inspected_via: 'WebFetch-equivalent: web.run click and find; actual tool is web.run'
+  quote: null
+  verification:
+    tool: web.run click/find
+    verdict: paraphrase and surrounding context checked
+    link: https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/20?id=p41&lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Date denotes approximate original revelation date, not date every word of current text was written.
+  found_by: capy-doctrine-scholar
+  claims:
+  - 1
+- id: handbook-confirmation-oct2026
+  type: official
+  title: 'General Handbook 18.8 and 18.8.2: Confirmation and Gift of the Holy Ghost'
+  author: The Church of Jesus Christ of Latter-day Saints
+  date: '2026-10-01'
+  locator: https://www.churchofjesuschrist.org/study/manual/general-handbook/18-priesthood-ordinances-and-blessings?lang=eng
+  accessed: '2026-10-01'
+  inspected: true
+  inspected_via: 'WebFetch-equivalent: web.run open and find; actual tool is web.run'
+  quote: null
+  verification:
+    tool: web.run open/find
+    verdict: current instructions and context checked
+    link: https://www.churchofjesuschrist.org/study/manual/general-handbook/18-priesthood-ordinances-and-blessings?lang=eng
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Date is inspection date for current practice, not publication date. Authorized priesthood holders place
+    hands on the person's head for confirmation after baptism.
+  found_by: capy-doctrine-scholar
+  claims:
+  - 1
+- id: morley-1857-confirmation-context
+  type: primary
+  title: The Prosperity of the Saints Dependent Upon Their Being Right Before God—Prayer and Watchfulness, Etc.
+  author: Isaac Morley
+  date: '1857-11-08'
+  locator: https://pulpit.restorationcommons.org/talks/1857-11-08-morley-prosperity-of-the-saints/#p13
+  accessed: '2026-10-01'
+  inspected: true
+  inspected_via: Pulpit read_paragraphs and verify_quote
+  quote: the laying on of hands for the gift of the Holy Ghost
+  verification:
+    tool: verify_quote
+    verdict: exact
+    link: https://pulpit.restorationcommons.org/talks/1857-11-08-morley-prosperity-of-the-saints/#p13
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Paragraphs 10–16 inspected; contemporaneous report, tier 4. No asserted connection to sheet allegation.
+  found_by: capy-doctrine-scholar
+  claims:
+  - 1
+- id: bednar-2010-confirmation-context
+  type: official
+  title: Receive the Holy Ghost
+  author: David A. Bednar
+  date: 2010-10
+  locator: https://pulpit.restorationcommons.org/talks/2010-10-bednar-receive-the-holy-ghost/#p5
+  accessed: '2026-10-01'
+  inspected: true
+  inspected_via: Pulpit read_paragraphs and verify_quote
+  quote: The gift of the Holy Ghost is bestowed only after proper and authorized baptism
+  verification:
+    tool: verify_quote
+    verdict: exact
+    link: https://pulpit.restorationcommons.org/talks/2010-10-bednar-receive-the-holy-ghost/#p5
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Paragraphs 3–10 inspected. Paragraph 5 continues with laying on hands by Melchizedek Priesthood holders.
+    Tier 4 teaching. Pulpit indexes date as 2010-10-01; month precision used because day of delivery not independently
+    checked.
+  found_by: capy-doctrine-scholar
+  claims:
+  - 1
+- id: ds-1835-mormon-angel-historian
+  type: primary
+  title: The Mormon Angel, Evangelical Magazine and Gospel Advocate, p. 192 (transcription)
+  author: D. S.
+  date: '1835-06-06'
+  locator: https://bookofmormon.online/history/1835-06-06-the-mormon-angel
+  accessed: '2026-10-01'
+  inspected: true
+  inspected_via: 'WebFetch-equivalent: functions.exec tools.exec_command Invoke-WebRequest -Uri https://bookofmormon.online/history/1835-06-06-the-mormon-angel;
+    full article HTML inspected'
+  quote: from the lips of one of the daring trio
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://bookofmormon.online/history/1835-06-06-the-mormon-angel
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: true
+  notes: Primary article text in a modern transcription, not an independently inspected newspaper scan. Date and
+    p192 independently corroborated by BYU bibliography. D.S. claims oral testimony from S——; the witness identity,
+    incident date and actual incident are not verified. Angel, not Holy Ghost. Quote is 10 words and exact after
+    HTML entity decoding.
+  found_by: capy-historian
+  claims:
+  - 1
+- id: cowdery-1835-slanderous-historian
+  type: primary
+  title: Slanderous, Latter Day Saints Messenger and Advocate 1, no. 10, pp. 148–149 (archive OCR)
+  author: null
+  date: 1835-07
+  locator: https://archive.org/details/latterdaysaintsm01unse/page/148/mode/2up
+  accessed: '2026-10-01'
+  inspected: true
+  inspected_via: 'WebFetch-equivalent: functions.exec tools.exec_command Invoke-WebRequest -Uri https://archive.org/download/latterdaysaintsm01unse/latterdaysaintsm01unse_djvu.txt;
+    Slanderous and surrounding article inspected'
+  quote: null
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://archive.org/download/latterdaysaintsm01unse/latterdaysaintsm01unse_djvu.txt
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: Archive original-volume OCR inspected directly. BYU bibliography confirms print pp148–149. Reprints New-York
+    Mercury June25, attributed to Rochester Rep.; denies event and asserts Joseph had not baptized or attended baptisms
+    near Painesville. Facts supported are what editor claimed, not automatic proof those claims are correct. Month-only
+    date because no day is supplied. Editor identity is not used; OCR signature is ambiguous.
+  found_by: capy-historian
+  claims:
+  - 1
+- id: chatelain-2018-press-historian
+  type: scholarly
+  title: 'The Imprint of the Press: A Cultural History of the Influence of Nineteenth-Century American Print on
+    Mormonism in Kirtland, Ohio, 1831–1837'
+  author: Jeremy John Chatelain
+  date: 2018-05
+  locator: https://collections.lib.utah.edu/dl_files/e5/e6/e5e6efb72641a8130fbce91a605af4278063bb18.pdf
+  accessed: '2026-10-01'
+  inspected: true
+  inspected_via: 'WebFetch-equivalent: tools.web__run open dissertation PDF; find Angel Caught; title and printed
+    pp191–194 inspected'
+  quote: null
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://collections.lib.utah.edu/dl_files/e5/e6/e5e6efb72641a8130fbce91a605af4278063bb18.pdf
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: Printed p192/PDF index201 cites Connecticut Observer January29 1835 p102 and reports 31 papers,21 cities,14
+    states. Printed p194/PDF index203 proposes nonextant Rochester issue December1834/earlyJanuary1835. These are
+    scholarly findings, not independently inspected January newspaper or proven original publication.
+  found_by: capy-historian
+  claims:
+  - 1
+- id: byu-newspaper-bibliography-historian
+  type: other
+  title: '19th-Century Publications about the Book of Mormon (1829–1844): Master List of Documents'
+  author: Harold B. Lee Library, Brigham Young University
+  date: null
+  locator: https://lib.byu.edu/collections/19th-century-publications-about-the-book-of-mormon/about/master-list-of-documents/
+  accessed: '2026-10-01'
+  inspected: true
+  inspected_via: 'WebFetch-equivalent: tools.web__run open bibliography; find The Mormon Angel'
+  quote: null
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://lib.byu.edu/collections/19th-century-publications-about-the-book-of-mormon/about/master-list-of-documents/
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: 'Bibliographic confirmation only: June6 1835 p192 and July1835 Slanderous pp148–149. Do not portray as
+    inspection of original June scan.'
+  found_by: capy-historian
+  claims:
+  - 1
+- id: fair-1835-slanderous-lead-historian
+  type: apologetic-lead
+  title: Messenger and Advocate/1/10 transcription
+  author: FAIR
+  date: null
+  locator: https://www.fairlatterdaysaints.org/answers/Messenger_and_Advocate/1/10
+  accessed: '2026-10-01'
+  inspected: true
+  inspected_via: 'WebFetch-equivalent: tools.web__run open FAIR transcription, then followed archive lead and independently
+    fetched archive OCR'
+  quote: null
+  verification:
+    tool: null
+    verdict: direct-read
+    link: https://www.fairlatterdaysaints.org/answers/Messenger_and_Advocate/1/10
+  grade_supports: fact
+  traced_to: cowdery-1835-slanderous-historian
+  used_on_screen: false
+  counter: false
+  notes: Lead only; terminal citation is original-volume archive entry above.
+  found_by: capy-historian
+  claims:
+  - 1
+- id: red-team-messenger-july1835-ocr-inspected
+  type: primary
+  title: Slanderous, Latter Day Saints' Messenger and Advocate 1 no. 10, pp. 148–149
+  author: C.
+  date: 1835-07
+  locator: https://archive.org/download/latterdaysaintsm01unse/latterdaysaintsm01unse_djvu.txt
+  accessed: '2026-10-01'
+  inspected: true
+  inspected_via: 'WebFetch-equivalent: exec_command Invoke-WebRequest; original-volume OCR, complete Slanderous
+    section and surrounding headings read'
+  quote: null
+  verification:
+    tool: exec_command Invoke-WebRequest
+    verdict: direct-read of original-volume OCR
+    link: https://archive.org/download/latterdaysaintsm01unse/latterdaysaintsm01unse_djvu.txt
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: true
+  counter: false
+  notes: Independently verifies what the contemporary denial and copied newspaper allegation say; does not establish
+    whether the incident happened. No direct quotation supplied because OCR is imperfect.
+  claims:
+  - 1
+  found_by: capy-red-team
+- id: red-team-chatelain-2018-inspected
+  type: scholarly
+  title: 'The Imprint of the Press: A Cultural History of the Influence of Nineteenth-Century American Print on
+    Mormonism in Kirtland, Ohio, 1831–1837'
+  author: Jeremy John Chatelain
+  date: '2018'
+  locator: https://collections.lib.utah.edu/dl_files/e5/e6/e5e6efb72641a8130fbce91a605af4278063bb18.pdf
+  accessed: '2026-10-01'
+  inspected: true
+  inspected_via: 'WebFetch-equivalent: web.run open/find; dissertation pp. 191–194 (PDF pp. 200–203) and title page
+    read'
+  quote: null
+  verification:
+    tool: web.run open/find
+    verdict: direct-read
+    link: https://collections.lib.utah.edu/dl_files/e5/e6/e5e6efb72641a8130fbce91a605af4278063bb18.pdf
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: Verifies what the dissertation reports about distribution, early printing, and contemporary response. Suggested
+    earliest origin remains the author's inference. A university dissertation, not a peer-reviewed journal article.
+  claims:
+  - 1
+  found_by: capy-red-team
+- id: red-team-byu-bibliography-inspected
+  type: other
+  title: Chronologically Ordered Master List of Bibliographic Information for Documents Included in 19th-Century
+    Publications about the Book of Mormon
+  author: Harold B. Lee Library
+  date: null
+  locator: https://lib.byu.edu/collections/19th-century-publications-about-the-book-of-mormon/about/master-list-of-documents/
+  accessed: '2026-10-01'
+  inspected: true
+  inspected_via: 'WebFetch-equivalent: web.run open/find; entries for The Mormon Angel and Slanderous read'
+  quote: null
+  verification:
+    tool: web.run open/find
+    verdict: direct-read
+    link: https://lib.byu.edu/collections/19th-century-publications-about-the-book-of-mormon/about/master-list-of-documents/
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: false
+  notes: Institutional bibliography verifies June 6, 1835 page 192 citation and July 1835 pages 148–149 response
+    citation; does not verify the incident.
+  claims:
+  - 1
+  found_by: capy-red-team
+- id: red-team-angel-transcription-lead
+  type: other
+  title: Angels — transcription of The Mormon Angel
+  author: Analyzing Mormonism
+  date: null
+  locator: https://www.analyzingmormonism.com/angels/
+  accessed: '2026-10-01'
+  inspected: true
+  inspected_via: 'WebFetch-equivalent: web.run open/find; reproduced article and closing provenance paragraph read'
+  quote: null
+  verification:
+    tool: web.run open/find
+    verdict: direct-read of secondary transcription only
+    link: https://www.analyzingmormonism.com/angels/
+  grade_supports: fact
+  traced_to: null
+  used_on_screen: false
+  counter: true
+  notes: Research lead for stronger critic context; must not be the terminal citation for original newspaper wording.
+    Primary link failed to load.
+  claims:
+  - 1
+  found_by: capy-red-team
+- id: red-team-fair-response-lead
+  type: apologetic-lead
+  title: Messenger and Advocate Volume 1 Number 10 transcription
+  author: FAIR
+  date: null
+  locator: https://www.fairlatterdaysaints.org/answers/Messenger_and_Advocate/1/10
+  accessed: '2026-10-01'
+  inspected: true
+  inspected_via: 'WebFetch-equivalent: web.run open; Slanderous heading and full neighboring response read'
+  quote: null
+  verification:
+    tool: web.run open
+    verdict: direct-read of lead transcription
+    link: https://www.fairlatterdaysaints.org/answers/Messenger_and_Advocate/1/10
+  grade_supports: fact
+  traced_to: red-team-messenger-july1835-ocr-inspected
+  used_on_screen: false
+  counter: false
+  notes: Traced to independently inspected original-volume OCR at Internet Archive. This lead must never carry an
+    on-screen quote.
+  claims:
+  - 1
+  found_by: capy-red-team

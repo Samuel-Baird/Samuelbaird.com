@@ -19,11 +19,11 @@ The relevant theological question for both traditions: what does it mean
 for prophetic authority when multiple leaders, speaking with apparent
 confidence and apparent doctrinal authority, offer theological
 justifications that a later prophetic body formally repudiates as
-baseless? Engage this directly as a real problem for models of prophetic
-inerrancy specifically, while distinguishing it from a broader claim
-against the possibility of prophetic authority as such — see
-`prophetic-fallibility-versus-prophetic-authority.md` for the fuller
-treatment of that distinction.
+baseless? Engage this directly: it cuts against models of prophetic
+*inerrancy* specifically, which is a different claim from prophetic
+authority as such, so the objection lands only if the two are
+equated — see `prophetic-fallibility-versus-prophetic-authority.md` for
+the fuller treatment of that distinction.
 
 ## Exmo/atheist response
 

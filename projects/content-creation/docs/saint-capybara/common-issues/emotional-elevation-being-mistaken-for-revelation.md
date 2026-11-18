@@ -24,16 +24,17 @@ gotcha unique to LDS testimony meetings.
 
 ## Exmo/atheist response
 
-Give the strongest form of the naturalistic explanation credit rather
-than dismissing it: known psychological mechanisms plausibly explain at
+State the naturalistic explanation at full strength rather than
+dismissing it: known psychological mechanisms plausibly explain at
 least some, likely much, of what gets reported as spiritual confirmation
 in testimony-meeting contexts (social conformity pressure, music's
 well-documented emotional effects, narrative and ritual repetition). The
-honest LDS response doesn't deny these mechanisms operate — it argues
+LDS response doesn't need to deny these mechanisms operate, because
 their operation doesn't by itself prove *nothing else* is also happening,
 which is a claim naturalistic explanation alone cannot establish either
 (showing a natural mechanism is present is not the same as showing it is
-the *sole* cause) — while conceding this makes the felt-witness method
-weaker as standalone evidence than many members are taught to treat it,
-consistent with `circular-testimony-epistemology.md`'s broader
-concession.
+the *sole* cause) — and the same fact that makes the felt-witness method
+weaker as standalone evidence than many members are taught to treat it
+is what places it in its proper role as corroborating rather than
+founding evidence, consistent with
+`circular-testimony-epistemology.md`'s framing.

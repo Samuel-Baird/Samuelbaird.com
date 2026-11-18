@@ -21,14 +21,14 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 03. `n04` (narration, ~8.7s)
 - **Original Video Transcript:** When Solomon had 700 wives and 300 concubines, the Bible's not saying, oh, that was good. When David had a few wives and some concubines, the Bible's not saying that was good.
 - **Pose:** source
-- **Narration:** First, look at Solomon's own downfall: the Bible blames it on his foreign wives turning his heart to other gods -- not on having more than one wife in the first place.
+- **Narration:** First, look at Solomon's own downfall: the Bible blames it on his foreign wives turning his heart to other gods: not on having more than one wife in the first place.
 - **Sources:** fair-plural-marriage-bible, ot-polygamy-texts
 - **Notes:** 
 
 ## 04. `n08` (narration, ~9.0s)
 - **Original Video Transcript:** When Solomon had 700 wives and 300 concubines, the Bible's not saying, oh, that was good. When David had a few wives and some concubines, the Bible's not saying that was good.
 - **Pose:** skeptical
-- **Narration:** In fact, in Second Samuel chapter twelve, verse eight, God himself says he gave David his master's wives. That's a pretty strange thing for God to say, if he actually condemns polygamy outright.
+- **Narration:** In fact, in Second Samuel chapter twelve, verse eight, God himself says he gave David his master's wives. That's a pretty strange thing for God to do if he actually condemns polygamy.
 - **Sources:** copan-moral-monster
 - **Notes:** 
 
@@ -55,21 +55,21 @@ Edit this file with `DROP` / `SPLIT` / `MOVE AFTER Bxx` directives or plain-lang
 ## 08. `n07` (narration, ~9.8s)
 - **Original Video Transcript:** No, right at the beginning in Genesis 2.24 we read, for this reason a man shall leave his father and mother, be united to his wife, and the two shall become one flesh. Not the 10 become one flesh. The two become one flesh.
 - **Pose:** source
-- **Narration:** Abraham and Jacob both practiced it openly, and the text never once records God condemning the practice itself. Solomon's downfall wasn't about having many wives -- it was specifically his wives turning his heart toward idolatry.
+- **Narration:** Abraham and Jacob both practiced it openly, and the text never once records God condemning the practice itself. Solomon's downfall wasn't about having many wives, it was specifically his wives turning his heart toward idolatry.
 - **Sources:** fair-plural-marriage-bible, ot-polygamy-texts
 - **Notes:** 
 
 ## 09. `n10` (narration, ~9.5s)
 - **Original Video Transcript:** No, right at the beginning in Genesis 2.24 we read, for this reason a man shall leave his father and mother, be united to his wife, and the two shall become one flesh. Not the 10 become one flesh. The two become one flesh.
 - **Pose:** source
-- **Narration:** So the accurate claim isn't that the Bible endorses polygamy. It's that the Bible never treats plural marriage itself as inherently sinful. God doesn't condemn the practice -- in some cases, he even regulates it and commands it.
+- **Narration:** So the accurate claim isn't that the Bible endorses polygamy. It's that the Bible never treats plural marriage itself as inherently sinful. God doesn't condemn the practice, and in some cases, he even regulates it and commands it.
 - **Sources:** fair-plural-marriage-bible, copan-moral-monster
 - **Notes:** 
 
 ## 10. `n11` (narration, ~22.4s)
 - **Original Video Transcript:** No, right at the beginning in Genesis 2.24 we read, for this reason a man shall leave his father and mother, be united to his wife, and the two shall become one flesh. Not the 10 become one flesh. The two become one flesh.
 - **Pose:** source
-- **Narration:** And here's the real irony: Latter-day Saint scripture actually sets a default, in plain language. The Book of Mormon's Jacob chapter two states directly that a man is to have only one wife, with any exception coming only by God's own direction. We have a scripture that flatly states the standard is monogamy -- while critics like this one have to work against Genesis and Deuteronomy's own text, to reach a conclusion that is opposite of what the texts actually say.
+- **Narration:** And here's the real irony: Latter-day Saint scripture actually sets a default, in plain language. The Book of Mormon's Jacob chapter two states directly that a man is to have only one wife, with any exception coming only by God's own direction. We have a scripture that flatly states the standard is monogamy, while critics like this Cliffe have to work against the texts of the Bible to reach the conclusion that polygamy is sinful.
 - **Sources:** jacob-2-27-30
 - **Notes:** 
 

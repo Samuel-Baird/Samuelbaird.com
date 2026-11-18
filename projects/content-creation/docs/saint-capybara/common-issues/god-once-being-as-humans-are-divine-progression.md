@@ -43,15 +43,15 @@ for the theosis sourcing in depth.
 
 ## Exmo/atheist response
 
-Concede plainly: God's own past progression (as opposed to human
-exaltation) is one of the least-emphasized and least-taught elements of
+The critic's argument depends on treating God's own past progression
+(as opposed to human exaltation) as load-bearing current doctrine, and
+it isn't: it is one of the least-emphasized and least-taught elements of
 current LDS doctrine, is not canonized scripture, and rests heavily on a
 single sermon (King Follett, 1844) whose textual reconstruction itself is
 disputed (multiple partial contemporaneous notes, no single official
-text) — this is a `disputed`/`reconstructed`-fidelity source, not a
-`verbatim` one, and should be graded that way on screen. That's a fair
-historical point and shouldn't be minimized. The stronger response is
-distinguishing *doctrinal status* (highly speculative, not required for
-salvation, rarely taught today) from *historical fact* (Joseph Smith did
-teach a version of this) — conceding the fact, disputing that it
-functions today the way critics imply.
+text) — a `disputed`/`reconstructed`-fidelity source, not a `verbatim`
+one, to be graded that way on screen. None of that should be minimized,
+because it is the answer. The response distinguishes *doctrinal status*
+(highly speculative, not required for salvation, rarely taught today)
+from *historical fact* (Joseph Smith did teach a version of this) — the
+fact stands, and it does not function today the way critics imply.

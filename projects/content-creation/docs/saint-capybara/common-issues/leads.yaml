@@ -1,0 +1,59 @@
+# Hand-maintained map of common-issues topic slug -> apologetic-lead locators
+# to mine for that topic's proposals/<slug>.md (2026-09-13, see README.md and
+# apologetics-playbook.md "Source hierarchy").
+#
+# fair_gsa: a Gospel Scholar Archive DIRECTORY hint under Read/Articles/FAIR/FAIR/...
+#   (or Read/Misc/Apologetics/...) to pass as search_concordance's path_contains --
+#   a scope to search within, NOT a pre-verified page locator. The miner still has
+#   to search, open, and cite_page the actual page itself before treating anything
+#   found there as inspected.
+# fair_web: a live fairlatterdaysaints.org URL, only when no GSA mirror exists.
+# knowhy / evidence: scripturecentral.org (KnoWhy or Evidence Central), web-only.
+# found_by: "hand" (this file's author) or "search_concordance"/"WebSearch" if a
+#   capy-lead-miner run appended an entry it found itself -- append, don't
+#   overwrite the hand-curated ones above it.
+#
+# Batch order (docs/saint-capybara/common-issues/README.md / the seeding plan):
+# batch 1 below; later batches added here as they're worked.
+
+joseph-smith-s-polygamy:
+  fair_gsa:
+    - "Read/Articles/FAIR/FAIR/LDS History/Joseph Smith/Polygamy"
+  fair_web: []
+  knowhy: []
+  evidence: []
+  found_by: hand
+
+teenage-plural-wives:
+  fair_web:
+    - "https://www.fairlatterdaysaints.org/helen-mar-kimballs-polygamy-story"
+    - "https://www.fairlatterdaysaints.org/answers/Joseph_Smith/Polygamy/Marriages_to_young_women"
+  fair_gsa: []
+  knowhy: []
+  evidence: []
+  found_by: hand
+
+seer-stone-hat-translation-method:
+  knowhy:
+    - "https://scripturecentral.org/knowhy/why-was-a-stone-used-as-an-aid-in-translating-the-book-of-mormon"
+  fair_gsa:
+    - "Read/Articles/FAIR/FAIR/Scripture/Book of Mormon"
+  fair_web: []
+  evidence: []
+  found_by: hand
+
+book-of-abraham-translation:
+  fair_gsa:
+    - "Read/Articles/FAIR/FAIR/Scripture"
+  fair_web: []
+  knowhy: []
+  evidence: []
+  found_by: hand
+
+egyptian-papyri-and-facsimiles:
+  fair_gsa:
+    - "Read/Articles/FAIR/FAIR/Scripture"
+  fair_web: []
+  knowhy: []
+  evidence: []
+  found_by: hand

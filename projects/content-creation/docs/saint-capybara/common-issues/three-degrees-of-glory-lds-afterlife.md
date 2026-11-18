@@ -36,8 +36,10 @@ resurrection body.
 
 Less commonly attacked as false doctrine by this audience and more often
 cited as evidence of theological improvisation (a system worked out fast,
-in 1832, from a vision two men reported having simultaneously) — that's
-a fair historical framing to concede (this doctrine, like the Nicene
-Trinity centuries earlier, was formulated at a specific, dateable moment
-in response to a real theological question, not handed down complete)
-without treating rapid formulation as itself disqualifying.
+in 1832, from a vision two men reported having simultaneously) — and a
+dateable formulation cuts no differently here than anywhere else in
+Christian history: this doctrine, like the Nicene Trinity centuries
+earlier, was formulated at a specific, dateable moment in response to a
+real theological question, not handed down complete, so rapid
+formulation can't be treated as itself disqualifying without
+disqualifying the Trinity on the same ground.

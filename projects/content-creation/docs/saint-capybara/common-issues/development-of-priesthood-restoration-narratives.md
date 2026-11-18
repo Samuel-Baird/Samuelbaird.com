@@ -5,10 +5,11 @@
 The dated, detailed narrative most members know (John the Baptist
 appearing May 15, 1829; Peter, James, and John appearing shortly after)
 comes together as a fixed, official account over time rather than
-appearing all at once in 1829-30 sources. This is a fact to state
-plainly, not to minimize — see below — while distinguishing "the
-narrative was clarified/completed over time" from "the events didn't
-happen," which is a separate, unproven inference.
+appearing all at once in 1829-30 sources. The inference critics draw
+from this, that "the events didn't happen," is a separate, unproven
+claim from "the narrative was clarified/completed over time," so state
+the documentary fact once, precisely, without minimizing it, and spend
+the beat on that distinction — see below.
 
 ## Catholic and Protestant response
 
@@ -45,11 +46,11 @@ deserves the most direct, source-forward treatment — don't soften it:
   — useful for showing this isn't an unaddressed problem, just a
   genuinely hard one.
 
-State the honest position: the earliest contemporary documentation for
-the Aaronic and Melchizedek restoration events is thinner and later than
-many members assume, and responsible LDS scholarship (BYU Studies,
-Interpreter) has acknowledged this rather than disputing it. The apostasy
-line is the same as elsewhere: that's a real difficulty, and it is not by
-itself evidence the events didn't happen — absence of an early written
+State the position with the rebuttal built in: the earliest contemporary
+documentation for the Aaronic and Melchizedek restoration events is
+thinner and later than many members assume, which responsible LDS
+scholarship (BYU Studies, Interpreter) has acknowledged rather than
+disputed, and which is not by itself evidence the events didn't happen.
+The apostasy line is the same as elsewhere: absence of an early written
 record is a different claim than presence of positive counter-evidence,
 and this case has the former, not the latter.

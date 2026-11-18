@@ -1,0 +1,128 @@
+version: 1
+slug: smith-holy-ghost-sheet-claim
+title: Joseph Smith in a Sheet? Check the Evidence
+caption: A ghost story at a baptism? What does the nineteenth-century newspaper actually give us?
+hook: Joseph Smith in a sheet? Check the evidence.
+summary: 'A response to the claim that a nineteenth-century newspaper anecdote supports a fraud interpretation of
+  Joseph Smith: the alleged witness, the reprints, the contemporary denial, and the early ordinance record.'
+format:
+  width: 1080
+  height: 1920
+  fps: 30
+  min_seconds: 60
+  max_seconds: 180
+voice:
+  engine: chatterbox
+  ref: assets/saint-capybara/voices/host_andrew_kennedy.wav
+  speed: 1.25
+  exaggeration: 0.5
+  cfg_weight: 0.5
+sensitive: false
+music: null
+tags:
+- ldshistory
+exemplars:
+- trent-horn-distill
+- mcclellan-delivery
+- peterson-breaking-the-rules
+beats:
+- id: c01
+  kind: clip
+  start: 9.2
+  end: 21.3
+  speed: 1
+  speaker: Source video
+  pose: skeptical
+- id: n01
+  kind: narration
+  pose: source
+  stage: freeze
+  function: evidence
+  text: This newspaper story does not establish that Joseph Smith staged a baptismal fraud. The argument depends
+    on how reliable the account is, and that requires more than knowing it appeared in print.
+  sources:
+  - ds-1835-mormon-angel-historian
+  - critic-reel
+  opinion: false
+- id: q01
+  kind: card
+  pose: reading
+  function: evidence
+  text: The June eighteen thirty-five article describes an angel, rather than the Holy Ghost. Its writer signs D.
+    S. and says he heard the story from one of the three supposed captors. The printed name is only S, followed
+    by a dash.
+  card:
+    quote: from the lips of one of the daring trio
+    attribution: D. S., The Mormon Angel, June 6, 1835, p. 192 (transcription)
+    source: ds-1835-mormon-angel-historian
+  sources:
+  - ds-1835-mormon-angel-historian
+  opinion: false
+- id: n02
+  kind: narration
+  pose: thoughtful
+  stage: blank
+  function: explain
+  text: The claimed eyewitness reaches us through someone else's report. The article gives no incident date or full
+    name for its informant, and it supplies no separate accounts from the other two alleged captors. That limits
+    how much of the story we can independently check.
+  sources:
+  - ds-1835-mormon-angel-historian
+  opinion: false
+- id: n03
+  kind: narration
+  pose: teaching
+  stage: blank
+  function: explain
+  text: Counting the reprints tells us how far the accusation traveled. A university dissertation traces versions
+    through thirty-one newspapers. That count does not identify thirty-one independent witnesses. Multiple copies
+    of this account cannot establish that its underlying testimony was accurate.
+  sources:
+  - chatelain-2018-press-historian
+  opinion: false
+- id: n04
+  kind: narration
+  pose: concerned
+  stage: blank
+  function: evidence
+  text: The contemporary LDS response also matters. That July, the Messenger and Advocate rejected the story and
+    asserted Joseph had never attended a baptism near the alleged location. The denial came from his defenders,
+    so it does not independently settle the event. It does establish that the allegation was challenged at the time.
+  sources:
+  - cowdery-1835-slanderous-historian
+  - red-team-messenger-july1835-ocr-inspected
+  opinion: false
+- id: n05
+  kind: narration
+  pose: reading
+  stage: blank
+  function: explain
+  text: 'The early LDS ordinance is documented in an eighteen thirty-one newspaper printing: confirmation by laying
+    on hands after baptism. That is evidence of prescribed practice; alleged unauthorized misconduct needs its own
+    evidence.'
+  sources:
+  - articles-covenants-1831-painesville-confirmation
+  opinion: false
+- id: n06
+  kind: narration
+  pose: pointing
+  stage: blank
+  function: explain
+  text: 'As a reason to conclude Joseph was running a con, this story has a weak link: we cannot independently check
+    its informant''s account. Its publication and repetition are documented. Its alleged exposure of Joseph is not
+    independently established by these sources. That makes withholding the fraud conclusion better supported than
+    building it on this anecdote.'
+  sources:
+  - ds-1835-mormon-angel-historian
+  - cowdery-1835-slanderous-historian
+  - chatelain-2018-press-historian
+  opinion: true
+- id: n99
+  kind: narration
+  pose: encouraging
+  function: closing
+  stage: blank
+  text: Thirty-one printings cannot supply the missing independent corroboration. God bless.
+  sources:
+  - chatelain-2018-press-historian
+  opinion: true
