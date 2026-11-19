@@ -46,7 +46,7 @@ const sha = value => createHash('sha256').update(value).digest('hex');
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[c]));
 const headers = {'Cache-Control':'private, no-store', 'X-Robots-Tag':'noindex, nofollow',
   'Referrer-Policy':'same-origin', 'X-Content-Type-Options':'nosniff',
-  'Content-Security-Policy':"default-src 'none'; style-src 'unsafe-inline'; script-src 'self'; connect-src 'self'; form-action 'self'; frame-src https://drive.google.com; frame-ancestors 'none'; base-uri 'none'"};
+  'Content-Security-Policy':"default-src 'none'; style-src 'unsafe-inline'; img-src data:; script-src 'self'; connect-src 'self'; form-action 'self'; frame-src https://drive.google.com; frame-ancestors 'none'; base-uri 'none'"};
 const response = (text, status=200, extra={}) => new Response(text, {status, headers:{...headers,...extra}});
 const redirect = path => response(null,303,{Location:path});
 const json = value => response(JSON.stringify(value),200,{'Content-Type':'application/json'});
