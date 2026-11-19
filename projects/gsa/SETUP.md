@@ -50,3 +50,10 @@ A fresh official Debian transfer ran through `ipsec0`, McAfee was manually switc
 The administrator password prompt timed out, so no TCP/UDP packet capture was collected. IPv6 became available on Wi-Fi while the VPN was off. A disconnected socket inspection showed only qBittorrent's localhost Web UI listener. These observations do **not** certify leak protection or Safe Reconnect behavior during an involuntary failure.
 
 The VPN was restored, the route and qBittorrent binding were verified as `ipsec0`, and the test torrent was stopped. The original completed ISO was preserved and its SHA-256 reverified; the new partial download was retained separately. Private samples and the result are in `network-checks/manual-disconnect/` beneath the worker home. VPN-down startup, reboot, network-change and packet-capture validation remain pending.
+
+## Session 3 analysis (2026-11-19)
+
+- **The counter rise during the 2026-11-18 disconnect** looks like delayed accounting: qBittorrent's `downloaded` counter updates in bursts, it was flat for the two samples before the route moved to Wi-Fi while the speed still read 0.5–1 MB/s, and it caught up by about 11.6 MB in the first two Wi-Fi samples, then stopped. This is an interpretation, not a passed test; it needs a packet capture.
+- **IPv6 is now live on Wi-Fi while McAfee is connected** (global addresses and an IPv6 default route on `en1`; `ipsec0` is IPv4 only). Capture IPv6 on `en1` in the connected scenario as well as the disconnected one; don't record IPv6 as "unavailable" on this network.
+- Still pending: the packet-captured disconnect/reconnect, VPN-down startup, reboot and network-change scenarios. McAfee has no `scutil --nc` service, so the VPN is toggled by hand in the McAfee app during each test.
+- `rollout.py` now fails closed on a null `expires_at` instead of crashing; `tests/test_rollout.py` covers the guard gates, stop-never-resume, and the launchd approval gate.
