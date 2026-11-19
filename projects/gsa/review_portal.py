@@ -43,7 +43,8 @@ def run(args):
         if args.command == 'queue':
             request['packet'] = packet
         req = urllib.request.Request('https://samuelbaird.com/gsa/operator', data=json.dumps(request).encode(),
-                                     headers={'Authorization':'Bearer ' + key, 'Content-Type':'application/json'})
+                                     headers={'Authorization':'Bearer ' + key, 'Content-Type':'application/json',
+                                              'User-Agent':'GSA-Review-Worker/1.0'})
         with urllib.request.urlopen(req, timeout=45) as response:
             result = json.load(response)
         if args.command == 'queue':
