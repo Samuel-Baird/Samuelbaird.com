@@ -199,4 +199,7 @@ test('same-site form posts are accepted even when the browser sends Origin: null
   assert.equal((await post({Origin: 'https://other.example', 'Sec-Fetch-Site': 'same-origin'})).status, 403);
   const page = await gsaRoute(new Request(url), env, session('b13llama@gmail.com'));
   assert.equal(page.headers.get('Referrer-Policy'), 'same-origin');
+  // The "Changes saved" check is an inline SVG data URL; default-src 'none' alone blocks it.
+  assert.match(page.headers.get('Content-Security-Policy'), /img-src data:/);
+  assert.match(await page.text(), /url\("data:image\/svg\+xml/);
 });
