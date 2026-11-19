@@ -27,7 +27,7 @@ test('case is kept: lower, Title, UPPER', () => {
 });
 
 test('the wiki overrides win over CMUdict', () => {
-  assert.equal(engine.word('Deseret').deseret, '𐐔𐐯𐑅𐐨𐑉𐐯𐐻');
+  assert.equal(engine.word('Deseret').deseret, '𐐔𐐯𐑆𐐲𐑉𐐯𐐻');
   assert.equal(engine.word('and').deseret, '𐐰𐑌𐐼');
   assert.equal(engine.word('not').deseret, '𐑌𐐱𐐻');
 });
@@ -104,13 +104,13 @@ test('markdown: frontmatter, code, link targets and footnotes are kept', () => {
   assert.match(r.deseret, /`code here`/);
   assert.match(r.deseret, /const letters = 38;/);
   assert.match(r.deseret, /\[\^1\]/);
-  assert.match(r.deseret, /# 𐐜𐐲 𐐰𐑊𐑁𐐲𐐺𐐯𐐻/);
-  assert.match(r.deseret, /\[𐑄𐐲 𐑁𐐪𐑌𐐻𐑅\]/);
+  assert.match(r.deseret, /# 𐐜 𐐰𐑊𐑁𐐲𐐺𐐯𐐻/);
+  assert.match(r.deseret, /\[𐑄 𐑁𐐪𐑌𐐻𐑅\]/);
 });
 
 test('html: only text nodes change', () => {
   const r = engine.text('<p class="lead">The <a href="/fonts/">fonts</a> &amp; <code>code</code></p>', { format: 'html' });
-  assert.equal(r.deseret, '<p class="lead">𐐜𐐲 <a href="/fonts/">𐑁𐐪𐑌𐐻𐑅</a> &amp; <code>code</code></p>');
+  assert.equal(r.deseret, '<p class="lead">𐐜 <a href="/fonts/">𐑁𐐪𐑌𐐻𐑅</a> &amp; <code>code</code></p>');
 });
 
 test('explain gives letters and alternatives', () => {
@@ -123,7 +123,7 @@ test('explain gives letters and alternatives', () => {
 });
 
 test('Deseret back to Latin, with homophones and respellings reported', () => {
-  const r = engine.fromDeseret('𐐜𐐲 𐐔𐐯𐑅𐐨𐑉𐐯𐐻 𐐈𐑊𐑁𐐲𐐺𐐯𐐻 𐐶𐐪𐑆 𐐺𐐴 𐑄𐐲 𐐡𐐨𐐾𐐲𐑌𐐻𐑅. 𐑆𐐿𐑅𐑅!');
+  const r = engine.fromDeseret('𐐜 𐐔𐐯𐑆𐐲𐑉𐐯𐐻 𐐈𐑊𐑁𐐲𐐺𐐯𐐻 𐐶𐐪𐑆 𐐺𐐴 𐑄 𐐡𐐨𐐾𐐲𐑌𐐻𐑅. 𐑆𐐿𐑅𐑅!');
   assert.equal(r.latin.split('.')[0], 'The Deseret Alphabet was by the Regents');
   assert.ok(r.ambiguous.some((a) => a.chose === 'by' && a.also.includes('buy')));
   assert.equal(r.respelled[0].respelled, 'zkss');
@@ -142,12 +142,34 @@ test('historical1868 matches the printed examples the wiki cites', () => {
   assert.equal(h('While'), '𐐐𐐶𐐴𐑊');
   assert.equal(h('of the'), '𐐱𐑂 𐑄');
   assert.equal(h('who'), engine.text('who').deseret, 'wh- words that start with an h sound are left alone');
-  assert.equal(h('Holiness to the Lord').length < engine.text('Holiness to the Lord').deseret.length, true);
-  assert.equal(engine.text('the').deseret, '𐑄𐐲', 'modern spelling is unchanged without the option');
+  assert.notEqual(h('Holiness'), engine.text('Holiness').deseret, '-ness is 𐐮𐑅 only in the 1868 forms');
+  assert.equal(h('Deseret'), '𐐔𐐯𐑅𐐨𐑉𐐯𐐻', 'DeSEEret, as in the primers');
+  assert.equal(engine.text('of').deseret, '𐐲𐑂', 'modern spelling is unchanged without the option');
+});
+
+test('"the" is 𐑄 and Deseret is DeZUret by default', () => {
+  assert.equal(engine.text('the The THE').deseret, '𐑄 𐐜 𐐜');
+  assert.equal(engine.text('Deseret').deseret, '𐐔𐐯𐑆𐐲𐑉𐐯𐐻');
+  assert.equal(engine.text('Encyclopædia').deseret, '𐐇𐑌𐑅𐐴𐐿𐑊𐐲𐐹𐐨𐐼𐐨𐐲');
+  // every spelling of Deseret, and the two-letter "the", still read back
+  assert.equal(engine.fromDeseret('𐐔𐐯𐑅𐐨𐑉𐐯𐐻 𐐔𐐯𐑅𐐲𐑉𐐯𐐻 𐐔𐐯𐑆𐐲𐑉𐐯𐐻 𐑄𐐲 𐑄').latin, 'Deseret Deseret Deseret the the');
 });
 
 test('1868 forms and hand corrections read back to Latin', () => {
   assert.equal(engine.fromDeseret('𐐐𐐬𐑊𐐨𐑌𐐮𐑅 𐐻𐐭 𐑄 𐐢𐐫𐑉𐐼').latin, 'Holiness to the Lord');
   assert.equal(engine.fromDeseret('𐐸𐐶𐐴𐑊 𐐱𐑂').latin, 'while of');
   assert.equal(engine.fromDeseret(engine.text('Mormon').deseret).latin, 'Mormon');
+});
+
+test('syllabic values: a word that sounds like a letter name is that one letter', () => {
+  const t = (s) => engine.text(s).deseret;
+  assert.equal(t('be bee tea tee pea gay thee ye gee woo ha'), '𐐺 𐐺 𐐻 𐐻 𐐹 𐑀 𐑄 𐐷 𐐾 𐐶 𐐸');
+  assert.equal(t('Be BE'), '𐐒 𐐒');
+  assert.equal(t('bees beat teas'), '𐐺𐐨𐑆 𐐺𐐨𐐻 𐐻𐐨𐑆', 'never inside a longer word');
+  assert.equal(engine.explain('bee').deseret, '𐐺');
+  assert.ok(engine.explain('bee').syllabic);
+  const back = engine.fromDeseret('𐐒 𐑀 𐐺 𐐻 𐑄');
+  assert.equal(back.latin, 'Be gay be tea the');
+  assert.ok(back.ambiguous.some((a) => a.chose === 'be' && a.also.includes('bee')));
+  assert.ok(back.ambiguous.some((a) => a.chose === 'the' && a.also.includes('thee')));
 });

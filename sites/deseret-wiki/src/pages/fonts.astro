@@ -3,6 +3,8 @@ import Base from '../layouts/Base.astro';
 import Title from '../components/Title.astro';
 import fonts from '../data/fonts.json';
 const sample = Array.from({ length: 80 }, (_, i) => String.fromCodePoint(0x10400 + i)).join('');
+// Keyboard (legacy-encoded) fonts draw Deseret on ordinary keys, so their sample is typed keys.
+const keySample = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz';
 const faces = fonts.map((f) => `@font-face{font-family:"dw-${f.id}";src:url("${f.file}");font-display:swap}`).join('');
 const kb = (b) => (b >= 1048576 ? (b / 1048576).toFixed(1) + ' MB' : Math.round(b / 1024) + ' KB');
 ---
@@ -12,7 +14,8 @@ const kb = (b) => (b >= 1048576 ? (b / 1048576).toFixed(1) + ' MB' : Math.round(
     <p class="kicker">Typefaces</p>
     <Title text="Fonts" />
     <p class="lede-text">Download and install a font to see the Deseret alphabet in Word, Excel or anywhere else. {fonts.length} fonts.</p>
-    <p class="small">Samples show all 80 letters (U+10400–1044F); a font may lack some.</p>
+    <p class="small">Samples show all 80 letters (U+10400–1044F); a font may lack some. Keyboard fonts show the keys A–Z, a–z, which they draw as Deseret.</p>
+    <p class="small">To read this site in a different Deseret font, press <b>Use</b> beside it. Fonts that lack any of the 80 letters can't be chosen. Your choice is saved in this browser only.</p>
   </header>
   <style set:html={faces}></style>
   <table class="fonts" data-no-dsrt>
@@ -22,8 +25,9 @@ const kb = (b) => (b >= 1048576 ? (b / 1048576).toFixed(1) + ' MB' : Math.round(
         <>
           <tr>
             <td>{f.name}</td>
-            <td class="sample" style={`font-family:"dw-${f.id}", serif`} lang="und">{sample}</td>
+            <td class="sample" style={`font-family:"dw-${f.id}", serif`} lang="und">{f.encoding === 'keyboard' ? keySample : sample}</td>
             <td class="btns">
+              {f.complete && <button type="button" class="use" aria-pressed="false" aria-label={`Read this site in ${f.name}`} data-use={f.id} data-file={f.file.endsWith('.zip') ? '' : f.file}>Use</button>}
               <button type="button" class="info" aria-label={`About ${f.name}`} aria-expanded="false" data-info={f.id}>i</button>
               <a class="dl" href={f.file} download aria-label={`Download ${f.name}`}>⤓</a>
             </td>
@@ -43,6 +47,31 @@ const kb = (b) => (b >= 1048576 ? (b / 1048576).toFixed(1) + ' MB' : Math.round(
   </table>
   </div>
   <script>
+    // Read the site in a chosen Deseret font: Base.astro loads it as 'DW Reader Deseret' on every page.
+    // Noto Sans Deseret (the default, data-file="") clears the choice.
+    const html = document.documentElement;
+    const mark = () => document.querySelectorAll('button.use').forEach((b) => {
+      const on = b.dataset.use === (html.dataset.dsrtFont || 'noto-sans');
+      b.setAttribute('aria-pressed', String(on));
+      b.textContent = on ? 'In use' : 'Use';
+    });
+    document.querySelectorAll('button.use').forEach((b) => b.addEventListener('click', () => {
+      const file = b.dataset.file;
+      document.getElementById('dsrt-font-face')?.remove();
+      try {
+        if (file) localStorage.setItem('dsrt-font', JSON.stringify({ id: b.dataset.use, file }));
+        else localStorage.removeItem('dsrt-font');
+      } catch {}
+      if (file) {
+        const st = document.createElement('style');
+        st.id = 'dsrt-font-face';
+        st.textContent = `@font-face{font-family:'DW Reader Deseret';src:url('${file}');unicode-range:U+10400-1044F;font-display:swap}`;
+        document.head.append(st);
+        html.dataset.dsrtFont = b.dataset.use;
+      } else delete html.dataset.dsrtFont;
+      mark();
+    }));
+    mark();
     document.querySelectorAll('button.info').forEach((b) => b.addEventListener('click', () => {
       const row = document.getElementById('info-' + b.dataset.info);
       row.hidden = !row.hidden;
@@ -55,7 +84,10 @@ const kb = (b) => (b >= 1048576 ? (b / 1048576).toFixed(1) + ' MB' : Math.round(
     .fonts td { border-bottom: 1px solid var(--rule); padding: .8rem .6rem; vertical-align: middle; }
     .fonts td:first-child { font: 1.08rem/1.3 var(--f-display); color: var(--heading); width: 13rem; }
     .fonts td.sample { font-size: 1.4rem; line-height: 1.35; word-break: break-all; color: var(--ink); }
-    .fonts td.btns { white-space: nowrap; text-align: right; width: 5.5rem; }
+    .fonts td.btns { white-space: nowrap; text-align: right; width: 9rem; }
+    .fonts .use { height: 2rem; padding: 0 .6rem; border: 1px solid var(--heading); border-radius: 1px; background: transparent; color: var(--heading); cursor: pointer; font: 600 .62rem/1 var(--f-formal); letter-spacing: .12em; text-transform: uppercase; vertical-align: middle; }
+    .fonts .use:hover { background: var(--paper-2); }
+    .fonts .use[aria-pressed='true'] { background: var(--accent); border-color: var(--accent); color: var(--paper); }
     .fonts .info, .fonts .dl { display: inline-grid; place-items: center; width: 2rem; height: 2rem; border: 1px solid var(--heading); border-radius: 1px; background: transparent; color: var(--heading); cursor: pointer; font: italic 1rem/1 var(--f-display); text-decoration: none; padding: 0; margin-left: .25rem; }
     .fonts .dl { background: var(--heading); color: var(--paper); font-style: normal; }
     .fonts .info:hover { background: var(--paper-2); }

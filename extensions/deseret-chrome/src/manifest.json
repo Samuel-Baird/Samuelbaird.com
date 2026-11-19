@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Deseret Alphabet: Read Any Page",
   "short_name": "Deseret",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Read any web page or YouTube captions in the Deseret Alphabet, or turn Deseret back into Latin letters.",
   "homepage_url": "https://deseret.wiki/",
   "icons": { "16": "icons/16.png", "32": "icons/32.png", "48": "icons/48.png", "128": "icons/128.png" },

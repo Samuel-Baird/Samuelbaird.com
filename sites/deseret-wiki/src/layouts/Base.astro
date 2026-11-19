@@ -59,6 +59,16 @@ const mastTitle = 'The Deseret Wiki';
       var d = document.documentElement, s = null;
       try { s = localStorage.getItem('script'); } catch (e) {}
       if (s === 'dsrt') d.dataset.scriptPending = 'dsrt';
+      // The Deseret font the reader chose on /fonts/, if any: {"id", "file"}.
+      var f = null;
+      try { f = JSON.parse(localStorage.getItem('dsrt-font') || 'null'); } catch (e) {}
+      if (f && typeof f.file === 'string' && /^\/fonts\/files\/[\w.-]+$/.test(f.file)) {
+        var st = document.createElement('style');
+        st.id = 'dsrt-font-face';
+        st.textContent = "@font-face{font-family:'DW Reader Deseret';src:url('" + f.file + "');unicode-range:U+10400-1044F;font-display:swap}";
+        document.head.appendChild(st);
+        d.dataset.dsrtFont = f.id;
+      }
     })();
   </script>
 </head>
@@ -87,8 +97,8 @@ const mastTitle = 'The Deseret Wiki';
           <input id="q" type="search" placeholder="Search the wiki" autocomplete="off" spellcheck="false" />
           <div class="search-results" id="search-results" hidden></div>
         </div>
-        <button class="iconbtn script-toggle" type="button" aria-pressed="false" data-tip="Read in the Deseret alphabet" aria-label="Show text in the Deseret alphabet">
-          <span class="st-dsrt dsrt" aria-hidden="true">𐐔</span><span class="st-latn" aria-hidden="true">A</span>
+        <button class="iconbtn script-toggle" type="button" data-no-dsrt aria-pressed="false" data-tip="Read in the Deseret alphabet" aria-label="Show text in the Deseret alphabet">
+          <span class="st-dsrt dsrt" aria-hidden="true">𐐔</span><span class="st-latn" aria-hidden="true">L</span>
         </button>
       </div>
     </div>

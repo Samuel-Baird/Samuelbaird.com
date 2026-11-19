@@ -1,16 +1,33 @@
 """Speak each Deseret letter with Kokoro: the letter's name, then its key word.
 
-    python scripts/letter-audio.py            # writes public/audio/letters/00.mp3 ... 37.mp3
+    python scripts/letter-audio.py            # writes public/audio/letters/00.mp3 ... 39.mp3
 
 Vowel letters are named by their sound, consonants by sound + vowel ("pee", "ef"), as in the
 1868 primers. Names are given to Kokoro as phonemes (misaki's [text](/phonemes/) syntax) so the
 sound is exact rather than guessed from spelling; the key word is read normally.
-Needs: pip install kokoro soundfile, and ffmpeg on PATH. Output is committed; re-run only to change it.
+Setup (Python 3.12, ffmpeg and espeak-ng): see scripts/requirements-audio.txt. Output is committed;
+re-run only to change it, e.g. `python scripts/letter-audio.py 38 39` for just Oi and Ew.
 """
 import os, subprocess, sys, tempfile
 import numpy as np
 import soundfile as sf
-from kokoro import KPipeline
+
+
+def use_system_espeak():
+    # The espeak-ng bundled with espeakng-loader points at its build machine's data folder on macOS
+    # and fails; use Homebrew's (brew install espeak-ng) when it is there.
+    for lib, data in (('/opt/homebrew/lib/libespeak-ng.dylib', '/opt/homebrew/share/espeak-ng-data'),
+                      ('/usr/local/lib/libespeak-ng.dylib', '/usr/local/share/espeak-ng-data')):
+        if os.path.exists(lib) and os.path.isdir(data):
+            from phonemizer.backend.espeak.wrapper import EspeakWrapper
+            os.environ.setdefault('ESPEAK_DATA_PATH', data)
+            EspeakWrapper.set_library(lib)
+            EspeakWrapper.set_data_path(data)
+            return
+
+
+use_system_espeak()
+from kokoro import KPipeline  # noqa: E402  (after the espeak fix)
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'public', 'audio', 'letters')
@@ -18,7 +35,7 @@ VOICE = 'af_heart'
 SR = 24000
 
 # (name, phonemes for the name, key word) in Unicode order, U+10400 onward. Keep in step with
-# LETTERS in src/pages/index.astro. Phonemes use misaki's US set (A = eɪ, I = aɪ, O = oʊ, W = aʊ).
+# LETTERS in src/pages/index.astro. Phonemes use misaki's US set (A = eɪ, I = aɪ, O = oʊ, W = aʊ, Y = ɔɪ).
 LETTERS = [
     ('Long I', 'ˈi', 'eat'), ('Long E', 'ˈA', 'ate'), ('Long A', 'ˈɑ', 'art'), ('Long Ah', 'ˈɔ', 'aught'),
     ('Long O', 'ˈO', 'oat'), ('Long Oo', 'ˈu', 'ooze'), ('Short I', 'ˈɪ', 'it'), ('Short E', 'ˈɛ', 'egg'),
@@ -29,6 +46,7 @@ LETTERS = [
     ('Ef', 'ˈɛf', 'fee'), ('Vee', 'vˈi', 'vie'), ('Eth', 'ˈɛθ', 'thigh'), ('Thee', 'ðˈi', 'thy'),
     ('Es', 'ˈɛs', 'sea'), ('Zee', 'zˈi', 'zeal'), ('Esh', 'ˈɛʃ', 'she'), ('Zhee', 'ʒˈi', 'vision'),
     ('Er', 'ˈɜɹ', 'ray'), ('El', 'ˈɛl', 'lay'), ('Em', 'ˈɛm', 'may'), ('En', 'ˈɛn', 'nay'), ('Eng', 'ˈɛŋ', 'sing'),
+    ('Oi', 'ˈY', 'boy'), ('Ew', 'jˈu', 'few'),
 ]
 
 

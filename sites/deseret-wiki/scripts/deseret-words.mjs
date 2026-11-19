@@ -28,7 +28,12 @@ const PHONE = {
 const OVERRIDES = {
   and: 'AE1 N D',
   not: 'N O1 T',
-  deseret: '𐐼𐐯𐑅𐐨𐑉𐐯𐐻', // the spelling the alphabet's own publications use
+  // DeZUret, as it is said today. The 1868 primers spell it 𐐔𐐯𐑅𐐨𐑉𐐯𐐻 (DeSEEret) and cmudict gives
+  // 𐐔𐐯𐑅𐐲𐑉𐐯𐐻 (DeSUret); the wiki article quotes both, but the site's own text uses this one.
+  deseret: '𐐼𐐯𐑆𐐲𐑉𐐯𐐻',
+  // "the" is the single letter 𐑄 (Thee), as in the primers and the Book of Mormon, not 𐑄𐐲.
+  the: '𐑄',
+  'encyclopædia': 'EH0 N S AY2 K L AH0 P IY1 D IY0 AH0',
   wiki: 'W IH1 K IY0',
   mormon: 'M AO1 R M AH0 N',
   pitman: 'P IH1 T M AH0 N',
@@ -40,6 +45,14 @@ const OVERRIDES = {
   autography: 'AO0 T AA1 G R AH0 F IY0', // Woodruff's spelling of orthography, kept as he wrote it
   leters: 'L EH1 T ER0 Z',              // Parley P. Pratt's spelling
   schonfield: 'SH OW1 N F IY2 L D',
+};
+
+// Syllabic values (see the article's "Syllabic values" section): a whole word that sounds exactly like a
+// letter's name is written with that one letter: be/bee 𐐺, tea/tee 𐐻, gay 𐑀, thee 𐑄. Never inside a longer
+// word. Keep in step with SYLLABIC in sites/deseret-mcp/src/dsrt.mjs.
+const SYLLABIC = {
+  '𐐶𐐭': '𐐶', '𐐷𐐨': '𐐷', '𐐸𐐪': '𐐸', '𐐹𐐨': '𐐹', '𐐺𐐨': '𐐺',
+  '𐐻𐐨': '𐐻', '𐐽𐐨': '𐐽', '𐐾𐐨': '𐐾', '𐑀𐐩': '𐑀', '𐑄𐐨': '𐑄',
 };
 
 const toDeseret = (phones) => phones.split(/\s+/).map((p) => {
@@ -91,7 +104,7 @@ function textOf(file) {
 const dict = await cmudict();
 const words = new Set();
 for (const f of walk(path.join(ROOT, 'src'))) {
-  for (const m of textOf(f).matchAll(/[A-Za-z]+(?:['’][A-Za-z]+)*/g)) words.add(m[0].toLowerCase().replace(/’/g, "'"));
+  for (const m of textOf(f).matchAll(/[A-Za-zÆæ]+(?:['’][A-Za-zÆæ]+)*/g)) words.add(m[0].toLowerCase().replace(/’/g, "'"));
 }
 
 const table = {};
@@ -101,7 +114,8 @@ for (const w of [...words].sort()) {
   if (o && /[\u{10400}-\u{1044F}]/u.test(o)) { table[w] = o; continue; }
   const phones = o ?? dict.get(w);
   if (!phones) { missing++; continue; }
-  table[w] = toDeseret(phones);
+  const d = toDeseret(phones);
+  table[w] = SYLLABIC[d] ?? d;
 }
 fs.writeFileSync(OUT, JSON.stringify(table));
 console.log(`${Object.keys(table).length} words written to ${path.relative(ROOT, OUT)}; ${missing} not in cmudict (left in Latin)`);

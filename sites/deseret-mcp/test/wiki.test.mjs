@@ -13,7 +13,7 @@ const { wiki, corpus } = load();
 
 test('the corpus covers every kind of source on the wiki', () => {
   for (const k of ['article', 'page', 'letter', 'library', 'resource', 'video', 'font', 'book', 'quote']) assert.ok(corpus.counts[k] > 0, k);
-  assert.equal(corpus.counts.letter, 38);
+  assert.equal(corpus.counts.letter, 40);
   for (const r of corpus.records) {
     assert.ok(r.url.startsWith('https://deseret.wiki/'), `${r.id} url ${r.url}`);
     assert.ok(r.id && r.title && r.kind, JSON.stringify(r).slice(0, 80));
@@ -65,7 +65,7 @@ test('contents lists kinds, then records', () => {
   const c = wiki.contents();
   assert.ok(c.kinds.find((k) => k.kind === 'article'));
   const l = wiki.contents('letter');
-  assert.equal(l.records.length, 38);
+  assert.equal(l.records.length, 40);
   assert.throws(() => wiki.contents('nope'), /Unknown kind/);
 });
 

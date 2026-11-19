@@ -28,11 +28,12 @@
   --texture-opacity: .55;
   --map-opacity: .16;
 
-  --f-masthead: 'Grenze Gotisch', 'Noto Sans Deseret', serif;
-  --f-display: 'IM Fell English', 'Noto Sans Deseret', Georgia, serif;
-  --f-formal: 'Cinzel', 'Noto Sans Deseret', Georgia, serif;
-  --f-text: 'Libre Baskerville', 'Noto Sans Deseret', Georgia, 'Times New Roman', serif;
-  --f-dsrt: 'Noto Sans Deseret', sans-serif;
+  /* 'DW Reader Deseret' exists only when the reader picks a Deseret font on /fonts/ (Base.astro defines it). */
+  --f-masthead: 'Grenze Gotisch', 'DW Reader Deseret', 'Noto Sans Deseret', serif;
+  --f-display: 'IM Fell English', 'DW Reader Deseret', 'Noto Sans Deseret', Georgia, serif;
+  --f-formal: 'Cinzel', 'DW Reader Deseret', 'Noto Sans Deseret', Georgia, serif;
+  --f-text: 'Libre Baskerville', 'DW Reader Deseret', 'Noto Sans Deseret', Georgia, 'Times New Roman', serif;
+  --f-dsrt: 'DW Reader Deseret', 'Noto Sans Deseret', sans-serif;
 
   --measure: 40rem;
   --wide: 68rem;
@@ -57,7 +58,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; scroll-padding-top: 1.5rem; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 1.5rem; overflow-x: clip; }
 body {
   margin: 0;
   background-color: var(--paper);
@@ -66,7 +67,7 @@ body {
   font-feature-settings: 'kern', 'liga', 'onum';
   text-rendering: optimizeLegibility;
   transition: background-color .4s ease, color .4s ease;
-  overflow-x: hidden;
+  overflow-x: clip; /* not hidden: phones still pan sideways into hidden overflow */
 }
 /* Aged paper: fine grain + faint foxing at the edges, all procedural (no image requests). */
 body::before {
@@ -161,6 +162,9 @@ main { display: block; min-height: 50vh; }
   opacity: 0; pointer-events: none; transition: opacity .15s, transform .15s; z-index: 30;
 }
 [data-tip]:hover::after, [data-tip]:focus-visible::after { opacity: 1; transform: translate(-50%, 0); }
+/* At the right edge of the top bar: open leftward so the label stays on screen. */
+.script-toggle[data-tip]::after { left: auto; right: 0; transform: translateY(-3px); }
+.script-toggle[data-tip]:hover::after, .script-toggle[data-tip]:focus-visible::after { transform: none; }
 
 /* ---------- ornaments ---------- */
 .ornament { display: flex; align-items: center; justify-content: center; gap: .9rem; color: var(--accent); margin: 3rem auto; }

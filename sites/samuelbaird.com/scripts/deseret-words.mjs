@@ -32,6 +32,8 @@ const OVERRIDES = {
   urim: 'Y UH1 R IH0 M', // as in Urim and Thummim
   peepstone: 'P IY1 P S T OW2 N',
   mcp: 'EH1 M S IY1 P IY1', // spelled out
+  the: '𐑄', // the single letter Thee, as on the Deseret Wiki
+  deseret: '𐐼𐐯𐑆𐐲𐑉𐐯𐐻', // DeZUret, as on the Deseret Wiki
 };
 
 const toDeseret = (phones) => phones.split(/\s+/).map((p) => {
