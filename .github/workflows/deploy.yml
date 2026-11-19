@@ -22,7 +22,7 @@ on:
         required: true
         default: all
         type: choice
-        options: [all, samuelbaird.com, urim, omni, peepstone, deseret-wiki, deseret-mcp]
+        options: [all, samuelbaird.com, latter-day-stats, urim, omni, peepstone, deseret-wiki, deseret-mcp]
 
 permissions:
   contents: read
@@ -46,13 +46,13 @@ jobs:
         run: |
           # dir|worker|kind   kind: static (wrangler deploy) or next (OpenNext build + deploy)
           SITES='samuelbaird.com|samuelbaird-com|static
+          latter-day-stats|latter-day-stats|next
           urim|urim|static
           omni|omni|next
           peepstone|peepstone|next
           deseret-wiki|deseret-wiki|static
           deseret-mcp|deseret-mcp|static'
-          # latter-day-stats|latter-day-stats|next  -- add back when it moves off Vercel (its Worker is
-          # ~2.9 MiB gzipped, under the free plan's 3 MiB). Needs its KV namespace id (NEXT_INC_CACHE_KV) in wrangler.jsonc first.
+          # latter-day-stats is ~2.9 MiB gzipped: keep it under the free plan's 3 MiB (check the deploy log's "gzip:" size).
           pick=()
           while IFS='|' read -r dir name kind; do
             dir=$(echo "$dir" | xargs)
