@@ -203,3 +203,23 @@ test('same-site form posts are accepted even when the browser sends Origin: null
   assert.match(page.headers.get('Content-Security-Policy'), /img-src data:/);
   assert.match(await page.text(), /url\("data:image\/svg\+xml/);
 });
+
+test('after publishing, the page shows the Drive link; edits and decisions close', async () => {
+  const {data, queue, env} = memory();
+  await operator(queue, {id: 'test', action: 'put', packet: basePacket()});
+  const page = async () => (await gsaRoute(new Request(url + '/work/test'), env, session('b13llama@gmail.com'))).text();
+  assert.match(await page(), /id="published-link" readonly value=""/);
+  assert.match(await page(), /Fills in after approval/);
+  const status = async () => (await gsaRoute(new Request(url + '/work/test/status'), env, session('davidjasonharper@gmail.com'))).json();
+  assert.deepEqual(await status(), {published: null});
+  assert.equal((await operator(queue, {id: 'test', action: 'published', file_url: 'https://evil.example/x', folder_url: 'https://drive.google.com/drive/folders/f1'})).status, 400);
+  const file_url = 'https://drive.google.com/file/d/file_1-x/view', folder_url = 'https://drive.google.com/drive/folders/folder_1';
+  assert.equal((await operator(queue, {id: 'test', action: 'published', file_url, folder_url, name: 'Smith, Fixture.pdf'})).status, 200);
+  const html = await page();
+  assert.ok(html.includes(`value="${file_url}"`) && html.includes(`href="${folder_url}"`) && html.includes('Smith, Fixture.pdf'));
+  assert.equal((await status()).published.file_url, file_url);
+  assert.equal((await edit(env, 'b13llama@gmail.com', 'title', 'Changed')).status, 409);
+  await operator(queue, {id: 'test', action: 'put', packet: basePacket()});  // a re-queue keeps the link
+  assert.equal(data.get('test').published.file_url, file_url);
+  assert.equal((await gsaRoute(new Request(url + '/work/test/status', {method: 'POST', headers: {Origin: new URL(url).origin}}), env, session('b13llama@gmail.com'))).status, 405);
+});

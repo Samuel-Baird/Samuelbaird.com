@@ -376,6 +376,15 @@ def select_candidate(db, wid, path, config):
         db.execute("UPDATE works SET sha256=?,status='awaiting_staff_approval' WHERE id=?", (report['sha256'], wid))
 
 
+def approvals_needed(config):
+    """How many of required_publication_reviewers must approve: all of them unless the config sets
+    publication_approvals_needed (for example 1: any one assigned reviewer)."""
+    required = config.get('required_publication_reviewers', [])
+    needed = config.get('publication_approvals_needed', len(required))
+    require(isinstance(needed, int) and 1 <= needed <= max(len(required), 1), 'Invalid publication_approvals_needed')
+    return needed
+
+
 def approve(db, wid, path, config):
     _, record = get(db, wid)
     approval = json.loads(path.read_text())
@@ -394,7 +403,7 @@ def approve(db, wid, path, config):
         require(approval['reviewer'] in required, 'Reviewer not assigned to this publication')
         checks = record.setdefault('reviewer_checks', {})
         checks[approval['reviewer']] = dict(approval, at=stamp())
-        if not all(reviewer in checks for reviewer in required):
+        if sum(reviewer in checks for reviewer in required) < approvals_needed(config):
             save(db, wid, record, 'awaiting_other_reviewer')
             return
         approval['reviewer_checks'] = dict(checks)
@@ -472,12 +481,15 @@ def publish(db, wid, api, config):
     require(config.get('publication_approved') is True, 'Live publication not enabled by staff')
     work, record = get(db, wid)
     require(record.get('approval'), 'Staff approval required')
-    for reviewer in config.get('required_publication_reviewers', []):
-        check = record['approval'].get('reviewer_checks', {}).get(reviewer, {})
-        require(reviewer in config['reviewers'] and check.get('sha256') == record['sha256']
-                and check.get('destination') == record['review']['destination']
-                and all(check.get(k) is True for k, _ in validation.STAFF_JUDGMENT),
-                'Assigned reviewer approval missing or revoked')
+    required = config.get('required_publication_reviewers', [])
+    if required:
+        valid = []
+        for reviewer in required:
+            check = record['approval'].get('reviewer_checks', {}).get(reviewer, {})
+            valid.append(reviewer in config['reviewers'] and check.get('sha256') == record['sha256']
+                         and check.get('destination') == record['review']['destination']
+                         and all(check.get(k) is True for k, _ in validation.STAFF_JUDGMENT))
+        require(sum(valid) >= approvals_needed(config), 'Assigned reviewer approval missing or revoked')
     permissions(record['review'], config, bool(record['review'].get('infohash')))
     require(record.get('validation', {}).get('automated_verdict') == 'pass'
             and all(record['approval'].get(k) is True for k, _ in validation.STAFF_JUDGMENT),
