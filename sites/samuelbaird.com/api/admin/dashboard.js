@@ -3,8 +3,8 @@
 //
 // summary  public.admin_dashboard_summary() (latter-day-stats migration 0062): donations,
 //          premium, accounts and ticket counts, aggregates only, owner only.
-// deploys  latest Vercel deployment per project. Needs VERCEL_TOKEN (a read-only token
-//          is enough) and optionally VERCEL_TEAM (team slug or id) on samuelbaird-com.
+// deploys  latest Cloudflare Workers deployment and version per Worker. Needs CLOUDFLARE_API_TOKEN
+//          (Account > Workers Scripts > Read is enough) and CLOUDFLARE_ACCOUNT_ID on samuelbaird-com.
 // uptime   a live GET of every public site's home page, with status and timing.
 // Each part fails on its own: a missing env var or a slow site only empties that panel.
 const { asUser, requireOwner } = require('../_lib/session');
@@ -36,35 +36,54 @@ async function summary(token) {
   return r.json;
 }
 
+async function cf(path, signal) {
+  const r = await fetch(`https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT}/workers/scripts/${path}`, {
+    headers: { authorization: `Bearer ${CF_TOKEN}` }, signal,
+  });
+  if (r.status === 404) return null; // Worker not deployed yet
+  if (!r.ok) throw new Error(`cloudflare_${r.status}`);
+  return (await r.json()).result;
+}
+
+// CI deploys with --tag <sha> --message "<branch>: <commit subject>" (see .github/workflows/deploy.yml).
+function describe(v, created) {
+  if (!v) return null;
+  const a = v.annotations || {};
+  const msg = a['workers/message'] || '';
+  const m = msg.match(/^([^:\s]+): ([\s\S]*)$/);
+  return {
+    state: 'READY',
+    target: 'production',
+    created: Date.parse(created || (v.metadata && v.metadata.created_on) || '') || null,
+    url: null,
+    inspector: null,
+    branch: m ? m[1] : null,
+    message: (m ? m[2] : msg).split('\n')[0].slice(0, 140) || a['workers/tag'] || null,
+  };
+}
+
 async function deploys() {
-  if (!VERCEL_TOKEN) throw new Error('no_vercel_token');
-  const team = /^team_/.test(VERCEL_TEAM) ? `teamId=${encodeURIComponent(VERCEL_TEAM)}` : `slug=${encodeURIComponent(VERCEL_TEAM)}`;
+  if (!CF_TOKEN || !CF_ACCOUNT) throw new Error('no_cloudflare_token');
   const t = withTimeout(8000);
   try {
-    const r = await fetch(`https://api.vercel.com/v6/deployments?limit=100&${team}`, {
-      headers: { authorization: `Bearer ${VERCEL_TOKEN}` }, signal: t.signal,
-    });
-    if (!r.ok) throw new Error(`vercel_${r.status}`);
-    const { deployments = [] } = await r.json();
-    return SITES.map((s) => {
-      const mine = deployments.filter((d) => d.name === s.project);
-      const pick = (d) => d && {
-        state: d.state || d.readyState,
-        target: d.target || 'preview',
-        created: d.created || d.createdAt,
-        url: d.url ? `https://${d.url}` : null,
-        inspector: d.inspectorUrl || null,
-        branch: d.meta?.githubCommitRef || null,
-        message: (d.meta?.githubCommitMessage || '').split('\n')[0].slice(0, 140) || null,
-      };
+    return await Promise.all(SITES.map(async (s) => {
+      const [dep, vers] = await Promise.all([
+        cf(`${s.project}/deployments`, t.signal),
+        cf(`${s.project}/versions?per_page=5`, t.signal),
+      ]);
+      const versions = (vers && vers.items) || [];
+      const current = dep && dep.deployments && dep.deployments[0];
+      const liveId = current && current.versions && current.versions[0] && current.versions[0].version_id;
+      const live = versions.find((v) => v.id === liveId) || (liveId ? { id: liveId, annotations: current.annotations, metadata: {} } : null);
+      const latest = versions[0] || null;
       return {
         project: s.project,
         name: s.name,
-        production: pick(mine.find((d) => d.target === 'production')),
-        latest: pick(mine[0]),
-        failing: mine.slice(0, 5).filter((d) => (d.state || d.readyState) === 'ERROR').length,
+        production: describe(live, current && current.created_on),
+        latest: latest && { ...describe(latest), target: latest.id === liveId ? 'production' : 'preview' },
+        failing: 0, // failed builds show in GitHub Actions, not here
       };
-    });
+    }));
   } finally { t.done(); }
 }
 
@@ -98,7 +117,7 @@ module.exports = async (req, res) => {
     summary: s.status === 'fulfilled' ? s.value : null,
     deploys: d.status === 'fulfilled' ? d.value : null,
     uptime: u.status === 'fulfilled' ? u.value : null,
-    vercelTeam: VERCEL_TEAM,
+    cloudflareAccount: CF_ACCOUNT || null,
     errors,
   });
 };

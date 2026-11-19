@@ -2,12 +2,12 @@
 
 An MCP server exposing the data behind [Latter-day Stats](https://github.com/Samuel-Baird/latter-day-stats): channels and studies.
 
-**Hosted, remote version — no setup required:** `https://latterdaystats.samuelbaird.com/api/mcp`
+**Hosted, remote version — no setup required:** `https://samuelbaird.com/latter-day-stats/mcp`
 (source: [`src/app/api/mcp/route.ts`](../src/app/api/mcp/route.ts)). The hosted version also
 exposes Data Explorer dataset tools (`list_datasets`, `get_dataset`, `list_dataset_categories`),
 which this standalone local server does not — those datasets are static site content, not
 Supabase rows, so they're only served from the deployed app.
-Step-by-step instructions for Claude and ChatGPT: [latterdaystats.samuelbaird.com/connect](https://latterdaystats.samuelbaird.com/connect).
+Step-by-step instructions for Claude and ChatGPT: [samuelbaird.com/latter-day-stats/connect](https://samuelbaird.com/latter-day-stats/connect).
 Point any MCP client that supports remote/Streamable HTTP servers at that URL directly,
 or use [`mcp-remote`](https://www.npmjs.com/package/mcp-remote) for stdio-only clients:
 
@@ -16,7 +16,7 @@ or use [`mcp-remote`](https://www.npmjs.com/package/mcp-remote) for stdio-only c
   "mcpServers": {
     "latter-day-stats": {
       "command": "npx",
-      "args": ["-y", "mcp-remote", "https://latterdaystats.samuelbaird.com/api/mcp"]
+      "args": ["-y", "mcp-remote", "https://samuelbaird.com/latter-day-stats/mcp"]
     }
   }
 }

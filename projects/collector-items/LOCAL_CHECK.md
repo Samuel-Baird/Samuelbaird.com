@@ -12,10 +12,11 @@ Use the Claude in Chrome tools. Open each page in a tab you create, and close ev
 you opened when finished.
 
 ## 1. Load
-- `git pull` in `collector-items` and in `Samuelbaird.com`
-  (`C:\Users\b13ll\OneDrive\Documentos\AI projects\Samuelbaird.com`; check out `main`
+- `git pull` in the monorepo checkout (`Samuel-Baird/Samuelbaird.com`, wherever the machine
+  running this keeps it; check out `main`
   and make sure the working tree is clean first. If it is not clean, stop and say so).
-- Read today's run in `Samuelbaird.com/scout/leads.json` (the entry whose `date` is
+  This folder is `projects/collector-items` in that repo; the old `collector-items` repo is archived.
+- Read today's run in `sites/samuelbaird.com/scout/leads.json` (the entry whose `date` is
   today; if there is none yet, create it with empty `leads`).
 - Read `scouts/artifact-scout.md`, `scouts/common-cup.md`, `wants.md`,
   `state/seen.json`, `state/dismissed.json`.
@@ -66,9 +67,9 @@ except re-report a seen URL if its price dropped by 25% or more.
   results}` object per platform above, plus any the cloud run recorded. Update `searches`
   and `summary` to include the local check.
 - Add every new, sold, ended and gone URL to `state/seen.json`.
-- Append a "Local check" section to `reports/<today>.md` in `collector-items`.
-- Commit and push: `collector-items` to `main` ("Local check YYYY-MM-DD"), and
-  `Samuelbaird.com` `scout/leads.json` only, to `main` ("Scout leads YYYY-MM-DD (local
-  check)"). Do not touch any other file in `Samuelbaird.com`.
+- Append a "Local check" section to `projects/collector-items/reports/<today>.md`.
+- Commit and push to `main` in one commit ("Local check YYYY-MM-DD"): the files under
+  `projects/collector-items/` and `sites/samuelbaird.com/scout/leads.json`. Do not touch any
+  other file under `sites/`. The push redeploys samuelbaird.com to Cloudflare.
 - If the local check added verified Special Alert items, add a comment to today's GitHub
   issue (or open `Scout YYYY-MM-DD: N finds`, label `alert`, if the cloud run opened none).

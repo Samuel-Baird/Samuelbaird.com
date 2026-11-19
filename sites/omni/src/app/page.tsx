@@ -14,7 +14,7 @@ export default function Home() {
         Omni is one Model Context Protocol endpoint that fronts several others. Add it once as a custom connector in
         Claude (Settings, Connectors, Add custom connector) or any MCP client:
       </p>
-      <pre className="dw-frame" style={{ overflowX: "auto" }}><code>https://samuelbaird.com/omni/api/mcp</code></pre>
+      <pre className="dw-frame" style={{ overflowX: "auto" }}><code>https://samuelbaird.com/omni/mcp</code></pre>
       <h2>What it connects</h2>
       <ol className="register">
         {shown.map((u) => (

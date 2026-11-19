@@ -1,7 +1,7 @@
 # Keeps /temples and data/lds-temples.{json,csv} current.
 # Weekly (and on demand from the Actions tab) it re-reads the Church's official temple list, refetches
 # the pages of temples that are not yet operating or changed status, and rebuilds the site.
-# It commits only when the data changed; Vercel then deploys the commit as usual.
+# It commits only when the data changed; deploy.yml then deploys it to Cloudflare.
 name: Sync temples
 
 on:

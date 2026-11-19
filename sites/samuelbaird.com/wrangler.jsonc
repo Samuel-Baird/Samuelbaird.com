@@ -1,0 +1,36 @@
+{
+  // samuelbaird.com on Cloudflare Workers: static assets (this folder, minus .assetsignore) plus
+  // worker/index.mjs for /api/* and the family apps (forwarded over service bindings).
+  // Headers: _headers. Redirects: _redirects. Clean URLs: html_handling drop-trailing-slash.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "samuelbaird-com",
+  "main": "worker/index.mjs",
+  "compatibility_date": "2026-11-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": true,
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS",
+    "html_handling": "drop-trailing-slash",
+    "not_found_handling": "404-page",
+    "run_worker_first": [
+      "/api/*",
+      "/latter-day-stats", "/latter-day-stats/*",
+      "/urim", "/urim/*",
+      "/peepstone", "/peepstone/*",
+      "/omni", "/omni/*"
+    ]
+  },
+  // Each app is its own Worker (sites/<app>/wrangler.jsonc). Deploy those before this one.
+  "services": [
+    // { "binding": "LATTER_DAY_STATS", "service": "latter-day-stats" }, // until LDS moves (4 MiB worker needs Workers Paid); proxied to its Vercel origin meanwhile
+    { "binding": "URIM", "service": "urim" },
+    { "binding": "PEEPSTONE", "service": "peepstone" },
+    { "binding": "OMNI", "service": "omni" }
+  ],
+  "observability": { "enabled": true }
+  // Secrets (wrangler secret put): SUPABASE_URL, SUPABASE_ANON_KEY, SCOUT_GITHUB_TOKEN,
+  // CLOUDFLARE_API_TOKEN (read-only Workers Scripts, for the /admin deploys panel), CLOUDFLARE_ACCOUNT_ID.
+  // Production routes (samuelbaird.com, www) are added at cutover.
+}

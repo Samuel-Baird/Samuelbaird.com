@@ -5,7 +5,7 @@
 // - Writes /about, /faq, /data, /sacred-sites/sites, /wishlist, robots.txt, sitemap.xml, llms.txt, llms-full.txt.
 // - /wishlist merges wishlist/data.json (synced from Amazon by scripts/fetch-wishlist.mjs) with your
 //   hand-set priorities in wishlist/priorities.json.
-// Idempotent: safe to run repeatedly. Commit the output (Vercel serves the repo as-is).
+// Idempotent: safe to run repeatedly. Commit the output (Cloudflare serves the folder as-is).
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
@@ -432,10 +432,9 @@ function checkLd(path, graph) {
 }
 
 /* ---------- head / SEO ---------- */
-// Vercel Web Analytics (cookie-free). Needs "Web Analytics" enabled for the project in the Vercel dashboard;
-// until then /_vercel/insights/script.js 404s harmlessly. Gives referrers such as chatgpt.com and perplexity.ai.
-const ANALYTICS = `<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)}</script>
-<script defer src="/_vercel/insights/script.js"></script>`;
+// Analytics: Cloudflare Web Analytics (cookie-free), injected at the edge by the zone's automatic setup
+// (dash > Web Analytics > samuelbaird.com > Automatic setup), so pages carry no snippet of their own.
+const ANALYTICS = '';
 function seo(p) {
   const url = BASE + (p.path === '/' ? '/' : p.path);
   const img = BASE + (p.image || '/img/og-card.png');

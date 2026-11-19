@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { Analytics } from "@vercel/analytics/react";
 import { Libre_Baskerville, IM_Fell_English, Noto_Sans_Deseret } from "next/font/google";
 import { FAMILY_CSS, FAMILY_FONTS, FAMILY_FOOT, FAMILY_JS } from "@/components/family-chrome.generated";
 import Script from "next/script";
@@ -126,7 +125,6 @@ export default function RootLayout({
             <AgeGateModal />
           </AuthPromptProvider>
         </Suspense>
-        <Analytics />
         <Script src={`${BASE_PATH}/bg/glyph-field.js`} strategy="afterInteractive" charSet="utf-8" />
         <Script src={FAMILY_JS} strategy="afterInteractive" />
       </body>

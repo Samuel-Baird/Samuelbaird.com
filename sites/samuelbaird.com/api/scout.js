@@ -1,17 +1,20 @@
-// Vercel function behind the private /scout page.
+// Function behind the private /scout page (runs in the samuelbaird-com Worker through worker/index.mjs).
 //   GET  /api/scout  -> { keys: [...] }  normalized URLs the owner has dismissed (no titles; same data leads.json already exposes)
 //   GET  /api/scout?list=1 -> { text }   the scout's master search list (search-list.txt)
 //   POST /api/scout  -> body { list: "..." } replaces search-list.txt
 //   POST /api/scout  -> body { url, title }: adds the URL to state/dismissed.json in
-//                       Samuel-Baird/collector-items so future scout runs skip it.
+//                       projects/collector-items in the monorepo so future scout runs skip it.
 // No login: the /scout page is unlinked and noindex, so nothing protects this endpoint beyond that.
-// Env (set in Vercel): SCOUT_GITHUB_TOKEN = fine-grained token, Contents read/write on collector-items only.
+// Secret on the Worker: SCOUT_GITHUB_TOKEN = fine-grained token, Contents read/write on Samuel-Baird/Samuelbaird.com.
+// (collector-items moved into the monorepo; the old repo is archived and read-only.) Writes touch only projects/,
+// which the deploy workflow ignores, so a dismiss never triggers a site deploy.
 // No dependencies. The repo and file path are fixed here and never taken from the request.
 const MAX_ITEMS = 2000; // keeps dismissed.json from growing without bound if the URL is ever found
 
 const OWNER = 'Samuel-Baird';
-const REPO = 'collector-items';
-const FILE = 'state/dismissed.json';
+const REPO = 'Samuelbaird.com';
+const DIR = 'projects/collector-items';
+const FILE = `${DIR}/state/dismissed.json`;
 const API = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${FILE}`;
 
 // Same rule as the scout runs and the page: host + path + query, no scheme, no www., no tracking params.
@@ -28,7 +31,7 @@ function normalize(u) {
   } catch { return ''; }
 }
 
-const LIST_API = `https://api.github.com/repos/${OWNER}/${REPO}/contents/search-list.txt`;
+const LIST_API = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${DIR}/search-list.txt`;
 const MAX_LIST = 20000;
 
 function gh(method, body) { return ghFile(API, method, body); }

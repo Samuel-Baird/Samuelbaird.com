@@ -2,6 +2,19 @@
   "name": "deseret-wiki",
   "type": "module",
   "private": true,
-  "scripts": { "dev": "astro dev", "build": "astro build", "preview": "astro preview", "words": "node scripts/deseret-words.mjs", "stars": "node scripts/stars.mjs" },
-  "dependencies": { "astro": "^5.0.0" }
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "words": "node scripts/deseret-words.mjs",
+    "stars": "node scripts/stars.mjs",
+    "cf:dev": "wrangler dev",
+    "cf:deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "astro": "^5.0.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.165.0"
+  }
 }
