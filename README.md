@@ -1,8 +1,8 @@
 # Samuel Baird: websites and projects
 
-Every website and project in one private repo. Each site deploys as its own Vercel project, with its Root Directory set to the folder below.
+Every website and project in one private repo. Each site deploys as its own Cloudflare Worker (`sites/<folder>/wrangler.jsonc`), through `.github/workflows/deploy.yml`.
 
-| Folder | Live at | Vercel project | Stack |
+| Folder | Live at | Worker | Stack |
 |---|---|---|---|
 | `sites/samuelbaird.com` | https://samuelbaird.com | samuelbaird-com | static HTML, `scripts/build.mjs` |
 | `sites/latter-day-stats` | https://samuelbaird.com/latter-day-stats | latter-day-stats | Next.js (basePath), Supabase |

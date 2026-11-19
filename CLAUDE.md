@@ -1,6 +1,6 @@
 # Samuel Baird monorepo
 
-Every website and project in one private repo. Each site deploys as its own Cloudflare Worker (`sites/<folder>/wrangler.jsonc`), by `.github/workflows/deploy.yml` on every push to main that touches its folder or `packages/family`. (Until the Vercel projects are deleted after cutover, their `vercel.json` files stay in place; don't rely on them.)
+Every website and project in one private repo. Each site deploys as its own Cloudflare Worker (`sites/<folder>/wrangler.jsonc`), by `.github/workflows/deploy.yml` on every push to main that touches its folder or `packages/family`.
 
 | Folder | Live at | Worker | Stack |
 |---|---|---|---|
@@ -17,7 +17,7 @@ Every website and project in one private repo. Each site deploys as its own Clou
 ## URLs
 
 - Everything except the Deseret Wiki family lives at `https://samuelbaird.com/<id>`. The samuelbaird-com Worker (`sites/samuelbaird.com/worker/index.mjs`) forwards `/<id>` and `/<id>/*` to the app's Worker over a service binding (Host stays samuelbaird.com), and each app runs under that base path. Without a binding (local dev) it proxies the app's `origin` from `packages/family/projects.json` instead; keep the `APPS` list there in step with `projects.json`.
-- Hosting limits to keep in mind: Workers have no filesystem at runtime (bundle data as modules or read it from the ASSETS binding), static assets cost nothing and don't count as requests, and Worker scripts must stay under 10 MiB gzipped (Workers Paid).
+- Hosting limits to keep in mind: Workers have no filesystem at runtime (bundle data as modules or read it from the ASSETS binding), static assets cost nothing and don't count as requests, and the account is on the Workers free plan: each Worker script must stay under 3 MiB gzipped (Latter-day Stats is ~2.8 MiB; check the deploy log), CPU is nominally 10 ms per request, and a cron run gets 50 subrequests. No R2 (needs a card): OpenNext caches use KV and D1.
 - The old hosts (latterdaystats.samuelbaird.com, urim.samuelbaird.com, omni.samuelbaird.com) are custom domains on their app's Worker: they 301 every page to the new path but keep their `/api` (and LDS's `/auth`) endpoints answering, so connectors, webhooks and crons keep working. Don't remove them. urim.samuelbaird.com's page redirects are a zone Redirect Rule (its pages are static assets, which never run the Worker). Peepstone's only address is https://samuelbaird.com/peepstone/mcp (the old peepstone.vercel.app was deleted with the Vercel project).
 - In the Next apps, Next adds the base path to `<Link>`, router and `redirect()` paths. Raw `<a>`/`<Script>` paths, OAuth callback URLs and `NextResponse.redirect` URLs need it added by hand (`BASE_PATH` in LDS's `src/lib/site.ts`).
 - robots.txt only counts at the domain root, so the apps' private paths and sitemaps are listed in samuelbaird.com's robots.txt, generated from `projects.json` (`privatePaths`, `sitemap`).

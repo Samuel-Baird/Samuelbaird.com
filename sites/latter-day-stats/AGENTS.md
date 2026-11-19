@@ -18,7 +18,7 @@ Two things that are still worth doing carefully:
   half-finished work and push it under your commit message. Run `git status`
   first, and stage the files you actually changed.
 - **Merge working code.** Get the build green and check your change on the
-  Vercel preview before merging. Shipping fast is the default; shipping broken
+  local Workers preview (`npm run preview`) before merging. Shipping fast is the default; shipping broken
   is not.
 
 # Design
