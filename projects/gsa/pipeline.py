@@ -174,6 +174,26 @@ def unresolved_matches(matches, resolution=None):
     allowed = set(resolution.get('matches') or []) if str(resolution.get('reason') or '').strip() else set()
     return [m for m in matches if m['match'] == 'exact' or m.get('key', match_key(m)) not in allowed]
 
+def name_hit(request, name):
+    """A filename that may hold the requested work: the whole title, or its short title
+    (before a colon) together with the author's surname, as in "Lastname, Short Title.pdf".
+    Only ever routes to review as ambiguous."""
+    title, name = request.get('title') or '', gsa.normalized(name)
+    full = gsa.normalized(title)
+    if not full:
+        return False
+    if full in name:
+        return True
+    short = gsa.normalized(title.split(':')[0])
+    words = (request.get('author') or '').replace(',', ' ').split()
+    surname = gsa.normalized(words[-1]) if words else ''
+    if surname in ('ed', 'editor', 'eds', 'editors') and len(words) > 1:
+        surname = gsa.normalized(words[-2])
+    padded = f' {name} '
+    if short and short != full and len(short.split()) >= 2 and f' {short} ' in padded:
+        return f' {surname} ' in padded if surname else len(short.split()) >= 3
+    return False
+
 def archive_check(db, wid, api, config, destination):
     work, record = get(db, wid)
     request = json.loads(work['metadata'])
@@ -183,8 +203,7 @@ def archive_check(db, wid, api, config, destination):
     matches = []
     for item in index:
         match = compare(request, item)
-        title = gsa.normalized(request.get('title', ''))
-        if match == 'unrelated' and title and title in gsa.normalized(item.get('name', '')):
+        if match == 'unrelated' and name_hit(request, item.get('name', '')):
             match = 'ambiguous'
         matches.append(dict(item, match=match))
     matches = [item for item in matches if item['match'] != 'unrelated']
@@ -193,7 +212,7 @@ def archive_check(db, wid, api, config, destination):
         props = item.get('appProperties', {})
         if props.get('gsa_sha256') and props.get('gsa_sha256') == record.get('sha256'):
             matches.append(dict(item, match='exact'))
-        elif request.get('title') and gsa.normalized(request['title']) in gsa.normalized(item['name']):
+        elif name_hit(request, item['name']):
             matches.append(dict(item, match='ambiguous'))
     matches = [dict(m, key=match_key(m)) for m in matches]
     record['archive_check'] = {'at': stamp(), 'destination': destination, 'matches': matches}
