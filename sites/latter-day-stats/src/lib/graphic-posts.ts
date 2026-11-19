@@ -38,7 +38,7 @@ const fetchGraphicPostRows = unstable_cache(
     return (data ?? []) as GraphicPost[];
   },
   ["graphic-post-map"],
-  { tags: ["graphic-posts"], revalidate: 3600 },
+  { tags: ["graphic-posts"], revalidate: 86400 },
 );
 
 /** Every graphic_posts row, as a plain Record keyed `${slug}/${id}` — plain

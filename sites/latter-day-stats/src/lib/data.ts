@@ -64,7 +64,7 @@ const fetchChannelFullRows = cache(
       return (data ?? []) as ChannelFullRow[];
     },
     ["channel-full-rows"],
-    { tags: ["channels"], revalidate: 3600 },
+    { tags: ["channels"], revalidate: 86400 },
   ),
 );
 
@@ -102,7 +102,7 @@ const fetchChannelByYouTubeId = unstable_cache(
     return (data as ChannelFullRow) ?? null;
   },
   ["channel-by-youtube-id"],
-  { tags: ["channels"], revalidate: 3600 },
+  { tags: ["channels"], revalidate: 86400 },
 );
 
 export async function getChannelByYouTubeId(
@@ -287,7 +287,7 @@ const fetchRecentlyAdded = unstable_cache(
     };
   },
   ["recently-added"],
-  { tags: ["channels", "studies"], revalidate: 3600 },
+  { tags: ["channels", "studies"], revalidate: 86400 },
 );
 
 export async function getRecentlyAdded(
@@ -411,7 +411,7 @@ const fetchChannelBySlug = unstable_cache(
     return (data as ChannelFullRow) ?? null;
   },
   ["channel-by-slug"],
-  { tags: ["channels"], revalidate: 3600 },
+  { tags: ["channels"], revalidate: 86400 },
 );
 
 export async function getChannelBySlug(
@@ -433,7 +433,7 @@ export const getChannelStatsHistory = unstable_cache(
     return data ?? [];
   },
   ["channel-stats-history"],
-  { tags: ["channels"], revalidate: 3600 },
+  { tags: ["channels"], revalidate: 86400 },
 );
 
 export type StudySort = "categories" | "year" | "upvotes";
@@ -466,7 +466,7 @@ const fetchStudies = unstable_cache(
     return (data ?? []) as Study[];
   },
   ["studies-query"],
-  { tags: ["studies"], revalidate: 3600 },
+  { tags: ["studies"], revalidate: 86400 },
 );
 
 export async function getStudies(opts: StudiesQuery = {}): Promise<Study[]> {
@@ -509,7 +509,7 @@ export const getAllStudyTags = cache(
         .sort((a, b) => a.value.localeCompare(b.value));
     },
     ["all-study-tags"],
-    { tags: ["studies"], revalidate: 3600 },
+    { tags: ["studies"], revalidate: 86400 },
   ),
 );
 
@@ -532,7 +532,7 @@ const fetchAllUpvoteCounts = cache(
       }[];
     },
     ["upvote-counts-all"],
-    { tags: ["upvotes"], revalidate: 60 },
+    { tags: ["upvotes"], revalidate: 3600 },
   ),
 );
 
@@ -580,7 +580,7 @@ const fetchRecentStudies = unstable_cache(
     return (data ?? []) as Study[];
   },
   ["recent-studies"],
-  { tags: ["studies"], revalidate: 3600 },
+  { tags: ["studies"], revalidate: 86400 },
 );
 
 const fetchStudiesByIds = unstable_cache(
@@ -592,7 +592,7 @@ const fetchStudiesByIds = unstable_cache(
     return (data ?? []) as Study[];
   },
   ["studies-by-ids"],
-  { tags: ["studies"], revalidate: 3600 },
+  { tags: ["studies"], revalidate: 86400 },
 );
 
 // Pool for the homepage carousel: a shuffled mix biased toward both
@@ -640,7 +640,7 @@ export const getStudyBySlug = unstable_cache(
     return (data as Study) ?? null;
   },
   ["study-by-slug"],
-  { tags: ["studies"], revalidate: 3600 },
+  { tags: ["studies"], revalidate: 86400 },
 );
 
 /** Batch lookup by slug — used to join a static registry (e.g.
@@ -655,7 +655,7 @@ export const getStudiesBySlugs = unstable_cache(
     return (data ?? []) as Study[];
   },
   ["studies-by-slugs"],
-  { tags: ["studies"], revalidate: 3600 },
+  { tags: ["studies"], revalidate: 86400 },
 );
 
 export const getSiteStats = cache(
@@ -670,7 +670,7 @@ export const getSiteStats = cache(
       return (data as SiteStats) ?? null;
     },
     ["site-stats"],
-    { tags: ["channels"], revalidate: 3600 },
+    { tags: ["channels"], revalidate: 86400 },
   ),
 );
 
@@ -705,7 +705,7 @@ const fetchStudiesOverlappingTags = unstable_cache(
     return (data ?? []) as Study[];
   },
   ["studies-overlapping-tags"],
-  { tags: ["studies"], revalidate: 3600 },
+  { tags: ["studies"], revalidate: 86400 },
 );
 
 export async function getRelatedStudies(
@@ -771,7 +771,7 @@ const fetchSearchIndexBase = unstable_cache(
     };
   },
   ["search-index-base"],
-  { tags: ["channels", "studies"], revalidate: 3600 },
+  { tags: ["channels", "studies"], revalidate: 86400 },
 );
 
 export async function getSearchIndex(
@@ -851,7 +851,7 @@ export const getStudyStats = unstable_cache(
   return { total: rows.length, findings, topics: topics.size, yearMin, yearMax, flagged };
   },
   ["study-stats"],
-  { tags: ["studies"], revalidate: 3600 },
+  { tags: ["studies"], revalidate: 86400 },
 );
 
 export function pdfPublicUrl(pdfPath: string | null): string | null {
