@@ -1,0 +1,5 @@
+row_id,title,author,year,edition,isbn,doi,language,suggested_shelf,source_url
+1,Example book,A. Author,2020,2nd,,,en,Read/Bible,
+2,Example book,A. Author,2020,2nd,,,en,Read/Bible,
+3,Example book,A. Author,2020,1st,,,en,Read/Bible,
+4,Example article,B. Author,2024,,,,en,Read/Articles,

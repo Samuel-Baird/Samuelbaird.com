@@ -1,0 +1,11 @@
+{
+  "reviewer": "STAFF_ID",
+  "source_url": "https://publisher.example/authorized.pdf",
+  "permission_evidence": "REPLACE with license or permission reference and scope",
+  "download_permitted": false,
+  "gsa_upload_permitted": false,
+  "matched_work": "Exact bibliographic citation including edition",
+  "filename": "Lastname, Title.pdf",
+  "destination": "STAFF_APPROVED_FOLDER_ID",
+  "changelog_text": "STAFF_APPROVED_DATED_ENTRY"
+}
