@@ -6,7 +6,7 @@ const Q = QUOTES[0]; // Brigham Young, October 1867: the home page card and the 
 import WaxSeal from '../components/WaxSeal.astro';
 import { roman } from '../lib/roman.js';
 
-// The 38 letters of the 1854 alphabet: name, sound, key word.
+// The 40 letters in Unicode: the 38 of the 1854 alphabet, then 𐐦 (oi) and 𐐧 (ew), approved in 1859. Name, sound, key word.
 const LETTERS = [
   ['Long I', 'iː', 'eat'], ['Long E', 'eɪ', 'ate'], ['Long A', 'ɑː', 'art'], ['Long Ah', 'ɔː', 'aught'], ['Long O', 'oʊ', 'oat'], ['Long Oo', 'uː', 'ooze'],
   ['Short I', 'ɪ', 'it'], ['Short E', 'ɛ', 'egg'], ['Short A', 'æ', 'at'], ['Short Ah', 'ɒ', 'odd'], ['Short O', 'ʌ', 'up'], ['Short Oo', 'ʊ', 'book'],
@@ -14,11 +14,12 @@ const LETTERS = [
   ['Tee', 't', 'tea'], ['Dee', 'd', 'day'], ['Chee', 'tʃ', 'cheese'], ['Jee', 'dʒ', 'jay'], ['Kay', 'k', 'key'], ['Gay', 'ɡ', 'gay'],
   ['Ef', 'f', 'fee'], ['Vee', 'v', 'vie'], ['Eth', 'θ', 'thigh'], ['Thee', 'ð', 'thy'], ['Es', 's', 'sea'], ['Zee', 'z', 'zeal'],
   ['Esh', 'ʃ', 'she'], ['Zhee', 'ʒ', 'vision'], ['Er', 'r', 'ray'], ['El', 'l', 'lay'], ['Em', 'm', 'may'], ['En', 'n', 'nay'], ['Eng', 'ŋ', 'sing'],
+  ['Oi', 'ɔɪ', 'boy'], ['Ew', 'juː', 'few'],
 ].map(([name, ipa, word], i) => ({ name, ipa, word, glyph: String.fromCodePoint(0x10400 + i) }));
 
 const CATEGORIES = [
   { icon: 'i-wagon', vb: '0 0 100 64', title: 'History', text: 'Pioneers, Regents and the State of Deseret, 1847–1869.', href: '/wiki/deseret-alphabet/#history' },
-  { icon: 'i-primer', vb: '0 0 64 48', title: 'The Letters', text: 'Thirty-eight characters, one for every sound of English.', href: '/wiki/deseret-alphabet/#alphabet' },
+  { icon: 'i-primer', vb: '0 0 64 48', title: 'The Letters', text: 'Forty characters, one for every sound of English.', href: '/wiki/deseret-alphabet/#alphabet' },
   { icon: 'i-sorts', vb: '0 0 64 64', title: 'Typefaces', text: 'Fonts for setting Deseret, from the 1850s to Unicode.', href: '/fonts/' },
   { icon: 'i-comb', vb: '0 0 64 64', title: 'The Hive', text: 'Communities, games and places to practise.', href: '/resources/' },
   { icon: 'i-sunmoon', vb: '0 0 64 64', title: 'Moving Pictures', text: 'Lectures and short documentaries on the alphabet.', href: '/videos/' },
@@ -37,13 +38,13 @@ const CATEGORIES = [
     </div>
 
     <figure class="specimen frame frame--corners">
-      <figcaption class="smallcaps">The Thirty-Eight Letters</figcaption>
+      <figcaption class="smallcaps">The Forty Letters</figcaption>
       <ol class="letters" lang="en-Dsrt" data-no-dsrt>
         {LETTERS.map((l, i) => (
           <li tabindex="0" role="button" data-i={i} data-tip={`${l.name} · /${l.ipa}/ · ${l.word}`} aria-label={`${l.name}, as in ${l.word}. Play sound`}><span class="dsrt">{l.glyph}</span></li>
         ))}
       </ol>
-      <p class="specimen-note small">Hover or tap a letter to hear its name and key word.</p>
+      <p class="specimen-note small">Hover or tap a letter to hear its name and key word. The last two, Oi and Ew, were added in 1859.</p>
     </figure>
   </section>
 

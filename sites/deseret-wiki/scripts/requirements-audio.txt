@@ -1,0 +1,11 @@
+# Kokoro voice for scripts/letter-audio.py (the letter clips on the home page).
+# Python 3.12 (Kokoro doesn't support newer yet). Also needs ffmpeg and espeak-ng on PATH:
+#   brew install ffmpeg espeak-ng
+#   uv venv -p 3.12 .venv-audio && VIRTUAL_ENV=.venv-audio uv pip install -r scripts/requirements-audio.txt
+#   .venv-audio/bin/python scripts/letter-audio.py 38 39
+kokoro>=0.9.4
+misaki[en]>=0.9.4
+soundfile>=0.13
+numpy>=2.0
+# misaki tries to pip-install this spaCy model on first run, which fails in a uv venv; install it up front.
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl

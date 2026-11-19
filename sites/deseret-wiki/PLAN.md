@@ -38,13 +38,13 @@ A wiki, document library and learning toolkit for the Deseret Alphabet (𐐔𐐯
 - Large PDFs (>25 MB) go to object storage/Git LFS or the Internet Archive, not plain git.
 
 ## 5. Content already collected
-**`assets/fonts/`** — 61 files, from the Baybayin Project's font set (all 35 Deseret fonts it offers, plus variants). Credits/licences listed there:
+**`assets/fonts/`** — 61 files, from ScriptWorks' (formerly the Baybayin Project) font set (all 35 Deseret fonts it offers, plus variants). Credits/licences listed there:
 - Noto Sans Deseret (Google, OFL) · Analecta (G. Douros, PD) · Code2001 (freeware) · MPH 2B Damase (PD) · desalph (Beesley/Brennan, OFL) · IDC Xylocopa, Nomada (OFL), Hesperapis (OFL), Xenoglossa + Alt (MIT) · Mellifera (sigilante) · Unifont Upper (OFL/GPL)
 - Joshua Erickson "Bee" family: AdamicBee, TimesBee, TumbleBee, QueenBee (+Star), DeseretBee, HoneyBee, ReaderBee, ZarahemlaBee, TuBee Blunt/Round (+Hollow/Shadow) — listed as "Free"; **verify redistribution terms before bundling on the public site** (link to Erickson's page instead if unclear).
 - Legacy: Deseret / DESERET / Deseret_ (Bateman, Thibault/Kass, Kearney), HuneyBee, Bee Skep (Spicer).
 - Mind the `unicode added` folder: same fonts re‑mapped to U+10400.
 
-**`assets/source-pdfs/`** — Deseret‑alphabet renderings of The Family, The Living Christ, The Restoration, Articles of Faith (plain + parallel), from the Baybayin Project.
+**`assets/source-pdfs/`** — Deseret‑alphabet renderings of The Family, The Living Christ, The Restoration, Articles of Faith (plain + parallel), from ScriptWorks (formerly the Baybayin Project).
 
 **`assets/scholarship-pdfs/`** (scholarship mentioning the Deseret alphabet):
 | File | Why |
@@ -59,7 +59,7 @@ Other sources worth reading but not downloaded (large volumes; link instead): Co
 **`C:\Users\b13ll\Downloads\deseret\`** (your files, not yet copied): First & Second Readers, BoM/Bible/Apocrypha PDFs, Burton *City of the Saints*, Beadle, Remy, Watt, German book, 1854/1859 charts, comparison tables, Unicode chapter 20 + docs, SVG lineups, images.
 
 ## 6. Link sources to mine
-deseretalphabet.org · 2deseret.com · churchofjesuschrist.org Deseret Alphabet topic · restorethealphabet.com · deseretalphabet.info (Classics, BoM EPUB) · U of Utah "Designing Deseret" exhibit · Baybayin Project transliterator. Record licence/permission for each before copying text or images; link out where unclear.
+deseretalphabet.org · 2deseret.com · churchofjesuschrist.org Deseret Alphabet topic · restorethealphabet.com · deseretalphabet.info (Classics, BoM EPUB) · U of Utah "Designing Deseret" exhibit · ScriptWorks transliterator. Record licence/permission for each before copying text or images; link out where unclear.
 
 ## 7. Phases
 1. **Scaffold** (Astro, theme, nav, fonts via `@font-face`, deploy to deseret.wiki)

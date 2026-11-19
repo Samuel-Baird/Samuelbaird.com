@@ -1,6 +1,6 @@
 // Builds data/wiki.json: every source on the Deseret Wiki as citable records.
 // Run: npm run build:wiki   (reads a checkout of github.com/Samuel-Baird/deseret, never writes to it)
-//   DESERET_WIKI=path/to/deseret   default ../deseret
+//   DESERET_WIKI=path/to/deseret-wiki   default ../deseret-wiki
 //
 // Sources: wiki articles (src/pages/wiki/*.md and src/content/**/*.md, one record per section), the
 // visible text of every page, the lists in each page's frontmatter (library, resources, videos, the
@@ -13,7 +13,7 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const WIKI = path.resolve(process.env.DESERET_WIKI || path.join(ROOT, '..', 'deseret'));
+const WIKI = path.resolve(process.env.DESERET_WIKI || path.join(ROOT, '..', 'deseret-wiki'));
 const OUT = path.resolve(process.env.DESERET_WIKI_OUT || path.join(ROOT, 'data', 'wiki.json'));
 const SITE = 'https://deseret.wiki';
 
@@ -143,7 +143,7 @@ const strings = (o) => Object.values(o).filter((v) => typeof v === 'string' && !
 
 // how each known list becomes records; unknown lists fall back to a generic mapping
 const MAPPERS = {
-  'index.LETTERS': (l, page) => ({ kind: 'letter', title: `${l.glyph} ${l.name}`, text: `${l.name} (${l.glyph}): /${l.ipa}/ as in "${l.word}". One of the thirty-eight letters of the 1854 alphabet.`, url: page, glyph: l.glyph, ipa: l.ipa, key_word: l.word }),
+  'index.LETTERS': (l, page) => ({ kind: 'letter', title: `${l.glyph} ${l.name}`, text: `${l.name} (${l.glyph}): /${l.ipa}/ as in "${l.word}". ${/^(Oi|Ew)$/.test(l.name) ? 'One of the two letters added in 1859, making forty.' : 'One of the thirty-eight letters of the 1854 alphabet.'}`, url: page, glyph: l.glyph, ipa: l.ipa, key_word: l.word }),
   'index.CATEGORIES': null,
   'buy.sections': null,
   'library.pdfs': (p) => ({ kind: 'library', title: p.title, text: p.note, url: `${SITE}/library/${encodeURI(p.file)}`, source_url: p.cite, format: 'PDF (hosted on deseret.wiki)' }),

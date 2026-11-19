@@ -17,7 +17,7 @@ function beeLoader(text) {
 // Swaps visible text word by word using the build-time table at /deseret-words.json.
 // Words not in the table (names, rare words) stay in Latin letters rather than being guessed.
 const CASE_OFFSET = 0x28;
-const WORD_RE = /[A-Za-z]+(?:['’][A-Za-z]+)*/g;
+const WORD_RE = /[A-Za-zÆæ]+(?:['’][A-Za-zÆæ]+)*/g; // æ for Encyclopædia
 const SKIP = '.rn,.num,.card-num,script,style,code,pre,svg,textarea,input,select,option,template,[data-no-dsrt],.dsrt,.search-results';
 let words = null;
 const originals = new Map(); // text node -> Latin text
@@ -101,7 +101,7 @@ function reveal(h1) {
     latin.textContent = tok;
     latin.style.animation = `deseret-in ${DURATION}ms ease-out ${Math.round((seen + chars.length - 1) * stagger)}ms both`;
     const overlay = document.createElement('span');
-    overlay.style.cssText = "position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;font-family:'Noto Sans Deseret',sans-serif;font-size:.8em";
+    overlay.style.cssText = "position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;font-family:var(--f-dsrt);font-size:.8em";
     const step = glyphs.length > 1 ? (chars.length - 1) / (glyphs.length - 1) : 0;
     glyphs.forEach((c, j) => {
       const g = document.createElement('span');

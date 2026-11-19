@@ -1,6 +1,6 @@
 # Deseret MCP: the Deseret Alphabet for any AI assistant
 
-An MCP server that writes English in the Deseret Alphabet (𐐔𐐯𐑅𐐨𐑉𐐯𐐻), reads it back, and answers questions about the
+An MCP server that writes English in the Deseret Alphabet (𐐔𐐯𐑆𐐲𐑉𐐯𐐻), reads it back, and answers questions about the
 alphabet from every source on [deseret.wiki](https://deseret.wiki), with links back to the page each answer came from.
 Landing page and install steps: <https://mcp.deseret.wiki>. Sister project of [Urim](https://github.com/Samuel-Baird/urim).
 
@@ -51,7 +51,7 @@ Reading Deseret back uses the same dictionary reversed; homophones are ranked by
 |---|---|
 | `article` | `src/pages/wiki/*.md` and `src/content/**/*.md`, one record per section, with the heading anchor the site uses |
 | `page` | the visible text of each `.astro` page |
-| `letter` | the 38-letter chart on the front page |
+| `letter` | the 40-letter chart on the front page (38 from 1854, plus 𐐦 and 𐐧 from 1859) |
 | `library`, `resource`, `video` | the lists in `library.astro`, `resources.astro`, `videos.astro` (new lists on any page are picked up automatically) |
 | `font`, `book`, `quote` | `src/data/fonts.json`, `buy.json`, `quotes.json` (when present) and `social-quote.json` |
 
@@ -89,7 +89,7 @@ The same script is a small command line tool:
 
 ```bash
 node bin/deseret-mcp.mjs to "The Deseret Alphabet"
-node bin/deseret-mcp.mjs from "𐐜𐐲 𐐔𐐯𐑅𐐨𐑉𐐯𐐻 𐐈𐑊𐑁𐐲𐐺𐐯𐐻"
+node bin/deseret-mcp.mjs from "𐐜 𐐔𐐯𐑆𐐲𐑉𐐯𐐻 𐐈𐑊𐑁𐐲𐐺𐐯𐐻"
 node bin/deseret-mcp.mjs file notes.md
 node bin/deseret-mcp.mjs search "gold coin"
 ```

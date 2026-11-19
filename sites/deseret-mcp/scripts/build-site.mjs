@@ -208,7 +208,7 @@ page({
       <div class="stack">
         ${copy('Use Deseret MCP: write "The glory of God is intelligence" in the Deseret Alphabet and explain the first word letter by letter.', { wrap: true })}
         ${copy('Use Deseret MCP: what did Brigham Young say about teaching the Deseret Alphabet? Give the sources from the Deseret Wiki.', { wrap: true })}
-        ${copy('Use Deseret MCP: read this back into English: 𐐜𐐲 𐐔𐐯𐑅𐐨𐑉𐐯𐐻 𐐈𐑊𐑁𐐲𐐺𐐯𐐻', { wrap: true })}
+        ${copy('Use Deseret MCP: read this back into English: 𐐜 𐐔𐐯𐑆𐐲𐑉𐐯𐐻 𐐈𐑊𐑁𐐲𐐺𐐯𐐻', { wrap: true })}
       </div></section>
     <section class="block"><h2>If something goes wrong</h2><div class="trouble">
       <details><summary>&ldquo;Add custom connector&rdquo; is greyed out</summary><p>Custom connectors need a paid plan or an admin on work and school accounts. On a free Claude plan you get one custom connector, so remove another one first.</p></details>

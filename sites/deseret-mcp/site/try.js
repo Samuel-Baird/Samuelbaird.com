@@ -6,7 +6,7 @@
   var input = document.getElementById('try-in'), out = document.getElementById('try-out'), report = document.getElementById('try-report');
   var status = document.getElementById('try-status'), go = document.getElementById('try-go');
   var mode = 'to';
-  var samples = { to: input.value, from: '𐐜𐐲 𐐔𐐯𐑅𐐨𐑉𐐯𐐻 𐐈𐑊𐑁𐐲𐐺𐐯𐐻 𐐶𐐪𐑆 𐐲𐐹𐑉𐐭𐑂𐐼 𐐺𐐴 𐑄𐐲 𐐡𐐨𐐾𐐲𐑌𐐻𐑅 𐐮𐑌 1854.' };
+  var samples = { to: input.value, from: '𐐜 𐐔𐐯𐑆𐐲𐑉𐐯𐐻 𐐈𐑊𐑁𐐲𐐺𐐯𐐻 𐐶𐐪𐑆 𐐲𐐹𐑉𐐭𐑂𐐼 𐐺𐐴 𐑄 𐐡𐐨𐐾𐐲𐑌𐐻𐑅 𐐮𐑌 1854.' };
   var id = 0;
 
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }

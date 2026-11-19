@@ -53,6 +53,7 @@ function tools({ local }) {
       description:
         'Transliterate English text (a word, a passage or a whole document) into the Deseret Alphabet. Spellings come from the CMU Pronouncing ' +
         'Dictionary (126,052 words) mapped sound by sound to Deseret letters, with hand corrections, as on deseret.wiki; capitals are kept. ' +
+        '"the" is the single letter 𐑄, and a word that sounds like a letter\'s name is that one letter (be 𐐺, tea 𐐻, gay 𐑀). ' +
         'Words the dictionary lacks are spelled from their parts where possible (listed in "derived"); words with no spelling stay in Latin ' +
         'letters and are listed in "unknown". This is a change of script, not a translation.',
       inputSchema: {

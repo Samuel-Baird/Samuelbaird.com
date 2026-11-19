@@ -3,7 +3,7 @@
 import WORDS from '../data/deseret-words.json';
 
 const CASE_OFFSET = 0x28; // capitals sit 0x28 below lowercase
-const WORD_RE = /[A-Za-z]+(?:['’][A-Za-z]+)*/g;
+const WORD_RE = /[A-Za-zÆæ]+(?:['’][A-Za-zÆæ]+)*/g; // æ for Encyclopædia
 const upper = (s) => Array.from(s).map((c) => String.fromCodePoint(c.codePointAt(0) - CASE_OFFSET)).join('');
 
 export function dsrtWord(w) {

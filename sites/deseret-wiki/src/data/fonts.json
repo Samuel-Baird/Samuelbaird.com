@@ -9,7 +9,8 @@
   "creator": "Google",
   "source": "https://fonts.google.com/noto/specimen/Noto+Sans+Deseret",
   "note": "",
-  "bytes": 92360
+  "bytes": 92360,
+  "complete": true
  },
  {
   "id": "analecta",
@@ -21,7 +22,8 @@
   "creator": "George Douros",
   "source": "https://dn-works.com/ufas/",
   "note": "",
-  "bytes": 106064
+  "bytes": 106064,
+  "complete": true
  },
  {
   "id": "code2001",
@@ -33,7 +35,8 @@
   "creator": "James Kass",
   "source": "https://www.code2001.com/code2001.htm",
   "note": "",
-  "bytes": 722528
+  "bytes": 722528,
+  "complete": true
  },
  {
   "id": "mph-2b-damase",
@@ -45,7 +48,8 @@
   "creator": "Mark Williamson",
   "source": "https://www.wazu.jp/gallery/Fonts_Deseret.html",
   "note": "",
-  "bytes": 900260
+  "bytes": 900260,
+  "complete": false
  },
  {
   "id": "desalph",
@@ -57,7 +61,8 @@
   "creator": "Kenneth R. Beesley / Fredrick R. Brennan",
   "source": "https://github.com/ctrlcctrlv/desalph",
   "note": "",
-  "bytes": 24108
+  "bytes": 24108,
+  "complete": true
  },
  {
   "id": "xylocopa",
@@ -69,7 +74,8 @@
   "creator": "Illinois Deseret Consortium / sigilante",
   "source": "https://github.com/sigilante/idc-xylocopa",
   "note": "",
-  "bytes": 13976
+  "bytes": 13976,
+  "complete": true
  },
  {
   "id": "nomada",
@@ -81,7 +87,8 @@
   "creator": "N E Davis / Illinois Deseret Consortium",
   "source": "https://github.com/sigilante/idc-nomada",
   "note": "",
-  "bytes": 15328
+  "bytes": 15328,
+  "complete": false
  },
  {
   "id": "hesperapis",
@@ -93,7 +100,8 @@
   "creator": "N. E. Davis / Illinois Deseret Consortium",
   "source": "https://github.com/sigilante/idc-hesperapis",
   "note": "",
-  "bytes": 23224
+  "bytes": 23224,
+  "complete": true
  },
  {
   "id": "xenoglossa",
@@ -105,7 +113,8 @@
   "creator": "Sigilante",
   "source": "https://github.com/sigilante/idc-xenoglossa",
   "note": "",
-  "bytes": 14228
+  "bytes": 14228,
+  "complete": false
  },
  {
   "id": "xenoglossa-alt",
@@ -117,7 +126,8 @@
   "creator": "Sigilante",
   "source": "https://github.com/sigilante/idc-xenoglossa",
   "note": "",
-  "bytes": 9724
+  "bytes": 9724,
+  "complete": false
  },
  {
   "id": "unifont-upper",
@@ -129,7 +139,8 @@
   "creator": "Roman Czyborra / Paul Hardy et al.",
   "source": "https://unifoundry.com/unifont/",
   "note": "",
-  "bytes": 5954156
+  "bytes": 5954156,
+  "complete": true
  },
  {
   "id": "adamic-bee",
@@ -141,7 +152,8 @@
   "creator": "Joshua Erickson",
   "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
   "note": "",
-  "bytes": 43080
+  "bytes": 43080,
+  "complete": true
  },
  {
   "id": "times-bee",
@@ -153,7 +165,8 @@
   "creator": "Joshua Erickson",
   "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
   "note": "",
-  "bytes": 58516
+  "bytes": 58516,
+  "complete": true
  },
  {
   "id": "tumble-bee",
@@ -165,7 +178,8 @@
   "creator": "Joshua Erickson",
   "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
   "note": "",
-  "bytes": 59696
+  "bytes": 59696,
+  "complete": true
  },
  {
   "id": "queen-bee",
@@ -177,7 +191,8 @@
   "creator": "Joshua Erickson",
   "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
   "note": "",
-  "bytes": 49664
+  "bytes": 49664,
+  "complete": true
  },
  {
   "id": "queen-bee-star",
@@ -189,7 +204,8 @@
   "creator": "Joshua Erickson",
   "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
   "note": "",
-  "bytes": 52932
+  "bytes": 52932,
+  "complete": true
  },
  {
   "id": "deseret-bee",
@@ -201,7 +217,8 @@
   "creator": "Joshua Erickson",
   "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
   "note": "",
-  "bytes": 30640
+  "bytes": 30640,
+  "complete": true
  },
  {
   "id": "honey-bee",
@@ -213,7 +230,8 @@
   "creator": "Joshua Erickson",
   "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
   "note": "",
-  "bytes": 37168
+  "bytes": 37168,
+  "complete": true
  },
  {
   "id": "reader-bee",
@@ -225,7 +243,8 @@
   "creator": "Joshua Erickson",
   "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
   "note": "",
-  "bytes": 40756
+  "bytes": 40756,
+  "complete": true
  },
  {
   "id": "zarahemla-bee",
@@ -237,7 +256,8 @@
   "creator": "Joshua Erickson",
   "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
   "note": "",
-  "bytes": 38784
+  "bytes": 38784,
+  "complete": true
  },
  {
   "id": "tubee-blunt",
@@ -249,7 +269,8 @@
   "creator": "Joshua Erickson",
   "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
   "note": "",
-  "bytes": 34492
+  "bytes": 34492,
+  "complete": true
  },
  {
   "id": "tubee-blunt-hollow-light",
@@ -261,7 +282,8 @@
   "creator": "Joshua Erickson",
   "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
   "note": "",
-  "bytes": 52512
+  "bytes": 52512,
+  "complete": true
  },
  {
   "id": "tubee-blunt-hollow-medium",
@@ -273,7 +295,8 @@
   "creator": "Joshua Erickson",
   "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
   "note": "",
-  "bytes": 52360
+  "bytes": 52360,
+  "complete": true
  },
  {
   "id": "tubee-blunt-shadow",
@@ -285,7 +308,8 @@
   "creator": "Joshua Erickson",
   "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
   "note": "",
-  "bytes": 63316
+  "bytes": 63316,
+  "complete": true
  },
  {
   "id": "tubee-round",
@@ -297,7 +321,8 @@
   "creator": "Joshua Erickson",
   "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
   "note": "",
-  "bytes": 43440
+  "bytes": 43440,
+  "complete": true
  },
  {
   "id": "tubee-round-hollow-light",
@@ -309,7 +334,8 @@
   "creator": "Joshua Erickson",
   "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
   "note": "",
-  "bytes": 67560
+  "bytes": 67560,
+  "complete": true
  },
  {
   "id": "tubee-round-hollow-medium",
@@ -321,7 +347,8 @@
   "creator": "Joshua Erickson",
   "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
   "note": "",
-  "bytes": 67408
+  "bytes": 67408,
+  "complete": true
  },
  {
   "id": "tubee-round-shadow",
@@ -333,7 +360,8 @@
   "creator": "Joshua Erickson",
   "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
   "note": "",
-  "bytes": 83460
+  "bytes": 83460,
+  "complete": true
  },
  {
   "id": "mellifera",
@@ -345,11 +373,12 @@
   "creator": "sigilante",
   "source": "https://github.com/sigilante/font-mellifera",
   "note": "",
-  "bytes": 447696
+  "bytes": 447696,
+  "complete": true
  },
  {
   "id": "huneybee",
-  "name": "HuneyBee",
+  "name": "HuneyBee (Unicode)",
   "family": "Deseret HuneyBee",
   "file": "/fonts/files/huneybee.ttf",
   "license": "Free",
@@ -357,11 +386,26 @@
   "creator": "Daniel U. Thibault / James Kass",
   "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
   "note": "Unicode-remapped version of a legacy font.",
-  "bytes": 37836
+  "bytes": 37836,
+  "complete": false
+ },
+ {
+  "id": "huneybee-keyboard",
+  "name": "HuneyBee (keyboard)",
+  "family": "Deseret HuneyBee",
+  "file": "/fonts/files/huneybee-keyboard.ttf",
+  "license": "Free",
+  "category": "keyboard",
+  "creator": "Daniel U. Thibault / James Kass",
+  "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
+  "note": "Legacy keyboard encoding: type ordinary keys and the font draws Deseret letters. Good for Word documents; web pages, search and screen readers see only the Latin keys. The (Unicode) version above it is the same design on the Deseret code points.",
+  "bytes": 34564,
+  "complete": false,
+  "encoding": "keyboard"
  },
  {
   "id": "bee-skep",
-  "name": "Bee Skep Serif",
+  "name": "Bee Skep Serif (Unicode)",
   "family": "Bee Skep Serif",
   "file": "/fonts/files/bee-skep.otf",
   "license": "Free",
@@ -369,11 +413,26 @@
   "creator": "Joseph Spicer",
   "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
   "note": "Unicode-remapped version of a legacy font.",
-  "bytes": 17092
+  "bytes": 17092,
+  "complete": false
+ },
+ {
+  "id": "bee-skep-keyboard",
+  "name": "Bee Skep Serif (keyboard)",
+  "family": "Bee Skep Serif",
+  "file": "/fonts/files/bee-skep-keyboard.otf",
+  "license": "Free",
+  "category": "keyboard",
+  "creator": "Joseph Spicer",
+  "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
+  "note": "Legacy keyboard encoding: type ordinary keys and the font draws Deseret letters. Good for Word documents; web pages, search and screen readers see only the Latin keys. The (Unicode) version above it is the same design on the Deseret code points.",
+  "bytes": 14924,
+  "complete": false,
+  "encoding": "keyboard"
  },
  {
   "id": "deseret-legacy",
-  "name": "Deseret (Bateman)",
+  "name": "Deseret (Bateman, Unicode)",
   "family": "Deseret Legacy",
   "file": "/fonts/files/deseret-legacy.ttf",
   "license": "Free",
@@ -381,11 +440,26 @@
   "creator": "Edward J. Bateman",
   "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
   "note": "Unicode-remapped version of a legacy font.",
-  "bytes": 28240
+  "bytes": 28240,
+  "complete": false
+ },
+ {
+  "id": "deseret-bateman-keyboard",
+  "name": "Deseret (Bateman, keyboard)",
+  "family": "Deseret Legacy",
+  "file": "/fonts/files/deseret-bateman-keyboard.ttf",
+  "license": "Free",
+  "category": "keyboard",
+  "creator": "Edward J. Bateman",
+  "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
+  "note": "Legacy keyboard encoding: type ordinary keys and the font draws Deseret letters. Good for Word documents; web pages, search and screen readers see only the Latin keys. The (Unicode) version above it is the same design on the Deseret code points.",
+  "bytes": 27380,
+  "complete": false,
+  "encoding": "keyboard"
  },
  {
   "id": "deseret-legacy-alt",
-  "name": "Deseret (Thibault/Kass)",
+  "name": "Deseret (Thibault/Kass, Unicode)",
   "family": "Deseret Legacy Alt",
   "file": "/fonts/files/deseret-legacy-alt.ttf",
   "license": "Free",
@@ -393,11 +467,26 @@
   "creator": "Daniel U. Thibault / James Kass",
   "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
   "note": "Unicode-remapped version of a legacy font.",
-  "bytes": 33684
+  "bytes": 33684,
+  "complete": false
+ },
+ {
+  "id": "deseret-thibault-keyboard",
+  "name": "Deseret (Thibault/Kass, keyboard)",
+  "family": "Deseret Legacy Alt",
+  "file": "/fonts/files/deseret-thibault-keyboard.ttf",
+  "license": "Free",
+  "category": "keyboard",
+  "creator": "Daniel U. Thibault / James Kass",
+  "source": "https://cmckinney-59.github.io/the-baybayin-project/#/transliterator/deseret",
+  "note": "Legacy keyboard encoding: type ordinary keys and the font draws Deseret letters. Good for Word documents; web pages, search and screen readers see only the Latin keys. The (Unicode) version above it is the same design on the Deseret code points.",
+  "bytes": 31616,
+  "complete": false,
+  "encoding": "keyboard"
  },
  {
   "id": "deseret-legacy-underscore",
-  "name": "Deseret (1991)",
+  "name": "Deseret (1991, Unicode)",
   "family": "Deseret Legacy Underscore",
   "file": "/fonts/files/deseret-legacy-underscore.ttf",
   "license": "Free",
@@ -405,11 +494,26 @@
   "creator": "Greg Kearney",
   "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
   "note": "Unicode-remapped version of a legacy font.",
-  "bytes": 34856
+  "bytes": 34856,
+  "complete": false
+ },
+ {
+  "id": "deseret-1991-keyboard",
+  "name": "Deseret (1991, keyboard)",
+  "family": "Deseret Legacy Underscore",
+  "file": "/fonts/files/deseret-1991-keyboard.ttf",
+  "license": "Free",
+  "category": "keyboard",
+  "creator": "Greg Kearney",
+  "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
+  "note": "Legacy keyboard encoding: type ordinary keys and the font draws Deseret letters. Good for Word documents; web pages, search and screen readers see only the Latin keys. The (Unicode) version above it is the same design on the Deseret code points.",
+  "bytes": 33876,
+  "complete": false,
+  "encoding": "keyboard"
  },
  {
   "id": "deseret-bee-legacy",
-  "name": "DeseretBee (legacy)",
+  "name": "DeseretBee (Unicode)",
   "family": "DeseretBee Legacy",
   "file": "/fonts/files/deseret-bee-legacy.ttf",
   "license": "Free",
@@ -417,6 +521,21 @@
   "creator": "Joshua Erickson / Greg Kearney",
   "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
   "note": "Unicode-remapped version of a legacy font.",
-  "bytes": 17756
+  "bytes": 17756,
+  "complete": false
+ },
+ {
+  "id": "deseret-bee-keyboard",
+  "name": "DeseretBee (keyboard)",
+  "family": "DeseretBee Legacy",
+  "file": "/fonts/files/deseret-bee-keyboard.ttf",
+  "license": "Free",
+  "category": "keyboard",
+  "creator": "Joshua Erickson / Greg Kearney",
+  "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
+  "note": "Legacy keyboard encoding: type ordinary keys and the font draws Deseret letters. Good for Word documents; web pages, search and screen readers see only the Latin keys. The (Unicode) version above it is the same design on the Deseret code points.",
+  "bytes": 15988,
+  "complete": false,
+  "encoding": "keyboard"
  }
 ]

@@ -45,7 +45,7 @@ test('hosted: notifications, batches, bad JSON, GET', async () => {
 test('hosted: to_deseret reports unknown words', async () => {
   const r = await call('to_deseret', { text: 'The Deseret Alphabet, Qwrtp.' });
   assert.ok(!r.isError);
-  assert.equal(r.structuredContent.deseret, '𐐜𐐲 𐐔𐐯𐑅𐐨𐑉𐐯𐐻 𐐈𐑊𐑁𐐲𐐺𐐯𐐻, Qwrtp.');
+  assert.equal(r.structuredContent.deseret, '𐐜 𐐔𐐯𐑆𐐲𐑉𐐯𐐻 𐐈𐑊𐑁𐐲𐐺𐐯𐐻, Qwrtp.');
   assert.deepEqual(r.structuredContent.unknown, [{ word: 'Qwrtp', count: 1 }]);
   assert.match(r.structuredContent.note, /left in Latin letters/);
   assert.equal(JSON.parse(r.content[0].text).deseret, r.structuredContent.deseret);
@@ -111,5 +111,5 @@ test('local: stdio server speaks newline-delimited JSON-RPC', async () => {
   child.kill();
   assert.equal(lines[0].result.protocolVersion, '2025-11-25');
   assert.ok(lines[1].result.tools.some((t) => t.name === 'deseret_file'));
-  assert.equal(lines[2].result.structuredContent.deseret, '𐐺𐐨');
+  assert.equal(lines[2].result.structuredContent.deseret, '𐐺'); // syllabic value: the letter Bee alone
 });

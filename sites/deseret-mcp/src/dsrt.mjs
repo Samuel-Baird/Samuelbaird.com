@@ -59,6 +59,19 @@ export function phonesToDeseret(phones) {
   }).join('').replace(/𐐷𐐭/gu, '𐑏'); // Y + UW is the single letter 𐑏 ("ew"), as on the wiki
 }
 
+// Syllabic values: a letter written on its own is read as its name, so a whole word that sounds exactly like
+// a letter's name is written with that one letter (be/bee 𐐺, tea/tee 𐐻, gay 𐑀, thee 𐑄). Never inside a
+// longer word ("bees" is 𐐺𐐨𐑆). The list is the one the Deseret Wiki's article gives; keep it in step with
+// SYLLABIC in the wiki's scripts/deseret-words.mjs. ("the" is 𐑄 through the overrides; "you" is already 𐑏.)
+export const SYLLABIC = {
+  '𐐶𐐭': '𐐶', '𐐷𐐨': '𐐷', '𐐸𐐪': '𐐸', '𐐹𐐨': '𐐹', '𐐺𐐨': '𐐺',
+  '𐐻𐐨': '𐐻', '𐐽𐐨': '𐐽', '𐐾𐐨': '𐐾', '𐑀𐐩': '𐑀', '𐑄𐐨': '𐑄',
+};
+// Reading a lone letter back: the usual word first; other words spelled as the name follow as alternatives.
+const SYLLABIC_READ = { '𐐶': 'woo', '𐐷': 'ye', '𐐸': 'ha', '𐐹': 'pea', '𐐺': 'be', '𐐻': 'tea', '𐐾': 'gee', '𐑀': 'gay', '𐑄': 'the' };
+/** Lowercase whole-word Deseret -> its single-letter form when it is a letter's name. */
+export const syllabic = (d) => SYLLABIC[d] ?? d;
+
 /** Reapply the Latin word's case: UPPER (2+ letters), Title, or lower. */
 export function applyCase(latin, dsrt) {
   const letters = latin.replace(/[^\p{L}]/gu, '');
@@ -227,7 +240,9 @@ export function createEngine({ dict, overrides = {}, freq = new Map() }) {
       }
       if (ck !== null) cache.set(ck, r);
     }
-    return r ? { ...r, deseret: applyCase(w, r.deseret) } : null;
+    if (!r) return null;
+    const one = syllabic(r.deseret);
+    return { ...r, deseret: applyCase(w, one), ...(one !== r.deseret ? { syllabic: true } : {}) };
   }
 
   /** Every spelling we know for a word, with letter names: for the deseret_word tool. */
@@ -247,6 +262,7 @@ export function createEngine({ dict, overrides = {}, freq = new Map() }) {
       source: chosen ? chosen.source : null,
       phones: chosen ? chosen.phones : null,
       ...(chosen && chosen.how ? { derived_from: chosen.how } : {}),
+      ...(chosen && chosen.syllabic ? { syllabic: 'Written with one letter: the word sounds like the letter’s name (its syllabic value).' } : {}),
       ...(HETERONYMS[k] ? { note: 'Heteronym: the spelling depends on the sense. to_deseret picks one from the words before it; pass `spellings` to force one.' } : {}),
       alternatives: alternatives.length > 1 || (alternatives.length && chosen && alternatives[0].deseret !== chosen.deseret) ? alternatives : undefined,
       letters,
@@ -329,7 +345,7 @@ export function createEngine({ dict, overrides = {}, freq = new Map() }) {
       const h = HETERONYMS[k];
       if (h && !(extra && extra[k]) && !overrides[k]) {
         const phones = h.after && h.after.words.includes(prevKey) ? h.after.phones : h.phones;
-        r = { deseret: applyCase(w, phonesToDeseret(phones)), phones, source: 'cmudict' };
+        r = { deseret: applyCase(w, syllabic(phonesToDeseret(phones))), phones, source: 'cmudict' };
         if (!hetero.has(k)) hetero.set(k, { word: k, alternatives: (dict.get(k) || []).map((p) => phonesToDeseret(p)).filter((d, i, a) => a.indexOf(d) === i), used: new Set() });
         hetero.get(k).used.add(lowerDsrt(r.deseret));
       } else {
@@ -384,7 +400,12 @@ export function createEngine({ dict, overrides = {}, freq = new Map() }) {
     }
     // 1868 printing forms (see historical1868), so period Deseret text reads back too.
     add('𐑄', 'the', 1);
+    add('𐐼𐐯𐑅𐐨𐑉𐐯𐐻', 'deseret', 1); // DeSEEret, the primers' spelling
     add('𐐱𐑂', 'of', 1);
+    for (const [full, one] of Object.entries(SYLLABIC)) {
+      if (SYLLABIC_READ[one]) add(one, SYLLABIC_READ[one], 0);
+      for (const e of reverse.get(full) || []) if (e.w.length > 1) add(one, e.w, Math.max(1, e.rank)); // not the letter names b, t
+    }
     // Hand corrections (rank 0) beat dictionary entries; then first pronunciations, frequency, length.
     const score = (e) => [e.rank === 0 ? 0 : 1, e.rank === 2 ? 1 : 0, -(freq.get(e.w) || 0), e.w.includes("'") ? 1 : 0, e.w.length, e.w];
     const cmp = (a, b) => { const x = score(a), y = score(b); for (let i = 0; i < x.length; i++) if (x[i] !== y[i]) return x[i] < y[i] ? -1 : 1; return 0; };
@@ -433,13 +454,14 @@ export function createEngine({ dict, overrides = {}, freq = new Map() }) {
 
 // 1868-69 printing conventions (Orson Pratt's transcriptions: the Deseret First and Second Books and the
 // 1869 Book of Mormon), limited to patterns the Deseret Wiki documents with printed examples:
-//   "the" is the single letter 𐑄 ("𐐸𐐬𐑊𐐨𐑌𐐮𐑅 𐐻𐐭 𐑄 𐐢𐐫𐑉𐐼", 1860 coin; "𐑅𐐲𐑉𐑂 𐑄 𐐢𐐫𐑉𐐼", Second Book hymn)
+//   "the" is the single letter 𐑄 ("𐐸𐐬𐑊𐐨𐑌𐐮𐑅 𐐻𐐭 𐑄 𐐢𐐫𐑉𐐼", 1860 coin; "𐑅𐐲𐑉𐑂 𐑄 𐐢𐐫𐑉𐐼", Second Book hymn); now the default too
+//   "Deseret" is 𐐔𐐯𐑅𐐨𐑉𐐯𐐻 (DeSEEret), as in the primers' titles; the modern default is 𐐔𐐯𐑆𐐲𐑉𐐯𐐻
 //   "of" is 𐐱𐑂 (title page of the First and Second Books, "𐐱𐑂 𐑄 𐐔𐐇𐐝𐐀𐐡𐐇𐐓 ...")
 //   "wh" keeps its h: 𐐸𐐶 ("𐐸𐐶𐐴𐑊" while, "𐐸𐐶𐐩𐑉𐑁𐐬𐑉" wherefore; no wine-whine merger)
 //   -ness/-less end in 𐐮𐑅 ("𐐸𐐬𐑊𐐨𐑌𐐮𐑅" Holiness)
 // Use as engine.text(s, historical1868). Everything else follows the modern dictionary spelling.
 export const historical1868 = {
-  spellings: { the: '𐑄', of: '𐐱𐑂' },
+  spellings: { the: '𐑄', of: '𐐱𐑂', deseret: '𐐼𐐯𐑅𐐨𐑉𐐯𐐻' },
   respell(latin, dsrt) {
     const k = keyOf(latin);
     let out = dsrt;

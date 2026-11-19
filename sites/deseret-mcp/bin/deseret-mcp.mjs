@@ -2,7 +2,7 @@
 // Deseret MCP, local: stdio transport (newline-delimited JSON-RPC), no dependencies.
 // Everything the hosted server does, plus deseret_file for whole files on this computer.
 //   claude mcp add deseret -- node /path/to/deseret-mcp/bin/deseret-mcp.mjs
-// Also a small CLI:  deseret-mcp to "some text"  |  deseret-mcp from "𐐔𐐯𐑅𐐨𐑉𐐯𐐻"  |  deseret-mcp file notes.md
+// Also a small CLI:  deseret-mcp to "some text"  |  deseret-mcp from "𐐔𐐯𐑆𐐲𐑉𐐯𐐻"  |  deseret-mcp file notes.md
 import readline from 'node:readline';
 import { createHandler } from '../src/tools.mjs';
 
