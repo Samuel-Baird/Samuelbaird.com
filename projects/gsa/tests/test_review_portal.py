@@ -74,6 +74,25 @@ class CommandTests(unittest.TestCase):
                 rp.run(types.SimpleNamespace(args.__dict__ | {'config': None}))
 
 
+class ReviewerRuleTests(unittest.TestCase):
+    BOTH = ['b13llama@gmail.com', 'davidjasonharper@gmail.com']
+
+    def test_production_needs_both_reviewers(self):
+        self.assertEqual(set(rp.required_reviewers({'required_publication_reviewers': self.BOTH}, '/w/GSA Worker')), {'Samuel', 'David'})
+        with self.assertRaises(Exception):
+            rp.required_reviewers({'required_publication_reviewers': self.BOTH[:1]}, '/w/GSA Worker')
+
+    def test_single_reviewer_only_in_a_marked_sandbox_home(self):
+        one = {'required_publication_reviewers': self.BOTH[:1], 'sandbox': True}
+        self.assertEqual(rp.required_reviewers(one, '/w/sandbox-x'), {'Samuel': self.BOTH[0]})
+        with self.assertRaises(Exception):
+            rp.required_reviewers(one, '/w/production')  # flag alone isn't enough
+        with self.assertRaises(Exception):
+            rp.required_reviewers(dict(one, sandbox=False), '/w/sandbox-x')
+        with self.assertRaises(Exception):
+            rp.required_reviewers(dict(one, required_publication_reviewers=['stranger@example.org']), '/w/sandbox-x')
+
+
 if __name__ == '__main__':
     unittest.main()
 
