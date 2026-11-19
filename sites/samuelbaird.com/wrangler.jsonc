@@ -15,7 +15,7 @@
     "html_handling": "drop-trailing-slash",
     "not_found_handling": "404-page",
     "run_worker_first": [
-      "/api/*",
+      "/api/*", "/gsa", "/gsa/*",
       "/latter-day-stats", "/latter-day-stats/*",
       "/urim", "/urim/*",
       "/peepstone", "/peepstone/*",
@@ -29,6 +29,8 @@
     { "binding": "PEEPSTONE", "service": "peepstone" },
     { "binding": "OMNI", "service": "omni" }
   ],
+  "durable_objects": {"bindings": [{"name": "GSA_REVIEWS", "class_name": "GsaReviews"}]},
+  "migrations": [{"tag": "gsa-reviews-v1", "new_sqlite_classes": ["GsaReviews"]}],
   "observability": { "enabled": true }
   // Secrets (wrangler secret put): SUPABASE_URL, SUPABASE_ANON_KEY, SCOUT_GITHUB_TOKEN,
   // CLOUDFLARE_API_TOKEN (read-only Workers Scripts, for the /admin deploys panel), CLOUDFLARE_ACCOUNT_ID.

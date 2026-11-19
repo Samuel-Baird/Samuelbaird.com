@@ -57,3 +57,11 @@ Run `python3 -m unittest discover -s tests -v` and then `python3 -m unittest dis
 ### Unattended intake rehearsal
 
 Run `python3 -m unittest discover -s tests -p test_intake_startup.py -v` in the worktree. The tests invoke the poll command with a temporary private config and queue. They check token refresh after HTTP 401, restart while offline, interruption between pages, recovery on the next poll, and exclusion of a second worker. The tests simulate Keychain and Google. A supervised read-only poll under the intended Mac account is still needed to verify actual credential access and reconciliation before enabling scheduling.
+
+### Website review
+
+The private review queue is at `https://samuelbaird.com/gsa`. Reviewers sign in through the site's Google SSO. Samuel and David each inspect the linked reviewer PDF and record their own checks or a change request. A change request requires a note. Decisions are final for that revision. For a correction, update the private review packet and increment its version to request fresh decisions. Republishing the same packet preserves existing decisions.
+
+On the worker Mac, use `review_portal.py queue --home WORKER_QUEUE --packet PRIVATE_SETTINGS.json` after validation and a clean archive check. The settings specify a stable URL-safe id, work ID, version, review_file (the private source review JSON), folder display name, reviewer-copy PDF URL and rights/attribution text. Keep the operator credential in the private worker home as `review-portal.key`; its SHA-256 verifier is configured in the site worker. The queue contains bibliographic and review metadata. Files stay in the separately shared Drive folder.
+
+After both approvals, run the same command with `collect` instead of `queue`. Collection verifies the local candidate hash and exact packet and imports the decisions using the pipeline's review and approval gates. The portal handles direct-download candidates. Publication is still an explicit worker command, with a fresh destination duplicate check.

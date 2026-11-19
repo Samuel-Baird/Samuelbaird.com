@@ -6,6 +6,8 @@
 //   /latter-day-stats, /urim,       the family apps, forwarded over service bindings (no extra HTTP hop,
 //   /peepstone, /omni (+ /*)        Host stays samuelbaird.com). Without a binding (local dev, or before
 //                                   an app is deployed) it falls back to proxying the app's public origin.
+import { gsaRoute } from './gsa.mjs';
+export { GsaReviews } from './gsa.mjs';
 import process from 'node:process';
 
 // The handlers read process.env when their module first evaluates, so they are imported only after
@@ -123,6 +125,10 @@ export default {
     const url = new URL(request.url);
     const path = url.pathname;
 
+    if (path === '/gsa' || path.startsWith('/gsa/')) {
+      loadEnv(env);
+      return gsaRoute(request, env, (await import('../api/_lib/session.js')).default);
+    }
     for (const app of APPS) {
       if (path === app.base || path.startsWith(app.base + '/')) return forward(app, request, env);
     }
