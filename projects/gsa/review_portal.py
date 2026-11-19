@@ -162,6 +162,24 @@ def archive_folder(api, config, index_config_path, folder_id):
         return False
 
 
+ASSIGNED = {'Samuel': 'b13llama@gmail.com', 'David': 'davidjasonharper@gmail.com'}
+
+
+def is_sandbox(config, home):
+    return config.get('sandbox') is True and 'sandbox' in Path(home).name
+
+
+def required_reviewers(config, home):
+    """The site reviewers whose approvals collect imports: both assigned reviewers, or, in a
+    sandbox home (config "sandbox": true and "sandbox" in the folder name), the configured subset."""
+    required = set(config.get('required_publication_reviewers', []))
+    if is_sandbox(config, home):
+        p.require(required and required <= set(ASSIGNED.values()), 'Configure the sandbox reviewers')
+    else:
+        p.require(required == set(ASSIGNED.values()), 'Configure both assigned reviewers')
+    return {name: email for name, email in ASSIGNED.items() if email in required}
+
+
 def apply_edits(draft, packet, edits):
     """Return the source review and packet with the reviewers' web edits applied."""
     draft, packet = dict(draft), dict(packet)
@@ -230,14 +248,15 @@ def run(args):
             # Chosen from the Table of Contents tree: find the real Drive folder by its path.
             names = [n.strip() for n in packet['folder'].split(' / ')][1:]
             packet['destination'] = draft['destination'] = resolve_toc_folder(api, config, names)
+        # A sandbox home publishes only to its own test folder, whatever a reviewer picked on the site.
+        p.require(not is_sandbox(config, home) or packet['destination'] in config['destination_ids'],
+                  'Sandbox works can only publish to the sandbox folder; set the destination back on the site')
         if packet['destination'] not in config['destination_ids']:
             p.require(archive_folder(api, config, args.config, packet['destination']),
                       'Edited destination is not a folder inside the archive (checked the Table of Contents and Drive)')
             # Both assigned reviewers approved this exact folder, which stands in for the allowlist.
             config = dict(config, destination_ids=[*config['destination_ids'], packet['destination']])
-        reviewers = {'Samuel':'b13llama@gmail.com', 'David':'davidjasonharper@gmail.com'}
-        p.require(set(config.get('required_publication_reviewers', [])) == set(reviewers.values()),
-                  'Configure both assigned reviewers')
+        reviewers = required_reviewers(config, home)
         for name in reviewers:
             check = decisions.get(name, {})
             p.require(check.get('decision') == 'Approved' and
@@ -246,11 +265,12 @@ def run(args):
         # Portal approval covers the displayed direct-download rights and exact destination.
         # Preserve the validated bytes while adding the source review for a browser-acquired PDF.
         p.require(not draft.get('infohash'), 'Portal supports direct downloads')
-        staff = reviewers['Samuel']
+        lead = next(iter(reviewers))
+        staff = reviewers[lead]
         data = dict(draft, reviewer=staff, permissions={})
         for kind in p.acquisition.PERMISSION_FIELDS:
             data['permissions'][kind] = dict(status='unknown' if kind=='peer_sharing' else 'granted',
-                basis=packet['rights'], source=packet['source'], recorded_by=staff, recorded_at=decisions['Samuel']['at'])
+                basis=packet['rights'], source=packet['source'], recorded_by=staff, recorded_at=decisions[lead]['at'])
         with tempfile.TemporaryDirectory(dir=home) as folder:
             file = Path(folder) / 'packet.json'
             file.write_text(json.dumps(data))
@@ -286,7 +306,7 @@ def run(args):
                 db.execute('ROLLBACK TO portal_import')
                 db.execute('RELEASE portal_import')
                 raise
-        print('Both decisions imported. Publication remains a separate operator command.')
+        print(f"{' and '.join(reviewers)} approval imported. Publication remains a separate operator command.")
 
 
 if __name__ == '__main__':
