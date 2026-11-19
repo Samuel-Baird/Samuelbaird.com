@@ -211,7 +211,7 @@ export default function TermsPage() {
                 href="/contact"
                 className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
               >
-                contact form
+                contact page
               </Link>{" "}
               or email{" "}
               <a

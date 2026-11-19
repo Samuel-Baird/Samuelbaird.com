@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  // Same name as the Vercel project. Routes / custom domains are added at cutover, not here.
+  // Custom domain omni.samuelbaird.com is attached in Cloudflare (not here); no workers.dev URL, Omni stays hidden.
   "name": "omni",
   // worker.ts wraps .open-next/worker.js (bare /api/mcp rewrite + noindex header).
   "main": "worker.ts",

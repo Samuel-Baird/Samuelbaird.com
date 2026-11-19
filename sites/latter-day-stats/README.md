@@ -17,7 +17,7 @@ Saints, BYU, or any tracked creator.
 | Language | TypeScript, `strict`, path alias `@/*` → `src/*` |
 | Styling | Tailwind CSS v4 — no config file; design tokens are CSS variables in `src/app/globals.css` |
 | Data | Supabase (Postgres + auth + storage) |
-| Hosting | Vercel |
+| Hosting | Cloudflare Workers (OpenNext), worker `latter-day-stats` |
 | Package manager | npm |
 
 > **This is not the Next.js you may know.** Version 16 has breaking changes

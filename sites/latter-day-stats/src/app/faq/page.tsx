@@ -96,7 +96,7 @@ const FAQS: Faq[] = [
   },
   {
     question: "How can I suggest a channel or study, or report an error?",
-    answerText: `Use the contact form or email ${CONTACT_EMAIL}. We usually respond within 48 hours.`,
+    answerText: `Email ${CONTACT_EMAIL} (or see the contact page). We usually respond within 48 hours.`,
     answer: (
       <p>
         Use the{" "}
@@ -104,7 +104,7 @@ const FAQS: Faq[] = [
           href="/contact"
           className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
         >
-          contact form
+          contact page
         </Link>{" "}
         or email{" "}
         <a
@@ -170,7 +170,7 @@ export default function FaqPage() {
           href="/contact"
           className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
         >
-          contact form
+          contact page
         </Link>
         .
       </p>

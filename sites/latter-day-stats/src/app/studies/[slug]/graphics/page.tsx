@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { studyOgImage } from "@/lib/og-images";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -35,6 +36,7 @@ export async function generateMetadata({
     title: `${study.title} graphics`,
     description: `Graphics made from the data in ${study.title}, free to download.`,
     alternates: { canonical: `/studies/${slug}/graphics` },
+    ...studyOgImage(study.slug),
   };
 }
 

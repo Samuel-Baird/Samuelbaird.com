@@ -115,7 +115,7 @@ export default function DmcaPage() {
                 href="/contact"
                 className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
               >
-                contact form
+                contact page
               </Link>
               .
             </p>

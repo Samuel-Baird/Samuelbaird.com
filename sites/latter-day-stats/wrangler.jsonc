@@ -16,8 +16,8 @@
   "observability": {
     "enabled": true
   },
-  // Same schedule as the old vercel.json crons; scheduled() in worker.ts
-  // calls /api/cron/refresh-stats and /api/cron/message-digest.
+  // Daily at 19:00 UTC; scheduled() in worker.ts calls /api/cron/refresh-stats
+  // (YouTube stats). No email cron: the site sends no mail.
   "triggers": {
     "crons": ["0 19 * * *"]
   },
@@ -28,21 +28,20 @@
       "service": "latter-day-stats"
     }
   ],
-  "r2_buckets": [
+  "kv_namespaces": [
     {
-      // OpenNext incremental cache (ISR pages + unstable_cache data).
-      "binding": "NEXT_INC_CACHE_R2_BUCKET",
-      "bucket_name": "latter-day-stats-opennext-cache"
+      // OpenNext incremental cache (ISR pages + unstable_cache data). KV, not
+      // R2: R2 is not enabled on the account.
+      "binding": "NEXT_INC_CACHE_KV",
+      "id": "bd4f29e73e0b4160a3d2ea3e27817b3d"
     }
   ],
   "d1_databases": [
     {
-      // OpenNext tag cache (revalidateTag / revalidatePath). Wrangler
-      // provisions the database on first deploy when database_id is omitted;
-      // or create it with `npx wrangler d1 create latter-day-stats-tag-cache`
-      // and add its "database_id" here.
+      // OpenNext tag cache (revalidateTag / revalidatePath).
       "binding": "NEXT_TAG_CACHE_D1",
-      "database_name": "latter-day-stats-tag-cache"
+      "database_name": "latter-day-stats-tag-cache",
+      "database_id": "59d682d8-1001-466c-a683-cd1578d16e85"
     }
   ],
   "images": {

@@ -60,7 +60,8 @@ export default async function AdminMessagesPage({
     <div>
       <h1 className="serif text-4xl font-semibold tracking-tight">Messages</h1>
       <p className="mt-2 text-sm text-[color:var(--muted)]">
-        Submissions from the public contact form.
+        Past submissions from the old contact form (retired; people now
+        email the site directly). Resolve what is left here.
       </p>
 
       <nav className="mt-6 flex gap-2 border-b border-[color:var(--border)] pb-3">

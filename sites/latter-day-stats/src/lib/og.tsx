@@ -1,5 +1,10 @@
 import type { CSSProperties, ReactNode } from "react";
 
+// Social card designs, rendered at BUILD time only by
+// scripts/build-og-images.tsx (next/og under Node) into public/og/. Nothing in
+// src/app may import this or next/og: the renderer's wasm would put the
+// Worker back over the free plan's size limit.
+
 export const OG_SIZE = { width: 1200, height: 630 };
 export const OG_CONTENT_TYPE = "image/png";
 

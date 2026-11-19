@@ -33,7 +33,7 @@ export default function PrivacyPage() {
           <DeseretTitle text="Privacy Policy." />
         </h1>
         <p className="mt-5 max-w-2xl text-sm text-[color:var(--muted)]">
-          Last updated November 18, 2026.
+          Last updated November 19, 2026.
         </p>
       </header>
 
@@ -52,12 +52,11 @@ export default function PrivacyPage() {
                 Bookmarks, upvotes, and study reading progress you create on
                 the site.
               </li>
-              <li>Your newsletter subscription status, if you opt in.</li>
             </ul>
             <p className="mt-3">
-              If you use the contact form, we collect your name, email, and
-              the message you send, along with which page (if any) you were
-              referencing.
+              If you email us, we have your message and email address in an
+              ordinary mailbox, as with any email. The site itself has no
+              contact form and sends no email.
             </p>
             <p className="mt-3">
               If you complete a quiz (such as &ldquo;How evangelical are
@@ -76,11 +75,10 @@ export default function PrivacyPage() {
 
           <Section id="how-we-use-it" title="How we use it">
             <p>
-              To run your account (sign-in, bookmarks, reading progress), send
-              the monthly newsletter if you&apos;ve opted in, respond to
-              messages sent through the contact form, and send the
-              weekly digest if you&apos;ve opted in. We don&apos;t sell your data or use it
-              for advertising — the site doesn&apos;t run ads.
+              To run your account (sign-in, bookmarks, reading progress) and
+              to answer email you send us. We don&apos;t send newsletters or
+              notification emails. We don&apos;t sell your data or use it for
+              advertising — the site doesn&apos;t run ads.
             </p>
           </Section>
 
@@ -124,10 +122,6 @@ export default function PrivacyPage() {
                 aggregate, cookieless analytics.
               </li>
               <li>
-                <strong>Resend</strong> — delivers contact-form
-                notifications and the opt-in newsletter.
-              </li>
-              <li>
                 <strong>YouTube Data API</strong> — public channel statistics
                 are pulled from YouTube; nothing about you is sent to
                 YouTube.
@@ -146,10 +140,11 @@ export default function PrivacyPage() {
           <Section id="retention" title="Data retention">
             <p>
               Account data is kept for as long as your account exists.
-              Contact-form messages are kept indefinitely as a record, with
-              your account link removed if you delete your account (the
-              message text and the name/email you provided at the time
-              remain, since that&apos;s the record of what was reported).
+              Messages sent through the contact form the site used to have
+              are kept as a record, with your account link removed if you
+              delete your account (the message text and the name/email given
+              at the time remain, since that&apos;s the record of what was
+              reported).
             </p>
           </Section>
 
@@ -164,7 +159,7 @@ export default function PrivacyPage() {
                 account settings
               </Link>
               . Deleting your account removes your profile, bookmarks,
-              upvotes, reading progress, and newsletter subscription
+              upvotes and reading progress
               immediately and permanently. If you&apos;d rather we handle a
               request manually — including requests covered by GDPR, CCPA, or
               a similar law — email us and we&apos;ll take care of it.
@@ -206,7 +201,7 @@ export default function PrivacyPage() {
                 href="/contact"
                 className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
               >
-                contact form
+                contact page
               </Link>{" "}
               or email{" "}
               <a

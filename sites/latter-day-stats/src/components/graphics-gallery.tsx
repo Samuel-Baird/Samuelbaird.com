@@ -7,7 +7,8 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { GraphicAdminControls } from "@/components/admin/graphic-admin-controls";
 import { FacetGroup } from "@/components/facet-group";
 import { Tag } from "@/components/tag";
-import { graphicId, type GalleryGraphic } from "@/lib/data-explorer";
+import type { GalleryGraphic } from "@/lib/data-explorer";
+import { graphicId } from "@/lib/graphic-id";
 import type { GraphicPostMap } from "@/lib/graphic-posts";
 import { publishState, type PublishState } from "@/lib/graphic-publish";
 

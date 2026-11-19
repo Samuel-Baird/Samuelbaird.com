@@ -7,7 +7,8 @@ Build the values, pass them in, and everything below comes for free.
 ```
 src/components/map/choropleth-map.tsx   the map: zoom, pan, tooltip, key, PNG export
 src/components/map/classes.ts           banding, colors, legend labels
-src/lib/world-map.ts                    server-side geometry (builds SVG paths)
+src/lib/world-map.ts                    server-side geometry (serves the precomputed SVG paths)
+scripts/maps/build-map-shapes.ts        projects the atlases into src/data/map-shapes.json
 ```
 
 Existing users: `src/components/map-explorer/map-explorer.tsx` and
@@ -18,7 +19,10 @@ its shape for a new map).
 
 1. Build the geometry on the **server**: `buildWorldMap(countryNames)` from
    `src/lib/world-map.ts`, and pass the result to the client component. No
-   topology ships to the browser. Names must match Natural Earth's; differences
+   topology ships to the browser, and none ships in the Worker either: the
+   paths are precomputed by `npx tsx scripts/maps/build-map-shapes.ts` into
+   `src/data/map-shapes.json` (committed; re-run it after changing an atlas, a
+   projection or a size). Names must match Natural Earth's; differences
    are handled by `NAME_ALIASES` in that file (add to it if a country is
    missing from the map).
 2. Render `<ChoroplethMap>` with:
@@ -143,7 +147,8 @@ Data Explorer PNG house style in `docs/CHARTS.md`:
 
   To add another country's subdivisions: scrape them into a CSV, add them to
   `build_state_stats.py`, add a `build<Country>Map()` next to
-  `buildCanadaProvinceMap()`, and add the country to `SUB` and `subMaps` in
+  `buildCanadaProvinceMap()` (geometry in `scripts/maps/build-map-shapes.ts`,
+  then re-run it), and add the country to `SUB` and `subMaps` in
   `map-explorer.tsx` / its page. Simplify any new geometry (topojson-simplify)
   so the page doesn't ship megabytes of coastline.
 - Blank counts mean zero. The learn site's family-history-center field is the

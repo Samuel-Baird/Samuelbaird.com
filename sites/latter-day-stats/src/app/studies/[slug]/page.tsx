@@ -17,6 +17,8 @@ import { CitationCopy } from "@/components/citation-copy";
 import { StudyProgressPanel } from "@/components/study-progress-panel";
 import { Tag, type TagInk } from "@/components/tag";
 import { getCurrentUser } from "@/lib/auth";
+import { studyOgImage } from "@/lib/og-images";
+import { mailto } from "@/lib/contact";
 import { filterPublished, getGraphicPostMap } from "@/lib/graphic-posts";
 import {
   getBookmarkSetForUser,
@@ -41,6 +43,7 @@ export async function generateMetadata({
     title: s.title,
     description: s.abstract?.slice(0, 200) ?? undefined,
     alternates: { canonical: `/studies/${slug}` },
+    ...studyOgImage(s.slug),
   };
 }
 
@@ -437,14 +440,12 @@ export default async function StudyDetailPage({
       />
 
       <p className="mt-10 text-xs text-[color:var(--muted)]">
-        <Link
-          href={`/contact?category=correction&ref=${encodeURIComponent(
-            `study:${study.slug}`,
-          )}`}
+        <a
+          href={mailto(`Correction: study ${study.slug}`)}
           className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
         >
           Report an error
-        </Link>{" "}
+        </a>{" "}
         on this study.
       </p>
 

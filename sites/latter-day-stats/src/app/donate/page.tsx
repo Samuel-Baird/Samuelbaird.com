@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { sectionOgImage } from "@/lib/og-images";
 import Link from "next/link";
 import { DeseretTitle } from "@/components/deseret-title";
 import { DonateButtons } from "@/components/donate-buttons";
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
   description:
     "Support Latter-day Stats — donations go toward hosting and keeping the site free and ad-free.",
   alternates: { canonical: "/donate" },
+  ...sectionOgImage("donate", "Latter-day Stats — Donate"),
 };
 
 

@@ -5,6 +5,7 @@
  * route or component, the same reasoning as the quiz's own tradition
  * lookup table (see scripts/evangelical-quiz/README.md).
  */
+import { graphicId } from "@/lib/graphic-id";
 
 import { fiveColumnPct, groupBreakdownRows, QUIZ_DATA } from "@/lib/evangelical-quiz";
 import switchingGeneralizedData from "../../docs/datasets/pew-rls-2023-24/switching-generalized.json";
@@ -5330,9 +5331,7 @@ export function getDataset(slug: string): Dataset | undefined {
  * Used as the /data-explorer/[slug]/graphics/[graphicId] URL segment and
  * as graphic_posts.graphic_id (see supabase/migrations/0049_graphic_posts.sql)
  * - renaming a PNG changes it, so treat basenames as stable identifiers. */
-export function graphicId(graphic: Graphic): string {
-  return graphic.imageSrc.split("/").pop()!.replace(/\.png$/, "");
-}
+export { graphicId };
 
 export function getGraphic(datasetSlug: string, id: string): Graphic | undefined {
   return getDataset(datasetSlug)?.graphics.find((g) => graphicId(g) === id);

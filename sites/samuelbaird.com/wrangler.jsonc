@@ -24,7 +24,7 @@
   },
   // Each app is its own Worker (sites/<app>/wrangler.jsonc). Deploy those before this one.
   "services": [
-    // { "binding": "LATTER_DAY_STATS", "service": "latter-day-stats" }, // until LDS moves (4 MiB worker needs Workers Paid); proxied to its Vercel origin meanwhile
+    { "binding": "LATTER_DAY_STATS", "service": "latter-day-stats" },
     { "binding": "URIM", "service": "urim" },
     { "binding": "PEEPSTONE", "service": "peepstone" },
     { "binding": "OMNI", "service": "omni" }

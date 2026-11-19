@@ -56,3 +56,6 @@ __pycache__/
 /.wrangler/
 .dev.vars*
 !.dev.vars.example
+
+# Social card images, rendered before every build by scripts/build-og-images.tsx
+/public/og/
