@@ -44,6 +44,18 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(p.compare(requested, dict(requested, edition='1')), 'ambiguous')
         self.assertEqual(p.compare(requested, {'title':'A Book'}), 'ambiguous')
         self.assertEqual(p.compare(requested, {'title':'Another'}), 'unrelated')
+
+    def test_filename_hits_include_short_title_with_surname(self):
+        volf = {'title': 'After Our Likeness: The Church as the Image of the Trinity', 'author': 'Miroslav Volf'}
+        self.assertTrue(p.name_hit(volf, 'Volf, After Our Likeness.pdf'))
+        self.assertTrue(p.name_hit(volf, 'Volf, After Our Likeness: The Church as the Image of the Trinity.pdf'))
+        self.assertFalse(p.name_hit(volf, 'Smith, After Our Likeness.pdf'))  # different author
+        self.assertFalse(p.name_hit(volf, 'Volf, Exclusion and Embrace.pdf'))
+        edited = {'title': 'Faith: A Short Guide', 'author': 'Jane Doe (editor)'}
+        self.assertFalse(p.name_hit(edited, 'Faith Healing.pdf'))  # one-word short title never matches alone
+        three = {'title': 'The Book of Mormon: A Biography', 'author': ''}
+        self.assertTrue(p.name_hit(three, 'Gutjahr, The Book of Mormon.pdf'))  # 3+ word short title, no author given
+        self.assertFalse(p.name_hit({'title': '', 'author': 'X'}, 'anything.pdf'))
     def seed(self):
         gsa.ingest(self.db, [{'row_id':'1', 'title':'Book'}], 'csv:test', 'test')
     def test_review_requires_both_permissions(self):
