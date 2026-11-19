@@ -7,7 +7,8 @@
       "scout": "artifact",
       "first_seen": "2026-11-11",
       "last_price": "$195",
-      "verified": false
+      "verified": false,
+      "status": "gone"
     },
     "https://www.schilbantiquarian.com/product/deseret-second-alphabet-1868/": {
       "title": "Deseret Second Reader 1868 (Schilb)",
@@ -560,6 +561,203 @@
       "first_seen": "2026-11-17",
       "last_price": "?",
       "verified": false,
+      "status": "gone"
+    },
+    "https://www.rarenewspapers.com/newspaper/700919-brigham-young-s-state-of-the-union-address": {
+      "title": "Deseret News 15 Dec 1853, Brigham Young Governor's Message",
+      "price": "$75",
+      "scout": "artifact",
+      "first_seen": "2026-11-19",
+      "last_price": "$75",
+      "verified": true
+    },
+    "https://www.abebooks.com/paper-collectibles/Absurdities-Immaterialism-Reply-Taylders-Pamphlet-Entitled/31893605717/bd": {
+      "title": "Orson Pratt, Absurdities of Immaterialism (Liverpool 1849), Stellar Books",
+      "price": "$75",
+      "scout": "artifact",
+      "first_seen": "2026-11-19",
+      "last_price": "$75",
+      "verified": true
+    },
+    "https://www.abebooks.com/first-edition/Exclusive-Salvation-Jaques-John-Richards-James/18332231064/bd": {
+      "title": "John Jaques, Exclusive Salvation (Liverpool 1851), Ken Sanders",
+      "price": "$75",
+      "scout": "artifact",
+      "first_seen": "2026-11-19",
+      "last_price": "$75",
+      "verified": true
+    },
+    "https://www.abebooks.com/Latter-Day-Saints-Millennial-Star-Saturday-October/13531865601/bd": {
+      "title": "Millennial Star 8 Oct 1853 (Vol XV No 41), Mare Booksellers",
+      "price": "$43",
+      "scout": "artifact",
+      "first_seen": "2026-11-19",
+      "last_price": "$43",
+      "verified": true
+    },
+    "https://www.abebooks.com/first-edition/Rise-Progress-Travels-Church-Jesus-Christ/31394702609/bd": {
+      "title": "George A. Smith, Rise, Progress and Travels of the Church (SLC 1869), Tschanz",
+      "price": "$250",
+      "scout": "artifact",
+      "first_seen": "2026-11-19",
+      "last_price": "$250",
+      "verified": true
+    },
+    "https://www.kensandersbooks.com/pages/books/47887/brigham-young/journal-of-discourses-by-brigham-young-president-of-the-church-his-two-counsellors-the-twelve": {
+      "title": "Journal of Discourses Vol 2 (Liverpool 1855), Ken Sanders 47887",
+      "price": "$275",
+      "scout": "artifact",
+      "first_seen": "2026-11-19",
+      "last_price": "$275",
+      "verified": true
+    },
+    "https://www.abebooks.com/Way-Obtain-Eternal-Life-Discussion-Church/6563765978/bd": {
+      "title": "Nye, Which is the Way to Obtain Eternal Life? (London 1883), Ken Sanders",
+      "price": "$100",
+      "scout": "artifact",
+      "first_seen": "2026-11-19",
+      "last_price": "$100",
+      "verified": true
+    },
+    "https://www.abebooks.com/LEvangile-Christ-Enseignait-Retablissement-Derniers-Jours/3921278065/bd": {
+      "title": "Spori/Tanner/Hintze, L'Evangile que Christ enseignait (Berne 1895), Ken Sanders",
+      "price": "$60",
+      "scout": "artifact",
+      "first_seen": "2026-11-19",
+      "last_price": "$60",
+      "verified": true
+    },
+    "https://www.kensandersbooks.com/pages/books/47886/john-taylor/journal-of-discourses-by-president-john-taylor-of-the-church-his-counsellors-the-twelve-apostles": {
+      "title": "Journal of Discourses Vol XXII (1882), Ken Sanders 47886",
+      "price": "$150",
+      "scout": "artifact",
+      "first_seen": "2026-11-19",
+      "last_price": "$150",
+      "verified": true
+    },
+    "https://www.abebooks.com/paper-collectibles/Cessation-Difficulties-Utah-Message-President-United/31365951935/bd": {
+      "title": "Buchanan, Cessation of Difficulties in Utah (1858), Little Sages",
+      "price": "$75",
+      "scout": "artifact",
+      "first_seen": "2026-11-19",
+      "last_price": "$75",
+      "verified": true
+    },
+    "https://www.rarenewspapers.com/view/685129": {
+      "title": "Niles' National Register 5 Oct 1844, More Trouble at Nauvoo",
+      "price": "$57",
+      "scout": "artifact",
+      "first_seen": "2026-11-19",
+      "last_price": "$57",
+      "verified": true
+    },
+    "https://www.kensandersbooks.com/pages/books/67675/charles-roscoe-savage-c-r-savage-carte-de-visite-cdv/brigham-youngs-residences-the-lion-house-and-the-beehive-house": {
+      "title": "C. R. Savage CDV, Lion House and Beehive House (c.1870s), Ken Sanders 67675",
+      "price": "$400",
+      "scout": "artifact",
+      "first_seen": "2026-11-19",
+      "last_price": "$400",
+      "verified": true
+    },
+    "https://www.abebooks.com/Life-Utah-Mysteries-Crimes-Mormonism-Being/32485402393/bd": {
+      "title": "Beadle, Life in Utah 1870, Argosy (peripheral Deseret)",
+      "price": "$150",
+      "scout": "artifact",
+      "first_seen": "2026-11-19",
+      "last_price": "$150",
+      "verified": true
+    },
+    "https://www.abebooks.com/first-edition/Life-Utah-Mysteries-Crimes-Mormonism-Being/31760056767/bd": {
+      "title": "Beadle, Life in Utah 1870, Dark Parks Books (peripheral Deseret)",
+      "price": "$100",
+      "scout": "artifact",
+      "first_seen": "2026-11-19",
+      "last_price": "$100",
+      "verified": true
+    },
+    "https://www.abebooks.com/first-edition/Journey-Great-Salt-Lake-City-Jules/19026467650/bd": {
+      "title": "Remy, Journey to Great-Salt-Lake City 1861, 2 vols, Ken Sanders (peripheral Deseret)",
+      "price": "$300",
+      "scout": "artifact",
+      "first_seen": "2026-11-19",
+      "last_price": "$300",
+      "verified": true
+    },
+    "https://www.abebooks.com/first-edition/Journey-Great-Salt-Lake-City-Sketch/31269999847/bd": {
+      "title": "Remy, Journey to Great-Salt-Lake City 1861, 2 vols, Orrin Schwab (peripheral Deseret)",
+      "price": "$300",
+      "scout": "artifact",
+      "first_seen": "2026-11-19",
+      "last_price": "$300",
+      "verified": true
+    },
+    "https://antiques-atlas.com/antique/victorian_silver__cut_glass_communion_set_in_box/ac058a1532": {
+      "title": "Victorian silver communion set, Birmingham 1843, Willmore (Carlton Fine Art)",
+      "price": "GBP380",
+      "scout": "artifact",
+      "first_seen": "2026-11-19",
+      "last_price": "GBP380",
+      "verified": true
+    },
+    "https://www.1stdibs.com/furniture/more-furniture-collectibles/collectibles-curiosities/religious-items/19th-century-sterling-silver-communion-beaker-wafer-tazza/id-f_27363722": {
+      "title": "William IV sterling communion beaker and wafer tazza, 1832, Edward Edwards II (1stdibs)",
+      "price": "price on request",
+      "scout": "artifact",
+      "first_seen": "2026-11-19",
+      "last_price": "price on request",
+      "verified": true
+    },
+    "https://ebornbooks.com/?p=124718": {
+      "title": "A Liahona bound vol 1964/65 (Portuguese), eBorn",
+      "price": "$35",
+      "scout": "artifact",
+      "first_seen": "2026-11-19",
+      "last_price": "$35",
+      "verified": true
+    },
+    "https://ebornbooks.com/?p=77002": {
+      "title": "Linforth reply to C.W. Lawrence 1851 (eBorn) - over budget, not reported",
+      "price": "$3,350",
+      "scout": "artifact",
+      "first_seen": "2026-11-19",
+      "last_price": "$3,350",
+      "verified": true,
+      "status": "over_budget"
+    },
+    "https://ebornbooks.com/?p=7447": {
+      "title": "Millennial Harbinger vol 2 1831 (eBorn) - over budget, not reported",
+      "price": "$10,000",
+      "scout": "artifact",
+      "first_seen": "2026-11-19",
+      "last_price": "$10,000",
+      "verified": true,
+      "status": "over_budget"
+    },
+    "https://www.abebooks.com/Mormonism-Exposed-Side-English-View-Case/13539862951/bd": {
+      "title": "Barclay Mormonism Exposed 1884 (Argosy) - not reported, owner dismissed other copies of this title",
+      "price": "$60",
+      "scout": "artifact",
+      "first_seen": "2026-11-19",
+      "last_price": "$60",
+      "verified": true,
+      "status": "not_reported"
+    },
+    "https://www.panoplybooks.com/the-deseret-second-book-by-the-regents-of-deseret-u-1868-original": {
+      "title": "Deseret Second Book 1868 (Panoply, alt URL) - 404",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-19",
+      "last_price": "?",
+      "verified": true,
+      "status": "gone"
+    },
+    "https://panoplybooks.com/the-deseret-second-book-by-regents-of-deseret-university-1868-original": {
+      "title": "Deseret Second Book 1868 (Panoply, alt URL) - 404",
+      "price": "?",
+      "scout": "artifact",
+      "first_seen": "2026-11-19",
+      "last_price": "?",
+      "verified": true,
       "status": "gone"
     }
   }
