@@ -58,9 +58,9 @@ class PipelineTests(unittest.TestCase):
         path.write_bytes(b'%PDF-1.7\n')
         p.save(self.db, 1, {'candidate':str(path)}, 'test')
         with patch('pipeline.subprocess.run', side_effect=FileNotFoundError('scanner')):
-            with self.assertRaises(FileNotFoundError):
+            with self.assertRaisesRegex(ValueError, 'Validation failed'):
                 p.validate_file(self.db, 1, {'scanner_command':['missing-scanner'], 'max_file_bytes':1024})
-        self.assertNotIn('validation', p.get(self.db, 1)[1])
+        self.assertEqual(p.get(self.db, 1)[1]['validation']['automated_verdict'], 'fail')
     def test_publish_requires_approval_before_network(self):
         self.seed()
         with self.assertRaisesRegex(ValueError, 'Staff approval required'):

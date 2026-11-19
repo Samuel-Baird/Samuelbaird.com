@@ -5,7 +5,7 @@
   "keychain_service": "GSA Google OAuth",
   "keychain_account": "gsa-worker",
   "form_id": "REPLACE_PRIVATELY",
-  "question_map": {"title": "QUESTION_ID", "author": "QUESTION_ID", "edition": "QUESTION_ID"},
+  "form_question_ids": {"materials": "MATERIALS_ID", "topics": "TOPICS_ID", "quality_of_life": "QUALITY_ID", "bugs": "BUGS_ID"},
   "archive_index": "/PRIVATE/PATH/archive-index.json",
   "destination_ids": [],
   "reviewers": [],
@@ -13,7 +13,7 @@
   "max_file_bytes": 1073741824,
   "disk_budget_bytes": 10737418240,
   "reserve_bytes": 5368709120,
-  "scanner_command": ["clamscan", "--infected", "--no-summary"],
+  "scanner_command": ["clamscan", "--database=/PRIVATE/PATH/clamav/db", "--infected", "--no-summary"],
   "changelog_document_id": "REPLACE_PRIVATELY",
   "changelog_anchor": "REPLACE_WITH_CURRENT_DATED_SECTION",
   "vpn_interface": "ipsec0"

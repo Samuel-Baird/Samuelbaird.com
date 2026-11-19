@@ -6,7 +6,9 @@ import hashlib
 import json
 import os
 from pathlib import Path
-import shutil
+import acquire as acquisition
+import validate as validation
+import rollout
 import subprocess
 import sys
 import time
@@ -106,6 +108,9 @@ class Google:
                 return result
 
 def poll(db, api, config):
+    if 'form_question_ids' in config:
+        from google_intake import poll_freeform
+        return poll_freeform(db, api, config)
     require(config.get('intake_approved') is True, 'Staff intake approval missing')
     form = config['form_id']
     source = 'form:' + form
@@ -167,14 +172,39 @@ def archive_check(db, wid, api, config, destination):
     save(db, wid, record, 'archive_check')
     return matches
 
+def triage(db, config, path):
+    packet = json.loads(path.read_text())
+    require(packet.get('reviewer') in config['reviewers'], 'Unknown reviewer')
+    pair = (config['form_id'], packet['response_id'])
+    row = db.execute('SELECT status FROM form_requests WHERE form_id=? AND response_id=?', pair).fetchone()
+    require(row is not None, 'Unknown form request')
+    source = 'triage:' + json.dumps(pair)
+    rows = packet['works']
+    require(isinstance(rows, list), 'Expected works array')
+    if row[0] != 'needs_review':
+        raise ValueError('Form request already reviewed')
+    with db:
+        gsa.ingest_rows(db, rows, source, packet['reviewer'])
+        db.execute("UPDATE form_requests SET status='reviewed' WHERE form_id=? AND response_id=?", pair)
+
+
+def permissions(data, config, torrent=False):
+    entries = data.get('permissions', {})
+    require(all(isinstance(entries.get(k), dict) for k in acquisition.PERMISSION_FIELDS),
+            'Separate download, peer-sharing and upload records required')
+    result = acquisition.evaluate_permissions(entries, config['reviewers'])
+    require(result['may_download_torrent' if torrent else 'may_download_direct']
+            and result['may_upload_to_gsa'], 'Permission evidence incomplete')
+
+
 def review(db, wid, path, config):
     work, record = get(db, wid)
     require(not record.get('upload_id'), 'Cannot revise an upload in progress')
     data = json.loads(path.read_text())
     require(data.get('reviewer') in config['reviewers'], 'Unknown reviewer')
-    for key in ('source_url', 'permission_evidence', 'matched_work', 'filename', 'destination', 'changelog_text'):
+    for key in ('source_url', 'matched_work', 'filename', 'destination', 'changelog_text'):
         require(bool(data.get(key)), 'Missing review field: ' + key)
-    require(data.get('download_permitted') is True and data.get('gsa_upload_permitted') is True, 'Separate download and upload permission required')
+    permissions(data, config, bool(data.get('infohash')))
     require(data['destination'] in config['destination_ids'], 'Unapproved destination')
     require(Path(data['filename']).name == data['filename'] and data['filename'] not in ('.', '..'), 'Invalid filename')
     record = {'review': data}
@@ -185,12 +215,11 @@ def review(db, wid, path, config):
 def acquire(db, wid, home, config):
     _, record = get(db, wid)
     review_data = record['review']
+    permissions(review_data, config)
     url = review_data['source_url']
     require(urllib.parse.urlparse(url).scheme == 'https', 'Only authorized HTTPS direct downloads supported; torrents remain supervised')
     require(urllib.parse.urlparse(url).hostname in config['source_hosts'], 'Source host not approved')
     limit = int(config['max_file_bytes'])
-    used = sum(p.stat().st_size for folder in ('incomplete', 'candidates') for p in (home / folder).rglob('*') if p.is_file())
-    require(used + limit <= config['disk_budget_bytes'] and shutil.disk_usage(home).free > limit + config['reserve_bytes'], 'Disk budget exhausted')
     class Redirect(urllib.request.HTTPRedirectHandler):
         def redirect_request(self, req, fp, code, msg, headers, newurl):
             target = urllib.parse.urlparse(newurl)
@@ -200,6 +229,9 @@ def acquire(db, wid, home, config):
     require(not record.get('upload_id'), 'Upload already started')
     try:
         with urllib.request.build_opener(Redirect()).open(url, timeout=60) as response, target.open('wb') as out:
+            length = response.headers.get('Content-Length')
+            if length:
+                require(acquisition.disk_check(home, [int(length)], config)['ok'], 'Disk budget exhausted')
             size = 0
             while True:
                 block = response.read(1024 * 1024)
@@ -207,6 +239,8 @@ def acquire(db, wid, home, config):
                     break
                 size += len(block)
                 require(size <= limit, 'Download exceeds file limit')
+                out.flush()
+                require(acquisition.disk_check(home, [size], config, out.tell())['ok'], 'Disk budget exhausted')
                 out.write(block)
             require(size > 0, 'Empty download')
             if response.headers.get('Content-Length'):
@@ -222,35 +256,30 @@ def acquire(db, wid, home, config):
 
 def validate_file(db, wid, config):
     _, record = get(db, wid)
-    path = Path(record['candidate'])
-    require(path.stat().st_size <= config['max_file_bytes'], 'File exceeds limit')
-    with path.open('rb') as f:
-        magic = f.read(32)
-    ext = path.suffix.lower()
-    require((ext == '.pdf' and magic.startswith(b'%PDF-')) or
-            (ext == '.mp3' and (magic.startswith(b'ID3') or (len(magic) > 1 and magic[0] == 255 and magic[1] & 224 == 224))) or
-            (ext == '.mp4' and magic[4:8] == b'ftyp'), 'Unsupported or mismatched file type')
-    # Tool errors and unavailable/stale scanners must never count as clean.
-    scanner = config['scanner_command']
-    require(isinstance(scanner, list) and scanner, 'Configure a malware scanner command array')
-    before = digest(path)
-    subprocess.run([*scanner, str(path)], capture_output=True, check=True, timeout=600)
-    command = ['pdfinfo', str(path)] if ext == '.pdf' else ['ffprobe', '-v', 'error', '-show_format', '-show_streams', str(path)]
-    result = subprocess.run(command, capture_output=True, text=True, check=True, timeout=120)
-    require(before == digest(path), 'Candidate changed during validation')
-    record['sha256'] = before
-    record['validation'] = {'at': stamp(), 'sha256': before, 'tool_output': result.stdout, 'scanner': scanner}
+    require(not record.get('upload_id'), 'Upload already started')
     record.pop('approval', None)
-    save(db, wid, record, 'validated')
+    record.pop('validation', None)
+    save(db, wid, record, 'validation_started')
+    report = validation.validate(Path(record['candidate']), config)
+    record['validation'] = report
+    record['sha256'] = report['sha256']
+    passed = report['automated_verdict'] == 'pass'
+    save(db, wid, record, 'validated' if passed else 'validation_failed')
     with db:
-        db.execute('UPDATE works SET sha256=?,status=? WHERE id=?', (record['sha256'], 'awaiting_staff_approval', wid))
+        db.execute('UPDATE works SET sha256=?,status=? WHERE id=?',
+                   (report['sha256'], 'awaiting_staff_approval' if passed else 'needs_review', wid))
+    require(passed, 'Validation failed: ' + ', '.join(report['automated_failures']))
+    return report
+
 
 def approve(db, wid, path, config):
     _, record = get(db, wid)
     approval = json.loads(path.read_text())
     require(approval.get('reviewer') in config['reviewers'], 'Unknown reviewer')
     require(record.get('validation') and approval.get('sha256') == record['sha256'] == digest(record['candidate']), 'Approval must bind to validated file hash')
-    for key in ('bibliography_verified', 'complete', 'first_last_and_body_checked'):
+    permissions(record['review'], config, bool(record['review'].get('infohash')))
+    require(record['validation'].get('automated_verdict') == 'pass', 'Passing validation required')
+    for key, _ in validation.STAFF_JUDGMENT:
         require(approval.get(key) is True, 'Staff check required: ' + key)
     require(approval.get('destination') == record['review']['destination'], 'Approval destination mismatch')
     require(record.get('archive_check') and not record['archive_check']['matches'], 'Archive matches require resolution before approval')
@@ -262,6 +291,10 @@ def publish(db, wid, api, config):
     require(config.get('publication_approved') is True, 'Live publication not enabled by staff')
     work, record = get(db, wid)
     require(record.get('approval'), 'Staff approval required')
+    permissions(record['review'], config, bool(record['review'].get('infohash')))
+    require(record.get('validation', {}).get('automated_verdict') == 'pass'
+            and all(record['approval'].get(k) is True for k, _ in validation.STAFF_JUDGMENT),
+            'Current validation and staff checks required')
     path = Path(record['candidate'])
     require(digest(path) == record['approval']['sha256'], 'File changed after approval')
     review_data = record['review']
@@ -283,6 +316,7 @@ def publish(db, wid, api, config):
     except urllib.error.HTTPError as exc:
         if exc.code != 404:
             raise
+        exc.close()
         require(path.stat().st_size <= 5 * 1024 * 1024, 'Pilot multipart uploader supports at most 5 MiB; larger files require resumable upload implementation')
         boundary = 'gsa_' + record['sha256']
         metadata = {'id': file_id, 'name': review_data['filename'], 'parents': [destination], 'appProperties': {'gsa_sha256': record['sha256']}}
@@ -318,13 +352,60 @@ def publish(db, wid, api, config):
         db.execute('UPDATE works SET changelog_receipt=?,status=?,reason=? WHERE id=?', (json.dumps({'target': document_id, 'marker': marker, 'at': stamp()}), 'complete', 'Verified Drive upload and dated changelog', wid))
 
 
+def torrent_loop(db, wid, home, config, evidence, metainfo):
+    """Supervise one operator-added torrent. The operator alone starts transfers."""
+    while True:
+        issues = rollout.guard(config, json.loads(evidence.read_text()))
+        require(not issues, 'Torrent guard blocked: ' + ', '.join(issues))
+        _, record = get(db, wid)
+        data = record['review']
+        require(not record.get('upload_id'), 'Upload already started')
+        permissions(data, config, torrent=True)
+        key = data['infohash'].lower()
+        require(bool(key), 'Missing reviewed infohash')
+        payload = acquisition.review_payload(acquisition.parse_torrent(metainfo.read_bytes()), config, key)
+        require(payload['route'] == 'permission_check', 'Payload requires staff review')
+        client = rollout.Client()
+        rows = client.call('torrents/info?' + urllib.parse.urlencode({'hashes': key}))
+        now = time.time()
+        job = record.setdefault('torrent_job', acquisition.new_job(key, now, payload['total_bytes']))
+        row = rows[0] if len(rows) == 1 else None
+        decision = acquisition.assess(job, row, now, config=config)
+        if row:
+            root = (home / 'incomplete').resolve()
+            path = Path(row['content_path']).resolve()
+            expected = payload['files'][0]
+            safe = path.is_relative_to(root) and path.name == Path(expected['path']).name
+            present = path.stat().st_size if safe and path.is_file() else 0
+            if not safe or not acquisition.disk_check(home, [expected['bytes']], config, present)['ok']:
+                decision = {'action': 'pause_and_review', 'reason': 'Unapproved path or disk budget'}
+                job['status'] = 'review'
+        action = decision['action']
+        if action in ('complete', 'pause_and_review', 'route_to_review') and row:
+            client.call('torrents/stop', {'hashes': key})
+        if action == 'complete':
+            require(path.is_file() and present == expected['bytes'], 'Incomplete payload')
+            record['candidate'] = str(path)
+            record.pop('approval', None)
+            record.pop('validation', None)
+        if action == 'recheck':
+            job['retries'] += 1
+        save(db, wid, record, 'torrent_' + action)
+        if action not in ('retry', 'recheck', 'wait'):
+            return decision
+        if action != 'wait':
+            client.call('torrents/' + ('reannounce' if action == 'retry' else 'recheck'), {'hashes': key})
+        time.sleep(15)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--home', type=Path, default=gsa.DEFAULT_HOME)
     parser.add_argument('--config', type=Path, required=True)
-    parser.add_argument('command', choices=['poll', 'check', 'review', 'acquire', 'validate', 'approve', 'publish'])
+    parser.add_argument('command', choices=['poll', 'triage', 'rank', 'torrent-loop', 'check', 'review', 'acquire', 'validate', 'approve', 'publish'])
     parser.add_argument('--work', type=int)
     parser.add_argument('--file', type=Path)
+    parser.add_argument('--evidence', type=Path)
     args = parser.parse_args()
     os.umask(0o077)
     require(args.config.stat().st_mode & 0o077 == 0, 'Private configuration must have mode 0600')
@@ -336,20 +417,31 @@ def main():
     with (home / 'pipeline.lock').open('a') as lock:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         api = Google(config)
-        if args.command == 'poll':
+        if args.command == 'triage':
+            require(args.file, '--file required')
+            triage(db, config, args.file)
+        elif args.command == 'poll':
             print(f'Imported {poll(db, api, config)} submissions')
         else:
             require(args.work is not None, '--work required')
             if args.command in ('review', 'approve'):
                 require(args.file is not None, '--file required')
                 globals()[args.command](db, args.work, args.file, config)
+            elif args.command == 'rank':
+                reports = [json.loads(row[0])['validation'] for row in db.execute(
+                    "SELECT detail FROM pipeline_events WHERE work_id=? AND action IN ('validated','validation_failed')", (args.work,))
+                    if 'automated_verdict' in json.loads(row[0])['validation']]
+                print(json.dumps(validation.rank(reports), indent=2))
+            elif args.command == 'torrent-loop':
+                require(args.file and args.evidence, '--file and --evidence required')
+                print(torrent_loop(db, args.work, home, config, args.evidence, args.file))
             elif args.command == 'check':
                 _, record = get(db, args.work)
                 print(json.dumps(archive_check(db, args.work, api, config, record['review']['destination']), indent=2))
             elif args.command == 'acquire':
                 acquire(db, args.work, home, config)
             elif args.command == 'validate':
-                validate_file(db, args.work, config)
+                print(validation.render(validate_file(db, args.work, config)))
             else:
                 publish(db, args.work, api, config)
     db.close()

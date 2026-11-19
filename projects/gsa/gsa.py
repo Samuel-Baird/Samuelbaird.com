@@ -70,6 +70,11 @@ def connect(home):
     return db
 
 def ingest(db, rows, source, batch, checkpoint=None):
+    with db:
+        return ingest_rows(db, rows, source, batch, checkpoint)
+
+
+def ingest_rows(db, rows, source, batch, checkpoint=None):
     # Validate the complete batch before any mutation. Submission and checkpoint commit together.
     prepared = []
     seen = set()
@@ -81,22 +86,21 @@ def ingest(db, rows, source, batch, checkpoint=None):
         seen.add(sid)
         prepared.append((sid, row))
     added = 0
-    with db:
-        for sid, row in prepared:
-            existing = db.execute('SELECT original FROM submissions WHERE source=? AND submission_id=?', (source, sid)).fetchone()
-            if existing:
-                if json.loads(existing['original']) != row:
-                    raise ValueError(f'Submission {sid} changed; use a new row_id to retain its previous outcome')
-                continue
-            key = identity(row)
-            reason = 'Edition, archive duplicate check, source, permission, and destination require review'
-            db.execute('INSERT OR IGNORE INTO works(fingerprint,metadata,reason,source) VALUES(?,?,?,?)',
-                       (key, json.dumps(row), reason, row['source_url']))
-            wid = db.execute('SELECT id FROM works WHERE fingerprint=?', (key,)).fetchone()['id']
-            db.execute('INSERT INTO submissions VALUES(?,?,?,?,?)', (source, sid, wid, batch, json.dumps(row)))
-            added += 1
-        if checkpoint is not None:
-            db.execute('INSERT INTO checkpoints VALUES(?,?) ON CONFLICT(source) DO UPDATE SET value=excluded.value', (source, checkpoint))
+    for sid, row in prepared:
+        existing = db.execute('SELECT original FROM submissions WHERE source=? AND submission_id=?', (source, sid)).fetchone()
+        if existing:
+            if json.loads(existing['original']) != row:
+                raise ValueError(f'Submission {sid} changed; use a new row_id to retain its previous outcome')
+            continue
+        key = identity(row)
+        reason = 'Edition, archive duplicate check, source, permission, and destination require review'
+        db.execute('INSERT OR IGNORE INTO works(fingerprint,metadata,reason,source) VALUES(?,?,?,?)',
+                   (key, json.dumps(row), reason, row['source_url']))
+        wid = db.execute('SELECT id FROM works WHERE fingerprint=?', (key,)).fetchone()['id']
+        db.execute('INSERT INTO submissions VALUES(?,?,?,?,?)', (source, sid, wid, batch, json.dumps(row)))
+        added += 1
+    if checkpoint is not None:
+        db.execute('INSERT INTO checkpoints VALUES(?,?) ON CONFLICT(source) DO UPDATE SET value=excluded.value', (source, checkpoint))
     return added
 
 def manifest(db, output):
