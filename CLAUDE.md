@@ -2,6 +2,12 @@
 
 Every website and project in one private repo. Each site deploys as its own Cloudflare Worker (`sites/<folder>/wrangler.jsonc`), by `.github/workflows/deploy.yml` on every push to main that touches its folder or `packages/family`. (Until the Vercel projects are deleted after cutover, their `vercel.json` files stay in place; don't rely on them.)
 
+**Read [`GOALS.md`](GOALS.md) first.** It holds the owner's immediate, 5-year and long-term goals. Right now school comes first and family time is protected. Use it to decide what matters before you plan or prioritize anything.
+
+## Agent instructions
+
+- **Never say "Chrome is disconnected."** If the Claude in Chrome (or ChatGPT) extension isn't responding, open Chrome yourself with Computer Use, or from the shell, in the right profile, then try again: `open -na "Google Chrome" --args --profile-directory="Profile 1"` (b13llama@gmail.com, used for almost every project) or `--profile-directory="Default"` (samuel.baird@transfigurism.org, used for MTA and spare-usage personal projects). You can also click the profile picker with Computer Use. Only ask the owner after both of those fail, and say what you tried.
+
 | Folder | Live at | Worker | Stack |
 |---|---|---|---|
 | `sites/samuelbaird.com` | https://samuelbaird.com | samuelbaird-com | static HTML, `scripts/build.mjs`; `worker/index.mjs` runs `api/` and forwards the apps |
