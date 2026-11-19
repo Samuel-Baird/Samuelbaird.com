@@ -34,3 +34,18 @@ test('each assigned account can approve once per exact review version',async()=>
   assert.equal((await post('b13llama@gmail.com')).status,409);
   assert.deepEqual(data.get('test').decisions,{});
 });
+
+test('private Drive reviewer copies render inline with the checklist and a separate-tab fallback', async () => {
+  const packet = {title:'Sample', pdf:'https://drive.google.com/file/d/test_id-1/view?usp=sharing&resourcekey=test-key'};
+  const queue = new GsaReviews({storage:{get:async()=>({packet,decisions:{},revision:'1'})}});
+  const env = {GSA_REVIEWS:{idFromName:()=>1,get:()=>queue}};
+  const open = () => gsaRoute(new Request(url+'/work/test'),env,session('b13llama@gmail.com'));
+  const result = await open();
+  assert.match(result.headers.get('Content-Security-Policy'), /frame-src https:\/\/drive\.google\.com;/);
+  const html = await result.text();
+  assert.match(html, /<iframe src="https:\/\/drive.google.com\/file\/d\/test_id-1\/preview\?resourcekey=test-key"/);
+  assert.match(html, /Open PDF in a new tab/);
+  assert.match(html, /Approve publication/);
+  packet.pdf = 'https://example.org/file/d/test/view';
+  assert.doesNotMatch(await (await open()).text(), /<iframe/);
+});

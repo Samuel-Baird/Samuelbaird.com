@@ -18,23 +18,35 @@ const sha = value => createHash('sha256').update(value).digest('hex');
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[c]));
 const headers = {'Cache-Control':'private, no-store', 'X-Robots-Tag':'noindex, nofollow',
   'Referrer-Policy':'no-referrer', 'X-Content-Type-Options':'nosniff',
-  'Content-Security-Policy':"default-src 'none'; style-src 'unsafe-inline'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'"};
+  'Content-Security-Policy':"default-src 'none'; style-src 'unsafe-inline'; form-action 'self'; frame-src https://drive.google.com; frame-ancestors 'none'; base-uri 'none'"};
 const response = (text, status=200, extra={}) => new Response(text, {status, headers:{...headers,...extra}});
 const redirect = path => response(null,303,{Location:path});
 const json = value => response(JSON.stringify(value),200,{'Content-Type':'application/json'});
 function page(title, body) {
   return response(`<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)} · GSA</title><style>
-  *{box-sizing:border-box}body{margin:0;background:#f7f5ee;color:#222d27;font:16px/1.55 system-ui,sans-serif}header{border-bottom:1px solid #c6cbc1;padding:1rem max(5vw,calc((100vw - 60rem)/2));white-space:nowrap;color:#345344;font-weight:650}main{max-width:62rem;margin:3rem auto;padding:0 1.5rem}h1,h2{font-family:Georgia,serif;line-height:1.15}h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:500}h2{font-size:1.55rem}section{padding:1.4rem 0;border-top:1px solid #c6cbc1}a{color:#245640}label{display:block;margin:.7rem 0}input{width:1rem;height:1rem;margin-right:.6rem}textarea{display:block;width:100%;max-width:40rem;padding:.6rem}button,.open{display:inline-block;background:#294f3c;color:white;padding:.65rem 1rem;border:0;border-radius:4px;margin:.5rem .6rem .5rem 0;font:inherit;cursor:pointer;text-decoration:none}button.secondary{background:#e2e5db;color:#243a2b}code{overflow-wrap:anywhere}small{color:#49564d}dl{display:grid;grid-template-columns:max-content 1fr;gap:.4rem 1rem}dd{margin:0;overflow-wrap:anywhere}@media(max-width:600px){dl{display:block}dd{margin-bottom:.7rem}}</style>
+  *{box-sizing:border-box}body{margin:0;background:#f7f5ee;color:#222d27;font:16px/1.55 system-ui,sans-serif}header{border-bottom:1px solid #c6cbc1;padding:1rem max(5vw,calc((100vw - 60rem)/2));white-space:nowrap;color:#345344;font-weight:650}main{max-width:62rem;margin:3rem auto;padding:0 1.5rem}h1,h2{font-family:Georgia,serif;line-height:1.15}h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:500}h2{font-size:1.55rem}section{padding:1.4rem 0;border-top:1px solid #c6cbc1}a{color:#245640}label{display:block;margin:.7rem 0}input{width:1rem;height:1rem;margin-right:.6rem}textarea{display:block;width:100%;max-width:40rem;padding:.6rem}button,.open{display:inline-block;background:#294f3c;color:white;padding:.65rem 1rem;border:0;border-radius:4px;margin:.5rem .6rem .5rem 0;font:inherit;cursor:pointer;text-decoration:none}button.secondary{background:#e2e5db;color:#243a2b}code{overflow-wrap:anywhere}small{color:#49564d}dl{display:grid;grid-template-columns:max-content 1fr;gap:.4rem 1rem}dd{margin:0;overflow-wrap:anywhere}@media(max-width:600px){dl{display:block}dd{margin-bottom:.7rem}}
+  .pdf-review iframe{display:block;width:100%;height:72vh;border:1px solid #c6cbc1;background:white}
+  @media(min-width:70rem){main:has(.pdf-review){max-width:98rem}.pdf-review{display:grid;grid-template-columns:minmax(0,3fr) minmax(20rem,2fr);gap:2rem;align-items:start}.pdf-review iframe{position:sticky;top:1rem;height:calc(100vh - 2rem)}}
+  </style>
   <header>Gospel Scholar Archive</header><main>${body}</main></html>`,200,{'Content-Type':'text/html; charset=utf-8'});
 }
 function itemPage(item, actor) {
   const {packet:p, decisions, revision}=item;
+  const pdf = URL.canParse(p.pdf) ? new URL(p.pdf) : null;
+  const file = pdf?.origin === 'https://drive.google.com' && pdf.pathname.match(/^\/file\/d\/([\w-]+)(?:\/(?:view|preview))?\/?$/);
+  let viewer = '';
+  if (file) {
+    const preview = new URL('https://drive.google.com/file/d/' + file[1] + '/preview');
+    if (pdf.searchParams.has('resourcekey')) preview.searchParams.set('resourcekey', pdf.searchParams.get('resourcekey'));
+    viewer = `<iframe src="${esc(preview.href)}" title="Reviewer PDF: ${esc(p.title)}" allowfullscreen></iframe>`;
+  }
   const done=decisions[actor];
   const statuses=[...reviewers.values()].map(name=>`<li>${name} · ${esc(decisions[name]?.decision || 'Pending')}${decisions[name]?.note ? ' — '+esc(decisions[name].note):''}</li>`).join('');
-  return page(p.title,`<a href="/gsa">← Review queue</a><h1>${esc(p.title)}</h1><p>${esc(p.citation)}</p><a class="open" href="${esc(p.pdf)}" target="_blank" rel="noreferrer">Open reviewer PDF ↗</a> <a href="${esc(p.source)}" target="_blank" rel="noreferrer">Publisher source ↗</a>
+  return page(p.title,`<a href="/gsa">← Review queue</a><h1>${esc(p.title)}</h1><p>${esc(p.citation)}</p><a class="open" href="${esc(p.pdf)}" target="_blank" rel="noreferrer">Open PDF in a new tab ↗</a> <a href="${esc(p.source)}" target="_blank" rel="noreferrer">Publisher source ↗</a>
+  ${viewer ? '<div class="pdf-review">'+viewer+'<div>' : ''}
   <section><h2>Publication details</h2><dl>${Object.entries({'Filename':p.filename,'Destination':p.folder,'Rights evidence':p.rights,'Changelog entry':p.entry,'Automated checks':p.validation,'SHA-256':p.sha256}).map(([k,v])=>`<dt>${k}</dt><dd>${esc(v)}</dd>`).join('')}</dl></section>
   <section><h2>Reviewer decisions</h2><ul>${statuses}</ul></section>
-  ${done ? '<p>Your decision is recorded for this version.</p>' : `<section><h2>Your review</h2><form method="post"><input type="hidden" name="revision" value="${revision}">${Object.entries(labels).map(([k,v])=>`<label><input type="checkbox" name="${k}">${v}</label>`).join('')}<label>Review notes<textarea name="note" rows="3" maxlength="2000"></textarea></label><button name="decision" value="Approved">Approve publication</button><button class="secondary" name="decision" value="Changes requested">Request changes</button></form></section>`}`);
+  ${done ? '<p>Your decision is recorded for this version.</p>' : `<section><h2>Your review</h2><form method="post"><input type="hidden" name="revision" value="${revision}">${Object.entries(labels).map(([k,v])=>`<label><input type="checkbox" name="${k}">${v}</label>`).join('')}<label>Review notes<textarea name="note" rows="3" maxlength="2000"></textarea></label><button name="decision" value="Approved">Approve publication</button><button class="secondary" name="decision" value="Changes requested">Request changes</button></form></section>`}${viewer ? '</div></div>' : ''}`);
 }
 
 export async function gsaRoute(request,env,session) {
