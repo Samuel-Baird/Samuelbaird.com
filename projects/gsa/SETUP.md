@@ -67,7 +67,7 @@ Run with `vpn_test.py` (sampler + phase marks + pcap attribution) and a root `tc
 | Connected | No qBittorrent packets on Wi-Fi, IPv4 or IPv6. It listens only on the tunnel's IPv4 address. |
 | Disconnected | `ipsec0` disappears, the listener closes, the last tunnel socket dies within ~25 s, the torrent stalls. Zero qBittorrent packets on Wi-Fi; no tracker DNS. The counter rose once (4.2 MB, 3 s after the drop) with no matching traffic on Wi-Fi: delayed accounting. |
 | Reconnected | The tunnel returns with a new address; qBittorrent re-binds by itself and resumes through the VPN ~40 s later. |
-| VPN-down startup | **Fails as configured.** No BitTorrent traffic leaves, but qBittorrent's own HTTPS requests do: the DB-IP GeoIP download (~4.2 MB; "Resolve peer countries") and the program update check (qbittorrent.org, fosshub.com, qbittorrent.github.io), over IPv4 and IPv6. Fix: turn both off, then retest. |
+| VPN-down startup | First run failed: qBittorrent's own HTTPS requests (DB-IP GeoIP download, ~4.2 MB, and the program update check) went out over Wi-Fi on IPv4 and IPv6, though no BitTorrent traffic did. Fixed by setting `Preferences/Advanced/updateCheck=false` and `Preferences/Connection/ResolvePeerCountries=false` in the profile's qBittorrent.ini (backup `.before-session3-fix`). Retest (torrent started with the VPN down): nothing from qBittorrent on Wi-Fi, no related DNS, only the localhost Web UI socket; it re-bound to the tunnel when the VPN returned. |
 | Reboot, network change | Not tested. |
 
 Attribution note: `vpn_test.py` matches packets to qBittorrent by its sampled local ports and peer addresses, so an unrelated process reusing a port can be flagged (one Apple DNS query was); check flagged packets by hand.
