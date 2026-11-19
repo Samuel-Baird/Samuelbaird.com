@@ -111,10 +111,12 @@ jobs:
       - name: Deploy message
         run: |
           echo "DEPLOY_TAG=$(git rev-parse --short=12 HEAD)" >> "$GITHUB_ENV"
-          echo "DEPLOY_MSG=main: $(git log -1 --format=%s | tr -d '\r\n' | cut -c1-80)" >> "$GITHUB_ENV"
-      - if: matrix.kind == 'static'
-        run: npx wrangler deploy --tag "$DEPLOY_TAG" --message "$DEPLOY_MSG"
+          # In an OpenNext folder `wrangler deploy` hands off to `opennextjs-cloudflare deploy`, which re-splits the
+          # message on spaces and through a shell. So keep only safe characters and use non-breaking spaces.
+          msg="main: $(git log -1 --format=%s | tr -d '\r\n' | tr -cd 'A-Za-z0-9 ._:/#,-' | cut -c1-80)"
+          echo "DEPLOY_MSG=$(printf '%s' "$msg" | sed 's/ /\xc2\xa0/g')" >> "$GITHUB_ENV"
       - if: matrix.kind == 'next'
-        run: |
-          npx opennextjs-cloudflare build
-          npx opennextjs-cloudflare deploy -- --tag "$DEPLOY_TAG" --message "$DEPLOY_MSG"
+        run: npx opennextjs-cloudflare build
+      # Same command for both kinds: in an OpenNext folder wrangler routes it through OpenNext's deploy
+      # (populates the cache, then uploads).
+      - run: npx wrangler deploy --tag "$DEPLOY_TAG" --message "$DEPLOY_MSG"
