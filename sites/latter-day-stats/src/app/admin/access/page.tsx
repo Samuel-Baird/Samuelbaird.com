@@ -1,5 +1,4 @@
 import { setUserRole, upsertUserAccess, type UserRole } from "@/app/admin/actions";
-import { CopyEmails } from "@/components/copy-emails";
 import { SubmitButton } from "@/components/submit-button";
 import { requireAdmin } from "@/lib/auth";
 import { fmtDate } from "@/lib/format";
@@ -34,17 +33,14 @@ export default async function AdminAccessPage() {
     { data: premiumRows, error: premiumError },
     { data: adminRows, error: adminError },
     { data: adminProfileRows, error: profileError },
-    { data: digestRows, error: digestError },
   ] = await Promise.all([
     supabase.from("premium_users").select("email, name, created_at"),
     supabase.from("admins").select("email, name, created_at"),
     supabase.from("profiles").select("email, full_name").eq("is_admin", true),
-    supabase.from("premium_users").select("email").eq("notify_weekly", true),
   ]);
   if (premiumError) throw premiumError;
   if (adminError) throw adminError;
   if (profileError) throw profileError;
-  if (digestError) throw digestError;
 
   const people = new Map<string, Person>();
   function upsert(email: string | null, name: string | null, addedAt: string | null, role?: UserRole) {
@@ -73,9 +69,6 @@ export default async function AdminAccessPage() {
 
   const roster = [...people.values()].sort((a, b) => a.email.localeCompare(b.email));
 
-  const digestEmails = ((digestRows ?? []) as { email: string }[])
-    .map((r) => r.email)
-    .sort();
 
   return (
     <div>
@@ -195,23 +188,6 @@ export default async function AdminAccessPage() {
             Nobody has premium or admin access yet.
           </div>
         )}
-      </div>
-
-      <div className="mt-10 grid gap-6 sm:grid-cols-2">
-        <section className="rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-5 sm:p-6">
-          <h2 className="serif text-xl font-semibold tracking-tight">
-            Weekly digest recipients
-          </h2>
-          <p className="mt-2 text-sm leading-relaxed text-[color:var(--muted)]">
-            Premium members opted into the weekly email digest.
-          </p>
-          <div className="mt-4 text-sm text-[color:var(--muted)]">
-            {digestEmails.length} {digestEmails.length === 1 ? "recipient" : "recipients"}
-          </div>
-          <div className="mt-3">
-            <CopyEmails value={digestEmails.join(", ")} />
-          </div>
-        </section>
       </div>
     </div>
   );

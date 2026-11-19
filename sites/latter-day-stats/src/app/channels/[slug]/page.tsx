@@ -8,6 +8,7 @@ import { FreshnessBadge } from "@/components/freshness-badge";
 import { GrowthChart } from "@/components/growth-chart";
 import { getCurrentUser } from "@/lib/auth";
 import { channelOgImage } from "@/lib/og-images";
+import { mailto } from "@/lib/contact";
 import { Tag } from "@/components/tag";
 import { inkForType } from "@/lib/channel-types";
 import {
@@ -246,14 +247,12 @@ export default async function ChannelDetailPage({
       </div>
 
       <p className="mt-6 text-xs text-[color:var(--muted)]">
-        <Link
-          href={`/contact?category=correction&ref=${encodeURIComponent(
-            `channel:${channel.slug}`,
-          )}`}
+        <a
+          href={mailto(`Correction: ${channel.name} (channel ${channel.slug})`)}
           className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
         >
           Report an error
-        </Link>
+        </a>
       </p>
     </div>
   );

@@ -33,6 +33,8 @@ const nextConfig: NextConfig = {
     return [
       // Compare was removed; keep old links and bookmarks working.
       { source: "/compare", destination: "/channels", permanent: true },
+      // The contact form (and its thank-you page) was replaced by an email address.
+      { source: "/contact/thank-you", destination: "/contact", permanent: true },
       { source: "/", has: LEGACY, destination: "https://samuelbaird.com/latter-day-stats", permanent: true, basePath: false },
       { source: "/:path((?!latter-day-stats(?:/|$)|api/|auth/|mcp(?:/|$)|_next/).+)", has: LEGACY, destination: "https://samuelbaird.com/latter-day-stats/:path", permanent: true, basePath: false },
     ];

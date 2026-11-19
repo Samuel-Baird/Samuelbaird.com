@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { sectionOgImage } from "@/lib/og-images";
 import Link from "next/link";
 import { DeseretTitle } from "@/components/deseret-title";
-import { CONTACT_EMAIL } from "@/lib/contact";
+import { CONTACT_EMAIL, mailto } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Methodology",
@@ -78,9 +78,9 @@ export default function MethodologyPage() {
             </p>
             <p className="mt-3">
               To suggest a channel,{" "}
-              <Link href="/contact?category=channel_suggestion" className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline">
-                use the contact form
-              </Link>
+              <a href={mailto("Channel suggestion")} className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline">
+                email {CONTACT_EMAIL}
+              </a>
               .
             </p>
           </Section>
@@ -118,9 +118,9 @@ export default function MethodologyPage() {
             </p>
             <p className="mt-3">
               To suggest a study,{" "}
-              <Link href="/contact?category=study_suggestion" className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline">
-                use the contact form
-              </Link>
+              <a href={mailto("Study suggestion")} className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline">
+                email {CONTACT_EMAIL}
+              </a>
               .
             </p>
           </Section>
@@ -143,13 +143,9 @@ export default function MethodologyPage() {
           <Section id="corrections" title="Corrections">
             <p>
               Errors in channel metadata, stats attribution, or study summaries
-              can be reported via the{" "}
-              <Link href="/contact?category=correction" className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline">
-                contact form
-              </Link>{" "}
-              or by emailing{" "}
+              can be reported by emailing{" "}
               <a
-                href={`mailto:${CONTACT_EMAIL}`}
+                href={mailto("Correction")}
                 className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
               >
                 {CONTACT_EMAIL}
@@ -183,18 +179,11 @@ export default function MethodologyPage() {
             <p className="mt-3 border-t border-[color:var(--border)] pt-3 text-sm leading-relaxed text-[color:var(--muted)]">
               Something here look wrong? Write to{" "}
               <a
-                href={`mailto:${CONTACT_EMAIL}`}
+                href={mailto("Correction")}
                 className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
               >
                 {CONTACT_EMAIL}
-              </a>{" "}
-              or{" "}
-              <Link
-                href="/contact?category=correction"
-                className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
-              >
-                use the contact form
-              </Link>
+              </a>
               .
             </p>
           </div>

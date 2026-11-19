@@ -5,11 +5,12 @@
 // 1. Rewrites: /api/*, /auth/* and /mcp outside the basePath go to
 //    /latter-day-stats/api/*, /latter-day-stats/auth/* and
 //    /latter-day-stats/mcp, so the legacy host (latterdaystats.samuelbaird.com)
-//    keeps Stripe webhooks, OAuth callbacks and the MCP endpoint working.
+//    keeps OAuth callbacks and the MCP endpoint working.
 //    Every other legacy-host path is 301'd to samuelbaird.com/latter-day-stats
 //    by the redirects in next.config.ts.
-// 2. Crons: the Cron Trigger in wrangler.jsonc (0 19 * * *) calls both cron
-//    routes in-process with the same Bearer CRON_SECRET they check.
+// 2. Cron: the Cron Trigger in wrangler.jsonc (0 19 * * *) calls
+//    /api/cron/refresh-stats in-process with the Bearer CRON_SECRET it checks.
+//    (The daily message-digest email cron was removed with all outgoing email.)
 //
 // Excluded from tsconfig.json: .open-next/worker.js only exists after an
 // OpenNext build, and the Workers types are not part of the Next program.
@@ -23,7 +24,7 @@ type ScheduledController = { cron: string; scheduledTime: number };
 
 const BASE_PATH = "/latter-day-stats";
 const OUTSIDE_BASE_PATH = /^\/(?:api|auth|mcp)(?:\/|$)/;
-const CRON_ROUTES = ["/api/cron/refresh-stats", "/api/cron/message-digest"];
+const CRON_ROUTES = ["/api/cron/refresh-stats"];
 const IMAGE_PATH = `${BASE_PATH}/_next/image`;
 // Static social cards (public/og, see src/lib/og-images.ts). Static assets are
 // served before the Worker runs, so a request that reaches here for a
@@ -84,8 +85,8 @@ const worker = {
       console.error(JSON.stringify({ evt: "cron.skipped", level: "error", reason: "CRON_SECRET not set" }));
       return;
     }
-    // Run sequentially: both are I/O-bound, and running them one after the
-    // other keeps concurrent subrequests (Supabase, YouTube, Resend) low.
+    // One route today; if more are added, keep them sequential so concurrent
+    // subrequests stay low (free plan: 50 per invocation).
     for (const path of CRON_ROUTES) {
       const started = Date.now();
       try {
