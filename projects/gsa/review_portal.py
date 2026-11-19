@@ -154,8 +154,9 @@ def run(args):
                     db.execute('UPDATE works SET metadata=? WHERE id=?', (json.dumps(metadata), wid))
                 p.review(tx, wid, file, config)
                 _, updated = p.get(tx, wid)
-                for field in ('candidate','sha256','validation'):
-                    updated[field] = record[field]
+                for field in ('candidate','sha256','validation','candidates','candidate_reports','format_choice'):
+                    if field in record:
+                        updated[field] = record[field]
                 updated['web_review'] = {'revision':result['revision'], 'decisions':decisions,
                                          'edits':result.get('edits') or {}, 'history':result.get('history') or []}
                 p.save(tx, wid, updated, 'web_review_received')
