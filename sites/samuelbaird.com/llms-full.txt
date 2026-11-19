@@ -27,6 +27,7 @@ A wiki, document library and learning toolkit for the Deseret Alphabet, the 1854
 - Articles on the alphabet's people, letters, works and variants
 - Every known Deseret font with specimens and licenses
 - Read any page in the Deseret alphabet with one toggle
+- Deseret MCP: an AI connector for Deseret transliteration and wiki search (https://mcp.deseret.wiki/mcp)
 
 Topics: Deseret Alphabet, Latter-day Saint history, Phonetic writing, Typography, Pioneer Utah.
 
@@ -44,6 +45,22 @@ A searchable multilingual dictionary of Latter-day Saint theological vocabulary.
 
 Topics: Translation, Latter-day Saint terminology, Portuguese, Spanish, Multilingual dictionary.
 
+### LDS Sacred Sites
+
+https://samuelbaird.com/lds-sacred-sites/
+
+Interactive maps and open datasets of the places The Church of Jesus Christ of Latter-day Saints holds sacred: every temple (operating, under construction and announced, with announcement, groundbreaking and dedication dates) and every Church history site, visitors’ center, monument and museum. Compiled from the Church’s official pages, Wikidata and OpenStreetMap, downloadable as CSV and JSON.
+
+Topics: Latter-day Saints, Temples, Church history, Maps, Open data.
+
+### Editions
+
+https://samuelbaird.com/editions/
+
+Change logs and open datasets of the Church’s official texts: every hymn in every Latter-day Saint hymnbook from Emma Smith’s 1835 collection to Hymns—For Home and Church, with which hymns were added or dropped, and every published section and chapter update to the General Handbook since 2020. Downloadable as CSV and JSON.
+
+Topics: Latter-day Saints, Hymnody, General Handbook, Church policy, Open data.
+
 ### Pulpit
 
 https://pulpit.restorationcommons.org/ (Samuel Baird is a contributor)
@@ -55,18 +72,6 @@ A critical digital edition of every General Conference discourse since 1830. Eac
 - Each talk traced to its best surviving witness
 
 Topics: General Conference, Latter-day Saint history, Textual criticism.
-
-### Deseret MCP
-
-https://mcp.deseret.wiki/
-
-A Model Context Protocol (MCP) server that lets Claude and other AI assistants transliterate English to and from the Deseret Alphabet and search the Deseret Wiki. Add it as a custom connector and ask for any text in Deseret, or for sourced answers about the alphabet's history.
-
-- MCP endpoint: https://mcp.deseret.wiki/mcp
-- English to Deseret and back, phonetically
-- Searches every Deseret Wiki article
-
-Topics: Model Context Protocol, Deseret Alphabet, Transliteration, AI tools.
 
 ### Peepstone
 
@@ -114,7 +119,7 @@ Samuel Baird builds public data tools and makes videos about religion, history a
 
 ### What projects has Samuel Baird made?
 
-8 public projects, all free: [Latter-day Stats](https://samuelbaird.com/latter-day-stats) (statistics, research and creator data on the Latter-day Saint community); [Deseret Wiki](https://deseret.wiki/) (a library, encyclopaedia and primer of the Deseret Alphabet); [Urim](https://samuelbaird.com/urim) (the Mormon Translation Atlas: how the Church translates its own vocabulary); [Deseret MCP](https://mcp.deseret.wiki/) (deseret Alphabet transliteration and Deseret Wiki search for AI assistants); [Peepstone](https://samuelbaird.com/peepstone) (search and read the Joseph Smith Papers from any AI assistant); [Sacred Sites Visited](https://samuelbaird.com/sacred-sites) (a map of every church, temple and house of worship visited since 2025); [My Reading](https://samuelbaird.com/books) (every book and article read, with the date finished); [Collection](https://samuelbaird.com/collection) (historic Latter-day Saint books, periodicals and artifacts). He also contributed to [Pulpit](https://pulpit.restorationcommons.org/). Every project has a page under [Projects](https://samuelbaird.com/projects).
+9 public projects, all free: [Latter-day Stats](https://samuelbaird.com/latter-day-stats) (statistics, research and creator data on the Latter-day Saint community); [Deseret Wiki](https://deseret.wiki/) (a library, encyclopaedia and primer of the Deseret Alphabet); [Urim](https://samuelbaird.com/urim) (the Mormon Translation Atlas: how the Church translates its own vocabulary); [LDS Sacred Sites](https://samuelbaird.com/lds-sacred-sites) (maps and open data of every Latter-day Saint temple and Church history site); [Editions](https://samuelbaird.com/editions) (how the Church’s hymnbooks and General Handbook have changed, edition by edition); [Peepstone](https://samuelbaird.com/peepstone) (search and read the Joseph Smith Papers from any AI assistant); [Sacred Sites Visited](https://samuelbaird.com/sacred-sites) (a map of every church, temple and house of worship visited since 2025); [My Reading](https://samuelbaird.com/books) (every book and article read, with the date finished); [Collection](https://samuelbaird.com/collection) (historic Latter-day Saint books, periodicals and artifacts). He also contributed to [Pulpit](https://pulpit.restorationcommons.org/). Every project has a page under [Projects](https://samuelbaird.com/projects).
 
 ### What is Latter-day Stats?
 

@@ -1,5 +1,5 @@
 {
-  "$comment": "Single source of truth for every public Samuel Baird project. Drives the shared sidebar on every site and the project pages, JSON-LD, sitemap and llms.txt on samuelbaird.com. Never add private work here (school, collector-items, content-creation) and never link the Gospel Scholar Archive. The hidden flag (true) keeps a project off every public list (sidebar, /projects, llms.txt, sitemap) and disallows its whole base path in robots.txt; Omni is hidden because it proxies the private Gospel Scholar Archive. After editing, run: node scripts/family-sync.mjs URL rule: every project except the Deseret Wiki family (deseret.wiki, mcp.deseret.wiki) lives at https://samuelbaird.com/<id>, served by its own Cloudflare Worker, which the samuelbaird-com Worker reaches over a service binding (origin is the fallback for local dev); formerUrl hosts 301 there.",
+  "$comment": "Single source of truth for every public Samuel Baird project. Drives the shared sidebar on every site and the project pages, JSON-LD, sitemap and llms.txt on samuelbaird.com. Never add private work here (school, collector-items, content-creation) and never link the Gospel Scholar Archive. The hidden flag (true) keeps a project off every public list (sidebar, /projects, llms.txt, sitemap) and disallows its whole base path in robots.txt; unlisted (true) keeps a project off every list but still builds its About page (Deseret MCP is listed only on the Deseret Wiki); kind \"page\" items are personal pages, shown under Personal in the sidebar, not Projects; Omni is hidden because it proxies the private Gospel Scholar Archive. After editing, run: node scripts/family-sync.mjs URL rule: every project except the Deseret Wiki family (deseret.wiki, mcp.deseret.wiki) lives at https://samuelbaird.com/<id>, served by its own Cloudflare Worker, which the samuelbaird-com Worker reaches over a service binding (origin is the fallback for local dev); formerUrl hosts 301 there.",
   "owner": {
     "name": "Samuel Baird",
     "url": "https://samuelbaird.com",
@@ -77,7 +77,8 @@
         "Scans of the Deseret readers, the 1869 Book of Mormon and the Deseret News",
         "Articles on the alphabet's people, letters, works and variants",
         "Every known Deseret font with specimens and licenses",
-        "Read any page in the Deseret alphabet with one toggle"
+        "Read any page in the Deseret alphabet with one toggle",
+        "Deseret MCP: an AI connector for Deseret transliteration and wiki search (https://mcp.deseret.wiki/mcp)"
       ],
       "links": [
         [
@@ -95,6 +96,10 @@
         [
           "Quotes",
           "/quotes/"
+        ],
+        [
+          "Deseret MCP (use with AI)",
+          "https://mcp.deseret.wiki/connect"
         ]
       ],
       "topics": [
@@ -160,6 +165,76 @@
       "origin": "https://urim.samuelbaird.com"
     },
     {
+      "id": "lds-sacred-sites",
+      "name": "LDS Sacred Sites",
+      "url": "https://samuelbaird.com/lds-sacred-sites",
+      "role": "creator",
+      "kind": "data",
+      "color": "#B88A4A",
+      "icon": "i-sunmoon",
+      "tagline": "Maps and open data of every Latter-day Saint temple and Church history site.",
+      "description": "Interactive maps and open datasets of the places The Church of Jesus Christ of Latter-day Saints holds sacred: every temple (operating, under construction and announced, with announcement, groundbreaking and dedication dates) and every Church history site, visitors’ center, monument and museum. Compiled from the Church’s official pages, Wikidata and OpenStreetMap, downloadable as CSV and JSON.",
+      "facts": [],
+      "links": [
+        [
+          "Temples",
+          "https://samuelbaird.com/temples"
+        ],
+        [
+          "Historic Sites",
+          "https://samuelbaird.com/historic-sites"
+        ],
+        [
+          "Open data",
+          "https://samuelbaird.com/data#lds-temples"
+        ]
+      ],
+      "topics": [
+        "Latter-day Saints",
+        "Temples",
+        "Church history",
+        "Maps",
+        "Open data"
+      ],
+      "schemaType": "CollectionPage",
+      "since": "2026"
+    },
+    {
+      "id": "editions",
+      "name": "Editions",
+      "url": "https://samuelbaird.com/editions",
+      "role": "creator",
+      "kind": "data",
+      "color": "#8A7AA8",
+      "icon": "i-primer",
+      "tagline": "How the Church’s hymnbooks and General Handbook have changed, edition by edition.",
+      "description": "Change logs and open datasets of the Church’s official texts: every hymn in every Latter-day Saint hymnbook from Emma Smith’s 1835 collection to Hymns—For Home and Church, with which hymns were added or dropped, and every published section and chapter update to the General Handbook since 2020. Downloadable as CSV and JSON.",
+      "facts": [],
+      "links": [
+        [
+          "Hymns",
+          "https://samuelbaird.com/hymns"
+        ],
+        [
+          "Handbook Changes",
+          "https://samuelbaird.com/handbook-changes"
+        ],
+        [
+          "Open data",
+          "https://samuelbaird.com/data#lds-hymns"
+        ]
+      ],
+      "topics": [
+        "Latter-day Saints",
+        "Hymnody",
+        "General Handbook",
+        "Church policy",
+        "Open data"
+      ],
+      "schemaType": "CollectionPage",
+      "since": "2026"
+    },
+    {
       "id": "pulpit",
       "name": "Pulpit",
       "url": "https://pulpit.restorationcommons.org",
@@ -216,7 +291,8 @@
         "AI tools"
       ],
       "schemaType": "SoftwareApplication",
-      "since": "2026"
+      "since": "2026",
+      "unlisted": true
     },
     {
       "id": "peepstone",

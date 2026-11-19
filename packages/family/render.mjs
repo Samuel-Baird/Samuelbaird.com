@@ -13,7 +13,12 @@ export const DATA = JSON.parse(fs.readFileSync(path.join(HERE, 'projects.json'),
 // off every public list: sidebars, footers, /projects, llms.txt, sitemap. ALL_PROJECTS still
 // has it so a hidden app can render its own chrome.
 export const ALL_PROJECTS = DATA.projects;
-export const PROJECTS = DATA.projects.filter((p) => !p.hidden);
+// "unlisted": true (Deseret MCP) also stays off every list, but keeps its About page; it is listed only on the Deseret Wiki.
+export const PROJECTS = DATA.projects.filter((p) => !p.hidden && !p.unlisted);
+// kind "page" items are personal pages on samuelbaird.com (sacred sites visited, reading, collection): the sidebar's
+// Personal section. Everything else is a project.
+export const WORK = PROJECTS.filter((p) => p.kind !== 'page');
+export const PERSONAL = PROJECTS.filter((p) => p.kind === 'page');
 export const OWNER = DATA.owner;
 const asset = (f) => fs.readFileSync(path.join(HERE, 'assets', f), 'utf8');
 
@@ -77,10 +82,16 @@ export function renderTop(siteId, pagePath = '') {
   const { bp, onHub } = siteBase(siteId);
   const here = pagePath ? (pagePath === '/' ? (bp || '/') : bp + pagePath) : '';
   const L = (m) => ({ ...m, href: localize(m.href, bp, onHub) });
-  const projects = PROJECTS.map((p) => {
-    const cur = p.id === s.project;
+  // A project is current on its own site, or (on the hub) on its landing page and the pages it links to.
+  const isCur = (p) => p.id === s.project || (onHub && !!here && [p.url, ...(p.links || []).map(([, u]) => u)].some((u) => u.startsWith(OWNER.url + '/') && here === u.slice(OWNER.url.length).replace(/[#?].*$/, '')));
+  const projects = WORK.map((p) => {
+    const cur = isCur(p);
     const href = localize(p.url, bp, onHub);
     return `<li><a class="side-link" href="${esc(href)}"${cur ? ' aria-current="true"' : ''}${ext(href) ? ' rel="noopener"' : ''}><i class="bar" style="background:${p.color}"></i><span>${esc(p.name)}</span>${p.role === 'contributor' ? '<small class="side-note">contributor</small>' : ''}</a></li>`;
+  }).join('');
+  const personal = PERSONAL.map((p) => {
+    const href = localize(p.url, bp, onHub);
+    return `<li>${link({ href }, here, `${icon(p.icon)}<span>${esc(p.name)}</span>`)}</li>`;
   }).join('');
   const main = s.main.map(L).map((m) => `<li>${link(m, here, `${icon(m.icon)}<span>${esc(m.label)}</span>`)}</li>`).join('');
   const shelves = (s.shelves || []).map(L).map((m) => `<li>${link(m, here, `<i class="bar" style="background:${m.color}"></i><span>${esc(m.label)}</span>`)}</li>`).join('');
@@ -102,6 +113,7 @@ export function renderTop(siteId, pagePath = '') {
     <p class="side-label">${isHub ? 'Projects' : 'Samuel Baird projects'}</p>
     <ul class="side-list side-projects">${projects}</ul>
     <a class="side-all" href="${all}">All projects &rarr;</a>
+    ${personal ? `<p class="side-label">Personal</p><ul class="side-list side-personal">${personal}</ul>` : ''}
   </nav>
   <div class="side-foot"><ul class="side-list">${foot}</ul><p class="side-dsrt" lang="en-Dsrt">${esc(toDeseret(brand))}</p></div>
 </aside>
@@ -154,7 +166,8 @@ export function familyData(siteId) {
   const s = SITES[siteId];
   return {
     owner: OWNER,
-    projects: PROJECTS.map(({ id, name, url, color, role, kind }) => ({ id, name, url: url + (kind === 'page' ? '' : '/'), color, role, current: id === s.project })),
+    projects: WORK.map(({ id, name, url, color, role }) => ({ id, name, url: url + '/', color, role, current: id === s.project })),
+    personal: PERSONAL.map(({ id, name, url, icon }) => ({ id, name, url, icon, vb: VIEWBOX[icon] })),
     about: `${OWNER.projectsUrl}/${s.project}`,
   };
 }

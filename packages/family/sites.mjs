@@ -1,6 +1,7 @@
 // Per-site menus for the shared sidebar. Each site lists its own pages ("main", with an engraved icon
 // from assets/sprite.svg) and optional "shelves" (secondary sections, marked with a coloured bar).
-// The "Projects" shelf and the samuelbaird.com links are added to every site from projects.json.
+// The "Projects" and "Personal" sections and the samuelbaird.com links are added to every site from projects.json,
+// so a site's own menu must not repeat them (one link per page in the sidebar).
 //
 // target: where scripts/family-sync.mjs writes the assets and how it stamps the chrome in.
 //   static -> public dir; every *.html under it with <!--family:...--> markers is patched in place
@@ -17,13 +18,8 @@ export const SITES = {
     main: [
       { href: '/', label: 'Home', icon: 'i-skep', exact: true },
       { href: '/projects', label: 'Projects', icon: 'i-comb' },
-      { href: '/sacred-sites', label: 'Sacred Sites', icon: 'i-wagon' },
-      { href: '/temples', label: 'Temples', icon: 'i-sunmoon' },
-      { href: '/historic-sites', label: 'Historic Sites', icon: 'i-lamp' },
-      { href: '/hymns', label: 'Hymns', icon: 'i-primer' },
-      { href: '/handbook-changes', label: 'Handbook Changes', icon: 'i-primer' },
-      { href: '/books', label: 'Reading', icon: 'i-books' },
-      { href: '/collection', label: 'Collection', icon: 'i-sego' },
+      // Projects (LDS Sacred Sites, Editions…) and the Personal pages (Sacred Sites Visited, My Reading,
+      // Collection) come from projects.json; don't repeat them here.
     ],
     shelves: [
       { href: '/data', label: 'Open data', color: '#8DA27A' },
