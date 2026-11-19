@@ -45,7 +45,7 @@ const folderKey = id => 'folder:' + id;
 const sha = value => createHash('sha256').update(value).digest('hex');
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[c]));
 const headers = {'Cache-Control':'private, no-store', 'X-Robots-Tag':'noindex, nofollow',
-  'Referrer-Policy':'no-referrer', 'X-Content-Type-Options':'nosniff',
+  'Referrer-Policy':'same-origin', 'X-Content-Type-Options':'nosniff',
   'Content-Security-Policy':"default-src 'none'; style-src 'unsafe-inline'; script-src 'self'; connect-src 'self'; form-action 'self'; frame-src https://drive.google.com; frame-ancestors 'none'; base-uri 'none'"};
 const response = (text, status=200, extra={}) => new Response(text, {status, headers:{...headers,...extra}});
 const redirect = path => response(null,303,{Location:path});
@@ -97,6 +97,14 @@ function itemPage(id, item, actor) {
   ${done ? '<p>Your decision is recorded for this version.</p>' : `<section><h2>Your review</h2><form method="post"><input type="hidden" name="revision" value="${revision}">${Object.entries(labels).map(([k,v])=>`<label><input type="checkbox" name="${k}">${v}</label>`).join('')}<label>Review notes<textarea name="note" rows="3" maxlength="2000"></textarea></label><button name="decision" value="Approved">Approve publication</button><button class="secondary" name="decision" value="Changes requested">Request changes</button></form></section>`}${viewer ? '</div></div>' : ''}<script src="/gsa/review.js" defer></script>`);
 }
 
+// A same-page form POST can carry Origin: null under a strict referrer policy; the browser's
+// Sec-Fetch-Site still says whether it came from this site.
+function sameOrigin(request) {
+  const origin=request.headers.get('Origin');
+  if (origin && origin!=='null') return origin===new URL(request.url).origin;
+  return request.headers.get('Sec-Fetch-Site')==='same-origin';
+}
+
 export async function gsaRoute(request,env,session) {
   const path=new URL(request.url).pathname.replace(/\/$/,'');
   let actor;
@@ -115,7 +123,7 @@ export async function gsaRoute(request,env,session) {
     const email=(user.json?.email||'').toLowerCase();
     actor=user.json?.email_confirmed_at && reviewers.get(sha(email));
     if(!actor) return response('This account does not have GSA reviewer access.',403);
-    if(request.method==='POST' && request.headers.get('Origin')!==new URL(request.url).origin) return response('Forbidden',403);
+    if(request.method==='POST' && !sameOrigin(request)) return response('Forbidden',403);
   }
   if(path==='/gsa/review.js') return response(reviewScript,200,{'Content-Type':'text/javascript; charset=utf-8'});
   const forwarded=new Request(request);

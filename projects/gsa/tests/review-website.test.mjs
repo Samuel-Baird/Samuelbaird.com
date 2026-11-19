@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {gsaRoute,GsaReviews} from '../../../sites/samuelbaird.com/worker/gsa.mjs';
+import {reviewScript} from '../../../sites/samuelbaird.com/worker/gsa-client.mjs';
 
 const url='https://samuelbaird.com/gsa';
 function session(email){
@@ -177,4 +178,25 @@ test('folders known only by path can be browsed but not chosen', async () => {
   assert.equal((await (await edit(env, 'b13llama@gmail.com', 'destination', 'month11real')).json()).value, 'Archive / 2025 / 11');
   const root = await (await gsaRoute(new Request(url + '/folders/root'), env, session('b13llama@gmail.com'))).json();
   assert.equal(root.source, 'Table of Contents');
+});
+
+test('the served script survives the deploy bundler adding __name() calls', () => {
+  // Wrangler bundles with keepNames, which rewrites function bodies to call __name(fn, "name").
+  // Rebuild that situation: the served string must supply __name itself.
+  const bundled = reviewScript.replace('function client() {', 'function client() { __name(function inner() {}, "inner");');
+  assert.notEqual(bundled, reviewScript);
+  globalThis.document = {querySelector: () => null};  // a page without the review section
+  try { assert.doesNotThrow(() => new Function(bundled)()); } finally { delete globalThis.document; }
+});
+
+test('same-site form posts are accepted even when the browser sends Origin: null', async () => {
+  const {queue, env} = memory();
+  await operator(queue, {id: 'test', action: 'put', packet: basePacket()});
+  const post = headers => gsaRoute(new Request(url + '/work/test', {method: 'POST', headers, body: new URLSearchParams({decision: 'Changes requested', note: 'x', revision: 'stale'})}), env, session('b13llama@gmail.com'));
+  assert.equal((await post({Origin: 'null', 'Sec-Fetch-Site': 'same-origin'})).status, 409);  // past the origin check
+  assert.equal((await post({Origin: 'null', 'Sec-Fetch-Site': 'cross-site'})).status, 403);
+  assert.equal((await post({'Sec-Fetch-Site': 'same-origin'})).status, 409);
+  assert.equal((await post({Origin: 'https://other.example', 'Sec-Fetch-Site': 'same-origin'})).status, 403);
+  const page = await gsaRoute(new Request(url), env, session('b13llama@gmail.com'));
+  assert.equal(page.headers.get('Referrer-Policy'), 'same-origin');
 });
