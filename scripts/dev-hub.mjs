@@ -1,4 +1,4 @@
-// Local stand-in for samuelbaird.com's production routing (sites/samuelbaird.com/vercel.json rewrites).
+// Local stand-in for samuelbaird.com's production routing (sites/samuelbaird.com/worker/index.mjs forwarding).
 //   node scripts/dev-hub.mjs [port=4310]
 // /urim/*                      -> sites/urim/site (static)
 // /latter-day-stats, /omni, /peepstone -> that app's `next dev` (start it with its base path; ports below)

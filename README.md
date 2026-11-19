@@ -15,8 +15,8 @@ Every website and project in one private repo. Each site deploys as its own Verc
 
 ## URLs
 
-- Everything except the Deseret Wiki family lives at `https://samuelbaird.com/<id>`. samuelbaird.com's `vercel.json` rewrites `/<id>/*` to the app's own custom domain (`origin` in `packages/family/projects.json`), and each app runs under that base path.
-- The old hosts (latterdaystats.samuelbaird.com, urim.samuelbaird.com, omni.samuelbaird.com, peepstone.vercel.app) 301 every page to the new path but keep their `/api` (and Peepstone's `/mcp`, LDS's `/auth`) endpoints answering, so connectors, webhooks and crons keep working. Don't remove those custom domains: they are the proxy origins.
+- Everything except the Deseret Wiki family lives at `https://samuelbaird.com/<id>`. The samuelbaird-com Worker forwards `/<id>/*` to the app's own Worker over a service binding, and each app runs under that base path (see CLAUDE.md).
+- The old hosts (latterdaystats.samuelbaird.com, urim.samuelbaird.com, omni.samuelbaird.com) 301 every page to the new path but keep their `/api` (and Peepstone's `/mcp`, LDS's `/auth`) endpoints answering, so connectors, webhooks and crons keep working. Don't remove those custom domains: they are the proxy origins.
 - In the Next apps, Next adds the base path to `<Link>`, router and `redirect()` paths. Raw `<a>`/`<Script>` paths, OAuth callback URLs and `NextResponse.redirect` URLs need it added by hand (`BASE_PATH` in LDS's `src/lib/site.ts`).
 - robots.txt only counts at the domain root, so the apps' private paths and sitemaps are listed in samuelbaird.com's robots.txt, generated from `projects.json` (`privatePaths`, `sitemap`).
 

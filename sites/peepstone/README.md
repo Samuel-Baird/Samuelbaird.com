@@ -24,7 +24,7 @@ Long results are capped at about 20,000 characters, and each such result says wh
 ## Use it
 
 ### Remote (claude.ai, Claude Desktop, Claude mobile)
-Once deployed (see below), add a custom connector with the deployment URL plus `/mcp`, e.g. `https://samuelbaird.com/peepstone/mcp` (the app is served under the `/peepstone` base path; the old `peepstone.vercel.app/mcp` address still works):
+Once deployed (see below), add a custom connector with the deployment URL plus `/mcp`, e.g. `https://samuelbaird.com/peepstone/mcp` (the app is served under the `/peepstone` base path):
 **Settings → Connectors → Add custom connector**.
 
 ### Local (stdio)
@@ -67,9 +67,9 @@ Runs on Cloudflare Workers via [OpenNext](https://opennext.js.org/cloudflare) as
 
 - `npm run preview`: build and serve it locally in workerd (`/peepstone`, `/peepstone/mcp`, bare `/mcp`).
 - `npm run cf:deploy`: build and deploy by hand (needs `wrangler login`).
-- `worker.ts` wraps the OpenNext worker to rewrite bare `/mcp` to `/peepstone/mcp` (what `vercel.json` did on Vercel).
+- `worker.ts` wraps the OpenNext worker to rewrite bare `/mcp` to `/peepstone/mcp`.
 - `next.config.ts` aliases the MCP SDK's validator shim to the `@cfworker/json-schema` one, because Workers forbid the Ajv validator's `new Function`.
-- peepstone.vercel.app is a Vercel hostname and can't move; its redirect rule in `next.config.ts` is inert on Cloudflare. `vercel.json` stays until the Vercel project is deleted.
+- The old peepstone.vercel.app address was retired with the Vercel project (Nov 2026).
 
 ## Etiquette and attribution
 Peepstone sends at most 2 concurrent requests per instance, retries with backoff, caches responses for 10 minutes, and identifies itself with a `Peepstone-MCP` User-Agent.

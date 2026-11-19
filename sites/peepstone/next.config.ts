@@ -1,9 +1,6 @@
 import type { NextConfig } from "next";
 
-// Peepstone is served at https://samuelbaird.com/peepstone (proxied from samuelbaird.com's vercel.json).
-// The old host keeps its MCP endpoint (/mcp) for existing connectors: vercel.json rewrites it, since Next
-// only allows external rewrites outside the base path. Every page on the old host 301s to the new path.
-const LEGACY = [{ type: "host" as const, value: "peepstone.vercel.app" }];
+// Peepstone is served at https://samuelbaird.com/peepstone (forwarded by the samuelbaird-com Worker over a service binding).
 
 const nextConfig: NextConfig = {
   basePath: "/peepstone",
@@ -16,12 +13,6 @@ const nextConfig: NextConfig = {
       // so /mcp would 500 on Workers. The browser/workerd shim uses @cfworker/json-schema, which runs everywhere.
       "@modelcontextprotocol/server/_shims": "./node_modules/@modelcontextprotocol/server/dist/shimsBrowser.mjs",
     },
-  },
-  async redirects() {
-    return [
-      { source: "/", has: LEGACY, destination: "https://samuelbaird.com/peepstone", permanent: true, basePath: false },
-      { source: "/:path((?!peepstone(?:/|$)|mcp$|_next/).+)", has: LEGACY, destination: "https://samuelbaird.com/peepstone/:path", permanent: true, basePath: false },
-    ];
   },
 };
 

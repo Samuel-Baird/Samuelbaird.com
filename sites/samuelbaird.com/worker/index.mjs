@@ -27,7 +27,7 @@ function loadEnv(env) {
 const APPS = [
   { base: '/latter-day-stats', binding: 'LATTER_DAY_STATS', origin: 'https://latterdaystats.samuelbaird.com' },
   { base: '/urim', binding: 'URIM', origin: 'https://urim.samuelbaird.com' },
-  { base: '/peepstone', binding: 'PEEPSTONE', origin: 'https://peepstone.vercel.app' },
+  { base: '/peepstone', binding: 'PEEPSTONE', origin: 'https://peepstone.deseret-mcp.workers.dev' },
   { base: '/omni', binding: 'OMNI', origin: 'https://omni.samuelbaird.com', noindex: true },
 ];
 

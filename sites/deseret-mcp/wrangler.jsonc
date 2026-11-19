@@ -1,6 +1,5 @@
-// Cloudflare Worker for mcp.deseret.wiki (replaces the Vercel project "deseret-mcp" at cutover;
-// vercel.json stays until then). Static site/ is served by Workers static assets for free; only
-// /api/* runs the Worker (src/worker.mjs = api/mcp.js). Routes / custom domain are added at cutover.
+// Cloudflare Worker for mcp.deseret.wiki (custom domain attached in the dashboard/API). Static site/ is
+// served by Workers static assets for free; only /mcp and /api/* run the Worker (src/worker.mjs = api/mcp.js).
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "deseret-mcp",

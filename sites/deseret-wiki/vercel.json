@@ -1,8 +1,0 @@
-{
-  "git": {
-    "deploymentEnabled": {
-      "archive/**": false,
-      "port/**": false
-    }
-  }
-}

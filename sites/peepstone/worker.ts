@@ -1,8 +1,7 @@
 // Cloudflare Worker entry: wraps the OpenNext handler (built into .open-next/worker.js by `opennextjs-cloudflare build`).
 //
-// The bare `/mcp` path (outside the /peepstone base path) is rewritten to `/peepstone/mcp`, as vercel.json does on
-// Vercel; Next can't do this rewrite itself. It keeps `<worker host>/mcp` working like the old peepstone.vercel.app/mcp.
-// (peepstone.vercel.app itself is Vercel-owned and can't move to Cloudflare; its 301 rule in next.config.ts is harmless here.)
+// The bare `/mcp` path (outside the /peepstone base path) is rewritten to `/peepstone/mcp`, so `<worker host>/mcp` answers
+// too; Next can't do this rewrite itself. The public address is https://samuelbaird.com/peepstone/mcp.
 //
 // samuelbaird.com reaches this Worker through a service binding with Host samuelbaird.com and path /peepstone/...,
 // which is the base path itself and needs no rewriting.
