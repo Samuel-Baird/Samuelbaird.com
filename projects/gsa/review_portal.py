@@ -4,6 +4,7 @@ import fcntl
 import hashlib
 import json
 import os
+import re
 from pathlib import Path
 import tempfile
 import urllib.request
@@ -59,14 +60,26 @@ def folder_snapshot(api, config):
     return {'root': {'id': root, 'name': name}, 'folders': out}
 
 
+FOLDER_LINK = re.compile(r'https://drive\.google\.com/drive/(?:u/\d+/)?folders/([\w-]{10,})')
+
+
 def toc_rows(api, config):
-    """Name / Folder Path rows from the staff Table of Contents (refreshed daily by staff)."""
+    """Name / Folder Path rows from the staff Table of Contents (refreshed daily by staff).
+    Each Folder Path cell links to its Drive folder, which gives the folder's real ID."""
     import urllib.parse
     base = 'https://sheets.googleapis.com/v4/spreadsheets/' + config['toc_spreadsheet_id']
     tab = "'" + config['toc_sheet_name'].replace("'", "''") + "'!A:B"
-    rows = api.call('GET', base + '/values/' + urllib.parse.quote(tab, safe='')).get('values', [])
-    p.require(rows and rows[0][:2] == ['Name', 'Folder Path'], 'Table of Contents headers changed')
-    return [{'name': r[0], 'folder_path': r[1]} for r in rows[1:] if len(r) > 1 and r[1].strip()]
+    result = api.call('GET', base, params={'ranges': tab, 'includeGridData': 'true',
+                                           'fields': 'sheets.data.rowData.values(formattedValue,hyperlink)'})
+    rows = [[v for v in row.get('values', [])] for row in result['sheets'][0]['data'][0].get('rowData', [])]
+    p.require(rows and [v.get('formattedValue') for v in rows[0][:2]] == ['Name', 'Folder Path'], 'Table of Contents headers changed')
+    out = []
+    for row in rows[1:]:
+        if len(row) > 1 and str(row[1].get('formattedValue') or '').strip():
+            link = FOLDER_LINK.match(row[1].get('hyperlink') or '')
+            out.append({'name': row[0].get('formattedValue', ''), 'folder_path': row[1]['formattedValue'],
+                        'folder_id': link.group(1) if link else None})
+    return out
 
 
 def toc_folder_id(segments):
@@ -80,6 +93,11 @@ def toc_snapshot(rows, config):
     known = {r['name'].strip(): r['id'] for r in config.get('discovered_archive_resources', [])
              if r.get('type') == FOLDER}
     root = {'id': config['archive_root_id'], 'name': None}
+    linked = {}  # path below the root -> real Drive ID from the row's folder link
+    for row in rows:
+        segments = [part.strip() for part in row['folder_path'].split('/') if part.strip()]
+        if row.get('folder_id') and len(segments) > 1:
+            linked[tuple(segments[1:])] = row['folder_id']
     ids, out = {}, []
     for row in rows:
         segments = [part.strip() for part in row['folder_path'].split('/') if part.strip()]
@@ -92,7 +110,7 @@ def toc_snapshot(rows, config):
             key = tuple(segments[1:depth + 1])
             if key in ids:
                 continue
-            ids[key] = known.get(key[0]) if depth == 1 and key[0] in known else toc_folder_id(list(key))
+            ids[key] = linked.get(key) or (known.get(key[0]) if depth == 1 else None) or toc_folder_id(list(key))
             parent = ids[key[:-1]] if depth > 1 else root['id']
             out.append({'id': ids[key], 'name': key[-1], 'parent': parent, 'path': list(key)})
     p.require(root['name'], 'Table of Contents lists no folders')
@@ -125,6 +143,23 @@ def under_archive(api, config, folder_id, depth=40):
             return False
         current = parents[0]
     return False
+
+
+def archive_folder(api, config, index_config_path, folder_id):
+    """True when folder_id is a real folder inside the archive: listed (with its own Drive link) in
+    the staff Table of Contents, or, failing that, found under archive_root_id in Drive."""
+    if folder_id.startswith('toc-') or not config.get('archive_root_id'):
+        return False
+    if index_config_path:
+        source = json.loads(Path(index_config_path).read_text())
+        if source.get('toc_spreadsheet_id'):
+            snapshot = toc_snapshot(toc_rows(p.Google(source), source), dict(source, archive_root_id=config['archive_root_id']))
+            if any(f['id'] == folder_id for f in snapshot['folders']):
+                return True
+    try:
+        return under_archive(api, config, folder_id)
+    except Exception:  # noqa: BLE001 - no Drive access to the archive counts as "not shown"
+        return False
 
 
 def apply_edits(draft, packet, edits):
@@ -187,8 +222,8 @@ def run(args):
             names = [n.strip() for n in packet['folder'].split(' / ')][1:]
             packet['destination'] = draft['destination'] = resolve_toc_folder(api, config, names)
         if packet['destination'] not in config['destination_ids']:
-            p.require(config.get('archive_root_id') and under_archive(api, config, packet['destination']),
-                      'Edited destination is not a folder inside the archive')
+            p.require(archive_folder(api, config, args.config, packet['destination']),
+                      'Edited destination is not a folder inside the archive (checked the Table of Contents and Drive)')
             # Both assigned reviewers approved this exact folder, which stands in for the allowlist.
             config = dict(config, destination_ids=[*config['destination_ids'], packet['destination']])
         reviewers = {'Samuel':'b13llama@gmail.com', 'David':'davidjasonharper@gmail.com'}
@@ -250,7 +285,7 @@ if __name__ == '__main__':
     parser.add_argument('command', choices=['queue','collect','folders'])
     parser.add_argument('--home', required=True, type=Path)
     parser.add_argument('--packet', type=Path, help='Private packet settings (queue and collect)')
-    parser.add_argument('--config', type=Path, help='folders: private config whose Google access and Table of Contents to use (read only)')
+    parser.add_argument('--config', type=Path, help='folders and collect: private config whose Google access and Table of Contents to use (read only)')
     os.umask(0o077)
     args = parser.parse_args()
     if args.command != 'folders' and not args.packet:

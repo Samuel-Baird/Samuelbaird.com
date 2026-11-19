@@ -220,6 +220,7 @@ export class GsaReviews {
       const folder=/^[\w-]{1,100}$/.test(raw) && await this.storage.get(folderKey(raw));
       if(!meta || !folder) return fail('That folder is not in the archive folder list');
       if(folder.id===meta.root) return fail('Choose a shelf inside the archive, not the archive root');
+      if(folder.id.startsWith('toc-')) return fail('That folder only holds other folders. Open it and choose the folder inside.');
       changes={destination:folder.id,folder:folder.trail.map(t=>t.name).join(' / ')};
     } else if(editable[field]) {
       changes={[field]:raw.trim()};

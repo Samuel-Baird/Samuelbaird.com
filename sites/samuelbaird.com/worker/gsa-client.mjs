@@ -148,9 +148,10 @@ function client() {
     });
     filter.value = '';
     renderList();
-    const isRoot = current.id === current.root;
-    selectButton.disabled = isRoot;
-    selectButton.textContent = isRoot ? 'Open a shelf to select it' : 'Select “' + current.name + '”';
+    // Folders known only by path (they hold subfolders, not files) can be opened but not chosen.
+    const container = current.id === current.root || current.id.startsWith('toc-');
+    selectButton.disabled = container;
+    selectButton.textContent = container ? 'Open a folder inside to select it' : 'Select “' + current.name + '”';
     snapshot.textContent = 'Folders from the ' + (current.source || 'Drive') + ', ' + String(current.at).slice(0, 10);
   }
   function toggle(show) {
@@ -166,7 +167,7 @@ function client() {
   filter.addEventListener('input', renderList);
   selectButton.addEventListener('click', async () => {
     const chosen = current;
-    if (!chosen || chosen.id === chosen.root) return;
+    if (!chosen || chosen.id === chosen.root || chosen.id.startsWith('toc-')) return;
     toggle(false);
     show(indicator(destination), 'busy', 'Saving…');
     try {
