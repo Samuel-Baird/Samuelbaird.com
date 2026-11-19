@@ -110,6 +110,14 @@ class Sandbox(unittest.TestCase):
             index.write_text('[]')  # Reviewer reconciled the synthetic index.
             p.archive_check(db, 1, api, config, 'folder')
             p.approve(db, 1, file, config)
+            config['reviewers'].append('second')
+            config['required_publication_reviewers'] = ['staff', 'second']
+            p.archive_check(db, 1, api, config, 'folder')
+            p.approve(db, 1, file, config)
+            self.assertNotIn('approval', p.get(db, 1)[1])
+            approval['reviewer'] = 'second'
+            file.write_text(json.dumps(approval))
+            p.approve(db, 1, file, config)
             for error in ('upload interrupted', 'lost changelog'):
                 with self.assertRaisesRegex(ConnectionError, error):
                     p.publish(db, 1, api, config)

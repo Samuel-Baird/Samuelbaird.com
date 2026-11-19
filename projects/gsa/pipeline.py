@@ -183,6 +183,7 @@ def archive_check(db, wid, api, config, destination):
             matches.append(dict(item, match='ambiguous'))
     record['archive_check'] = {'at': stamp(), 'destination': destination, 'matches': matches}
     record.pop('approval', None)
+    record.pop('reviewer_checks', None)
     save(db, wid, record, 'archive_check')
     return matches
 
@@ -264,6 +265,7 @@ def acquire(db, wid, home, config):
         record['candidate'] = str(candidate)
         record.pop('validation', None)
         record.pop('approval', None)
+        record.pop('reviewer_checks', None)
         save(db, wid, record, 'acquired')
     finally:
         target.unlink(missing_ok=True)
@@ -272,6 +274,7 @@ def validate_file(db, wid, config):
     _, record = get(db, wid)
     require(not record.get('upload_id'), 'Upload already started')
     record.pop('approval', None)
+    record.pop('reviewer_checks', None)
     record.pop('validation', None)
     save(db, wid, record, 'validation_started')
     report = validation.validate(Path(record['candidate']), config)
@@ -297,6 +300,15 @@ def approve(db, wid, path, config):
         require(approval.get(key) is True, 'Staff check required: ' + key)
     require(approval.get('destination') == record['review']['destination'], 'Approval destination mismatch')
     require(record.get('archive_check') and not record['archive_check']['matches'], 'Archive matches require resolution before approval')
+    required = config.get('required_publication_reviewers', [])
+    if required:
+        require(approval['reviewer'] in required, 'Reviewer not assigned to this publication')
+        checks = record.setdefault('reviewer_checks', {})
+        checks[approval['reviewer']] = dict(approval, at=stamp())
+        if not all(reviewer in checks for reviewer in required):
+            save(db, wid, record, 'awaiting_other_reviewer')
+            return
+        approval['reviewer_checks'] = dict(checks)
     record['approval'] = dict(approval, at=stamp())
     save(db, wid, record, 'approved')
 
@@ -371,6 +383,12 @@ def publish(db, wid, api, config):
     require(config.get('publication_approved') is True, 'Live publication not enabled by staff')
     work, record = get(db, wid)
     require(record.get('approval'), 'Staff approval required')
+    for reviewer in config.get('required_publication_reviewers', []):
+        check = record['approval'].get('reviewer_checks', {}).get(reviewer, {})
+        require(reviewer in config['reviewers'] and check.get('sha256') == record['sha256']
+                and check.get('destination') == record['review']['destination']
+                and all(check.get(k) is True for k, _ in validation.STAFF_JUDGMENT),
+                'Assigned reviewer approval missing or revoked')
     permissions(record['review'], config, bool(record['review'].get('infohash')))
     require(record.get('validation', {}).get('automated_verdict') == 'pass'
             and all(record['approval'].get(k) is True for k, _ in validation.STAFF_JUDGMENT),
@@ -475,6 +493,7 @@ def torrent_loop(db, wid, home, config, evidence, metainfo):
             require(path.is_file() and present == expected['bytes'], 'Incomplete payload')
             record['candidate'] = str(path)
             record.pop('approval', None)
+            record.pop('reviewer_checks', None)
             record.pop('validation', None)
         if action == 'recheck':
             job['retries'] += 1

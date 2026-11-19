@@ -7,6 +7,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 from pathlib import Path
 import secrets
+import subprocess
 import time
 import urllib.parse
 import urllib.request
@@ -18,14 +19,28 @@ SCOPES = ' '.join('https://www.googleapis.com/auth/' + s for s in (
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--client-id', required=True)
-    parser.add_argument('--client-secret-file', type=Path, required=True)
+    parser.add_argument('--client-id')
+    parser.add_argument('--client-secret-file', type=Path)
+    parser.add_argument('--test-client-from', type=Path, help='Reuse an intake desktop client for a separate drive.file test credential')
     parser.add_argument('--config', type=Path, required=True)
     args = parser.parse_args()
     config = json.loads(args.config.read_text())
+    scopes = SCOPES
+    if args.test_client_from:
+        source = json.loads(args.test_client_from.read_text())
+        if source['keychain_service'] == config['keychain_service']:
+            parser.error('Use a separate publication-test Keychain service')
+        saved = subprocess.run(['security', 'find-generic-password', '-s', source['keychain_service'],
+                                '-a', source['keychain_account'], '-w'], capture_output=True, check=True)
+        client = json.loads(saved.stdout)
+        args.client_id, client_secret = client['client_id'], client['client_secret']
+        scopes = 'https://www.googleapis.com/auth/drive.file'
+    elif args.client_id and args.client_secret_file:
+        client_secret = args.client_secret_file.read_text().strip()
+    else:
+        parser.error('Supply the desktop client or --test-client-from')
     if not args.client_id.endswith('.apps.googleusercontent.com'):
         raise SystemExit('Expected a Google OAuth client ID.')
-    client_secret = args.client_secret_file.read_text().strip()
     state, verifier = secrets.token_urlsafe(32), secrets.token_urlsafe(64)
     result = {}
 
@@ -47,7 +62,7 @@ def main():
         server.timeout = 1
         redirect = f'http://127.0.0.1:{server.server_port}/'
         params = dict(client_id=args.client_id, redirect_uri=redirect, response_type='code',
-                      scope=SCOPES, access_type='offline', prompt='consent', state=state,
+                      scope=scopes, access_type='offline', prompt='consent', state=state,
                       code_challenge=base64.urlsafe_b64encode(hashlib.sha256(verifier.encode()).digest()).decode().rstrip('='),
                       code_challenge_method='S256')
         webbrowser.open('https://accounts.google.com/o/oauth2/v2/auth?' + urllib.parse.urlencode(params))
@@ -63,8 +78,8 @@ def main():
         token = json.load(response)
     if not token.get('refresh_token'):
         raise SystemExit('No refresh token received; credentials were not stored.')
-    if not set(SCOPES.split()).issubset(set(token.get('scope', '').split())):
-        raise SystemExit('Required read-only scopes were not all granted; credentials were not stored.')
+    if not set(scopes.split()).issubset(set(token.get('scope', '').split())):
+        raise SystemExit('Required scopes were not all granted; credentials were not stored.')
     raw = json.dumps(dict(client_id=args.client_id, client_secret=client_secret, refresh_token=token['refresh_token'])).encode()
     security = ctypes.CDLL('/System/Library/Frameworks/Security.framework/Security')
     add = security.SecKeychainAddGenericPassword
