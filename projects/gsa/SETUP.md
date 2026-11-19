@@ -84,3 +84,29 @@ Keep the following items open until a designated reviewer records the evidence. 
 ## Session 4 reconciliation (2026-11-19)
 
 Ported onto the merged pipeline from PR #87: quarantine of files that fail the malware scan, numbered candidates ranked with scans above ebook conversions plus a reviewer `select` command, reviewer resolution of ambiguous archive matches, and the `torrent_acquisition_approved` staff flag on `torrent-loop`. `sandbox_trial.py` passed 22/22 in `sandbox-session4-reconciled/` under the worker home (fake Google and qBittorrent, real ClamAV 1.5.5, poppler and qpdf). The guard step used the real session 3 evidence draft and still fails on 8 issues, so no torrent may run.
+
+## Session 5 (2026-11-19)
+
+- **Review site.**
+  - The worker's Google token has Forms, Docs and Sheets read scopes but no Drive scope, so `folders` builds the tree from the Table of Contents (PRs #90 and #91).
+  - Run it as `review_portal.py folders --home WORKER_HOME --config WORKER_HOME/pipeline-config.json`.
+  - A synthetic sandbox packet (`sandbox-session5`, fake destination) is queued for the browser check. Remove it afterwards with `remove`.
+  - The browser check could not be driven from the session (Chrome Profile 1 was signed out of samuelbaird.com, and no browser-control tool was available), so the owner runs it by hand.
+- **Read-only pilot.** A supervised `poll` against the real form ran into a separate pilot queue under the worker home; the form currently holds 3 responses. Triage produced 5 works. The index check found no archive copies. The private comparison and the draft staff questions are in that pilot folder.
+  - `check` cannot run against live folders until `destination_ids` is set and the worker has Drive read access.
+  - Table of Contents matching is filename-only, so it never yields `exact`.
+- **Config.** `scanner_max_db_age_hours: 72` and `required_publication_reviewers` (both reviewers) were added with the owner's approval. A backup is at `pipeline-config.before-session5-2026-11-19.json`. Run `freshclam` against the worker database before validating.
+- **Changelog format.** Requests & Updates uses plain `MM/DD/YY` lines, newest first. `changelog_anchor` is still a placeholder pending staff approval.
+- **Network evidence review.** A private review aid sits next to the session 3 evidence. Two gaps matter:
+  - The VPN-down startup retest capture hit its file limit before the VPN returned, and its sampler started after qBittorrent launched.
+  - In every "VPN off" window a high-rate UDP flow to the VPN provider's network continued, so "off" may not mean all VPN transport stopped.
+
+  No scenario is signed.
+- **Unattended intake.** No dedicated worker account exists yet. A private `unattended-intake-check/check.sh` under the worker home checks five things:
+  - Keychain access.
+  - Offline start, simulated with an unreachable local proxy.
+  - Recovery once back online.
+  - A second concurrent run is refused.
+  - Overlap replay adds no duplicates.
+
+  It passed as the owner's account as a dry run only. The gate stays open until it is run as the worker account.

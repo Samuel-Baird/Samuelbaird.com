@@ -173,9 +173,18 @@ def apply_edits(draft, packet, edits):
 
 
 def run(args):
-    home = args.home.resolve()
-    config = json.loads((home / 'config.json').read_text())
+    home = args.home.expanduser().resolve()
+    # A sandbox home carries its own config.json; the worker home keeps pipeline-config.json,
+    # passed with --config.
+    config_path = home / 'config.json' if (home / 'config.json').exists() else args.config
+    p.require(config_path is not None, f'No config.json in {home}; pass --config')
+    config = json.loads(config_path.read_text())
     key = (p.gsa.DEFAULT_HOME / 'review-portal.key').read_text().strip()
+    if args.command == 'remove':
+        p.require(args.id, '--id is required for remove')
+        result = send({'id': args.id, 'action': 'delete'}, key)
+        print('Removed' if result.get('deleted') else 'Nothing queued under', args.id)
+        return
     if args.command == 'folders':
         # Prefer a live Drive listing; fall back to the Table of Contents when the worker's
         # Google access can't list the archive (e.g. a drive.file-only credential).
@@ -282,12 +291,13 @@ def run(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command', choices=['queue','collect','folders'])
+    parser.add_argument('command', choices=['queue','collect','folders','remove'])
     parser.add_argument('--home', required=True, type=Path)
     parser.add_argument('--packet', type=Path, help='Private packet settings (queue and collect)')
+    parser.add_argument('--id', help='remove: review id to take off the site')
     parser.add_argument('--config', type=Path, help='folders and collect: private config whose Google access and Table of Contents to use (read only)')
     os.umask(0o077)
     args = parser.parse_args()
-    if args.command != 'folders' and not args.packet:
+    if args.command in ('queue', 'collect') and not args.packet:
         parser.error('--packet is required for queue and collect')
     run(args)
