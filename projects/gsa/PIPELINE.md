@@ -53,3 +53,7 @@ Session 3 captured the connected, disconnect/reconnect and VPN-down startup scen
 ## Sandbox verification
 
 Run `python3 -m unittest discover -s tests -v` and then `python3 -m unittest discover -s tests -p test_session4.py -v`. The session 4 rehearsal uses a temporary worker home, synthetic PDF, deterministic scanner exit codes and local service doubles. It checks free-text triage, edition ambiguity, failed validation, and recovery of one upload and one dated entry after lost responses. The full suite separately exercises ClamAV with EICAR when its database is available.
+
+### Unattended intake rehearsal
+
+Run `python3 -m unittest discover -s tests -p test_intake_startup.py -v` in the worktree. The tests invoke the poll command with a temporary private config and queue. They check token refresh after HTTP 401, restart while offline, interruption between pages, recovery on the next poll, and exclusion of a second worker. The tests simulate Keychain and Google. A supervised read-only poll under the intended Mac account is still needed to verify actual credential access and reconciliation before enabling scheduling.

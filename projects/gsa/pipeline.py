@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Supervised GSA pipeline. Private JSON configuration; no live defaults."""
+from contextlib import closing
 import argparse
 import fcntl
 import hashlib
@@ -411,40 +412,39 @@ def main():
     require(args.config.stat().st_mode & 0o077 == 0, 'Private configuration must have mode 0600')
     config = json.loads(args.config.read_text())
     home = args.home.expanduser().resolve()
-    db = gsa.connect(home)
-    migrate(db)
-    # One process covers poll/acquisition/publication; crash releases the lock.
-    with (home / 'pipeline.lock').open('a') as lock:
-        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-        api = Google(config)
-        if args.command == 'triage':
-            require(args.file, '--file required')
-            triage(db, config, args.file)
-        elif args.command == 'poll':
-            print(f'Imported {poll(db, api, config)} submissions')
-        else:
-            require(args.work is not None, '--work required')
-            if args.command in ('review', 'approve'):
-                require(args.file is not None, '--file required')
-                globals()[args.command](db, args.work, args.file, config)
-            elif args.command == 'rank':
-                reports = [json.loads(row[0])['validation'] for row in db.execute(
-                    "SELECT detail FROM pipeline_events WHERE work_id=? AND action IN ('validated','validation_failed')", (args.work,))
-                    if 'automated_verdict' in json.loads(row[0])['validation']]
-                print(json.dumps(validation.rank(reports), indent=2))
-            elif args.command == 'torrent-loop':
-                require(args.file and args.evidence, '--file and --evidence required')
-                print(torrent_loop(db, args.work, home, config, args.evidence, args.file))
-            elif args.command == 'check':
-                _, record = get(db, args.work)
-                print(json.dumps(archive_check(db, args.work, api, config, record['review']['destination']), indent=2))
-            elif args.command == 'acquire':
-                acquire(db, args.work, home, config)
-            elif args.command == 'validate':
-                print(validation.render(validate_file(db, args.work, config)))
+    with closing(gsa.connect(home)) as db:
+        migrate(db)
+        # One process covers poll/acquisition/publication; crash releases the lock.
+        with (home / 'pipeline.lock').open('a') as lock:
+            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            api = Google(config)
+            if args.command == 'triage':
+                require(args.file, '--file required')
+                triage(db, config, args.file)
+            elif args.command == 'poll':
+                print(f'Imported {poll(db, api, config)} submissions')
             else:
-                publish(db, args.work, api, config)
-    db.close()
+                require(args.work is not None, '--work required')
+                if args.command in ('review', 'approve'):
+                    require(args.file is not None, '--file required')
+                    globals()[args.command](db, args.work, args.file, config)
+                elif args.command == 'rank':
+                    reports = [json.loads(row[0])['validation'] for row in db.execute(
+                        "SELECT detail FROM pipeline_events WHERE work_id=? AND action IN ('validated','validation_failed')", (args.work,))
+                        if 'automated_verdict' in json.loads(row[0])['validation']]
+                    print(json.dumps(validation.rank(reports), indent=2))
+                elif args.command == 'torrent-loop':
+                    require(args.file and args.evidence, '--file and --evidence required')
+                    print(torrent_loop(db, args.work, home, config, args.evidence, args.file))
+                elif args.command == 'check':
+                    _, record = get(db, args.work)
+                    print(json.dumps(archive_check(db, args.work, api, config, record['review']['destination']), indent=2))
+                elif args.command == 'acquire':
+                    acquire(db, args.work, home, config)
+                elif args.command == 'validate':
+                    print(validation.render(validate_file(db, args.work, config)))
+                else:
+                    publish(db, args.work, api, config)
 
 if __name__ == '__main__':
     try:
