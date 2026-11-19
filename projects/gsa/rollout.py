@@ -25,7 +25,7 @@ def problems(config, evidence, preferences, route, now=None):
         issues.append('Evidence belongs to a different tunnel')
     try:
         expired = datetime.fromisoformat(evidence['expires_at'].replace('Z', '+00:00')) <= now
-    except (KeyError, ValueError, TypeError):
+    except (KeyError, ValueError, TypeError, AttributeError):
         expired = True
     if expired:
         issues.append('Validation evidence is missing or expired')
