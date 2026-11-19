@@ -58,6 +58,22 @@ class ReviewPortalTests(unittest.TestCase):
         self.assertEqual(draft['filename'], 'A.pdf')  # inputs untouched
 
 
+class CommandTests(unittest.TestCase):
+    def test_remove_uses_config_flag_when_home_has_no_config_json(self):
+        import json, tempfile, types
+        from unittest.mock import patch
+        with tempfile.TemporaryDirectory() as tmp:
+            home = Path(tmp)
+            (home / 'review-portal.key').write_text('k')
+            (home / 'pipeline-config.json').write_text(json.dumps({'archive_root_id': 'root'}))
+            args = types.SimpleNamespace(command='remove', home=home, config=home / 'pipeline-config.json', id='sandbox-x', packet=None)
+            with patch.object(rp.p.gsa, 'DEFAULT_HOME', home), patch.object(rp, 'send', return_value={'deleted': True}) as send:
+                rp.run(args)
+            send.assert_called_once_with({'id': 'sandbox-x', 'action': 'delete'}, 'k')
+            with self.assertRaises(Exception):
+                rp.run(types.SimpleNamespace(args.__dict__ | {'config': None}))
+
+
 if __name__ == '__main__':
     unittest.main()
 

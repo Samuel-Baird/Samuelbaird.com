@@ -109,6 +109,8 @@ test('edits are validated, need an assigned reviewer and a same-origin request',
     assert.match((await res.json()).error, message);
   }
   assert.equal((await edit(env, 'b13llama@gmail.com', 'filename', 'Smith, Fixture (2nd ed.).pdf')).status, 200);
+  assert.equal((await edit(env, 'b13llama@gmail.com', 'filename', 'Smith, Fixture: A Subtitle.pdf')).status, 200);
+  assert.ok((await edit(env, 'b13llama@gmail.com', 'filename', 'Smith\\Fixture.pdf')).status >= 400);
   assert.equal((await edit(env, 'stranger@example.org', 'title', 'x')).status, 403);
   assert.equal((await edit(env, 'b13llama@gmail.com', 'title', 'x', 'https://other.example')).status, 403);
 });
@@ -143,6 +145,16 @@ test('operator folder snapshot feeds the explorer and destination edits', async 
   // The queue page lists works only, not folder records.
   const list = await (await gsaRoute(new Request(url), env, session('b13llama@gmail.com'))).text();
   assert.equal((list.match(/<section>/g) || []).length, 1);
+});
+
+test('the operator can delete a queued work without touching the folder list', async () => {
+  const {data, queue} = memory();
+  await operator(queue, {id: 'test', action: 'put', packet: basePacket()});
+  await operator(queue, {action: 'folders', root: {id: 'root1', name: 'Archive'}, folders: [{id: 'read1', name: 'Read', parent: 'root1'}]});
+  assert.deepEqual(await (await operator(queue, {id: 'test', action: 'delete'})).json(), {deleted: true});
+  assert.equal(data.has('test'), false);
+  assert.equal(await (await operator(queue, {id: 'test', action: 'get'})).json(), null);
+  assert.ok(data.has('folder:read1'));
 });
 
 test('the page script is served after sign-in and allowed by the CSP', async () => {

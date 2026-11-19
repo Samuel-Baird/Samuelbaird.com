@@ -31,7 +31,8 @@ function checkEdit(field, value, packet) {
   if (value.length > spec.max) return `${spec.label} is limited to ${spec.max} characters`;
   if (/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/.test(value) || (!spec.multiline && /[\r\n]/.test(value))) return spec.label + ' has characters that are not allowed';
   if (field === 'filename') {
-    if (/[\/\\:]/.test(value) || value.startsWith('.')) return 'Filenames cannot contain / \\ : or start with a dot';
+    // Colons are fine in Drive and common in archive names ("Lastname, Title: Subtitle.pdf").
+    if (/[\/\\]/.test(value) || value.startsWith('.')) return 'Filenames cannot contain / or \\ or start with a dot';
     if (suffix(value) !== suffix(packet.filename)) return `Keep the ${suffix(packet.filename) || 'original'} extension`;
   }
   return null;
@@ -130,6 +131,8 @@ export class GsaReviews {
     const {action,id,packet}=body;
     if(!isWorkKey(String(id))) return response('Invalid work ID',400);
     if(action==='get') return json(await this.storage.get(id) || null);
+    // Removes a queued packet with its edits, history and decisions (sandbox clean-up, withdrawn works).
+    if(action==='delete') return json({deleted:await this.storage.transaction(async tx=>{const had=await tx.get(id)!==undefined; if(had) await tx.delete(id); return had;})});
     if(action!=='put' || !packet || !/^[a-f0-9]{64}$/.test(packet.sha256) || ![packet.pdf,packet.source].every(v=>typeof v==='string' && v.startsWith('https://'))) return response('Invalid packet',400);
     const revision=await this.storage.transaction(async tx=>{
       const prior=await tx.get(id);
