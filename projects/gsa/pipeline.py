@@ -6,6 +6,7 @@ import fcntl
 import hashlib
 import json
 import os
+import re
 from pathlib import Path
 import acquire as acquisition
 import validate as validation
@@ -41,6 +42,7 @@ def migrate(db):
     db.executescript('''
     CREATE TABLE IF NOT EXISTS pipeline_records (
       work_id INTEGER PRIMARY KEY REFERENCES works(id), record TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS upload_sessions (file_id TEXT PRIMARY KEY, url TEXT NOT NULL);
     CREATE TABLE IF NOT EXISTS pipeline_events (
       id INTEGER PRIMARY KEY, at TEXT NOT NULL, work_id INTEGER, action TEXT NOT NULL, detail TEXT NOT NULL);
     ''')
@@ -75,7 +77,7 @@ class Google:
         self.expiry = time.time() + result['expires_in'] - 60
         return self.token
 
-    def call(self, method, url, body=None, params=None, headers=None, raw=False):
+    def call(self, method, url, body=None, params=None, headers=None, raw=False, stream_hash=False):
         if params:
             url += '?' + urllib.parse.urlencode(params)
         payload = json.dumps(body).encode() if isinstance(body, dict) else body
@@ -85,6 +87,11 @@ class Google:
                 'Content-Type': 'application/json', **(headers or {})})
             try:
                 with urllib.request.urlopen(req, timeout=90) as response:
+                    if stream_hash:
+                        digest_state = hashlib.sha256()
+                        for chunk in iter(lambda: response.read(1024 * 1024), b''):
+                            digest_state.update(chunk)
+                        return digest_state.hexdigest()
                     result = response.read()
                     return result if raw else (json.loads(result) if result else {})
             except urllib.error.HTTPError as exc:
@@ -159,7 +166,13 @@ def archive_check(db, wid, api, config, destination):
     require(destination in config['destination_ids'], 'Destination is not staff approved')
     # Index is a staff-maintained bibliographic JSON export. Always inspect live destination too.
     index = json.loads(Path(config['archive_index']).read_text())
-    matches = [dict(item, match=compare(request, item)) for item in index]
+    matches = []
+    for item in index:
+        match = compare(request, item)
+        title = gsa.normalized(request.get('title', ''))
+        if match == 'unrelated' and title and title in gsa.normalized(item.get('name', '')):
+            match = 'ambiguous'
+        matches.append(dict(item, match=match))
     matches = [item for item in matches if item['match'] != 'unrelated']
     files = api.files("'" + quote(destination) + "' in parents and trashed=false")
     for item in files:
@@ -288,6 +301,72 @@ def approve(db, wid, path, config):
     save(db, wid, record, 'approved')
 
 
+def upload_request(api, method, url, body, headers):
+    parsed = urllib.parse.urlsplit(url)
+    require(parsed.scheme == 'https' and parsed.netloc == 'www.googleapis.com',
+            'Unexpected Drive upload endpoint')
+    request = urllib.request.Request(url, data=body, method=method,
+        headers={**headers, 'Authorization': 'Bearer ' + api.access_token()})
+    try:
+        with urllib.request.urlopen(request, timeout=90) as response:
+            return response.status, response.headers
+    except urllib.error.HTTPError as exc:
+        with exc:
+            if exc.code in (308, 404):
+                return exc.code, exc.headers
+            raise ValueError(f'Drive upload failed with HTTP {exc.code}') from None
+
+
+def resumable_upload(db, api, path, metadata):
+    size = path.stat().st_size
+    file_id = metadata['id']
+    row = db.execute('SELECT url FROM upload_sessions WHERE file_id=?', (file_id,)).fetchone()
+    offset = 0
+    if row:
+        url = row[0]
+        status, headers = upload_request(api, 'PUT', url, b'', {'Content-Range': f'bytes */{size}'})
+        if status in (200, 201):
+            return
+        require(status in (308, 404), 'Unexpected upload status response')
+        if status == 308:
+            offset = received_bytes(headers, size)
+        else:
+            row = None
+    if not row:
+        status, headers = upload_request(api, 'POST',
+            'https://www.googleapis.com/upload/drive/v3/files?uploadType=resumable&supportsAllDrives=true',
+            json.dumps(metadata).encode(), {'Content-Type': 'application/json',
+            'X-Upload-Content-Type': 'application/octet-stream', 'X-Upload-Content-Length': str(size)})
+        require(status in (200, 201) and headers.get('Location'), 'Could not start upload')
+        url = headers['Location']
+        with db:
+            db.execute('INSERT OR REPLACE INTO upload_sessions VALUES(?,?)', (file_id, url))
+    with path.open('rb') as source:
+        while offset < size:
+            source.seek(offset)
+            block = source.read(min(4 * 1024 * 1024, size - offset))
+            end = offset + len(block)
+            require(block, 'Candidate truncated during upload')
+            status, headers = upload_request(api, 'PUT', url, block, {
+                'Content-Type': 'application/octet-stream', 'Content-Range': f'bytes {offset}-{end-1}/{size}'})
+            if status in (200, 201):
+                require(end == size, 'Premature upload completion')
+                return
+            require(status == 308, 'Upload session interrupted; retry publication')
+            next_offset = received_bytes(headers, size)
+            require(offset < next_offset <= end, 'Unexpected upload progress')
+            offset = next_offset
+
+
+def received_bytes(headers, size):
+    value = headers.get('Range')
+    if not value:
+        return 0
+    match = re.fullmatch(r'bytes=0-(\d+)', value)
+    require(match and int(match[1]) + 1 < size, 'Invalid upload acknowledgement')
+    return int(match[1]) + 1
+
+
 def publish(db, wid, api, config):
     require(config.get('publication_approved') is True, 'Live publication not enabled by staff')
     work, record = get(db, wid)
@@ -318,28 +397,36 @@ def publish(db, wid, api, config):
         if exc.code != 404:
             raise
         exc.close()
-        require(path.stat().st_size <= 5 * 1024 * 1024, 'Pilot multipart uploader supports at most 5 MiB; larger files require resumable upload implementation')
-        boundary = 'gsa_' + record['sha256']
         metadata = {'id': file_id, 'name': review_data['filename'], 'parents': [destination], 'appProperties': {'gsa_sha256': record['sha256']}}
-        body = (f'--{boundary}\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n' + json.dumps(metadata) + f'\r\n--{boundary}\r\nContent-Type: application/octet-stream\r\n\r\n').encode() + path.read_bytes() + f'\r\n--{boundary}--\r\n'.encode()
-        api.call('POST', 'https://www.googleapis.com/upload/drive/v3/files', body=body, params={'uploadType': 'multipart', 'supportsAllDrives': 'true'}, headers={'Content-Type': 'multipart/related; boundary=' + boundary})
+        if path.stat().st_size > 5 * 1024 * 1024:
+            resumable_upload(db, api, path, metadata)
+        else:
+            boundary = 'gsa_' + record['sha256']
+            body = (f'--{boundary}\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n' + json.dumps(metadata) + f'\r\n--{boundary}\r\nContent-Type: application/octet-stream\r\n\r\n').encode() + path.read_bytes() + f'\r\n--{boundary}--\r\n'.encode()
+            api.call('POST', 'https://www.googleapis.com/upload/drive/v3/files', body=body, params={'uploadType': 'multipart', 'supportsAllDrives': 'true'}, headers={'Content-Type': 'multipart/related; boundary=' + boundary})
         remote = api.call('GET', DRIVE + '/' + file_id, params={'fields': 'id,name,parents,size,md5Checksum,webViewLink', 'supportsAllDrives': 'true'})
     require(remote['name'] == review_data['filename'] and destination in remote.get('parents', []) and int(remote['size']) == path.stat().st_size and remote.get('md5Checksum') == digest(path, 'md5'), 'Uploaded file verification failed')
     # Verify readability, not just metadata.
-    downloaded = api.call('GET', DRIVE + '/' + file_id, params={'alt': 'media', 'supportsAllDrives': 'true'}, raw=True)
-    require(hashlib.sha256(downloaded).hexdigest() == record['sha256'], 'Drive readback mismatch')
+    readback_hash = api.call('GET', DRIVE + '/' + file_id, params={'alt': 'media', 'supportsAllDrives': 'true'}, stream_hash=True)
+    require(readback_hash == record['sha256'], 'Drive readback mismatch')
     with db:
+        db.execute('DELETE FROM upload_sessions WHERE file_id=?', (file_id,))
         db.execute('UPDATE works SET upload_receipt=?,status=? WHERE id=?', (json.dumps(dict(remote, verified_drive_link=remote.get('webViewLink', 'https://drive.google.com/file/d/' + file_id + '/view'))), 'uploaded', wid))
     document_id = config['changelog_document_id']
-    document = api.call('GET', DOCS + document_id)
+    tab_id = config.get('changelog_tab_id')
+    if tab_id:
+        from google_intake import document_body
+        document = api.call('GET', DOCS + document_id, params={'includeTabsContent': 'true'})
+        document['body'] = document_body(document, tab_id)
+    else:
+        document = api.call('GET', DOCS + document_id)
     marker = '[GSA:' + file_id + ']'
     entry = review_data['changelog_text'] + '\n' + marker + '\n'
-    # Staff supplies exact dated entry; reject multi-tab docs until a tab is explicitly supported.
     require('body' in document, 'Changelog must expose a document body')
     content = ''.join(el.get('textRun', {}).get('content', '') for item in document['body']['content'] for el in item.get('paragraph', {}).get('elements', []))
     if marker not in content:
         anchor = config['changelog_anchor']
-        require(content.count(anchor) == 1, 'Changelog dated anchor missing or ambiguous')
+        require(anchor and content.count(anchor) == 1, 'Changelog dated anchor missing or ambiguous')
         # Find the actual Docs UTF-16 index, accounting for structural elements.
         insertion = None
         for item in document['body']['content']:
@@ -348,7 +435,7 @@ def publish(db, wid, api, config):
                 if anchor in text:
                     insertion = el['startIndex'] + len(text[:text.index(anchor) + len(anchor)].encode('utf-16-le')) // 2
         require(insertion is not None, 'Anchor spans text runs; staff must choose a plain-text anchor')
-        api.call('POST', DOCS + document_id + ':batchUpdate', body={'writeControl': {'requiredRevisionId': document['revisionId']}, 'requests': [{'insertText': {'location': {'index': insertion}, 'text': '\n' + entry}}]})
+        api.call('POST', DOCS + document_id + ':batchUpdate', body={'writeControl': {'requiredRevisionId': document['revisionId']}, 'requests': [{'insertText': {'location': dict(index=insertion, **({'tabId': tab_id} if tab_id else {})), 'text': '\n' + entry}}]})
     with db:
         db.execute('UPDATE works SET changelog_receipt=?,status=?,reason=? WHERE id=?', (json.dumps({'target': document_id, 'marker': marker, 'at': stamp()}), 'complete', 'Verified Drive upload and dated changelog', wid))
 

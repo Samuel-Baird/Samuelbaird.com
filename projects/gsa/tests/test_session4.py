@@ -36,13 +36,18 @@ class Services:
             if not self.uploads:
                 raise HTTPError(url, 404, 'missing', {}, None)
             if params.get('alt') == 'media':
-                return self.pdf
+                assert kwargs.get('stream_hash')
+                return p.hashlib.sha256(self.pdf).hexdigest()
             return dict(id='reserved', name='Book.pdf', parents=['folder'], size=len(self.pdf),
                         md5Checksum=p.hashlib.md5(self.pdf).hexdigest())
         if url == p.DOCS + 'log':
-            return {'body': {'content': [{'paragraph': {'elements': [
-                {'startIndex': 1, 'textRun': {'content': self.content}}]}}]}, 'revisionId': '1'}
+            assert params == {'includeTabsContent': 'true'}
+            body = {'content': [{'paragraph': {'elements': [
+                {'startIndex': 1, 'textRun': {'content': self.content}}]}}]}
+            return {'tabs': [{'tabProperties': {'tabId': 'updates'}, 'documentTab': {'body': body}}],
+                    'revisionId': '1'}
         if url == p.DOCS + 'log:batchUpdate':
+            assert body['requests'][0]['insertText']['location']['tabId'] == 'updates'
             self.content += body['requests'][0]['insertText']['text']
             self.edits += 1
             raise ConnectionError('lost changelog response')
@@ -74,7 +79,7 @@ class Sandbox(unittest.TestCase):
                           destination_ids=['folder'], archive_index=str(index),
                           source_hosts=['publisher.example'], max_file_bytes=100000,
                           disk_budget_bytes=200000, reserve_bytes=1, scanner_command=['/usr/bin/false'],
-                          publication_approved=True, changelog_document_id='log', changelog_anchor='Today')
+                          publication_approved=True, changelog_document_id='log', changelog_anchor='Today', changelog_tab_id='updates')
             file = home / 'packet'
             self.assertEqual(p.poll(db, api, config), 1)
             self.assertEqual(db.execute('SELECT count(*) FROM works').fetchone()[0], 0)

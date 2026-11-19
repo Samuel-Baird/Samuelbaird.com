@@ -71,3 +71,12 @@ Run with `vpn_test.py` (sampler + phase marks + pcap attribution) and a root `tc
 | Reboot, network change | Not tested. |
 
 Attribution note: `vpn_test.py` matches packets to qBittorrent by its sampled local ports and peer addresses, so an unrelated process reusing a port can be flagged (one Apple DNS query was); check flagged packets by hand.
+
+### Deferred operator work for long-term torrent use
+
+Keep the following items open until a designated reviewer records the evidence. Direct HTTPS intake and publication rehearsals can proceed independently.
+
+- [ ] Review the session 3 connected, disconnected, reconnected and VPN-down startup captures, including the startup retest. Record a separate decision and evidence path for each scenario.
+- [ ] **Reboot.** Arrange an uninterrupted maintenance window. Capture from before qBittorrent starts after boot, retain the physical-interface capture and startup timeline, and check the route and binding before starting the official Debian test transfer. A capture started after client launch leaves startup unverified.
+- [ ] **Network change.** Arrange a second connection. During the Debian test, capture the old and new physical interfaces through the handoff and tunnel recovery. Record TCP, UDP, IPv4 and IPv6 observations on both connections, including DNS and client background traffic.
+- [ ] Save the dated phase marks, samples, captures, attribution analysis and reviewer decisions under the private worker network-checks directory. Record evidence expiration and run the guard before any GSA torrent use.
