@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   ...sectionOgImage("about", "Latter-day Stats — About"),
 };
 
-export const revalidate = 600;
+export const revalidate = 3600;
 
 export default async function AboutPage() {
   // The rest of the page has nothing to do with this channel lookup — a data
