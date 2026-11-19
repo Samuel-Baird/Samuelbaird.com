@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17",
+  "updated": "2026-11-19",
   "runs": [
     {
       "date": "2026-11-11",
@@ -1878,6 +1878,364 @@
           "status": "skipped",
           "results": 0
         }
+      ]
+    },
+    {
+      "date": "2026-11-19",
+      "searches": 42,
+      "summary": "17 finds, 8 of them alerts: Deseret News 15 Dec 1853 with Brigham Young's Governor's Message ($75), Orson Pratt Absurdities of Immaterialism 1849 ($75), Jaques Exclusive Salvation 1851 ($75), Millennial Star 8 Oct 1853 ($43), G. A. Smith Rise, Progress and Travels 1869 ($250), Journal of Discourses Vol. 2 1855 ($275), plus two LDS missionary pamphlets. Also peripheral Deseret books (Beadle 1870, Remy 1861), two pre-1900 silver communion sets and a 1960s Portuguese A Liahona. No common cups, Deseret originals or wants found.",
+      "leads": [
+        {
+          "title": "Deseret News, 15 December 1853: Brigham Young's Governor's Message",
+          "price": "$75",
+          "seller": "Timothy Hughes Rare & Early Newspapers (rarenewspapers.com)",
+          "url": "https://www.rarenewspapers.com/newspaper/700919-brigham-young-s-state-of-the-union-address",
+          "more_urls": [],
+          "date": "1853",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": true,
+          "notes": "Original issue, Great Salt Lake City, U.T., vol. 3. Page 2 prints the Governor's Message to the Territorial Legislature (12 Dec 1853); page 1 continues the Life of Joseph Smith. Never bound or trimmed; light soiling at the top of the front page.",
+          "action": "Buy",
+          "image": "https://secure-images.rarenewspapers.com/ebayimgs/3.30.2025/image013.jpg",
+          "status": "live",
+          "search_terms": [
+            "Utah Territory",
+            "Brigham Young sermon"
+          ]
+        },
+        {
+          "title": "Orson Pratt, Absurdities of Immaterialism (Liverpool, 1849)",
+          "price": "$75",
+          "seller": "Stellar Books & Ephemera, ABAA (AbeBooks)",
+          "url": "https://www.abebooks.com/paper-collectibles/Absurdities-Immaterialism-Reply-Taylders-Pamphlet-Entitled/31893605717/bd",
+          "more_urls": [],
+          "date": "1849",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": true,
+          "notes": "19th-century LDS pamphlet, Pratt's reply to T. W. P. Taylder. Seen live on the AbeBooks search page; condition not read.",
+          "action": "Buy",
+          "image": null,
+          "status": "live",
+          "search_terms": [
+            "Orson Pratt",
+            "Mormon pamphlet"
+          ]
+        },
+        {
+          "title": "John Jaques, Exclusive Salvation (Liverpool, 1851), first edition",
+          "price": "$75",
+          "seller": "Ken Sanders Rare Books, ABAA (AbeBooks)",
+          "url": "https://www.abebooks.com/first-edition/Exclusive-Salvation-Jaques-John-Richards-James/18332231064/bd",
+          "more_urls": [],
+          "date": "1851",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": true,
+          "notes": "Early British Mission tract (F. D. Richards). Seen live on the AbeBooks search page; condition not read.",
+          "action": "Buy",
+          "image": null,
+          "status": "live",
+          "search_terms": [
+            "Mormon pamphlet",
+            "Mormon tract"
+          ]
+        },
+        {
+          "title": "Millennial Star, 8 October 1853 (Vol. XV, No. 41), single issue",
+          "price": "$43",
+          "seller": "Mare Booksellers, ABAA ILAB (AbeBooks)",
+          "url": "https://www.abebooks.com/Latter-Day-Saints-Millennial-Star-Saturday-October/13531865601/bd",
+          "more_urls": [],
+          "date": "1853",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": true,
+          "notes": "Early Millennial Star issue at a low price. It may be disbound from a volume.",
+          "action": "Buy",
+          "image": null,
+          "status": "live",
+          "search_terms": [
+            "Millennial Star",
+            "Mormon pamphlet"
+          ]
+        },
+        {
+          "title": "George A. Smith, The Rise, Progress and Travels of the Church of Jesus Christ of Latter-day Saints (Salt Lake City, 1869), first edition",
+          "price": "$250",
+          "seller": "Tschanz Rare Books (AbeBooks)",
+          "url": "https://www.abebooks.com/first-edition/Rise-Progress-Travels-Church-Jesus-Christ/31394702609/bd",
+          "more_urls": [],
+          "date": "1869",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": true,
+          "notes": "Pioneer-era Utah LDS pamphlet. Seen live on the AbeBooks search page; condition not read.",
+          "action": "Watch",
+          "image": null,
+          "status": "live",
+          "search_terms": [
+            "Mormon pamphlet"
+          ]
+        },
+        {
+          "title": "Journal of Discourses, Vol. 2 (Liverpool: F. D. Richards, 1855), first edition",
+          "price": "$275",
+          "seller": "Ken Sanders Rare Books (item 47887)",
+          "url": "https://www.kensandersbooks.com/pages/books/47887/brigham-young/journal-of-discourses-by-brigham-young-president-of-the-church-his-two-counsellors-the-twelve",
+          "more_urls": [],
+          "date": "1855",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": true,
+          "notes": "In stock. 3/4 leather over marbled boards, light rubbing; interior near fine with scattered foxing. Cheaper than the $400 Ken Sanders Vol. II already tracked (43482).",
+          "action": "Contact seller / buy",
+          "image": null,
+          "status": "live",
+          "search_terms": [
+            "Journal of Discourses"
+          ]
+        },
+        {
+          "title": "Nye, Which is the Way to Obtain Eternal Life? (London, 1883)",
+          "price": "$100",
+          "seller": "Ken Sanders Rare Books, ABAA (AbeBooks)",
+          "url": "https://www.abebooks.com/Way-Obtain-Eternal-Life-Discussion-Church/6563765978/bd",
+          "more_urls": [],
+          "date": "1883",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": true,
+          "notes": "19th-century British Mission pamphlet.",
+          "action": "Watch",
+          "image": null,
+          "status": "live",
+          "search_terms": [
+            "Mormon pamphlet"
+          ]
+        },
+        {
+          "title": "Spori, Tanner & Hintze, L'Évangile que Christ enseignait (Berne, 1895), third French edition",
+          "price": "$60",
+          "seller": "Ken Sanders Rare Books, ABAA (AbeBooks)",
+          "url": "https://www.abebooks.com/LEvangile-Christ-Enseignait-Retablissement-Derniers-Jours/3921278065/bd",
+          "more_urls": [],
+          "date": "1895",
+          "category": "Early LDS print",
+          "alert": true,
+          "verified": true,
+          "notes": "Rare French-language LDS missionary tract from the Swiss-German Mission.",
+          "action": "Watch",
+          "image": null,
+          "status": "live",
+          "search_terms": [
+            "Mormon pamphlet",
+            "Mormon tract"
+          ]
+        },
+        {
+          "title": "Journal of Discourses, Vol. XXII (1882)",
+          "price": "$150",
+          "seller": "Ken Sanders Rare Books (item 47886)",
+          "url": "https://www.kensandersbooks.com/pages/books/47886/john-taylor/journal-of-discourses-by-president-john-taylor-of-the-church-his-counsellors-the-twelve-apostles",
+          "more_urls": [],
+          "date": "1882",
+          "category": "Early LDS print",
+          "alert": false,
+          "verified": true,
+          "notes": "VG, Add to Cart shown.",
+          "action": "Watch",
+          "image": null,
+          "status": "live",
+          "search_terms": [
+            "Journal of Discourses"
+          ]
+        },
+        {
+          "title": "Buchanan, Cessation of Difficulties in Utah: Message of the President (Washington, 1858)",
+          "price": "$75",
+          "seller": "Little Sages Books, ABAA/ILAB (AbeBooks)",
+          "url": "https://www.abebooks.com/paper-collectibles/Cessation-Difficulties-Utah-Message-President-United/31365951935/bd",
+          "more_urls": [],
+          "date": "1858",
+          "category": "Anti-Mormon literature",
+          "alert": false,
+          "verified": true,
+          "notes": "Federal message closing the Utah War; a political response to Mormonism.",
+          "action": "Watch",
+          "image": null,
+          "status": "live",
+          "search_terms": [
+            "Mormon question",
+            "Utah Territory"
+          ]
+        },
+        {
+          "title": "Niles' National Register, 5 October 1844: \"More Trouble at Nauvoo\"",
+          "price": "$57",
+          "seller": "Timothy Hughes Rare & Early Newspapers (rarenewspapers.com)",
+          "url": "https://www.rarenewspapers.com/view/685129",
+          "more_urls": [],
+          "date": "1844",
+          "category": "Early LDS print",
+          "alert": false,
+          "verified": true,
+          "notes": "Original 16-page issue. Governor Ford orders militia to Nauvoo after the Expositor affair.",
+          "action": "Watch",
+          "image": "https://secure-images.rarenewspapers.com/ebayimgs/2.4.2025/image082.jpg",
+          "status": "live",
+          "search_terms": [
+            "Nauvoo Expositor"
+          ]
+        },
+        {
+          "title": "C. R. Savage carte de visite: Brigham Young's Residences, the Lion House and the Beehive House (c. early 1870s)",
+          "price": "$400",
+          "seller": "Ken Sanders Rare Books (item 67675)",
+          "url": "https://www.kensandersbooks.com/pages/books/67675/charles-roscoe-savage-c-r-savage-carte-de-visite-cdv/brigham-youngs-residences-the-lion-house-and-the-beehive-house",
+          "more_urls": [],
+          "date": "c. 1870s",
+          "category": "LDS relics & art",
+          "alert": false,
+          "verified": true,
+          "notes": "Very good; the print is starting to curl away from the card at the top. High price for a view card.",
+          "action": "Watch",
+          "image": "https://kensandersbooks.cdn.bibliopolis.com/pictures/67675.jpg",
+          "status": "live",
+          "search_terms": [
+            "early Mormon photograph"
+          ]
+        },
+        {
+          "title": "Beadle, Life in Utah (1870), first edition with folding map (peripheral Deseret: \"Mormon Alphabet\" plate)",
+          "price": "$150",
+          "seller": "Argosy Book Store (AbeBooks)",
+          "url": "https://www.abebooks.com/Life-Utah-Mysteries-Crimes-Mormonism-Being/32485402393/bd",
+          "more_urls": [
+            "https://www.abebooks.com/first-edition/Life-Utah-Mysteries-Crimes-Mormonism-Being/31760056767/bd"
+          ],
+          "date": "1870",
+          "category": "Deseret Alphabet",
+          "alert": false,
+          "verified": true,
+          "notes": "VG+ with an owner inscription and the folding map. A second copy at Dark Parks Books is $100 (first edition, with map). Confirm the p. 470 alphabet engraving is present.",
+          "action": "Buy if you want the plate",
+          "image": null,
+          "status": "live",
+          "search_terms": [
+            "Beadle Life in Utah 1870"
+          ]
+        },
+        {
+          "title": "Remy & Brenchley, A Journey to Great-Salt-Lake City (London: W. Jeffs, 1861), 2 vols complete (peripheral Deseret)",
+          "price": "$300",
+          "seller": "Ken Sanders Rare Books, ABAA (AbeBooks)",
+          "url": "https://www.abebooks.com/first-edition/Journey-Great-Salt-Lake-City-Jules/19026467650/bd",
+          "more_urls": [
+            "https://www.abebooks.com/first-edition/Journey-Great-Salt-Lake-City-Sketch/31269999847/bd"
+          ],
+          "date": "1861",
+          "category": "Deseret Alphabet",
+          "alert": false,
+          "verified": true,
+          "notes": "All ten illustrations and the folding map present. A second set at $300 from Orrin Schwab Books. Neither listing names the 'Alphabet des Mormons' plate, so ask before buying.",
+          "action": "Contact seller",
+          "image": null,
+          "status": "live",
+          "search_terms": [
+            "Remy Journey to Great Salt Lake City 1861"
+          ]
+        },
+        {
+          "title": "Victorian silver communion set, Birmingham 1843, Joseph Willmore (cup, wafer tray, cut-glass bottle, boxed)",
+          "price": "GBP 380",
+          "seller": "Carlton Fine Art & Antique Centre (Antiques Atlas)",
+          "url": "https://antiques-atlas.com/antique/victorian_silver__cut_glass_communion_set_in_box/ac058a1532",
+          "more_urls": [],
+          "date": "1843",
+          "category": "Communion vessels (pre-1900)",
+          "alert": false,
+          "verified": true,
+          "notes": "For sale. Hallmarked; engraved cup and tray, no parish inscription stated. Probably a private or sick-call set.",
+          "action": "Watch",
+          "image": "https://images.antiquesatlas.com/dealer-stock-images/carltonfineart/Victorian_Silver__Cut_Glass_Co_ac058a1532b.jpg",
+          "status": "live",
+          "search_terms": [
+            "Victorian communion cup",
+            "Georgian communion chalice"
+          ]
+        },
+        {
+          "title": "William IV sterling communion beaker and wafer tazza, London 1832, Edward Edwards II",
+          "price": "price on request",
+          "seller": "1stdibs dealer",
+          "url": "https://www.1stdibs.com/furniture/more-furniture-collectibles/collectibles-curiosities/religious-items/19th-century-sterling-silver-communion-beaker-wafer-tazza/id-f_27363722",
+          "more_urls": [],
+          "date": "1832",
+          "category": "Communion vessels (pre-1900)",
+          "alert": false,
+          "verified": true,
+          "notes": "Clear full hallmarks; Contact Seller shown, no sold notice.",
+          "action": "Watch (ask the price)",
+          "image": "https://a.1stdibscdn.com/19th-century-sterling-silver-communion-beaker-and-wafer-tazza-for-sale/1121189/f_273637221663151915072/27363722_datamatics.jpg",
+          "status": "live",
+          "search_terms": [
+            "Georgian communion chalice"
+          ]
+        },
+        {
+          "title": "A Liahona, bound volume 1964/65 (Portuguese)",
+          "price": "$35",
+          "seller": "eBorn Books",
+          "url": "https://ebornbooks.com/?p=124718",
+          "more_urls": [],
+          "date": "1965",
+          "category": "Portuguese-language LDS",
+          "alert": false,
+          "verified": true,
+          "notes": "In stock. After 1960, so not an alert, but cheap Brazilian-mission material.",
+          "action": "Watch",
+          "image": "https://i0.wp.com/ebornbooks.com/wp-content/uploads/2023/05/20230522_215717.jpg?fit=416%2C312&ssl=1",
+          "status": "live",
+          "search_terms": [
+            "A Liahona português"
+          ]
+        }
+      ],
+      "nothing_found": [
+        "Common cup / metal sacrament ware: only glass cups and modern plastic trays",
+        "Deseret Alphabet originals, Deseret $5 coin",
+        "Times and Seasons, Mormonism Unvailed 1834, Nauvoo Expositor",
+        "Portuguese LDS pre-1960",
+        "Luther / Reformation in budget",
+        "Happy Songs to Sing, 145th FA history, chaplain items"
+      ],
+      "coverage_gaps": [
+        "eBay, Biblio, Etsy, ABAA, Schilb: 403",
+        "ViaLibri search URL 404; LiveAuctioneers search ignored the query",
+        "Ken Sanders /shop/rarebooks/ pages would not render",
+        "WorthPoint, Trem das 7 skipped"
+      ],
+      "issue": "https://github.com/Samuel-Baird/Samuelbaird.com/issues/79",
+      "coverage": [
+        {"site": "eBay", "status": "blocked", "results": 0},
+        {"site": "AbeBooks", "status": "searched", "results": 12},
+        {"site": "Biblio", "status": "blocked", "results": 0},
+        {"site": "ViaLibri", "status": "blocked", "results": 0},
+        {"site": "LiveAuctioneers", "status": "blocked", "results": 0},
+        {"site": "Heritage Auctions", "status": "searched", "results": 0},
+        {"site": "RR Auction", "status": "searched", "results": 0},
+        {"site": "Etsy", "status": "blocked", "results": 0},
+        {"site": "WorthPoint", "status": "skipped", "results": 0},
+        {"site": "Rare Book Hub", "status": "searched", "results": 0},
+        {"site": "Estante Virtual", "status": "searched", "results": 0},
+        {"site": "Mercado Livre", "status": "searched", "results": 0},
+        {"site": "Trem das 7", "status": "skipped", "results": 0},
+        {"site": "Ken Sanders", "status": "searched", "results": 3},
+        {"site": "rarenewspapers.com", "status": "searched", "results": 2},
+        {"site": "ABAA", "status": "blocked", "results": 0},
+        {"site": "Schilb", "status": "blocked", "results": 0}
       ]
     }
   ]
