@@ -21,7 +21,7 @@
         "Tracks 328 LDS YouTube channels with 16.6M combined subscribers",
         "Curates 73 academic studies and 58 survey graphics",
         "Data Explorer for Pew, CCES and other public survey data",
-        "MCP endpoint: https://samuelbaird.com/latter-day-stats/api/mcp"
+        "MCP endpoint: https://samuelbaird.com/latter-day-stats/mcp"
       ],
       "links": [
         [
@@ -122,7 +122,8 @@
         "367 concepts with evidence",
         "125,650 aligned General Conference paragraphs",
         "41,994 aligned scripture verses",
-        "English, Portuguese (Brazil) and Spanish"
+        "English, Portuguese (Brazil) and Spanish",
+        "MCP endpoint: https://samuelbaird.com/urim/mcp"
       ],
       "links": [
         [
@@ -194,7 +195,7 @@
       "tagline": "Deseret Alphabet transliteration and Deseret Wiki search for AI assistants.",
       "description": "A Model Context Protocol (MCP) server that lets Claude and other AI assistants transliterate English to and from the Deseret Alphabet and search the Deseret Wiki. Add it as a custom connector and ask for any text in Deseret, or for sourced answers about the alphabet's history.",
       "facts": [
-        "MCP endpoint: https://mcp.deseret.wiki/api/mcp",
+        "MCP endpoint: https://mcp.deseret.wiki/mcp",
         "English to Deseret and back, phonetically",
         "Searches every Deseret Wiki article"
       ],
@@ -264,7 +265,7 @@
       "tagline": "One MCP connector for every Latter-day Saint research server.",
       "description": "One Model Context Protocol endpoint that fronts several research servers at once: Pulpit, Latter-day Stats, Peepstone and Deseret MCP. Add a single connector and an AI assistant can search General Conference, survey data, the Joseph Smith Papers and the Deseret Alphabet together.",
       "facts": [
-        "One endpoint: https://samuelbaird.com/omni/api/mcp",
+        "One endpoint: https://samuelbaird.com/omni/mcp",
         "Each server's tools are prefixed by source",
         "A down server is skipped without breaking the rest"
       ],

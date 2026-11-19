@@ -1,6 +1,6 @@
 # samuelbaird.com: notes for working in this repo
 
-Plain static HTML, CSS and JS on Vercel (`cleanUrls`, no build step on Vercel; it serves the repo as-is). Lives at `sites/samuelbaird.com` in the monorepo. Pages: home (`index.html`), `/projects`, `/about`, `/books`, `/collection`, `/data`, `/donate`, `/faq`, `/wishlist`, `/sacred-sites` (map, `photos/`, `sites/`, `traditions/`), `404.html`. `/learn`, `/scout` and `/admin` (dashboard + `/admin/tickets`) are private tools (`noindex` in `vercel.json`); see "Admin, tickets and single sign-on" in `../../CLAUDE.md`. Functions live in `api/` (`api/_lib/` holds helpers, not routes).
+Plain static HTML, CSS and JS on a Cloudflare Worker (`wrangler.jsonc`): the folder is uploaded as static assets as-is (no build step at deploy; `.assetsignore` keeps `api/`, `worker/`, `scripts/`, `docs/` and repo files private), clean URLs via `html_handling: drop-trailing-slash`, headers in `_headers`, redirects in `_redirects`. `worker/index.mjs` runs only for `/api/*` and the app paths. Local: `npm run cf:dev` (secrets in an untracked `.dev.vars`). Lives at `sites/samuelbaird.com` in the monorepo. Pages: home (`index.html`), `/projects`, `/about`, `/books`, `/collection`, `/data`, `/donate`, `/faq`, `/wishlist`, `/sacred-sites` (map, `photos/`, `sites/`, `traditions/`), `404.html`. `/learn`, `/scout` and `/admin` (dashboard + `/admin/tickets`) are private tools (`noindex` in `_headers`); see "Admin, tickets and single sign-on" in `../../CLAUDE.md`. Functions live in `api/` (`api/_lib/` holds helpers, not routes); they keep the Node `(req, res)` signature and run through the shim in `worker/index.mjs`. A new function must be added to its `API` map.
 
 ## Generated files
 
@@ -14,7 +14,7 @@ This site is the hub of the monorepo (see `../../CLAUDE.md`). Every Samuel Baird
 - `scripts/build.mjs` renders the family chrome (sidebar, top bar, panorama, colophon) into the `nav`/`foot` markers and the family `<head>` links into `famhead`, from `packages/family/render.mjs`.
 - `/projects` and `/projects/<id>` (one per project, with JSON-LD and Q&A), the home page's project register, llms.txt, sitemap.xml and robots.txt are generated from `packages/family/projects.json`. Add or change a project there, not here.
 - `tokens.css` and `style.css` still use the old Archive token names; `/_family/family.css` (loaded after them) maps those names onto the family palette. Edit colours in the package, not here.
-- `vercel.json` rewrites `/latter-day-stats`, `/urim`, `/omni` and `/peepstone` to those apps. `/omni` is hidden (`"hidden": true`, noindex): it proxies the Gospel Scholar Archive, which is never public-facing, so never link it. Keep it in step with `projects.json` (`basePath`, `origin`).
+- `worker/index.mjs` forwards `/latter-day-stats`, `/urim`, `/omni` and `/peepstone` to those apps' Workers (service bindings in `wrangler.jsonc`). `/omni` is hidden (`"hidden": true`, noindex): it proxies the Gospel Scholar Archive, which is never public-facing, so never link it. Keep it in step with `projects.json` (`basePath`, `origin`).
 - Every public page loads the glyph background (`bg/`), `deseret.js` and the family head. (`/learn` and `/scout` skip them on purpose.)
 
 ## Deseret title reveal

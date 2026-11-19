@@ -1,0 +1,16 @@
+{
+  // deseret.wiki on Cloudflare Workers: the Astro static build (dist/) served as static assets.
+  // No Worker script runs, so requests are free and unmetered. Production custom domains
+  // (deseret.wiki, www.deseret.wiki) are added at cutover.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "deseret-wiki",
+  "compatibility_date": "2026-11-01",
+  "workers_dev": true,
+  "preview_urls": true,
+  "build": { "command": "npm run build" },
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}

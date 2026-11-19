@@ -7,6 +7,10 @@ const LEGACY = [{ type: "host" as const, value: "omni.samuelbaird.com" }];
 
 const nextConfig: NextConfig = {
   basePath: "/omni",
+  // Canonical MCP URL is /omni/mcp (same as every other MCP: <base>/mcp); /omni/api/mcp stays as an alias.
+  async rewrites() {
+    return [{ source: "/mcp", destination: "/api/mcp" }];
+  },
   async redirects() {
     return [
       { source: "/", has: LEGACY, destination: "https://samuelbaird.com/omni", permanent: true, basePath: false },

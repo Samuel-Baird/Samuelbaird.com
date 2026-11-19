@@ -62,8 +62,14 @@ Layout:
 - `src/jsp/`: the site client (`client.ts`), HTML→Markdown conversion (`html.ts`), and parsers for search, documents, directory entries and the other page types.
 - `src/server.ts`: tool definitions, shared by `app/mcp/route.ts` (HTTP, via `mcp-handler`) and `src/stdio.ts`.
 
-## Deploy (Vercel)
-Import the repository into Vercel. No configuration or environment variables are needed. The MCP endpoint is `/mcp`.
+## Deploy (Cloudflare Workers)
+Runs on Cloudflare Workers via [OpenNext](https://opennext.js.org/cloudflare) as the `peepstone` Worker (`wrangler.jsonc`); `.github/workflows/deploy.yml` deploys it on pushes to main. No environment variables or secrets are needed. `samuelbaird.com/peepstone/*` reaches it over a service binding from the samuelbaird-com Worker.
+
+- `npm run preview`: build and serve it locally in workerd (`/peepstone`, `/peepstone/mcp`, bare `/mcp`).
+- `npm run cf:deploy`: build and deploy by hand (needs `wrangler login`).
+- `worker.ts` wraps the OpenNext worker to rewrite bare `/mcp` to `/peepstone/mcp` (what `vercel.json` did on Vercel).
+- `next.config.ts` aliases the MCP SDK's validator shim to the `@cfworker/json-schema` one, because Workers forbid the Ajv validator's `new Function`.
+- peepstone.vercel.app is a Vercel hostname and can't move; its redirect rule in `next.config.ts` is inert on Cloudflare. `vercel.json` stays until the Vercel project is deleted.
 
 ## Etiquette and attribution
 Peepstone sends at most 2 concurrent requests per instance, retries with backoff, caches responses for 10 minutes, and identifies itself with a `Peepstone-MCP` User-Agent.

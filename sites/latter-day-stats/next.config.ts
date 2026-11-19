@@ -22,7 +22,8 @@ const securityHeaders = [
 ];
 
 // Served at https://samuelbaird.com/latter-day-stats (proxied from samuelbaird.com's vercel.json).
-// The old host 301s every page there; its /api and /auth paths keep working (vercel.json rewrites) so
+// The old host 301s every page there; its /api, /auth and /mcp paths keep working (vercel.json rewrites, or
+// worker.ts on Cloudflare) so
 // webhooks, crons, the MCP endpoint and in-flight sign-ins are not broken.
 const LEGACY = [{ type: "host" as const, value: "latterdaystats.samuelbaird.com" }];
 
@@ -33,7 +34,7 @@ const nextConfig: NextConfig = {
       // Compare was removed; keep old links and bookmarks working.
       { source: "/compare", destination: "/channels", permanent: true },
       { source: "/", has: LEGACY, destination: "https://samuelbaird.com/latter-day-stats", permanent: true, basePath: false },
-      { source: "/:path((?!latter-day-stats(?:/|$)|api/|auth/|_next/).+)", has: LEGACY, destination: "https://samuelbaird.com/latter-day-stats/:path", permanent: true, basePath: false },
+      { source: "/:path((?!latter-day-stats(?:/|$)|api/|auth/|mcp(?:/|$)|_next/).+)", has: LEGACY, destination: "https://samuelbaird.com/latter-day-stats/:path", permanent: true, basePath: false },
     ];
   },
   async headers() {

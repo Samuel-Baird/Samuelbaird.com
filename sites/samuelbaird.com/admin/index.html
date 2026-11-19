@@ -84,7 +84,7 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:now
   </div>
 
   <section aria-labelledby="h-deploys">
-    <h2 id="h-deploys">Deploys <small>latest Vercel deployment per project</small></h2>
+    <h2 id="h-deploys">Deploys <small>latest Cloudflare Workers deployment per site</small></h2>
     <p class="note" id="deploy-note" hidden></p>
     <div class="scroll"><table><thead><tr><th>Site</th><th>Production</th><th>Latest</th><th>Commit</th></tr></thead><tbody id="deploys"><tr><td colspan="4" class="muted">Loading…</td></tr></tbody></table></div>
   </section>
@@ -194,16 +194,16 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:now
     const note = $('#deploy-note');
     if (!list) {
       note.hidden = false;
-      note.innerHTML = err === 'no_vercel_token'
-        ? 'Add a <code>VERCEL_TOKEN</code> (create one at <a href="https://vercel.com/account/tokens" rel="noopener">vercel.com/account/tokens</a>) to the samuelbaird-com project to see deploys here.'
+      note.innerHTML = err === 'no_cloudflare_token'
+        ? 'Add <code>CLOUDFLARE_API_TOKEN</code> (Workers Scripts: Read, from <a href="https://dash.cloudflare.com/profile/api-tokens" rel="noopener">dash.cloudflare.com/profile/api-tokens</a>) and <code>CLOUDFLARE_ACCOUNT_ID</code> as secrets on the samuelbaird-com Worker to see deploys here.'
         : 'Deploys could not load: ' + esc(err) + '.';
-      $('#deploys').innerHTML = PROJECTS.map((p) => `<tr><td><a href="https://vercel.com/${esc(team)}/${p}" rel="noopener">${p}</a></td><td colspan="3" class="muted">—</td></tr>`).join('');
+      $('#deploys').innerHTML = PROJECTS.map((p) => `<tr><td><a href="https://dash.cloudflare.com/${esc(team || '')}/workers/services/view/${p}/production" rel="noopener">${p}</a></td><td colspan="3" class="muted">—</td></tr>`).join('');
       return;
     }
     note.hidden = true;
     $('#deploys').innerHTML = list.map((d) => {
       const prod = d.production, last = d.latest;
-      const link = `https://vercel.com/${esc(team)}/${esc(d.project)}`;
+      const link = `https://dash.cloudflare.com/${esc(team || '')}/workers/services/view/${esc(d.project)}/production`;
       const cell = (x) => x ? `${state(x.state)} <span class="muted small">${ago(x.created)}</span>` : '<span class="muted">none</span>';
       const latestCell = last && prod && last.created === prod.created ? '<span class="muted small">same</span>'
         : last ? `${cell(last)}${last.branch ? `<div class="muted small">${esc(last.branch)}</div>` : ''}` : '<span class="muted">none</span>';
@@ -221,7 +221,7 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:now
   }
 
   function renderTraffic(team) {
-    $('#traffic').innerHTML = PROJECTS.map((p) => `<li><a href="https://vercel.com/${esc(team)}/${p}/analytics" rel="noopener">${p}</a></li>`).join('')
+    $('#traffic').innerHTML = PROJECTS.map((p) => `<li><a href="https://dash.cloudflare.com/${esc(team || '')}/web-analytics" rel="noopener">${p}</a></li>`).join('')
       + '<li><a href="https://search.google.com/search-console" rel="noopener">Google Search Console</a></li>';
   }
 
@@ -247,9 +247,9 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:now
     renderTraffic('samuel-bairds-projects');
     try {
       const data = await get('/api/admin/dashboard');
-      renderTraffic(data.vercelTeam);
+      renderTraffic(data.cloudflareAccount);
       renderSummary(data.summary, data.errors.summary);
-      renderDeploys(data.deploys, data.errors.deploys, data.vercelTeam);
+      renderDeploys(data.deploys, data.errors.deploys, data.cloudflareAccount);
       renderUptime(data.uptime);
       tickets();
     } catch (e) {

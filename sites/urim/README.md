@@ -26,6 +26,7 @@ as evidence. A term with no Church source stays blank.
 - `pipeline/` Python build: seed, attest, mine variants, build
 - `data/` generated attestations, glossaries, provenance
 - `site/` static site (Vercel root)
+- `wrangler.jsonc`, `src/worker.mjs` the site, the `/urim` rewrite and the MCP as a Cloudflare Worker (tools in `src/mcp-core.mjs`, shared with `api/mcp.js`): `npm install`, then `npm run cf:dev` / `npm run cf:deploy`
 - `mcp/` local, free translation MCP server (glossary-enforcing, cached)
 - `deseret/` Deseret Alphabet transliteration package (vendored from pulpit-vault; see its README)
 - `proclamations/` generator for the Church's proclamations in the official layouts, as Deseret posters (languages are added through a registry; see its README)

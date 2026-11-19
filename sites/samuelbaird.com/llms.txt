@@ -11,7 +11,7 @@ All projects: [https://samuelbaird.com/projects](https://samuelbaird.com/project
   - Tracks 328 LDS YouTube channels with 16.6M combined subscribers
   - Curates 73 academic studies and 58 survey graphics
   - Data Explorer for Pew, CCES and other public survey data
-  - MCP endpoint: https://samuelbaird.com/latter-day-stats/api/mcp
+  - MCP endpoint: https://samuelbaird.com/latter-day-stats/mcp
   - [Data Explorer](https://samuelbaird.com/latter-day-stats/data-explorer)
   - [Studies](https://samuelbaird.com/latter-day-stats/studies)
   - [Channels](https://samuelbaird.com/latter-day-stats/channels)
@@ -30,6 +30,7 @@ All projects: [https://samuelbaird.com/projects](https://samuelbaird.com/project
   - 125,650 aligned General Conference paragraphs
   - 41,994 aligned scripture verses
   - English, Portuguese (Brazil) and Spanish
+  - MCP endpoint: https://samuelbaird.com/urim/mcp
   - [Atlas](https://samuelbaird.com/urim/)
   - [Variants](https://samuelbaird.com/urim/variants)
   - [Proclamations](https://samuelbaird.com/urim/proclamations)
@@ -39,7 +40,7 @@ All projects: [https://samuelbaird.com/projects](https://samuelbaird.com/project
   - 4,292 graded verbatim
   - Each talk traced to its best surviving witness
 - [Deseret MCP](https://mcp.deseret.wiki/): Deseret Alphabet transliteration and Deseret Wiki search for AI assistants. [About](https://samuelbaird.com/projects/deseret-mcp)
-  - MCP endpoint: https://mcp.deseret.wiki/api/mcp
+  - MCP endpoint: https://mcp.deseret.wiki/mcp
   - English to Deseret and back, phonetically
   - Searches every Deseret Wiki article
   - [Connect](https://mcp.deseret.wiki/connect)

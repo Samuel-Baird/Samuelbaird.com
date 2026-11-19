@@ -33,7 +33,7 @@ export default function PrivacyPage() {
           <DeseretTitle text="Privacy Policy." />
         </h1>
         <p className="mt-5 max-w-2xl text-sm text-[color:var(--muted)]">
-          Last updated August 10, 2026.
+          Last updated November 18, 2026.
         </p>
       </header>
 
@@ -93,16 +93,16 @@ export default function PrivacyPage() {
               your device.
             </p>
             <p className="mt-3">
-              The site uses Vercel Web Analytics for aggregate page-view
-              counts. It doesn&apos;t use cookies or collect personally
-              identifiable information — see{" "}
+              The site uses Cloudflare Web Analytics for aggregate page-view
+              counts. It doesn&apos;t use cookies, fingerprinting or collect
+              personally identifiable information — see{" "}
               <a
-                href="https://vercel.com/docs/analytics/privacy-policy"
+                href="https://www.cloudflare.com/web-analytics/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[color:var(--accent)] underline underline-offset-2 hover:no-underline"
               >
-                Vercel&apos;s analytics privacy documentation
+                Cloudflare&apos;s Web Analytics privacy overview
               </a>{" "}
               for specifics.
             </p>
@@ -120,8 +120,8 @@ export default function PrivacyPage() {
                 storage for the site.
               </li>
               <li>
-                <strong>Vercel</strong> — hosting and aggregate, cookieless
-                analytics.
+                <strong>Cloudflare</strong> — hosting, content delivery and
+                aggregate, cookieless analytics.
               </li>
               <li>
                 <strong>Resend</strong> — delivers contact-form

@@ -11,3 +11,8 @@ scratch/
 proclamations/.venv/
 proclamations/.cache/
 proclamations/out/
+
+# Cloudflare / npm
+node_modules/
+.wrangler/
+.dev.vars*

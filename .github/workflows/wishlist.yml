@@ -1,7 +1,7 @@
 # Keeps /wishlist in sync with the Amazon list.
 # - Every 6 hours (and on demand from the Actions tab) it re-reads the public Amazon list.
 # - When you edit wishlist/priorities.json on main, it rebuilds the page right away.
-# It commits only when something changed; Vercel then deploys the commit as usual.
+# It commits only when something changed; deploy.yml then deploys it to Cloudflare.
 name: Sync wishlist
 
 on:

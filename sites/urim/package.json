@@ -1,0 +1,14 @@
+{
+  "name": "urim",
+  "private": true,
+  "description": "Urim: Mormon Translation Atlas. Static site/ plus the hosted MCP (api/mcp.js on Vercel, src/worker.mjs on Cloudflare). The data pipeline is Python (pipeline/).",
+  "scripts": {
+    "test": "node --test \"deseret/test/*.test.mjs\" \"tests/*.test.mjs\"",
+    "cf:dev": "wrangler dev",
+    "cf:deploy": "wrangler deploy"
+  },
+  "engines": { "node": ">=20" },
+  "devDependencies": {
+    "wrangler": "^4.165.0"
+  }
+}

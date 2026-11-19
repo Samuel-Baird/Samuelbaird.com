@@ -646,9 +646,11 @@ export async function updateStudy(
 export async function regenerateStudyPreview(id: string) {
   await requireAdmin();
   assertUuid(id);
-  // Relies on scripts/ which isn't bundled into Vercel functions — this is
-  // local-only admin tooling.
-  if (process.env.VERCEL) {
+  // Relies on scripts/ and child_process, which aren't available on Vercel
+  // functions or Cloudflare Workers — this is local-only admin tooling.
+  const onWorkers =
+    typeof navigator !== "undefined" && navigator.userAgent === "Cloudflare-Workers";
+  if (process.env.VERCEL || onWorkers) {
     throw new Error(
       "Preview regeneration only works when running the admin locally.",
     );
