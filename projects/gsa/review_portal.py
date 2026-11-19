@@ -222,6 +222,17 @@ def run(args):
         print('Sent', result['folders'], 'archive folders from the', snapshot['source'], 'to the review site')
         return
     settings = json.loads(args.packet.read_text())
+    if args.command == 'published':
+        with p.closing(p.gsa.connect(home)) as db:
+            work, record = p.get(db, settings['work'])
+        p.require(work['status'] == 'complete' and work['upload_receipt'], 'Not published yet')
+        receipt = json.loads(work['upload_receipt'])
+        file_url = 'https://drive.google.com/file/d/' + receipt['id'] + '/view'
+        folder_url = 'https://drive.google.com/drive/folders/' + record['review']['destination']
+        send({'id': settings['id'], 'action': 'published', 'file_url': file_url, 'folder_url': folder_url,
+              'name': receipt.get('name', '')}, key)
+        print('Drive link shown on the review page:', file_url)
+        return
     draft = json.loads(Path(settings['review_file']).read_text())
     with (home / 'pipeline.lock').open('a') as lock, p.closing(p.gsa.connect(home)) as db:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
@@ -257,11 +268,16 @@ def run(args):
             # Both assigned reviewers approved this exact folder, which stands in for the allowlist.
             config = dict(config, destination_ids=[*config['destination_ids'], packet['destination']])
         reviewers = required_reviewers(config, home)
+        # Any "Changes requested" holds the work; otherwise enough approvals publish it.
         for name in reviewers:
-            check = decisions.get(name, {})
-            p.require(check.get('decision') == 'Approved' and
-                      all(check['checks'].get(k) is True for k, _ in p.validation.STAFF_JUDGMENT),
-                      'Awaiting approval from ' + name)
+            p.require(decisions.get(name, {}).get('decision') != 'Changes requested', name + ' requested changes')
+        approved = {name: email for name, email in reviewers.items()
+                    if decisions.get(name, {}).get('decision') == 'Approved'
+                    and all(decisions[name]['checks'].get(k) is True for k, _ in p.validation.STAFF_JUDGMENT)}
+        needed = p.approvals_needed(config)
+        p.require(len(approved) >= needed, 'Awaiting approval from ' + (
+            ' and '.join(n for n in reviewers if n not in approved) if needed == len(reviewers) else f'{needed} assigned reviewer(s)'))
+        reviewers = approved
         # Portal approval covers the displayed direct-download rights and exact destination.
         # Preserve the validated bytes while adding the source review for a browser-acquired PDF.
         p.require(not draft.get('infohash'), 'Portal supports direct downloads')
@@ -311,13 +327,13 @@ def run(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command', choices=['queue','collect','folders','remove'])
+    parser.add_argument('command', choices=['queue','collect','folders','remove','published'])
     parser.add_argument('--home', required=True, type=Path)
     parser.add_argument('--packet', type=Path, help='Private packet settings (queue and collect)')
     parser.add_argument('--id', help='remove: review id to take off the site')
     parser.add_argument('--config', type=Path, help='folders and collect: private config whose Google access and Table of Contents to use (read only)')
     os.umask(0o077)
     args = parser.parse_args()
-    if args.command in ('queue', 'collect') and not args.packet:
-        parser.error('--packet is required for queue and collect')
+    if args.command in ('queue', 'collect', 'published') and not args.packet:
+        parser.error('--packet is required for queue, collect and published')
     run(args)

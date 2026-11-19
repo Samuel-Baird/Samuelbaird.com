@@ -71,6 +71,14 @@ function fieldInput(key, value, edit) {
     : `<input id="${id}" type="text" data-field="${key}" maxlength="${spec.max}" value="${esc(value)}" autocomplete="off" spellcheck="${key === 'filename' ? 'false' : 'true'}">`;
   return `<div class="field"><label for="${id}">${spec.label}</label><div class="row">${control}<span class="saved" role="status" aria-live="polite"></span></div>${edit ? `<small class="edited">Edited by ${esc(edit.by)} · ${esc(edit.at.slice(0, 16).replace('T', ' '))} UTC</small>` : ''}</div>`;
 }
+function publishedSection(item) {
+  const pub = item.published, approved = Object.values(item.decisions || {}).some(d => d.decision === 'Approved');
+  return `<section class="published" data-approved="${approved ? 'yes' : 'no'}"><h2>Published to Google Drive</h2>
+  <div class="row"><input type="text" id="published-link" readonly value="${esc(pub?.file_url || '')}" placeholder="The Drive link appears here once the file is published" aria-label="Drive link to the published file">
+  <a class="open" id="published-file" href="${esc(pub?.file_url || '#')}" target="_blank" rel="noreferrer"${pub ? '' : ' hidden'}>Open file ↗</a><a id="published-folder" href="${esc(pub?.folder_url || '#')}" target="_blank" rel="noreferrer"${pub ? '' : ' hidden'}>Open folder ↗</a></div>
+  <small id="published-status">${pub ? 'Published ' + esc(pub.at.slice(0, 16).replace('T', ' ')) + ' UTC as ' + esc(pub.name) + '. Open it to double-check the file and folder.' : approved ? 'Approved. Waiting for the worker to publish; this fills in by itself.' : 'Fills in after approval, once the worker has published the file.'}</small></section>`;
+}
+
 function itemPage(id, item, actor) {
   const {decisions, revision}=item;
   const p = effective(item), edits = item.edits || {};
@@ -94,7 +102,7 @@ function itemPage(id, item, actor) {
   ${['title','citation','filename'].map(k=>fieldInput(k,p[k],edits[k])).join('')}${destination}${['rights','entry'].map(k=>fieldInput(k,p[k],edits[k])).join('')}
   <dl>${Object.entries({'Automated checks':p.validation,'SHA-256':p.sha256}).map(([k,v])=>`<dt>${k}</dt><dd>${esc(v)}</dd>`).join('')}</dl></section>
   <section><h2>Reviewer decisions</h2><ul>${statuses}</ul></section>
-  ${done ? '<p>Your decision is recorded for this version.</p>' : `<section><h2>Your review</h2><form method="post"><input type="hidden" name="revision" value="${revision}">${Object.entries(labels).map(([k,v])=>`<label><input type="checkbox" name="${k}">${v}</label>`).join('')}<label>Review notes<textarea name="note" rows="3" maxlength="2000"></textarea></label><button name="decision" value="Approved">Approve publication</button><button class="secondary" name="decision" value="Changes requested">Request changes</button></form></section>`}${viewer ? '</div></div>' : ''}<script src="/gsa/review.js" defer></script>`);
+  ${done ? '<p>Your decision is recorded for this version.</p>' : `<section><h2>Your review</h2><form method="post"><input type="hidden" name="revision" value="${revision}">${Object.entries(labels).map(([k,v])=>`<label><input type="checkbox" name="${k}">${v}</label>`).join('')}<label>Review notes<textarea name="note" rows="3" maxlength="2000"></textarea></label><button name="decision" value="Approved">Approve publication</button><button class="secondary" name="decision" value="Changes requested">Request changes</button></form></section>`}${publishedSection(item)}${viewer ? '</div></div>' : ''}<script src="/gsa/review.js" defer></script>`);
 }
 
 // A same-page form POST can carry Origin: null under a strict referrer policy; the browser's
@@ -140,6 +148,13 @@ export class GsaReviews {
     if(!isWorkKey(String(id))) return response('Invalid work ID',400);
     if(action==='get') return json(await this.storage.get(id) || null);
     // Removes a queued packet with its edits, history and decisions (sandbox clean-up, withdrawn works).
+    // The worker reports the verified Drive file after publishing, for the reviewer's double check.
+    if(action==='published') {
+      const {file_url,folder_url,name}=body;
+      if(!/^https:\/\/drive\.google\.com\/file\/d\/[\w-]+\/view(\?[\w=&.-]*)?$/.test(file_url||'') || !/^https:\/\/drive\.google\.com\/drive\/folders\/[\w-]+$/.test(folder_url||'')) return response('Invalid Drive links',400);
+      const ok=await this.storage.transaction(async tx=>{const item=await tx.get(id); if(!item) return false; item.published={file_url,folder_url,name:String(name||'').slice(0,300),at:new Date().toISOString()}; await tx.put(id,item); return true;});
+      return ok ? json({published:true}) : response('Work not found',404);
+    }
     if(action==='delete') return json({deleted:await this.storage.transaction(async tx=>{const had=await tx.get(id)!==undefined; if(had) await tx.delete(id); return had;})});
     if(action!=='put' || !packet || !/^[a-f0-9]{64}$/.test(packet.sha256) || ![packet.pdf,packet.source].every(v=>typeof v==='string' && v.startsWith('https://'))) return response('Invalid packet',400);
     const revision=await this.storage.transaction(async tx=>{
@@ -148,7 +163,7 @@ export class GsaReviews {
       const edits={...(prior?.edits||{})};
       for(const [k,e] of Object.entries(edits)) if(packet[k]===e.value || (k==='folder' && packet.destination===edits.destination?.value)) delete edits[k];
       if(!edits.destination) delete edits.folder;
-      const next={packet,edits,history:prior?.history||[],decisions:prior?.decisions||{}};
+      const next={packet,edits,history:prior?.history||[],decisions:prior?.decisions||{},...(prior?.published?{published:prior.published}:{})};
       next.revision=revisionOf(next);
       if(prior?.revision!==next.revision) next.decisions={};
       await tx.put(id,next);
@@ -198,9 +213,14 @@ export class GsaReviews {
       const entry=await this.storage.get(folderKey(folder==='root'?meta.root:folder));
       return entry ? json({...entry,root:meta.root,at:meta.at,source:meta.source||'Drive'}) : response(JSON.stringify({error:'Folder not found'}),404,{'Content-Type':'application/json'});
     }
-    const match=path.match(/^\/gsa\/work\/([a-z0-9-]{1,80})(\/edit)?$/);
+    const match=path.match(/^\/gsa\/work\/([a-z0-9-]{1,80})(\/edit|\/status)?$/);
     if(!match) return response('Not found',404);
     const id=match[1];
+    if(match[2]==='/status') {
+      if(req.method!=='GET') return response('Method not allowed',405);
+      const item=await this.storage.get(id);
+      return item ? json({published:item.published||null}) : response('Work not found',404);
+    }
     if(match[2]) return req.method==='POST' ? this.edit(req,id,actor) : response('Method not allowed',405);
     const item=await this.storage.get(id);
     if(!item) return response('Work not found',404);
@@ -213,7 +233,7 @@ export class GsaReviews {
       (decision==='Approved' ? !Object.values(checks).every(Boolean) : !note)) return response('Complete all checks to approve, or describe the requested changes. Go back to your review.',422);
     const saved=await this.storage.transaction(async tx=>{
       const current=await tx.get(id);
-      if(current?.revision!==form.get('revision') || current.decisions[actor]) return false;
+      if(current?.revision!==form.get('revision') || current.decisions[actor] || current.published) return false;
       current.decisions[actor]={decision,note,checks,at:new Date().toISOString()};
       await tx.put(id,current);return true;
     });
@@ -240,6 +260,7 @@ export class GsaReviews {
     const result=await this.storage.transaction(async tx=>{
       const item=await tx.get(id);
       if(!item) return {error:'Work not found',status:404};
+      if(item.published) return {error:'Already published to Drive; edits are closed',status:409};
       if(field!=='destination'){const problem=checkEdit(field,changes[field],item.packet); if(problem) return {error:problem};}
       item.edits={...(item.edits||{})};
       const current=effective(item);

@@ -125,6 +125,14 @@ class Sandbox(unittest.TestCase):
             p.approve(db, 1, file, config)
             config['reviewers'].append('second')
             config['required_publication_reviewers'] = ['staff', 'second']
+            config['publication_approvals_needed'] = 1  # any one assigned reviewer
+            p.archive_check(db, 1, api, config, 'folder')
+            p.approve(db, 1, file, config)
+            self.assertIn('approval', p.get(db, 1)[1])
+            for bad in (0, 3, '1'):
+                with self.assertRaisesRegex(ValueError, 'publication_approvals_needed'):
+                    p.approvals_needed(dict(config, publication_approvals_needed=bad))
+            del config['publication_approvals_needed']  # default: both must approve
             p.archive_check(db, 1, api, config, 'folder')
             p.approve(db, 1, file, config)
             self.assertNotIn('approval', p.get(db, 1)[1])

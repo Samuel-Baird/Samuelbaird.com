@@ -5,6 +5,28 @@ function client() {
   const details = document.querySelector('.details[data-work]');
   if (!details) return;
   const work = details.dataset.work;
+
+  // Published link: once approved, check every 10 s (up to 30 min) until the worker reports the Drive file.
+  const pubSection = document.querySelector('.published');
+  const pubBox = document.getElementById('published-link');
+  if (pubSection && pubBox && !pubBox.value && pubSection.dataset.approved === 'yes') {
+    let tries = 0;
+    const timer = setInterval(async () => {
+      if (++tries > 180) return clearInterval(timer);
+      try {
+        const res = await fetch('/gsa/work/' + encodeURIComponent(work) + '/status', {headers: {Accept: 'application/json'}});
+        const pub = res.ok && (await res.json()).published;
+        if (!pub) return;
+        clearInterval(timer);
+        pubBox.value = pub.file_url;
+        for (const [id, url] of [['published-file', pub.file_url], ['published-folder', pub.folder_url]]) {
+          const a = document.getElementById(id);
+          a.href = url; a.hidden = false;
+        }
+        document.getElementById('published-status').textContent = 'Published as ' + pub.name + '. Open it to double-check the file and folder.';
+      } catch { /* keep checking */ }
+    }, 10000);
+  }
   const DEBOUNCE = 600;
   const pending = new Set();
 
