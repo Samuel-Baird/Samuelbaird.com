@@ -8,6 +8,7 @@ import json
 import os
 import re
 from pathlib import Path
+import shutil
 import acquire as acquisition
 import validate as validation
 import rollout
@@ -160,6 +161,19 @@ def compare(request, candidate):
 def quote(value):
     return value.replace('\\', '\\\\').replace("'", "\\'")
 
+def match_key(item):
+    if item.get('id'):
+        return 'drive:' + item['id']
+    fields = [gsa.normalized(str(item.get(k) or '')) for k in ('title', 'name', 'author', 'edition', 'year', 'isbn', 'doi', 'language')]
+    return 'index:' + hashlib.sha256(json.dumps(fields).encode()).hexdigest()[:16]
+
+def unresolved_matches(matches, resolution=None):
+    """Exact matches always block. An ambiguous match (e.g. another edition) blocks unless the
+    approval lists its key in archive_resolution.matches with a written reason."""
+    resolution = resolution or {}
+    allowed = set(resolution.get('matches') or []) if str(resolution.get('reason') or '').strip() else set()
+    return [m for m in matches if m['match'] == 'exact' or m.get('key', match_key(m)) not in allowed]
+
 def archive_check(db, wid, api, config, destination):
     work, record = get(db, wid)
     request = json.loads(work['metadata'])
@@ -181,6 +195,7 @@ def archive_check(db, wid, api, config, destination):
             matches.append(dict(item, match='exact'))
         elif request.get('title') and gsa.normalized(request['title']) in gsa.normalized(item['name']):
             matches.append(dict(item, match='ambiguous'))
+    matches = [dict(m, key=match_key(m)) for m in matches]
     record['archive_check'] = {'at': stamp(), 'destination': destination, 'matches': matches}
     record.pop('approval', None)
     record.pop('reviewer_checks', None)
@@ -260,8 +275,11 @@ def acquire(db, wid, home, config):
             require(size > 0, 'Empty download')
             if response.headers.get('Content-Length'):
                 require(size == int(response.headers['Content-Length']), 'Incomplete download')
-        candidate = home / 'candidates' / f'{wid}{Path(review_data["filename"]).suffix.lower()}'
+        candidates = record.get('candidates') or ([{'path': record['candidate'], 'origin': 'earlier'}] if record.get('candidate') else [])
+        candidate = home / 'candidates' / f'{wid}-{len(candidates) + 1}{Path(review_data["filename"]).suffix.lower()}'
+        require(not candidate.exists(), 'Candidate path already used')
         target.replace(candidate)
+        record['candidates'] = candidates + [{'path': str(candidate), 'origin': 'direct:' + url, 'added_at': stamp()}]
         record['candidate'] = str(candidate)
         record.pop('validation', None)
         record.pop('approval', None)
@@ -270,23 +288,73 @@ def acquire(db, wid, home, config):
     finally:
         target.unlink(missing_ok=True)
 
+def worker_home(db):
+    return Path(db.execute('PRAGMA database_list').fetchone()[2]).parent
+
+def quarantine(db, path):
+    """Move a file that failed the malware scan out of the candidate area, read-only."""
+    folder = worker_home(db) / 'quarantine'
+    folder.mkdir(mode=0o700, exist_ok=True)
+    target = folder / f'{stamp().replace(":", "")}-{Path(path).name}'
+    shutil.move(str(path), target)
+    os.chmod(target, 0o400)
+    return str(target)
+
 def validate_file(db, wid, config):
+    """Validate every live candidate. Malware failures are quarantined. Passing reports are ranked
+    (real scans and original PDFs above ebook conversions) and the best becomes the current candidate."""
     _, record = get(db, wid)
     require(not record.get('upload_id'), 'Upload already started')
-    record.pop('approval', None)
-    record.pop('reviewer_checks', None)
-    record.pop('validation', None)
+    for key in ('approval', 'reviewer_checks', 'validation', 'candidate_reports', 'format_choice'):
+        record.pop(key, None)
+    candidates = record.get('candidates') or ([{'path': record['candidate'], 'origin': 'current'}] if record.get('candidate') else [])
+    live = [c for c in candidates if not c.get('quarantined_to')]
+    require(live, 'No candidate to validate')
     save(db, wid, record, 'validation_started')
-    report = validation.validate(Path(record['candidate']), config)
-    record['validation'] = report
-    record['sha256'] = report['sha256']
-    passed = report['automated_verdict'] == 'pass'
+    reports = []
+    for c in live:
+        report = dict(validation.validate(Path(c['path']), config), path=c['path'], origin=c['origin'])
+        if report['automated_checks'].get('malware_scan', {}).get('status') == 'fail':
+            c['quarantined_to'] = report['quarantined_to'] = quarantine(db, c['path'])
+        reports.append(report)
+    ranked = validation.rank(reports)
+    best = ranked[0]
+    record['candidates'] = candidates
+    record['candidate_reports'] = ranked
+    record['validation'] = best
+    record['sha256'] = best['sha256']
+    if not best.get('quarantined_to'):
+        record['candidate'] = best['path']
+    passed = best['automated_verdict'] == 'pass'
     save(db, wid, record, 'validated' if passed else 'validation_failed')
     with db:
         db.execute('UPDATE works SET sha256=?,status=? WHERE id=?',
-                   (report['sha256'], 'awaiting_staff_approval' if passed else 'needs_review', wid))
-    require(passed, 'Validation failed: ' + ', '.join(report['automated_failures']))
-    return report
+                   (best['sha256'], 'awaiting_staff_approval' if passed else 'needs_review', wid))
+    require(passed, 'Validation failed: ' + ', '.join(best['automated_failures']))
+    return best
+
+
+def select_candidate(db, wid, path, config):
+    """Reviewer picks a passing candidate other than the top-ranked one, with a reason."""
+    _, record = get(db, wid)
+    require(not record.get('upload_id'), 'Upload already started')
+    choice = json.loads(path.read_text())
+    require(choice.get('reviewer') in config['reviewers'], 'Unknown reviewer')
+    reports = record.get('candidate_reports') or []
+    report = next((r for r in reports if r['sha256'] == choice.get('sha256')), None)
+    require(report is not None and report['automated_verdict'] == 'pass' and not report.get('quarantined_to'),
+            'Choose a candidate that passed validation')
+    require(digest(report['path']) == report['sha256'], 'Candidate changed since validation')
+    cls = ((report.get('pdf') or {}).get('classification') or {}).get('class')
+    if report['sha256'] != reports[0]['sha256'] or cls == 'likely_ebook_conversion':
+        require(str(choice.get('reason') or '').strip(), 'Explain choosing a lower-ranked or ebook-converted candidate (reason)')
+    for key in ('approval', 'reviewer_checks'):
+        record.pop(key, None)
+    record.update(candidate=report['path'], sha256=report['sha256'], validation=report,
+                  format_choice=dict(choice, at=stamp()))
+    save(db, wid, record, 'candidate_selected')
+    with db:
+        db.execute("UPDATE works SET sha256=?,status='awaiting_staff_approval' WHERE id=?", (report['sha256'], wid))
 
 
 def approve(db, wid, path, config):
@@ -299,7 +367,9 @@ def approve(db, wid, path, config):
     for key, _ in validation.STAFF_JUDGMENT:
         require(approval.get(key) is True, 'Staff check required: ' + key)
     require(approval.get('destination') == record['review']['destination'], 'Approval destination mismatch')
-    require(record.get('archive_check') and not record['archive_check']['matches'], 'Archive matches require resolution before approval')
+    require(record.get('archive_check'), 'Run check before approval')
+    open_matches = unresolved_matches(record['archive_check']['matches'], approval.get('archive_resolution'))
+    require(not open_matches, 'Archive matches require resolution before approval: ' + ', '.join(m['key'] for m in open_matches))
     required = config.get('required_publication_reviewers', [])
     if required:
         require(approval['reviewer'] in required, 'Reviewer not assigned to this publication')
@@ -403,7 +473,7 @@ def publish(db, wid, api, config):
         # Preserve approval while doing a fresh duplicate check.
         approval = record['approval']
         matches = archive_check(db, wid, api, config, destination)
-        require(not matches, 'Duplicate or ambiguous archive match; staff review required')
+        require(not unresolved_matches(matches, approval.get('archive_resolution')), 'Duplicate or ambiguous archive match; staff review required')
         _, record = get(db, wid)
         record['approval'] = approval
         record['upload_id'] = api.call('GET', DRIVE + '/generateIds', params={'count': 1, 'space': 'drive'})['ids'][0]
@@ -460,6 +530,7 @@ def publish(db, wid, api, config):
 
 def torrent_loop(db, wid, home, config, evidence, metainfo):
     """Supervise one operator-added torrent. The operator alone starts transfers."""
+    require(config.get('torrent_acquisition_approved') is True, 'Staff have not approved torrent acquisition')
     while True:
         issues = rollout.guard(config, json.loads(evidence.read_text()))
         require(not issues, 'Torrent guard blocked: ' + ', '.join(issues))
@@ -492,6 +563,9 @@ def torrent_loop(db, wid, home, config, evidence, metainfo):
         if action == 'complete':
             require(path.is_file() and present == expected['bytes'], 'Incomplete payload')
             record['candidate'] = str(path)
+            origin = 'torrent:' + key
+            candidates = [c for c in record.get('candidates', []) if c['origin'] != origin]
+            record['candidates'] = candidates + [{'path': str(path), 'origin': origin, 'added_at': stamp()}]
             record.pop('approval', None)
             record.pop('reviewer_checks', None)
             record.pop('validation', None)
@@ -509,7 +583,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--home', type=Path, default=gsa.DEFAULT_HOME)
     parser.add_argument('--config', type=Path, required=True)
-    parser.add_argument('command', choices=['poll', 'triage', 'rank', 'torrent-loop', 'check', 'review', 'acquire', 'validate', 'approve', 'publish'])
+    parser.add_argument('command', choices=['poll', 'triage', 'rank', 'select', 'torrent-loop', 'check', 'review', 'acquire', 'validate', 'approve', 'publish'])
     parser.add_argument('--work', type=int)
     parser.add_argument('--file', type=Path)
     parser.add_argument('--evidence', type=Path)
@@ -534,6 +608,11 @@ def main():
                 if args.command in ('review', 'approve'):
                     require(args.file is not None, '--file required')
                     globals()[args.command](db, args.work, args.file, config)
+                elif args.command == 'select':
+                    require(args.file is not None, '--file required')
+                    select_candidate(db, args.work, args.file, config)
+                elif args.command == 'rank' and get(db, args.work)[1].get('candidate_reports'):
+                    print(json.dumps(get(db, args.work)[1]['candidate_reports'], indent=2))
                 elif args.command == 'rank':
                     reports = [json.loads(row[0])['validation'] for row in db.execute(
                         "SELECT detail FROM pipeline_events WHERE work_id=? AND action IN ('validated','validation_failed')", (args.work,))

@@ -8,5 +8,6 @@
   "completeness": false,
   "rights": false,
   "filename_and_destination": false,
-  "format_preference": false
+  "format_preference": false,
+  "archive_resolution": {"matches": [], "reason": ""}
 }

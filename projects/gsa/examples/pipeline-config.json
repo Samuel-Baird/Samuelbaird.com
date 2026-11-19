@@ -2,6 +2,7 @@
   "intake_approved": false,
   "publication_approved": false,
   "unattended_intake_validated": false,
+  "torrent_acquisition_approved": false,
   "keychain_service": "GSA Google OAuth",
   "keychain_account": "gsa-worker",
   "form_id": "REPLACE_PRIVATELY",

@@ -61,8 +61,12 @@ class Sandbox(unittest.TestCase):
             evidence.write_text('{}')
             with patch.object(p.rollout, 'guard', return_value=['unsigned']), patch.object(p.rollout, 'Client') as client:
                 with self.assertRaisesRegex(ValueError, 'unsigned'):
-                    p.torrent_loop(None, 1, Path(tmp), {}, evidence, None)
+                    p.torrent_loop(None, 1, Path(tmp), {'torrent_acquisition_approved': True}, evidence, None)
                 client.assert_not_called()
+            with patch.object(p.rollout, 'guard') as guard:
+                with self.assertRaisesRegex(ValueError, 'not approved torrent acquisition'):
+                    p.torrent_loop(None, 1, Path(tmp), {}, evidence, None)
+                guard.assert_not_called()
 
     def test_full_rehearsal(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -99,7 +103,16 @@ class Sandbox(unittest.TestCase):
                 p.acquire(db, 1, home, config)
             with self.assertRaisesRegex(ValueError, 'malware_scan'):
                 p.validate_file(db, 1, config)
+            record = p.get(db, 1)[1]
+            self.assertTrue(Path(record['candidates'][0]['quarantined_to']).exists())
+            self.assertEqual(list((home / 'candidates').iterdir()), [])
+            with self.assertRaisesRegex(ValueError, 'No candidate'):
+                p.validate_file(db, 1, config)
             config['scanner_command'] = ['/usr/bin/true']
+            response = io.BytesIO(api.pdf)
+            response.headers = {'Content-Length': str(len(api.pdf))}
+            with patch('pipeline.urllib.request.build_opener', return_value=Mock(open=Mock(return_value=response))):
+                p.acquire(db, 1, home, config)
             report = p.validate_file(db, 1, config)
             approval = dict(reviewer='staff', destination='folder', sha256=report['sha256'])
             approval.update({k: True for k, _ in p.validation.STAFF_JUDGMENT})
@@ -124,3 +137,71 @@ class Sandbox(unittest.TestCase):
             p.publish(db, 1, api, config)
             self.assertEqual((api.uploads, api.edits), (1, 1))
             self.assertEqual(p.get(db, 1)[0]['status'], 'complete')
+
+
+class Reconciled(unittest.TestCase):
+    """Session 4 additions ported onto the merged pipeline: ranking, selection, edition resolution."""
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.home = Path(self.tmp.name)
+        self.db = gsa.connect(self.home)
+        p.migrate(self.db)
+        self.index = self.home / 'index'
+        self.index.write_text('[{"title":"Book","author":"Smith","edition":"1"}]')
+        self.config = dict(reviewers=['staff'], destination_ids=['folder'], archive_index=str(self.index),
+                           source_hosts=['publisher.example'], max_file_bytes=10 ** 7, disk_budget_bytes=10 ** 8,
+                           reserve_bytes=1, scanner_command=['/usr/bin/true'])
+        gsa.ingest(self.db, [{'row_id': '1', 'title': 'Book', 'author': 'Smith', 'edition': '2'}], 'csv:t', 't')
+        review = json.loads((Path(p.__file__).parent / 'examples/review.json').read_text())
+        review.update(reviewer='staff', filename='Book.pdf', destination='folder')
+        for entry in review['permissions'].values():
+            entry.update(status='granted', recorded_by='staff', recorded_at=p.stamp(), basis='synthetic', source='fixture')
+        self.file = self.home / 'packet'
+        self.file.write_text(json.dumps(review))
+        p.review(self.db, 1, self.file, self.config)
+
+    def tearDown(self):
+        self.db.close()
+        self.tmp.cleanup()
+
+    def acquire(self, data):
+        response = io.BytesIO(data)
+        response.headers = {'Content-Length': str(len(data))}
+        with patch('pipeline.urllib.request.build_opener', return_value=Mock(open=Mock(return_value=response))):
+            p.acquire(self.db, 1, self.home, self.config)
+
+    def write(self, data):
+        self.file.write_text(json.dumps(data))
+        return self.file
+
+    @unittest.skipUnless(all(p.shutil.which(t) for t in ('pdfinfo', 'pdffonts', 'pdfimages', 'qpdf')), 'poppler and qpdf required')
+    def test_scan_outranks_ebook_conversion_and_selection_needs_reason(self):
+        from pdf_fixtures import calibre_pdf, scan_pdf
+        self.acquire(calibre_pdf())
+        self.acquire(scan_pdf(pages=2, ppi=300))
+        best = p.validate_file(self.db, 1, self.config)
+        record = p.get(self.db, 1)[1]
+        self.assertEqual([r['pdf']['classification']['class'] for r in record['candidate_reports']], ['scan', 'likely_ebook_conversion'])
+        self.assertEqual(record['candidate'], best['path'])
+        conversion = record['candidate_reports'][1]['sha256']
+        with self.assertRaisesRegex(ValueError, 'reason'):
+            p.select_candidate(self.db, 1, self.write({'reviewer': 'staff', 'sha256': conversion}), self.config)
+        p.select_candidate(self.db, 1, self.write({'reviewer': 'staff', 'sha256': conversion, 'reason': 'Scan is missing pages'}), self.config)
+        self.assertEqual(p.get(self.db, 1)[1]['sha256'], conversion)
+
+    def test_ambiguous_edition_needs_named_resolution_from_each_reviewer(self):
+        from pdf_fixtures import text_pdf
+        self.acquire(text_pdf())
+        with patch('validate.pdf_checks', return_value=({}, None)):
+            report = p.validate_file(self.db, 1, self.config)
+        api = Mock(files=Mock(return_value=[]))
+        matches = p.archive_check(self.db, 1, api, self.config, 'folder')
+        self.assertEqual([m['match'] for m in matches], ['ambiguous'])
+        approval = dict(reviewer='staff', destination='folder', sha256=report['sha256'])
+        approval.update({k: True for k, _ in p.validation.STAFF_JUDGMENT})
+        with self.assertRaisesRegex(ValueError, 'Archive matches'):
+            p.approve(self.db, 1, self.write(approval), self.config)
+        with self.assertRaisesRegex(ValueError, 'Archive matches'):
+            p.approve(self.db, 1, self.write(dict(approval, archive_resolution={'matches': [matches[0]['key']], 'reason': ' '})), self.config)
+        p.approve(self.db, 1, self.write(dict(approval, archive_resolution={'matches': [matches[0]['key']], 'reason': 'Archive has the 1st edition'})), self.config)
+        self.assertIn('approval', p.get(self.db, 1)[1])

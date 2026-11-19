@@ -80,3 +80,7 @@ Keep the following items open until a designated reviewer records the evidence. 
 - [ ] **Reboot.** Arrange an uninterrupted maintenance window. Capture from before qBittorrent starts after boot, retain the physical-interface capture and startup timeline, and check the route and binding before starting the official Debian test transfer. A capture started after client launch leaves startup unverified.
 - [ ] **Network change.** Arrange a second connection. During the Debian test, capture the old and new physical interfaces through the handoff and tunnel recovery. Record TCP, UDP, IPv4 and IPv6 observations on both connections, including DNS and client background traffic.
 - [ ] Save the dated phase marks, samples, captures, attribution analysis and reviewer decisions under the private worker network-checks directory. Record evidence expiration and run the guard before any GSA torrent use.
+
+## Session 4 reconciliation (2026-11-19)
+
+Ported onto the merged pipeline from PR #87: quarantine of files that fail the malware scan, numbered candidates ranked with scans above ebook conversions plus a reviewer `select` command, reviewer resolution of ambiguous archive matches, and the `torrent_acquisition_approved` staff flag on `torrent-loop`. `sandbox_trial.py` passed 22/22 in `sandbox-session4-reconciled/` under the worker home (fake Google and qBittorrent, real ClamAV 1.5.5, poppler and qpdf). The guard step used the real session 3 evidence draft and still fails on 8 issues, so no torrent may run.
