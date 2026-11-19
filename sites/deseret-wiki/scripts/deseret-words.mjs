@@ -33,6 +33,8 @@ const OVERRIDES = {
   deseret: '𐐼𐐯𐑆𐐲𐑉𐐯𐐻',
   // "the" is the single letter 𐑄 (Thee), as in the primers and the Book of Mormon, not 𐑄𐐲.
   the: '𐑄',
+  // "a" is the single letter 𐐪 (Ah), the same rule (deseretalphabet.info, About, rule 1).
+  a: '𐐪',
   'encyclopædia': 'EH0 N S AY2 K L AH0 P IY1 D IY0 AH0',
   wiki: 'W IH1 K IY0',
   mormon: 'M AO1 R M AH0 N',

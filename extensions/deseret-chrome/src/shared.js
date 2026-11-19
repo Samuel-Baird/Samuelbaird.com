@@ -12,6 +12,8 @@
 
   const DEFAULTS = {
     strict: false,          // true: words the dictionary lacks stay Latin even if they can be built from parts
+    oneAh: false,           // true: write every ah as 𐐂 (no 𐐃 or 𐐉), as most American English says it
+    syllabic: true,         // true: the 𐑄, bee 𐐺, gay 𐑀 (a word that is a letter's name is that letter)
     font: 'noto',
     size: 110,              // percent, applied to Deseret letters only (CSS size-adjust)
     everywhere: false,      // convert every page automatically

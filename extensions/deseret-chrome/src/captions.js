@@ -145,7 +145,7 @@
   }
   async function apply(newSettings) {
     const fontChanged = !settings || ['font', 'size'].some((k) => settings[k] !== newSettings[k]);
-    const spellChanged = settings && settings.strict !== newSettings.strict;
+    const spellChanged = settings && ['strict', 'oneAh', 'syllabic'].some((k) => settings[k] !== newSettings[k]);
     settings = newSettings;
     mode = settings.captions === 'off' || !settings.captions ? 'off' : 'dsrt'; // older 'both' setting -> Deseret
     if (spellChanged) cache.clear();
@@ -158,7 +158,7 @@
   }
 
   chrome.storage.onChanged.addListener(async (changes, area) => {
-    if (area === 'sync' && Object.keys(changes).some((k) => ['captions', 'strict', 'font', 'size'].includes(k))) apply(await getSettings());
+    if (area === 'sync' && Object.keys(changes).some((k) => ['captions', 'strict', 'oneAh', 'syllabic', 'font', 'size'].includes(k))) apply(await getSettings());
   });
   chrome.runtime.onMessage.addListener((msg, _s, reply) => {
     if (msg.type === 'captions-cycle') { cycle(); reply({ ok: true }); }

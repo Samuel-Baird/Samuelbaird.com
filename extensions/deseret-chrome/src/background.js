@@ -18,9 +18,10 @@ function engine() {
 }
 
 // texts: string[] -> string[] in the same order. direction: 'dsrt' (Latin -> Deseret) | 'latin'.
-async function convert({ texts, direction, strict }) {
-  const e = await engine();
-  const opts = { strict: !!strict };
+// Spelling options come from the saved settings, so every caller (page, captions, popup) spells alike.
+async function convert({ texts, direction }) {
+  const [e, s] = await Promise.all([engine(), self.DSRT_SHARED.getSettings()]);
+  const opts = { strict: !!s.strict, style: { ah: s.oneAh ? 'one' : 'three', syllabic: s.syllabic !== false } };
   let words = 0, unknown = 0;
   const out = texts.map((t) => {
     if (direction === 'latin') return e.fromDeseret(t).latin;

@@ -62,7 +62,8 @@ export function phonesToDeseret(phones) {
 // Syllabic values: a letter written on its own is read as its name, so a whole word that sounds exactly like
 // a letter's name is written with that one letter (be/bee 𐐺, tea/tee 𐐻, gay 𐑀, thee 𐑄). Never inside a
 // longer word ("bees" is 𐐺𐐨𐑆). The list is the one the Deseret Wiki's article gives; keep it in step with
-// SYLLABIC in the wiki's scripts/deseret-words.mjs. ("the" is 𐑄 through the overrides; "you" is already 𐑏.)
+// SYLLABIC in the wiki's scripts/deseret-words.mjs. ("the" is 𐑄 and "a" is 𐐪 through the overrides, as
+// deseretalphabet.info's rule 1 has it; "you" is already 𐑏.)
 export const SYLLABIC = {
   '𐐶𐐭': '𐐶', '𐐷𐐨': '𐐷', '𐐸𐐪': '𐐸', '𐐹𐐨': '𐐹', '𐐺𐐨': '𐐺',
   '𐐻𐐨': '𐐻', '𐐽𐐨': '𐐽', '𐐾𐐨': '𐐾', '𐑀𐐩': '𐑀', '𐑄𐐨': '𐑄',
@@ -71,6 +72,51 @@ export const SYLLABIC = {
 const SYLLABIC_READ = { '𐐶': 'woo', '𐐷': 'ye', '𐐸': 'ha', '𐐹': 'pea', '𐐺': 'be', '𐐻': 'tea', '𐐾': 'gee', '𐑀': 'gay', '𐑄': 'the' };
 /** Lowercase whole-word Deseret -> its single-letter form when it is a letter's name. */
 export const syllabic = (d) => SYLLABIC[d] ?? d;
+
+// One "ah" (deseretalphabet.info, letter table footnote): most American English has a single ah sound, so
+// 𐐂 (cot) can stand for 𐐃 (caught) and 𐐉 (Boston) too. Before r, 𐐃 is the "or" of "for", "Lord", which
+// merged with 𐐄 (long o), not with 𐐂: "for" becomes 𐑁𐐬𐑉, not 𐑁𐐪𐑉 ("far"). Works on lowercase Deseret.
+export const oneAh = (d) => d.replace(/𐐫𐑉/gu, '𐐬𐑉').replace(/[𐐫𐐱]/gu, '𐐪');
+
+/** Spelling options: ah 'three' (𐐂 𐐃 𐐉, default) | 'one' (𐐂 only); syllabic single-letter words (default on);
+ * initialisms spelled from first sounds (default on). Missing keys take the defaults. */
+export const STYLE_DEFAULTS = { ah: 'three', syllabic: true, initialisms: true };
+
+// ---- acronyms and initialisms (deseretalphabet.info, About, rule 10)
+// An acronym is said as a word (NASA, laser) and is spelled by its sound like any other word. An initialism
+// (USA, BBC, URL) is said letter by letter and is written with the first sound of each word it stands for, one
+// Deseret letter each, read by the letters' names: USA 𐐧𐐝𐐊 (United States of America), URL 𐐧𐐡𐐢, BBC 𐐒𐐒𐐗.
+// Known initialisms with what they stand for (lowercase words like "of" are skipped), or the letters themselves.
+export const INITIALISMS = {
+  usa: 'United States of America', uk: 'United Kingdom', un: 'United Nations', eu: 'European Union',
+  uae: 'United Arab Emirates', ussr: 'Union of Soviet Socialist Republics',
+  fbi: 'Federal Bureau of Investigation', cia: 'Central Intelligence Agency', nsa: 'National Security Agency',
+  irs: 'Internal Revenue Service', ira: 'Individual Retirement Account',
+  bbc: 'British Broadcasting Corporation', cnn: 'Cable News Network', abc: 'American Broadcasting Company',
+  nbc: 'National Broadcasting Company', cbs: 'Columbia Broadcasting System', pbs: 'Public Broadcasting Service',
+  npr: 'National Public Radio', nfl: 'National Football League', nba: 'National Basketball Association',
+  mlb: 'Major League Baseball', url: 'Uniform Resource Locator', html: 'HyperText Markup Language',
+  css: 'Cascading Style Sheets', pdf: 'Portable Document Format', usb: 'Universal Serial Bus',
+  dvd: 'Digital Versatile Disc', tv: '𐐓𐐚', ceo: 'Chief Executive Officer', cfo: 'Chief Financial Officer',
+  hr: 'Human Resources', ai: 'Artificial Intelligence', api: 'Application Programming Interface',
+  faq: 'Frequently Asked Questions', gps: 'Global Positioning System', atm: 'Automated Teller Machine',
+  dna: 'Deoxyribonucleic Acid', ufo: 'Unidentified Flying Object', lds: 'Latter Day Saints',
+  byu: 'Brigham Young University', mcp: 'Model Context Protocol',
+};
+// Said as letter names but not initialisms of anything, so spelled by sound as usual.
+const NOT_INITIALISMS = new Set(['ok']);
+// First sound of a word starting with each Latin letter, for initialisms not in the table.
+const FIRST_SOUND = {
+  A: '𐐊', B: '𐐒', C: '𐐗', D: '𐐔', E: '𐐇', F: '𐐙', G: '𐐘', H: '𐐐', I: '𐐆', J: '𐐖', K: '𐐗', L: '𐐢', M: '𐐣',
+  N: '𐐤', O: '𐐂', P: '𐐑', Q: '𐐗', R: '𐐡', S: '𐐝', T: '𐐓', U: '𐐧', V: '𐐚', W: '𐐎', X: '𐐇', Y: '𐐏', Z: '𐐞',
+};
+// The names of the Latin letters, to tell an initialism (FBI: "ef bee eye") from an acronym (NASA) in CMUdict.
+const LATIN_NAMES = {
+  A: 'EY1', B: 'B IY1', C: 'S IY1', D: 'D IY1', E: 'IY1', F: 'EH1 F', G: 'JH IY1', H: 'EY1 CH', I: 'AY1', J: 'JH EY1',
+  K: 'K EY1', L: 'EH1 L', M: 'EH1 M', N: 'EH1 N', O: 'OW1', P: 'P IY1', Q: 'K Y UW1', R: 'AA1 R', S: 'EH1 S', T: 'T IY1',
+  U: 'Y UW1', V: 'V IY1', W: 'D AH1 B AH0 L Y UW0', X: 'EH1 K S', Y: 'W AY1', Z: 'Z IY1',
+};
+const ROMAN = /^[IVXLCDM]+$/; // Henry IV, Chapter XII: numerals, not initialisms
 
 /** Reapply the Latin word's case: UPPER (2+ letters), Title, or lower. */
 export function applyCase(latin, dsrt) {
@@ -227,8 +273,54 @@ export function createEngine({ dict, overrides = {}, freq = new Map() }) {
     return null;
   }
 
-  /** Spell one word (any case). Returns null if it has no spelling. */
-  function word(w, extra) {
+  /** Lowercase Deseret for whole word k -> lowercase Deseret in the given style. */
+  function styled(k, d, style) {
+    let out = d;
+    if (style.syllabic === false) {
+      // an override that is one letter ("the" 𐑄, "a" 𐐪) goes back to the dictionary's full spelling
+      if (Array.from(out).length === 1 && dict.get(k)) out = phonesToDeseret(dict.get(k)[0]);
+    } else out = syllabic(out);
+    if (style.ah === 'one') out = oneAh(out);
+    return out;
+  }
+
+  /**
+   * An initialism (FBI, USA, URLs, BBC's) -> Deseret capitals, one per word it stands for; null for anything else
+   * (acronyms said as words, ordinary words in capitals, Roman numerals).
+   */
+  function initialism(w, style = STYLE_DEFAULTS) {
+    const m = /^([A-Z]{2,})(['’]?s)?$/.exec(w);
+    if (!m) return null;
+    const caps = m[1];
+    const k = caps.toLowerCase();
+    if (NOT_INITIALISMS.has(k) || ROMAN.test(caps) || overrides[k]) return null;
+    let letters;
+    const known = INITIALISMS[k];
+    if (known && HAS_DSRT.test(known)) letters = Array.from(upperDsrt(known));
+    else if (known) {
+      letters = known.split(/\s+/).filter((x) => /^\p{Lu}/u.test(x)).map((x) => {
+        const r = direct(keyOf(x.split('-')[0]));
+        return r ? upperDsrt(Array.from(r.deseret)[0]) : FIRST_SOUND[x[0].toUpperCase()];
+      });
+    } else {
+      const prons = dict.get(k);
+      if (prons) {
+        // in the dictionary: an initialism only if it is read as its letters' names (FBI, not NASA or GOD)
+        const names = phonesToDeseret(Array.from(caps).map((c) => LATIN_NAMES[c]).join(' '));
+        // (first reading only: "us" and "am" also have letter-name readings in CMUdict, but are words first)
+        let first; try { first = phonesToDeseret(prons[0]); } catch { return null; }
+        if (first !== names) return null;
+      } else if (caps.length > 4 && /[AEIOUY]/.test(caps)) return null; // a long unknown word: leave it to the usual rules
+      letters = Array.from(caps).map((c) => FIRST_SOUND[c]);
+    }
+    let out = letters.join('');
+    if (style.ah === 'one') out = upperDsrt(oneAh(lowerDsrt(out)));
+    if (m[2]) out += m[2].length > 1 ? `${m[2][0]}𐑆` : '𐑆';
+    return out;
+  }
+
+  /** Spell one word (any case). Returns null if it has no spelling. style: see STYLE_DEFAULTS. */
+  function word(w, extra, style = STYLE_DEFAULTS) {
     const k = keyOf(w);
     const ck = extra ? null : k;
     let r = ck !== null ? cache.get(ck) : undefined;
@@ -241,8 +333,8 @@ export function createEngine({ dict, overrides = {}, freq = new Map() }) {
       if (ck !== null) cache.set(ck, r);
     }
     if (!r) return null;
-    const one = syllabic(r.deseret);
-    return { ...r, deseret: applyCase(w, one), ...(one !== r.deseret ? { syllabic: true } : {}) };
+    const one = styled(k, r.deseret, style);
+    return { ...r, deseret: applyCase(w, one), ...(one.length < r.deseret.length && Array.from(one).length === 1 ? { syllabic: true } : {}) };
   }
 
   /** Every spelling we know for a word, with letter names: for the deseret_word tool. */
@@ -318,8 +410,11 @@ export function createEngine({ dict, overrides = {}, freq = new Map() }) {
    * Transliterate text. format: plain | markdown | html. strict: leave derived spellings in Latin.
    * spellings: per-call word -> ARPAbet or Deseret.
    * respell: optional (latinWord, deseret) => deseret, applied to every spelled word (see historical1868).
+   * style: spelling options, see STYLE_DEFAULTS ({ ah: 'one' } writes every ah as 𐐂; { syllabic: false } spells
+   * "the", "bee" in full; { initialisms: false } spells FBI by its letters' sounds instead of its words').
    */
-  function text(input, { format = 'plain', strict = false, spellings, respell } = {}) {
+  function text(input, { format = 'plain', strict = false, spellings, respell, style: styleIn } = {}) {
+    const style = { ...STYLE_DEFAULTS, ...(styleIn || {}) };
     let extra = null;
     if (spellings && Object.keys(spellings).length) {
       extra = {};
@@ -341,15 +436,19 @@ export function createEngine({ dict, overrides = {}, freq = new Map() }) {
       if (IPA.test(w)) return w; // phonetic notation (/ˈdɛzərɛt/) is not English spelling
       stats.words++;
       const k = keyOf(w);
+      if (style.initialisms && !(extra && extra[k])) {
+        const ini = initialism(w, style);
+        if (ini) { stats.from_dictionary++; prevKey = k; return ini; }
+      }
       let r;
       const h = HETERONYMS[k];
       if (h && !(extra && extra[k]) && !overrides[k]) {
         const phones = h.after && h.after.words.includes(prevKey) ? h.after.phones : h.phones;
-        r = { deseret: applyCase(w, syllabic(phonesToDeseret(phones))), phones, source: 'cmudict' };
+        r = { deseret: applyCase(w, styled(k, phonesToDeseret(phones), style)), phones, source: 'cmudict' };
         if (!hetero.has(k)) hetero.set(k, { word: k, alternatives: (dict.get(k) || []).map((p) => phonesToDeseret(p)).filter((d, i, a) => a.indexOf(d) === i), used: new Set() });
         hetero.get(k).used.add(lowerDsrt(r.deseret));
       } else {
-        r = word(w, extra);
+        r = word(w, extra, style);
       }
       prevKey = k;
       if (!r || (strict && r.source === 'derived')) {
@@ -406,11 +505,41 @@ export function createEngine({ dict, overrides = {}, freq = new Map() }) {
       if (SYLLABIC_READ[one]) add(one, SYLLABIC_READ[one], 0);
       for (const e of reverse.get(full) || []) if (e.w.length > 1) add(one, e.w, Math.max(1, e.rank)); // not the letter names b, t
     }
+    // Initialisms from the table read back as their capitals (𐐧𐐝𐐊 -> USA).
+    for (const k of Object.keys(INITIALISMS)) { const d = initialism(k.toUpperCase()); if (d) add(lowerDsrt(d), k, 0); }
     // Hand corrections (rank 0) beat dictionary entries; then first pronunciations, frequency, length.
     const score = (e) => [e.rank === 0 ? 0 : 1, e.rank === 2 ? 1 : 0, -(freq.get(e.w) || 0), e.w.includes("'") ? 1 : 0, e.w.length, e.w];
     const cmp = (a, b) => { const x = score(a), y = score(b); for (let i = 0; i < x.length; i++) if (x[i] !== y[i]) return x[i] < y[i] ? -1 : 1; return 0; };
+    rankCmp = cmp;
     for (const list of reverse.values()) list.sort(cmp);
+    // Text written with one ah (𐐂 for 𐐃 and 𐐉) reads back through a second index keyed that way.
+    loose = new Map();
+    for (const [key, list] of reverse) {
+      const l = oneAh(key);
+      if (!loose.has(l)) loose.set(l, []);
+      const into = loose.get(l);
+      for (const e of list) if (!into.some((x) => x.w === e.w)) into.push(e);
+    }
+    for (const list of loose.values()) list.sort(cmp);
     return reverse;
+  }
+  let loose = null;
+  let rankCmp = null;
+  // Fallbacks for Deseret written without the two 1859 letters: 𐐷𐐭 for 𐑏, and 𐐱𐐮 / 𐐫𐐮 / 𐐬𐐮 for 𐑎 (boy).
+  // Text with only 𐐂 (no 𐐃 or 𐐉) may have been written with one ah: 𐐪𐑊 is then "all" more likely than "ahl".
+  const maybeOneAh = (key) => /𐐪|𐐬𐑉/u.test(key) && !/[𐐫𐐱]/u.test(key);
+  function lookup(idx, key) {
+    const hit = idx.get(key);
+    if (hit && maybeOneAh(key)) {
+      const both = [...hit, ...(loose.get(key) || []).filter((e) => !hit.some((x) => x.w === e.w))];
+      return both.sort(rankCmp);
+    }
+    if (hit) return hit;
+    const tries = [key.replace(/𐐷𐐭/gu, '𐑏')];
+    for (const t of [...tries]) for (const pair of ['𐐱𐐮', '𐐫𐐮', '𐐬𐐮']) if (t.includes(pair)) tries.push(t.split(pair).join('𐑎'));
+    for (const t of tries) { const h = idx.get(t); if (h) return h; }
+    for (const t of [key, ...tries]) { const h = loose.get(oneAh(t)); if (h) return h; }
+    return null;
   }
 
   const latinCase = (dsrt, latin) => {
@@ -430,7 +559,7 @@ export function createEngine({ dict, overrides = {}, freq = new Map() }) {
       stats.words++;
       const key = lowerDsrt(d).replace(/’/g, "'");
       // 1868 forms the dictionary spells differently: 𐐸𐐶 for "wh", -𐐮𐑅 for -ness/-less.
-      const hits = idx.get(key)
+      const hits = lookup(idx, key)
         || (key.startsWith('𐐸𐐶') && idx.get(key.slice(2))) // drop 𐐸 (one letter = two UTF-16 units)
         || (key.endsWith('𐐮𐑅') && (idx.get(key.slice(0, -4) + '𐐲𐑅') || idx.get(key.slice(0, -4) + '𐐯𐑅')));
       if (hits) {
@@ -449,7 +578,7 @@ export function createEngine({ dict, overrides = {}, freq = new Map() }) {
     return { latin, stats, ambiguous: [...ambiguous.values()], respelled: [...respelled.values()] };
   }
 
-  return { word, explain, text, fromDeseret, size: dict.size };
+  return { word, explain, text, fromDeseret, initialism, size: dict.size };
 }
 
 // 1868-69 printing conventions (Orson Pratt's transcriptions: the Deseret First and Second Books and the
