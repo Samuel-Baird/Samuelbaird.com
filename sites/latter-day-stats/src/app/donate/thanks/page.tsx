@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { sectionOgImage } from "@/lib/og-images";
 import { DeseretTitle } from "@/components/deseret-title";
 import { CONTACT_EMAIL, mailto } from "@/lib/contact";
 import { getStripe, isStripeConfigured } from "@/lib/stripe";
@@ -6,6 +7,7 @@ import { getStripe, isStripeConfigured } from "@/lib/stripe";
 export const metadata: Metadata = {
   title: "Thank you",
   robots: { index: false },
+  ...sectionOgImage("donate", "Latter-day Stats — Donate"),
 };
 
 export const dynamic = "force-dynamic";

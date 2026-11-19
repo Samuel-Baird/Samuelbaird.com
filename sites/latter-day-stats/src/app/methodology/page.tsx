@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { sectionOgImage } from "@/lib/og-images";
 import Link from "next/link";
 import { DeseretTitle } from "@/components/deseret-title";
 import { CONTACT_EMAIL } from "@/lib/contact";
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
   description:
     "How Latter-day Stats selects channels, collects statistics, and curates academic studies.",
   alternates: { canonical: "/methodology" },
+  ...sectionOgImage("methodology", "Latter-day Stats — Methodology"),
 };
 
 const SECTIONS: { id: string; title: string }[] = [

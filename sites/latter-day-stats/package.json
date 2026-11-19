@@ -4,12 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "tsx scripts/build-og-images.tsx && next build",
     "start": "next start",
     "lint": "eslint",
     "check:pew-rls": "tsx scripts/pew-rls/check-taxonomy.ts",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "cf:build": "opennextjs-cloudflare build",
+    "og:build": "tsx scripts/build-og-images.tsx",
     "cf:deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv --include-runtime=false cloudflare-env.d.ts"
   },

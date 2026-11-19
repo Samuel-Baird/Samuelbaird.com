@@ -8,6 +8,7 @@ import { AuthPromptProvider } from "@/components/auth-prompt";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { SITE_URL, BASE_PATH } from "@/lib/site";
+import { sectionOgImage } from "@/lib/og-images";
 import "./globals.css";
 
 // Family style (packages/family): body in Libre Baskerville, display in IM Fell English. The variable
@@ -47,7 +48,11 @@ export const metadata: Metadata = {
   },
   description:
     "Statistics, research, and creator data on the Latter-day Saint community.",
+  // public/icon.png, written by scripts/build-og-images.tsx. Absolute URL
+  // because a root-relative one would skip the basePath.
   icons: { icon: [{ url: `${SITE_URL}/icon.png`, type: "image/png", sizes: "32x32" }] },
+  // Default social card for every page that doesn't set its own.
+  ...sectionOgImage("home", "Latter-day Stats"),
 };
 
 export const viewport: Viewport = {

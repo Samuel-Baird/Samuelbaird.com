@@ -4,6 +4,7 @@
 // keeps it under ~60 KB, which is plenty at map scale.
 //
 // Usage: node scripts/maps/build_canada_topology.mjs
+// then:  npx tsx scripts/maps/build-map-shapes.ts (projects it into src/data/map-shapes.json)
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { topology } from 'topojson-server';

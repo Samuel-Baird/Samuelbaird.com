@@ -35,22 +35,16 @@ export default async function AdminAccessPage() {
     { data: adminRows, error: adminError },
     { data: adminProfileRows, error: profileError },
     { data: digestRows, error: digestError },
-    { data: subscriberRows, error: subscriberError },
   ] = await Promise.all([
     supabase.from("premium_users").select("email, name, created_at"),
     supabase.from("admins").select("email, name, created_at"),
     supabase.from("profiles").select("email, full_name").eq("is_admin", true),
     supabase.from("premium_users").select("email").eq("notify_weekly", true),
-    supabase
-      .from("newsletter_subscribers")
-      .select("email, profiles(email)")
-      .is("unsubscribed_at", null),
   ]);
   if (premiumError) throw premiumError;
   if (adminError) throw adminError;
   if (profileError) throw profileError;
   if (digestError) throw digestError;
-  if (subscriberError) throw subscriberError;
 
   const people = new Map<string, Person>();
   function upsert(email: string | null, name: string | null, addedAt: string | null, role?: UserRole) {
@@ -81,15 +75,6 @@ export default async function AdminAccessPage() {
 
   const digestEmails = ((digestRows ?? []) as { email: string }[])
     .map((r) => r.email)
-    .sort();
-
-  type SubscriberRow = { email: string; profiles: { email: string | null } | { email: string | null }[] | null };
-  const mailingListEmails = ((subscriberRows ?? []) as SubscriberRow[])
-    .map((r) => {
-      const profile = Array.isArray(r.profiles) ? r.profiles[0] : r.profiles;
-      return profile?.email ?? r.email;
-    })
-    .filter((e): e is string => Boolean(e))
     .sort();
 
   return (
@@ -225,22 +210,6 @@ export default async function AdminAccessPage() {
           </div>
           <div className="mt-3">
             <CopyEmails value={digestEmails.join(", ")} />
-          </div>
-        </section>
-
-        <section className="rounded-[var(--radius)] border border-[color:var(--border)] bg-white p-5 sm:p-6">
-          <h2 className="serif text-xl font-semibold tracking-tight">
-            Mailing list
-          </h2>
-          <p className="mt-2 text-sm leading-relaxed text-[color:var(--muted)]">
-            Subscribers to the monthly newsletter (opted in from{" "}
-            <code className="text-xs">/me/settings</code>).
-          </p>
-          <div className="mt-4 text-sm text-[color:var(--muted)]">
-            {mailingListEmails.length} {mailingListEmails.length === 1 ? "subscriber" : "subscribers"}
-          </div>
-          <div className="mt-3">
-            <CopyEmails value={mailingListEmails.join(", ")} />
           </div>
         </section>
       </div>

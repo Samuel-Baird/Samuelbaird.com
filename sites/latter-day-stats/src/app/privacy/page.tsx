@@ -52,7 +52,6 @@ export default function PrivacyPage() {
                 Bookmarks, upvotes, and study reading progress you create on
                 the site.
               </li>
-              <li>Your newsletter subscription status, if you opt in.</li>
             </ul>
             <p className="mt-3">
               If you use the contact form, we collect your name, email, and
@@ -76,9 +75,8 @@ export default function PrivacyPage() {
 
           <Section id="how-we-use-it" title="How we use it">
             <p>
-              To run your account (sign-in, bookmarks, reading progress), send
-              the monthly newsletter if you&apos;ve opted in, respond to
-              messages sent through the contact form, and send the
+              To run your account (sign-in, bookmarks, reading progress),
+              respond to messages sent through the contact form, and send the
               weekly digest if you&apos;ve opted in. We don&apos;t sell your data or use it
               for advertising — the site doesn&apos;t run ads.
             </p>
@@ -125,7 +123,7 @@ export default function PrivacyPage() {
               </li>
               <li>
                 <strong>Resend</strong> — delivers contact-form
-                notifications and the opt-in newsletter.
+                notifications.
               </li>
               <li>
                 <strong>YouTube Data API</strong> — public channel statistics
@@ -164,7 +162,7 @@ export default function PrivacyPage() {
                 account settings
               </Link>
               . Deleting your account removes your profile, bookmarks,
-              upvotes, reading progress, and newsletter subscription
+              upvotes and reading progress
               immediately and permanently. If you&apos;d rather we handle a
               request manually — including requests covered by GDPR, CCPA, or
               a similar law — email us and we&apos;ll take care of it.

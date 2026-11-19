@@ -52,7 +52,7 @@ jobs:
           deseret-wiki|deseret-wiki|static
           deseret-mcp|deseret-mcp|static'
           # latter-day-stats|latter-day-stats|next  -- add back when it moves off Vercel (its Worker is
-          # ~4 MiB gzipped: over the free plan's 3 MiB). Needs R2 bucket latter-day-stats-opennext-cache first.
+          # ~2.9 MiB gzipped, under the free plan's 3 MiB). Needs its KV namespace id (NEXT_INC_CACHE_KV) in wrangler.jsonc first.
           pick=()
           while IFS='|' read -r dir name kind; do
             dir=$(echo "$dir" | xargs)

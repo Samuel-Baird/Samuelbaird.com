@@ -14,8 +14,8 @@ export type SendEmailInput = {
   html: string;
   text: string;
   replyTo?: string | null;
-  // Extra headers, e.g. List-Unsubscribe / List-Unsubscribe-Post for the
-  // monthly newsletter's one-click unsubscribe (RFC 8058).
+  // Extra headers, e.g. List-Unsubscribe / List-Unsubscribe-Post
+  // (RFC 8058 one-click unsubscribe) for a bulk email.
   headers?: Record<string, string>;
 };
 

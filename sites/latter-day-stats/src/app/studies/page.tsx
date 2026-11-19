@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { sectionOgImage } from "@/lib/og-images";
 import { DeseretTitle } from "@/components/deseret-title";
 import { StudiesExplorer } from "@/components/studies-explorer";
 import { getCurrentUser } from "@/lib/auth";
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
   description:
     "Academic studies and research relating to the Latter-day Saint community.",
   alternates: { canonical: "/studies" },
+  ...sectionOgImage("studies", "Latter-day Stats — Research library"),
 };
 
 type SearchParams = {

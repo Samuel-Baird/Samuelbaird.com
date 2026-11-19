@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { sectionOgImage } from "@/lib/og-images";
 import Image from "next/image";
 import Link from "next/link";
 import { DeseretTitle } from "@/components/deseret-title";
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
   description:
     "About Latter-day Stats — a public hub for statistics, research, and creator data on the Latter-day Saint community.",
   alternates: { canonical: "/about" },
+  ...sectionOgImage("about", "Latter-day Stats — About"),
 };
 
 export const revalidate = 600;

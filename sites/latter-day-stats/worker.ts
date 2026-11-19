@@ -25,6 +25,11 @@ const BASE_PATH = "/latter-day-stats";
 const OUTSIDE_BASE_PATH = /^\/(?:api|auth|mcp)(?:\/|$)/;
 const CRON_ROUTES = ["/api/cron/refresh-stats", "/api/cron/message-digest"];
 const IMAGE_PATH = `${BASE_PATH}/_next/image`;
+// Static social cards (public/og, see src/lib/og-images.ts). Static assets are
+// served before the Worker runs, so a request that reaches here for a
+// per-channel/per-study card means no file exists (added after the last
+// build): answer with that section's generic card.
+const OG_CARD_MISS = /^\/latter-day-stats\/og\/(channels|studies)\/[^/]+\.png$/;
 // Next's own optimizer caches remote images for minimumCacheTTL (4h); OpenNext's
 // Cloudflare Images handler sends no Cache-Control for them, so every view
 // would re-fetch and re-transform. Give them the same 4h TTL and keep a copy
@@ -57,6 +62,19 @@ const worker = {
     }
     if (url.pathname === IMAGE_PATH && request.method === "GET") {
       return optimizedImage(request, env, ctx);
+    }
+    const ogMiss = OG_CARD_MISS.exec(url.pathname);
+    if (ogMiss && (request.method === "GET" || request.method === "HEAD")) {
+      const assets = env.ASSETS as { fetch(input: Request | string): Promise<Response> } | undefined;
+      if (assets) {
+        const fallback = await assets.fetch(new Request(new URL(`${BASE_PATH}/og/${ogMiss[1]}.png`, url), request));
+        if (fallback.ok) {
+          const response = new Response(fallback.body, fallback);
+          // Short TTL: the real card appears after the next build.
+          response.headers.set("cache-control", "public, max-age=3600");
+          return response;
+        }
+      }
     }
     return handler.fetch(request, env, ctx);
   },

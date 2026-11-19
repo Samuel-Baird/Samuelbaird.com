@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { sectionOgImage } from "@/lib/og-images";
 import Link from "next/link";
 import { DeseretTitle } from "@/components/deseret-title";
 import { CONTACT_EMAIL, mailto } from "@/lib/contact";
@@ -7,6 +8,7 @@ export const metadata: Metadata = {
   title: "Message sent",
   description: "Your message to Latter-day Stats was received.",
   robots: { index: false, follow: true },
+  ...sectionOgImage("contact", "Latter-day Stats — Contact"),
 };
 
 export default function ContactThankYouPage() {

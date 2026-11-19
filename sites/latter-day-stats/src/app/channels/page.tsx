@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { sectionOgImage } from "@/lib/og-images";
 import Link from "next/link";
 import { ChannelsExplorer } from "@/components/channels-explorer";
 import { DeseretTitle } from "@/components/deseret-title";
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
   title: "Channels",
   description: "Latter-day Saint YouTube creators tracked by Latter-day Stats.",
   alternates: { canonical: "/channels" },
+  ...sectionOgImage("channels", "Latter-day Stats — Channels"),
 };
 
 export default async function ChannelsPage() {

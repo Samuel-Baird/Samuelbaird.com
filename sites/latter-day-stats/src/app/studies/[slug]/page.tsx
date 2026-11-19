@@ -17,6 +17,7 @@ import { CitationCopy } from "@/components/citation-copy";
 import { StudyProgressPanel } from "@/components/study-progress-panel";
 import { Tag, type TagInk } from "@/components/tag";
 import { getCurrentUser } from "@/lib/auth";
+import { studyOgImage } from "@/lib/og-images";
 import { filterPublished, getGraphicPostMap } from "@/lib/graphic-posts";
 import {
   getBookmarkSetForUser,
@@ -41,6 +42,7 @@ export async function generateMetadata({
     title: s.title,
     description: s.abstract?.slice(0, 200) ?? undefined,
     alternates: { canonical: `/studies/${slug}` },
+    ...studyOgImage(s.slug),
   };
 }
 

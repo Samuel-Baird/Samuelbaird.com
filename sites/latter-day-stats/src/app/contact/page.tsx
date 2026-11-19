@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { sectionOgImage } from "@/lib/og-images";
 import Link from "next/link";
 import { submitMessage } from "@/app/actions/messages";
 import { SubmitButton } from "@/components/submit-button";
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
   description:
     "Get in touch, report an error, or suggest a channel or study for Latter-day Stats.",
   alternates: { canonical: "/contact" },
+  ...sectionOgImage("contact", "Latter-day Stats — Contact"),
 };
 
 type SearchParams = {

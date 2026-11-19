@@ -25,9 +25,9 @@ export async function confirmAge() {
   if (error) throw error;
 }
 
-// Bookmarks, upvotes, study_progress, and newsletter_subscribers all
-// cascade-delete from auth.users via FK constraints (see the migrations that
-// define them), so deleting the auth user is sufficient — nothing else to
+// Bookmarks, upvotes, study_progress, and the rows left in the retired
+// newsletter_subscribers table all cascade-delete from auth.users via FK
+// constraints (see the migrations that define them), so deleting the auth user is sufficient — nothing else to
 // clean up by hand. `messages` intentionally keeps its rows with user_id set
 // to null (ON DELETE SET NULL) rather than cascading, since a submitted
 // correction/bug report shouldn't vanish along with the account that sent

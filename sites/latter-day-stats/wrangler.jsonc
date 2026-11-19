@@ -28,11 +28,14 @@
       "service": "latter-day-stats"
     }
   ],
-  "r2_buckets": [
+  "kv_namespaces": [
     {
-      // OpenNext incremental cache (ISR pages + unstable_cache data).
-      "binding": "NEXT_INC_CACHE_R2_BUCKET",
-      "bucket_name": "latter-day-stats-opennext-cache"
+      // OpenNext incremental cache (ISR pages + unstable_cache data). KV, not
+      // R2: R2 is not enabled on the account. PLACEHOLDER: create the namespace
+      // (`npx wrangler kv namespace create latter-day-stats-opennext-cache`)
+      // and put its id here before the first deploy.
+      "binding": "NEXT_INC_CACHE_KV",
+      "id": "REPLACE_WITH_KV_ID"
     }
   ],
   "d1_databases": [

@@ -22,8 +22,8 @@ export function DeleteAccountButton() {
   return (
     <div className="rounded-[var(--radius)] border border-[color:var(--oxblood)]/40 bg-[color:var(--oxblood-soft)] p-4">
       <p className="text-sm text-[color:var(--foreground)]">
-        This permanently deletes your account, bookmarks, upvotes, reading
-        progress, and newsletter subscription. It cannot be undone.
+        This permanently deletes your account, bookmarks, upvotes and reading
+        progress. It cannot be undone.
       </p>
       <div className="mt-4 flex flex-wrap gap-3">
         <form action={deleteMyAccount}>

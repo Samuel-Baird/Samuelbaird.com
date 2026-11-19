@@ -7,6 +7,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { FreshnessBadge } from "@/components/freshness-badge";
 import { GrowthChart } from "@/components/growth-chart";
 import { getCurrentUser } from "@/lib/auth";
+import { channelOgImage } from "@/lib/og-images";
 import { Tag } from "@/components/tag";
 import { inkForType } from "@/lib/channel-types";
 import {
@@ -49,6 +50,7 @@ export async function generateMetadata({
     title: c.name,
     description: `Subscriber, view, and upload stats for the LDS YouTube channel ${c.name}.`,
     alternates: { canonical: `/channels/${slug}` },
+    ...channelOgImage(c.slug),
   };
 }
 

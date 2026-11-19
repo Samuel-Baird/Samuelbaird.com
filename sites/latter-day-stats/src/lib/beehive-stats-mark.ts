@@ -1,5 +1,6 @@
 // Shared geometry for the filled beehive-and-bar-chart mark, consumed by
-// both the favicon (src/app/icon.tsx, rendered via Satori/ImageResponse)
+// both the favicon (public/icon.png, rendered at build time by
+// scripts/build-og-images.tsx)
 // and the nav-bar logo (src/components/beehive-stats-mark.tsx, rendered as
 // a normal SVG). Kept in one place so the two can never drift apart.
 //
