@@ -60,3 +60,34 @@ class ReviewPortalTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class TocTests(unittest.TestCase):
+    CONFIG = {'archive_root_id': 'root', 'discovered_archive_resources': [
+        {'id': 'READ', 'name': 'Read📚', 'type': FOLDER}, {'id': 'doc', 'name': 'Table of Contents', 'type': 'application/vnd.google-apps.spreadsheet'}]}
+    ROWS = [{'name': 'a.pdf', 'folder_path': 'Gospel Scholar Archives™️ / Read📚 / Bible / Old Testament'},
+            {'name': 'b.pdf', 'folder_path': 'Gospel Scholar Archives™️ /  Read📚  / Bible'},
+            {'name': 'c.mp3', 'folder_path': 'Gospel Scholar Archives™️ / Listen🎧 '},
+            {'name': 'TOC', 'folder_path': 'Gospel Scholar Archives™️'},
+            {'name': 'x', 'folder_path': 'Someone Else / Stuff'}]
+
+    def test_toc_paths_become_a_tree_with_known_and_placeholder_ids(self):
+        snap = rp.toc_snapshot(self.ROWS, self.CONFIG)
+        self.assertEqual(snap['root'], {'id': 'root', 'name': 'Gospel Scholar Archives™️'})
+        tree = {f['name']: f for f in snap['folders']}
+        self.assertEqual(set(tree), {'Read📚', 'Bible', 'Old Testament', 'Listen🎧'})
+        self.assertEqual(tree['Read📚']['id'], 'READ')
+        self.assertEqual(tree['Bible']['parent'], 'READ')
+        self.assertEqual(tree['Old Testament']['parent'], tree['Bible']['id'])
+        self.assertTrue(tree['Listen🎧']['id'].startswith('toc-'))
+        self.assertEqual(rp.toc_snapshot(self.ROWS, self.CONFIG), snap)  # stable IDs between pushes
+
+    def test_placeholder_resolves_by_walking_drive_names(self):
+        drive = DriveStub([
+            {'id': 'root', 'name': 'Archive', 'mimeType': FOLDER, 'parents': []},
+            {'id': 'READ', 'name': 'Read📚 ', 'mimeType': FOLDER, 'parents': ['root']},
+            {'id': 'BIB', 'name': 'Bible', 'mimeType': FOLDER, 'parents': ['READ']}])
+        drive.files = lambda q: [f for f in drive.byid.values() if f"'{q.split(chr(39))[1]}' in parents" in q and q.split("'")[1] in f['parents']]
+        self.assertEqual(rp.resolve_toc_folder(drive, self.CONFIG, ['Read📚', 'Bible']), 'BIB')
+        with self.assertRaisesRegex(ValueError, 'Drive read access'):
+            rp.resolve_toc_folder(drive, self.CONFIG, ['Read📚', 'Missing'])
