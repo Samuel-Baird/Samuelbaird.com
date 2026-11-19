@@ -1,5 +1,7 @@
 # GSA torrenting plan
 
+Code: [SETUP.md](SETUP.md) (local pilot, offline rehearsal and network notes) and [PIPELINE.md](PIPELINE.md) (supervised pipeline, rollout gates). Private config, credentials and request data live in `~/Library/Application Support/GSA Worker`, never in this repo.
+
 Run a volunteer workflow on a dedicated Mac. New form submissions and bulk book or paper lists enter the same queue. The agent checks the archive first, identifies the requested edition, acquires eligible files, and prepares them for staff-approved upload. Start with a dry run and a supervised pilot.
 
 ## Where the work happens

@@ -1,0 +1,8 @@
+{
+  "reviewer": "STAFF_ID",
+  "sha256": "VALIDATED_CANDIDATE_HASH",
+  "destination": "STAFF_APPROVED_FOLDER_ID",
+  "bibliography_verified": false,
+  "complete": false,
+  "first_last_and_body_checked": false
+}
