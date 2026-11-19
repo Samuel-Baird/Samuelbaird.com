@@ -36,6 +36,10 @@ const EXT = {
 };
 // Project URLs come from packages/family/projects.json (one registry for every site).
 const projectUrl = (id) => FAMILY.find((p) => p.id === id).url;
+// Every project with an About page: the listed ones plus unlisted ones (Deseret MCP, listed only on the Deseret Wiki).
+const ABOUT = ALL_PROJECTS.filter((p) => !p.hidden && p.kind !== 'page');
+// A project's start links are relative to its URL, or absolute (data projects link to pages elsewhere on this site).
+const linkUrl = (x, u) => (/^https?:/.test(u) ? u : x.url + (u === '/' ? '/' : u));
 const LDS = projectUrl('latter-day-stats');
 const PULPIT = 'https://pulpit.restorationcommons.org';
 const DESERET = 'https://deseret.wiki';
@@ -316,9 +320,9 @@ const PERSON = {
 };
 const WEBSITE = { '@type': 'WebSite', '@id': BASE + '/#website', url: BASE + '/', name: NAME, description: 'Data tools and videos about religion, history and ideas.', inLanguage: 'en', publisher: { '@id': BASE + '/#person' }, license: LICENSE_URL };
 // One schema.org node per external project (on-site pages get their own CollectionPage nodes).
-const projectNodeId = (x) => (x.kind === 'page' ? x.url + '#page' : x.url + '/#' + (x.schemaType === 'SoftwareApplication' ? 'app' : 'website'));
+const projectNodeId = (x) => (x.kind === 'page' ? x.url + '#page' : x.kind === 'data' ? x.url + '#collection' : x.url + '/#' + (x.schemaType === 'SoftwareApplication' ? 'app' : 'website'));
 const projectNode = (x) => ({
-  '@type': x.schemaType, '@id': projectNodeId(x), name: x.name, url: x.url + '/', description: x.description,
+  '@type': x.schemaType, '@id': projectNodeId(x), name: x.name, url: x.url + (x.kind === 'data' ? '' : '/'), description: x.description,
   ...(x.schemaType === 'SoftwareApplication' ? { applicationCategory: 'DeveloperApplication', operatingSystem: 'Any (Model Context Protocol client)', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } } : { inLanguage: 'en' }),
   [x.role === 'contributor' ? 'contributor' : 'creator']: { '@id': BASE + '/#person' },
   keywords: x.topics.join(', '), subjectOf: { '@type': 'AboutPage', '@id': BASE + '/projects/' + x.id + '#page', url: BASE + '/projects/' + x.id, name: `About ${x.name}` },
@@ -546,13 +550,13 @@ const PAGES = {
       { '@type': 'ItemList', '@id': BASE + '/books#list', name: 'Reading log', numberOfItems: BOOKS.length, itemListElement: BOOKS.map((b, i) => ({ '@type': 'ListItem', position: i + 1, item: bookNode(b, i) })) },
       crumbs([['Home', '/'], ['My Reading', '/books']])] },
   '/temples': { file: 'temples/index.html', title: `Every Latter-day Saint Temple: Map, Status and Dedication Dates (${T.all}) · ${NAME}`, desc: `Map and open dataset of all ${T.all} temples of The Church of Jesus Christ of Latter-day Saints in ${T.countries} countries and territories: ${T.operating} operating, ${T.building} under construction and ${T.announced} announced, with announcement, groundbreaking and dedication dates. CSV and JSON.`,
-    ld: (p) => [webPage(p, 'CollectionPage', { about: { '@id': DATASETS.temples['@id'] } }), DATASETS.temples, crumbs([['Home', '/'], ['Temples', '/temples']])] },
+    ld: (p) => [webPage(p, 'CollectionPage', { about: { '@id': DATASETS.temples['@id'] } }), DATASETS.temples, crumbs([['Home', '/'], ['LDS Sacred Sites', '/lds-sacred-sites'], ['Temples', '/temples']])] },
   '/historic-sites': { file: 'historic-sites/index.html', title: `Church History Sites: Map of ${H.all} Latter-day Saint Historic Sites · ${NAME}`, desc: `Map and open dataset of the ${H.all} Church history sites, visitors' centers, monuments and museums operated by The Church of Jesus Christ of Latter-day Saints, from Palmyra and Kirtland to Nauvoo, Missouri and the Mormon Trail, with addresses and coordinates. CSV and JSON.`,
-    ld: (p) => [webPage(p, 'CollectionPage', { about: { '@id': DATASETS.historic['@id'] } }), DATASETS.historic, crumbs([['Home', '/'], ['Historic sites', '/historic-sites']])] },
+    ld: (p) => [webPage(p, 'CollectionPage', { about: { '@id': DATASETS.historic['@id'] } }), DATASETS.historic, crumbs([['Home', '/'], ['LDS Sacred Sites', '/lds-sacred-sites'], ['Historic sites', '/historic-sites']])] },
   '/hymns': { file: 'hymns/index.html', title: `Latter-day Saint Hymnbooks: Every Hymn in Every Edition, 1835 to Today · ${NAME}`, desc: `Search ${HY.records} records of every hymn in ${HY.editions} Latter-day Saint hymnbooks, from Emma Smith's 1835 collection to Hymns (1985) and Hymns—For Home and Church: numbers, first lines, authors and composers, and which hymns were added or dropped. CSV and JSON.`,
-    ld: (p) => [webPage(p, 'CollectionPage', { about: { '@id': DATASETS.hymns['@id'] } }), DATASETS.hymns, crumbs([['Home', '/'], ['Hymns', '/hymns']])] },
+    ld: (p) => [webPage(p, 'CollectionPage', { about: { '@id': DATASETS.hymns['@id'] } }), DATASETS.hymns, crumbs([['Home', '/'], ['Editions', '/editions'], ['Hymns', '/hymns']])] },
   '/handbook-changes': { file: 'handbook-changes/index.html', title: `General Handbook Change Log: ${HB.all} Updates Across ${HB.releases} Releases (2020–2026) · ${NAME}`, desc: `Complete change log and open dataset of ${HB.all} section and chapter updates to the General Handbook of The Church of Jesus Christ of Latter-day Saints across ${HB.releases} releases since February 2020, filterable by chapter, kind and release. CSV and JSON.`,
-    ld: (p) => [webPage(p, 'CollectionPage', { about: { '@id': DATASETS.handbook['@id'] } }), DATASETS.handbook, crumbs([['Home', '/'], ['General Handbook changes', '/handbook-changes']])] },
+    ld: (p) => [webPage(p, 'CollectionPage', { about: { '@id': DATASETS.handbook['@id'] } }), DATASETS.handbook, crumbs([['Home', '/'], ['Editions', '/editions'], ['General Handbook changes', '/handbook-changes']])] },
   '/collection': { file: 'collection/index.html', title: `Collection: Historic Latter-day Saint Books, Periodicals and Artifacts · ${NAME}`, desc: `Historical Latter-day Saint items owned by ${NAME}, including a first edition of the Deseret First Book (1868), an 1864 Millennial Star and a 1908 Northern States Mission Book of Mormon.`,
     ld: (p) => [webPage(p, 'CollectionPage', { mainEntity: { '@id': BASE + '/collection#items' } }), collectionList(), crumbs([['Home', '/'], ['Collection', '/collection']])] },
   '/wishlist': { title: `Wishlist: Books and Equipment for the Channel · ${NAME}`, desc: `${WISHLIST.length ? plural(WISHLIST.length, 'book and piece of equipment', 'books and pieces of equipment') : 'Books and equipment'} ${NAME} would like for his YouTube channel, most wanted first. Bought through Amazon, shipped directly to him.`,
@@ -606,7 +610,7 @@ const pagehead = (crumb, eyebrow, h1, lede) => `<div class="pagehead">
 
 
 /* ---------- projects: one page per project, from packages/family/projects.json ---------- */
-const KIND = { site: 'Website', tool: 'AI tool (MCP server)', page: 'On this site' };
+const KIND = { site: 'Website', data: 'Open data on this site', tool: 'AI tool (MCP server)', page: 'Personal' };
 const hostOf = (u) => u.replace(/^https?:\/\//, '').replace(/\/$/, '');
 const related = (x) => FAMILY.filter((y) => y.id !== x.id && y.kind !== 'page' && y.topics.some((t) => x.topics.includes(t)));
 const projectFaq = (x) => [
@@ -626,7 +630,7 @@ const projectPage = (x) => {
   <h2 id="what">What is ${esc(x.name)}?</h2>
   <p>${esc(x.description)}</p>
   ${x.facts.length ? `<h2 id="facts">At a glance</h2>\n  <ul>${x.facts.map((f) => `<li>${esc(f)}</li>`).join('')}</ul>` : ''}
-  ${x.links.length ? `<h2 id="start">Start here</h2>\n  <ul>${x.links.map(([t, u]) => `<li><a href="${rel(x.url) + (u === '/' ? '' : u)}">${esc(t)}</a></li>`).join('')}</ul>` : ''}
+  ${x.links.length ? `<h2 id="start">Start here</h2>\n  <ul>${x.links.map(([t, u]) => `<li><a href="${rel(linkUrl(x, u))}">${esc(t)}</a></li>`).join('')}</ul>` : ''}
   <h2 id="topics">Topics</h2>
   <p class="topics">${x.topics.map((t) => `<span class="smallcaps">${esc(t)}</span>`).join(' ')}</p>
   ${rels.length ? `<h2 id="related">Related projects</h2>\n  <ol class="register">${rels.map((y) => `<li><a class="reg-title" href="/projects/${y.id}">${esc(y.name)}</a><p class="reg-note">${esc(y.tagline)}</p></li>`).join('')}</ol>` : ''}
@@ -635,14 +639,36 @@ const projectPage = (x) => {
   <p class="small">Part of <a href="/projects">${NAME}&rsquo;s projects</a>. Figures dated ${EXT.asOf}.</p>
 </div>`);
 };
+// Landing page for an open-data project on this site (LDS Sacred Sites, Editions): its pages, with live counts.
+const DATA_PARTS = {
+  '/temples': () => `${T.all} temples: ${T.operating} operating, ${T.building} under construction, ${T.announced} announced, in ${T.countries} countries and territories.`,
+  '/historic-sites': () => `${H.all} Church history sites, visitors&rsquo; centers, monuments and museums, from Palmyra and Kirtland to Nauvoo and the Mormon Trail.`,
+  '/hymns': () => `${HY.records} records of every hymn in ${HY.editions} hymnbooks, from Emma Smith&rsquo;s 1835 collection to Hymns&mdash;For Home and Church.`,
+  '/handbook-changes': () => `${HB.all} section and chapter updates to the General Handbook across ${HB.releases} releases since 2020.`,
+};
+const dataProjectPage = (x) => {
+  const path = x.url.slice(BASE.length);
+  const parts = x.links.filter(([, u]) => DATA_PARTS[u.slice(BASE.length)]);
+  return shell(path, `${pagehead([['Home', '/'], ['Projects', '/projects'], [x.name, path]], 'Open data', esc(x.name), esc(x.tagline))}
+<div class="prose">
+  <ol class="register">${parts.map(([t, u]) => `<li><a class="reg-title" href="${rel(u)}">${esc(t)}</a><p class="reg-note">${DATA_PARTS[u.slice(BASE.length)]()}</p></li>`).join('')}</ol>
+  <p>${esc(x.description)}</p>
+  <p class="small">Download every dataset as CSV or JSON from <a href="/data">Open data</a>. <a href="/projects/${x.id}">About ${esc(x.name)}</a>.</p>
+</div>`);
+};
+for (const x of FAMILY.filter((y) => y.kind === 'data')) {
+  const path = x.url.slice(BASE.length);
+  PAGES[path] = { title: `${x.name}: ${x.tagline.replace(/\.$/, '')} · ${NAME}`, desc: x.description.split('. ').slice(0, 2).join('. ').replace(/\.?$/, '.'),
+    ld: (p) => [webPage(p, 'CollectionPage', { about: { '@id': projectNodeId(x) } }), projectNode(x), crumbs([['Home', '/'], ['Projects', '/projects'], [x.name, path]])] };
+}
 function projectsIndex() {
   return shell('/projects', `${pagehead([['Home', '/'], ['Projects', '/projects']], 'Projects', 'Projects', `Everything ${NAME} has built or contributed to: websites, open data and AI tools for research on religion and Latter-day Saint history. All free and independent.`)}
 <div class="prose">
-  ${['site', 'tool', 'page'].map((k) => `<h2>${{ site: 'Websites', tool: 'AI tools', page: 'On this site' }[k]}</h2>
+  ${['site', 'data', 'tool', 'page'].map((k) => `<h2>${{ site: 'Websites', data: 'Open data', tool: 'AI tools', page: 'Personal' }[k]}</h2>
   <ol class="register">${FAMILY.filter((x) => x.kind === k).map((x) => `<li id="${x.id}"><a class="reg-title" href="${x.kind === 'page' ? rel(x.url) : '/projects/' + x.id}">${esc(x.name)}</a><p class="reg-note">${esc(x.tagline)}${x.role === 'contributor' ? ' (contributor)' : ''}</p><p class="reg-note"><a href="${rel(x.url)}">${esc(hostOf(x.url))}</a></p></li>`).join('')}</ol>`).join('\n  ')}
 </div>`);
 }
-for (const x of FAMILY.filter((y) => y.kind !== 'page')) {
+for (const x of ABOUT) {
   PAGES['/projects/' + x.id] = { title: `${x.name}: ${x.tagline.replace(/\.$/, '')} · ${NAME}`, desc: x.description.split('. ').slice(0, 2).join('. ').replace(/\.?$/, '.'),
     ld: (p) => [webPage(p, 'AboutPage', { about: { '@id': projectNodeId(x) }, mainEntity: { '@id': projectNodeId(x) } }), projectNode(x),
       { '@type': 'FAQPage', '@id': BASE + p.path + '#faq', isPartOf: { '@id': BASE + p.path + '#page' }, mainEntity: projectFaq(x).map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: stripTags(a) } })) },
@@ -823,7 +849,8 @@ write('data/index.html', dataPage());
 write('sacred-sites/sites/index.html', sitesPage());
 write('wishlist/index.html', wishlistPage());
 write('projects/index.html', projectsIndex());
-for (const x of FAMILY.filter((y) => y.kind !== 'page')) write(`projects/${x.id}/index.html`, projectPage(x));
+for (const x of ABOUT) write(`projects/${x.id}/index.html`, projectPage(x));
+for (const x of FAMILY.filter((y) => y.kind === 'data')) write(`${x.url.slice(BASE.length + 1)}/index.html`, dataProjectPage(x));
 write('data/sacred-sites.csv', toCsv(SITE_ROWS));
 write('data/sacred-sites.json', JSON.stringify({ name: DATASETS.sites.name, license: LICENSE_URL, source: BASE + '/data', generated: TODAY, records: SITE_ROWS }, null, 2) + '\n');
 write('data/reading-list.csv', toCsv(BOOK_ROWS));
@@ -854,7 +881,7 @@ Sitemap: ${BASE}/sitemap.xml
 ${FAMILY.filter((x) => x.basePath && x.sitemap).map((x) => `Sitemap: ${x.url}${x.sitemap}\n`).join('')}`);
 
 // sitemap.xml
-const urls = [['/', 1.0, 'weekly'], ['/projects', 0.9, 'weekly'], ...FAMILY.filter((x) => x.kind !== 'page').map((x) => ['/projects/' + x.id, 0.8, 'monthly']), ['/about', 0.8, 'monthly'], ['/faq', 0.9, 'weekly'], ['/data', 0.9, 'weekly'], ['/sacred-sites', 0.8, 'weekly'], ['/sacred-sites/sites', 0.8, 'weekly'], ['/sacred-sites/photos', 0.6, 'weekly'], ['/sacred-sites/traditions', 0.6, 'weekly'], ['/books', 0.7, 'weekly'], ['/collection', 0.6, 'monthly'], ['/temples', 0.9, 'weekly'], ['/data/lds-temples.csv', 0.4, 'weekly'], ['/data/lds-temples.json', 0.4, 'weekly'], ['/historic-sites', 0.8, 'monthly'], ['/data/lds-historic-sites.csv', 0.4, 'monthly'], ['/data/lds-historic-sites.json', 0.4, 'monthly'], ['/hymns', 0.8, 'monthly'], ['/data/lds-hymns.csv', 0.4, 'monthly'], ['/data/lds-hymns.json', 0.4, 'monthly'], ['/handbook-changes', 0.8, 'monthly'], ['/data/lds-handbook-changes.csv', 0.4, 'monthly'], ['/data/lds-handbook-changes.json', 0.4, 'monthly'], ['/donate', 0.3, 'yearly'], ['/wishlist', 0.3, 'weekly'], ['/data/sacred-sites.csv', 0.4, 'weekly'], ['/data/sacred-sites.json', 0.4, 'weekly'], ['/data/reading-list.csv', 0.4, 'weekly'], ['/data/reading-list.json', 0.4, 'weekly'], ['/llms.txt', 0.3, 'monthly']];
+const urls = [['/', 1.0, 'weekly'], ['/projects', 0.9, 'weekly'], ...ABOUT.map((x) => ['/projects/' + x.id, 0.8, 'monthly']), ...FAMILY.filter((x) => x.kind === 'data').map((x) => [x.url.slice(BASE.length), 0.8, 'monthly']), ['/about', 0.8, 'monthly'], ['/faq', 0.9, 'weekly'], ['/data', 0.9, 'weekly'], ['/sacred-sites', 0.8, 'weekly'], ['/sacred-sites/sites', 0.8, 'weekly'], ['/sacred-sites/photos', 0.6, 'weekly'], ['/sacred-sites/traditions', 0.6, 'weekly'], ['/books', 0.7, 'weekly'], ['/collection', 0.6, 'monthly'], ['/temples', 0.9, 'weekly'], ['/data/lds-temples.csv', 0.4, 'weekly'], ['/data/lds-temples.json', 0.4, 'weekly'], ['/historic-sites', 0.8, 'monthly'], ['/data/lds-historic-sites.csv', 0.4, 'monthly'], ['/data/lds-historic-sites.json', 0.4, 'monthly'], ['/hymns', 0.8, 'monthly'], ['/data/lds-hymns.csv', 0.4, 'monthly'], ['/data/lds-hymns.json', 0.4, 'monthly'], ['/handbook-changes', 0.8, 'monthly'], ['/data/lds-handbook-changes.csv', 0.4, 'monthly'], ['/data/lds-handbook-changes.json', 0.4, 'monthly'], ['/donate', 0.3, 'yearly'], ['/wishlist', 0.3, 'weekly'], ['/data/sacred-sites.csv', 0.4, 'weekly'], ['/data/sacred-sites.json', 0.4, 'weekly'], ['/data/reading-list.csv', 0.4, 'weekly'], ['/data/reading-list.json', 0.4, 'weekly'], ['/llms.txt', 0.3, 'monthly']];
 write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map(([u, pr, cf]) => `  <url><loc>${BASE}${u === '/' ? '/' : u}</loc><lastmod>${TODAY}</lastmod><changefreq>${cf}</changefreq><priority>${pr.toFixed(1)}</priority></url>`).join('\n')}
@@ -871,7 +898,7 @@ Figures for external sites are dated ${EXT.asOf}.
 ## Projects
 All projects: [${BASE}/projects](${BASE}/projects). Every project except the Deseret Wiki lives at ${BASE}/<project>.
 
-${FAMILY.map((x) => `- [${x.name}](${x.url}${x.kind === 'page' ? '' : '/'}): ${x.tagline}${x.role === 'contributor' ? ' Samuel Baird is a contributor.' : ''}${x.kind === 'page' ? '' : ` [About](${BASE}/projects/${x.id})`}${x.facts.length ? '\n' + x.facts.map((f) => `  - ${f}`).join('\n') : ''}${x.links.length ? '\n' + x.links.map(([t, u]) => `  - [${t}](${x.url}${u === '/' ? '/' : u})`).join('\n') : ''}`).join('\n')}
+${FAMILY.map((x) => `- [${x.name}](${x.url}${x.kind === 'page' ? '' : '/'}): ${x.tagline}${x.role === 'contributor' ? ' Samuel Baird is a contributor.' : ''}${x.kind === 'page' ? '' : ` [About](${BASE}/projects/${x.id})`}${x.facts.length ? '\n' + x.facts.map((f) => `  - ${f}`).join('\n') : ''}${x.links.length ? '\n' + x.links.map(([t, u]) => `  - [${t}](${linkUrl(x, u)})`).join('\n') : ''}`).join('\n')}
   - Sacred sites: [directory of every site](${BASE}/sacred-sites/sites), [photos](${BASE}/sacred-sites/photos) and [traditions](${BASE}/sacred-sites/traditions).
 - [Wishlist](${BASE}/wishlist): books and equipment he would like for the YouTube channel, most wanted first.
 

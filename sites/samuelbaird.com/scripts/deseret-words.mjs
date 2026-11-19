@@ -26,6 +26,7 @@ const PHONE = {
 const OVERRIDES = {
   and: 'AE1 N D', // stressed, as in a title, not the reduced "𐐲𐑌𐐼"
   not: 'N O1 T',
+  lds: 'EH1 L D IY1 EH1 S', // spelled out: L-D-S
   periodicals: 'P IH2 R IY0 O1 D IH0 K AH0 L Z',
   projects: 'P R O1 JH EH0 K T S',
   urim: 'Y UH1 R IH0 M', // as in Urim and Thummim

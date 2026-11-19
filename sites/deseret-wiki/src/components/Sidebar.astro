@@ -20,6 +20,8 @@ const shelves = [
   { href: '/resources/', label: 'Resources', color: '#8DA27A' },
   { href: '/videos/', label: 'Videos', color: '#7E9BBB' },
   { href: '/buy/', label: 'Books & Prints', color: '#B8645A' },
+  // Deseret MCP is listed only here, not in the Samuel Baird projects list (unlisted in projects.json).
+  { href: 'https://mcp.deseret.wiki/', label: 'Use with AI (MCP)', color: '#A98442', ext: true },
 ];
 const foot = [
   { href: '/about/', label: 'About this wiki', icon: 'i-eye', vb: '0 0 64 64' },
@@ -56,7 +58,7 @@ const current = (href: string, exact = false) => (exact ? path === href : path.s
     <p class="side-label">Shelves</p>
     <ul class="side-list">
       {shelves.map((s) => (
-        <li><a class="side-link" href={s.href} aria-current={current(s.href)}><i class="bar" style={`background:${s.color}`}></i><span>{s.label}</span></a></li>
+        <li><a class="side-link" href={s.href} aria-current={s.ext ? undefined : current(s.href)} rel={s.ext ? 'noopener' : undefined}><i class="bar" style={`background:${s.color}`}></i><span>{s.label}</span></a></li>
       ))}
     </ul>
 
@@ -67,6 +69,13 @@ const current = (href: string, exact = false) => (exact ? path === href : path.s
       ))}
     </ul>
     <a class="side-all" href={family.owner.projectsUrl}>All projects &rarr;</a>
+
+    <p class="side-label">Personal</p>
+    <ul class="side-list">
+      {family.personal.map((p) => (
+        <li><a class="side-link" href={p.url} rel="noopener"><svg viewBox={p.vb} aria-hidden="true"><use href={`#${p.icon}`} /></svg><span>{p.name}</span></a></li>
+      ))}
+    </ul>
   </nav>
 
   <div class="side-foot">

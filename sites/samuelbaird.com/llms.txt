@@ -21,10 +21,12 @@ All projects: [https://samuelbaird.com/projects](https://samuelbaird.com/project
   - Articles on the alphabet's people, letters, works and variants
   - Every known Deseret font with specimens and licenses
   - Read any page in the Deseret alphabet with one toggle
+  - Deseret MCP: an AI connector for Deseret transliteration and wiki search (https://mcp.deseret.wiki/mcp)
   - [The Alphabet](https://deseret.wiki/wiki/deseret-alphabet/)
   - [Library](https://deseret.wiki/library/)
   - [Fonts](https://deseret.wiki/fonts/)
   - [Quotes](https://deseret.wiki/quotes/)
+  - [Deseret MCP (use with AI)](https://mcp.deseret.wiki/connect)
 - [Urim](https://samuelbaird.com/urim/): The Mormon Translation Atlas: how the Church translates its own vocabulary. [About](https://samuelbaird.com/projects/urim)
   - 367 concepts with evidence
   - 125,650 aligned General Conference paragraphs
@@ -35,16 +37,18 @@ All projects: [https://samuelbaird.com/projects](https://samuelbaird.com/project
   - [Variants](https://samuelbaird.com/urim/variants)
   - [Proclamations](https://samuelbaird.com/urim/proclamations)
   - [Use with AI](https://samuelbaird.com/urim/connect)
+- [LDS Sacred Sites](https://samuelbaird.com/lds-sacred-sites/): Maps and open data of every Latter-day Saint temple and Church history site. [About](https://samuelbaird.com/projects/lds-sacred-sites)
+  - [Temples](https://samuelbaird.com/temples)
+  - [Historic Sites](https://samuelbaird.com/historic-sites)
+  - [Open data](https://samuelbaird.com/data#lds-temples)
+- [Editions](https://samuelbaird.com/editions/): How the Church’s hymnbooks and General Handbook have changed, edition by edition. [About](https://samuelbaird.com/projects/editions)
+  - [Hymns](https://samuelbaird.com/hymns)
+  - [Handbook Changes](https://samuelbaird.com/handbook-changes)
+  - [Open data](https://samuelbaird.com/data#lds-hymns)
 - [Pulpit](https://pulpit.restorationcommons.org/): Every General Conference discourse since 1830, graded for fidelity. Samuel Baird is a contributor. [About](https://samuelbaird.com/projects/pulpit)
   - 12,201 discourses since 1830
   - 4,292 graded verbatim
   - Each talk traced to its best surviving witness
-- [Deseret MCP](https://mcp.deseret.wiki/): Deseret Alphabet transliteration and Deseret Wiki search for AI assistants. [About](https://samuelbaird.com/projects/deseret-mcp)
-  - MCP endpoint: https://mcp.deseret.wiki/mcp
-  - English to Deseret and back, phonetically
-  - Searches every Deseret Wiki article
-  - [Connect](https://mcp.deseret.wiki/connect)
-  - [About](https://mcp.deseret.wiki/about)
 - [Peepstone](https://samuelbaird.com/peepstone/): Search and read the Joseph Smith Papers from any AI assistant. [About](https://samuelbaird.com/projects/peepstone)
   - MCP endpoint: https://samuelbaird.com/peepstone/mcp
   - Full-site search with people, place and subject facets
