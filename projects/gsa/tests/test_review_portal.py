@@ -65,7 +65,7 @@ if __name__ == '__main__':
 class TocTests(unittest.TestCase):
     CONFIG = {'archive_root_id': 'root', 'discovered_archive_resources': [
         {'id': 'READ', 'name': 'Read📚', 'type': FOLDER}, {'id': 'doc', 'name': 'Table of Contents', 'type': 'application/vnd.google-apps.spreadsheet'}]}
-    ROWS = [{'name': 'a.pdf', 'folder_path': 'Gospel Scholar Archives™️ / Read📚 / Bible / Old Testament'},
+    ROWS = [{'name': 'a.pdf', 'folder_path': 'Gospel Scholar Archives™️ / Read📚 / Bible / Old Testament', 'folder_id': 'OTREAL123456'},
             {'name': 'b.pdf', 'folder_path': 'Gospel Scholar Archives™️ /  Read📚  / Bible'},
             {'name': 'c.mp3', 'folder_path': 'Gospel Scholar Archives™️ / Listen🎧 '},
             {'name': 'TOC', 'folder_path': 'Gospel Scholar Archives™️'},
@@ -79,7 +79,9 @@ class TocTests(unittest.TestCase):
         self.assertEqual(tree['Read📚']['id'], 'READ')
         self.assertEqual(tree['Bible']['parent'], 'READ')
         self.assertEqual(tree['Old Testament']['parent'], tree['Bible']['id'])
+        self.assertEqual(tree['Old Testament']['id'], 'OTREAL123456')  # real ID from the row's folder link
         self.assertTrue(tree['Listen🎧']['id'].startswith('toc-'))
+        self.assertTrue(rp.FOLDER_LINK.match('https://drive.google.com/drive/folders/1JOPXajLJWGP0Ym4_vORK001ksMV-jYjD').group(1).startswith('1JOP'))
         self.assertEqual(rp.toc_snapshot(self.ROWS, self.CONFIG), snap)  # stable IDs between pushes
 
     def test_placeholder_resolves_by_walking_drive_names(self):
@@ -91,3 +93,20 @@ class TocTests(unittest.TestCase):
         self.assertEqual(rp.resolve_toc_folder(drive, self.CONFIG, ['Read📚', 'Bible']), 'BIB')
         with self.assertRaisesRegex(ValueError, 'Drive read access'):
             rp.resolve_toc_folder(drive, self.CONFIG, ['Read📚', 'Missing'])
+
+
+class ArchiveFolderTests(unittest.TestCase):
+    def test_table_of_contents_vouches_for_a_folder_without_drive_access(self):
+        import json, tempfile
+        from unittest.mock import patch
+        rows = [{'name': 'a.pdf', 'folder_path': 'Archive / Read📚 / Bible', 'folder_id': 'BIBLEREAL123'}]
+        class NoDrive:
+            def call(self, *a, **k): raise PermissionError('drive.file only')
+            def files(self, q): return []
+        with tempfile.NamedTemporaryFile('w', suffix='.json') as f:
+            json.dump({'toc_spreadsheet_id': 'sheet', 'toc_sheet_name': 'Table of Contents'}, f); f.flush()
+            with patch.object(rp, 'toc_rows', return_value=rows), patch.object(rp.p, 'Google'):
+                self.assertTrue(rp.archive_folder(NoDrive(), {'archive_root_id': 'root'}, f.name, 'BIBLEREAL123'))
+                self.assertFalse(rp.archive_folder(NoDrive(), {'archive_root_id': 'root'}, f.name, 'ELSEWHERE123'))
+                self.assertFalse(rp.archive_folder(NoDrive(), {'archive_root_id': 'root'}, f.name, 'toc-abc'))
+        self.assertFalse(rp.archive_folder(NoDrive(), {'archive_root_id': 'root'}, None, 'BIBLEREAL123'))

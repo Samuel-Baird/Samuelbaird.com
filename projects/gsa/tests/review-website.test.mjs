@@ -155,3 +155,14 @@ test('the page script is served after sign-in and allowed by the CSP', async () 
   assert.match(code, /Changes saved/);
   new Function(code); // parses
 });
+
+test('folders known only by path can be browsed but not chosen', async () => {
+  const {queue, env} = memory();
+  await operator(queue, {id: 'test', action: 'put', packet: basePacket()});
+  await operator(queue, {action: 'folders', source: 'Table of Contents', root: {id: 'root1', name: 'Archive'}, folders: [
+    {id: 'toc-0123456789abcdef01234567', name: '2025', parent: 'root1'}, {id: 'month11real', name: '11', parent: 'toc-0123456789abcdef01234567'}]});
+  assert.match((await (await edit(env, 'b13llama@gmail.com', 'destination', 'toc-0123456789abcdef01234567')).json()).error, /only holds other folders/);
+  assert.equal((await (await edit(env, 'b13llama@gmail.com', 'destination', 'month11real')).json()).value, 'Archive / 2025 / 11');
+  const root = await (await gsaRoute(new Request(url + '/folders/root'), env, session('b13llama@gmail.com'))).json();
+  assert.equal(root.source, 'Table of Contents');
+});
