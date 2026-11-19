@@ -21,6 +21,7 @@ export const SITES = {
       { href: '/temples', label: 'Temples', icon: 'i-sunmoon' },
       { href: '/historic-sites', label: 'Historic Sites', icon: 'i-lamp' },
       { href: '/hymns', label: 'Hymns', icon: 'i-primer' },
+      { href: '/handbook-changes', label: 'Handbook Changes', icon: 'i-primer' },
       { href: '/books', label: 'Reading', icon: 'i-books' },
       { href: '/collection', label: 'Collection', icon: 'i-sego' },
     ],

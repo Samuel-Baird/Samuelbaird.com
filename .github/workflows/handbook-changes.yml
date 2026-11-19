@@ -1,0 +1,62 @@
+# Keeps /handbook-changes and data/lds-handbook-changes.{json,csv} current.
+# Weekly (and on demand from the Actions tab) it refetches the Church's live General Handbook
+# Summary of Recent Updates page and rebuilds the site if a new update batch or revision appears.
+# It commits only when the data changed; Vercel then deploys the commit as usual.
+name: Sync General Handbook changes
+
+on:
+  schedule:
+    - cron: '23 10 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: handbook-changes-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: sites/samuelbaird.com
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          sparse-checkout: |
+            sites/samuelbaird.com
+            sites/deseret-wiki/src/data
+            packages
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Sync, rebuild and push
+        env:
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/fetch-handbook-changes.mjs --refresh
+          # The data file carries a "generated" date; ignore it when deciding whether anything changed.
+          if git diff --quiet -I '"generated":' -- data/lds-handbook-changes.json; then
+            echo "No General Handbook changes."; exit 0
+          fi
+          cp data/lds-handbook-changes.json data/lds-handbook-changes.csv scripts/cache/handbook-changes.json "$RUNNER_TEMP/"
+          for attempt in 1 2 3; do
+            git fetch -q origin "$BRANCH"
+            git reset -q --hard "origin/$BRANCH"
+            cp "$RUNNER_TEMP/lds-handbook-changes.json" "$RUNNER_TEMP/lds-handbook-changes.csv" data/
+            cp "$RUNNER_TEMP/handbook-changes.json" scripts/cache/
+            node scripts/build.mjs
+            git add -A .
+            git diff --cached --quiet && exit 0
+            git commit -q -m "Sync General Handbook change log from Summary of Recent Updates"
+            git push -q origin "HEAD:$BRANCH" && exit 0
+            echo "Push rejected (branch moved); retrying from the new tip..."
+            sleep $((attempt * 5))
+          done
+          exit 1

@@ -26,6 +26,9 @@
   <url><loc>https://samuelbaird.com/hymns</loc><lastmod>2026-11-19</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://samuelbaird.com/data/lds-hymns.csv</loc><lastmod>2026-11-19</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
   <url><loc>https://samuelbaird.com/data/lds-hymns.json</loc><lastmod>2026-11-19</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://samuelbaird.com/handbook-changes</loc><lastmod>2026-11-19</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://samuelbaird.com/data/lds-handbook-changes.csv</loc><lastmod>2026-11-19</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://samuelbaird.com/data/lds-handbook-changes.json</loc><lastmod>2026-11-19</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
   <url><loc>https://samuelbaird.com/donate</loc><lastmod>2026-11-19</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://samuelbaird.com/wishlist</loc><lastmod>2026-11-19</lastmod><changefreq>weekly</changefreq><priority>0.3</priority></url>
   <url><loc>https://samuelbaird.com/data/sacred-sites.csv</loc><lastmod>2026-11-19</lastmod><changefreq>weekly</changefreq><priority>0.4</priority></url>
