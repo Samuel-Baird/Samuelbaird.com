@@ -1,0 +1,22 @@
+// Cloudflare Worker for mcp.deseret.wiki (custom domain attached in the dashboard/API). Static site/ is
+// served by Workers static assets for free; only /mcp and /api/* run the Worker (src/worker.mjs = api/mcp.js).
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "deseret-mcp",
+  "main": "src/worker.mjs",
+  "compatibility_date": "2026-11-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": true,
+  "assets": {
+    "directory": "site",
+    "binding": "ASSETS",
+    // vercel.json cleanUrls + trailingSlash:false: /about.html -> /about, /about/ -> /about
+    "html_handling": "drop-trailing-slash",
+    "not_found_handling": "none",
+    "run_worker_first": ["/mcp", "/api/*"]
+  },
+  // data/ is bundled into the Worker (no filesystem on Workers): JSON imports natively, the dictionary as text.
+  "rules": [{ "type": "Text", "globs": ["**/*.tsv"], "fallthrough": true }],
+  "observability": { "enabled": true }
+}

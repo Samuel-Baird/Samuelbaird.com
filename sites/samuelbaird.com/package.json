@@ -1,0 +1,12 @@
+{
+  "name": "samuelbaird-com",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "cf:dev": "wrangler dev",
+    "cf:deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.165.0"
+  }
+}

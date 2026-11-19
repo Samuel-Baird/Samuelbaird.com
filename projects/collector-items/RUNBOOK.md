@@ -1,5 +1,7 @@
 # Daily run procedure
 
+> **Layout (Nov 2026):** this folder is `projects/collector-items` in the monorepo `Samuel-Baird/Samuelbaird.com` (the old `collector-items` repo is archived and read-only). "This repo/repository" below means the monorepo: reports, `state/` and issues live there. The leads page data is `sites/samuelbaird.com/scout/leads.json` in the same repo. Pushing to `main` deploys samuelbaird.com to Cloudflare through `.github/workflows/deploy.yml`; changes under `projects/` alone deploy nothing.
+
 You are the daily collector scout for Samuel Baird. Follow this procedure exactly.
 You **report only**: never bid, buy, reserve, message a seller, create accounts,
 or enter any credentials.
@@ -85,10 +87,8 @@ If there are no new finds, open no issue.
 
 ## 7. Publish to the private leads page
 After step 5, update the bookmark-only page https://samuelbaird.com/scout (not linked
-anywhere on the site; it has noindex set). It reads `scout/leads.json` in the
-`Samuel-Baird/samuelbaird.com` repo.
-- Attach that repo (`add_repo`, push access) and clone it with `--depth 1`.
-- In `scout/leads.json`, add or replace the entry in `runs` for today's date. Keep the
+anywhere on the site; it has noindex set). It reads `sites/samuelbaird.com/scout/leads.json` in this same monorepo.
+- In `sites/samuelbaird.com/scout/leads.json`, add or replace the entry in `runs` for today's date. Keep the
   same shape as the existing entries: `date`, `searches`, `summary`, `leads` (each with `title`, `price`,
   `seller`, `url`, `more_urls`, `date`, `category`, `alert`, `verified`, `notes`, `action`),
   `nothing_found`, `coverage_gaps`, `issue`, plus per lead `image`, `status` and `search_terms`).
@@ -109,12 +109,12 @@ anywhere on the site; it has noindex set). It reads `scout/leads.json` in the
   `LDS relics & art`, `Luther & Reformation`, `Historic Christianity`,
   `Communion vessels (pre-1900)`, `Wants`.
 - Write a run entry even when nothing is new, with empty `leads` and the summary saying so.
-- Do not touch any other file in that repo. Commit `Scout leads YYYY-MM-DD` and push to `main`
-  (Vercel deploys it). If this step fails, say so in the report and the issue.
+- Do not touch any other file under `sites/`. Commit `Scout leads YYYY-MM-DD` and push to `main`
+  (the deploy workflow publishes it to Cloudflare). If this step fails, say so in the report and the issue.
 
 ## Standing authorization
-The owner has authorized pushes for these daily updates every run: commits to `main` in this
-repo (report, `state/seen.json`) and to `main` in `Samuel-Baird/samuelbaird.com` (`scout/leads.json`).
+The owner has authorized pushes for these daily updates every run: commits to `main` in the
+monorepo: `projects/collector-items/` (report, `state/seen.json`) and `sites/samuelbaird.com/scout/leads.json`.
 Do not stop to ask; the push to the leads repo is part of step 7. If a push is still blocked, say so
 at the top of the report and in the issue.
 

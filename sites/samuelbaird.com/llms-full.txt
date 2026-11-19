@@ -1,6 +1,6 @@
 # Samuel Baird: full text
 
-> Plain-text copy of the key pages of https://samuelbaird.com. Updated 2026-11-18. Original data licensed CC BY 4.0.
+> Plain-text copy of the key pages of https://samuelbaird.com. Updated 2026-11-19. Original data licensed CC BY 4.0.
 
 ## Projects
 
@@ -13,7 +13,7 @@ A public, independent hub for statistics, research and creator data on the Latte
 - Tracks 328 LDS YouTube channels with 16.6M combined subscribers
 - Curates 73 academic studies and 58 survey graphics
 - Data Explorer for Pew, CCES and other public survey data
-- MCP endpoint: https://samuelbaird.com/latter-day-stats/api/mcp
+- MCP endpoint: https://samuelbaird.com/latter-day-stats/mcp
 
 Topics: Latter-day Saints, Religious demographics, Survey data, YouTube creators, Data visualization.
 
@@ -40,6 +40,7 @@ A searchable multilingual dictionary of Latter-day Saint theological vocabulary.
 - 125,650 aligned General Conference paragraphs
 - 41,994 aligned scripture verses
 - English, Portuguese (Brazil) and Spanish
+- MCP endpoint: https://samuelbaird.com/urim/mcp
 
 Topics: Translation, Latter-day Saint terminology, Portuguese, Spanish, Multilingual dictionary.
 
@@ -61,7 +62,7 @@ https://mcp.deseret.wiki/
 
 A Model Context Protocol (MCP) server that lets Claude and other AI assistants transliterate English to and from the Deseret Alphabet and search the Deseret Wiki. Add it as a custom connector and ask for any text in Deseret, or for sourced answers about the alphabet's history.
 
-- MCP endpoint: https://mcp.deseret.wiki/api/mcp
+- MCP endpoint: https://mcp.deseret.wiki/mcp
 - English to Deseret and back, phonetically
 - Searches every Deseret Wiki article
 

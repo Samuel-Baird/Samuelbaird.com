@@ -102,6 +102,7 @@ node bin/deseret-mcp.mjs search "gold coin"
 - `data/` committed data: `cmudict.tsv`, `overrides.json`, `wiki.json`
 - `scripts/` `build-dict.mjs` (CMUdict) and `build-wiki.mjs` (the wiki)
 - `site/` static landing site (Vercel root, no build step)
+- `wrangler.jsonc`, `src/worker.mjs` the same site and endpoint as a Cloudflare Worker (static assets + `/api/mcp`, data bundled in): `npm install`, then `npm run cf:dev` / `npm run cf:deploy`
 
 ## Tests
 

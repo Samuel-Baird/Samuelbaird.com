@@ -3,3 +3,5 @@ scripts/.cache/
 .vercel/
 scratch/
 .mcp.json
+.wrangler/
+.dev.vars*

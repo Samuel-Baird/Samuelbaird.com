@@ -15,6 +15,10 @@
       "destination": "/latter-day-stats/api/:path*"
     },
     {
+      "source": "/mcp",
+      "destination": "/latter-day-stats/mcp"
+    },
+    {
       "source": "/auth/:path*",
       "destination": "/latter-day-stats/auth/:path*"
     }

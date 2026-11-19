@@ -1,0 +1,122 @@
+# Deploys every site to Cloudflare Workers (replaces Vercel's git integration and scripts/vercel-ignore.sh).
+# - Push to main: deploys each site whose folder (or packages/family) changed in the push.
+# - After "Sync wishlist" / "Sync temples" commit (their GITHUB_TOKEN pushes don't trigger workflows): samuelbaird.com.
+# - Manually from the Actions tab: one site or all.
+# Needs repo secret CLOUDFLARE_API_TOKEN (Workers Scripts: Edit, Workers Routes: Edit, Account Settings: Read)
+# and repo variable CLOUDFLARE_ACCOUNT_ID. Build-time public values for the Next apps are repo variables too.
+# Each deploy is tagged with the commit SHA and messaged "<branch>: <subject>", which /admin shows.
+name: Deploy to Cloudflare
+
+on:
+  push:
+    branches: [main]
+    paths: ['sites/**', 'packages/family/**', '.github/workflows/deploy.yml']
+  workflow_run:
+    workflows: ['Sync wishlist', 'Sync temples']
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      site:
+        description: 'Site folder under sites/, or "all"'
+        required: true
+        default: all
+        type: choice
+        options: [all, samuelbaird.com, urim, omni, peepstone, deseret-wiki, deseret-mcp]
+
+permissions:
+  contents: read
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    outputs:
+      matrix: ${{ steps.pick.outputs.matrix }}
+      any: ${{ steps.pick.outputs.any }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - id: pick
+        env:
+          EVENT: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          INPUT: ${{ github.event.inputs.site }}
+        run: |
+          # dir|worker|kind   kind: static (wrangler deploy) or next (OpenNext build + deploy)
+          SITES='samuelbaird.com|samuelbaird-com|static
+          urim|urim|static
+          omni|omni|next
+          peepstone|peepstone|next
+          deseret-wiki|deseret-wiki|static
+          deseret-mcp|deseret-mcp|static'
+          # latter-day-stats|latter-day-stats|next  -- add back when it moves off Vercel (its Worker is
+          # ~4 MiB gzipped: over the free plan's 3 MiB). Needs R2 bucket latter-day-stats-opennext-cache first.
+          pick=()
+          while IFS='|' read -r dir name kind; do
+            dir=$(echo "$dir" | xargs)
+            case "$EVENT" in
+              workflow_dispatch) [ "$INPUT" = all ] || [ "$INPUT" = "$dir" ] || continue ;;
+              workflow_run) [ "$dir" = samuelbaird.com ] || continue ;;
+              push)
+                if [ -n "$BEFORE" ] && [ "$BEFORE" != 0000000000000000000000000000000000000000 ] \
+                   && git cat-file -e "$BEFORE^{commit}" 2>/dev/null \
+                   && git diff --quiet "$BEFORE" HEAD -- .github/workflows/deploy.yml \
+                   && git diff --quiet "$BEFORE" HEAD -- "sites/$dir" packages/family; then
+                  continue
+                fi ;;
+            esac
+            pick+=("{\"dir\":\"$dir\",\"name\":\"$name\",\"kind\":\"$kind\"}")
+          done <<< "$SITES"
+          json="[$(IFS=,; echo "${pick[*]}")]"
+          echo "Deploying: $json"
+          echo "matrix={\"include\":$json}" >> "$GITHUB_OUTPUT"
+          [ ${#pick[@]} -gt 0 ] && echo "any=true" >> "$GITHUB_OUTPUT" || echo "any=false" >> "$GITHUB_OUTPUT"
+
+  deploy:
+    needs: plan
+    if: needs.plan.outputs.any == 'true'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.plan.outputs.matrix) }}
+    concurrency:
+      group: deploy-${{ matrix.name }}
+      cancel-in-progress: false
+    name: ${{ matrix.name }}
+    defaults:
+      run:
+        working-directory: sites/${{ matrix.dir }}
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+      NEXT_TELEMETRY_DISABLED: '1'
+      # Inlined into the Next client bundles at build time (public values, not secrets).
+      NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+      # Latter-day Stats prerenders / with the service key at build time.
+      SUPABASE_SERVICE_ROLE_KEY: ${{ matrix.dir == 'latter-day-stats' && secrets.SUPABASE_SERVICE_ROLE_KEY || '' }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          # workflow_run: deploy the commit the sync job pushed, not the one that triggered it.
+          ref: ${{ github.event_name == 'workflow_run' && 'main' || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: sites/${{ matrix.dir }}/package-lock.json
+      - run: npm ci
+      - name: Deploy message
+        run: |
+          echo "DEPLOY_TAG=$(git rev-parse --short=12 HEAD)" >> "$GITHUB_ENV"
+          # In an OpenNext folder `wrangler deploy` hands off to `opennextjs-cloudflare deploy`, which re-splits the
+          # message on spaces and through a shell. So keep only safe characters and use non-breaking spaces.
+          msg="main: $(git log -1 --format=%s | tr -d '\r\n' | tr -cd 'A-Za-z0-9 ._:/#,-' | cut -c1-80)"
+          echo "DEPLOY_MSG=$(printf '%s' "$msg" | sed 's/ /\xc2\xa0/g')" >> "$GITHUB_ENV"
+      - if: matrix.kind == 'next'
+        run: npx opennextjs-cloudflare build
+      # Same command for both kinds: in an OpenNext folder wrangler routes it through OpenNext's deploy
+      # (populates the cache, then uploads).
+      - run: npx wrangler deploy --tag "$DEPLOY_TAG" --message "$DEPLOY_MSG"

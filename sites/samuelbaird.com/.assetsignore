@@ -1,0 +1,18 @@
+# Never uploaded as public files (Vercel used to serve some of these).
+api
+worker
+scripts
+docs
+node_modules
+.wrangler
+.dev.vars*
+CLAUDE.md
+README.md
+package.json
+package-lock.json
+wrangler.jsonc
+vercel.json
+.assetsignore
+.env*
+.vercel
+.gitignore

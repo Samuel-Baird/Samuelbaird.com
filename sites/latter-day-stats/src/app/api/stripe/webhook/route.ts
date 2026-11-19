@@ -1,7 +1,7 @@
 import { revalidateTag } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
 import type Stripe from "stripe";
-import { getStripe, isOurSession, PREMIUM_MIN_CENTS } from "@/lib/stripe";
+import { getStripe, isOurSession, PREMIUM_MIN_CENTS, stripeCryptoProvider } from "@/lib/stripe";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 
 // Stripe webhook. Configure the endpoint (dashboard, or `stripe listen
@@ -18,11 +18,14 @@ export async function POST(req: NextRequest) {
 
   let event: Stripe.Event;
   try {
-    // Signature is computed over the raw body, so read it as text.
-    event = getStripe().webhooks.constructEvent(
+    // Signature is computed over the raw body, so read it as text. Async +
+    // Web Crypto so it runs on Cloudflare Workers as well as Node.
+    event = await getStripe().webhooks.constructEventAsync(
       await req.text(),
       signature,
       secret,
+      undefined,
+      stripeCryptoProvider,
     );
   } catch (error) {
     console.error("stripe webhook signature check failed:", error);

@@ -1,4 +1,4 @@
-// Single-line JSON logs so Vercel log search can filter on evt/level.
+// Single-line JSON logs so log search (Vercel logs, Cloudflare Workers Logs) can filter on evt/level.
 export function logEvent(
   evt: string,
   data: Record<string, unknown> = {},

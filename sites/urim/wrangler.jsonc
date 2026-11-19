@@ -1,0 +1,26 @@
+// Cloudflare Worker for Urim (custom domain urim.samuelbaird.com; samuelbaird.com/urim via service binding).
+// Static site/ is served by Workers static assets for free; only the paths in run_worker_first run the
+// Worker (src/worker.mjs): the MCP at /api/mcp and the /urim prefix rewrite. Routes / custom domains
+// (samuelbaird.com/urim*, urim.samuelbaird.com) are added at cutover.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "urim",
+  "main": "src/worker.mjs",
+  "compatibility_date": "2026-11-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": true,
+  "assets": {
+    "directory": "site",
+    "binding": "ASSETS",
+    // vercel.json cleanUrls + trailingSlash:false: /about.html -> /about, /about/ -> /about
+    "html_handling": "drop-trailing-slash",
+    "not_found_handling": "none",
+    // The urim.samuelbaird.com -> samuelbaird.com/urim redirect is host-based and can't be expressed here:
+    // the Worker implements it, but for other paths it needs a zone Redirect Rule (or "run_worker_first": true).
+    "run_worker_first": ["/mcp", "/api/*", "/urim", "/urim/*"]
+  },
+  // data/api.json and deseret/data are bundled into the Worker (no filesystem): JSON natively, words.tsv as text.
+  "rules": [{ "type": "Text", "globs": ["**/*.tsv"], "fallthrough": true }],
+  "observability": { "enabled": true }
+}

@@ -15,7 +15,7 @@ export async function GET(req: NextRequest) {
   const supabase = createSupabaseServiceClient();
   const summary = await runStatsRefresh(supabase, { activeOnly: true });
 
-  // Non-200 on write failures so Vercel cron monitoring flags the run.
+  // Non-200 on write failures so cron monitoring (Vercel, or the Worker's scheduled() log) flags the run.
   // "missing" channels are a data condition (deleted/renamed on YouTube),
   // not a failure of the refresh itself.
   const ok = summary.failed === 0 && (summary.synced > 0 || summary.total === 0);
