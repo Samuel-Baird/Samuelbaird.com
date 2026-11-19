@@ -1,6 +1,7 @@
 """Send a validated work to the private review website or import both decisions."""
 import argparse
 import fcntl
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -58,6 +59,58 @@ def folder_snapshot(api, config):
     return {'root': {'id': root, 'name': name}, 'folders': out}
 
 
+def toc_rows(api, config):
+    """Name / Folder Path rows from the staff Table of Contents (refreshed daily by staff)."""
+    import urllib.parse
+    base = 'https://sheets.googleapis.com/v4/spreadsheets/' + config['toc_spreadsheet_id']
+    tab = "'" + config['toc_sheet_name'].replace("'", "''") + "'!A:B"
+    rows = api.call('GET', base + '/values/' + urllib.parse.quote(tab, safe='')).get('values', [])
+    p.require(rows and rows[0][:2] == ['Name', 'Folder Path'], 'Table of Contents headers changed')
+    return [{'name': r[0], 'folder_path': r[1]} for r in rows[1:] if len(r) > 1 and r[1].strip()]
+
+
+def toc_folder_id(segments):
+    """Stable placeholder for a folder known only by its path; resolved to a Drive ID at collect."""
+    return 'toc-' + hashlib.sha256(json.dumps(segments, ensure_ascii=False).encode()).hexdigest()[:24]
+
+
+def toc_snapshot(rows, config):
+    """Folder tree from Table of Contents paths ("Archive / Read📚 / Shelf"). Top-level shelves
+    use their known Drive IDs; deeper folders get toc- placeholders."""
+    known = {r['name'].strip(): r['id'] for r in config.get('discovered_archive_resources', [])
+             if r.get('type') == FOLDER}
+    root = {'id': config['archive_root_id'], 'name': None}
+    ids, out = {}, []
+    for row in rows:
+        segments = [part.strip() for part in row['folder_path'].split('/') if part.strip()]
+        if not segments:
+            continue
+        root['name'] = root['name'] or segments[0]
+        if segments[0] != root['name']:
+            continue
+        for depth in range(1, len(segments)):
+            key = tuple(segments[1:depth + 1])
+            if key in ids:
+                continue
+            ids[key] = known.get(key[0]) if depth == 1 and key[0] in known else toc_folder_id(list(key))
+            parent = ids[key[:-1]] if depth > 1 else root['id']
+            out.append({'id': ids[key], 'name': key[-1], 'parent': parent, 'path': list(key)})
+    p.require(root['name'], 'Table of Contents lists no folders')
+    return {'root': root, 'folders': [{k: f[k] for k in ('id', 'name', 'parent')} for f in out], 'source': 'Table of Contents'}
+
+
+def resolve_toc_folder(api, config, path_names):
+    """Walk Drive from archive_root_id by folder name to the real ID of a toc- placeholder."""
+    parent = config['archive_root_id']
+    for name in path_names:
+        hits = [f for f in api.files(f"'{p.quote(parent)}' in parents and mimeType='{FOLDER}' and trashed=false")
+                if f['name'].strip() == name]
+        p.require(len(hits) == 1, f'Cannot find the Drive folder "{name}" with the worker\'s current Google access. '
+                  'Matching a folder chosen from the Table of Contents needs Drive read access to the archive.')
+        parent = hits[0]['id']
+    return parent
+
+
 def under_archive(api, config, folder_id, depth=40):
     """True when folder_id is a folder inside archive_root_id (walks Drive parents)."""
     current = folder_id
@@ -89,9 +142,22 @@ def run(args):
     config = json.loads((home / 'config.json').read_text())
     key = (p.gsa.DEFAULT_HOME / 'review-portal.key').read_text().strip()
     if args.command == 'folders':
-        snapshot = folder_snapshot(p.Google(config), config)
+        # Prefer a live Drive listing; fall back to the Table of Contents when the worker's
+        # Google access can't list the archive (e.g. a drive.file-only credential).
+        source = json.loads(args.config.read_text()) if args.config else config
+        api = p.Google(source)
+        snapshot = None
+        try:
+            drive = folder_snapshot(api, source)
+            if drive['folders']:
+                snapshot = dict(drive, source='Drive')
+        except Exception as exc:  # noqa: BLE001 - access errors fall through to the index
+            print('Drive listing unavailable:', type(exc).__name__)
+        if snapshot is None:
+            p.require(source.get('toc_spreadsheet_id'), 'No Drive access and no Table of Contents configured; pass --config')
+            snapshot = toc_snapshot(toc_rows(api, source), source)
         result = send(dict(snapshot, action='folders', at=p.stamp()), key)
-        print('Sent', result['folders'], 'archive folders to the review site')
+        print('Sent', result['folders'], 'archive folders from the', snapshot['source'], 'to the review site')
         return
     settings = json.loads(args.packet.read_text())
     draft = json.loads(Path(settings['review_file']).read_text())
@@ -116,6 +182,10 @@ def run(args):
         # Both approvals below cover the edited version, because any edit resets decisions.
         draft, packet = apply_edits(draft, packet, result.get('edits') or {})
         api = p.Google(config)
+        if packet['destination'].startswith('toc-'):
+            # Chosen from the Table of Contents tree: find the real Drive folder by its path.
+            names = [n.strip() for n in packet['folder'].split(' / ')][1:]
+            packet['destination'] = draft['destination'] = resolve_toc_folder(api, config, names)
         if packet['destination'] not in config['destination_ids']:
             p.require(config.get('archive_root_id') and under_archive(api, config, packet['destination']),
                       'Edited destination is not a folder inside the archive')
@@ -180,6 +250,7 @@ if __name__ == '__main__':
     parser.add_argument('command', choices=['queue','collect','folders'])
     parser.add_argument('--home', required=True, type=Path)
     parser.add_argument('--packet', type=Path, help='Private packet settings (queue and collect)')
+    parser.add_argument('--config', type=Path, help='folders: private config whose Google access and Table of Contents to use (read only)')
     os.umask(0o077)
     args = parser.parse_args()
     if args.command != 'folders' and not args.packet:

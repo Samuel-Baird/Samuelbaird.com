@@ -87,6 +87,16 @@ function client() {
   const selectButton = panel.querySelector('[data-act="select"]');
   const cache = new Map();
   let current = null;
+  selectButton.disabled = true;
+  function failed(message) {
+    current = null;
+    crumbs.replaceChildren();
+    filter.hidden = true;
+    selectButton.disabled = true;
+    selectButton.textContent = 'Select this folder';
+    snapshot.textContent = '';
+    list.replaceChildren(el('li', {className: 'empty error'}, message));
+  }
 
   async function folder(id) {
     if (!cache.has(id)) {
@@ -119,13 +129,15 @@ function client() {
     }
   }
   async function open(id) {
+    selectButton.disabled = true;
     list.replaceChildren(el('li', {className: 'empty'}, 'Loading…'));
     try {
       current = await folder(id);
     } catch (error) {
-      list.replaceChildren(el('li', {className: 'empty'}, error.message));
+      failed(error.message === 'Failed to fetch' ? 'Could not reach the site. Check your connection and try again.' : error.message);
       return;
     }
+    filter.hidden = false;
     crumbs.replaceChildren();
     current.trail.forEach((step, i) => {
       if (i) crumbs.append(el('span', {}, '/'));
@@ -139,7 +151,7 @@ function client() {
     const isRoot = current.id === current.root;
     selectButton.disabled = isRoot;
     selectButton.textContent = isRoot ? 'Open a shelf to select it' : 'Select “' + current.name + '”';
-    snapshot.textContent = 'Folder list as of ' + String(current.at).slice(0, 10);
+    snapshot.textContent = 'Folders from the ' + (current.source || 'Drive') + ', ' + String(current.at).slice(0, 10);
   }
   function toggle(show) {
     panel.hidden = !show;
@@ -154,6 +166,7 @@ function client() {
   filter.addEventListener('input', renderList);
   selectButton.addEventListener('click', async () => {
     const chosen = current;
+    if (!chosen || chosen.id === chosen.root) return;
     toggle(false);
     show(indicator(destination), 'busy', 'Saving…');
     try {

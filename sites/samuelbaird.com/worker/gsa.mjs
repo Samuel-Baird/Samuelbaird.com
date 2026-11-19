@@ -56,7 +56,7 @@ function page(title, body) {
   .saved{display:inline-flex;align-items:center;gap:.35rem;min-height:2.4rem;font-size:.9rem;opacity:0;transition:opacity .4s}.saved.show{opacity:1}.saved.ok{color:#1d7a3e;font-weight:600}.saved.ok::before{content:"";width:1.25rem;height:1.25rem;border-radius:50%;background:#1d7a3e url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/80% no-repeat}.saved.busy{color:#49564d}.saved.err{color:#a3261b;font-weight:600}
   .edited{display:block;margin-top:.25rem}.reset-note{background:#fff4d6;border:1px solid #e3c46b;padding:.6rem .8rem;border-radius:4px}
   .explorer{margin-top:.6rem;max-width:40rem;border:1px solid #aeb5aa;border-radius:6px;background:white}.crumbs{display:flex;flex-wrap:wrap;gap:.1rem;padding:.5rem .6rem;border-bottom:1px solid #dde1d8;font-size:.92rem}.crumbs button,.folders button{background:none;color:#245640;border:0;margin:0;padding:.2rem .35rem;border-radius:3px;font:inherit;cursor:pointer;text-align:left}.crumbs button:hover,.folders button:hover{background:#eef3ec}.crumbs span{color:#8a9388;padding:.2rem 0}.explorer .filter{display:block;width:calc(100% - 1.2rem);height:auto;margin:.5rem .6rem;padding:.4rem .5rem;border:1px solid #c6cbc1;border-radius:4px;font:inherit}
-  .folders{list-style:none;margin:0;padding:.2rem .3rem;max-height:18rem;overflow:auto}.folders li button{display:flex;width:100%;gap:.5rem;align-items:center;padding:.4rem .5rem;color:#222d27}.folders li button::before{content:"";flex:none;width:1.1rem;height:.85rem;border-radius:2px;background:#c99a3b;box-shadow:inset 0 .22rem 0 #e0b65a}.folders li button .n{flex:1}.folders li button .c{color:#8a9388;font-size:.85rem}.folders .empty{padding:.6rem;color:#69746b}
+  .folders{list-style:none;margin:0;padding:.2rem .3rem;max-height:18rem;overflow:auto}.folders li button{display:flex;width:100%;gap:.5rem;align-items:center;padding:.4rem .5rem;color:#222d27}.folders li button::before{content:"";flex:none;width:1.1rem;height:.85rem;border-radius:2px;background:#c99a3b;box-shadow:inset 0 .22rem 0 #e0b65a}.folders li button .n{flex:1}.folders li button .c{color:#8a9388;font-size:.85rem}.folders .empty{padding:.6rem;color:#69746b}.folders .error{color:#a3261b;font-weight:600}
   .explorer-foot{display:flex;justify-content:space-between;align-items:center;gap:.6rem;flex-wrap:wrap;padding:.5rem .6rem;border-top:1px solid #dde1d8}.explorer-foot button{margin:0 0 0 .4rem}
   .pdf-review iframe{display:block;width:100%;height:72vh;border:1px solid #c6cbc1;background:white}
   @media(min-width:70rem){main:has(.pdf-review){max-width:98rem}.pdf-review{display:grid;grid-template-columns:minmax(0,3fr) minmax(20rem,2fr);gap:2rem;align-items:start}.pdf-review iframe{position:sticky;top:1rem;height:calc(100vh - 2rem)}}
@@ -145,7 +145,7 @@ export class GsaReviews {
     });
     return json({revision});
   }
-  async putFolders({root,folders,at}) {
+  async putFolders({root,folders,at,source}) {
     // Snapshot of the archive's folder tree, pushed by the worker Mac (the site has no Drive access).
     if(!root || !/^[\w-]{1,100}$/.test(root.id) || !Array.isArray(folders) || folders.length>50000) return response('Invalid folder snapshot',400);
     const byId=new Map([[root.id,{id:root.id,name:String(root.name||'Archive').slice(0,300),children:[]}]]);
@@ -168,7 +168,7 @@ export class GsaReviews {
     for(let i=0;i<old.length;i+=128) await this.storage.delete(old.slice(i,i+128));
     const entries=[...out.values()].map(f=>[folderKey(f.id),f]);
     for(let i=0;i<entries.length;i+=128) await this.storage.put(Object.fromEntries(entries.slice(i,i+128)));
-    await this.storage.put('meta:folders',{root:root.id,at:String(at||new Date().toISOString()),count:out.size});
+    await this.storage.put('meta:folders',{root:root.id,at:String(at||new Date().toISOString()),count:out.size,source:String(source||'Drive').slice(0,40)});
     return json({folders:out.size});
   }
   async fetch(req) {
@@ -183,9 +183,9 @@ export class GsaReviews {
     const folder=path.match(/^\/gsa\/folders\/(root|[\w-]{1,100})$/)?.[1];
     if(folder && req.method==='GET'){
       const meta=await this.storage.get('meta:folders');
-      if(!meta) return response(JSON.stringify({error:'No folder list yet. The operator needs to run review_portal.py folders.'}),404,{'Content-Type':'application/json'});
+      if(!meta) return response(JSON.stringify({error:'The folder list hasn\'t been loaded yet. Ask the operator to run review_portal.py folders on the worker Mac.'}),404,{'Content-Type':'application/json'});
       const entry=await this.storage.get(folderKey(folder==='root'?meta.root:folder));
-      return entry ? json({...entry,root:meta.root,at:meta.at}) : response(JSON.stringify({error:'Folder not found'}),404,{'Content-Type':'application/json'});
+      return entry ? json({...entry,root:meta.root,at:meta.at,source:meta.source||'Drive'}) : response(JSON.stringify({error:'Folder not found'}),404,{'Content-Type':'application/json'});
     }
     const match=path.match(/^\/gsa\/work\/([a-z0-9-]{1,80})(\/edit)?$/);
     if(!match) return response('Not found',404);
