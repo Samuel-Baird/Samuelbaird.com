@@ -1,0 +1,18 @@
+/* /hymns: on top of /temples/temples.css. Family palette tokens only (see packages/family/STYLE.md). */
+.h-table td.h-no{font-variant-numeric:tabular-nums;color:var(--ink-soft);white-space:nowrap;width:3.5em}
+.h-table td.h-no s{text-decoration:line-through;opacity:.8}
+.h-table td b{font-weight:400;color:var(--heading)}
+.h-table .h-fl{display:block;font-size:.84rem;color:var(--ink-soft);font-style:italic}
+.h-table tbody tr[data-id]{cursor:pointer}
+.h-table tbody tr[data-id]:hover td,.h-table tbody tr[aria-expanded="true"] td{background:var(--paper-2)}
+.h-table tr.h-detail td{background:var(--panel);padding:12px 14px 16px}
+.h-detail dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px;margin:0 0 10px;font-size:.9rem}
+.h-detail dt{font:600 .66rem/1.9 var(--f-formal);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.h-detail dd{margin:0}
+.h-detail ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.h-detail ol li{border:1px solid var(--line);border-radius:var(--radius);padding:4px 8px;font-size:.85rem;background:var(--paper-2)}
+.h-detail ol li.cur{border-color:var(--brass)}
+.h-detail ol li span{color:var(--ink-soft)}
+.h-hint,.h-note{color:var(--ink-soft);margin:0 0 10px}
+.h-note:empty{display:none}
+@media (max-width:640px){.h-detail dl{grid-template-columns:1fr}.h-detail dt{margin-top:6px}.h-table td.h-no{width:auto}}
