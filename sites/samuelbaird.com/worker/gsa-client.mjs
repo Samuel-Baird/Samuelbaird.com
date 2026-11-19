@@ -182,4 +182,6 @@ function client() {
   });
 }
 
-export const reviewScript = `(${client})();\n`;
+// The deploy bundler keeps function names by inserting __name(fn, "name") calls, and its helper
+// isn't part of this string, so the page gets a stand-in. Without it the script stops at once.
+export const reviewScript = `(() => { const __name = (fn) => fn; (${client})(); })();\n`;
