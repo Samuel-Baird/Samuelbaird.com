@@ -57,3 +57,17 @@ The VPN was restored, the route and qBittorrent binding were verified as `ipsec0
 - **IPv6 is now live on Wi-Fi while McAfee is connected** (global addresses and an IPv6 default route on `en1`; `ipsec0` is IPv4 only). Capture IPv6 on `en1` in the connected scenario as well as the disconnected one; don't record IPv6 as "unavailable" on this network.
 - Still pending: the packet-captured disconnect/reconnect, VPN-down startup, reboot and network-change scenarios. McAfee has no `scutil --nc` service, so the VPN is toggled by hand in the McAfee app during each test.
 - `rollout.py` now fails closed on a null `expires_at` instead of crashing; `tests/test_rollout.py` covers the guard gates, stop-never-resume, and the launchd approval gate.
+
+## Session 3 packet-captured VPN tests (2026-11-19)
+
+Run with `vpn_test.py` (sampler + phase marks + pcap attribution) and a root `tcpdump` on `en1`; 851,704 packets, 0 dropped. Private evidence: `network-checks/session3-2026-11-19/` (pcap, samples, `analysis-final.json`, `network-evidence-draft.json`). Observations only; no scenario is signed off until a designated reviewer inspects the capture.
+
+| Scenario | Observed |
+|---|---|
+| Connected | No qBittorrent packets on Wi-Fi, IPv4 or IPv6. It listens only on the tunnel's IPv4 address. |
+| Disconnected | `ipsec0` disappears, the listener closes, the last tunnel socket dies within ~25 s, the torrent stalls. Zero qBittorrent packets on Wi-Fi; no tracker DNS. The counter rose once (4.2 MB, 3 s after the drop) with no matching traffic on Wi-Fi: delayed accounting. |
+| Reconnected | The tunnel returns with a new address; qBittorrent re-binds by itself and resumes through the VPN ~40 s later. |
+| VPN-down startup | **Fails as configured.** No BitTorrent traffic leaves, but qBittorrent's own HTTPS requests do: the DB-IP GeoIP download (~4.2 MB; "Resolve peer countries") and the program update check (qbittorrent.org, fosshub.com, qbittorrent.github.io), over IPv4 and IPv6. Fix: turn both off, then retest. |
+| Reboot, network change | Not tested. |
+
+Attribution note: `vpn_test.py` matches packets to qBittorrent by its sampled local ports and peer addresses, so an unrelated process reusing a port can be flagged (one Apple DNS query was); check flagged packets by hand.
