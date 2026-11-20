@@ -237,15 +237,6 @@ def triage(db, config, path):
         db.execute("UPDATE form_requests SET status='reviewed' WHERE form_id=? AND response_id=?", pair)
 
 
-def permissions(data, config, torrent=False):
-    entries = data.get('permissions', {})
-    require(all(isinstance(entries.get(k), dict) for k in acquisition.PERMISSION_FIELDS),
-            'Separate download, peer-sharing and upload records required')
-    result = acquisition.evaluate_permissions(entries, config['reviewers'])
-    require(result['may_download_torrent' if torrent else 'may_download_direct']
-            and result['may_upload_to_gsa'], 'Permission evidence incomplete')
-
-
 def review(db, wid, path, config):
     work, record = get(db, wid)
     require(not record.get('upload_id'), 'Cannot revise an upload in progress')
@@ -253,18 +244,17 @@ def review(db, wid, path, config):
     require(data.get('reviewer') in config['reviewers'], 'Unknown reviewer')
     for key in ('source_url', 'matched_work', 'filename', 'destination', 'changelog_text'):
         require(bool(data.get(key)), 'Missing review field: ' + key)
-    permissions(data, config, bool(data.get('infohash')))
     require(data['destination'] in config['destination_ids'], 'Unapproved destination')
     require(Path(data['filename']).name == data['filename'] and data['filename'] not in ('.', '..'), 'Invalid filename')
+    data.pop('permissions', None)
     record = {'review': data}
     save(db, wid, record, 'source_review')
     with db:
-        db.execute('UPDATE works SET source=?,permission=?,matched_work=?,proposed_filename=?,destination=? WHERE id=?', (data['source_url'], 'staff-reviewed', data['matched_work'], data['filename'], data['destination'], wid))
+        db.execute('UPDATE works SET source=?,matched_work=?,proposed_filename=?,destination=? WHERE id=?', (data['source_url'], data['matched_work'], data['filename'], data['destination'], wid))
 
 def acquire(db, wid, home, config):
     _, record = get(db, wid)
     review_data = record['review']
-    permissions(review_data, config)
     url = review_data['source_url']
     require(urllib.parse.urlparse(url).scheme == 'https', 'Only authorized HTTPS direct downloads supported; torrents remain supervised')
     require(urllib.parse.urlparse(url).hostname in config['source_hosts'], 'Source host not approved')
@@ -390,7 +380,6 @@ def approve(db, wid, path, config):
     approval = json.loads(path.read_text())
     require(approval.get('reviewer') in config['reviewers'], 'Unknown reviewer')
     require(record.get('validation') and approval.get('sha256') == record['sha256'] == digest(record['candidate']), 'Approval must bind to validated file hash')
-    permissions(record['review'], config, bool(record['review'].get('infohash')))
     require(record['validation'].get('automated_verdict') == 'pass', 'Passing validation required')
     for key, _ in validation.STAFF_JUDGMENT:
         require(approval.get(key) is True, 'Staff check required: ' + key)
@@ -490,7 +479,6 @@ def publish(db, wid, api, config):
                          and check.get('destination') == record['review']['destination']
                          and all(check.get(k) is True for k, _ in validation.STAFF_JUDGMENT))
         require(sum(valid) >= approvals_needed(config), 'Assigned reviewer approval missing or revoked')
-    permissions(record['review'], config, bool(record['review'].get('infohash')))
     require(record.get('validation', {}).get('automated_verdict') == 'pass'
             and all(record['approval'].get(k) is True for k, _ in validation.STAFF_JUDGMENT),
             'Current validation and staff checks required')
@@ -568,7 +556,6 @@ def torrent_loop(db, wid, home, config, evidence, metainfo):
         _, record = get(db, wid)
         data = record['review']
         require(not record.get('upload_id'), 'Upload already started')
-        permissions(data, config, torrent=True)
         key = data['infohash'].lower()
         require(bool(key), 'Missing reviewed infohash')
         payload = acquisition.review_payload(acquisition.parse_torrent(metainfo.read_bytes()), config, key)

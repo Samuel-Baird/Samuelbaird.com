@@ -6,7 +6,7 @@ ClamAV, poppler and qpdf are the real installed tools. Nothing contacts Google,
 qBittorrent or the VPN, and nothing is published. The private config is read
 only for reviewer IDs and the scanner command; it is never written.
 
-Covers: free-text intake and triage, three permission records, an ambiguous
+Covers: free-text intake and triage, an ambiguous
 edition resolved by both reviewers, a failed malware scan (real scanner error and
 a simulated detection with quarantine), the guarded torrent loop (guard failure
 on the real evidence draft, then a stall and completion), ranking a scan above an
@@ -23,7 +23,6 @@ import sys
 from unittest.mock import Mock, patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parent / 'tests'))
-import acquire as acq
 import fakes
 import gsa
 import pdf_fixtures as fx
@@ -109,9 +108,9 @@ def main():
         with patch('pipeline.urllib.request.build_opener', return_value=Mock(open=Mock(return_value=response))):
             p.acquire(db, wid, home, config)
 
-    def review(wid, name, url, filename, perms=None, **extra):
+    def review(wid, name, url, filename, **extra):
         doc = dict(reviewer=first, source_url=url, matched_work=name, filename=filename, destination=folder,
-                   changelog_text=f'19 November 2026: added {filename} (sandbox)', permissions=perms or fakes.granted(first), **extra)
+                   changelog_text=f'19 November 2026: added {filename} (sandbox)', **extra)
         p.review(db, wid, write(f'review-{wid}.json', doc), config)
 
     def approve_both(wid, sha, **extra):
@@ -138,11 +137,7 @@ def main():
          db.execute('SELECT count(*) FROM works').fetchone()[0] == 3
          and db.execute("SELECT count(*) FROM form_requests WHERE status='needs_review'").fetchone()[0] == 0)
 
-    # 2. Permission records and an ambiguous edition ----------------------------------------
-    no_upload = fakes.granted(first)
-    no_upload['gsa_upload'] = acq.permission_entry('unknown', '', '', first, '2026-11-19T00:00:00Z')
-    step.refuses('review refuses without a granted gsa_upload record', 'Permission evidence incomplete',
-                 lambda: review(study, 'Smith, A Study of Things, 2nd ed.', 'https://publisher.example/study.pdf', 'Smith, A Study of Things.pdf', no_upload))
+    # 2. Source review and an ambiguous edition
     review(study, 'Smith, A Study of Things, 2nd ed.', 'https://publisher.example/study.pdf', 'Smith, A Study of Things.pdf')
     acquire(study, 'https://publisher.example/study.pdf', fx.scan_pdf(pages=3, ppi=300, with_ocr_layer=True))
     report = p.validate_file(db, study, config)

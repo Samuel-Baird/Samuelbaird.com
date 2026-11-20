@@ -226,7 +226,8 @@ class GeneratedPdfTests(Base):
     def test_report_separates_automated_and_staff_judgment(self):
         report = self.report('converted.pdf', fx.calibre_pdf())
         staff = {s['item'] for s in report['staff_judgment']}
-        self.assertTrue({'bibliographic_match', 'first_and_last_pages', 'body_spot_check', 'completeness', 'rights'} <= staff)
+        self.assertTrue({'bibliographic_match', 'first_and_last_pages', 'body_spot_check', 'completeness'} <= staff
+                        and 'rights' not in staff)
         self.assertTrue(all(s['status'] == 'pending' for s in report['staff_judgment']))
         self.assertFalse(staff & set(report['automated_checks']))
         text = v.render(report)

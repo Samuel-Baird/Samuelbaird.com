@@ -46,14 +46,14 @@ class ReviewPortalTests(unittest.TestCase):
 
     def test_web_edits_map_onto_the_source_review(self):
         draft = {'filename': 'A.pdf', 'matched_work': 'A (1999)', 'changelog_text': 'old', 'destination': 'read', 'source_url': 'https://x'}
-        packet = {'title': 'A', 'filename': 'A.pdf', 'citation': 'A (1999)', 'entry': 'old', 'destination': 'read', 'folder': 'Archive / Read', 'rights': 'CC'}
+        packet = {'title': 'A', 'filename': 'A.pdf', 'citation': 'A (1999)', 'entry': 'old', 'destination': 'read', 'folder': 'Archive / Read'}
         edits = {k: {'value': v, 'by': 'David', 'at': 'now'} for k, v in
                  {'title': 'A, Revised', 'filename': 'A (2nd ed.).pdf', 'citation': 'A, 2nd ed. (2001)', 'entry': 'new',
                   'destination': 'bible', 'folder': 'Archive / Read / Bible', 'rights': 'CC BY 4.0'}.items()}
         new_draft, new_packet = rp.apply_edits(draft, packet, edits)
         self.assertEqual(new_draft, {'filename': 'A (2nd ed.).pdf', 'matched_work': 'A, 2nd ed. (2001)', 'changelog_text': 'new',
                                      'destination': 'bible', 'source_url': 'https://x'})
-        self.assertEqual(new_packet['rights'], 'CC BY 4.0')
+        self.assertNotIn('rights', new_packet)
         self.assertEqual(new_packet['title'], 'A, Revised')
         self.assertEqual(draft['filename'], 'A.pdf')  # inputs untouched
 

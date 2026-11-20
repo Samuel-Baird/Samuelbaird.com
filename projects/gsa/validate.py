@@ -25,7 +25,6 @@ STAFF_JUDGMENT = (
     ('first_and_last_pages', 'First pages (title, copyright) and last pages (index, back matter) are present and legible'),
     ('body_spot_check', 'Body spot-checked for missing, duplicated, blank, cropped or out-of-order pages'),
     ('completeness', 'Whole work present (all volumes/parts); not an excerpt or sample'),
-    ('rights', 'Download, peer-sharing and GSA-upload permission records are each granted with a basis'),
     ('filename_and_destination', 'Filename follows the volunteer manual and the destination shelf is right'),
     ('format_preference', 'If flagged as an ebook conversion, look for a scan or original PDF before accepting'),
 )
@@ -373,7 +372,7 @@ def validate(path, config, run=subprocess.run):
         'reviewer_flags': flags,
         'staff_judgment': [{'item': k, 'question': q, 'status': 'pending'} for k, q in STAFF_JUDGMENT],
         'tool_versions': tool_versions(run),
-        'note': 'Automated checks cannot establish bibliographic match, completeness or rights. Staff must record each judgment item.',
+        'note': 'Automated checks cannot establish bibliographic match or completeness. Staff must record each judgment item.',
     }
 
 

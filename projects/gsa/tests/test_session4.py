@@ -92,9 +92,6 @@ class Sandbox(unittest.TestCase):
             p.triage(db, config, file)
             review = json.loads((Path(p.__file__).parent/'examples/review.json').read_text())
             review.update(reviewer='staff', filename='Book.pdf', destination='folder')
-            for entry in review['permissions'].values():
-                entry.update(status='granted', recorded_by='staff', recorded_at=p.stamp(),
-                             basis='synthetic license', source='fixture')
             file.write_text(json.dumps(review))
             p.review(db, 1, file, config)
             response = io.BytesIO(api.pdf)
@@ -162,8 +159,6 @@ class Reconciled(unittest.TestCase):
         gsa.ingest(self.db, [{'row_id': '1', 'title': 'Book', 'author': 'Smith', 'edition': '2'}], 'csv:t', 't')
         review = json.loads((Path(p.__file__).parent / 'examples/review.json').read_text())
         review.update(reviewer='staff', filename='Book.pdf', destination='folder')
-        for entry in review['permissions'].values():
-            entry.update(status='granted', recorded_by='staff', recorded_at=p.stamp(), basis='synthetic', source='fixture')
         self.file = self.home / 'packet'
         self.file.write_text(json.dumps(review))
         p.review(self.db, 1, self.file, self.config)

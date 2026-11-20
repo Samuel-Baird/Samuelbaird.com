@@ -11,7 +11,6 @@ const labels = {
   first_and_last_pages: 'First and last pages inspected',
   body_spot_check: 'Interior pages checked for legibility and order',
   completeness: 'All pages and parts present',
-  rights: 'Source, attribution and rights for this transfer verified',
   filename_and_destination: 'Filename and destination verified',
   format_preference: 'Original scan or publisher PDF preferred',
 };
@@ -21,7 +20,6 @@ const editable = {
   title: {label:'Title', max:300},
   citation: {label:'Citation and edition', max:1000, multiline:true},
   filename: {label:'Filename', max:200},
-  rights: {label:'Rights evidence', max:2000, multiline:true},
   entry: {label:'Changelog entry', max:2000, multiline:true},
 };
 const suffix = name => (String(name).match(/\.[a-z0-9]+$/i)?.[0] || '').toLowerCase();
@@ -99,7 +97,7 @@ function itemPage(id, item, actor) {
   ${viewer ? '<div class="pdf-review">'+viewer+'<div>' : ''}
   <section class="details" data-work="${esc(id)}"><h2>Publication details</h2><p><small>Changes save as you type. Any change resets recorded decisions, so both reviewers approve the edited version.</small></p>
   <p class="reset-note" hidden>Your edit reset the recorded decisions. Reload the page to review this version.</p>
-  ${['title','citation','filename'].map(k=>fieldInput(k,p[k],edits[k])).join('')}${destination}${['rights','entry'].map(k=>fieldInput(k,p[k],edits[k])).join('')}
+  ${['title','citation','filename'].map(k=>fieldInput(k,p[k],edits[k])).join('')}${destination}${fieldInput('entry',p.entry,edits.entry)}
   <dl>${Object.entries({'Automated checks':p.validation,'SHA-256':p.sha256}).map(([k,v])=>`<dt>${k}</dt><dd>${esc(v)}</dd>`).join('')}</dl></section>
   <section><h2>Reviewer decisions</h2><ul>${statuses}</ul></section>
   ${done ? '<p>Your decision is recorded for this version.</p>' : `<section><h2>Your review</h2><form method="post"><input type="hidden" name="revision" value="${revision}">${Object.entries(labels).map(([k,v])=>`<label><input type="checkbox" name="${k}">${v}</label>`).join('')}<label>Review notes<textarea name="note" rows="3" maxlength="2000"></textarea></label><button name="decision" value="Approved">Approve publication</button><button class="secondary" name="decision" value="Changes requested">Request changes</button></form></section>`}${publishedSection(item)}${viewer ? '</div></div>' : ''}<script src="/gsa/review.js" defer></script>`);
