@@ -6,6 +6,8 @@ const sample = Array.from({ length: 80 }, (_, i) => String.fromCodePoint(0x10400
 // Keyboard (legacy-encoded) fonts draw Deseret on ordinary keys, so their sample is typed keys.
 const keySample = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz';
 const faces = fonts.map((f) => `@font-face{font-family:"dw-${f.id}";src:url("${f.file}");font-display:swap}`).join('');
+// A font can read the site if it has all 80 letters, or lacks only a few (Noto Sans Deseret fills those in).
+const usable = (f) => f.encoding !== 'keyboard' && (f.complete || [...(f.missing || '')].length <= 4);
 const kb = (b) => (b >= 1048576 ? (b / 1048576).toFixed(1) + ' MB' : Math.round(b / 1024) + ' KB');
 ---
 <Base title="Fonts — Deseret Wiki">
@@ -15,7 +17,7 @@ const kb = (b) => (b >= 1048576 ? (b / 1048576).toFixed(1) + ' MB' : Math.round(
     <Title text="Fonts" />
     <p class="lede-text">Download and install a font to see the Deseret alphabet in Word, Excel or anywhere else. {fonts.length} fonts.</p>
     <p class="small">Samples show all 80 letters (U+10400–1044F); a font may lack some. Keyboard fonts show the keys A–Z, a–z, which they draw as Deseret.</p>
-    <p class="small">To read this site in a different Deseret font, press <b>Use</b> beside it. Fonts that lack any of the 80 letters can't be chosen. Your choice is saved in this browser only.</p>
+    <p class="small">To read this site in a different Deseret font, press <b>Use</b> beside it. If a font lacks a few letters (usually Oi and Ew, 𐐦 𐐧), those letters show in Noto Sans Deseret. Keyboard fonts and fonts with only capital letters can't be chosen. Your choice is saved in this browser only.</p>
   </header>
   <style set:html={faces}></style>
   <table class="fonts" data-no-dsrt>
@@ -27,7 +29,7 @@ const kb = (b) => (b >= 1048576 ? (b / 1048576).toFixed(1) + ' MB' : Math.round(
             <td>{f.name}</td>
             <td class="sample" style={`font-family:"dw-${f.id}", serif`} lang="und">{f.encoding === 'keyboard' ? keySample : sample}</td>
             <td class="btns">
-              {f.complete && <button type="button" class="use" aria-pressed="false" aria-label={`Read this site in ${f.name}`} data-use={f.id} data-file={f.file.endsWith('.zip') ? '' : f.file}>Use</button>}
+              {usable(f) && <button type="button" class="use" aria-pressed="false" aria-label={`Read this site in ${f.name}`} data-use={f.id} data-file={f.file.endsWith('.zip') ? '' : f.file}>Use</button>}
               <button type="button" class="info" aria-label={`About ${f.name}`} aria-expanded="false" data-info={f.id}>i</button>
               <a class="dl" href={f.file} download aria-label={`Download ${f.name}`}>⤓</a>
             </td>
@@ -38,6 +40,7 @@ const kb = (b) => (b >= 1048576 ? (b / 1048576).toFixed(1) + ' MB' : Math.round(
               {f.creator && <> By {f.creator}.</>}
               {f.source && <> <a href={f.source} rel="noopener">Source</a>.</>}
               {f.note && <> {f.note}</>}
+              {f.missing && <> Lacks <span lang="und" class="dsrt">{f.missing}</span> ({[...f.missing].length} of 80){usable(f) ? '; the site shows these in Noto Sans Deseret' : ''}.</>}
               {f.license === 'Free' && <> <small>Redistribution terms unverified; check the source before reusing.</small></>}
             </td>
           </tr>

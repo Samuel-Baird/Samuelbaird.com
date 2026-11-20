@@ -49,7 +49,8 @@
   "source": "https://www.wazu.jp/gallery/Fonts_Deseret.html",
   "note": "",
   "bytes": 900260,
-  "complete": false
+  "complete": false,
+  "missing": "𐐦𐐧𐑎𐑏"
  },
  {
   "id": "desalph",
@@ -88,7 +89,8 @@
   "source": "https://github.com/sigilante/idc-nomada",
   "note": "",
   "bytes": 15328,
-  "complete": false
+  "complete": false,
+  "missing": "𐐨𐐩𐐪𐐫𐐬𐐭𐐮𐐯𐐰𐐱𐐲𐐳𐐴𐐵𐐶𐐷𐐸𐐹𐐺𐐻𐐼𐐽𐐾𐐿𐑀𐑁𐑂𐑃𐑄𐑅𐑆𐑇𐑈𐑉𐑊𐑋𐑌𐑍𐑎𐑏"
  },
  {
   "id": "hesperapis",
@@ -114,7 +116,8 @@
   "source": "https://github.com/sigilante/idc-xenoglossa",
   "note": "",
   "bytes": 14228,
-  "complete": false
+  "complete": false,
+  "missing": "𐐦𐐧𐑎𐑏"
  },
  {
   "id": "xenoglossa-alt",
@@ -127,7 +130,8 @@
   "source": "https://github.com/sigilante/idc-xenoglossa",
   "note": "",
   "bytes": 9724,
-  "complete": false
+  "complete": false,
+  "missing": "𐐦𐐧𐑎𐑏"
  },
  {
   "id": "unifont-upper",
@@ -387,7 +391,8 @@
   "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
   "note": "Unicode-remapped version of a legacy font.",
   "bytes": 37836,
-  "complete": false
+  "complete": false,
+  "missing": "𐐦𐐧𐑎𐑏"
  },
  {
   "id": "huneybee-keyboard",
@@ -414,7 +419,8 @@
   "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
   "note": "Unicode-remapped version of a legacy font.",
   "bytes": 17092,
-  "complete": false
+  "complete": false,
+  "missing": "𐐦𐐧𐑎𐑏"
  },
  {
   "id": "bee-skep-keyboard",
@@ -441,7 +447,8 @@
   "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
   "note": "Unicode-remapped version of a legacy font.",
   "bytes": 28240,
-  "complete": false
+  "complete": false,
+  "missing": "𐐦𐐧𐐨𐐩𐐪𐐫𐐬𐐭𐐮𐐯𐐰𐐱𐐳𐐴𐐵𐐶𐐷𐐸𐐹𐐺𐐻𐐼𐐽𐐾𐐿𐑀𐑁𐑂𐑃𐑄𐑅𐑆𐑇𐑈𐑉𐑊𐑋𐑌𐑍𐑎𐑏"
  },
  {
   "id": "deseret-bateman-keyboard",
@@ -468,7 +475,8 @@
   "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
   "note": "Unicode-remapped version of a legacy font.",
   "bytes": 33684,
-  "complete": false
+  "complete": false,
+  "missing": "𐐦𐐧𐑎𐑏"
  },
  {
   "id": "deseret-thibault-keyboard",
@@ -495,7 +503,8 @@
   "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
   "note": "Unicode-remapped version of a legacy font.",
   "bytes": 34856,
-  "complete": false
+  "complete": false,
+  "missing": "𐐐𐐦𐐧𐐨𐐩𐐪𐐫𐐬𐐭𐐮𐐯𐐰𐐱𐐲𐐳𐐴𐐵𐐷𐐸𐐹𐐺𐐻𐐼𐐽𐐾𐐿𐑀𐑁𐑂𐑃𐑅𐑆𐑇𐑈𐑉𐑊𐑋𐑌𐑍𐑎𐑏"
  },
  {
   "id": "deseret-1991-keyboard",
@@ -522,7 +531,8 @@
   "source": "https://www.chem.ucla.edu/~jericks/Fonts/",
   "note": "Unicode-remapped version of a legacy font.",
   "bytes": 17756,
-  "complete": false
+  "complete": false,
+  "missing": "𐐦𐐧𐑎𐑏"
  },
  {
   "id": "deseret-bee-keyboard",
