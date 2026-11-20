@@ -73,3 +73,27 @@ The destination is chosen with a folder explorer. The site has no Drive access, 
 The worker home keeps its config as `pipeline-config.json`, so pass `--config` for `folders` and `remove` (a sandbox home with its own `config.json` doesn't need it). `review_portal.py remove --home HOME --config CONFIG --id REVIEW_ID` takes a queued packet off the site, with its edits, history and decisions (sandbox clean-up or a withdrawn work).
 
 `collect` applies the edits to the source review (citation → matched work, entry → changelog text, filename, destination; title → the work's metadata) and re-runs the duplicate check for the edited title and folder before importing approvals. A folder chosen on the site that is not in `destination_ids` is accepted only if Drive confirms it is a live folder inside `archive_root_id`; both assigned reviewers approving that exact folder stands in for the allowlist entry.
+
+### Select a PDF from a collection torrent
+
+For a collection that lists individual files, record the exact metainfo path as
+`torrent_member`, its catalog MD5 as `member_md5`, the torrent's `infohash`,
+and the destination PDF filename in the source review. The member can have a
+`.pdf` extension or use its MD5 as its entire filename. A compressed archive
+that contains several books cannot be selected this way.
+
+Add the torrent **stopped**, with its original file layout and the save path
+`HOME/incomplete/INFOHASH` (lowercase hash). Keep temporary downloads inside
+that same directory or disable the separate temporary path. Run
+`prepare-member --work ID --file COLLECTION.torrent --evidence NETWORK.json`
+with the usual pipeline config and home. It sets every other file's priority
+to zero and reads the priorities back while the job remains stopped. Start the
+prepared job in qBittorrent, then run `torrent-loop` with the same arguments.
+Use one job per collection at a time. A subsequent selection requires stopping
+the collection and preparing the new work. Both commands run the torrent guard.
+
+The loop checks the priority and disk budget on each poll. BitTorrent may
+fetch parts of adjacent files sharing boundary pieces. The budget includes
+two extra pieces and space for a staged PDF copy. The worker checks the PDF
+signature, size and catalog MD5 before staging. Use the usual `validate` and
+review commands to check malware, format, edition and completeness.

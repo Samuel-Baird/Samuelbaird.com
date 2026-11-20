@@ -12,6 +12,7 @@ import shutil
 import acquire as acquisition
 import validate as validation
 import rollout
+import torrent_member
 import subprocess
 import sys
 import time
@@ -547,7 +548,7 @@ def publish(db, wid, api, config):
         db.execute('UPDATE works SET changelog_receipt=?,status=?,reason=? WHERE id=?', (json.dumps({'target': document_id, 'marker': marker, 'at': stamp()}), 'complete', 'Verified Drive upload and dated changelog', wid))
 
 
-def torrent_loop(db, wid, home, config, evidence, metainfo):
+def torrent_loop(db, wid, home, config, evidence, metainfo, prepare=False):
     """Supervise one operator-added torrent. The operator alone starts transfers."""
     require(config.get('torrent_acquisition_approved') is True, 'Staff have not approved torrent acquisition')
     while True:
@@ -558,18 +559,38 @@ def torrent_loop(db, wid, home, config, evidence, metainfo):
         require(not record.get('upload_id'), 'Upload already started')
         key = data['infohash'].lower()
         require(bool(key), 'Missing reviewed infohash')
-        payload = acquisition.review_payload(acquisition.parse_torrent(metainfo.read_bytes()), config, key)
-        require(payload['route'] == 'permission_check', 'Payload requires staff review')
+        meta = acquisition.parse_torrent(metainfo)
+        member = data.get('torrent_member')
+        require(not prepare or member, 'Source review must specify torrent_member')
         client = rollout.Client()
         rows = client.call('torrents/info?' + urllib.parse.urlencode({'hashes': key}))
-        now = time.time()
-        job = record.setdefault('torrent_job', acquisition.new_job(key, now, payload['total_bytes']))
         row = rows[0] if len(rows) == 1 else None
+        if member:
+            try:
+                names, piece = torrent_member.inspect(meta, data)
+                expected = {'path': member, 'bytes': names[member]}
+                require(not prepare or row is not None, 'Add the reviewed collection stopped before preparing it')
+                if row:
+                    require(row['hash'].lower() == key, 'Unexpected torrent in client')
+                    path, selected = torrent_member.check(client, key, names, piece, member, row, home, config, prepare)
+                    if prepare:
+                        return {'action': 'prepared', 'member': member, 'bytes': names[member]}
+                    row = dict(row, total_size=names[member], progress=selected['progress'],
+                               completed=int(names[member] * selected['progress']))
+            except Exception:
+                if row:
+                    client.call('torrents/stop', {'hashes': key})
+                raise
+        else:
+            payload = acquisition.review_payload(meta, config, key)
+            require(payload['route'] == 'permission_check', 'Payload requires staff review')
+            expected = payload['files'][0]
+        now = time.time()
+        job = record.setdefault('torrent_job', acquisition.new_job(key, now, expected['bytes']))
         decision = acquisition.assess(job, row, now, config=config)
-        if row:
+        if row and not member:
             root = (home / 'incomplete').resolve()
             path = Path(row['content_path']).resolve()
-            expected = payload['files'][0]
             safe = path.is_relative_to(root) and path.name == Path(expected['path']).name
             present = path.stat().st_size if safe and path.is_file() else 0
             if not safe or not acquisition.disk_check(home, [expected['bytes']], config, present)['ok']:
@@ -579,9 +600,11 @@ def torrent_loop(db, wid, home, config, evidence, metainfo):
         if action in ('complete', 'pause_and_review', 'route_to_review') and row:
             client.call('torrents/stop', {'hashes': key})
         if action == 'complete':
-            require(path.is_file() and present == expected['bytes'], 'Incomplete payload')
+            require(path.is_file() and path.stat().st_size == expected['bytes'], 'Incomplete payload')
+            if member:
+                path = torrent_member.stage(home, wid, path, data, expected['bytes'])
             record['candidate'] = str(path)
-            origin = 'torrent:' + key
+            origin = 'torrent:' + key + ('/' + member if member else '')
             candidates = [c for c in record.get('candidates', []) if c['origin'] != origin]
             record['candidates'] = candidates + [{'path': str(path), 'origin': origin, 'added_at': stamp()}]
             record.pop('approval', None)
@@ -601,7 +624,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--home', type=Path, default=gsa.DEFAULT_HOME)
     parser.add_argument('--config', type=Path, required=True)
-    parser.add_argument('command', choices=['poll', 'triage', 'rank', 'select', 'torrent-loop', 'check', 'review', 'acquire', 'validate', 'approve', 'publish'])
+    parser.add_argument('command', choices=['poll', 'triage', 'rank', 'select', 'torrent-loop', 'prepare-member', 'check', 'review', 'acquire', 'validate', 'approve', 'publish'])
     parser.add_argument('--work', type=int)
     parser.add_argument('--file', type=Path)
     parser.add_argument('--evidence', type=Path)
@@ -636,9 +659,9 @@ def main():
                         "SELECT detail FROM pipeline_events WHERE work_id=? AND action IN ('validated','validation_failed')", (args.work,))
                         if 'automated_verdict' in json.loads(row[0])['validation']]
                     print(json.dumps(validation.rank(reports), indent=2))
-                elif args.command == 'torrent-loop':
+                elif args.command in ('torrent-loop', 'prepare-member'):
                     require(args.file and args.evidence, '--file and --evidence required')
-                    print(torrent_loop(db, args.work, home, config, args.evidence, args.file))
+                    print(torrent_loop(db, args.work, home, config, args.evidence, args.file, prepare=args.command == 'prepare-member'))
                 elif args.command == 'check':
                     _, record = get(db, args.work)
                     print(json.dumps(archive_check(db, args.work, api, config, record['review']['destination']), indent=2))
