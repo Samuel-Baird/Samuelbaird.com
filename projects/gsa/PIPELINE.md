@@ -1,6 +1,6 @@
 # Supervised pipeline implementation
 
-`pipeline.py` extends the existing SQLite queue without replacing the offline rehearsal. It uses the Python standard library. The new code has fixture coverage; it has **not** been validated against live staff Forms, Drive, or Docs resources. Nothing has been scheduled and no GSA files have been published.
+`pipeline.py` extends the SQLite queue. Live read-only Forms intake, sandbox publication, and the three-book acquisition test have passed. Routine production operation is not enabled. See [STATUS.md](STATUS.md) for current evidence and remaining work.
 
 ## Private configuration
 
@@ -48,7 +48,7 @@ python3 rollout.py --config /private/config.json launchd /private/org.gsa.intake
 
 The launchd command only generates an inactive five-minute intake job after intake approval and unattended-intake validation are recorded. It does not install or load it. Test with a sandbox queue, expired credentials, concurrent invocations, interrupted pagination, and startup while offline. Install into the dedicated account only after those tests and staff access approval. This job polls intake only; it cannot acquire or publish automatically.
 
-Session 3 captured the connected, disconnect/reconnect and VPN-down startup scenarios, including the startup retest. Reviewer signoff, reboot and network-change evidence remain pending. See SETUP.md for observations.
+The fixed Wi-Fi pilot has approved network evidence, including the cold-start test. Network change is not applicable to this Mac's one permanent Wi-Fi connection. The evidence expires at `2026-11-27T00:24:33.069268+00:00`. See [STATUS.md](STATUS.md) for current status and `SETUP.md` for historical observations.
 
 ## Sandbox verification
 
@@ -56,7 +56,7 @@ Run `python3 -m unittest discover -s tests -v` and then `python3 -m unittest dis
 
 ### Unattended intake rehearsal
 
-Run `python3 -m unittest discover -s tests -p test_intake_startup.py -v` in the worktree. The tests invoke the poll command with a temporary private config and queue. They check token refresh after HTTP 401, restart while offline, interruption between pages, recovery on the next poll, and exclusion of a second worker. The tests simulate Keychain and Google. A supervised read-only poll under the intended Mac account is still needed to verify actual credential access and reconciliation before enabling scheduling.
+Run `python3 -m unittest discover -s tests -p test_intake_startup.py -v` in the worktree. The tests invoke the poll command with a temporary private config and queue. They check token refresh after HTTP 401, restart while offline, interruption between pages, recovery on the next poll, and exclusion of a second worker. The tests simulate Keychain and Google. Live read-only polling passed under the owner's account. Unattended validation under the intended runtime account remains open before scheduling.
 
 ### Website review
 
@@ -79,7 +79,11 @@ The worker home keeps its config as `pipeline-config.json`, so pass `--config` f
 For a collection that lists individual files, record the exact metainfo path as
 `torrent_member`, its catalog MD5 as `member_md5`, the torrent's `infohash`,
 and the destination PDF filename in the source review. The member can have a
-`.pdf` extension or use its MD5 as its entire filename. A compressed archive
+`.pdf` extension or use its MD5 as its entire filename. A numeric filename
+requires `member_mapping` in the source review. Set `catalog_url` to the
+reviewed `source_url`. Set `torrent_member` and `member_md5` to the reviewed
+values. Put the catalog server path and collection name in `evidence`.
+Check this mapping in the catalog before you prepare the transfer. A compressed archive
 that contains several books cannot be selected this way.
 
 Add the torrent **stopped**, with its original file layout and the save path
@@ -97,3 +101,22 @@ fetch parts of adjacent files sharing boundary pieces. The budget includes
 two extra pieces and space for a staged PDF copy. The worker checks the PDF
 signature, size and catalog MD5 before staging. Use the usual `validate` and
 review commands to check malware, format, edition and completeness.
+
+### Browser fallback after a torrent stall
+
+A short stall does not establish that a file is unavailable. Use the configured
+stall and retry limits for a torrent attempt. Keep the partial data when you
+change sources. Record the attempt duration and the last byte count.
+
+For a supervised browser fallback, open the reviewed catalog record in Chrome.
+Use a partner link listed on that record. The links can expire. A partner can
+limit speed and concurrent downloads. Use one transfer at a time when the
+partner requires this. The browser check and wait page can be necessary even
+when a command-line request returns HTTP 403.
+
+A browser download remains an unverified candidate until it is complete.
+Check its expected MD5 and PDF signature before staging. Run the configured
+scanner and PDF checks. Check the title page, edition, final numbered page,
+bibliography, and index before delivery. Keep the source catalog URL and the
+partner number with the result. Do not treat a catalog listing or a started
+browser download as a successful acquisition.

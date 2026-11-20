@@ -247,6 +247,10 @@ def review(db, wid, path, config):
         require(bool(data.get(key)), 'Missing review field: ' + key)
     require(data['destination'] in config['destination_ids'], 'Unapproved destination')
     require(Path(data['filename']).name == data['filename'] and data['filename'] not in ('.', '..'), 'Invalid filename')
+    if 'source_md5' in data or 'source_bytes' in data:
+        # Browser import binds to these reviewed values (candidate_import.py).
+        require(re.fullmatch('[0-9a-f]{32}', str(data.get('source_md5'))), 'source_md5 must be 32 lowercase hex digits')
+        require(type(data.get('source_bytes')) is int and data['source_bytes'] > 0, 'source_bytes must be a positive integer')
     data.pop('permissions', None)
     record = {'review': data}
     save(db, wid, record, 'source_review')
@@ -624,7 +628,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--home', type=Path, default=gsa.DEFAULT_HOME)
     parser.add_argument('--config', type=Path, required=True)
-    parser.add_argument('command', choices=['poll', 'triage', 'rank', 'select', 'torrent-loop', 'prepare-member', 'check', 'review', 'acquire', 'validate', 'approve', 'publish'])
+    parser.add_argument('command', choices=['poll', 'triage', 'rank', 'select', 'torrent-loop', 'prepare-member', 'check', 'review', 'acquire', 'validate', 'approve', 'publish', 'import-candidate'])
     parser.add_argument('--work', type=int)
     parser.add_argument('--file', type=Path)
     parser.add_argument('--evidence', type=Path)
@@ -662,6 +666,10 @@ def main():
                 elif args.command in ('torrent-loop', 'prepare-member'):
                     require(args.file and args.evidence, '--file and --evidence required')
                     print(torrent_loop(db, args.work, home, config, args.evidence, args.file, prepare=args.command == 'prepare-member'))
+                elif args.command == 'import-candidate':
+                    require(args.file and args.evidence, '--file and --evidence required')
+                    import candidate_import
+                    print(json.dumps(candidate_import.import_candidate(db, args.work, home, config, args.file, args.evidence), indent=2))
                 elif args.command == 'check':
                     _, record = get(db, args.work)
                     print(json.dumps(archive_check(db, args.work, api, config, record['review']['destination']), indent=2))
