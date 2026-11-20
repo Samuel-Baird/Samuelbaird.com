@@ -76,6 +76,21 @@ class SelectedMemberTests(unittest.TestCase):
         self.assertEqual(candidate.read_bytes(), self.body)
         self.assertEqual(candidate.suffix, '.pdf')
 
+    def test_numeric_member_requires_bound_mapping(self):
+        import torrent_member
+        data, _ = torrent([('7465862', len(self.body))], name='collection')
+        meta = acquire.parse_torrent(data)
+        review = dict(infohash=meta['infohash_v1'], torrent_member='collection/7465862',
+                      member_md5=self.md5, filename='Test.pdf', source_url='https://catalog.example/book')
+        with self.assertRaises(ValueError):
+            torrent_member.inspect(meta, review)
+        review['member_mapping'] = dict(torrent_member=review['torrent_member'], member_md5=self.md5,
+                                       catalog_url=review['source_url'], evidence='Catalog server path')
+        self.assertIn(review['torrent_member'], torrent_member.inspect(meta, review)[0])
+        review['member_mapping']['member_md5'] = '0' * 32
+        with self.assertRaises(ValueError):
+            torrent_member.inspect(meta, review)
+
     def test_prepare_requires_collection_in_client(self):
         self.client.row = None
         with self.assertRaisesRegex(ValueError, 'Add the reviewed collection'):

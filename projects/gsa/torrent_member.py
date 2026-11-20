@@ -23,7 +23,15 @@ def inspect(torrent, review):
     require(re.fullmatch('[0-9a-f]{32}', checksum), 'Expected lowercase member_md5')
     require(isinstance(path, str) and not acquire._unsafe(path), 'Invalid selected file path')
     require(Path(review['filename']).suffix.lower() == '.pdf', 'Reviewed destination must be a PDF')
-    require(Path(path).suffix.lower() == '.pdf' or Path(path).name == checksum,
+    mapping = review.get('member_mapping', {})
+    numeric = (re.fullmatch(r'[0-9]+', Path(path).name) is not None
+               and mapping.get('torrent_member') == path
+               and mapping.get('member_md5') == checksum
+               and mapping.get('catalog_url') == review.get('source_url')
+               and isinstance(mapping.get('catalog_url'), str)
+               and mapping['catalog_url'].startswith('https://')
+               and bool(mapping.get('evidence')))
+    require(Path(path).suffix.lower() == '.pdf' or Path(path).name == checksum or numeric,
             'Choose an individual PDF or its exact MD5 filename')
     names = {}
     folded = set()

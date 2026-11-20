@@ -1,0 +1,23 @@
+Implement resumable queue coordination for the GSA intake pipeline.
+
+Project: /Users/samuelbaird/Projects/ai-projects/gsa-book-acquisition/projects/gsa
+Read STATUS.md, LESSONS.md, PIPELINE.md, and applicable AGENTS.md instructions first.
+Use ASD-STE100 Simplified Technical English for documentation and instructions.
+
+The main session is running live torrent retries. Another session will add browser-file import to pipeline.py. Do this work yourself. Do not start agents or new threads.
+
+Scope:
+1. Inspect the existing SQLite records and CLI commands before designing the coordinator.
+2. Add gsa_runner.py as a separate entry point. Add persistent coordinator records without replacing existing queue or publication records. Use the existing worker lock so the runner cannot race pipeline.py or another runner.
+3. Provide a status or plan command that shows the next action for each work and the reason for any wait. Distinguish untriaged submissions, source or edition review, acquisition, browser-file import, validation, duplicate review, staff approval, publication readiness, and completion. Derive states from actual records rather than inventing completed work.
+4. Provide a bounded supervised run command that advances only eligible existing operations. Use the existing pipeline functions and checks. Do not bypass source review, checksum checks, disk limits, network evidence, duplicate checks, reviewer decisions, or publication approval.
+5. Keep source search, edition decisions, browser interaction, and completeness review as explicit agent or operator tasks when the code cannot perform them. Emit a concrete next action instead of marking the work failed or approved. Browser import will be provided by the other session; do not implement it here or assume it already exists.
+6. Persist operation attempts, retry timing, and outcomes. Prevent duplicate acquisition or publication after restart. Retain partial downloads. Respect the existing stall policy. A brief idle period must not be treated as permanent source failure.
+7. Make the default run mode suitable for review without external writes. Require an explicit execution mode for allowed actions. Do not add or load a schedule. Do not enable unattended publication.
+8. Test restart, lock contention, blocked prerequisites, bounded retry, rejected or changed review, duplicate prevention, and action selection. Use fixtures and service doubles. Run focused tests and then the full suite.
+
+File ownership: add gsa_runner.py and a separate helper module if needed; add tests/test_gsa_runner.py. Write usage, state design, and test results in session-prompts/queue-runner-result.md. Do not edit pipeline.py, candidate_import.py, tests/test_candidate_import.py, STATUS.md, LESSONS.md, PIPELINE.md, or README.md. Preserve all existing uncommitted work. If a required core change conflicts with this boundary, document the exact integration change while completing the independent runner work.
+
+The private worker home is ~/Library/Application Support/GSA Worker. Use temporary fixture homes for tests. Do not change private configuration, credentials, qBittorrent, VPN settings, live queues, Drive files, review-site records, or schedules. Do not publish or enable production writes.
+
+Deliver working code, tests, exact commands, restart behavior, and remaining integration needs. The user authorized implementation; do not stop at a proposal.

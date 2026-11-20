@@ -1,5 +1,7 @@
 # Local pilot setup
 
+These session notes are historical. Use [STATUS.md](STATUS.md) for current results and remaining work. Completed tasks can still appear as pending in earlier entries.
+
 The first build is an **offline intake rehearsal**. It runs on Python 3.10+ with no third-party packages. It does not download, connect to Forms or Drive, search the archive, assess permissions, scan files, or publish. The torrent worker remains paused. Read [the workflow plan](README.md) before configuring live services.
 
 ## Installed state

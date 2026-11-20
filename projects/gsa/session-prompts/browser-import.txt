@@ -1,0 +1,22 @@
+Implement supported browser-file import for the GSA intake pipeline.
+
+Project: /Users/samuelbaird/Projects/ai-projects/gsa-book-acquisition/projects/gsa
+Read STATUS.md, LESSONS.md, PIPELINE.md, and applicable AGENTS.md instructions first.
+Use ASD-STE100 Simplified Technical English for documentation and instructions.
+
+The main session is running live torrent retries. Another session will build queue coordination. Do this work yourself. Do not start agents or new threads.
+
+Scope:
+1. Add an import-candidate command to pipeline.py. Use the existing --home, --config, --work, --file, and --evidence arguments. --file identifies a complete downloaded file. --evidence identifies a private JSON source record.
+2. Define the source record. Include the catalog URL, the actual source or partner, expected MD5, expected byte count, and the reviewed work identity. Bind these values to the existing source review. Do not trust a caller's replacement work identity or checksum without a reviewed source change.
+3. Copy the file into an immutable candidate. Check its size, PDF signature, and MD5 before registration. Enforce the existing disk limits. Reject partial browser files, unsafe paths, wrong files, and concurrent source changes. Preserve the original downloaded file.
+4. Register the candidate through the existing candidate, validation, ranking, review, and approval model. Keep acquisition separate from validation and staff approval. Preserve prior candidates. Prevent duplicate candidates on replay. Clear stale approval only when the selected candidate changes as required by existing rules.
+5. Use the existing CLI lock and private file permissions. Make interrupted import recoverable without registering an unchecked file or overwriting a verified candidate.
+6. Add meaningful regression tests for a passing import, incomplete input, checksum mismatch, insufficient disk space, duplicate import, interrupted import, and approval handling.
+7. Run the relevant tests. Run the full suite after the focused tests pass.
+
+File ownership: edit pipeline.py; add candidate_import.py if useful; add tests/test_candidate_import.py. Write usage and test results in session-prompts/browser-import-result.md. Do not edit STATUS.md, LESSONS.md, PIPELINE.md, README.md, or files owned by the queue session. Do not reset or overwrite existing uncommitted changes in pipeline.py or other files.
+
+The private worker home is ~/Library/Application Support/GSA Worker. Existing live test evidence is in three-books-sandbox-ut0jwodl. Read private records only when needed. Use temporary fixture homes for tests. Do not change private configuration, credentials, qBittorrent, VPN settings, live queues, Drive files, review-site records, or schedules. Do not publish or enable production writes.
+
+Deliver the implementation, test results, exact CLI usage, evidence schema, and any remaining limitation. The user authorized implementation; do not stop at a proposal.
