@@ -66,6 +66,50 @@ class Problems(unittest.TestCase):
         self.assertIn('Evidence lacks designated reviewer', rollout.problems({**CONFIG, 'reviewers': []}, evidence(), PREFS, ROUTE_VPN, NOW))
 
 
+class FixedWifi(unittest.TestCase):
+    HW = 'Hardware Port: Ethernet\nDevice: en0\n\nHardware Port: Wi-Fi\nDevice: en1\n'
+    NWI = """IPv4 network interface information
+  ipsec0 : flags      : 0x5 (IPv4,DNS)
+           address    : 10.0.1.1
+           VPN server : 192.0.2.1
+     en1 : flags      : 0x5 (IPv4,DNS)
+           address    : 192.168.0.2
+IPv6 network interface information
+Network interfaces: ipsec0 en1
+"""
+    UDP = 'udp4 0 0 192.168.0.2.4500 192.0.2.1.4500 123 123 NEIKEv2Provider:42'
+
+    def test_transport_identification(self):
+        self.assertTrue(rollout.wifi_underlay('ipsec0', 'en1', self.HW, self.NWI, self.UDP))
+        for hw, nwi, udp in [
+            (self.HW.replace('Wi-Fi', 'Ethernet'), self.NWI, self.UDP),
+            (self.HW, self.NWI, self.UDP.replace('192.168.0.2.', '192.168.1.2.')),
+            (self.HW, self.NWI.replace('ipsec0 en1', 'ipsec0 en1 en0'), self.UDP),
+            (self.HW, self.NWI.replace('VPN server', 'Other field'), self.UDP),
+            (self.HW, self.NWI, self.UDP.replace('192.0.2.1.', '192.0.2.3.')),
+            (self.HW, self.NWI, self.UDP.replace('NEIKEv2Provider', 'other')),
+            (self.HW, self.NWI, self.UDP + '\n' + self.UDP.replace('192.168.0.2.', '192.168.1.2.')),
+        ]:
+            with self.subTest(hw=hw, nwi=nwi, udp=udp):
+                self.assertFalse(rollout.wifi_underlay('ipsec0', 'en1', hw, nwi, udp))
+
+    def test_scoped_exception_requires_verified_live_transport(self):
+        config = dict(CONFIG, fixed_wifi_interface='en1')
+        ev = evidence()
+        self.assertTrue(rollout.problems(config, ev, PREFS, ROUTE_VPN, NOW, wifi_verified=True))
+        ev['scenarios']['network-change'] = {'interface': 'en1', 'status': 'not_applicable'}
+        self.assertTrue(rollout.problems(CONFIG, ev, PREFS, ROUTE_VPN, NOW))
+        self.assertTrue(rollout.problems(config, ev, PREFS, ROUTE_VPN, NOW))
+        self.assertEqual(rollout.problems(config, ev, PREFS, ROUTE_VPN, NOW, wifi_verified=True), [])
+        for name in ('reboot', 'vpn-down-startup', 'connected', 'reconnected', 'disconnected'):
+            with self.subTest(name=name):
+                incomplete = {**ev, 'scenarios': {k: v for k, v in ev['scenarios'].items() if k != name}}
+                self.assertIn('Unverified scenario: ' + name,
+                              rollout.problems(config, incomplete, PREFS, ROUTE_VPN, NOW, wifi_verified=True))
+        ev['scenarios']['network-change']['interface'] = 'en0'
+        self.assertTrue(rollout.problems(config, ev, PREFS, ROUTE_VPN, NOW, wifi_verified=True))
+
+
 class Guard(unittest.TestCase):
     def _client(self, prefs):
         client = mock.Mock()
@@ -81,6 +125,18 @@ class Guard(unittest.TestCase):
         endpoints = [c.args[0] for c in client.call.call_args_list]
         self.assertIn('torrents/stop', endpoints)
         self.assertNotIn('torrents/start', endpoints)
+
+    def test_stops_when_live_wifi_underlay_changes(self):
+        client = self._client(PREFS)
+        ev = evidence(expires_at='2100-01-01T00:00:00+00:00')
+        ev['scenarios']['network-change'] = {'interface': 'en1', 'status': 'not_applicable'}
+        cfg = dict(CONFIG, fixed_wifi_interface='en1')
+        with mock.patch.object(rollout, 'Client', return_value=client), \
+             mock.patch.object(rollout, 'network_output', return_value=ROUTE_VPN), \
+             mock.patch.object(rollout, 'current_wifi_underlay', side_effect=[True, False]):
+            self.assertEqual(rollout.guard(cfg, ev), [])
+            self.assertIn('Fixed Wi-Fi transport could not be verified', rollout.guard(cfg, ev))
+        client.call.assert_called_with('torrents/stop', {'hashes': 'all'})
 
     def test_stops_when_route_check_errors(self):
         client = self._client(PREFS)

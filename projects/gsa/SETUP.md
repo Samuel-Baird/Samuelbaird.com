@@ -110,3 +110,9 @@ Ported onto the merged pipeline from PR #87: quarantine of files that fail the m
   - Overlap replay adds no duplicates.
 
   It passed as the owner's account as a dry run only. The gate stays open until it is run as the worker account.
+
+## Fixed Wi-Fi IKEv2 worker
+
+On a Mac with one permanent Wi-Fi connection, set `fixed_wifi_interface` in its private worker configuration to the BSD device listed under Wi-Fi in `networksetup -listallhardwareports` (on this worker, `en1`). Record `{"status":"not_applicable","interface":"en1"}` for the `network-change` scenario in the private evidence file. The reviewer still signs the connected, disconnected, reconnected, VPN-down startup, and reboot observations and records an expiration. Staff still enable torrent acquisition separately.
+
+At each guard invocation, macOS must report that Wi-Fi device and the configured VPN tunnel as the only active IP interfaces. The IKEv2 provider must have a connected IPv4 UDP socket from the Wi-Fi address to the VPN server reported for that tunnel. A missing socket, another active interface, a changed tunnel route, or a qBittorrent binding mismatch stops transfers. The guard checks the interface at sampling time. It does not distinguish access points on the same radio or establish a continuous packet filter. Deployments that can roam or change uplinks use the standard six-scenario procedure above.
