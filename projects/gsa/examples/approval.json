@@ -6,8 +6,10 @@
   "first_and_last_pages": false,
   "body_spot_check": false,
   "completeness": false,
-  "rights": false,
   "filename_and_destination": false,
   "format_preference": false,
-  "archive_resolution": {"matches": [], "reason": ""}
+  "archive_resolution": {
+    "matches": [],
+    "reason": ""
+  }
 }

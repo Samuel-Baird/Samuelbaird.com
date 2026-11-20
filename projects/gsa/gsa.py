@@ -93,7 +93,7 @@ def ingest_rows(db, rows, source, batch, checkpoint=None):
                 raise ValueError(f'Submission {sid} changed; use a new row_id to retain its previous outcome')
             continue
         key = identity(row)
-        reason = 'Edition, archive duplicate check, source, permission, and destination require review'
+        reason = 'Edition, archive duplicate check, source, and destination require review'
         db.execute('INSERT OR IGNORE INTO works(fingerprint,metadata,reason,source) VALUES(?,?,?,?)',
                    (key, json.dumps(row), reason, row['source_url']))
         wid = db.execute('SELECT id FROM works WHERE fingerprint=?', (key,)).fetchone()['id']
@@ -105,7 +105,7 @@ def ingest_rows(db, rows, source, batch, checkpoint=None):
 
 def manifest(db, output):
     columns = ['batch_id', 'submission_id', 'work_id', *FIELDS[1:], 'matched_work', 'status', 'reason',
-               'permission', 'estimated_bytes', 'proposed_filename', 'destination', 'sha256', 'verified_drive_link']
+               'estimated_bytes', 'proposed_filename', 'destination', 'sha256', 'verified_drive_link']
     output.parent.mkdir(parents=True, exist_ok=True)
     # Exports contain request details: keep them private even outside the worker directory.
     fd = os.open(output, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)

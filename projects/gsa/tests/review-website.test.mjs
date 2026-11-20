@@ -25,7 +25,7 @@ test('each assigned account can approve once per exact review version',async()=>
   const form=new URLSearchParams({revision,decision:'Approved'});
   const post=email=>gsaRoute(new Request(url+'/work/test',{method:'POST',headers:{Origin:new URL(url).origin},body:form}),env,session(email));
   assert.equal((await post('b13llama@gmail.com')).status,422);
-  for(const key of ['bibliographic_match','first_and_last_pages','body_spot_check','completeness','rights','filename_and_destination','format_preference'])form.set(key,'on');
+  for(const key of ['bibliographic_match','first_and_last_pages','body_spot_check','completeness','filename_and_destination','format_preference'])form.set(key,'on');
   assert.equal((await post('b13llama@gmail.com')).status,303);
   assert.equal((await post('b13llama@gmail.com')).status,409);
   assert.equal((await post('davidjasonharper@gmail.com')).status,303);
@@ -65,13 +65,13 @@ function memory() {
 }
 const operator = (queue, body) => queue.fetch(new Request(url + '/operator', {method: 'POST', headers: {'X-GSA-Actor': 'operator'}, body: JSON.stringify(body)}));
 const basePacket = () => ({sha256: 'b'.repeat(64), title: 'Fixture', citation: 'Smith, Fixture (1999)', filename: 'Smith, Fixture.pdf',
-  folder: 'Archive / Read', destination: 'read1', rights: 'CC BY', entry: 'Nov 19: Fixture', validation: 'Passed',
+  folder: 'Archive / Read', destination: 'read1', entry: 'Nov 19: Fixture', validation: 'Passed',
   source: 'https://example.org', pdf: 'https://drive.google.com/file/d/x/view'});
 const edit = (env, email, field, value, origin = new URL(url).origin) => gsaRoute(new Request(url + '/work/test/edit', {method: 'POST',
   headers: {Origin: origin, 'Content-Type': 'application/json'}, body: JSON.stringify({field, value})}), env, session(email));
 const approveAll = async (env, revision) => {
   const form = new URLSearchParams({revision, decision: 'Approved'});
-  for (const key of ['bibliographic_match','first_and_last_pages','body_spot_check','completeness','rights','filename_and_destination','format_preference']) form.set(key, 'on');
+  for (const key of ['bibliographic_match','first_and_last_pages','body_spot_check','completeness','filename_and_destination','format_preference']) form.set(key, 'on');
   return gsaRoute(new Request(url + '/work/test', {method: 'POST', headers: {Origin: new URL(url).origin}, body: form}), env, session('b13llama@gmail.com'));
 };
 

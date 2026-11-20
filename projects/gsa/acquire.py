@@ -192,9 +192,7 @@ def _unsafe(path):
 def review_payload(torrent, config=None, expected_infohash=None):
     """Classify a parsed torrent's payload. Any flag routes it to staff review.
 
-    A clean result only means the payload looks like one supported file; it is
-    still blocked until all three permission records are granted (see
-    evaluate_permissions) and staff confirm provenance and edition.
+    Staff confirm source and edition separately during source review.
     """
     config = config or {}
     flags = []

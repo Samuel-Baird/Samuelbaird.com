@@ -59,7 +59,7 @@ class WorkerTests(unittest.TestCase):
         gsa.manifest(self.db, out)
         with out.open() as f:
             row = next(csv.DictReader(f))
-        self.assertEqual(row['permission'], 'unverified')
+        self.assertNotIn('permission', row)
         self.assertEqual(row['verified_drive_link'], '')
         self.assertEqual(row['matched_work'], '')
         self.assertEqual(out.stat().st_mode & 0o777, 0o600)

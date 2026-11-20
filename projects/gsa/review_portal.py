@@ -23,7 +23,7 @@ def make_packet(work, record, draft, settings):
     return dict(title=json.loads(work['metadata'])['title'], citation=draft['matched_work'],
                 pdf=settings['pdf'], source=draft['source_url'], folder=settings['folder'],
                 destination=draft['destination'], filename=draft['filename'], entry=draft['changelog_text'],
-                rights=settings['rights'], sha256=record['sha256'], validation='Passed',
+                sha256=record['sha256'], validation='Passed',
                 version=settings['version'], validation_at=report['checked_at'])
 
 
@@ -184,6 +184,8 @@ def apply_edits(draft, packet, edits):
     """Return the source review and packet with the reviewers' web edits applied."""
     draft, packet = dict(draft), dict(packet)
     for field, edit in edits.items():
+        if field not in packet:
+            continue
         packet[field] = edit['value']
         if field in EDIT_TARGETS:
             draft[EDIT_TARGETS[field]] = edit['value']
@@ -249,9 +251,9 @@ def run(args):
         if args.command == 'queue':
             print('Queued', settings['id'], result['revision'])
             return
-        p.require(result and result['packet'] == packet, 'Web review differs from current work')
+        p.require(result and {k: v for k, v in result['packet'].items() if k != 'rights'} == packet, 'Web review differs from current work')
         decisions = result['decisions']
-        # Reviewers' edits on the site (title, citation, filename, folder, rights, changelog entry).
+        # Reviewers' edits on the site (title, citation, filename, folder, changelog entry).
         # Both approvals below cover the edited version, because any edit resets decisions.
         draft, packet = apply_edits(draft, packet, result.get('edits') or {})
         api = p.Google(config)
@@ -278,15 +280,12 @@ def run(args):
         p.require(len(approved) >= needed, 'Awaiting approval from ' + (
             ' and '.join(n for n in reviewers if n not in approved) if needed == len(reviewers) else f'{needed} assigned reviewer(s)'))
         reviewers = approved
-        # Portal approval covers the displayed direct-download rights and exact destination.
+        # Portal approval covers the reviewed direct download and exact destination.
         # Preserve the validated bytes while adding the source review for a browser-acquired PDF.
         p.require(not draft.get('infohash'), 'Portal supports direct downloads')
         lead = next(iter(reviewers))
         staff = reviewers[lead]
-        data = dict(draft, reviewer=staff, permissions={})
-        for kind in p.acquisition.PERMISSION_FIELDS:
-            data['permissions'][kind] = dict(status='unknown' if kind=='peer_sharing' else 'granted',
-                basis=packet['rights'], source=packet['source'], recorded_by=staff, recorded_at=decisions[lead]['at'])
+        data = dict(draft, reviewer=staff)
         with tempfile.TemporaryDirectory(dir=home) as folder:
             file = Path(folder) / 'packet.json'
             file.write_text(json.dumps(data))

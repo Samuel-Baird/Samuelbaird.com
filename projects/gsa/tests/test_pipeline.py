@@ -58,12 +58,11 @@ class PipelineTests(unittest.TestCase):
         self.assertFalse(p.name_hit({'title': '', 'author': 'X'}, 'anything.pdf'))
     def seed(self):
         gsa.ingest(self.db, [{'row_id':'1', 'title':'Book'}], 'csv:test', 'test')
-    def test_review_requires_both_permissions(self):
+    def test_review_without_rights_evidence(self):
         self.seed()
         path = self.home / 'review.json'
-        path.write_text(json.dumps(dict(reviewer='staff', source_url='https://example.com/book', permission_evidence='license', matched_work='Book', filename='Book.pdf', destination='folder', changelog_text='dated entry', download_permitted=True)))
-        with self.assertRaisesRegex(ValueError, 'Separate'):
-            p.review(self.db, 1, path, {'reviewers':['staff'], 'destination_ids':['folder']})
+        path.write_text(json.dumps(dict(reviewer='staff', source_url='https://example.com/book', matched_work='Book', filename='Book.pdf', destination='folder', changelog_text='dated entry')))
+        p.review(self.db, 1, path, {'reviewers':['staff'], 'destination_ids':['folder']})
     def test_scanner_failure_never_validates(self):
         self.seed()
         path = self.home / 'candidates' / '1.pdf'
