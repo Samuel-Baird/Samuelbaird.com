@@ -31,6 +31,8 @@
 
   $('everywhere').checked = s.everywhere;
   $('strict').checked = s.strict;
+  $('threeAh').checked = !s.oneAh;
+  $('syllabic').checked = s.syllabic;
   $('font').innerHTML = FONTS.map((f) => `<option value="${f.id}">${esc(f.name)}${f.style ? ` (${esc(f.style)})` : ''}</option>`).join('');
   $('font').value = s.font;
   $('size').value = s.size;
@@ -39,6 +41,8 @@
 
   $('everywhere').addEventListener('change', () => setSettings({ everywhere: $('everywhere').checked }));
   $('strict').addEventListener('change', () => setSettings({ strict: $('strict').checked }));
+  $('threeAh').addEventListener('change', () => setSettings({ oneAh: !$('threeAh').checked }));
+  $('syllabic').addEventListener('change', () => setSettings({ syllabic: $('syllabic').checked }));
   $('font').addEventListener('change', () => { s.font = $('font').value; setSettings({ font: s.font }); preview(); });
   $('size').addEventListener('input', () => { s.size = +$('size').value; $('size-out').textContent = `${s.size}%`; preview(); });
   $('size').addEventListener('change', () => setSettings({ size: s.size }));

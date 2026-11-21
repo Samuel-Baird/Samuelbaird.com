@@ -173,3 +173,30 @@ test('syllabic values: a word that sounds like a letter name is that one letter'
   assert.ok(back.ambiguous.some((a) => a.chose === 'be' && a.also.includes('bee')));
   assert.ok(back.ambiguous.some((a) => a.chose === 'the' && a.also.includes('thee')));
 });
+
+test('initialisms take the first sound of each word; acronyms are spelled by sound (deseretalphabet.info rule 10)', () => {
+  const r = engine.text('NASA and the USA, the FBI, the BBC, a URL, the LDS Church, CEOs, the FBI’s, LASER, Henry IV, OK, IT, CONTACT US, I AM HERE');
+  assert.equal(r.deseret, '𐐤𐐈𐐝𐐊 𐐰𐑌𐐼 𐑄 𐐧𐐝𐐊, 𐑄 𐐙𐐒𐐆, 𐑄 𐐒𐐒𐐗, 𐐪 𐐧𐐡𐐢, 𐑄 𐐢𐐔𐐝 𐐕𐐲𐑉𐐽, 𐐕𐐆𐐃𐑆, 𐑄 𐐙𐐒𐐆’𐑆, 𐐢𐐁𐐞𐐊𐐡, 𐐐𐐯𐑌𐑉𐐨 IV, 𐐄𐐗𐐁, 𐐆𐐓, 𐐗𐐂𐐤𐐓𐐈𐐗𐐓 𐐊𐐝, 𐐌 𐐈𐐣 𐐐𐐀𐐡');
+  assert.equal(engine.text('the LDS').deseret, '𐑄 𐐢𐐔𐐝');
+  assert.equal(engine.text('the FBI', { style: { initialisms: false } }).deseret, '𐑄 𐐇𐐙𐐒𐐀𐐌');
+  assert.equal(engine.fromDeseret('𐑄 𐐧𐐝𐐊').latin, 'the USA');
+});
+
+test('style: one ah writes 𐐂 for 𐐃 and 𐐉, and "or" as 𐐬𐑉', () => {
+  const r = engine.text('For the Lord, father caught not all.', { style: { ah: 'one' } });
+  assert.equal(r.deseret, '𐐙𐐬𐑉 𐑄 𐐢𐐬𐑉𐐼, 𐑁𐐪𐑄𐐲𐑉 𐐿𐐪𐐻 𐑌𐐪𐐻 𐐪𐑊.');
+  assert.doesNotMatch(r.deseret, /[𐐃𐐉𐐫𐐱]/u);
+  assert.equal(engine.fromDeseret('𐑌𐐪𐐻 𐐪𐑊').latin, 'not all');
+});
+
+test('style: syllabic off spells the single-letter words in full', () => {
+  assert.equal(engine.text('The bee and thee are gay.', { style: { syllabic: false } }).deseret, '𐐜𐐲 𐐺𐐨 𐐰𐑌𐐼 𐑄𐐨 𐐪𐑉 𐑀𐐩.');
+  assert.equal(engine.text('The bee and thee are gay.').deseret, '𐐜 𐐺 𐐰𐑌𐐼 𐑄 𐐪𐑉 𐑀.');
+  assert.equal(engine.text('A bee saw a boy.').deseret, '𐐂 𐐺 𐑅𐐫 𐐪 𐐺𐑎.'); // rule 1: "a" is 𐐪
+  assert.equal(engine.text('a boy', { style: { syllabic: false } }).deseret, '𐐲 𐐺𐑎');
+  assert.equal(engine.fromDeseret('𐐪 𐐺𐑎').latin, 'a boy');
+});
+
+test('Deseret written without 𐑏 and 𐑎 still reads back', () => {
+  assert.equal(engine.fromDeseret('𐐺𐐱𐐮 𐑁𐐷𐐭').latin, 'boy few');
+});

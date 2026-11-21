@@ -25,6 +25,16 @@ const spellingsProp = {
   description: 'Optional per-call spellings: word -> ARPAbet phones ("R EH1 D") or Deseret text. Use to fix a heteronym or a name.',
 };
 const formatProp = { type: 'string', enum: ['plain', 'markdown', 'html'], description: 'plain (default), markdown (keeps code, links, URLs, frontmatter and footnote marks) or html (text nodes only).' };
+const styleProp = {
+  type: 'object',
+  properties: {
+    ah: { type: 'string', enum: ['three', 'one'], description: 'three (default): 𐐂 cot, 𐐃 caught, 𐐉 Boston, as the dictionary gives them. one: every ah is 𐐂 (and "or" is 𐐬𐑉), as most American English says it.' },
+    syllabic: { type: 'boolean', description: 'Default true: a word that sounds like a letter\'s name is that one letter (the 𐑄, a 𐐪, bee 𐐺, gay 𐑀). false spells them in full.' },
+    initialisms: { type: 'boolean', description: 'Default true: initialisms (USA, FBI) are written with the first sound of each word they stand for (𐐧𐐝𐐊, 𐐙𐐒𐐆); acronyms said as words (NASA) are spelled by sound. false spells initialisms by their letters\' names.' },
+  },
+  additionalProperties: false,
+  description: 'Optional spelling conventions (deseretalphabet.info, About: rules 1 and 10 and the note on the three ah letters).',
+};
 const strictProp = { type: 'boolean', description: 'Leave words built from their parts (e.g. un- + faithful + -ness) in Latin letters instead of spelling them. Default false.' };
 
 function report(r, cap = 200) {
@@ -53,19 +63,20 @@ function tools({ local }) {
       description:
         'Transliterate English text (a word, a passage or a whole document) into the Deseret Alphabet. Spellings come from the CMU Pronouncing ' +
         'Dictionary (126,052 words) mapped sound by sound to Deseret letters, with hand corrections, as on deseret.wiki; capitals are kept. ' +
-        '"the" is the single letter 𐑄, and a word that sounds like a letter\'s name is that one letter (be 𐐺, tea 𐐻, gay 𐑀). ' +
+        '"the" is the single letter 𐑄, "a" is 𐐪, and a word that sounds like a letter\'s name is that one letter (be 𐐺, tea 𐐻, gay 𐑀). ' +
+        'Initialisms take the first sound of each word they stand for (USA 𐐧𐐝𐐊); acronyms said as words are spelled by sound (NASA 𐐤𐐈𐐝𐐊). ' +
         'Words the dictionary lacks are spelled from their parts where possible (listed in "derived"); words with no spelling stay in Latin ' +
         'letters and are listed in "unknown". This is a change of script, not a translation.',
       inputSchema: {
         type: 'object',
-        properties: { text: { type: 'string', description: `English text (up to ${HOSTED_LIMIT.toLocaleString('en')} characters).` }, format: formatProp, strict: strictProp, spellings: spellingsProp },
+        properties: { text: { type: 'string', description: `English text (up to ${HOSTED_LIMIT.toLocaleString('en')} characters).` }, format: formatProp, strict: strictProp, spellings: spellingsProp, style: styleProp },
         required: ['text'],
       },
-      run({ text, format, strict, spellings }) {
+      run({ text, format, strict, spellings, style }) {
         const input = String(text ?? '');
         if (!input.trim()) throw new Error('text is required');
         if (input.length > HOSTED_LIMIT) throw new Error(`text is ${input.length} characters; the limit is ${HOSTED_LIMIT}. Split it${local ? ', or use deseret_file' : ''}.`);
-        const r = load().engine.text(input, { format: format || 'plain', strict: !!strict, spellings });
+        const r = load().engine.text(input, { format: format || 'plain', strict: !!strict, spellings, style });
         return { deseret: r.deseret, ...report(r) };
       },
     },
@@ -168,10 +179,11 @@ function tools({ local }) {
           format: formatProp,
           strict: strictProp,
           spellings: spellingsProp,
+          style: styleProp,
         },
         required: ['path'],
       },
-      run({ path: p, output_path, overwrite, format, strict, spellings }) {
+      run({ path: p, output_path, overwrite, format, strict, spellings, style }) {
         const src = path.resolve(String(p ?? ''));
         if (!p || !fs.existsSync(src) || !fs.statSync(src).isFile()) throw new Error(`no such file: ${src}`);
         const fmt = format || detectFormat(src);
@@ -179,7 +191,7 @@ function tools({ local }) {
         const out = path.resolve(output_path ? String(output_path) : src.slice(0, src.length - ext.length) + '.dsrt' + ext);
         if (out === src) throw new Error('output_path is the input file; choose another path');
         if (fs.existsSync(out) && !overwrite) throw new Error(`${out} already exists; pass overwrite: true to replace it`);
-        const r = load().engine.text(fs.readFileSync(src, 'utf8'), { format: fmt, strict: !!strict, spellings });
+        const r = load().engine.text(fs.readFileSync(src, 'utf8'), { format: fmt, strict: !!strict, spellings, style });
         fs.mkdirSync(path.dirname(out), { recursive: true });
         fs.writeFileSync(out, r.deseret, 'utf8');
         return { ok: true, input_path: src, output_path: out, format: fmt, ...report(r) };

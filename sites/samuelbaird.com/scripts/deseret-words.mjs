@@ -26,13 +26,14 @@ const PHONE = {
 const OVERRIDES = {
   and: 'AE1 N D', // stressed, as in a title, not the reduced "𐐲𐑌𐐼"
   not: 'N O1 T',
-  lds: 'EH1 L D IY1 EH1 S', // spelled out: L-D-S
+  lds: '𐐢𐐼𐑅', // initialism: first sound of Latter Day Saints (deseretalphabet.info rule 10)
   periodicals: 'P IH2 R IY0 O1 D IH0 K AH0 L Z',
   projects: 'P R O1 JH EH0 K T S',
   urim: 'Y UH1 R IH0 M', // as in Urim and Thummim
   peepstone: 'P IY1 P S T OW2 N',
-  mcp: 'EH1 M S IY1 P IY1', // spelled out
+  mcp: '𐑋𐐿𐐹', // initialism: Model Context Protocol
   the: '𐑄', // the single letter Thee, as on the Deseret Wiki
+  a: '𐐪', // the single letter Ah (deseretalphabet.info rule 1)
   deseret: '𐐼𐐯𐑆𐐲𐑉𐐯𐐻', // DeZUret, as on the Deseret Wiki
 };
 

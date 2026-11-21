@@ -185,7 +185,7 @@
   chrome.storage.onChanged.addListener((changes, area) => {
     if (!active) return;
     const keys = Object.keys(changes);
-    if (area === 'sync' && keys.some((k) => ['strict', 'font', 'size'].includes(k))) activate(direction, { save: false });
+    if (area === 'sync' && keys.some((k) => ['strict', 'oneAh', 'syllabic', 'font', 'size'].includes(k))) activate(direction, { save: false });
   });
 
   // On load: sites marked "always" (or every site when "everywhere" is on), else whatever this tab was
