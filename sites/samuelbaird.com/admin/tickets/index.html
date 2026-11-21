@@ -15,13 +15,14 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--background);color:var(--foreground);font:15px/1.55 var(--font-sans)}
 a{color:var(--accent);text-underline-offset:3px;overflow-wrap:anywhere}
-.rail{max-width:76rem;margin:0 auto;padding:28px 16px 64px}
+.rail{max-width:86rem;margin:0 auto;padding:28px 16px 64px}
 .crumb{font-size:.85rem;color:var(--muted);margin:0 0 6px}
 .crumb a{color:var(--muted)}
 h1{font:600 clamp(1.7rem,4.5vw,2.3rem)/1.15 var(--font-serif);margin:0 0 4px}
 .sub{color:var(--muted);margin:0 0 18px}
 button,select,input,textarea{font:inherit;color:var(--foreground)}
 select,input,textarea{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:7px 9px;min-height:38px}
+input[type="checkbox"]{min-height:0;padding:0;width:16px;height:16px;accent-color:var(--accent);cursor:pointer;vertical-align:middle}
 textarea{width:100%;resize:vertical}
 input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
 .btn{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:7px 12px;min-height:38px;cursor:pointer}
@@ -47,8 +48,19 @@ th button[aria-sort]::after{content:" ▾"}
 td{padding:9px 8px;border-bottom:1px solid var(--border);vertical-align:top}
 tr.t{cursor:pointer}
 tr.t:hover td{background:var(--muted-soft)}
+tr.t.ai-on td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
 tr.child td.title{padding-left:28px}
 tr.child td.title::before{content:"↳ ";color:var(--muted)}
+.ai-cell{text-align:center;width:36px;cursor:default}
+.ai-cell input[type="checkbox"]{width:18px;height:18px;margin-top:2px}
+.ai-inst-cell{min-width:220px;width:250px;cursor:default}
+.ai-inst-wrap{display:flex;flex-direction:column;gap:4px}
+.ai-inst{min-height:46px;padding:5px 7px;font-size:.82rem;line-height:1.35}
+.ai-inst-meta{display:flex;align-items:center;gap:6px;min-height:20px}
+.ai-save{font-size:.75rem;padding:2px 8px;min-height:22px;line-height:1.2}
+.ai-state{font-size:.74rem;color:var(--muted)}
+.ai-state.err{color:#e59a9a}
+.f-check{display:flex;align-items:center;gap:8px;font-size:.9rem;color:var(--foreground);margin:0 0 10px;cursor:pointer}
 .ref{font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap}
 .title b{font-weight:600}
 .title p{margin:2px 0 0;color:var(--muted);font-size:.85rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
@@ -104,6 +116,7 @@ dialog h2{font:600 1.3rem var(--font-serif);margin:0 0 12px}
         </select>
       </label>
       <label><input type="checkbox" id="tree" checked> Group subtasks</label>
+      <label><input type="checkbox" id="aiOnly"> AI enabled only</label>
       <label><input type="checkbox" id="showDone"> Show done</label>
       <button class="btn primary" id="new" type="button">New ticket</button>
     </div>
@@ -111,7 +124,8 @@ dialog h2{font:600 1.3rem var(--font-serif);margin:0 0 12px}
     <div style="overflow-x:auto">
       <table>
         <thead><tr>
-          <th>#</th><th>Ticket</th><th>Status</th>
+          <th title="Checked = AI agent may work on this ticket; unchecked = hold off">AI</th>
+          <th>#</th><th>Ticket</th><th>AI instructions</th><th>Status</th>
           <th class="hide-sm" title="Priority">Pri</th><th class="hide-sm" title="Impact">Imp</th>
           <th class="hide-sm" title="Traffic">Trf</th><th class="hide-sm" title="Revenue">Rev</th>
           <th class="hide-sm" title="Ease">Ease</th><th title="Overall score out of 100">Score</th>
@@ -135,6 +149,8 @@ dialog h2{font:600 1.3rem var(--font-serif);margin:0 0 12px}
     </div>
     <label class="f">Title<input name="title" required maxlength="200"></label>
     <label class="f">Summary<textarea name="summary" rows="2" maxlength="2000"></textarea></label>
+    <label class="f-check"><input type="checkbox" name="ai_enabled"> AI enabled (checked = AI agent should work on it; unchecked = hold off)</label>
+    <label class="f">AI instructions<textarea name="ai_instructions" rows="3" maxlength="10000" placeholder="Custom instructions an AI agent reads before starting this ticket"></textarea></label>
     <div class="grid">
       <label class="f">Priority<select name="priority"></select></label>
       <label class="f">Impact<select name="impact"></select></label>
@@ -224,11 +240,13 @@ dialog h2{font:600 1.3rem var(--font-serif);margin:0 0 12px}
   function visible() {
     const q = $('#q').value.trim().toLowerCase();
     const showDone = $('#showDone').checked;
+    const aiOnly = $('#aiOnly').checked;
     return tickets.filter((t) => {
       if (!showDone && CLOSED.has(t.status)) return false;
+      if (aiOnly && !t.ai_enabled) return false;
       if (activeCats.size && !activeCats.has(t.category)) return false;
       if (q) {
-        const hay = [t.ref, t.title, t.summary, t.notes, t.category, ...(t.tags || []), ...(t.monetization || [])].join(' ').toLowerCase();
+        const hay = [t.ref, t.title, t.summary, t.notes, t.ai_instructions, t.category, ...(t.tags || []), ...(t.monetization || [])].join(' ').toLowerCase();
         if (!q.split(/\s+/).every((w) => hay.includes(w))) return false;
       }
       return true;
@@ -251,16 +269,21 @@ dialog h2{font:600 1.3rem var(--font-serif);margin:0 0 12px}
     return out;
   }
 
-  function render() {
+  function renderStats() {
     const open = tickets.filter((t) => !CLOSED.has(t.status));
     const top = open.slice().sort((a, b) => overall(b) - overall(a))[0];
     $('#stats').innerHTML = [
       [open.length, 'open'],
+      [open.filter((t) => t.ai_enabled).length, 'AI enabled'],
       [open.filter((t) => t.status === 'doing').length, 'in progress'],
       [open.filter((t) => t.status === 'next').length, 'up next'],
       [open.filter((t) => t.revenue >= 3 && t.traffic >= 4).length, 'funding picks'],
       [top ? esc(top.ref) : '–', top ? 'top: ' + esc(top.title).slice(0, 40) : 'top'],
     ].map(([b, s]) => `<div class="stat"><b>${b}</b><span>${s}</span></div>`).join('');
+  }
+
+  function render() {
+    renderStats();
 
     const cats = [...new Set(tickets.map((t) => t.category))].sort();
     $('#cats').innerHTML = cats.map((c) => `<button type="button" class="chip" data-cat="${esc(c)}" aria-pressed="${activeCats.has(c)}">${esc(c)}</button>`).join('');
@@ -268,14 +291,16 @@ dialog h2{font:600 1.3rem var(--font-serif);margin:0 0 12px}
 
     const rows = ordered(visible());
     $('#rows').innerHTML = rows.length ? rows.map(([t, child]) => `
-      <tr class="t${child ? ' child' : ''}" data-ref="${esc(t.ref)}">
+      <tr class="t${child ? ' child' : ''}${t.ai_enabled ? ' ai-on' : ''}" data-ref="${esc(t.ref)}">
+        <td class="ai-cell"><input type="checkbox" data-ai-enabled aria-label="AI enabled for ticket ${esc(t.ref)}" title="Checked = AI agent may work on this ticket; unchecked = hold off"${t.ai_enabled ? ' checked' : ''}></td>
         <td class="ref">${esc(t.ref)}</td>
         <td class="title"><b>${esc(t.title)}</b>${t.summary ? `<p>${esc(t.summary)}</p>` : ''}
           <div class="tags">${t.visibility !== 'public' ? `<span class="tag${t.visibility === 'hidden' ? ' hidden' : ''}">${esc(t.visibility)}</span>` : ''}${(t.monetization || []).map((m) => `<span class="tag money">${esc(m)}</span>`).join('')}${(t.tags || []).slice(0, 4).map((g) => `<span class="tag">${esc(g)}</span>`).join('')}</div></td>
+        <td class="ai-inst-cell"><div class="ai-inst-wrap"><textarea class="ai-inst" rows="2" maxlength="10000" data-ai-instructions placeholder="Instructions for AI…" aria-label="AI instructions for ticket ${esc(t.ref)}">${esc(t.ai_instructions || '')}</textarea><div class="ai-inst-meta"><button type="button" class="btn ai-save" data-ai-save hidden>Save</button><span class="ai-state" data-ai-state aria-live="polite"></span></div></div></td>
         <td><select class="st" data-status aria-label="Status">${STATUS.map((s) => `<option${s === t.status ? ' selected' : ''}>${s}</option>`).join('')}</select></td>
         ${SCORES.map((k) => `<td class="sc hide-sm">${dots(t[k])}</td>`).join('')}
         <td class="sc"><span class="score">${overall(t)}</span></td>
-      </tr>`).join('') : '<tr><td colspan="9" class="empty">No tickets match.</td></tr>';
+      </tr>`).join('') : '<tr><td colspan="11" class="empty">No tickets match.</td></tr>';
   }
 
   function fill(sel, values, cur) { sel.innerHTML = values.map(([v, l]) => `<option value="${esc(v)}"${String(v) === String(cur) ? ' selected' : ''}>${esc(l)}</option>`).join(''); }
@@ -283,14 +308,15 @@ dialog h2{font:600 1.3rem var(--font-serif);margin:0 0 12px}
   function openEditor(t) {
     editing = t || null;
     const f = $('#form');
-    const d = t || { ref: '', parent_ref: null, status: 'backlog', visibility: 'public', title: '', summary: '', notes: '', category: 'site', priority: 3, impact: 3, traffic: 3, revenue: 1, ease: 3, monetization: [], tags: [], links: [] };
+    const d = t || { ref: '', parent_ref: null, status: 'backlog', visibility: 'public', title: '', summary: '', notes: '', ai_enabled: false, ai_instructions: '', category: 'site', priority: 3, impact: 3, traffic: 3, revenue: 1, ease: 3, monetization: [], tags: [], links: [] };
     $('#dlgTitle').textContent = t ? 'Ticket ' + t.ref : 'New ticket';
     f.ref.value = d.ref;
     fill(f.parent_ref, [['', '(none)'], ...tickets.filter((x) => x.ref !== d.ref).sort((a, b) => refKey(a.ref).localeCompare(refKey(b.ref))).map((x) => [x.ref, x.ref + ' ' + x.title.slice(0, 50)])], d.parent_ref || '');
     fill(f.status, STATUS.map((s) => [s, s]), d.status);
     f.visibility.value = d.visibility;
     for (const k of SCORES) fill(f[k], [5, 4, 3, 2, 1].map((n) => [n, n + (n === 5 ? ' (highest)' : n === 1 ? ' (lowest)' : '')]), d[k]);
-    for (const k of ['title', 'summary', 'notes', 'category']) f[k].value = d[k] || '';
+    for (const k of ['title', 'summary', 'notes', 'ai_instructions', 'category']) f[k].value = d[k] || '';
+    f.ai_enabled.checked = !!d.ai_enabled;
     f.monetization.value = (d.monetization || []).join(', ');
     f.tags.value = (d.tags || []).join(', ');
     f.links.value = (d.links || []).map((l) => (l.label && l.label !== l.url ? l.label + ' | ' : '') + l.url).join('\n');
@@ -300,8 +326,8 @@ dialog h2{font:600 1.3rem var(--font-serif);margin:0 0 12px}
 
   function formData() {
     const f = $('#form');
-    const out = { ref: f.ref.value.trim(), parent_ref: f.parent_ref.value || null, status: f.status.value, visibility: f.visibility.value };
-    for (const k of ['title', 'summary', 'notes', 'category']) out[k] = f[k].value;
+    const out = { ref: f.ref.value.trim(), parent_ref: f.parent_ref.value || null, status: f.status.value, visibility: f.visibility.value, ai_enabled: f.ai_enabled.checked };
+    for (const k of ['title', 'summary', 'notes', 'ai_instructions', 'category']) out[k] = f[k].value;
     for (const k of SCORES) out[k] = Number(f[k].value);
     out.monetization = f.monetization.value;
     out.tags = f.tags.value;
@@ -316,6 +342,47 @@ dialog h2{font:600 1.3rem var(--font-serif);margin:0 0 12px}
     tickets = tickets.filter((x) => x.ref !== (oldRef || t.ref));
     tickets.push(t);
     if (oldRef && oldRef !== t.ref) tickets.forEach((x) => { if (x.parent_ref === oldRef) x.parent_ref = t.ref; });
+  }
+
+  const savingInst = new Map();
+  async function saveAiInstructions(tr) {
+    const ref = tr?.dataset.ref;
+    if (!ref) return;
+    const ta = tr.querySelector('[data-ai-instructions]');
+    const btn = tr.querySelector('[data-ai-save]');
+    const state = tr.querySelector('[data-ai-state]');
+    const t = tickets.find((x) => x.ref === ref);
+    if (!ta || !t) return;
+    const val = ta.value;
+    const saved = t.ai_instructions || '';
+    if (val === saved) {
+      if (btn) btn.hidden = true;
+      if (state && state.textContent === 'Unsaved') state.textContent = '';
+      return;
+    }
+    if (savingInst.get(ref) === val) return;
+    savingInst.set(ref, val);
+    if (btn) btn.disabled = true;
+    if (state) { state.className = 'ai-state'; state.textContent = 'Saving…'; }
+    try {
+      const { ticket } = await api('PATCH', ref, { ai_instructions: val });
+      upsert(ticket);
+      say('');
+      if (btn) btn.disabled = false;
+      const dirty = ta.value !== (ticket.ai_instructions || '');
+      if (btn) btn.hidden = !dirty;
+      if (state) {
+        state.className = 'ai-state';
+        state.textContent = dirty ? 'Unsaved' : 'Saved';
+        if (!dirty) setTimeout(() => { if (state.textContent === 'Saved') state.textContent = ''; }, 2000);
+      }
+    } catch (err) {
+      if (btn) { btn.disabled = false; btn.hidden = false; }
+      if (state) { state.className = 'ai-state err'; state.textContent = 'Save failed'; }
+      say(explain(err));
+    } finally {
+      if (savingInst.get(ref) === val) savingInst.delete(ref);
+    }
   }
 
   $('#form').addEventListener('submit', async (e) => {
@@ -342,13 +409,62 @@ dialog h2{font:600 1.3rem var(--font-serif);margin:0 0 12px}
   });
 
   $('#rows').addEventListener('change', async (e) => {
-    if (!e.target.matches('[data-status]')) return;
-    const ref = e.target.closest('tr').dataset.ref;
-    try { const { ticket } = await api('PATCH', ref, { status: e.target.value }); upsert(ticket); render(); }
-    catch (err) { say(explain(err)); }
+    if (e.target.matches('[data-status]')) {
+      const ref = e.target.closest('tr').dataset.ref;
+      try { const { ticket } = await api('PATCH', ref, { status: e.target.value }); upsert(ticket); say(''); render(); }
+      catch (err) { say(explain(err)); }
+      return;
+    }
+    if (e.target.matches('[data-ai-enabled]')) {
+      const cb = e.target;
+      const tr = cb.closest('tr');
+      const ref = tr.dataset.ref;
+      const checked = cb.checked;
+      cb.disabled = true;
+      try {
+        const { ticket } = await api('PATCH', ref, { ai_enabled: checked });
+        upsert(ticket);
+        say('');
+        tr.classList.toggle('ai-on', !!ticket.ai_enabled);
+        cb.checked = !!ticket.ai_enabled;
+        renderStats();
+        if ($('#aiOnly').checked && !ticket.ai_enabled) render();
+      } catch (err) {
+        cb.checked = !checked;
+        say(explain(err));
+      } finally {
+        cb.disabled = false;
+      }
+    }
+  });
+  $('#rows').addEventListener('input', (e) => {
+    if (!e.target.matches('[data-ai-instructions]')) return;
+    const tr = e.target.closest('tr');
+    const t = tickets.find((x) => x.ref === tr?.dataset.ref);
+    const dirty = e.target.value !== (t?.ai_instructions || '');
+    const btn = tr.querySelector('[data-ai-save]');
+    const state = tr.querySelector('[data-ai-state]');
+    if (btn) btn.hidden = !dirty;
+    if (state) { state.className = 'ai-state'; state.textContent = dirty ? 'Unsaved' : ''; }
+  });
+  $('#rows').addEventListener('focusout', (e) => {
+    if (e.target.matches('[data-ai-instructions]')) saveAiInstructions(e.target.closest('tr'));
+  });
+  $('#rows').addEventListener('keydown', (e) => {
+    if (e.target.matches('[data-ai-instructions]') && (e.metaKey || e.ctrlKey) && e.key === 'Enter') {
+      e.preventDefault();
+      saveAiInstructions(e.target.closest('tr'));
+    }
+  });
+  $('#rows').addEventListener('mousedown', (e) => {
+    if (e.target.matches('[data-ai-save]')) e.preventDefault();
   });
   $('#rows').addEventListener('click', (e) => {
-    if (e.target.closest('select')) return;
+    if (e.target.matches('[data-ai-save]')) {
+      saveAiInstructions(e.target.closest('tr'));
+      return;
+    }
+    if (e.target.closest('select, input, textarea, button, label, .ai-cell, .ai-inst-cell')) return;
     const tr = e.target.closest('tr.t');
     if (tr) openEditor(tickets.find((t) => t.ref === tr.dataset.ref));
   });
@@ -360,7 +476,7 @@ dialog h2{font:600 1.3rem var(--font-serif);margin:0 0 12px}
     render();
   });
   $('#new').addEventListener('click', () => openEditor(null));
-  for (const id of ['sort', 'tree', 'showDone']) {
+  for (const id of ['sort', 'tree', 'aiOnly', 'showDone']) {
     const el = $('#' + id);
     const saved = store.get(id, null);
     if (saved != null) el.type === 'checkbox' ? (el.checked = saved) : (el.value = saved);

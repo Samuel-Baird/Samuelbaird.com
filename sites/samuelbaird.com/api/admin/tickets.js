@@ -28,6 +28,11 @@ function clean(b) {
     const v = str(b[k], max);
     if (v !== undefined) t[k] = k === 'category' ? v.trim().toLowerCase() : v;
   }
+  if (typeof b.ai_enabled === 'boolean') t.ai_enabled = b.ai_enabled;
+  if ('ai_instructions' in b) {
+    const v = b.ai_instructions === null ? '' : str(b.ai_instructions, 10000);
+    if (v !== undefined) t.ai_instructions = v;
+  }
   if (STATUS.includes(b.status)) t.status = b.status;
   if (VISIBILITY.includes(b.visibility)) t.visibility = b.visibility;
   for (const k of SCORES) {
