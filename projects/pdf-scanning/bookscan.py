@@ -3,8 +3,11 @@
   python bookscan.py check    scan.pdf            OCR every page, write a report of pages to rescan and duplicates
   python bookscan.py drop     scan.pdf 59 60 ...  copy the PDF without the given pages (1-based)
   python bookscan.py assemble scan.pdf --front cover.pdf [--back back.pdf] --title "Book Title" [--author "..."]
+  python bookscan.py small    book.pdf            smaller, searchable copy ("book (small).pdf")
+  python bookscan.py epub     book.pdf --config books/<book>.json   reflowable EPUB
 
-`check` caches OCR in <scan>.bookscan/ocr.jsonl and resumes if interrupted.
+OCR is cached in <pdf>.bookscan/ (ocr.jsonl = RapidOCR for check, wocr.jsonl = Windows OCR for
+small/epub) and resumes if interrupted; drop and assemble carry the caches to their output.
 Every write goes to a new file; the input PDFs are never changed.
 See README.md for the workflow and how to read the report.
 """
@@ -46,7 +49,11 @@ def ocr_pdf(pdf, cache, limit=None):
             res, _ = ocr(arr)
             res = res or []
             confs = [float(r[2]) for r in res]
-            rec = dict(page=i + 1, w=pil.width, h=pil.height,
+            # lines whose text box runs into the image edge: the crop went through the text
+            tol = max(6, 0.008 * pil.width)
+            edge_l = sum(min(pt[0] for pt in r[0]) <= tol for r in res)
+            edge_r = sum(max(pt[0] for pt in r[0]) >= pil.width - tol for r in res)
+            rec = dict(page=i + 1, w=pil.width, h=pil.height, edge_l=int(edge_l), edge_r=int(edge_r),
                        lap=float(cv2.Laplacian(gray, cv2.CV_64F).var()),
                        mean_bright=float(gray.mean()),
                        n_lines=len(res),
@@ -112,6 +119,14 @@ def analyze(recs, header_re=None):
             quality.append((r['page'], why))
     blank = [r['page'] for r in recs if r['n_lines'] <= 1]
 
+    # text running into the image edge (crop too tight at the spine)
+    has_edge = all('edge_l' in r for r in recs)
+    clipped = []
+    for r in recs if has_edge else []:
+        for side, n in (('left', r['edge_l']), ('right', r['edge_r'])):
+            if n >= 3:
+                clipped.append((r['page'], side, n, r['n_lines']))
+
     # printed page numbers -> breaks in the pdf-to-printed offset
     nums = [(r['page'], printed_number(r['text'], header_re)) for r in recs]
     nums = [(p, n) for p, n in nums if n is not None]
@@ -151,7 +166,7 @@ def analyze(recs, header_re=None):
     return dict(pages=len(recs), med_lap=med_lap, med_conf=med_conf, quality=quality,
                 blank=blank, numbered=len(clean), first=clean[0] if clean else None,
                 last=clean[-1] if clean else None, breaks=breaks, repeats=repeats,
-                dups=dups, by=by)
+                dups=dups, by=by, clipped=clipped, has_edge=has_edge)
 
 
 def overlap(a, b):
@@ -231,6 +246,18 @@ def report(pdf, a, outdir):
             L.append(f'- pdf {p} and {q}: shared phrases {ov:.0%} (jaccard {jac:.2f})')
     else:
         L.append('None found.')
+    L += ['', '## Text cut off at the page edge', '']
+    if not a['has_edge']:
+        L.append('Not checked: this OCR cache predates the edge check. Delete ocr.jsonl and run check again.')
+    elif a['clipped']:
+        L.append('The crop runs through the text on these pages, so letters next to the spine are partly '
+                 'or wholly missing. Readable on screen if only a sliver is lost; rescan with a looser crop '
+                 'for a clean copy. Thumbnails are in `review/`.')
+        L.append('')
+        for p, side, n, tot in a['clipped']:
+            L.append(f'- pdf {p}: {n} of {tot} lines touch the {side} edge')
+    else:
+        L.append('None found.')
     L += ['', '## Pages to look at', '',
           'Thumbnails are in `review/`. Look before rescanning: short pages (end of chapter, '
           'reading lists) often score soft only because they are mostly blank.', '']
@@ -276,11 +303,35 @@ def cmd_check(args):
     recs = [json.loads(l) for l in open(cache, encoding='utf-8')]
     a = analyze(recs, args.header_regex)
     rescans = {p for A, B, *_ in rescanned_blocks(a) if A for p in A + B}
-    flagged = sorted({p for p, _ in a['quality']} | {p for d in a['dups'] for p in d[:2]} | rescans)
+    flagged = sorted({p for p, _ in a['quality']} | {p for d in a['dups'] for p in d[:2]} | rescans |
+                     {c[0] for c in a['clipped']})
     thumbnails(args.pdf, flagged, outdir)
     path, drops = report(args.pdf, a, outdir)
     print(open(path, encoding='utf-8').read())
     print(f'Report: {path}')
+
+
+def workdir(pdf):
+    return os.path.splitext(pdf)[0] + '.bookscan'
+
+
+def carry_caches(src_pdf, out_pdf, mapping):
+    """Copy OCR caches to the output's work folder, renumbered (mapping: new page -> old page),
+    so later steps (epub, small, check) don't have to OCR again."""
+    src, dst = workdir(src_pdf), workdir(out_pdf)
+    inv = {old: new for new, old in mapping.items()}
+    for name in ('ocr.jsonl', 'wocr.jsonl'):
+        path = os.path.join(src, name)
+        if not os.path.exists(path):
+            continue
+        os.makedirs(dst, exist_ok=True)
+        with open(os.path.join(dst, name), 'w', encoding='utf-8') as f:
+            for line in open(path, encoding='utf-8'):
+                r = json.loads(line)
+                if r['page'] in inv:
+                    r['page'] = inv[r['page']]
+                    f.write(json.dumps(r, ensure_ascii=False) + '\n')
+        print(f'  carried {name} to {dst}')
 
 
 def cmd_drop(args):
@@ -293,6 +344,8 @@ def cmd_drop(args):
     want = [d for i, d in enumerate(before, 1) if i not in drop]
     ok = image_digests(fitz.open(out)) == want
     print(f'{out}: {len(want)} pages, dropped {drop}. Page images match original: {ok}')
+    kept = [i for i in range(1, len(before) + 1) if i not in drop]
+    carry_caches(args.pdf, out, {n: o for n, o in enumerate(kept, 1)})
 
 
 def cmd_assemble(args):
@@ -310,6 +363,44 @@ def cmd_assemble(args):
     want = sum((image_digests(fitz.open(p)) for p in parts), [])
     ok = image_digests(fitz.open(out)) == want
     print(f'{out}: {len(want)} pages. Page images match sources: {ok}')
+    front = fitz.open(args.front).page_count if args.front else 0
+    n = fitz.open(args.pdf).page_count
+    carry_caches(args.pdf, out, {front + i: i for i in range(1, n + 1)})
+
+
+def cmd_small(args):
+    from winocr import ocr_pdf_windows
+    from smallpdf import make_small
+    os.makedirs(workdir(args.pdf), exist_ok=True)
+    ocr = None if args.no_text else ocr_pdf_windows(args.pdf, os.path.join(workdir(args.pdf), 'wocr.jsonl'))
+    out = args.out or os.path.splitext(args.pdf)[0] + ' (small).pdf'
+    if os.path.exists(out):
+        sys.exit(f'{out} already exists; not overwriting.')
+    n = make_small(args.pdf, out, ocr, dpi=args.dpi, quality=args.quality,
+                   color_pages=set(args.color_pages))
+    mb = lambda p: os.path.getsize(p) / 1e6
+    print(f'{out}: {n} pages, {mb(out):.0f} MB (from {mb(args.pdf):.0f} MB)'
+          + ('' if args.no_text else ', searchable'))
+
+
+def cmd_epub(args):
+    from winocr import ocr_pdf_windows
+    from epubbuild import Book
+    cfg = json.load(open(args.config, encoding='utf-8'))
+    wd = workdir(args.pdf); os.makedirs(wd, exist_ok=True)
+    win = ocr_pdf_windows(args.pdf, os.path.join(wd, 'wocr.jsonl'))
+    rapid_path = os.path.join(wd, 'ocr.jsonl')
+    rapid = {r['page']: r for r in map(json.loads, open(rapid_path, encoding='utf-8'))} \
+        if os.path.exists(rapid_path) else None
+    if rapid is None:
+        print('No RapidOCR cache for this PDF; skipping recovery of dropped "Th" words.')
+    out = args.out or os.path.splitext(args.pdf)[0] + '.epub'
+    if os.path.exists(out):
+        sys.exit(f'{out} already exists; not overwriting.')
+    res = Book(args.pdf, cfg, win, rapid).build(out)
+    print(f"{out}: {res['chapters']} of {res['of']} chapters found"
+          + (f", missing {res['missing']}" if res['missing'] else '')
+          + f"; {len(res['recovered'])} dropped words recovered")
 
 
 def main():
@@ -334,6 +425,19 @@ def main():
     s.add_argument('--author')
     s.add_argument('--out')
     s.set_defaults(fn=cmd_assemble)
+    m = sub.add_parser('small', help='smaller, searchable copy')
+    m.add_argument('pdf')
+    m.add_argument('--dpi', type=int, default=150)
+    m.add_argument('--quality', type=int, default=55, help='JPEG quality for inside pages')
+    m.add_argument('--color-pages', type=int, nargs='*', default=[1], help='pages kept in colour (default: 1)')
+    m.add_argument('--no-text', action='store_true', help='skip the OCR text layer')
+    m.add_argument('--out')
+    m.set_defaults(fn=cmd_small)
+    e = sub.add_parser('epub', help='reflowable EPUB (needs a book config, see books/)')
+    e.add_argument('pdf')
+    e.add_argument('--config', required=True)
+    e.add_argument('--out')
+    e.set_defaults(fn=cmd_epub)
     args = ap.parse_args()
     args.fn(args)
 

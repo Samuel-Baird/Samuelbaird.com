@@ -1,0 +1,36 @@
+{
+  "title": "Mormonism in Five Minutes",
+  "author": "Dan McClellan",
+  "author_role": "edt",
+  "author_label": "Edited by",
+  "publisher": "Equinox Publishing",
+  "isbn": "9781800508101",
+  "language": "en",
+
+  "toc_pages": [7, 12],
+  "toc_skip": "(([xvi]+ )?CONTENTS( [xvi]+)?)|Contents|Preface",
+  "toc_not_parts": ["Index"],
+  "toc_fixes": {
+    "10": {"title": "What was the role of folk magic in the beginnings of Mormonism?"},
+    "63": {"author": "Brenton Griffin"},
+    "69": {"author": "Matthew Bowman"},
+    "70": {"title": "Why does God command Nephi to kill Laban in the Book of Mormon?"},
+    "75": {"author": "Brenton Griffin"}
+  },
+
+  "front": [
+    {"title": "Religion in 5 Minutes", "from": 4, "in_toc": false},
+    {"title": "Copyright", "from": 6, "kind": "lines", "in_toc": false,
+     "fixes": [["^VK:", "UK:"], ["\\bSl 2BX", "S1 2BX"], ["^@ ", "© "]]},
+    {"title": "Preface", "from": 13, "to": 15}
+  ],
+  "body_start": 16,
+  "index_heading": "Index",
+
+  "subheads": ["In this book", "Elsewhere"],
+  "refs_heading": "Suggestions for further reading",
+  "refs_end_headings": ["About the author"],
+  "text_fixes": [["churcho\\S?esuschrist", "churchofjesuschrist"]],
+
+  "notes": "Page numbers are pages of the finished PDF (cover = page 1). ISBN is the paperback, from the back-cover barcode. toc_fixes correct OCR slips in the contents, checked against the running headers."
+}
